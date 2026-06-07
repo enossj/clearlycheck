@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- PRIMARY SEO -->
+<title>Can I Afford This? Free Affordability Calculator</title>
+<meta name="description" content="Get a clear YES or NO on whether you can afford a house, car or any purchase based on your income. Uses the 28/36 rule. Free and instant.">
+<meta name="keywords" content="can I afford this, affordability calculator, can I afford a house, can I afford a car, how much house can I afford, how much car can I afford, income affordability calculator, 28 36 rule calculator, debt to income ratio, can I afford a loan, what can I afford on my salary, home affordability calculator, car affordability calculator, purchase affordability">
+<link rel="canonical" href="https://clearlycheck.com/can-i-afford-this.html">
+
+<!-- OPEN GRAPH (Facebook, LinkedIn, WhatsApp previews) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Can I Afford This? — Free Affordability Calculator">
+<meta property="og:description" content="Get a clear YES or NO on whether you can afford any major purchase based on your income. Uses real financial guidelines.">
+<meta property="og:url" content="https://clearlycheck.com/can-i-afford-this.html">
+<meta property="og:site_name" content="ClearlyCheck">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Can I Afford This? Calculator | ClearlyCheck">
+<meta name="twitter:description" content="Get a clear YES or NO on whether you can afford any major purchase based on your income.">
+
+<!-- STRUCTURED DATA: WebApplication schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Can I Afford This? Calculator",
+  "description": "Free affordability calculator that tells you whether you can afford a house, car, loan or any major purchase based on your income and existing debt obligations.",
+  "url": "https://clearlycheck.com/can-i-afford-this.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+
+<!-- STRUCTURED DATA: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearlycheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://clearlycheck.com/index.html#tools" },
+    { "@type": "ListItem", "position": 3, "name": "Can I Afford This?", "item": "https://clearlycheck.com/can-i-afford-this.html" }
+  ]
+}
+</script>
+
+<!-- STRUCTURED DATA: FAQPage (huge for Google featured snippets) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much house can I afford on my salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A general rule is to spend no more than 28% of your gross monthly income on housing costs (mortgage, insurance, taxes). So if you earn $5,000/month, your maximum housing payment should be around $1,400/month. This is known as the front-end ratio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 28/36 rule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 28/36 rule states that you should spend no more than 28% of your gross monthly income on housing costs, and no more than 36% on total debt (including housing, car loans, student loans, and credit cards). Most lenders use this rule when approving mortgages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I afford a car on my salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common guideline is to keep your total vehicle costs (payment + insurance + fuel) under 15-20% of your monthly take-home pay. For a car loan specifically, your monthly payment should ideally stay under 10-15% of gross monthly income."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef;
+    --green: #1a6b4a; --green-light: #e8f5ef; --green-dark: #145a3d;
+    --yellow: #b7770d; --yellow-light: #fef9ec;
+    --red: #c0392b; --red-light: #fdf0ef;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { color: var(--border-hover); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 560px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
+
+  /* PURCHASE TYPE SELECTOR */
+  .purchase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 28px; }
+  .purchase-btn { padding: 14px 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-card); color: var(--text-muted); cursor: pointer; transition: all 0.15s; text-align: center; line-height: 1.3; }
+  .purchase-btn .btn-icon { font-size: 22px; display: block; margin-bottom: 6px; }
+  .purchase-btn.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+  .purchase-btn:hover:not(.active) { border-color: var(--border-hover); background: var(--bg); }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 28px 32px; }
+
+  .currency-toggle { display: flex; gap: 8px; margin-bottom: 24px; }
+  .currency-btn { flex: 1; padding: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .currency-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+
+  .field { margin-bottom: 22px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .field label strong { color: var(--text); font-weight: 600; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-prefix, .input-suffix { padding: 0 14px; font-size: 15px; font-weight: 600; color: var(--text-muted); background: rgba(15,15,14,0.04); height: 48px; display: flex; align-items: center; border-right: 1px solid var(--border); flex-shrink: 0; white-space: nowrap; }
+  .input-suffix { border-right: none; border-left: 1px solid var(--border); }
+  .input-wrap input, .input-wrap select { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: var(--text); background: transparent; padding: 0 16px; height: 48px; width: 100%; }
+  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .section-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 16px; }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; }
+  .results-header { padding: 24px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-waiting { background: #f0f0ef; color: var(--text-light); }
+  .status-yes { background: var(--green-light); color: var(--green); }
+  .status-maybe { background: var(--yellow-light); color: var(--yellow); }
+  .status-no { background: var(--red-light); color: var(--red); }
+  .results-body { padding: 24px 28px; }
+
+  .empty-state { text-align: center; padding: 32px 0; }
+  .empty-icon { font-size: 40px; margin-bottom: 12px; }
+  .empty-text { font-size: 14px; color: var(--text-light); font-weight: 300; }
+
+  /* VERDICT */
+  .verdict-hero { text-align: center; padding: 24px 16px; border-radius: var(--radius-sm); margin-bottom: 20px; }
+  .verdict-hero.yes { background: var(--green-light); }
+  .verdict-hero.maybe { background: var(--yellow-light); }
+  .verdict-hero.no { background: var(--red-light); }
+  .verdict-emoji { font-size: 48px; line-height: 1; margin-bottom: 10px; }
+  .verdict-word { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1; margin-bottom: 6px; }
+  .verdict-hero.yes .verdict-word { color: var(--green); }
+  .verdict-hero.maybe .verdict-word { color: var(--yellow); }
+  .verdict-hero.no .verdict-word { color: var(--red); }
+  .verdict-sub { font-size: 13px; font-weight: 300; }
+  .verdict-hero.yes .verdict-sub { color: var(--green-dark); }
+  .verdict-hero.maybe .verdict-sub { color: #8a6500; }
+  .verdict-hero.no .verdict-sub { color: #8b1a0f; }
+
+  /* RATIO BARS */
+  .ratio-section { margin-bottom: 20px; }
+  .ratio-item { margin-bottom: 14px; }
+  .ratio-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .ratio-name { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+  .ratio-values { font-size: 13px; font-weight: 600; color: var(--text); }
+  .ratio-track { height: 8px; background: var(--bg); border-radius: 100px; overflow: hidden; position: relative; }
+  .ratio-fill { height: 100%; border-radius: 100px; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .ratio-fill.good { background: linear-gradient(90deg, #1a6b4a, #2ecc71); }
+  .ratio-fill.warn { background: linear-gradient(90deg, #f39c12, #e67e22); }
+  .ratio-fill.bad { background: linear-gradient(90deg, #c0392b, #e74c3c); }
+  .ratio-limit { position: absolute; top: 0; height: 100%; width: 2px; background: rgba(0,0,0,0.25); }
+
+  .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .metric { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .metric-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 4px; }
+  .metric-value { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); }
+  .metric-value.green { color: var(--green); }
+  .metric-value.red { color: var(--red); }
+
+  .tip-box { border-radius: var(--radius-sm); padding: 14px 16px; font-size: 13px; line-height: 1.7; font-weight: 300; }
+  .tip-box.green { background: var(--green-light); color: var(--green-dark); }
+  .tip-box.yellow { background: var(--yellow-light); color: #7a5000; }
+  .tip-box.red { background: var(--red-light); color: #8b1a0f; }
+  .tip-box strong { font-weight: 600; }
+
+  /* ARTICLE */
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
+  .article h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article h3 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; margin-top: 20px; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+
+  /* FAQ SECTION */
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 4px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } .article-section { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .calc-header { padding: 20px 20px 16px; } .page-header { padding: 32px 20px 24px; } .purchase-grid { grid-template-columns: repeat(2,1fr); } .metrics-grid { grid-template-columns: 1fr 1fr; } }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; width: 100%; padding: 18px 0;
+    font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800;
+    color: var(--text); background: none; border: none; cursor: pointer;
+    text-align: left; transition: color 0.15s;
+  }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--bg); border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 700;
+    transition: all 0.2s; color: var(--text-muted);
+  }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a {
+    font-size: 14px; color: var(--text-muted); line-height: 1.7;
+    font-weight: 300; padding: 0 0 18px 0;
+    display: none;
+  }
+  .faq-a.open { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Clearly<span>Check</span></a>
+    <a class="back-link" href="index.html">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#tools">Tools</a>
+      <span>›</span>
+      <span style="color:var(--text-muted);">Can I Afford This?</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🏠 Finance Tool</div>
+  <h1>Can I Afford This?</h1>
+  <p>Enter your income and get a clear, honest answer on whether you can afford a home, car, loan, or any big purchase — based on real financial guidelines, not guesswork.</p>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <!-- CALCULATOR -->
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>What are you thinking of buying?</h2>
+      <p>Select a purchase type, then fill in your numbers.</p>
+    </div>
+    <div class="calc-body">
+
+      <!-- PURCHASE TYPE -->
+      <div class="purchase-grid" role="group" aria-label="Purchase type">
+        <button class="purchase-btn active" onclick="setPurchase('house',this)" aria-pressed="true">
+          <span class="btn-icon">🏠</span>House / Rent
+        </button>
+        <button class="purchase-btn" onclick="setPurchase('car',this)" aria-pressed="false">
+          <span class="btn-icon">🚗</span>Car / Vehicle
+        </button>
+        <button class="purchase-btn" onclick="setPurchase('loan',this)" aria-pressed="false">
+          <span class="btn-icon">💳</span>Loan / Credit
+        </button>
+        <button class="purchase-btn" onclick="setPurchase('other',this)" aria-pressed="false">
+          <span class="btn-icon">🛒</span>Other Purchase
+        </button>
+      </div>
+
+      <div class="currency-toggle">
+        <button class="currency-btn active" onclick="setCurrency('$',this)">$ USD</button>
+        <button class="currency-btn" onclick="setCurrency('£',this)">£ GBP</button>
+        <button class="currency-btn" onclick="setCurrency('€',this)">€ EUR</button>
+        <button class="currency-btn" onclick="setCurrency('₹',this)">₹ INR</button>
+      </div>
+
+      <p class="section-label">Your income</p>
+
+      <div class="field">
+        <label><strong>Gross monthly income</strong> — before tax</label>
+        <div class="input-wrap">
+          <span class="input-prefix" id="pfx1">$</span>
+          <input type="number" id="income" placeholder="e.g. 5,000" min="1" step="any" oninput="calculate()" />
+          <span class="input-suffix">/ month</span>
+        </div>
+        <p class="hint">Use your total household income if buying jointly.</p>
+      </div>
+
+      <hr class="divider">
+      <p class="section-label">Existing monthly debt payments</p>
+
+      <div class="field">
+        <label><strong>Existing debt payments</strong> — car loans, student loans, credit cards (minimums)</label>
+        <div class="input-wrap">
+          <span class="input-prefix" id="pfx2">$</span>
+          <input type="number" id="existingDebt" placeholder="0" min="0" step="any" oninput="calculate()" value="0" />
+          <span class="input-suffix">/ month</span>
+        </div>
+        <p class="hint">Do not include rent or mortgage you currently pay — just other debts.</p>
+      </div>
+
+      <hr class="divider">
+      <p class="section-label" id="purchaseLabel">The purchase</p>
+
+      <div class="field" id="purchaseCostField">
+        <label id="costLabel"><strong>Monthly payment</strong> — estimated cost per month</label>
+        <div class="input-wrap">
+          <span class="input-prefix" id="pfx3">$</span>
+          <input type="number" id="purchaseCost" placeholder="e.g. 1,200" min="1" step="any" oninput="calculate()" />
+          <span class="input-suffix" id="costSuffix">/ month</span>
+        </div>
+        <p class="hint" id="costHint">Include mortgage/rent + insurance + taxes for a home estimate.</p>
+      </div>
+
+      <div class="field" id="totalPriceField" style="display:none;">
+        <label><strong>Total purchase price</strong> — optional, for context</label>
+        <div class="input-wrap">
+          <span class="input-prefix" id="pfx4">$</span>
+          <input type="number" id="totalPrice" placeholder="e.g. 350,000" min="1" step="any" oninput="calculate()" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-label="Affordability result" aria-live="polite">
+    <div class="results-header">
+      <h3>Affordability Check</h3>
+      <span class="results-status status-waiting" id="statusBadge">Waiting</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <div class="empty-state">
+        <div class="empty-icon">🏠</div>
+        <p class="empty-text">Fill in your income and the<br>purchase cost to get your answer.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<!-- ARTICLE + SIDEBAR -->
+<div class="article-section">
+  <article class="article">
+    <h2>How does the affordability calculator work?</h2>
+    <p>This calculator uses two widely accepted financial guidelines — the <strong>front-end ratio</strong> and the <strong>back-end ratio (28/36 rule)</strong> — to tell you whether a purchase fits within healthy financial boundaries based on your income.</p>
+
+    <h3>The Front-End Ratio (Housing)</h3>
+    <p>For housing costs, financial experts recommend spending <strong>no more than 28% of your gross monthly income</strong> on housing. This is called the front-end ratio or the housing ratio. For example, if you earn $5,000/month, your maximum housing cost should be around $1,400/month.</p>
+
+    <h3>The Back-End Ratio (Total Debt)</h3>
+    <p>Your <strong>total monthly debt obligations</strong> — including housing, car payments, student loans, and minimum credit card payments — should not exceed <strong>36% of gross monthly income</strong>. Some lenders allow up to 43%, but 36% is the conservative, safe threshold used by most financial advisors.</p>
+
+    <h2>What is the 28/36 rule?</h2>
+    <p>The 28/36 rule is the most widely used affordability guideline in personal finance. It states:</p>
+    <ul>
+      <li><strong>28%</strong> — maximum percentage of gross income for housing costs</li>
+      <li><strong>36%</strong> — maximum percentage of gross income for all debt combined</li>
+    </ul>
+    <p>Most banks and mortgage lenders use this rule when deciding whether to approve a loan. Staying within these limits gives you a comfortable financial cushion for savings, emergencies, and living expenses.</p>
+
+    <h2>How much car can I afford?</h2>
+    <p>For vehicles, a common rule is the <strong>20/4/10 rule</strong>: put 20% down, finance for no more than 4 years, and keep total vehicle costs (payment + insurance + fuel) under 10-15% of gross monthly income. If you earn $4,000/month, that means keeping all car expenses under $400-600/month.</p>
+
+    <h2>What counts as "existing debt"?</h2>
+    <p>Include any regular monthly debt payments you are already committed to: car loan payments, student loan minimum payments, credit card minimum payments, personal loan payments, and any other monthly obligations to lenders. Do not include utilities, groceries, or subscriptions — those are living expenses, not debt payments.</p>
+
+    <div class="faq-section">
+      
+    <h2>Common affordability questions this tool answers</h2>
+    <p>People search for affordability help in many ways: <em>can I afford a house on my salary</em>, <em>how much house can I afford</em>, <em>can I afford a $300,000 home</em>, <em>what car can I afford on my income</em>. This tool gives a clear answer for any of these.</p>
+    <p>The <strong>28/36 rule</strong> is the gold standard used by mortgage lenders, financial advisors, and banks worldwide. Staying within these limits means your debt load is considered manageable and you are much less likely to face financial stress from over-borrowing. If you are above the limits, this calculator shows you exactly how much you need to reduce the payment — or how much extra income you would need.</p>
+    <p>Common scenarios: <em>Can I afford a $250,000 house on a $60,000 salary?</em> At 20% down and a 6.5% rate, the monthly payment is around $1,264 — which is 25% of a $5,000 gross monthly income, just under the 28% threshold. <em>Can I afford a $400 car payment on a $3,000 monthly income?</em> That is 13.3% of income — well within the 15% car guideline.</p>
+
+    <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">Can I afford a house on a $60,000 salary?</button>
+        <div class="faq-a">On a $60,000 annual salary ($5,000/month gross), the 28% rule suggests a maximum housing payment of around $1,400/month. Depending on your location and down payment, this could support a home purchase price of roughly $200,000-$280,000 with a standard 30-year mortgage at typical rates.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if I am above the recommended ratio?</button>
+        <div class="faq-a">Being above the 28/36 threshold does not mean you cannot make the purchase — it means you are taking on more financial risk. You may still qualify for a loan, but you will have less room for emergencies, savings, or unexpected expenses. Consider whether you can increase your income, reduce other debts first, or choose a less expensive option.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is gross or net income used for affordability calculations?</button>
+        <div class="faq-a">Lenders use gross income (before tax) for the 28/36 rule, which is what this calculator uses. However, budgeting based on your net (take-home) income is more realistic for day-to-day planning, since that is the money you actually have available.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p class="sidebar-label" style="padding: 0 4px; margin-bottom: 12px;">More Finance Tools</p>
+    <div class="sidebar-tools">
+      <div class="ad-placeholder">Advertisement</div>
+      <a class="sidebar-tool" href="debt-free-calculator.html">
+        <div class="sidebar-tool-icon">💸</div>
+        <div>
+          <div class="sidebar-tool-name">Debt Free Calculator</div>
+          <div class="sidebar-tool-desc">Find your exact debt payoff date</div>
+        </div>
+      </a>
+      <a class="sidebar-tool" href="salary-converter.html">
+        <div class="sidebar-tool-icon">💼</div>
+        <div>
+          <div class="sidebar-tool-name">Salary to Hourly</div>
+          <div class="sidebar-tool-desc">Convert any salary instantly</div>
+        </div>
+      </a>
+      <a class="sidebar-tool" href="rent-vs-buy.html">
+        <div class="sidebar-tool-icon">🏡</div>
+        <div>
+          <div class="sidebar-tool-name">Rent vs. Buy</div>
+          <div class="sidebar-tool-desc">Compare true cost of renting vs buying</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- DISCLAIMER -->
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);padding:16px 24px;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:12px;">
+    <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+    <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;font-family:'DM Sans',sans-serif;">
+      <strong style="color:#0f0f0e;">For informational purposes only.</strong>
+      Results from this tool are estimates based on the information you provide and standard financial guidelines.
+      They do not constitute financial, legal, tax, or professional advice.
+      Always consult a qualified professional before making major financial or life decisions.
+      ClearlyCheck accepts no liability for decisions made based on these results.
+    </p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="index.html">Clearly<span>Check</span></a>
+    <p class="footer-copy">2025 ClearlyCheck · Free tools for smarter decisions · <a href="#" style="color:var(--text-light);text-decoration:none;">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+let purchaseType = 'house';
+let currSym = '$';
+
+const limits = {
+  house: { front: 0.28, back: 0.36, label: 'Housing cost', hint: 'Include estimated mortgage/rent + insurance + property tax.', showTotal: true },
+  car:   { front: 0.15, back: 0.36, label: 'Monthly car cost', hint: 'Include loan payment + insurance + estimated fuel.', showTotal: true },
+  loan:  { front: 0.10, back: 0.36, label: 'New monthly payment', hint: 'The new monthly debt payment you would be taking on.', showTotal: false },
+  other: { front: 0.20, back: 0.36, label: 'Monthly cost', hint: 'Ongoing monthly cost of this purchase.', showTotal: false }
+};
+
+const purchaseEmojis = { house:'🏠', car:'🚗', loan:'💳', other:'🛒' };
+
+function setPurchase(type, btn) {
+  purchaseType = type;
+  document.querySelectorAll('.purchase-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+  btn.classList.add('active');
+  btn.setAttribute('aria-pressed','true');
+  const cfg = limits[type];
+  document.getElementById('costLabel').innerHTML = '<strong>' + cfg.label + '</strong>';
+  document.getElementById('costHint').textContent = cfg.hint;
+  document.getElementById('totalPriceField').style.display = cfg.showTotal ? '' : 'none';
+  calculate();
+}
+
+function setCurrency(sym, btn) {
+  currSym = sym;
+  document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['pfx1','pfx2','pfx3','pfx4'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = sym; });
+  calculate();
+}
+
+function fmt(n) { return currSym + Math.round(n).toLocaleString(); }
+function pct(n) { return (n * 100).toFixed(1) + '%'; }
+
+function getRatioClass(ratio, limit) {
+  if (ratio <= limit * 0.85) return 'good';
+  if (ratio <= limit) return 'warn';
+  return 'bad';
+}
+
+function calculate() {
+  const income = parseFloat(document.getElementById('income').value);
+  const existing = parseFloat(document.getElementById('existingDebt').value) || 0;
+  const cost = parseFloat(document.getElementById('purchaseCost').value);
+
+  if (!income || !cost) { showEmpty(); return; }
+
+  const cfg = limits[purchaseType];
+  const frontRatio = cost / income;
+  const backRatio = (cost + existing) / income;
+  const frontLimit = cfg.front;
+  const backLimit = cfg.back;
+
+  const frontOk = frontRatio <= frontLimit;
+  const backOk = backRatio <= backLimit;
+
+  let verdict, verdictClass, badgeClass, badgeText, tipText;
+
+  if (frontOk && backOk) {
+    verdict = 'YES'; verdictClass = 'yes'; badgeClass = 'status-yes'; badgeText = 'Affordable';
+    const headroom = Math.min((frontLimit - frontRatio) / frontLimit, (backLimit - backRatio) / backLimit);
+    if (headroom > 0.3) tipText = '<strong>Comfortable fit.</strong> This purchase is well within your means. You have good headroom for savings and unexpected costs.';
+    else tipText = '<strong>Affordable, but tight.</strong> You qualify under the guidelines, but there is not much room to spare. Make sure your emergency fund is solid before committing.';
+  } else if (!frontOk && backOk) {
+    verdict = 'CAUTION'; verdictClass = 'maybe'; badgeClass = 'status-maybe'; badgeText = 'Caution';
+    const max = fmt(income * frontLimit);
+    tipText = `<strong>Above the recommended limit.</strong> The guideline for this purchase type is ${pct(frontLimit)} of income (${max}/month). You are at ${pct(frontRatio)}. You may still qualify for financing, but your financial cushion will be thin.`;
+  } else {
+    verdict = 'NO'; verdictClass = 'no'; badgeClass = 'status-no'; badgeText = 'Too High';
+    const maxFront = fmt(income * frontLimit);
+    const maxBack = fmt(income * backLimit - existing);
+    tipText = `<strong>This exceeds safe debt limits.</strong> Your total debt ratio would be ${pct(backRatio)} against a recommended maximum of ${pct(backLimit)}. To afford this comfortably, either increase your income, reduce existing debts, or look for a lower-cost option (max ${maxBack}/month for this purchase).`;
+  }
+
+  const frontFillPct = Math.min((frontRatio / (frontLimit * 1.5)) * 100, 100);
+  const backFillPct = Math.min((backRatio / (backLimit * 1.5)) * 100, 100);
+  const frontLimitPct = (frontLimit / (frontLimit * 1.5)) * 100;
+  const backLimitPct = (backLimit / (backLimit * 1.5)) * 100;
+
+  const maxAffordable = fmt(income * frontLimit - existing > 0 ? income * frontLimit : 0);
+  const remainingCapacity = Math.max(income * backLimit - existing - cost, 0);
+
+  document.getElementById('statusBadge').textContent = badgeText;
+  document.getElementById('statusBadge').className = 'results-status ' + badgeClass;
+
+  const emoji = verdictClass === 'yes' ? '✅' : verdictClass === 'maybe' ? '⚠️' : '❌';
+
+  document.getElementById('resultsBody').innerHTML = `
+    <div class="verdict-hero ${verdictClass}">
+      <div class="verdict-emoji">${emoji}</div>
+      <div class="verdict-word">${verdict}</div>
+      <div class="verdict-sub">${purchaseEmojis[purchaseType]} ${purchaseType.charAt(0).toUpperCase()+purchaseType.slice(1)} · ${fmt(cost)}/month on ${fmt(income)}/month income</div>
+    </div>
+
+    <div class="ratio-section">
+      <div class="ratio-item">
+        <div class="ratio-header">
+          <span class="ratio-name">Purchase ratio (limit: ${pct(frontLimit)})</span>
+          <span class="ratio-values">${pct(frontRatio)}</span>
+        </div>
+        <div class="ratio-track">
+          <div class="ratio-fill ${getRatioClass(frontRatio, frontLimit)}" style="width:${frontFillPct}%"></div>
+          <div class="ratio-limit" style="left:${frontLimitPct}%"></div>
+        </div>
+      </div>
+      <div class="ratio-item">
+        <div class="ratio-header">
+          <span class="ratio-name">Total debt ratio (limit: ${pct(backLimit)})</span>
+          <span class="ratio-values">${pct(backRatio)}</span>
+        </div>
+        <div class="ratio-track">
+          <div class="ratio-fill ${getRatioClass(backRatio, backLimit)}" style="width:${backFillPct}%"></div>
+          <div class="ratio-limit" style="left:${backLimitPct}%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-label">Max affordable</div>
+        <div class="metric-value green">${fmt(income * frontLimit)}/mo</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Remaining capacity</div>
+        <div class="metric-value ${remainingCapacity > 0 ? 'green' : 'red'}">${fmt(remainingCapacity)}/mo</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Total debt/mo</div>
+        <div class="metric-value">${fmt(cost + existing)}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Free income</div>
+        <div class="metric-value">${fmt(Math.max(income - cost - existing, 0))}</div>
+      </div>
+    </div>
+
+    <div class="tip-box ${verdictClass === 'yes' ? 'green' : verdictClass === 'maybe' ? 'yellow' : 'red'}">${tipText}</div>
+  `;
+}
+
+function showEmpty() {
+  document.getElementById('statusBadge').textContent = 'Waiting';
+  document.getElementById('statusBadge').className = 'results-status status-waiting';
+  document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🏠</div><p class="empty-text">Fill in your income and the<br>purchase cost to get your answer.</p></div>`;
+}
+</script>
+
+<script>
+(function() {
+  function initFAQ() {
+    var items = document.querySelectorAll('.faq-q');
+    items.forEach(function(btn) {
+      // Add the +/x icon if not already there
+      if (!btn.querySelector('.faq-icon')) {
+        var icon = document.createElement('span');
+        icon.className = 'faq-icon';
+        icon.textContent = '+';
+        btn.appendChild(icon);
+      }
+      btn.addEventListener('click', function() {
+        var answer = btn.nextElementSibling;
+        var isOpen = btn.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-q.open').forEach(function(b) {
+          b.classList.remove('open');
+          if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+        });
+        // Open this one if it was closed
+        if (!isOpen) {
+          btn.classList.add('open');
+          if (answer) answer.classList.add('open');
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+  } else {
+    initFAQ();
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Label Decoder — What's Really in Your Food? | ClearlyCheck</title>
+<meta name="description" content="Type any food ingredient and get a plain-English explanation of what it is, where it comes from, and whether it is safe. Free, instant, AI-powered.">
+<meta name="keywords" content="food label decoder, what is this ingredient, food ingredient checker, is this ingredient safe, E numbers explained, food additives checker, what is carrageenan, what is xanthan gum, food label translator, ingredient decoder">
+<link rel="canonical" href="https://clearlycheck.com/food-label-decoder.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Food Label Decoder — What's Really in Your Food?">
+<meta property="og:description" content="Type any ingredient from a food label and get a plain-English verdict — what it is, where it comes from, and whether it is worth worrying about.">
+<meta property="og:url" content="https://clearlycheck.com/food-label-decoder.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Food Label Decoder",
+  "description": "Free AI-powered food ingredient decoder. Type any ingredient or E number and get a plain-English explanation of what it is, its origin, and safety profile.",
+  "url": "https://clearlycheck.com/food-label-decoder.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are E numbers dangerous?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not all E numbers are dangerous. E numbers are simply the European food additive numbering system — they cover everything from vitamin C (E300) to natural colours and preservatives. Many are completely safe; some have concerns at high doses. This tool explains each one individually so you can make informed choices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is carrageenan in food?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Carrageenan is a natural thickening agent extracted from red seaweed. It is widely used in dairy products, plant milks, deli meats and infant formula. While approved as safe by most food regulatory bodies, some research has linked high doses to gut inflammation. It is considered controversial — some health-conscious consumers choose to avoid it."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --health: #1a6b4a; --health-light: #e8f5ef;
+    --yellow: #b7770d; --yellow-light: #fef9ec;
+    --red: #c0392b; --red-light: #fdf0ef;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 560px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 28px 32px; }
+
+  /* QUICK EXAMPLES */
+  .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .example-chip { padding: 6px 14px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; border: 1.5px solid var(--border); border-radius: 100px; background: var(--bg-card); color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .example-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+  .field { margin-bottom: 20px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .field label strong { color: var(--text); font-weight: 600; }
+  .input-row { display: flex; gap: 10px; }
+  .input-wrap { flex: 1; display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap input { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 400; color: var(--text); background: transparent; padding: 0 16px; height: 50px; width: 100%; }
+  .input-wrap input::placeholder { color: var(--text-light); }
+
+  .decode-btn { padding: 0 24px; height: 50px; background: var(--text); color: #fff; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; border: none; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.18s; white-space: nowrap; flex-shrink: 0; }
+  .decode-btn:hover:not(:disabled) { background: #2a2a28; transform: translateY(-1px); }
+  .decode-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* HISTORY */
+  .history-section { margin-top: 20px; }
+  .history-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 10px; }
+  .history-list { display: flex; flex-direction: column; gap: 6px; }
+  .history-item { display: flex; align-items: center; justify-content: space-between; background: var(--bg); border-radius: var(--radius-sm); padding: 10px 14px; cursor: pointer; transition: all 0.15s; }
+  .history-item:hover { background: var(--accent-light); }
+  .history-name { font-size: 14px; font-weight: 500; color: var(--text); }
+  .history-badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 100px; }
+  .badge-safe { background: var(--accent-light); color: var(--accent); }
+  .badge-caution { background: var(--yellow-light); color: var(--yellow); }
+  .badge-concern { background: var(--red-light); color: var(--red); }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; }
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-waiting { background: #f0f0ef; color: var(--text-light); }
+  .status-safe { background: var(--accent-light); color: var(--accent); }
+  .status-caution { background: var(--yellow-light); color: var(--yellow); }
+  .status-concern { background: var(--red-light); color: var(--red); }
+  .status-checking { background: #e8f0fe; color: #1a4fa0; }
+  .results-body { padding: 20px 24px; }
+
+  .empty-state { text-align: center; padding: 40px 0; }
+  .empty-icon { font-size: 48px; margin-bottom: 12px; }
+  .empty-text { font-size: 14px; color: var(--text-light); font-weight: 300; line-height: 1.7; }
+
+  .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-state { text-align: center; padding: 40px 0; }
+  .loading-text { font-size: 14px; color: var(--text-muted); font-weight: 300; }
+
+  /* INGREDIENT RESULT */
+  .ingredient-hero { border-radius: var(--radius-sm); padding: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+  .ingredient-hero.safe { background: var(--accent-light); }
+  .ingredient-hero.caution { background: var(--yellow-light); }
+  .ingredient-hero.concern { background: var(--red-light); }
+  .hero-icon { font-size: 40px; flex-shrink: 0; }
+  .hero-name { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 2px; }
+  .ingredient-hero.safe .hero-name { color: var(--accent); }
+  .ingredient-hero.caution .hero-name { color: var(--yellow); }
+  .ingredient-hero.concern .hero-name { color: var(--red); }
+  .hero-verdict { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ingredient-hero.safe .hero-verdict { color: var(--accent-dark); }
+  .ingredient-hero.caution .hero-verdict { color: #8a6500; }
+  .ingredient-hero.concern .hero-verdict { color: #8b1a0f; }
+
+  .info-rows { margin-bottom: 18px; }
+  .info-row { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .info-row:last-child { border-bottom: none; }
+  .info-key { font-weight: 600; color: var(--text); width: 90px; flex-shrink: 0; }
+  .info-val { color: var(--text-muted); font-weight: 300; line-height: 1.5; }
+
+  .summary-box { background: var(--bg); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 16px; font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+  .summary-box strong { color: var(--text); font-weight: 600; }
+
+  .verdict-box { border-radius: var(--radius-sm); padding: 12px 16px; font-size: 13px; line-height: 1.6; font-weight: 300; }
+  .verdict-box.safe { background: var(--accent-light); color: var(--accent-dark); }
+  .verdict-box.caution { background: var(--yellow-light); color: #7a5000; }
+  .verdict-box.concern { background: var(--red-light); color: #8b1a0f; }
+  .verdict-box strong { font-weight: 600; }
+
+  /* ARTICLE */
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
+  .article h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
+
+  .disclaimer-bar { background: #f0f0ef; border-top: 1px solid rgba(15,15,14,0.08); padding: 16px 24px; }
+  .disclaimer-bar .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; gap: 12px; }
+  .disclaimer-bar p { font-size: 12px; color: #6b6a66; line-height: 1.6; margin: 0; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } .article-section { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } .input-row { flex-direction: column; } .decode-btn { width: 100%; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Clearly<span>Check</span></a>
+    <a class="back-link" href="index.html">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <span style="color:var(--text-muted);">Food Label Decoder</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🥫 Health Tool</div>
+  <h1>Food Label<br>Decoder</h1>
+  <p>Standing in a supermarket aisle wondering what "carrageenan" or "E471" actually is? Type any ingredient and get a plain-English breakdown — what it is, where it comes from, and whether it's worth worrying about.</p>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Type an ingredient to decode</h2>
+      <p>Works with ingredient names, E numbers, chemical names, or anything from a food label.</p>
+    </div>
+    <div class="calc-body">
+
+      <div style="margin-bottom:14px;">
+        <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-light);margin-bottom:10px;">Try an example</p>
+        <div class="examples">
+          <button class="example-chip" onclick="tryExample('Carrageenan')">Carrageenan</button>
+          <button class="example-chip" onclick="tryExample('Xanthan Gum')">Xanthan Gum</button>
+          <button class="example-chip" onclick="tryExample('E471')">E471</button>
+          <button class="example-chip" onclick="tryExample('Sodium Benzoate')">Sodium Benzoate</button>
+          <button class="example-chip" onclick="tryExample('Maltodextrin')">Maltodextrin</button>
+          <button class="example-chip" onclick="tryExample('E621')">E621 (MSG)</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label><strong>Ingredient name or E number</strong></label>
+        <div class="input-row">
+          <div class="input-wrap">
+            <input type="text" id="ingredientInput" placeholder="e.g. Carrageenan, E471, Sodium Nitrite..." maxlength="100"
+              onkeydown="if(event.key==='Enter') decodeIngredient()" />
+          </div>
+          <button class="decode-btn" id="decodeBtn" onclick="decodeIngredient()">Decode →</button>
+        </div>
+      </div>
+
+      <div id="historySection" style="display:none;">
+        <div class="history-section">
+          <div class="history-label">Recent lookups</div>
+          <div class="history-list" id="historyList"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Ingredient Breakdown</h3>
+      <span class="results-status status-waiting" id="statusBadge">Waiting</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <div class="empty-state">
+        <div class="empty-icon">🥫</div>
+        <p class="empty-text">Type any ingredient from a food label<br>and we'll decode it in plain English.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="article-section">
+  <article class="article">
+    <h2>Why are food labels so confusing?</h2>
+    <p>Food manufacturers are required by law to list every ingredient — but they are not required to explain what those ingredients are in plain language. The result is labels packed with chemical names, E numbers, and technical terms that most people cannot decipher while standing in a supermarket aisle.</p>
+    <p>This tool translates any ingredient into plain English, covering <strong>what it actually is</strong>, <strong>where it comes from</strong> (natural, synthetic, or animal-derived), <strong>what it does in the food</strong>, and <strong>whether there are any known concerns</strong> about consuming it.</p>
+
+    <h2>What are E numbers?</h2>
+    <p>E numbers are a European classification system for food additives. Every approved food additive in the EU gets an "E" prefix followed by a number. They cover preservatives (E200s), colourings (E100s), antioxidants (E300s), emulsifiers (E400s), and many other categories.</p>
+    <p>The key thing to understand: <strong>an E number does not automatically mean dangerous</strong>. Vitamin C is E300. Curcumin (from turmeric) is E100. Many E numbers are completely natural and harmless. Others have genuine concerns. You need to look at each one individually — which is exactly what this tool does.</p>
+
+    <h2>Common ingredients people look up</h2>
+    <ul>
+      <li><strong>Carrageenan</strong> — natural seaweed extract used as a thickener. Controversial due to potential gut inflammation concerns.</li>
+      <li><strong>Xanthan gum</strong> — fermentation-derived thickener. Generally considered safe, common in gluten-free products.</li>
+      <li><strong>Maltodextrin</strong> — highly processed starch derivative used as a filler. High glycaemic index, minimal nutritional value.</li>
+      <li><strong>Sodium benzoate</strong> — preservative that can form benzene (a carcinogen) when combined with vitamin C. Used in acidic drinks.</li>
+      <li><strong>E621 (MSG)</strong> — monosodium glutamate, a flavour enhancer. Long considered controversial, but widely accepted as safe by regulators.</li>
+      <li><strong>Soy lecithin</strong> — emulsifier derived from soybean oil. Generally safe; relevant for those with soy allergies.</li>
+    </ul>
+
+    <h2>Should I avoid artificial ingredients?</h2>
+    <p>Not necessarily. "Natural" does not automatically mean safe, and "artificial" does not automatically mean harmful. Many synthetic additives are rigorously tested and well understood. Some natural ones have genuine risks at high doses. The key is knowing what each ingredient actually is — which is exactly what this tool helps you do.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">Are E numbers dangerous?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Not all E numbers are dangerous. E numbers are simply the European food additive numbering system — they cover everything from vitamin C (E300) to natural colours and preservatives. Many are completely safe; some have concerns at high doses. This tool explains each one individually so you can make informed choices.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is carrageenan in food?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Carrageenan is a natural thickening agent extracted from red seaweed. It is widely used in dairy products, plant milks, deli meats and infant formula. While approved as safe by most food regulatory bodies, some research has linked high doses to gut inflammation. It is considered controversial — some health-conscious consumers choose to avoid it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What does "natural flavour" mean on a food label?<span class="faq-icon">+</span></button>
+        <div class="faq-a">In the US, "natural flavour" means the flavouring was derived from a plant or animal source — but it can still be heavily processed and bear little resemblance to the original ingredient. It is a broad category that manufacturers use to avoid listing specific flavouring compounds. It is not necessarily healthier than "artificial flavour."</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is MSG bad for you?<span class="faq-icon">+</span></button>
+        <div class="faq-a">MSG (monosodium glutamate, E621) has been studied extensively and is considered safe by the FDA, WHO, and most global food regulators. The idea that MSG causes headaches (sometimes called "Chinese Restaurant Syndrome") has not been consistently supported by controlled research. It naturally occurs in foods like tomatoes, parmesan, and soy sauce.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
+    <div class="sidebar-tools">
+      <div class="ad-placeholder">Advertisement</div>
+      <a class="sidebar-tool" href="scam-checker.html">
+        <div class="sidebar-tool-icon">🛡️</div>
+        <div><div class="sidebar-tool-name">Scam Checker</div><div class="sidebar-tool-desc">Is this a scam? Find out instantly</div></div>
+      </a>
+      <a class="sidebar-tool" href="debt-free-calculator.html">
+        <div class="sidebar-tool-icon">💸</div>
+        <div><div class="sidebar-tool-name">Debt Free Calculator</div><div class="sidebar-tool-desc">Find your exact debt payoff date</div></div>
+      </a>
+      <a class="sidebar-tool" href="can-i-afford-this.html">
+        <div class="sidebar-tool-icon">🏠</div>
+        <div><div class="sidebar-tool-name">Can I Afford This?</div><div class="sidebar-tool-desc">Income-based affordability check</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer-bar">
+  <div class="inner">
+    <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+    <p><strong style="color:#0f0f0e;">For informational purposes only.</strong> This tool provides general information about food ingredients and does not constitute medical, dietary, or nutritional advice. Always consult a qualified healthcare professional or dietitian for personal dietary guidance, especially if you have allergies, medical conditions, or specific dietary needs. ClearlyCheck accepts no liability for decisions made based on these results.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="index.html">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a></p>
+  </div>
+</footer>
+
+<script>
+// ─── PASTE YOUR GEMINI API KEY HERE ─────────────────────────────────────────
+const GEMINI_API_KEY = 'AQ.Ab8RN6KP4uVSF4LMwqwNNrwMhE6TBvHGGG-n8xUmMICeCf656g';
+// ─────────────────────────────────────────────────────────────────────────────
+
+let history = [];
+
+function tryExample(name) {
+  document.getElementById('ingredientInput').value = name;
+  decodeIngredient();
+}
+
+async function decodeIngredient() {
+  const input = document.getElementById('ingredientInput').value.trim();
+  if (!input) { alert('Please type an ingredient to decode.'); return; }
+
+  if (GEMINI_API_KEY === 'PASTE_YOUR_GEMINI_API_KEY_HERE') {
+    alert('Please add your Gemini API key inside the food-label-decoder.html file.');
+    return;
+  }
+
+  const btn = document.getElementById('decodeBtn');
+  btn.disabled = true;
+  btn.textContent = '...';
+
+  document.getElementById('statusBadge').textContent = 'Decoding';
+  document.getElementById('statusBadge').className = 'results-status status-checking';
+  document.getElementById('resultsBody').innerHTML = `
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p class="loading-text">Decoding "${input}"...<br>Just a moment.</p>
+    </div>`;
+
+  const prompt = `You are a food science expert explaining ingredients to regular people. Decode the following food ingredient in plain English.
+
+INGREDIENT: "${input}"
+
+Respond ONLY with a valid JSON object in exactly this format, no other text:
+{
+  "name": "<common name of the ingredient>",
+  "also_known_as": "<other names it goes by, or empty string if none>",
+  "what_it_is": "<1 sentence plain English: what it actually is>",
+  "origin": "<Natural / Synthetic / Can be either>",
+  "source": "<where it comes from in plain English, e.g. 'seaweed', 'fermented corn starch', 'petroleum'>",
+  "purpose": "<what it does in food, e.g. 'thickener', 'preservative', 'emulsifier', 'sweetener'>",
+  "found_in": "<typical foods it appears in>",
+  "safety": "<one of: Generally Safe | Use in Moderation | Some Concerns | Avoid if Sensitive>",
+  "safety_details": "<2-3 sentences about any health considerations, who should be careful, regulatory status>",
+  "verdict": "<one of: safe | caution | concern>",
+  "summary": "<1-2 sentence plain English bottom line for a regular shopper>",
+  "vegan": "<Yes / No / Usually / Depends on source>"
+}
+
+Rules:
+- verdict: safe = well accepted with no significant concerns, caution = some debate or sensitive groups should avoid, concern = genuine health questions or controversial
+- Be honest but not alarmist — most additives are safe for most people
+- Keep all text values concise and jargon-free
+- If the input is not a food ingredient, set verdict to "caution" and explain in summary`;
+
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.1, maxOutputTokens: 700 }
+        })
+      }
+    );
+
+    const data = await response.json();
+    const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const result = JSON.parse(clean);
+
+    renderResult(result);
+    addToHistory(result.name, result.verdict);
+
+  } catch (err) {
+    document.getElementById('statusBadge').textContent = 'Error';
+    document.getElementById('statusBadge').className = 'results-status status-caution';
+    document.getElementById('resultsBody').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">⚠️</div>
+        <p class="empty-text">Something went wrong.<br>Check your API key and try again.</p>
+      </div>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Decode →';
+  }
+}
+
+function renderResult(r) {
+  const level = r.verdict;
+  const badge = document.getElementById('statusBadge');
+  const badgeLabels = { safe: 'Generally Safe', caution: 'Use with Caution', concern: 'Some Concerns' };
+  badge.textContent = badgeLabels[level] || 'Checked';
+  badge.className = 'results-status status-' + level;
+
+  const icons = { safe: '✅', caution: '⚠️', concern: '🔴' };
+
+  document.getElementById('resultsBody').innerHTML = `
+    <div class="ingredient-hero ${level}">
+      <div class="hero-icon">${icons[level]}</div>
+      <div>
+        <div class="hero-name">${r.name}</div>
+        <div class="hero-verdict">${r.safety}</div>
+      </div>
+    </div>
+
+    <div class="info-rows">
+      ${r.also_known_as ? `<div class="info-row"><div class="info-key">Also known</div><div class="info-val">${r.also_known_as}</div></div>` : ''}
+      <div class="info-row"><div class="info-key">What it is</div><div class="info-val">${r.what_it_is}</div></div>
+      <div class="info-row"><div class="info-key">Origin</div><div class="info-val">${r.origin} — ${r.source}</div></div>
+      <div class="info-row"><div class="info-key">Purpose</div><div class="info-val">${r.purpose}</div></div>
+      <div class="info-row"><div class="info-key">Found in</div><div class="info-val">${r.found_in}</div></div>
+      <div class="info-row"><div class="info-key">Vegan?</div><div class="info-val">${r.vegan}</div></div>
+    </div>
+
+    <div class="summary-box">${r.safety_details}</div>
+
+    <div class="verdict-box ${level}"><strong>Bottom line:</strong> ${r.summary}</div>
+  `;
+}
+
+function addToHistory(name, verdict) {
+  history = history.filter(h => h.name !== name);
+  history.unshift({ name, verdict });
+  if (history.length > 5) history.pop();
+
+  const labels = { safe: 'Safe', caution: 'Caution', concern: 'Concern' };
+  const list = document.getElementById('historyList');
+  list.innerHTML = history.map(h => `
+    <div class="history-item" onclick="document.getElementById('ingredientInput').value='${h.name}';decodeIngredient()">
+      <span class="history-name">${h.name}</span>
+      <span class="history-badge badge-${h.verdict}">${labels[h.verdict]}</span>
+    </div>`).join('');
+
+  document.getElementById('historySection').style.display = '';
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>

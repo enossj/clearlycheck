@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block no pages — everything is public
+Disallow:
+
+# Sitemap location
+Sitemap: https://clearlycheck.com/sitemap.xml

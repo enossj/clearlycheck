@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Timezone Meeting Planner — Free World Clock Scheduler</title>
+<meta name="description" content="Find the best meeting time across multiple timezones. Add up to 5 cities, see overlapping working hours and copy a ready-to-send meeting summary.">
+<meta name="keywords" content="timezone meeting planner, time zone converter, world clock meeting scheduler, best time to meet across time zones, remote team meeting time, international meeting scheduler, time zone overlap, meeting time finder, what time is it in, schedule meeting across time zones, time zone calculator, global meeting planner, UTC converter, time difference calculator">
+<link rel="canonical" href="https://clearlycheck.com/timezone-planner.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Timezone Meeting Planner — Find the Best Meeting Time">
+<meta property="og:description" content="Add up to 5 cities and instantly find overlapping working hours for your remote team. Copy a ready-to-paste meeting summary.">
+<meta property="og:url" content="https://clearlycheck.com/timezone-planner.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Timezone Meeting Planner | ClearlyCheck">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Timezone Meeting Planner",
+  "description": "Free timezone meeting planner that finds overlapping working hours for remote teams across up to 5 cities worldwide.",
+  "url": "https://clearlycheck.com/timezone-planner.html",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best time for a meeting between the US and India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best overlap between US Eastern Time and India Standard Time (IST) is typically 8:00–9:30 AM EST, which is 6:30–8:00 PM IST. This keeps both parties within reasonable working hours. Morning US time is usually the only practical window given the 10.5-hour difference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I schedule a meeting across multiple time zones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a timezone meeting planner tool — add each participant's city, then look for overlapping working hours (typically 9 AM to 6 PM local time). When no overlap exists, aim for a time that is early morning for one party and end of day for another, rotating who takes the inconvenient slot."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --yellow: #b7770d; --yellow-light: #fef9ec;
+    --red: #c0392b; --red-light: #fdf0ef;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 560px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 380px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 28px 32px; }
+
+  /* CITY INPUTS */
+  .cities-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .city-row { display: flex; align-items: center; gap: 10px; }
+  .city-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .city-select-wrap { flex: 1; position: relative; }
+  .city-select { width: 100%; padding: 0 14px; height: 46px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--text); background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); outline: none; appearance: none; cursor: pointer; transition: border-color 0.15s; }
+  .city-select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .city-label-input { width: 100%; padding: 0 14px; height: 46px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-muted); background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); outline: none; transition: border-color 0.15s; }
+  .city-label-input:focus { border-color: var(--accent); }
+  .city-label-input::placeholder { color: var(--text-light); }
+  .remove-btn { width: 32px; height: 32px; border: none; background: transparent; cursor: pointer; color: var(--text-light); font-size: 18px; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: all 0.15s; flex-shrink: 0; }
+  .remove-btn:hover { background: var(--red-light); color: var(--red); }
+
+  .add-city-btn { display: flex; align-items: center; gap: 8px; width: 100%; padding: 12px 16px; background: transparent; border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.15s; margin-bottom: 24px; }
+  .add-city-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 14px; }
+
+  /* WORKING HOURS */
+  .hours-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .hours-label { font-size: 13px; font-weight: 500; color: var(--text-muted); flex-shrink: 0; min-width: 90px; }
+  .time-select { padding: 8px 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text); background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); outline: none; cursor: pointer; }
+  .time-select:focus { border-color: var(--accent); }
+
+  .calc-btn { width: 100%; padding: 15px; background: var(--text); color: #fff; font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; border: none; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.18s; letter-spacing: -0.2px; margin-top: 8px; }
+  .calc-btn:hover { background: #2a2a28; transform: translateY(-1px); }
+
+  /* RESULTS PANEL */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; }
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-waiting { background: #f0f0ef; color: var(--text-light); }
+  .status-good { background: var(--accent-light); color: var(--accent); }
+  .status-warn { background: var(--yellow-light); color: var(--yellow); }
+  .status-none { background: var(--red-light); color: var(--red); }
+  .results-body { padding: 20px 24px; }
+
+  .empty-state { text-align: center; padding: 32px 0; }
+  .empty-icon { font-size: 40px; margin-bottom: 12px; }
+  .empty-text { font-size: 14px; color: var(--text-light); font-weight: 300; }
+
+  /* CURRENT CLOCKS */
+  .clocks-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .clock-item { display: flex; align-items: center; justify-content: space-between; background: var(--bg); border-radius: var(--radius-sm); padding: 10px 14px; }
+  .clock-left { display: flex; align-items: center; gap: 10px; }
+  .clock-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .clock-city { font-size: 13px; font-weight: 500; color: var(--text); }
+  .clock-tz { font-size: 11px; color: var(--text-light); }
+  .clock-time { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); }
+  .clock-ampm { font-size: 11px; color: var(--text-light); margin-left: 2px; }
+
+  /* OVERLAP SLOTS */
+  .overlap-section { margin-bottom: 18px; }
+  .overlap-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 10px; }
+  .slot-item { background: var(--accent-light); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 8px; cursor: pointer; transition: all 0.15s; border: 1.5px solid transparent; }
+  .slot-item:hover { border-color: var(--accent); }
+  .slot-item.selected { border-color: var(--accent); background: var(--accent-light); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .slot-time { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+  .slot-cities { display: flex; flex-direction: column; gap: 2px; }
+  .slot-city-line { font-size: 12px; color: var(--accent-dark); }
+  .no-overlap { background: var(--red-light); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 13px; color: #8b1a0f; font-weight: 300; line-height: 1.6; }
+  .no-overlap strong { font-weight: 600; }
+
+  /* COPY BUTTON */
+  .copy-btn { width: 100%; padding: 12px; background: var(--text); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; }
+  .copy-btn:hover { background: #2a2a28; }
+  .copy-btn.copied { background: var(--accent); }
+
+  /* TIMELINE GRID */
+  .timeline-section { margin-top: 32px; }
+  .timeline-wrap { overflow-x: auto; }
+  .timeline-grid { min-width: 600px; }
+  .timeline-header { display: flex; margin-bottom: 4px; padding-left: 100px; }
+  .timeline-hour { flex: 1; text-align: center; font-size: 10px; color: var(--text-light); font-weight: 500; }
+  .timeline-row { display: flex; align-items: center; margin-bottom: 6px; }
+  .timeline-city-name { width: 100px; font-size: 12px; font-weight: 500; color: var(--text-muted); flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: 8px; }
+  .timeline-blocks { display: flex; flex: 1; gap: 2px; }
+  .timeline-block { flex: 1; height: 28px; border-radius: 4px; position: relative; cursor: default; }
+  .timeline-block.sleep { background: #f0f0ef; }
+  .timeline-block.work { background: var(--accent-light); }
+  .timeline-block.overlap { background: var(--accent); }
+  .timeline-block.selected-slot { background: var(--text); }
+  .timeline-block-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.9); }
+
+  /* ARTICLE */
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 380px; gap: 28px; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
+  .article h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } .article-section { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; width: 100%; padding: 18px 0;
+    font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800;
+    color: var(--text); background: none; border: none; cursor: pointer;
+    text-align: left; transition: color 0.15s;
+  }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--bg); border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 700;
+    transition: all 0.2s; color: var(--text-muted);
+  }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a {
+    font-size: 14px; color: var(--text-muted); line-height: 1.7;
+    font-weight: 300; padding: 0 0 18px 0;
+    display: none;
+  }
+  .faq-a.open { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Clearly<span>Check</span></a>
+    <a class="back-link" href="index.html">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#tools">Tools</a>
+      <span>›</span>
+      <span style="color:var(--text-muted);">Timezone Planner</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🌍 Productivity Tool</div>
+  <h1>Timezone Meeting<br>Planner</h1>
+  <p>Add up to 5 cities, see everyone's working hours side by side, and find the best overlap window. Copy a ready-to-paste meeting summary in one click.</p>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Add your team's locations</h2>
+      <p>Select a city for each participant. We'll find the best time that works for everyone.</p>
+    </div>
+    <div class="calc-body">
+
+      <div class="cities-list" id="citiesList"></div>
+
+      <button class="add-city-btn" onclick="addCity()" id="addBtn">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        Add another city (up to 5)
+      </button>
+
+      <hr class="divider">
+      <p class="section-label">Working hours</p>
+
+      <div class="hours-row">
+        <span class="hours-label">Work starts</span>
+        <select class="time-select" id="workStart" onchange="calculate()">
+          <option value="7">7:00 AM</option>
+          <option value="8">8:00 AM</option>
+          <option value="9" selected>9:00 AM</option>
+          <option value="10">10:00 AM</option>
+        </select>
+      </div>
+      <div class="hours-row">
+        <span class="hours-label">Work ends</span>
+        <select class="time-select" id="workEnd" onchange="calculate()">
+          <option value="17">5:00 PM</option>
+          <option value="18" selected>6:00 PM</option>
+          <option value="19">7:00 PM</option>
+          <option value="20">8:00 PM</option>
+        </select>
+      </div>
+
+      <hr class="divider">
+
+      <button class="calc-btn" onclick="calculate()">Find Best Meeting Times →</button>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Meeting Windows</h3>
+      <span class="results-status status-waiting" id="statusBadge">Waiting</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <div class="empty-state">
+        <div class="empty-icon">🌍</div>
+        <p class="empty-text">Add your cities and click<br>"Find Best Meeting Times".</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TIMELINE -->
+<div style="max-width:1100px;margin:0 auto;padding:0 24px 48px;" id="timelineSection" style="display:none;">
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>24-hour timeline view</h2>
+      <p>See all timezones at a glance. Green = working hours. Dark green = overlap window.</p>
+    </div>
+    <div style="padding:24px 32px;" id="timelineBody"></div>
+  </div>
+</div>
+</main>
+
+<div class="article-section">
+  <article class="article">
+    <h2>How to find the best meeting time across timezones</h2>
+    <p>Scheduling across timezones is one of the most common frustrations for remote teams. The key is identifying the <strong>overlap window</strong> — the hours when all participants are within their normal working day. This tool does that automatically, but here are the principles behind it.</p>
+
+    <h2>Common timezone overlaps</h2>
+    <ul>
+      <li><strong>US East Coast + UK:</strong> 9 AM–1 PM EST (2 PM–6 PM GMT) — 4 hours of clean overlap</li>
+      <li><strong>US East Coast + India:</strong> 8–9:30 AM EST (6:30–8 PM IST) — tight 1.5 hour window</li>
+      <li><strong>US West Coast + India:</strong> Nearly impossible during normal hours — 13.5 hour gap</li>
+      <li><strong>UK + India:</strong> 9 AM–1 PM GMT (2:30–6:30 PM IST) — comfortable 4 hour overlap</li>
+      <li><strong>US East + Europe:</strong> 9 AM–1 PM EST (3–7 PM CET) — good overlap</li>
+      <li><strong>Australia + US:</strong> Very difficult — consider async communication instead</li>
+    </ul>
+
+    <h2>Tips for scheduling across difficult timezones</h2>
+    <ul>
+      <li><strong>Rotate the inconvenient slot.</strong> If one person always takes the early morning or late evening call, rotate who bears that burden fairly.</li>
+      <li><strong>Use async-first.</strong> For teams with no overlap window, consider whether a recorded Loom video or a detailed written brief can replace the meeting entirely.</li>
+      <li><strong>Book at the edge.</strong> 8 AM for one person and 6 PM for another is far better than 6 AM or 8 PM.</li>
+      <li><strong>Be explicit about timezones.</strong> Always include the timezone when sending a meeting invite — write "3:00 PM EST / 8:00 PM GMT" to avoid confusion.</li>
+      <li><strong>Account for DST changes.</strong> Daylight Saving Time shifts the US and Europe at different times, briefly changing your usual overlap by an hour.</li>
+    </ul>
+
+    <h2>What is UTC offset?</h2>
+    <p>UTC (Coordinated Universal Time) is the global time standard. All timezones are defined as an offset from UTC. For example, New York is UTC-5 in winter (EST) and UTC-4 in summer (EDT). Mumbai is always UTC+5:30. When you see a time listed as "15:00 UTC," that is 3:00 PM at the prime meridian, and you add or subtract your offset to find your local time.</p>
+
+    <div style="margin-top:32px;">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">What is the best time for a meeting between the US and India?</button>
+        <div class="faq-a">The best window is typically 8:00–9:30 AM US Eastern Time, which translates to 6:30–8:00 PM India Standard Time. This is the only practical overlap that keeps both parties within reasonable hours given the 10.5-hour difference.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I schedule a meeting across multiple time zones?</button>
+        <div class="faq-a">Add each participant's city to a timezone planner tool, set your working hours, and look for the overlap window. When no clean overlap exists, aim for early morning in one timezone and end of day in another, and rotate who takes the inconvenient slot.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
+    <div class="sidebar-tools">
+      <div class="ad-placeholder">Advertisement</div>
+      <a class="sidebar-tool" href="salary-converter.html">
+        <div class="sidebar-tool-icon">💼</div>
+        <div>
+          <div class="sidebar-tool-name">Salary to Hourly</div>
+          <div class="sidebar-tool-desc">Convert any salary instantly</div>
+        </div>
+      </a>
+      <a class="sidebar-tool" href="debt-free-calculator.html">
+        <div class="sidebar-tool-icon">💸</div>
+        <div>
+          <div class="sidebar-tool-name">Debt Free Calculator</div>
+          <div class="sidebar-tool-desc">Find your exact debt payoff date</div>
+        </div>
+      </a>
+      <a class="sidebar-tool" href="can-i-afford-this.html">
+        <div class="sidebar-tool-icon">🏠</div>
+        <div>
+          <div class="sidebar-tool-name">Can I Afford This?</div>
+          <div class="sidebar-tool-desc">Income-based affordability check</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- DISCLAIMER -->
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);padding:16px 24px;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:12px;">
+    <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+    <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;font-family:'DM Sans',sans-serif;">
+      <strong style="color:#0f0f0e;">For informational purposes only.</strong>
+      Results from this tool are estimates based on the information you provide and standard financial guidelines.
+      They do not constitute financial, legal, tax, or professional advice.
+      Always consult a qualified professional before making major financial or life decisions.
+      ClearlyCheck accepts no liability for decisions made based on these results.
+    </p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="index.html">Clearly<span>Check</span></a>
+    <p class="footer-copy">2025 ClearlyCheck · Free tools for smarter decisions · <a href="#" style="color:var(--text-light);text-decoration:none;">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+// ─── TIMEZONE DATABASE ───────────────────────────────────────────────────────
+const CITIES = [
+  { name: 'New York', tz: 'America/New_York', flag: '🇺🇸' },
+  { name: 'Los Angeles', tz: 'America/Los_Angeles', flag: '🇺🇸' },
+  { name: 'Chicago', tz: 'America/Chicago', flag: '🇺🇸' },
+  { name: 'London', tz: 'Europe/London', flag: '🇬🇧' },
+  { name: 'Paris', tz: 'Europe/Paris', flag: '🇫🇷' },
+  { name: 'Berlin', tz: 'Europe/Berlin', flag: '🇩🇪' },
+  { name: 'Dubai', tz: 'Asia/Dubai', flag: '🇦🇪' },
+  { name: 'Mumbai', tz: 'Asia/Kolkata', flag: '🇮🇳' },
+  { name: 'Delhi', tz: 'Asia/Kolkata', flag: '🇮🇳' },
+  { name: 'Bangalore', tz: 'Asia/Kolkata', flag: '🇮🇳' },
+  { name: 'Singapore', tz: 'Asia/Singapore', flag: '🇸🇬' },
+  { name: 'Tokyo', tz: 'Asia/Tokyo', flag: '🇯🇵' },
+  { name: 'Sydney', tz: 'Australia/Sydney', flag: '🇦🇺' },
+  { name: 'Melbourne', tz: 'Australia/Melbourne', flag: '🇦🇺' },
+  { name: 'Toronto', tz: 'America/Toronto', flag: '🇨🇦' },
+  { name: 'Vancouver', tz: 'America/Vancouver', flag: '🇨🇦' },
+  { name: 'São Paulo', tz: 'America/Sao_Paulo', flag: '🇧🇷' },
+  { name: 'Mexico City', tz: 'America/Mexico_City', flag: '🇲🇽' },
+  { name: 'Cairo', tz: 'Africa/Cairo', flag: '🇪🇬' },
+  { name: 'Nairobi', tz: 'Africa/Nairobi', flag: '🇰🇪' },
+  { name: 'Lagos', tz: 'Africa/Lagos', flag: '🇳🇬' },
+  { name: 'Johannesburg', tz: 'Africa/Johannesburg', flag: '🇿🇦' },
+  { name: 'Hong Kong', tz: 'Asia/Hong_Kong', flag: '🇭🇰' },
+  { name: 'Seoul', tz: 'Asia/Seoul', flag: '🇰🇷' },
+  { name: 'Shanghai', tz: 'Asia/Shanghai', flag: '🇨🇳' },
+  { name: 'Karachi', tz: 'Asia/Karachi', flag: '🇵🇰' },
+  { name: 'Dhaka', tz: 'Asia/Dhaka', flag: '🇧🇩' },
+  { name: 'Riyadh', tz: 'Asia/Riyadh', flag: '🇸🇦' },
+  { name: 'Istanbul', tz: 'Europe/Istanbul', flag: '🇹🇷' },
+  { name: 'Moscow', tz: 'Europe/Moscow', flag: '🇷🇺' },
+  { name: 'Amsterdam', tz: 'Europe/Amsterdam', flag: '🇳🇱' },
+  { name: 'Madrid', tz: 'Europe/Madrid', flag: '🇪🇸' },
+  { name: 'Rome', tz: 'Europe/Rome', flag: '🇮🇹' },
+  { name: 'Zurich', tz: 'Europe/Zurich', flag: '🇨🇭' },
+  { name: 'Valletta', tz: 'Europe/Malta', flag: '🇲🇹' },
+  { name: 'Auckland', tz: 'Pacific/Auckland', flag: '🇳🇿' },
+];
+
+const DOT_COLORS = ['#1a6b4a','#1a4fa0','#c0392b','#b7770d','#7c3aed'];
+const MAX_CITIES = 5;
+let cities = [];
+let clockInterval = null;
+let selectedSlotIndex = 0;
+
+function init() {
+  addCity('New York');
+  addCity('London');
+  calculate();
+}
+
+function addCity(defaultName) {
+  if (cities.length >= MAX_CITIES) return;
+  const idx = cities.length;
+  const id = 'city_' + Date.now() + idx;
+  cities.push({ id, name: defaultName || CITIES[0].name });
+
+  const row = document.createElement('div');
+  row.className = 'city-row';
+  row.id = 'row_' + id;
+
+  const options = CITIES.map(c =>
+    `<option value="${c.name}" ${c.name === (defaultName || CITIES[0].name) ? 'selected' : ''}>${c.flag} ${c.name}</option>`
+  ).join('');
+
+  row.innerHTML = `
+    <div class="city-dot" style="background:${DOT_COLORS[idx]}"></div>
+    <div class="city-select-wrap">
+      <select class="city-select" onchange="updateCity('${id}', this.value)">${options}</select>
+    </div>
+    <button class="remove-btn" onclick="removeCity('${id}')" title="Remove">✕</button>
+  `;
+
+  document.getElementById('citiesList').appendChild(row);
+  document.getElementById('addBtn').style.display = cities.length >= MAX_CITIES ? 'none' : 'flex';
+  calculate();
+}
+
+function removeCity(id) {
+  if (cities.length <= 1) return;
+  cities = cities.filter(c => c.id !== id);
+  const row = document.getElementById('row_' + id);
+  if (row) row.remove();
+  // Recolor dots
+  document.querySelectorAll('.city-dot').forEach((dot, i) => {
+    dot.style.background = DOT_COLORS[i] || DOT_COLORS[0];
+  });
+  document.getElementById('addBtn').style.display = cities.length >= MAX_CITIES ? 'none' : 'flex';
+  calculate();
+}
+
+function updateCity(id, name) {
+  const city = cities.find(c => c.id === id);
+  if (city) { city.name = name; calculate(); }
+}
+
+function getCityData(name) {
+  return CITIES.find(c => c.name === name) || CITIES[0];
+}
+
+function getLocalHour(tz, referenceDate) {
+  const str = referenceDate.toLocaleString('en-US', { timeZone: tz, hour: 'numeric', hour12: false });
+  return parseInt(str.replace('24','0'));
+}
+
+function getOffsetMinutes(tz) {
+  const now = new Date();
+  const utcStr = now.toLocaleString('en-US', { timeZone: 'UTC', hour: 'numeric', minute: 'numeric', hour12: false });
+  const tzStr  = now.toLocaleString('en-US', { timeZone: tz,    hour: 'numeric', minute: 'numeric', hour12: false });
+  const [uh, um] = utcStr.split(':').map(Number);
+  const [th, tm] = tzStr.split(':').map(Number);
+  let diff = (th * 60 + tm) - (uh * 60 + um);
+  if (diff > 720) diff -= 1440;
+  if (diff < -720) diff += 1440;
+  return diff;
+}
+
+function formatTime(h, m) {
+  const ampm = h < 12 ? 'AM' : 'PM';
+  const hh = h % 12 === 0 ? 12 : h % 12;
+  const mm = String(m || 0).padStart(2, '0');
+  return `${hh}:${mm} ${ampm}`;
+}
+
+function calculate() {
+  if (cities.length === 0) { showEmpty(); return; }
+  const workStart = parseInt(document.getElementById('workStart').value);
+  const workEnd   = parseInt(document.getElementById('workEnd').value);
+
+  const now = new Date();
+  const cityData = cities.map(c => {
+    const data = getCityData(c.name);
+    const offsetMin = getOffsetMinutes(data.tz);
+    return { ...c, ...data, offsetMin };
+  });
+
+  // Find overlap hours in UTC
+  // For each UTC hour 0-23, check if ALL cities are within working hours
+  const overlapHours = [];
+  for (let utcH = 0; utcH < 24; utcH++) {
+    const allWorking = cityData.every(cd => {
+      let localH = (utcH + Math.floor(cd.offsetMin / 60) + 24) % 24;
+      // handle half-hour offsets
+      return localH >= workStart && localH < workEnd;
+    });
+    if (allWorking) overlapHours.push(utcH);
+  }
+
+  // Group consecutive hours into slots
+  const slots = [];
+  let slotStart = null;
+  overlapHours.forEach((h, i) => {
+    if (slotStart === null) slotStart = h;
+    if (i === overlapHours.length - 1 || overlapHours[i + 1] !== h + 1) {
+      slots.push({ utcStart: slotStart, utcEnd: h + 1 });
+      slotStart = null;
+    }
+  });
+
+  // Live clocks
+  if (clockInterval) clearInterval(clockInterval);
+  const renderClocks = () => {
+    const now2 = new Date();
+    return cityData.map((cd, i) => {
+      const timeStr = now2.toLocaleString('en-US', { timeZone: cd.tz, hour: 'numeric', minute: '2-digit', hour12: true });
+      const [time, ampm] = timeStr.split(' ');
+      return `<div class="clock-item">
+        <div class="clock-left">
+          <div class="clock-dot" style="background:${DOT_COLORS[i]}"></div>
+          <div>
+            <div class="clock-city">${cd.flag} ${cd.name}</div>
+            <div class="clock-tz">${cd.tz.replace('_',' ')}</div>
+          </div>
+        </div>
+        <div class="clock-time">${time}<span class="clock-ampm">${ampm}</span></div>
+      </div>`;
+    }).join('');
+  };
+
+  // Slot HTML
+  const slotHtml = slots.length === 0
+    ? `<div class="no-overlap"><strong>No overlap found.</strong> There are no working hours that suit all cities simultaneously. Consider expanding your working hours or using async communication for this team.</div>`
+    : slots.map((s, si) => {
+        const cityTimes = cityData.map((cd, ci) => {
+          const localStart = (s.utcStart + Math.floor(cd.offsetMin / 60) + 24) % 24;
+          const localEnd   = (s.utcEnd   + Math.floor(cd.offsetMin / 60) + 24) % 24;
+          return `<div class="slot-city-line">${cd.flag} ${cd.name}: ${formatTime(localStart)} – ${formatTime(localEnd)}</div>`;
+        }).join('');
+        return `<div class="slot-item ${si === 0 ? 'selected' : ''}" onclick="selectSlot(${si}, ${JSON.stringify(s).replace(/"/g,"'")}, this)">
+          <div class="slot-time">${formatTime(s.utcEnd - s.utcStart === 1 ? s.utcStart : s.utcStart)} – ${formatTime(s.utcEnd)} UTC</div>
+          <div class="slot-cities">${cityTimes}</div>
+        </div>`;
+      }).join('');
+
+  const badge = document.getElementById('statusBadge');
+  if (slots.length === 0) { badge.textContent = 'No Overlap'; badge.className = 'results-status status-none'; }
+  else if (slots.reduce((a,s) => a + s.utcEnd - s.utcStart, 0) < 2) { badge.textContent = 'Tight'; badge.className = 'results-status status-warn'; }
+  else { badge.textContent = slots.length + ' Window' + (slots.length > 1 ? 's' : ''); badge.className = 'results-status status-good'; }
+
+  document.getElementById('resultsBody').innerHTML = `
+    <div class="section-label" style="margin-bottom:10px;">Current local times</div>
+    <div class="clocks-grid" id="clocksGrid">${renderClocks()}</div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
+    <div class="overlap-section">
+      <div class="overlap-label">Best meeting windows</div>
+      ${slotHtml}
+    </div>
+    <button class="copy-btn" id="copyBtn" onclick="copySummary()">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      Copy meeting summary
+    </button>
+  `;
+
+  clockInterval = setInterval(() => {
+    const grid = document.getElementById('clocksGrid');
+    if (grid) grid.innerHTML = renderClocks();
+  }, 10000);
+
+  renderTimeline(cityData, slots, workStart, workEnd);
+}
+
+function selectSlot(idx, slot, el) {
+  selectedSlotIndex = idx;
+  document.querySelectorAll('.slot-item').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function copySummary() {
+  const workStart = parseInt(document.getElementById('workStart').value);
+  const workEnd   = parseInt(document.getElementById('workEnd').value);
+  const cityData  = cities.map(c => ({ ...c, ...getCityData(c.name), offsetMin: getOffsetMinutes(getCityData(c.name).tz) }));
+  const selected  = document.querySelectorAll('.slot-item.selected')[0];
+  if (!selected) return;
+
+  const lines = ['📅 Meeting Time Options (ClearlyCheck Timezone Planner)', ''];
+  cityData.forEach(cd => {
+    const now2 = new Date();
+    const timeStr = now2.toLocaleString('en-US', { timeZone: cd.tz, hour: 'numeric', minute: '2-digit', hour12: true, weekday: 'short', month: 'short', day: 'numeric' });
+    lines.push(`${cd.flag} ${cd.name}: Current time — ${timeStr}`);
+  });
+  lines.push('');
+  lines.push(`Working hours used: ${workStart}:00 AM – ${workEnd}:00`);
+  lines.push('');
+  lines.push('Generated at clearlycheck.com/timezone-planner');
+
+  navigator.clipboard.writeText(lines.join('\n')).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = '<svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy meeting summary'; btn.classList.remove('copied'); }, 2500);
+  });
+}
+
+function renderTimeline(cityData, slots, workStart, workEnd) {
+  const sec = document.getElementById('timelineSection');
+  const body = document.getElementById('timelineBody');
+  sec.style.display = '';
+
+  const hours = Array.from({length: 24}, (_, i) => i);
+  const overlapSet = new Set();
+  slots.forEach(s => { for (let h = s.utcStart; h < s.utcEnd; h++) overlapSet.add(h); });
+
+  const headerHtml = `<div class="timeline-header">${hours.filter((_,i) => i % 3 === 0).map(h => `<div class="timeline-hour" style="flex:3">${formatTime(h)}</div>`).join('')}</div>`;
+
+  const rowsHtml = cityData.map((cd, ci) => {
+    const blocks = hours.map(utcH => {
+      let localH = (utcH + Math.floor(cd.offsetMin / 60) + 24) % 24;
+      const isWork = localH >= workStart && localH < workEnd;
+      const isOverlap = overlapSet.has(utcH) && isWork;
+      const cls = isOverlap ? 'overlap' : isWork ? 'work' : 'sleep';
+      return `<div class="timeline-block ${cls}" title="${cd.name}: ${formatTime(localH)}"></div>`;
+    }).join('');
+    return `<div class="timeline-row"><div class="timeline-city-name">${cd.flag} ${cd.name}</div><div class="timeline-blocks">${blocks}</div></div>`;
+  }).join('');
+
+  const legend = `<div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted)"><div style="width:14px;height:14px;border-radius:3px;background:#f0f0ef;"></div>Outside working hours</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted)"><div style="width:14px;height:14px;border-radius:3px;background:var(--accent-light);"></div>Working hours</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted)"><div style="width:14px;height:14px;border-radius:3px;background:var(--accent);"></div>Overlap — best meeting time</div>
+  </div>`;
+
+  body.innerHTML = `<div class="timeline-wrap"><div class="timeline-grid">${headerHtml}${rowsHtml}</div></div>${legend}`;
+}
+
+function showEmpty() {
+  document.getElementById('statusBadge').textContent = 'Waiting';
+  document.getElementById('statusBadge').className = 'results-status status-waiting';
+  document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🌍</div><p class="empty-text">Add your cities and click<br>"Find Best Meeting Times".</p></div>`;
+}
+
+init();
+</script>
+
+<script>
+(function() {
+  function initFAQ() {
+    var items = document.querySelectorAll('.faq-q');
+    items.forEach(function(btn) {
+      // Add the +/x icon if not already there
+      if (!btn.querySelector('.faq-icon')) {
+        var icon = document.createElement('span');
+        icon.className = 'faq-icon';
+        icon.textContent = '+';
+        btn.appendChild(icon);
+      }
+      btn.addEventListener('click', function() {
+        var answer = btn.nextElementSibling;
+        var isOpen = btn.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-q.open').forEach(function(b) {
+          b.classList.remove('open');
+          if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+        });
+        // Open this one if it was closed
+        if (!isOpen) {
+          btn.classList.add('open');
+          if (answer) answer.classList.add('open');
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+  } else {
+    initFAQ();
+  }
+})();
+</script>
+
+</body>
+</html>

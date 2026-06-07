@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salary to Hourly Calculator — Convert Any Pay Rate</title>
+<meta name="description" content="Convert annual salary to hourly rate or hourly wage to yearly salary. Includes monthly, weekly, daily and take-home pay estimates for US, UK, India and more.">
+<meta name="keywords" content="salary to hourly calculator, hourly to salary, salary converter, annual salary to hourly, how much is my hourly rate, convert salary to hourly, hourly wage to annual salary, take home pay calculator, salary calculator, what is my hourly rate, 50000 salary to hourly, how much do i make per hour, income calculator, wage calculator, paycheck calculator">
+<link rel="canonical" href="https://clearlycheck.com/salary-converter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Salary to Hourly Converter — Free Income Calculator">
+<meta property="og:description" content="Convert any salary to an hourly rate or hourly wage to yearly salary with take-home estimates.">
+<meta property="og:url" content="https://clearlycheck.com/salary-converter.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Salary to Hourly Calculator | ClearlyCheck">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Salary to Hourly Converter","description":"Free salary converter with take-home pay estimates for US, UK, India, EU, Australia and Canada.","url":"https://clearlycheck.com/salary-converter.html","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0"},"publisher":{"@type":"Organization","name":"ClearlyCheck"}}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I convert my annual salary to an hourly rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide your annual salary by the total hours worked per year. For a standard 40-hour work week across 52 weeks (2,080 hours): hourly rate = annual salary divided by 2,080. For example, a $65,000 salary equals $31.25 per hour. Use our free salary to hourly calculator to get your exact rate instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is $50,000 a year per hour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A $50,000 annual salary equals approximately $24.04 per hour based on a standard 40-hour work week and 52 weeks per year (2,080 total hours). After estimated US federal taxes, the take-home equivalent is roughly $18-20 per hour depending on your deductions and filing status."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is $20 an hour annually?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At $20 per hour working 40 hours a week for 52 weeks, you earn $41,600 per year before tax. Monthly that is approximately $3,467 gross. After taxes in the US, take-home pay would be roughly $33,000-$35,000 per year depending on your state and deductions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good hourly rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the United States, the median hourly wage is around $22-24 per hour. Under $15/hr is below living wage in most cities. $15-25/hr is entry to mid-level. $25-50/hr is a solid professional wage. $50-100/hr is high earner territory. Above $100/hr represents top professional or specialist rates."
+      }
+    }
+  ]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+  .back-link svg { width: 16px; height: 16px; }
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { color: var(--border-hover); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 560px; line-height: 1.7; }
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
+  .mode-toggle { display: flex; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px; gap: 4px; margin-bottom: 28px; }
+  .mode-btn { flex: 1; padding: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .mode-btn.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); font-weight: 600; }
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 28px 32px; }
+  .currency-toggle { display: flex; gap: 8px; margin-bottom: 28px; }
+  .currency-btn { flex: 1; padding: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .currency-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+  .field { margin-bottom: 24px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .field label strong { color: var(--text); font-weight: 600; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-prefix, .input-suffix { padding: 0 14px; font-size: 15px; font-weight: 600; color: var(--text-muted); background: rgba(15,15,14,0.04); height: 48px; display: flex; align-items: center; border-right: 1px solid var(--border); flex-shrink: 0; white-space: nowrap; }
+  .input-suffix { border-right: none; border-left: 1px solid var(--border); }
+  .input-wrap input, .input-wrap select { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: var(--text); background: transparent; padding: 0 16px; height: 48px; width: 100%; }
+  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; }
+  .results-header { padding: 24px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-waiting { background: #f0f0ef; color: var(--text-light); }
+  .status-ready { background: var(--accent-light); color: var(--accent); }
+  .results-body { padding: 24px 28px; }
+  .empty-state { text-align: center; padding: 32px 0; }
+  .empty-icon { font-size: 40px; margin-bottom: 12px; }
+  .empty-text { font-size: 14px; color: var(--text-light); font-weight: 300; }
+  .breakdown-hero { text-align: center; padding: 16px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+  .breakdown-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 8px; }
+  .breakdown-main { font-family: 'Syne', sans-serif; font-size: 42px; font-weight: 800; color: var(--accent); letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
+  .breakdown-sub { font-size: 14px; color: var(--text-muted); font-weight: 300; }
+  .breakdown-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+  .breakdown-table tr { border-bottom: 1px solid var(--border); }
+  .breakdown-table tr:last-child { border-bottom: none; }
+  .breakdown-table td { padding: 12px 0; font-size: 14px; }
+  .breakdown-table td:first-child { color: var(--text-muted); }
+  .breakdown-table td:last-child { text-align: right; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .take-home-box { background: var(--accent-light); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 16px; }
+  .take-home-row { display: flex; justify-content: space-between; align-items: center; }
+  .take-home-label { font-size: 13px; color: #145a3d; font-weight: 500; }
+  .take-home-value { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--accent); }
+  .take-home-note { font-size: 11px; color: #2e7d52; margin-top: 6px; font-weight: 300; }
+  .comparison-row { display: flex; gap: 10px; margin-bottom: 16px; }
+  .comp-item { flex: 1; background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .comp-label { font-size: 11px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .comp-value { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); }
+  .wage-context { font-size: 13px; color: var(--text-muted); background: var(--bg); border-radius: var(--radius-sm); padding: 14px 16px; line-height: 1.6; font-weight: 300; }
+  .wage-context strong { color: var(--text); font-weight: 500; }
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
+  .article h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 6px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .formula-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; font-family: monospace; font-size: 14px; color: var(--text); margin: 16px 0; line-height: 1.8; }
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 4px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } .article-section { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .calc-header { padding: 20px 20px 16px; } .page-header { padding: 32px 20px 24px; } .comparison-row { flex-direction: column; } }
+
+    .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; width: 100%; padding: 18px 0;
+    font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800;
+    color: var(--text); background: none; border: none; cursor: pointer;
+    text-align: left; transition: color 0.15s;
+  }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--bg); border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 700;
+    transition: all 0.2s; color: var(--text-muted);
+  }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a {
+    font-size: 14px; color: var(--text-muted); line-height: 1.7;
+    font-weight: 300; padding: 0 0 18px 0;
+    display: none;
+  }
+  .faq-a.open { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Clearly<span>Check</span></a>
+    <a class="back-link" href="index.html">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <a href="index.html#tools">Tools</a>
+    <span>›</span>
+    <span style="color:var(--text-muted);">Salary Converter</span>
+  </div>
+  <div class="tool-tag-pill">💼 Finance Tool</div>
+  <h1>Salary to Hourly<br>Converter</h1>
+  <p>Convert any salary to an hourly rate — or any hourly wage to yearly, monthly, and weekly figures. Includes a take-home pay estimate based on your country.</p>
+</div>
+
+<div class="main-layout">
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Enter your salary or wage</h2>
+      <p>Switch between converting salary to hourly or hourly to salary.</p>
+    </div>
+    <div class="calc-body">
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="modeAnnual" onclick="setMode('annual')">Annual → Hourly</button>
+        <button class="mode-btn" id="modeHourly" onclick="setMode('hourly')">Hourly → Annual</button>
+      </div>
+      <div class="currency-toggle">
+        <button class="currency-btn active" onclick="setCurrency('$','USD',this)">$ USD</button>
+        <button class="currency-btn" onclick="setCurrency('£','GBP',this)">£ GBP</button>
+        <button class="currency-btn" onclick="setCurrency('€','EUR',this)">€ EUR</button>
+        <button class="currency-btn" onclick="setCurrency('₹','INR',this)">₹ INR</button>
+      </div>
+      <div id="annualFields">
+        <div class="field">
+          <label><strong>Annual salary</strong></label>
+          <div class="input-wrap">
+            <span class="input-prefix" id="pfxA">$</span>
+            <input type="number" id="annualSalary" placeholder="e.g. 65,000" min="1" step="any" oninput="calculate()" />
+            <span class="input-suffix">/ year</span>
+          </div>
+        </div>
+      </div>
+      <div id="hourlyFields" style="display:none;">
+        <div class="field">
+          <label><strong>Hourly wage</strong></label>
+          <div class="input-wrap">
+            <span class="input-prefix" id="pfxH">$</span>
+            <input type="number" id="hourlyWage" placeholder="e.g. 25.00" min="0.01" step="any" oninput="calculate()" />
+            <span class="input-suffix">/ hour</span>
+          </div>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="field">
+        <label><strong>Hours worked per week</strong></label>
+        <div class="input-wrap">
+          <input type="number" id="hoursPerWeek" value="40" min="1" max="168" step="1" oninput="calculate()" />
+          <span class="input-suffix">hrs / week</span>
+        </div>
+        <p class="hint">Standard full-time is 40 hrs. Adjust for part-time or overtime.</p>
+      </div>
+      <div class="field">
+        <label><strong>Weeks worked per year</strong></label>
+        <div class="input-wrap">
+          <input type="number" id="weeksPerYear" value="52" min="1" max="52" step="1" oninput="calculate()" />
+          <span class="input-suffix">weeks / year</span>
+        </div>
+        <p class="hint">Use 50 if you take 2 weeks unpaid leave, 48 for a month off.</p>
+      </div>
+      <div class="field">
+        <label><strong>Country (for tax estimate)</strong></label>
+        <div class="input-wrap">
+          <select id="country" onchange="calculate()">
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="IN">India</option>
+            <option value="EU">Europe (avg.)</option>
+            <option value="AU">Australia</option>
+            <option value="CA">Canada</option>
+          </select>
+        </div>
+        <p class="hint">Take-home is an estimate. Actual taxes depend on deductions and filing status.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-card">
+    <div class="results-header">
+      <h3>Your Breakdown</h3>
+      <span class="results-status status-waiting" id="statusBadge">Waiting</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <div class="empty-state">
+        <div class="empty-icon">💼</div>
+        <p class="empty-text">Enter your salary or wage<br>to see your full breakdown.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-section">
+  <article class="article">
+    <h2>How is salary converted to hourly?</h2>
+    <p>The conversion is straightforward: divide your annual salary by the total number of hours worked in a year. For a standard full-time worker:</p>
+    <div class="formula-box">
+      Hourly rate = Annual salary / (Hours per week x Weeks per year)<br><br>
+      Example: $65,000 / (40 x 52) = $65,000 / 2,080 = $31.25/hour
+    </div>
+    <p>This gives you your <strong>gross hourly rate</strong> — before taxes and deductions. Your actual take-home will be lower depending on your tax bracket, country, and any pre-tax deductions like pension contributions.</p>
+
+    <h2>What counts as full-time hours?</h2>
+    <p>In most countries, a standard full-time job is <strong>40 hours per week</strong> across 52 weeks, totalling 2,080 hours per year. However, many salaried employees work more than this without extra pay. If you regularly work 45-50 hours, your effective hourly rate is lower than the calculator shows at 40 hours.</p>
+    <ul>
+      <li><strong>40 hrs x 52 weeks = 2,080 hours/year</strong> (standard full-time)</li>
+      <li><strong>37.5 hrs x 52 weeks = 1,950 hours/year</strong> (common in UK)</li>
+      <li><strong>40 hrs x 50 weeks = 2,000 hours/year</strong> (after 2 weeks leave)</li>
+    </ul>
+
+    <h2>What is the difference between gross and net pay?</h2>
+    <p><strong>Gross pay</strong> is what your employer pays you before any deductions. <strong>Net pay</strong> (take-home) is what lands in your bank account after income tax, social security, and any other deductions are taken out. The take-home estimate uses simplified effective tax rates and is a rough guide only.</p>
+
+    <h2>Freelancers: charge more than you think</h2>
+    <p>If you are a freelancer comparing yourself to an employed worker, remember that a salaried employee receives benefits their employer pays — pension contributions, health insurance, paid leave, and sick days. To match a $50,000 salaried role as a freelancer, you typically need to charge <strong>30-50% more</strong> to account for these costs, taxes, and unpaid downtime between projects.</p>
+
+    
+    <h2>Popular salary conversions people search for</h2>
+    <p>This tool answers the most common pay rate questions instantly. Whether you are asking <em>how much is my hourly rate</em>, <em>what is $60,000 a year per hour</em>, or <em>how much is $25 an hour annually</em> — enter your number and get the full breakdown.</p>
+    <p>Some of the most searched salary conversions: <strong>$50,000 a year is $24.04 an hour</strong>. <strong>$60,000 a year is $28.85 an hour</strong>. <strong>$75,000 a year is $36.06 an hour</strong>. <strong>$100,000 a year is $48.08 an hour</strong>. All based on a standard 40-hour work week.</p>
+    <p>For hourly workers wondering about annual income: <strong>$15 an hour is $31,200 a year</strong>. <strong>$20 an hour is $41,600 a year</strong>. <strong>$25 an hour is $52,000 a year</strong>. <strong>$30 an hour is $62,400 a year</strong>. Use the converter above to calculate your exact figure with custom hours and weeks.</p>
+    <p>This <strong>salary to hourly calculator</strong> is also useful for freelancers and contractors comparing a full-time job offer to their current rate, or for employees evaluating whether a raise offer is meaningful once broken down to an hourly equivalent.</p>
+
+    <h2>Is this wage competitive?</h2>
+    <p>Context is everything. A wage that is comfortable in one city can be below living wage in another. The best way to benchmark your pay is to compare against industry salary surveys for your role, experience level, and location — sites like Glassdoor, Levels.fyi, and LinkedIn Salary are useful starting points.</p>
+  
+    <div class="faq-section" style="margin-top:32px;">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How do I convert my annual salary to an hourly rate?</button>
+        <div class="faq-a">Divide your annual salary by the total hours worked per year. For a standard 40-hour week across 52 weeks (2,080 hours): hourly rate = annual salary ÷ 2,080. For example, a $65,000 salary equals $31.25 per hour. Use the calculator above to get your exact rate with custom hours.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much is $50,000 a year per hour?</button>
+        <div class="faq-a">A $50,000 annual salary equals approximately $24.04 per hour based on a standard 40-hour work week and 52 weeks per year (2,080 total hours). After estimated US federal taxes, the take-home equivalent is roughly $18–20 per hour depending on your deductions and filing status.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much is $20 an hour annually?</button>
+        <div class="faq-a">At $20 per hour working 40 hours a week for 52 weeks, you earn $41,600 per year before tax. Monthly that is approximately $3,467 gross. After taxes in the US, take-home pay is roughly $33,000–$35,000 per year depending on your state and deductions.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much is $25 an hour annually?</button>
+        <div class="faq-a">$25 per hour equals $52,000 per year based on a 40-hour work week and 52 weeks. Monthly gross is approximately $4,333. This puts you slightly above the US median household income and is considered a solid mid-range wage in most parts of the country.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is a good hourly rate?</button>
+        <div class="faq-a">In the United States, the median hourly wage is around $22–24 per hour. Under $15/hr is below living wage in most cities. $15–25/hr is entry to mid-level. $25–50/hr is a solid professional wage. $50–100/hr is high earner territory. Above $100/hr represents top professional or specialist rates.</div>
+      </div>
+    </div>
+
+  </article>
+
+  <div>
+    <p class="sidebar-label" style="padding: 0 4px; margin-bottom: 12px;">More Finance Tools</p>
+    <div class="sidebar-tools">
+      <div class="ad-placeholder">Advertisement</div>
+      <a class="sidebar-tool" href="debt-free-calculator.html">
+        <div class="sidebar-tool-icon">💸</div>
+        <div>
+          <div class="sidebar-tool-name">Debt Free Calculator</div>
+          <div class="sidebar-tool-desc">Find your exact debt payoff date</div>
+        </div>
+      </a>
+      <a class="sidebar-tool" href="can-i-afford-this.html">
+        <div class="sidebar-tool-icon">🏠</div>
+        <div>
+          <div class="sidebar-tool-name">Can I Afford This?</div>
+          <div class="sidebar-tool-desc">Check if a purchase fits your income</div>
+        </div>
+      </a>
+      <a class="sidebar-tool" href="timezone-planner.html">
+        <div class="sidebar-tool-icon">🌍</div>
+        <div>
+          <div class="sidebar-tool-name">Timezone Planner</div>
+          <div class="sidebar-tool-desc">Find the best meeting time across cities</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- DISCLAIMER -->
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);padding:16px 24px;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:12px;">
+    <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+    <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;font-family:'DM Sans',sans-serif;">
+      <strong style="color:#0f0f0e;">For informational purposes only.</strong>
+      Results from this tool are estimates based on the information you provide and standard financial guidelines.
+      They do not constitute financial, legal, tax, or professional advice.
+      Always consult a qualified professional before making major financial or life decisions.
+      ClearlyCheck accepts no liability for decisions made based on these results.
+    </p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="index.html">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a></p>
+  </div>
+</footer>
+
+<script>
+let mode = 'annual';
+let currSym = '$';
+
+const taxRates = {
+  US: { brackets: [[10000,0.10],[41775,0.12],[89075,0.22],[170050,0.24],[215950,0.32],[539900,0.35],[Infinity,0.37]], extra: 0.0765 },
+  UK: { brackets: [[12570,0],[50270,0.20],[125140,0.40],[Infinity,0.45]], extra: 0.12 },
+  IN: { brackets: [[250000,0],[500000,0.05],[750000,0.10],[1000000,0.15],[1250000,0.20],[1500000,0.25],[Infinity,0.30]], extra: 0.04 },
+  EU: { flat: 0.35 },
+  AU: { brackets: [[18200,0],[45000,0.19],[120000,0.325],[180000,0.37],[Infinity,0.45]], extra: 0.02 },
+  CA: { brackets: [[50197,0.15],[100392,0.205],[155625,0.26],[221708,0.29],[Infinity,0.33]], extra: 0.057 }
+};
+
+function estimateTax(annual, country) {
+  const t = taxRates[country];
+  if (!t) return annual * 0.25;
+  if (t.flat) return annual * t.flat;
+  let tax = 0, prev = 0;
+  for (const [limit, rate] of t.brackets) {
+    if (annual <= prev) break;
+    tax += (Math.min(annual, limit) - prev) * rate;
+    prev = limit;
+  }
+  return tax + annual * (t.extra || 0);
+}
+
+function fmt(n, dec) {
+  if (dec !== undefined) return currSym + Number(n).toFixed(dec);
+  return currSym + Math.round(n).toLocaleString();
+}
+
+function setMode(m) {
+  mode = m;
+  document.getElementById('annualFields').style.display = m === 'annual' ? '' : 'none';
+  document.getElementById('hourlyFields').style.display = m === 'hourly' ? '' : 'none';
+  document.getElementById('modeAnnual').classList.toggle('active', m === 'annual');
+  document.getElementById('modeHourly').classList.toggle('active', m === 'hourly');
+  calculate();
+}
+
+function setCurrency(sym, code, btn) {
+  currSym = sym;
+  document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('pfxA').textContent = sym;
+  document.getElementById('pfxH').textContent = sym;
+  calculate();
+}
+
+function getContext(hourly) {
+  if (hourly < 10) return '<strong>Below minimum wage</strong> in most developed countries. Consider negotiating or upskilling.';
+  if (hourly < 20) return '<strong>Entry-level range.</strong> Liveable in lower cost-of-living areas, tight in major cities.';
+  if (hourly < 40) return '<strong>Solid mid-range wage.</strong> You\'re earning more than the median worker in most countries.';
+  if (hourly < 80) return '<strong>Skilled professional territory.</strong> Top quartile in most markets.';
+  return '<strong>High earner rate.</strong> Top 10-15% of workers in most developed economies.';
+}
+
+function calculate() {
+  const hours = parseFloat(document.getElementById('hoursPerWeek').value) || 40;
+  const weeks = parseFloat(document.getElementById('weeksPerYear').value) || 52;
+  const country = document.getElementById('country').value;
+  const totalHours = hours * weeks;
+  let annual, hourly;
+
+  if (mode === 'annual') {
+    annual = parseFloat(document.getElementById('annualSalary').value);
+    if (!annual || annual <= 0) { showEmpty(); return; }
+    hourly = annual / totalHours;
+  } else {
+    hourly = parseFloat(document.getElementById('hourlyWage').value);
+    if (!hourly || hourly <= 0) { showEmpty(); return; }
+    annual = hourly * totalHours;
+  }
+
+  const monthly = annual / 12;
+  const weekly = annual / weeks;
+  const daily = weekly / 5;
+  const tax = estimateTax(annual, country);
+  const takeHome = annual - tax;
+  const takeHomeMonthly = takeHome / 12;
+
+  document.getElementById('statusBadge').textContent = 'Ready';
+  document.getElementById('statusBadge').className = 'results-status status-ready';
+
+  document.getElementById('resultsBody').innerHTML = `
+    <div class="breakdown-hero">
+      <div class="breakdown-label">${mode === 'annual' ? 'Hourly Rate' : 'Annual Salary'}</div>
+      <div class="breakdown-main">${mode === 'annual' ? fmt(hourly,2) : fmt(annual)}</div>
+      <div class="breakdown-sub">${mode === 'annual' ? 'gross per hour' : 'gross per year'}</div>
+    </div>
+
+    <table class="breakdown-table">
+      <tr><td>Per year</td><td>${fmt(annual)}</td></tr>
+      <tr><td>Per month</td><td>${fmt(monthly)}</td></tr>
+      <tr><td>Per week</td><td>${fmt(weekly)}</td></tr>
+      <tr><td>Per day</td><td>${fmt(daily)}</td></tr>
+      <tr><td>Per hour</td><td>${fmt(hourly,2)}</td></tr>
+    </table>
+
+    <div class="take-home-box">
+      <div class="take-home-row">
+        <span class="take-home-label">Est. take-home (annual)</span>
+        <span class="take-home-value">${fmt(takeHome)}</span>
+      </div>
+      <div class="take-home-row" style="margin-top:6px;">
+        <span class="take-home-label">Est. take-home (monthly)</span>
+        <span class="take-home-value" style="font-size:15px;">${fmt(takeHomeMonthly)}</span>
+      </div>
+      <p class="take-home-note">After estimated ${country} taxes. Actual amount varies by deductions and filing status.</p>
+    </div>
+
+    <div class="comparison-row">
+      <div class="comp-item">
+        <div class="comp-label">Tax estimate</div>
+        <div class="comp-value">${fmt(tax)}</div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-label">Effective rate</div>
+        <div class="comp-value">${(tax/annual*100).toFixed(1)}%</div>
+      </div>
+    </div>
+
+    <div class="wage-context">${getContext(hourly)}</div>
+  `;
+}
+
+function showEmpty() {
+  document.getElementById('statusBadge').textContent = 'Waiting';
+  document.getElementById('statusBadge').className = 'results-status status-waiting';
+  document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">💼</div><p class="empty-text">Enter your salary or wage<br>to see your full breakdown.</p></div>`;
+}
+</script>
+
+<script>
+(function() {
+  function initFAQ() {
+    var items = document.querySelectorAll('.faq-q');
+    items.forEach(function(btn) {
+      // Add the +/x icon if not already there
+      if (!btn.querySelector('.faq-icon')) {
+        var icon = document.createElement('span');
+        icon.className = 'faq-icon';
+        icon.textContent = '+';
+        btn.appendChild(icon);
+      }
+      btn.addEventListener('click', function() {
+        var answer = btn.nextElementSibling;
+        var isOpen = btn.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-q.open').forEach(function(b) {
+          b.classList.remove('open');
+          if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+        });
+        // Open this one if it was closed
+        if (!isOpen) {
+          btn.classList.add('open');
+          if (answer) answer.classList.add('open');
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+  } else {
+    initFAQ();
+  }
+})();
+</script>
+
+</body>
+</html>
