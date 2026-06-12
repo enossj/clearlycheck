@@ -9,28 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
-    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
-    --radius: 16px; --radius-sm: 10px; --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-  }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
-  .nav-inner { max-width: 800px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; }
-  .logo span { color: var(--accent); }
-  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
-  .back-link:hover { color: var(--text); }
   .page-wrap { max-width: 800px; margin: 0 auto; padding: 52px 24px 80px; }
   .doc-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 20px; }
   h1 { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; letter-spacing: -1px; color: var(--text); margin-bottom: 12px; }
   .subtitle { font-size: 17px; color: var(--text-muted); font-weight: 300; margin-bottom: 40px; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
-  .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); text-decoration: none; color: inherit; transition: all 0.18s; }
-  .contact-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10); transform: translateY(-2px); border-color: var(--border-hover); }
+  .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); color: inherit; }
   .contact-icon { font-size: 32px; margin-bottom: 14px; }
   .contact-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
   .contact-desc { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.6; margin-bottom: 14px; }
@@ -46,23 +33,21 @@
   textarea.input-field { resize: vertical; min-height: 120px; line-height: 1.6; }
   select.input-field { cursor: pointer; }
   .submit-btn { width: 100%; padding: 14px; background: var(--text); color: #fff; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; border: none; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.18s; margin-top: 8px; }
-  .submit-btn:hover { background: #2a2a28; transform: translateY(-1px); }
-  .success-msg { display: none; background: var(--accent-light); border-radius: var(--radius-sm); padding: 16px 20px; font-size: 14px; color: var(--accent-dark); margin-top: 16px; text-align: center; }
-  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
-  .footer-inner { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .submit-btn:hover:not(:disabled) { background: #2a2a28; transform: translateY(-1px); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .success-msg, .error-msg { display: none; border-radius: var(--radius-sm); padding: 16px 20px; font-size: 14px; margin-top: 16px; text-align: center; }
+  .success-msg { background: var(--accent-light); color: var(--accent-dark); }
+  .error-msg { background: #fdf0ef; color: #c0392b; }
+  .hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
   @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } .form-card { padding: 24px 20px; } h1 { font-size: 28px; } }
 </style>
-<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav>
-  <div class="nav-inner">
-    <a class="logo" href="index.html">Clearly<span>Check</span></a>
-    <a class="back-link" href="index.html">
+  <div class="nav-inner narrow">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
       <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l-4 4m-4 4h18"/></svg>
       Back to Tools
     </a>
@@ -104,62 +89,51 @@
   <div class="form-card">
     <h2>Send us a message</h2>
     <p>We read every message and typically respond within 2 business days.</p>
-    <div class="field">
-      <label><strong>Your name</strong></label>
-      <input type="text" class="input-field" id="name" placeholder="Jane Smith" />
-    </div>
-    <div class="field">
-      <label><strong>Your email</strong></label>
-      <input type="email" class="input-field" id="email" placeholder="jane@example.com" />
-    </div>
-    <div class="field">
-      <label><strong>Subject</strong></label>
-      <select class="input-field" id="subject">
-        <option value="">Select a topic...</option>
-        <option value="bug">Bug report</option>
-        <option value="tool-idea">Tool suggestion</option>
-        <option value="partnership">Partnership enquiry</option>
-        <option value="legal">Legal / Privacy</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="field">
-      <label><strong>Message</strong></label>
-      <textarea class="input-field" id="message" placeholder="Tell us what's on your mind..."></textarea>
-    </div>
-    <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
-    <div class="success-msg" id="successMsg">
-      ✅ Thanks for reaching out! We'll get back to you within 2 business days at the email you provided.
-    </div>
+    <form id="contactForm" method="POST">
+      <div class="hp-field" aria-hidden="true">
+        <label for="_gotcha">Leave blank</label>
+        <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="name"><strong>Your name</strong></label>
+        <input type="text" class="input-field" id="name" name="name" placeholder="Jane Smith" required />
+      </div>
+      <div class="field">
+        <label for="email"><strong>Your email</strong></label>
+        <input type="email" class="input-field" id="email" name="email" placeholder="jane@example.com" required />
+      </div>
+      <div class="field">
+        <label for="subject"><strong>Subject</strong></label>
+        <select class="input-field" id="subject" name="subject" required>
+          <option value="">Select a topic...</option>
+          <option value="bug">Bug report</option>
+          <option value="tool-idea">Tool suggestion</option>
+          <option value="partnership">Partnership enquiry</option>
+          <option value="legal">Legal / Privacy</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message"><strong>Message</strong></label>
+        <textarea class="input-field" id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message →</button>
+      <div class="error-msg" id="errorMsg"></div>
+      <div class="success-msg" id="successMsg">
+        Thanks for reaching out! We'll get back to you within 2 business days at the email you provided.
+      </div>
+    </form>
   </div>
 </div>
 
 <footer>
-  <div class="footer-inner">
-    <a class="footer-logo" href="index.html">Clearly<span>Check</span></a>
+  <div class="footer-inner narrow">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
     <p class="footer-copy">© 2026 ClearlyCheck · <a href="terms-of-use.html" style="color:var(--text-light);">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);">Privacy Policy</a></p>
   </div>
 </footer>
 
-<script>
-function handleSubmit() {
-  const name    = document.getElementById('name').value.trim();
-  const email   = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value.trim();
-  if (!name || !email || !subject || !message) {
-    alert('Please fill in all fields before sending.');
-    return;
-  }
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert('Please enter a valid email address.');
-    return;
-  }
-  // In production, replace this with a real form handler (Formspree, Netlify Forms, etc.)
-  document.getElementById('successMsg').style.display = 'block';
-  document.querySelector('.submit-btn').style.display = 'none';
-}
-</script>
+<script src="assets/js/contact-config.js"></script>
+<script src="assets/js/contact.js"></script>
 </body>
 </html>

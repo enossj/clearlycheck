@@ -56,65 +56,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
-    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a; --accent-light: #e8f5ef;
-    --radius: 16px; --radius-sm: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
-  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
-  .logo span { color: var(--accent); }
-  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
-  .back-link:hover { color: var(--text); }
-  .back-link svg { width: 16px; height: 16px; }
-  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
-  .breadcrumb a { color: var(--text-light); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .breadcrumb span { color: var(--border-hover); }
-  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
-  .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
-  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 560px; line-height: 1.7; }
-  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
   .mode-toggle { display: flex; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px; gap: 4px; margin-bottom: 28px; }
   .mode-btn { flex: 1; padding: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
   .mode-btn.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); font-weight: 600; }
-  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
-  .calc-header h2 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
-  .calc-body { padding: 28px 32px; }
   .currency-toggle { display: flex; gap: 8px; margin-bottom: 28px; }
   .currency-btn { flex: 1; padding: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
   .currency-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
-  .field { margin-bottom: 24px; }
-  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
-  .field label strong { color: var(--text); font-weight: 600; }
-  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
-  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
-  .input-prefix, .input-suffix { padding: 0 14px; font-size: 15px; font-weight: 600; color: var(--text-muted); background: rgba(15,15,14,0.04); height: 48px; display: flex; align-items: center; border-right: 1px solid var(--border); flex-shrink: 0; white-space: nowrap; }
-  .input-suffix { border-right: none; border-left: 1px solid var(--border); }
-  .input-wrap input, .input-wrap select { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: var(--text); background: transparent; padding: 0 16px; height: 48px; width: 100%; }
-  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
-  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
-  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; }
-  .results-header { padding: 24px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-  .results-header h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
-  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .status-waiting { background: #f0f0ef; color: var(--text-light); }
-  .status-ready { background: var(--accent-light); color: var(--accent); }
-  .results-body { padding: 24px 28px; }
-  .empty-state { text-align: center; padding: 32px 0; }
-  .empty-icon { font-size: 40px; margin-bottom: 12px; }
-  .empty-text { font-size: 14px; color: var(--text-light); font-weight: 300; }
   .breakdown-hero { text-align: center; padding: 16px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
   .breakdown-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 8px; }
   .breakdown-main { font-family: 'Syne', sans-serif; font-size: 42px; font-weight: 800; color: var(--accent); letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
@@ -136,66 +88,17 @@
   .comp-value { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); }
   .wage-context { font-size: 13px; color: var(--text-muted); background: var(--bg); border-radius: var(--radius-sm); padding: 14px 16px; line-height: 1.6; font-weight: 300; }
   .wage-context strong { color: var(--text); font-weight: 500; }
-  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
-  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
-  .article h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
-  .article h2:first-child { margin-top: 0; }
-  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
-  .article ul { padding-left: 20px; margin-bottom: 16px; }
-  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 6px; font-weight: 300; }
-  .article strong { color: var(--text); font-weight: 500; }
-  .formula-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; font-family: monospace; font-size: 14px; color: var(--text); margin: 16px 0; line-height: 1.8; }
-  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
-  .sidebar-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 4px; }
-  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
-  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
-  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
-  .sidebar-tool-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
-  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
-  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: var(--text-light); }
-  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } .article-section { grid-template-columns: 1fr; } }
-  @media (max-width: 600px) { .calc-body { padding: 20px; } .calc-header { padding: 20px 20px 16px; } .page-header { padding: 32px 20px 24px; } .comparison-row { flex-direction: column; } }
-
-    .faq-section { margin-top: 32px; }
-  .faq-item { border-top: 1px solid var(--border); }
-  .faq-q {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 12px; width: 100%; padding: 18px 0;
-    font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800;
-    color: var(--text); background: none; border: none; cursor: pointer;
-    text-align: left; transition: color 0.15s;
-  }
-  .faq-q:hover { color: var(--accent); }
-  .faq-q.open { color: var(--accent); }
-  .faq-icon {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: var(--bg); border: 1.5px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; font-size: 14px; font-weight: 700;
-    transition: all 0.2s; color: var(--text-muted);
-  }
-  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
-  .faq-a {
-    font-size: 14px; color: var(--text-muted); line-height: 1.7;
-    font-weight: 300; padding: 0 0 18px 0;
-    display: none;
-  }
-  .faq-a.open { display: block; }
+  .estimate-badge { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #8a6500; background: #fff8e1; padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; }
+  @media (max-width: 600px) { .comparison-row { flex-direction: column; } }
 </style>
-<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html">Clearly<span>Check</span></a>
-    <a class="back-link" href="index.html">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
       All Tools
     </a>
@@ -204,7 +107,7 @@
 
 <div class="page-header">
   <div class="breadcrumb">
-    <a href="index.html">Home</a>
+    <a href="/">Home</a>
     <span>›</span>
     <a href="index.html#tools">Tools</a>
     <span>›</span>
@@ -276,7 +179,7 @@
             <option value="US">United States</option>
             <option value="UK">United Kingdom</option>
             <option value="IN">India</option>
-            <option value="EU">Europe (avg.)</option>
+            <option value="EU">Europe (avg estimate)</option>
             <option value="AU">Australia</option>
             <option value="CA">Canada</option>
           </select>
@@ -406,7 +309,7 @@
 
 <footer>
   <div class="footer-inner">
-    <a class="footer-logo" href="index.html">Clearly<span>Check</span></a>
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
     <p class="footer-copy">© 2026 ClearlyCheck · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a></p>
   </div>
 </footer>
@@ -473,6 +376,7 @@ function calculate() {
   const weeks = parseFloat(document.getElementById('weeksPerYear').value) || 52;
   const country = document.getElementById('country').value;
   const totalHours = hours * weeks;
+  if (!totalHours || totalHours <= 0) { showEmpty(); return; }
   let annual, hourly;
 
   if (mode === 'annual') {
@@ -510,6 +414,7 @@ function calculate() {
       <tr><td>Per hour</td><td>${fmt(hourly,2)}</td></tr>
     </table>
 
+    <div class="estimate-badge">Estimate only — not tax advice</div>
     <div class="take-home-box">
       <div class="take-home-row">
         <span class="take-home-label">Est. take-home (annual)</span>
@@ -544,41 +449,6 @@ function showEmpty() {
 }
 </script>
 
-<script>
-(function() {
-  function initFAQ() {
-    var items = document.querySelectorAll('.faq-q');
-    items.forEach(function(btn) {
-      // Add the +/x icon if not already there
-      if (!btn.querySelector('.faq-icon')) {
-        var icon = document.createElement('span');
-        icon.className = 'faq-icon';
-        icon.textContent = '+';
-        btn.appendChild(icon);
-      }
-      btn.addEventListener('click', function() {
-        var answer = btn.nextElementSibling;
-        var isOpen = btn.classList.contains('open');
-        // Close all
-        document.querySelectorAll('.faq-q.open').forEach(function(b) {
-          b.classList.remove('open');
-          if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
-        });
-        // Open this one if it was closed
-        if (!isOpen) {
-          btn.classList.add('open');
-          if (answer) answer.classList.add('open');
-        }
-      });
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFAQ);
-  } else {
-    initFAQ();
-  }
-})();
-</script>
-
+<script src="assets/js/faq.js"></script>
 </body>
 </html>
