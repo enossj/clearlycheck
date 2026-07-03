@@ -76,7 +76,7 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
     --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
     --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
     --radius: 16px; --radius-sm: 10px;
@@ -185,7 +185,7 @@
   .counter-btn { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--border); background: var(--bg-card); font-size: 20px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: all 0.15s; flex-shrink: 0; }
   .counter-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
   .counter-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-  .counter-display { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; color: var(--text); min-width: 48px; text-align: center; }
+  .counter-display { font-family: 'DM Sans', sans-serif; font-size: 32px; font-weight: 800; color: var(--text); min-width: 48px; text-align: center; }
   .counter-label { font-size: 13px; color: var(--text-muted); font-weight: 300; text-align: center; }
   .split-toggle { display: flex; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px; gap: 4px; }
   .split-btn { flex: 1; padding: 9px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
@@ -195,7 +195,7 @@
   .person-label { font-size: 13px; font-weight: 500; color: var(--text-muted); width: 72px; flex-shrink: 0; }
   .person-input { flex: 1; padding: 10px 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text); background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); outline: none; transition: border-color 0.15s; min-width: 0; }
   .person-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
-  .person-amount { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); width: 72px; text-align: right; flex-shrink: 0; }
+  .person-amount { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); width: 72px; text-align: right; flex-shrink: 0; }
   .result-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
   .hero-box { border-radius: var(--radius-sm); padding: 16px; text-align: center; }
   .hero-box.green { background: var(--accent-light); }
@@ -203,7 +203,7 @@
   .hero-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
   .hero-box.green .hero-label { color: var(--accent-dark); }
   .hero-box.blue .hero-label { color: #1a4fa0; }
-  .hero-value { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+  .hero-value { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
   .hero-box.green .hero-value { color: var(--accent); }
   .hero-box.blue .hero-value { color: #1a4fa0; }
   .hero-sub { font-size: 11px; margin-top: 4px; font-weight: 300; }
@@ -211,7 +211,7 @@
   .hero-box.blue .hero-sub { color: #1a4fa0; }
   .total-row { display: flex; justify-content: space-between; align-items: center; background: var(--text); border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 16px; }
   .total-label { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); }
-  .total-value { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+  .total-value { font-family: 'DM Sans', sans-serif; font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
   .split-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
   .split-table tr { border-bottom: 1px solid var(--border); }
   .split-table tr:last-child { border-bottom: none; }

@@ -66,7 +66,7 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
     --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
     --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
     --yellow: #b7770d; --yellow-light: #fef9ec;
@@ -151,7 +151,7 @@
   .clock-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .clock-city { font-size: 13px; font-weight: 500; color: var(--text); }
   .clock-tz { font-size: 11px; color: var(--text-light); }
-  .clock-time { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); }
+  .clock-time { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); }
   .clock-ampm { font-size: 11px; color: var(--text-light); margin-left: 2px; }
 
   /* OVERLAP SLOTS */
@@ -160,7 +160,7 @@
   .slot-item { display: block; width: 100%; text-align: left; font-family: inherit; background: var(--accent-light); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 8px; cursor: pointer; transition: all 0.15s; border: 1.5px solid transparent; }
   .slot-item:hover { border-color: var(--accent); }
   .slot-item.selected { border-color: var(--accent); background: var(--accent-light); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
-  .slot-time { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+  .slot-time { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
   .slot-cities { display: flex; flex-direction: column; gap: 2px; }
   .slot-city-line { font-size: 12px; color: var(--accent-dark); }
   .no-overlap { background: var(--red-light); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 13px; color: #8b1a0f; font-weight: 300; line-height: 1.6; }
