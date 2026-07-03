@@ -12,6 +12,26 @@
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --border: rgba(15,15,14,0.10); --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --radius: 16px; --radius-sm: 10px; --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 800px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
+  .back-link:hover { color: var(--text); }
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a:hover { text-decoration: underline; }
+
   .page-wrap { max-width: 800px; margin: 0 auto; padding: 52px 24px 80px; }
   .doc-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 20px; }
   h1 { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; letter-spacing: -1px; color: var(--text); margin-bottom: 12px; }
@@ -129,7 +149,7 @@
 <footer>
   <div class="footer-inner narrow">
     <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="terms-of-use.html" style="color:var(--text-light);">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);">Privacy Policy</a></p>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);">About</a> · <a href="sitemap.html" style="color:var(--text-light);">Sitemap</a> · <a href="terms-of-use.html" style="color:var(--text-light);">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);">Privacy Policy</a></p>
   </div>
 </footer>
 

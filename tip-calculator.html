@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tip Calculator — Split Bills & Calculate Tips Instantly | ClearlyCheck</title>
+<meta name="description" content="Calculate tip amount and split any bill instantly. Choose tip percentage, split between any number of people, and handle unequal shares. Free, instant, no signup.">
+<meta name="keywords" content="tip calculator, bill split calculator, how much to tip, tip percentage calculator, split bill calculator, restaurant tip calculator, gratuity calculator, divide bill calculator, tip and split">
+<link rel="canonical" href="https://clearlycheck.com/tip-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tip Calculator — Split Bills & Calculate Tips">
+<meta property="og:description" content="Calculate tip and split any bill instantly. Free and instant.">
+<meta property="og:url" content="https://clearlycheck.com/tip-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tip Calculator",
+  "description": "Free tip calculator and bill splitter. Calculate tip amount, total per person, and handle unequal bill splits instantly.",
+  "url": "https://clearlycheck.com/tip-calculator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I tip at a restaurant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the US, standard restaurant tips are 15% for adequate service, 18% for good service, and 20% or more for excellent service. For takeout, 10% is common but optional. In the UK and Europe, tipping is less expected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate a 20% tip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To calculate a 20% tip, multiply your bill by 0.20. For example, on a $50 bill: $50 x 0.20 = $10 tip, making the total $60. Quick trick: find 10% by moving the decimal left one place, then double it."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearlycheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://clearlycheck.com/#tools" },
+    { "@type": "ListItem", "position": 3, "name": "Tip Calculator", "item": "https://clearlycheck.com/tip-calculator.html" }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/calculator.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+  .back-link svg { width: 16px; height: 16px; }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 560px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 24px 32px 28px; }
+
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .field label strong { color: var(--text); font-weight: 600; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap input, .input-wrap select { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; -webkit-appearance: none; appearance: none; }
+  .input-prefix { padding: 0 4px 0 14px; color: var(--text-light); font-weight: 500; font-size: 15px; }
+  .input-suffix { padding: 0 14px 0 4px; color: var(--text-light); font-size: 13px; white-space: nowrap; }
+  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 12px; }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; }
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-ready { background: var(--accent-light); color: var(--accent); }
+  .status-waiting { background: var(--bg); color: var(--text-light); }
+  .results-body { padding: 20px 24px; }
+  .empty-state { text-align: center; padding: 32px 12px; }
+  .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.6; }
+  .empty-text { font-size: 13.5px; color: var(--text-light); line-height: 1.6; }
+
+  /* ARTICLE */
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
+  .article h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); }
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
+
+  .disclaimer-box { background: #f0f0ef; border-top: 1px solid rgba(15,15,14,0.08); border-bottom: 1px solid rgba(15,15,14,0.08); padding: 16px 24px; margin-bottom: 40px; }
+  .disclaimer-inner { max-width: 1100px; margin: 0 auto; font-size: 12px; color: #6b6a66; line-height: 1.6; }
+  .disclaimer-inner strong { color: #0f0f0e; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } }
+
+  .tip-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 14px; }
+  .tip-btn { padding: 10px 4px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-card); color: var(--text-muted); cursor: pointer; transition: all 0.15s; text-align: center; }
+  .tip-btn.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+  .tip-btn:hover:not(.active) { border-color: var(--border-hover); }
+  .people-counter { display: flex; align-items: center; gap: 16px; }
+  .counter-btn { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--border); background: var(--bg-card); font-size: 20px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: all 0.15s; flex-shrink: 0; }
+  .counter-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .counter-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .counter-display { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; color: var(--text); min-width: 48px; text-align: center; }
+  .counter-label { font-size: 13px; color: var(--text-muted); font-weight: 300; text-align: center; }
+  .split-toggle { display: flex; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px; gap: 4px; }
+  .split-btn { flex: 1; padding: 9px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .split-btn.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); font-weight: 600; }
+  .custom-split { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+  .person-row { display: flex; align-items: center; gap: 10px; }
+  .person-label { font-size: 13px; font-weight: 500; color: var(--text-muted); width: 72px; flex-shrink: 0; }
+  .person-input { flex: 1; padding: 10px 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text); background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); outline: none; transition: border-color 0.15s; min-width: 0; }
+  .person-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .person-amount { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); width: 72px; text-align: right; flex-shrink: 0; }
+  .result-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .hero-box { border-radius: var(--radius-sm); padding: 16px; text-align: center; }
+  .hero-box.green { background: var(--accent-light); }
+  .hero-box.blue { background: #e8f0fe; }
+  .hero-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .hero-box.green .hero-label { color: var(--accent-dark); }
+  .hero-box.blue .hero-label { color: #1a4fa0; }
+  .hero-value { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+  .hero-box.green .hero-value { color: var(--accent); }
+  .hero-box.blue .hero-value { color: #1a4fa0; }
+  .hero-sub { font-size: 11px; margin-top: 4px; font-weight: 300; }
+  .hero-box.green .hero-sub { color: var(--accent-dark); }
+  .hero-box.blue .hero-sub { color: #1a4fa0; }
+  .total-row { display: flex; justify-content: space-between; align-items: center; background: var(--text); border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 16px; }
+  .total-label { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); }
+  .total-value { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+  .split-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+  .split-table tr { border-bottom: 1px solid var(--border); }
+  .split-table tr:last-child { border-bottom: none; }
+  .split-table td { padding: 10px 0; font-size: 14px; }
+  .split-table td:first-child { color: var(--text-muted); }
+  .split-table td:last-child { text-align: right; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .copy-btn { width: 100%; padding: 11px; background: transparent; color: var(--text-muted); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .copy-btn.copied { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="Breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">›</span>
+      <a href="/#tools">Tools</a><span aria-hidden="true">›</span>
+      <span>Tip Calculator</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🧾 Utility Tool</div>
+  <h1>Tip Calculator</h1>
+  <p>Calculate the tip and split any bill instantly. Choose your tip percentage, set the number of people, and handle unequal splits too.</p>
+</div>
+
+<main>
+  <div class="main-layout">
+
+    <div class="calc-card">
+      <div class="calc-header">
+        <h2>Enter your bill details</h2>
+        <p>Results update instantly as you type.</p>
+      </div>
+      <div class="calc-body">
+
+        <div class="field">
+          <label for="billAmount"><strong>Bill amount</strong></label>
+          <div class="input-wrap">
+            <span class="input-prefix" aria-hidden="true">$</span>
+            <input type="number" id="billAmount" placeholder="e.g. 85.00" min="0" step="0.01" oninput="calculate()" aria-label="Bill amount in dollars" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label><strong>Tip percentage</strong></label>
+          <div class="tip-grid" role="group" aria-label="Select tip percentage">
+            <button class="tip-btn" onclick="setTip(10,this)" aria-pressed="false">10%</button>
+            <button class="tip-btn" onclick="setTip(15,this)" aria-pressed="false">15%</button>
+            <button class="tip-btn active" onclick="setTip(18,this)" aria-pressed="true">18%</button>
+            <button class="tip-btn" onclick="setTip(20,this)" aria-pressed="false">20%</button>
+            <button class="tip-btn" onclick="setTip(25,this)" aria-pressed="false">25%</button>
+          </div>
+          <div class="input-wrap" style="margin-top:8px;">
+            <label for="customTip" class="sr-only">Custom tip percentage</label>
+            <input type="number" id="customTip" placeholder="Or enter custom %" min="0" max="100" step="0.5" oninput="setCustomTip(this.value)" />
+            <span class="input-suffix" aria-hidden="true">%</span>
+          </div>
+        </div>
+
+        <hr class="divider">
+        <p class="section-label">Split the bill</p>
+
+        <div class="field">
+          <label><strong>Number of people</strong></label>
+          <div class="people-counter">
+            <button class="counter-btn" onclick="changePeople(-1)" aria-label="Decrease number of people" id="btnDecrease" disabled>−</button>
+            <div>
+              <div class="counter-display" id="peopleCount" aria-live="polite">2</div>
+              <div class="counter-label">people</div>
+            </div>
+            <button class="counter-btn" onclick="changePeople(1)" aria-label="Increase number of people">+</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label><strong>Split type</strong></label>
+          <div class="split-toggle" role="group" aria-label="Split type">
+            <button class="split-btn active" id="btnEqual" onclick="setSplitMode('equal')" aria-pressed="true">Equal split</button>
+            <button class="split-btn" id="btnCustom" onclick="setSplitMode('custom')" aria-pressed="false">Custom amounts</button>
+          </div>
+          <div id="customSplitWrap" style="display:none;" aria-live="polite">
+            <div class="custom-split" id="customSplitRows"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="results-card" role="region" aria-label="Bill summary" aria-live="polite">
+      <div class="results-header">
+        <h3>Bill Summary</h3>
+        <span class="results-status status-waiting" id="statusBadge">Waiting</span>
+      </div>
+      <div class="results-body" id="resultsBody">
+        <div class="empty-state">
+          <div class="empty-icon" aria-hidden="true">🧾</div>
+          <p class="empty-text">Enter your bill amount<br>to see the split.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div class="article-section">
+  <article class="article">
+    <h2>How much should you tip?</h2>
+    <p>Tipping norms vary by country, service type, and quality of service. Here are the standard guidelines:</p>
+    <ul>
+      <li><strong>Restaurants (US):</strong> 15% for adequate service, 18% for good service, 20–25% for excellent service</li>
+      <li><strong>Takeout (US):</strong> 10% is appreciated but optional</li>
+      <li><strong>Bars (US):</strong> $1–2 per drink, or 15–20% of the tab</li>
+      <li><strong>Taxis and rideshare (US):</strong> 15–20%</li>
+      <li><strong>Hotel housekeeping:</strong> $2–5 per night</li>
+      <li><strong>UK and Europe:</strong> Tipping is less expected — 10% is generous, some restaurants include a service charge already</li>
+      <li><strong>Japan:</strong> Tipping is generally not customary and can even be considered rude</li>
+    </ul>
+
+    <h2>How to calculate a tip quickly in your head</h2>
+    <ul>
+      <li><strong>10% tip:</strong> Move the decimal point one place left. $85 becomes $8.50</li>
+      <li><strong>15% tip:</strong> Find 10%, then add half of that. $8.50 + $4.25 = $12.75</li>
+      <li><strong>20% tip:</strong> Find 10% and double it. $8.50 x 2 = $17.00</li>
+    </ul>
+
+    <h2>Should you tip on the pre-tax or post-tax amount?</h2>
+    <p>Etiquette experts say tip on the <strong>pre-tax amount</strong> — there is no reason to tip the government's share. In practice most people tip on the post-tax total since that is the number shown on the bill. Either is acceptable — the difference on a typical meal is usually under a dollar.</p>
+
+    <h2>How does unequal bill splitting work?</h2>
+    <p>Switch to Custom amounts mode and enter what each person ordered. The tip is then divided proportionally — if Person A ordered 60% of the food, they pay 60% of the tip. Everyone pays their fair share automatically.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How much should I tip at a restaurant?</button>
+        <div class="faq-a">In the US, standard restaurant tips are 15% for adequate service, 18% for good service, and 20% or more for excellent service. For takeout, 10% is common but optional. In the UK and Europe, tipping is less expected — 10% is generous.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I calculate a 20% tip?</button>
+        <div class="faq-a">Multiply your bill by 0.20. On a $50 bill: $50 x 0.20 = $10 tip, making the total $60. Quick mental trick: find 10% by moving the decimal left one place, then double it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I split a bill unevenly?</button>
+        <div class="faq-a">Switch to "Custom amounts" mode in this calculator. Enter what each person ordered before tip. The tool automatically calculates each person's proportional share of the tip — so everyone pays exactly what is fair.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is it rude not to tip?</button>
+        <div class="faq-a">In the US and Canada, not tipping is considered rude in sit-down restaurants because servers depend on tips as a major part of their income. In other countries like Japan, tipping is not expected at all. Always consider local customs when travelling.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p class="sidebar-label" style="padding: 0 4px; margin-bottom: 12px;">More Tools</p>
+    <div class="sidebar-tools">
+      <div class="ad-placeholder">Advertisement</div>
+      <a class="sidebar-tool" href="/salary-converter.html">
+        <div class="sidebar-tool-icon" aria-hidden="true">💼</div>
+        <div><div class="sidebar-tool-name">Salary to Hourly</div><div class="sidebar-tool-desc">Convert any salary instantly</div></div>
+      </a>
+      <a class="sidebar-tool" href="/debt-free-calculator.html">
+        <div class="sidebar-tool-icon" aria-hidden="true">💸</div>
+        <div><div class="sidebar-tool-name">Debt Free Calculator</div><div class="sidebar-tool-desc">Find your exact debt payoff date</div></div>
+      </a>
+      <a class="sidebar-tool" href="/bmi-calculator.html">
+        <div class="sidebar-tool-icon" aria-hidden="true">⚖️</div>
+        <div><div class="sidebar-tool-name">BMI Calculator</div><div class="sidebar-tool-desc">Calculate your Body Mass Index</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer-box">
+  <div class="disclaimer-inner">
+    <strong>For informational purposes only.</strong> Tip amounts are estimates based on the percentages entered. Tipping customs vary by country and situation. ClearlyCheck accepts no liability for decisions made based on these results.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = btn.nextElementSibling;
+      var isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q.open').forEach(function(b) {
+        b.classList.remove('open');
+        if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+    });
+  });
+</script>
+<script>
+  var tipPct = 18;
+  var people = 2;
+  var splitMode = 'equal';
+
+  function setTip(pct, btn) {
+    tipPct = pct;
+    document.querySelectorAll('.tip-btn').forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
+    document.getElementById('customTip').value = '';
+    calculate();
+  }
+
+  function setCustomTip(val) {
+    var parsed = parseFloat(val);
+    if (isNaN(parsed) || parsed < 0) return;
+    tipPct = parsed;
+    document.querySelectorAll('.tip-btn').forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    calculate();
+  }
+
+  function changePeople(delta) {
+    var next = people + delta;
+    if (next < 1 || next > 20) return;
+    people = next;
+    document.getElementById('peopleCount').textContent = people;
+    document.getElementById('btnDecrease').disabled = people <= 1;
+    if (splitMode === 'custom') buildCustomRows();
+    calculate();
+  }
+
+  function setSplitMode(mode) {
+    splitMode = mode;
+    var isEqual = mode === 'equal';
+    document.getElementById('btnEqual').classList.toggle('active', isEqual);
+    document.getElementById('btnEqual').setAttribute('aria-pressed', String(isEqual));
+    document.getElementById('btnCustom').classList.toggle('active', !isEqual);
+    document.getElementById('btnCustom').setAttribute('aria-pressed', String(!isEqual));
+    document.getElementById('customSplitWrap').style.display = isEqual ? 'none' : '';
+    if (!isEqual) buildCustomRows();
+    calculate();
+  }
+
+  function buildCustomRows() {
+    var bill = parseFloat(document.getElementById('billAmount').value) || 0;
+    var perPerson = bill > 0 ? (bill / people).toFixed(2) : '';
+    var html = '';
+    for (var i = 0; i < people; i++) {
+      html += '<div class="person-row">' +
+        '<label class="person-label" for="p' + i + '">Person ' + (i + 1) + '</label>' +
+        '<input class="person-input" type="number" id="p' + i + '" ' +
+          'placeholder="' + (perPerson || '0.00') + '" ' +
+          'value="' + (perPerson || '') + '" ' +
+          'min="0" step="0.01" oninput="calculate()" ' +
+          'aria-label="Amount ordered by person ' + (i + 1) + '" />' +
+        '<span class="person-amount" id="pa' + i + '" aria-live="polite">—</span>' +
+        '</div>';
+    }
+    document.getElementById('customSplitRows').innerHTML = html;
+  }
+
+  function fmt(n) {
+    return '$' + Math.abs(n).toFixed(2);
+  }
+
+  function calculate() {
+    var bill = parseFloat(document.getElementById('billAmount').value);
+    if (!bill || bill <= 0) { showEmpty(); return; }
+
+    var tipAmount = bill * (tipPct / 100);
+    var total = bill + tipAmount;
+
+    document.getElementById('statusBadge').textContent = 'Ready';
+    document.getElementById('statusBadge').className = 'results-status status-ready';
+
+    if (splitMode === 'equal') {
+      var perPerson = total / people;
+      var tipPerPerson = tipAmount / people;
+      var rows = '';
+      var limit = Math.min(people, 8);
+      for (var i = 0; i < limit; i++) {
+        rows += '<tr><td>Person ' + (i + 1) + '</td><td>' + fmt(perPerson) + '</td></tr>';
+      }
+      if (people > 8) {
+        rows += '<tr><td colspan="2" style="color:var(--text-light);font-size:12px;">+ ' + (people - 8) + ' more at ' + fmt(perPerson) + ' each</td></tr>';
+      }
+
+      document.getElementById('resultsBody').innerHTML =
+        '<div class="result-hero">' +
+          '<div class="hero-box green"><div class="hero-label">Tip amount</div><div class="hero-value">' + fmt(tipAmount) + '</div><div class="hero-sub">' + tipPct + '% tip</div></div>' +
+          '<div class="hero-box blue"><div class="hero-label">Per person</div><div class="hero-value">' + fmt(perPerson) + '</div><div class="hero-sub">incl. ' + fmt(tipPerPerson) + ' tip</div></div>' +
+        '</div>' +
+        '<div class="total-row"><span class="total-label">Total bill + tip</span><span class="total-value">' + fmt(total) + '</span></div>' +
+        '<table class="split-table">' +
+          '<tr><td>Bill (before tip)</td><td>' + fmt(bill) + '</td></tr>' +
+          '<tr><td>Tip (' + tipPct + '%)</td><td>' + fmt(tipAmount) + '</td></tr>' +
+          '<tr><td>Total</td><td>' + fmt(total) + '</td></tr>' +
+          '<tr><td>Split ' + people + ' ways</td><td>' + fmt(perPerson) + ' each</td></tr>' +
+        '</table>' +
+        (people > 1 ? '<table class="split-table">' + rows + '</table>' : '') +
+        '<button class="copy-btn" id="copyBtn" onclick="copySummary(' + bill.toFixed(2) + ',' + tipAmount.toFixed(2) + ',' + total.toFixed(2) + ',' + perPerson.toFixed(2) + ')">' +
+          '<svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>' +
+          'Copy summary to share' +
+        '</button>';
+
+    } else {
+      var amounts = [];
+      for (var j = 0; j < people; j++) {
+        var el = document.getElementById('p' + j);
+        amounts.push(el ? (parseFloat(el.value) || 0) : 0);
+      }
+      var customTotal = amounts.reduce(function(a, b) { return a + b; }, 0);
+      for (var k = 0; k < people; k++) {
+        var share = customTotal > 0 ? (amounts[k] / customTotal) : (1 / people);
+        var owes = amounts[k] + (tipAmount * share);
+        var paEl = document.getElementById('pa' + k);
+        if (paEl) paEl.textContent = fmt(owes);
+      }
+
+      document.getElementById('resultsBody').innerHTML =
+        '<div class="result-hero">' +
+          '<div class="hero-box green"><div class="hero-label">Tip amount</div><div class="hero-value">' + fmt(tipAmount) + '</div><div class="hero-sub">' + tipPct + '% tip</div></div>' +
+          '<div class="hero-box blue"><div class="hero-label">Grand total</div><div class="hero-value">' + fmt(total) + '</div><div class="hero-sub">bill + tip</div></div>' +
+        '</div>' +
+        '<div class="total-row"><span class="total-label">Total bill + tip</span><span class="total-value">' + fmt(total) + '</span></div>' +
+        '<table class="split-table">' +
+          '<tr><td>Bill (before tip)</td><td>' + fmt(bill) + '</td></tr>' +
+          '<tr><td>Tip (' + tipPct + '%)</td><td>' + fmt(tipAmount) + '</td></tr>' +
+          '<tr><td>Total</td><td>' + fmt(total) + '</td></tr>' +
+        '</table>' +
+        '<p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:4px;">Each person\'s total shown next to their input above.</p>';
+    }
+  }
+
+  function copySummary(bill, tip, total, perPerson) {
+    var text = 'Bill Summary (ClearlyCheck Tip Calculator)\n\n' +
+      'Bill: $' + bill + '\nTip (' + tipPct + '%): $' + tip + '\nTotal: $' + total + '\nPer person (' + people + '): $' + perPerson + '\n\nclearlycheck.com/tip-calculator';
+    navigator.clipboard.writeText(text).then(function() {
+      var btn = document.getElementById('copyBtn');
+      if (!btn) return;
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.innerHTML = '<svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy summary to share';
+        btn.classList.remove('copied');
+      }, 2500);
+    }).catch(function() {
+      var btn = document.getElementById('copyBtn');
+      if (btn) btn.textContent = 'Could not copy — try manually';
+    });
+  }
+
+  function showEmpty() {
+    document.getElementById('statusBadge').textContent = 'Waiting';
+    document.getElementById('statusBadge').className = 'results-status status-waiting';
+    document.getElementById('resultsBody').innerHTML =
+      '<div class="empty-state"><div class="empty-icon" aria-hidden="true">🧾</div><p class="empty-text">Enter your bill amount<br>to see the split.</p></div>';
+  }
+</script>
+</body>
+</html>

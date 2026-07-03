@@ -210,6 +210,21 @@
   .tip-box.red { background: var(--red-light); color: #8b1a0f; }
   .tip-box strong { font-weight: 600; }
 
+  /* BREAKDOWN TABLE */
+  .breakdown-wrap { margin-bottom: 20px; }
+  .breakdown-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 10px; }
+  .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .breakdown-table th { text-align: right; padding: 7px 6px; font-weight: 700; font-family: 'Syne', sans-serif; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-light); border-bottom: 1px solid var(--border); }
+  .breakdown-table th:first-child { text-align: left; }
+  .breakdown-table td { padding: 9px 6px; color: var(--text-muted); border-bottom: 1px solid var(--border); text-align: right; font-variant-numeric: tabular-nums; }
+  .breakdown-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+  .breakdown-table tr:last-child td { border-bottom: none; }
+  .breakdown-table tr.total-row td { border-top: 1.5px solid var(--border-hover); padding-top: 11px; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; color: var(--text); }
+  .status-pill-sm { display: inline-flex; align-items: center; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .status-pill-sm.good { background: var(--green-light); color: var(--green); }
+  .status-pill-sm.warn { background: var(--yellow-light); color: var(--yellow); }
+  .status-pill-sm.bad { background: var(--red-light); color: var(--red); }
+
   /* ARTICLE */
   .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
   .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
@@ -490,7 +505,7 @@
 <footer>
   <div class="footer-inner">
     <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a></p>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
   </div>
 </footer>
 
@@ -613,6 +628,53 @@ function calculate() {
       </div>
     </div>
 
+    <div class="breakdown-wrap">
+      <div class="breakdown-title">Income Allocation Breakdown</div>
+      <table class="breakdown-table">
+        <thead>
+          <tr><th>Category</th><th>Amount</th><th>% of income</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gross monthly income</td>
+            <td>${fmt(income)}</td>
+            <td>100%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>This purchase</td>
+            <td>${fmt(cost)}</td>
+            <td>${pct(frontRatio)}</td>
+            <td><span class="status-pill-sm ${getRatioClass(frontRatio, frontLimit)}">${getRatioClass(frontRatio, frontLimit) === 'good' ? 'OK' : getRatioClass(frontRatio, frontLimit) === 'warn' ? 'Tight' : 'Over'}</span></td>
+          </tr>
+          <tr>
+            <td>Existing debt</td>
+            <td>${fmt(existing)}</td>
+            <td>${pct(existing / income)}</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Guideline limit (this purchase)</td>
+            <td>${fmt(income * frontLimit)}</td>
+            <td>${pct(frontLimit)}</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Guideline limit (total debt)</td>
+            <td>${fmt(income * backLimit)}</td>
+            <td>${pct(backLimit)}</td>
+            <td>—</td>
+          </tr>
+          <tr class="total-row">
+            <td>Total committed</td>
+            <td>${fmt(cost + existing)}</td>
+            <td>${pct(backRatio)}</td>
+            <td><span class="status-pill-sm ${getRatioClass(backRatio, backLimit)}">${getRatioClass(backRatio, backLimit) === 'good' ? 'OK' : getRatioClass(backRatio, backLimit) === 'warn' ? 'Tight' : 'Over'}</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="metrics-grid">
       <div class="metric">
         <div class="metric-label">Max affordable</div>
@@ -643,7 +705,19 @@ function showEmpty() {
 }
 </script>
 
-<script src="assets/js/faq.js"></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = btn.nextElementSibling;
+      var isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q.open').forEach(function(b) {
+        b.classList.remove('open');
+        if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+    });
+  });
+</script>
 
 </body>
 </html>

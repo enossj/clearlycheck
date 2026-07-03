@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About ClearlyCheck — Built by One Person, Not a Company</title>
+<meta name="description" content="ClearlyCheck is built by one person — Enos, based in South Asia — who got tired of calculators that were paywalled, ad-choked, or shallow. Here's the story and how the tools are kept accurate.">
+<link rel="canonical" href="https://clearlycheck.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About ClearlyCheck — Built by One Person, Not a Company">
+<meta property="og:description" content="ClearlyCheck is built by one person who got tired of calculators that were paywalled, ad-choked, or shallow. Here's the story and how the tools are kept accurate.">
+<meta property="og:url" content="https://clearlycheck.com/about.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://clearlycheck.com/about.html",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Enos",
+    "description": "Independent builder of ClearlyCheck, learning data analytics with a focus on finance.",
+    "worksFor": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+  }
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #6b6a66; --text-light: #9a9994;
+    --border: rgba(15,15,14,0.10); --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --radius: 16px; --radius-sm: 10px; --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 800px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
+  .back-link:hover { color: var(--text); }
+
+  .page-wrap { max-width: 800px; margin: 0 auto; padding: 52px 24px 80px; }
+  .doc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 48px 52px; box-shadow: var(--shadow); }
+  .doc-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 20px; }
+  h1 { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; letter-spacing: -1px; color: var(--text); margin-bottom: 8px; }
+  .subtitle { font-size: 16px; color: var(--text-muted); font-weight: 300; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+  .author-strip { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .author-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px; flex-shrink: 0; }
+  .author-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: var(--text); }
+  .author-meta { font-size: 13px; color: var(--text-light); }
+
+  h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--text); margin: 36px 0 12px; }
+  h2:first-of-type { margin-top: 0; }
+  p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  ul { padding-left: 20px; margin-bottom: 16px; }
+  li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  strong { color: var(--text); font-weight: 500; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .highlight-box { background: var(--accent-light); border-radius: 10px; padding: 16px 20px; margin: 24px 0; font-size: 14px; color: var(--accent-dark); line-height: 1.7; }
+
+  .source-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+  .source-chip { font-size: 12.5px; font-weight: 500; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 100px; padding: 6px 12px; }
+
+  .cta-row { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 6px; padding: 12px 20px; border-radius: var(--radius-sm); font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.15s; }
+  .cta-btn.primary { background: var(--text); color: #fff; }
+  .cta-btn.primary:hover { background: #2a2a28; text-decoration: none; }
+  .cta-btn.secondary { background: var(--bg); color: var(--text); border: 1.5px solid var(--border); }
+  .cta-btn.secondary:hover { border-color: var(--accent); text-decoration: none; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+
+  @media (max-width: 600px) { .doc-card { padding: 28px 24px; } h1 { font-size: 28px; } }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l-4 4m-4 4h18"/></svg>
+      Back to Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="doc-card">
+    <div class="doc-tag">👋 About</div>
+    <h1>About ClearlyCheck</h1>
+    <p class="subtitle">One person, no company, no investors — just tools I wished already existed.</p>
+
+    <div class="author-strip">
+      <div class="author-avatar">E</div>
+      <div>
+        <div class="author-name">Enos</div>
+        <div class="author-meta">Builder of ClearlyCheck · Based in South Asia</div>
+      </div>
+    </div>
+
+    <h2>Why I built this</h2>
+    <p>I'm learning data analytics with finance as my target field — working through spreadsheets, SQL, Python, and a lot of trial and error. Along the way, I kept needing quick answers to everyday money questions: how long until this debt is paid off, whether renting or buying makes more sense, what a salary actually works out to per hour.</p>
+    <p>Every time, the calculators I found online were paywalled behind a "premium" tier, buried under a wall of ads before you could see a result, or gave an answer with no explanation of how it got there. I figured if I was frustrated by that, other people probably were too — so I started building the tools I wished existed: free, fast, and honest about how the number was calculated.</p>
+
+    <h2>Who's actually behind this</h2>
+    <p>Just me. There's no team, no company registration, no outside funding — I design, build, and write every tool on this site myself. I'm saying this plainly because I'd rather you know exactly what ClearlyCheck is than have it pretend to be bigger than it is. If that changes down the line, I'll update this page.</p>
+
+    <h2>How I try to keep things accurate</h2>
+    <p>ClearlyCheck's tools live in a category — personal finance and health calculators — where getting a number wrong can actually affect someone's decisions. I take that seriously, even as a one-person site. In practice, that means:</p>
+    <ul>
+      <li><strong>Figures come from primary sources</strong> where they exist — IRS revenue procedures for tax brackets, official CDC/WHO guidance for health formulas, not secondhand blog posts.</li>
+      <li><strong>Calculations are checked against known worked examples</strong> before publishing, not just assumed correct because the formula looks right.</li>
+      <li><strong>Every tool explains its own limitations</strong> — what it does and doesn't cover — instead of presenting an estimate as a guarantee.</li>
+      <li><strong>Nothing here replaces a professional.</strong> These tools are for getting a fast, informed starting point — not for replacing an accountant, financial advisor, or doctor.</li>
+    </ul>
+
+    <div class="source-chips">
+      <span class="source-chip">IRS Revenue Procedures</span>
+      <span class="source-chip">Tax Foundation</span>
+      <span class="source-chip">CFPB guidelines</span>
+      <span class="source-chip">CDC / WHO formulas</span>
+    </div>
+
+    <h2>How ClearlyCheck makes money</h2>
+    <p>The site is supported by advertising (Google AdSense) once approved, not by selling your data. I explain exactly what is and isn't collected in the <a href="privacy-policy.html">Privacy Policy</a> — short version: your calculator inputs never leave your browser.</p>
+
+    <div class="highlight-box">
+      <strong>Found something wrong, or want a tool that doesn't exist yet?</strong> I read every message myself and I'd genuinely like to know — reach out through the contact page below.
+    </div>
+
+    <div class="cta-row">
+      <a href="contact.html" class="cta-btn primary">Get in touch</a>
+      <a href="/#tools" class="cta-btn secondary">Browse all tools</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);">About</a> · <a href="sitemap.html" style="color:var(--text-light);">Sitemap</a> · <a href="terms-of-use.html" style="color:var(--text-light);">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);">Privacy Policy</a></p>
+  </div>
+</footer>
+</body>
+</html>

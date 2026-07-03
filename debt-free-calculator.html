@@ -632,23 +632,23 @@
     <div class="faq-section" style="margin-top:32px;">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
-        <button class="faq-q">When will I be debt free?</button>
+        <button class="faq-q">When will I be debt free?<span class="faq-icon">+</span></button>
         <div class="faq-a">Enter your current balance, annual interest rate, and monthly payment into the calculator above. It will show your exact debt-free date, total interest paid, and a full month-by-month payment schedule instantly.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">How can I pay off my debt faster?</button>
+        <button class="faq-q">How can I pay off my debt faster?<span class="faq-icon">+</span></button>
         <div class="faq-a">The most effective ways are: pay more than the minimum each month (even $50 extra makes a big difference), use the avalanche method (attack highest-interest debt first), or use the snowball method (pay off smallest balances first for motivation). You can also try a balance transfer to a 0% APR card or consolidate with a lower-interest personal loan.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What happens if I only pay the minimum payment?</button>
+        <button class="faq-q">What happens if I only pay the minimum payment?<span class="faq-icon">+</span></button>
         <div class="faq-a">Most of your payment goes toward interest rather than reducing the balance. On a $5,000 credit card at 20% APR with a $100 minimum payment, it would take over 9 years to pay off and cost more than $6,000 in interest — more than the original debt. Always pay more than the minimum when possible.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Is it better to pay off debt or save money?</button>
+        <button class="faq-q">Is it better to pay off debt or save money?<span class="faq-icon">+</span></button>
         <div class="faq-a">If your debt interest rate is higher than what savings would earn (usually true for credit cards at 18-25% APR), paying off debt first gives a better return. However, always keep a small emergency fund of at least $1,000 so you do not need to take on new debt for unexpected expenses.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">How do I calculate how long it will take to pay off debt?</button>
+        <button class="faq-q">How do I calculate how long it will take to pay off debt?<span class="faq-icon">+</span></button>
         <div class="faq-a">You need three numbers: your current balance, your annual interest rate (APR), and your monthly payment. The calculator above uses the standard amortization formula to determine exactly how many months until your balance reaches zero, and shows your precise payoff date.</div>
       </div>
     </div>
@@ -702,7 +702,7 @@
 <footer>
   <div class="footer-inner">
     <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a></p>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
   </div>
 </footer>
 
@@ -922,7 +922,19 @@ function toggleAmort() {
 }
 </script>
 
-<script src="assets/js/faq.js"></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = btn.nextElementSibling;
+      var isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q.open').forEach(function(b) {
+        b.classList.remove('open');
+        if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+    });
+  });
+</script>
 
 </body>
 </html>
