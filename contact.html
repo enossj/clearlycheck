@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://clearlycheck.com/contact.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
@@ -21,29 +21,30 @@
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
   nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
   .nav-inner { max-width: 800px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; }
   .logo span { color: var(--accent); }
   .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
   .back-link:hover { color: var(--text); }
   footer { border-top: 1px solid var(--border); padding: 32px 24px; }
   .footer-inner { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
   .footer-logo span { color: var(--accent); }
   .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
   .footer-copy a:hover { text-decoration: underline; }
 
   .page-wrap { max-width: 800px; margin: 0 auto; padding: 52px 24px 80px; }
   .doc-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 20px; }
-  h1 { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; letter-spacing: -1px; color: var(--text); margin-bottom: 12px; }
+  h1 { font-family: 'Roboto', sans-serif; font-size: 36px; font-weight: 800; letter-spacing: -1px; color: var(--text); margin-bottom: 12px; }
   .subtitle { font-size: 17px; color: var(--text-muted); font-weight: 300; margin-bottom: 40px; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
   .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); color: inherit; }
   .contact-icon { font-size: 32px; margin-bottom: 14px; }
-  .contact-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .contact-title { font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
   .contact-desc { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.6; margin-bottom: 14px; }
   .contact-action { font-size: 13px; font-weight: 500; color: var(--accent); }
   .form-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
-  .form-card h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .form-card h2 { font-family: 'Roboto', sans-serif; font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
   .form-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; font-weight: 300; }
   .field { margin-bottom: 20px; }
   .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
@@ -52,7 +53,7 @@
   .input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
   textarea.input-field { resize: vertical; min-height: 120px; line-height: 1.6; }
   select.input-field { cursor: pointer; }
-  .submit-btn { width: 100%; padding: 14px; background: var(--text); color: #fff; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; border: none; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.18s; margin-top: 8px; }
+  .submit-btn { width: 100%; padding: 14px; background: var(--text); color: #fff; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; border: none; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.18s; margin-top: 8px; }
   .submit-btn:hover:not(:disabled) { background: #2a2a28; transform: translateY(-1px); }
   .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
   .success-msg, .error-msg { display: none; border-radius: var(--radius-sm); padding: 16px 20px; font-size: 14px; margin-top: 16px; text-align: center; }
