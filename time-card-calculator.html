@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Card Calculator — Work Hours &amp; Pay | ClearlyCheck</title>
+<meta name="description" content="Add up your weekly work hours from clock-in and clock-out times, minus breaks. Get daily and weekly totals, overtime, and gross pay. Free, private, no signup.">
+<meta name="keywords" content="time card calculator, work hours calculator, hours calculator, timesheet calculator, weekly hours calculator, overtime calculator, clock in clock out calculator, payroll hours calculator">
+<link rel="canonical" href="https://clearlycheck.com/time-card-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time Card Calculator — Work Hours &amp; Pay">
+<meta property="og:description" content="Total your weekly work hours from clock in/out times, minus breaks, with overtime and gross pay. Free, no signup.">
+<meta property="og:url" content="https://clearlycheck.com/time-card-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Time Card Calculator",
+  "description": "Free time card calculator. Totals daily and weekly work hours from clock-in and clock-out times minus breaks, with overtime and gross pay.",
+  "url": "https://clearlycheck.com/time-card-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate hours worked from a time card?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For each day, subtract the clock-in time from the clock-out time to get the total shift length, then subtract any unpaid break. Add up every day for the weekly total. For example, 9:00 AM to 5:00 PM is 8 hours; take off a 1-hour lunch and you have 7 paid hours. This calculator does it for every day automatically, including shifts that run past midnight." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is overtime calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Under US federal law (the Fair Labor Standards Act), most hourly employees earn overtime at 1.5 times their regular rate for hours worked beyond 40 in a workweek. So 45 hours at $20/hour is 40 × $20 plus 5 × $30 = $950. Some states have daily overtime rules too. Turn on the overtime option in this calculator to split regular and overtime hours automatically." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert minutes to decimal hours?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.5, and 45 minutes is 0.75. Payroll systems use decimal hours because they multiply cleanly by an hourly rate — 7 hours 30 minutes becomes 7.5, and 7.5 × your rate gives the pay for that shift." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should breaks be paid?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Under US federal rules, short rest breaks (typically under 20 minutes) are usually paid, while bona fide meal breaks (usually 30 minutes or more, where you're relieved of duties) are usually unpaid. State laws vary. Enter only your unpaid break minutes in this calculator so paid time isn't deducted from your total." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearlycheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://clearlycheck.com/#tools" },
+    { "@type": "ListItem", "position": 3, "name": "Time Card Calculator", "item": "https://clearlycheck.com/time-card-calculator.html" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 1fr 380px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0;}
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 20px 24px 24px; }
+
+  .tc-scroll { overflow-x: auto; }
+  .tc-table { width: 100%; border-collapse: collapse; min-width: 460px; }
+  .tc-table th { font-family: 'Roboto', sans-serif; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); text-align: left; padding: 0 6px 10px; }
+  .tc-table th.num { text-align: right; }
+  .tc-table td { padding: 5px 6px; border-top: 1px solid var(--border); }
+  .tc-day { font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .tc-table input { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; background: var(--bg); font-family: 'DM Sans', sans-serif; font-size: 13.5px; color: var(--text); padding: 8px 8px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  .tc-table input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .tc-table input.brk { width: 62px; text-align: center; }
+  .tc-daytotal { font-family: 'Roboto', sans-serif; font-size: 13.5px; font-weight: 700; color: var(--accent); text-align: right; white-space: nowrap; }
+
+  .settings-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .settings-field { flex: 1; min-width: 140px; }
+  .settings-field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap input { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; }
+  .input-prefix { padding: 0 4px 0 14px; color: var(--text-light); font-weight: 500; font-size: 15px; }
+  .ot-toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; font-size: 13.5px; color: var(--text-muted); }
+  .ot-toggle input { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0;}
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-ready { background: var(--accent-light); color: var(--accent); }
+  .status-waiting { background: var(--bg); color: var(--text-light); }
+  .results-body { padding: 20px 24px; }
+  .empty-state { text-align: center; padding: 32px 12px; }
+  .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.6; }
+  .empty-text { font-size: 13.5px; color: var(--text-light); line-height: 1.6; }
+
+  .verdict-hero { text-align: center; background: var(--accent-light); border-radius: var(--radius-sm); padding: 24px 16px; margin-bottom: 16px; }
+  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
+  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 40px; font-weight: 800; color: var(--text); line-height: 1.1; }
+  .verdict-sub { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+  .tax-table { width: 100%; border-collapse: collapse; }
+  .tax-table td { padding: 11px 0; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+  .tax-table tr:last-child td { border-bottom: none; }
+  .tax-table td:last-child { text-align: right; font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); }
+  .tax-table tr.grand td { padding-top: 14px; font-size: 16px; color: var(--text); font-weight: 700; }
+  .tax-table tr.grand td:last-child { color: var(--accent); }
+
+  /* REFERENCE */
+  .reference-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 20px; }
+  .reference-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); margin-bottom: 28px; }
+  .reference-card h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 8px; }
+  .reference-card > p.ref-intro { font-size: 14.5px; color: var(--text-muted); font-weight: 300; margin-bottom: 20px; line-height: 1.7; }
+  .quick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .quick-item { background: var(--bg); border-radius: var(--radius-sm); padding: 14px; text-align: center; }
+  .quick-pct { font-family: 'Roboto', sans-serif; font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .quick-val { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); }
+
+  /* ARTICLE */
+  .article-section > div { min-width: 0; }
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 380px; gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0;}
+  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul, .article ol { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .article .sources { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
+  .article code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
+  @media (max-width: 600px) { .calc-body { padding: 18px 16px; } .page-header { padding: 32px 20px 24px; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <span style="color:var(--text-muted);">Time Card Calculator</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🗓️ Productivity Tool</div>
+  <h1>Time Card Calculator</h1>
+  <p>Enter your clock-in and clock-out times for the week, minus unpaid breaks, to get your daily and weekly hours — with overtime and gross pay. Shifts past midnight are handled automatically.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 11, 2026</div>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Your week</h2>
+      <p>Fill in the days you worked. Leave a day blank to skip it.</p>
+    </div>
+    <div class="calc-body">
+
+      <div class="tc-scroll">
+        <table class="tc-table">
+          <thead>
+            <tr><th>Day</th><th>Clock in</th><th>Clock out</th><th>Break (min)</th><th class="num">Hours</th></tr>
+          </thead>
+          <tbody id="tcBody"></tbody>
+        </table>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-field">
+          <label for="rate">Hourly rate (optional)</label>
+          <div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="rate" value="20" min="0" step="0.01" oninput="calculate()"></div>
+        </div>
+        <div class="settings-field">
+          <label style="margin-bottom:12px;">Overtime</label>
+          <label class="ot-toggle"><input type="checkbox" id="otToggle" checked onchange="calculate()"> Pay 1.5× over 40 hrs/week</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Weekly total</h3>
+      <span class="results-status status-waiting" id="statusBadge">Waiting</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <div class="empty-state">
+        <div class="empty-icon" aria-hidden="true">⏱️</div>
+        <p class="empty-text">Enter your hours<br>to see the total.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="reference-section">
+  <div class="reference-card">
+    <h2>Minutes to decimal hours</h2>
+    <p class="ref-intro">Payroll runs on decimal hours, not hours and minutes. Here's the quick conversion for common break and shift lengths.</p>
+    <div class="quick-grid" id="quickGrid"></div>
+  </div>
+</div>
+
+<div class="article-section">
+  <article class="article">
+    <h2>What this calculator does</h2>
+    <p>A time card (or timesheet) calculator turns your clock-in and clock-out times into paid hours. For each day it works out the length of your shift, subtracts any unpaid break, and adds the days together into a weekly total. If you enter an hourly rate it also estimates your gross pay, and it can split your hours into regular and overtime once you pass 40 in a week.</p>
+
+    <h2>How the hours are worked out</h2>
+    <p>The maths for each day is simple:</p>
+    <ul>
+      <li><strong>Shift length</strong> = clock-out time − clock-in time</li>
+      <li><strong>Paid hours</strong> = shift length − unpaid break</li>
+    </ul>
+    <p>If your clock-out time is earlier than your clock-in time, the calculator assumes the shift crossed midnight and adds 24 hours — so an 8:00 PM to 4:00 AM shift correctly counts as 8 hours, not a negative number.</p>
+
+    <h2>How overtime works</h2>
+    <p>Under the US Fair Labor Standards Act (FLSA), most hourly employees must be paid <strong>1.5× their regular rate for hours over 40 in a workweek</strong>. With the overtime option on, this tool caps regular hours at 40 and pays the rest at time-and-a-half. For example, 45 hours at $20/hour is 40 × $20 + 5 × $30 = <strong>$950</strong>. A few states (such as California) also require daily overtime after 8 hours — this calculator uses the federal weekly rule, so check your state if daily overtime applies to you.</p>
+
+    <h2>Paid vs. unpaid breaks</h2>
+    <p>Only enter <strong>unpaid</strong> break minutes. Under federal rules, short rest breaks (usually under 20 minutes) are typically paid and shouldn't be deducted, while genuine meal breaks (usually 30 minutes or more, free of duties) are typically unpaid. If a break is paid, leave it out so your total isn't reduced.</p>
+
+    <h2>The 7-minute rounding rule</h2>
+    <p>Some employers round clock times to the nearest quarter-hour. The FLSA allows this as long as it's neutral over time: minutes 1-7 past a quarter-hour round down, and 8-14 round up. Rounding must never systematically favour the employer. This calculator uses your exact times; if your workplace rounds, expect small differences from your official pay stub.</p>
+
+    <h2>Sources &amp; method</h2>
+    <p class="sources">Hour totals use the clock-in/clock-out method described above; overtime follows the <strong>US Department of Labor</strong> FLSA standard of 1.5× the regular rate beyond 40 hours per workweek (dol.gov). Break and rounding guidance also follows federal FLSA rules. State laws — daily overtime, mandatory break pay, and rounding limits — can differ, and this tool estimates gross pay only (before taxes and deductions). For payroll disputes or exact figures, rely on your employer's official records or a qualified professional. This tool is for general guidance, not legal or tax advice.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How do I calculate hours worked from a time card?<span class="faq-icon">+</span></button>
+        <div class="faq-a">For each day, subtract the clock-in time from the clock-out time, then subtract any unpaid break. Add up every day for the weekly total. For example, 9:00 AM to 5:00 PM is 8 hours; take off a 1-hour lunch and you have 7 paid hours. This calculator does it for every day automatically, including shifts past midnight.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How is overtime calculated?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Under US federal law, most hourly employees earn 1.5× their regular rate for hours over 40 in a workweek. So 45 hours at $20/hour is 40 × $20 + 5 × $30 = $950. Some states add daily overtime rules. Turn on the overtime option to split regular and overtime hours automatically.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I convert minutes to decimal hours?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.5, and 45 minutes is 0.75. Payroll uses decimal hours because they multiply cleanly by an hourly rate — 7 hours 30 minutes is 7.5, and 7.5 × your rate gives that shift's pay.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Should breaks be paid?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Under US federal rules, short rest breaks (under 20 minutes) are usually paid, while meal breaks (30 minutes or more, free of duties) are usually unpaid. State laws vary. Enter only unpaid break minutes here so paid time isn't deducted.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
+    <div class="sidebar-tools">
+      <a class="sidebar-tool" href="salary-converter.html">
+        <div class="sidebar-tool-icon">💼</div>
+        <div><div class="sidebar-tool-name">Salary to Hourly</div><div class="sidebar-tool-desc">Convert any pay rate instantly</div></div>
+      </a>
+      <a class="sidebar-tool" href="timezone-planner.html">
+        <div class="sidebar-tool-icon">🌍</div>
+        <div><div class="sidebar-tool-name">Timezone Planner</div><div class="sidebar-tool-desc">Find the best meeting time</div></div>
+      </a>
+      <a class="sidebar-tool" href="percentage-calculator.html">
+        <div class="sidebar-tool-icon">🧮</div>
+        <div><div class="sidebar-tool-name">Percentage Calculator</div><div class="sidebar-tool-desc">Every everyday percentage</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+    <strong style="color:#0f0f0e;">For informational purposes only.</strong> Hour and pay totals are estimates based on the times you enter and the federal overtime rule; state laws, rounding, and deductions may change your actual pay. This is general guidance, not legal or tax advice. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 11, 2026.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const DEFAULTS = [
+  ['09:00', '17:00', 60], ['09:00', '17:00', 60], ['09:00', '17:00', 60],
+  ['09:00', '17:00', 60], ['09:00', '17:00', 60], ['', '', 0], ['', '', 0]
+];
+
+// Build the day rows
+(function() {
+  const body = document.getElementById('tcBody');
+  body.innerHTML = DAYS.map((d, i) =>
+    '<tr>' +
+      '<td class="tc-day">' + d.slice(0, 3) + '</td>' +
+      '<td><input type="time" id="in' + i + '" value="' + DEFAULTS[i][0] + '" oninput="calculate()" aria-label="' + d + ' clock in"></td>' +
+      '<td><input type="time" id="out' + i + '" value="' + DEFAULTS[i][1] + '" oninput="calculate()" aria-label="' + d + ' clock out"></td>' +
+      '<td><input type="number" class="brk" id="brk' + i + '" value="' + DEFAULTS[i][2] + '" min="0" step="5" oninput="calculate()" aria-label="' + d + ' break minutes"></td>' +
+      '<td class="tc-daytotal" id="day' + i + '">—</td>' +
+    '</tr>'
+  ).join('');
+})();
+
+function parseTime(str) {
+  if (!str || str.indexOf(':') === -1) return null;
+  const parts = str.split(':');
+  const h = parseInt(parts[0], 10), m = parseInt(parts[1], 10);
+  if (isNaN(h) || isNaN(m)) return null;
+  return h * 60 + m;
+}
+
+function dayMinutes(i) {
+  const tin = parseTime(document.getElementById('in' + i).value);
+  const tout = parseTime(document.getElementById('out' + i).value);
+  if (tin === null || tout === null) return null;
+  let span = tout - tin;
+  if (span <= 0) span += 24 * 60; // overnight shift
+  const brk = parseFloat(document.getElementById('brk' + i).value) || 0;
+  let worked = span - brk;
+  if (worked < 0) worked = 0;
+  return worked;
+}
+
+function hm(mins) {
+  const h = Math.floor(mins / 60), m = Math.round(mins % 60);
+  return h + 'h ' + (m < 10 ? '0' + m : m) + 'm';
+}
+
+function money(n) {
+  return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function calculate() {
+  let totalMin = 0, anyEntered = false;
+  for (let i = 0; i < 7; i++) {
+    const dm = dayMinutes(i);
+    const cell = document.getElementById('day' + i);
+    if (dm === null) { cell.textContent = '—'; continue; }
+    anyEntered = true;
+    totalMin += dm;
+    cell.textContent = (dm / 60).toFixed(2);
+  }
+
+  const badge = document.getElementById('statusBadge');
+  if (!anyEntered || totalMin <= 0) {
+    badge.textContent = 'Waiting';
+    badge.className = 'results-status status-waiting';
+    document.getElementById('resultsBody').innerHTML =
+      '<div class="empty-state"><div class="empty-icon" aria-hidden="true">⏱️</div><p class="empty-text">Enter your hours<br>to see the total.</p></div>';
+    return;
+  }
+
+  badge.textContent = 'Ready';
+  badge.className = 'results-status status-ready';
+
+  const totalHrs = totalMin / 60;
+  const otOn = document.getElementById('otToggle').checked;
+  const rate = parseFloat(document.getElementById('rate').value);
+  const hasRate = !isNaN(rate) && rate > 0;
+
+  let regHrs = totalHrs, otHrs = 0;
+  if (otOn && totalHrs > 40) { regHrs = 40; otHrs = totalHrs - 40; }
+
+  let html =
+    '<div class="verdict-hero">' +
+      '<div class="verdict-label">Total hours this week</div>' +
+      '<div class="verdict-value">' + totalHrs.toFixed(2) + '</div>' +
+      '<div class="verdict-sub">' + hm(totalMin) + ' across the week</div>' +
+    '</div>' +
+    '<table class="tax-table">';
+
+  if (otOn && otHrs > 0) {
+    html += '<tr><td>Regular hours</td><td>' + regHrs.toFixed(2) + '</td></tr>' +
+            '<tr><td>Overtime hours (1.5×)</td><td>' + otHrs.toFixed(2) + '</td></tr>';
+  }
+
+  if (hasRate) {
+    const regPay = regHrs * rate;
+    const otPay = otHrs * rate * 1.5;
+    if (otOn && otHrs > 0) {
+      html += '<tr><td>Regular pay</td><td>' + money(regPay) + '</td></tr>' +
+              '<tr><td>Overtime pay</td><td>' + money(otPay) + '</td></tr>';
+    }
+    html += '<tr class="grand"><td>Estimated gross pay</td><td>' + money(regPay + otPay) + '</td></tr>';
+  } else {
+    html += '<tr class="grand"><td>Total hours</td><td>' + totalHrs.toFixed(2) + '</td></tr>';
+  }
+
+  html += '</table>';
+  if (hasRate) html += '<p style="font-size:11.5px;color:var(--text-light);text-align:center;margin-top:12px;">Gross pay before taxes and deductions.</p>';
+
+  document.getElementById('resultsBody').innerHTML = html;
+}
+
+// Reference grid
+(function() {
+  const mins = [15, 20, 30, 45, 60, 90];
+  document.getElementById('quickGrid').innerHTML = mins.map(m =>
+    '<div class="quick-item"><div class="quick-pct">' + m + ' min</div><div class="quick-val">' + (m / 60).toFixed(2) + ' h</div></div>'
+  ).join('');
+})();
+
+calculate();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>
