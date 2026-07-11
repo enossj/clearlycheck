@@ -204,7 +204,6 @@
   .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
   .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
   .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
-  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
 
   .disclaimer-bar { background: #f0f0ef; border-top: 1px solid rgba(15,15,14,0.08); border-bottom: 1px solid rgba(15,15,14,0.08); padding: 16px 24px; margin-bottom: 40px; }
   .disclaimer-bar .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; gap: 12px; }
@@ -219,6 +218,10 @@
 
   @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
   @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } .metrics-grid { grid-template-columns: 1fr 1fr; } .field-row2 { grid-template-columns: 1fr; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
 </head>
@@ -245,6 +248,7 @@
   <div class="tool-tag-pill">💵 Finance Tool</div>
   <h1>Income Tax Calculator</h1>
   <p>Estimate your U.S. federal income tax for 2025 or 2026. Enter your income, filing status, and dependents to see your bracket, taxable income, and an estimated refund or amount owed.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 11, 2026</div>
 </div>
 
 <div class="disclaimer-bar">
@@ -473,6 +477,9 @@
     </ul>
     <p>For a full, accurate calculation of your specific situation, use IRS Free File, reputable tax software, or a licensed tax preparer.</p>
 
+        <h2>Sources &amp; method</h2>
+    <p class="sources">Tax brackets, standard deductions, and filing thresholds are based on figures published by the <strong>IRS</strong> (irs.gov) for the 2025 and 2026 tax years. This tool estimates federal income tax only and does not include state tax, FICA, or credits beyond the standard deduction.</p>
+
     <div class="faq-section">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
@@ -497,7 +504,6 @@
   <div>
     <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
     <div class="sidebar-tools">
-      <div class="ad-placeholder">Advertisement</div>
       <a class="sidebar-tool" href="salary-converter.html">
         <div class="sidebar-tool-icon">💼</div>
         <div><div class="sidebar-tool-name">Salary to Hourly Converter</div><div class="sidebar-tool-desc">Convert annual salary to hourly rate</div></div>

@@ -162,7 +162,6 @@
   .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
   .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
   .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
-  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
 
   .disclaimer-box { background: #f0f0ef; border-top: 1px solid rgba(15,15,14,0.08); border-bottom: 1px solid rgba(15,15,14,0.08); padding: 16px 24px; margin-bottom: 40px; }
   .disclaimer-inner { max-width: 1100px; margin: 0 auto; font-size: 12px; color: #6b6a66; line-height: 1.6; }
@@ -223,7 +222,10 @@
   .copy-btn { width: 100%; padding: 11px; background: transparent; color: var(--text-muted); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 6px; }
   .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
   .copy-btn.copied { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
-  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -249,6 +251,7 @@
   <div class="tool-tag-pill">🧾 Utility Tool</div>
   <h1>Tip Calculator</h1>
   <p>Calculate the tip and split any bill instantly. Choose your tip percentage, set the number of people, and handle unequal splits too.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 11, 2026</div>
 </div>
 
 <main>
@@ -381,7 +384,6 @@
   <div>
     <p class="sidebar-label" style="padding: 0 4px; margin-bottom: 12px;">More Tools</p>
     <div class="sidebar-tools">
-      <div class="ad-placeholder">Advertisement</div>
       <a class="sidebar-tool" href="/salary-converter.html">
         <div class="sidebar-tool-icon" aria-hidden="true">💼</div>
         <div><div class="sidebar-tool-name">Salary to Hourly</div><div class="sidebar-tool-desc">Convert any salary instantly</div></div>
@@ -400,7 +402,7 @@
 
 <div class="disclaimer-box">
   <div class="disclaimer-inner">
-    <strong>For informational purposes only.</strong> Tip amounts are estimates based on the percentages entered. Tipping customs vary by country and situation. ClearlyCheck accepts no liability for decisions made based on these results.
+    <strong>For informational purposes only.</strong> Tip amounts are estimates based on the percentages entered. Tipping customs vary by country and situation. ClearlyCheck accepts no liability for decisions made based on these results. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 11, 2026.
   </div>
 </div>
 

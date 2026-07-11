@@ -217,7 +217,6 @@
   .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
   .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
   .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
-  .ad-placeholder { background: var(--bg-card); border: 1.5px dashed var(--border-hover); border-radius: var(--radius-sm); padding: 24px; text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 12px; }
 
   .disclaimer-bar { background: #f0f0ef; border-top: 1px solid rgba(15,15,14,0.08); border-bottom: 1px solid rgba(15,15,14,0.08); padding: 16px 24px; margin-bottom: 40px; }
   .disclaimer-bar .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; gap: 12px; }
@@ -232,6 +231,10 @@
 
   @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
   @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } .field-row2 { grid-template-columns: 1fr; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
 </head>
@@ -258,6 +261,7 @@
   <div class="tool-tag-pill">🩺 Health Tool</div>
   <h1>Due Date Calculator</h1>
   <p>Estimate your baby's due date, see how far along you are, and view your full week-by-week pregnancy timeline.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 11, 2026</div>
 </div>
 
 <main>
@@ -407,6 +411,9 @@
     <h2>Why your due date might change</h2>
     <p>It's common for an estimated due date to shift slightly as pregnancy progresses, especially after an early ultrasound. Ultrasound measurements taken in the first trimester (before about 14 weeks) are generally considered the most accurate way to date a pregnancy, more so than LMP-based estimates alone — particularly for anyone with irregular cycles or an uncertain last period date. If your provider gives you a different date than this calculator, their estimate — especially if based on an early scan — is usually the one to go with.</p>
 
+        <h2>Sources &amp; method</h2>
+    <p class="sources">Due dates are estimated using <strong>Naegele's rule</strong> (last menstrual period + 280 days), the standard method used by the <strong>American College of Obstetricians and Gynecologists</strong> (acog.org). Ultrasound and IVF dating options adjust from the relevant reference date. This is an estimate — only about 5% of babies arrive on the exact due date.</p>
+
     <div class="faq-section">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
@@ -431,7 +438,6 @@
   <div>
     <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Health Tools</p>
     <div class="sidebar-tools">
-      <div class="ad-placeholder">Advertisement</div>
       <a class="sidebar-tool" href="bmi-calculator.html">
         <div class="sidebar-tool-icon">⚖️</div>
         <div><div class="sidebar-tool-name">BMI Calculator</div><div class="sidebar-tool-desc">Calculate your Body Mass Index</div></div>
