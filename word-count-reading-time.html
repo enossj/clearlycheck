@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Count &amp; Reading Time Calculator | ClearlyCheck</title>
+<meta name="description" content="Count words, characters, sentences, and paragraphs as you type, and see estimated reading and speaking time. Free word counter, private, no signup — text never leaves your browser.">
+<meta name="keywords" content="word count, word counter, reading time calculator, character counter, words to minutes, speaking time calculator, how long to read, essay word count, speech length calculator">
+<link rel="canonical" href="https://clearlycheck.com/word-count-reading-time.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Word Count &amp; Reading Time Calculator">
+<meta property="og:description" content="Count words, characters, sentences, and paragraphs and see reading and speaking time as you type. Free, private, no signup.">
+<meta property="og:url" content="https://clearlycheck.com/word-count-reading-time.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Word Count & Reading Time Calculator",
+  "description": "Free word counter that counts words, characters, sentences, and paragraphs and estimates reading and speaking time, all in your browser.",
+  "url": "https://clearlycheck.com/word-count-reading-time.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is reading time calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Reading time is the word count divided by a reading speed in words per minute. This tool uses about 200-250 words per minute for average adult silent reading, which you can switch between slow, average, and fast. For example, a 1,000-word article takes roughly 4-5 minutes to read at an average pace." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the average reading speed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most adults read silently at about 200 to 250 words per minute for everyday prose. Reading aloud is slower, around 130 to 150 words per minute, and dense or technical material is slower still. Speed-readers can exceed 400 words per minute, though comprehension often drops at very high speeds." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to read 1,000 words?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At an average silent reading speed of about 200-250 words per minute, 1,000 words takes roughly 4 to 5 minutes. Read aloud, the same 1,000 words takes about 7 minutes. Adjust the reading speed in this tool to match your audience." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many words is a 5-minute speech?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At a comfortable speaking pace of around 130 words per minute, a 5-minute speech is about 650 words. Slower, more deliberate delivery lands closer to 600 words, while a faster pace can reach 750. This tool shows speaking time alongside reading time so you can size a script." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearlycheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://clearlycheck.com/#tools" },
+    { "@type": "ListItem", "position": 3, "name": "Word Count & Reading Time", "item": "https://clearlycheck.com/word-count-reading-time.html" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 1fr 360px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0;}
+  .calc-header { padding: 22px 28px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); }
+  .clear-btn { font-size: 12.5px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; cursor: pointer; transition: all 0.15s; }
+  .clear-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .editor { width: 100%; min-height: 420px; border: none; outline: none; resize: vertical; font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.8; color: var(--text); background: var(--bg-card); padding: 24px 28px; }
+  .editor::placeholder { color: var(--text-light); }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0;}
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-body { padding: 20px 24px; }
+
+  .verdict-hero { text-align: center; background: var(--accent-light); border-radius: var(--radius-sm); padding: 22px 16px; margin-bottom: 8px; }
+  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
+  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 34px; font-weight: 800; color: var(--text); line-height: 1.1; }
+  .verdict-sub { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+  .speed-tabs { display: flex; gap: 6px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 5px; margin: 14px 0 4px; }
+  .speed-tab { flex: 1; padding: 8px 6px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; text-align: center; }
+  .speed-tab.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); font-weight: 700; }
+  .speed-tab span { display: block; font-size: 10px; color: var(--text-light); font-weight: 400; }
+  .speed-tab.active span { color: var(--text-muted); }
+
+  .stat-list { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .stat-list td { padding: 11px 0; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+  .stat-list tr:last-child td { border-bottom: none; }
+  .stat-list td:last-child { text-align: right; font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); }
+
+  /* ARTICLE */
+  .article-section > div { min-width: 0; }
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 360px; gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0;}
+  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .article .sources { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
+  .article table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
+  .article th, .article td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .article th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .table-scroll { overflow-x: auto; margin-bottom: 8px; }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
+  @media (max-width: 600px) { .editor { padding: 18px 16px; min-height: 300px; } .page-header { padding: 32px 20px 24px; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <span style="color:var(--text-muted);">Word Count &amp; Reading Time</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🗓️ Productivity Tool</div>
+  <h1>Word Count &amp; Reading Time</h1>
+  <p>Paste or type your text to count words, characters, sentences, and paragraphs, and see how long it takes to read or speak. Your text stays in your browser — nothing is uploaded.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 11, 2026</div>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Your text</h2>
+      <button class="clear-btn" onclick="clearText()">Clear</button>
+    </div>
+    <label for="editor" class="sr-only">Text to count</label>
+    <textarea id="editor" class="editor" placeholder="Start typing or paste your text here…" oninput="count()" aria-describedby="wordStat"></textarea>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Live stats</h3>
+    </div>
+    <div class="results-body">
+      <div class="verdict-hero">
+        <div class="verdict-label">Words</div>
+        <div class="verdict-value" id="wordStat">0</div>
+        <div class="verdict-sub" id="readStat">0 sec reading time</div>
+      </div>
+
+      <div class="speed-tabs" role="group" aria-label="Reading speed">
+        <button class="speed-tab" id="spSlow" onclick="setSpeed(100)">Slow<span>100 wpm</span></button>
+        <button class="speed-tab active" id="spAvg" onclick="setSpeed(200)">Average<span>200 wpm</span></button>
+        <button class="speed-tab" id="spFast" onclick="setSpeed(300)">Fast<span>300 wpm</span></button>
+      </div>
+
+      <table class="stat-list">
+        <tr><td>Characters</td><td id="charStat">0</td></tr>
+        <tr><td>Characters (no spaces)</td><td id="charNsStat">0</td></tr>
+        <tr><td>Sentences</td><td id="sentStat">0</td></tr>
+        <tr><td>Paragraphs</td><td id="paraStat">0</td></tr>
+        <tr><td>Reading time</td><td id="readTimeStat">0 sec</td></tr>
+        <tr><td>Speaking time</td><td id="speakStat">0 sec</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="article-section">
+  <article class="article">
+    <h2>What this tool counts</h2>
+    <p>As you type or paste, this counter updates six figures in real time: <strong>words</strong>, <strong>characters</strong> (with and without spaces), <strong>sentences</strong>, <strong>paragraphs</strong>, and estimated <strong>reading and speaking time</strong>. Everything happens locally in your browser using JavaScript, so your text is never uploaded, stored, or seen by anyone — safe for drafts, private notes, or confidential work.</p>
+
+    <h2>How reading time is estimated</h2>
+    <p>Reading time is simply your word count divided by a reading speed in words per minute (wpm). Research on adult silent reading of everyday prose puts the average at roughly <strong>200 to 250 wpm</strong>. This tool lets you switch between three speeds so the estimate fits your audience:</p>
+    <ul>
+      <li><strong>Slow (100 wpm)</strong> — dense, technical, or unfamiliar material, or non-native readers.</li>
+      <li><strong>Average (200 wpm)</strong> — typical adult reading a blog post, article, or email.</li>
+      <li><strong>Fast (300 wpm)</strong> — confident readers skimming familiar content.</li>
+    </ul>
+
+    <h2>Reading time vs. speaking time</h2>
+    <p>Reading silently is much faster than reading aloud. A comfortable <strong>speaking pace is around 130 words per minute</strong>, which is why this tool shows speaking time separately — useful for speeches, presentations, voiceovers, and video scripts. As a rule of thumb:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Length</th><th>Reading (200 wpm)</th><th>Speaking (130 wpm)</th></tr></thead>
+        <tbody>
+          <tr><td>250 words</td><td>~1 min</td><td>~2 min</td></tr>
+          <tr><td>500 words</td><td>~2.5 min</td><td>~4 min</td></tr>
+          <tr><td>1,000 words</td><td>~5 min</td><td>~7.5 min</td></tr>
+          <tr><td>2,000 words</td><td>~10 min</td><td>~15 min</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Words or characters — which counts?</h2>
+    <p>It depends on the platform. Essays, articles, and books are measured in <strong>words</strong>; social posts and meta descriptions are measured in <strong>characters</strong>. A few common limits: an SEO meta description is best kept near 150-160 characters, a tweet is 280 characters, and a college essay is usually set in words. This tool shows both so you can hit whichever limit applies.</p>
+
+    <h2>Tips for hitting a target length</h2>
+    <ul>
+      <li><strong>Over the limit?</strong> Cut filler words (very, really, just, actually), merge short sentences, and remove repetition.</li>
+      <li><strong>Under the limit?</strong> Add a concrete example, expand a claim with evidence, or address a counterpoint — padding with filler is obvious to readers.</li>
+      <li><strong>Writing a speech?</strong> Aim for the speaking-time figure, not reading time, and rehearse aloud to check the real pace.</li>
+    </ul>
+
+    <h2>Sources &amp; method</h2>
+    <p class="sources">Word counts split text on whitespace; sentences are counted by terminal punctuation (. ! ?) and paragraphs by line breaks, so unusual formatting can shift the sentence and paragraph totals slightly. Reading-speed ranges (about 200-250 wpm for silent reading, ~130 wpm for speaking) reflect widely reported averages from reading research; individual speed varies with material and reader. Reading and speaking times are estimates for planning, not exact measurements. All processing happens in your browser.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How is reading time calculated?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Reading time is the word count divided by a reading speed in words per minute. This tool uses about 200-250 wpm for average adult silent reading, switchable between slow, average, and fast. A 1,000-word article takes roughly 4-5 minutes at an average pace.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the average reading speed?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Most adults read silently at about 200 to 250 words per minute for everyday prose. Reading aloud is slower (130-150 wpm), and dense or technical material is slower still. Speed-readers can exceed 400 wpm, though comprehension often drops at very high speeds.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does it take to read 1,000 words?<span class="faq-icon">+</span></button>
+        <div class="faq-a">At an average silent reading speed of about 200-250 wpm, 1,000 words takes roughly 4 to 5 minutes. Read aloud, it takes about 7 minutes. Adjust the reading speed in this tool to match your audience.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How many words is a 5-minute speech?<span class="faq-icon">+</span></button>
+        <div class="faq-a">At a comfortable speaking pace of around 130 words per minute, a 5-minute speech is about 650 words. Slower delivery lands nearer 600 words, faster around 750. This tool shows speaking time alongside reading time so you can size a script.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
+    <div class="sidebar-tools">
+      <a class="sidebar-tool" href="grade-calculator.html">
+        <div class="sidebar-tool-icon">📝</div>
+        <div><div class="sidebar-tool-name">Grade Calculator</div><div class="sidebar-tool-desc">Final grade needed &amp; averages</div></div>
+      </a>
+      <a class="sidebar-tool" href="gpa-calculator.html">
+        <div class="sidebar-tool-icon">🎓</div>
+        <div><div class="sidebar-tool-name">GPA Calculator</div><div class="sidebar-tool-desc">Semester &amp; cumulative GPA</div></div>
+      </a>
+      <a class="sidebar-tool" href="date-duration-calculator.html">
+        <div class="sidebar-tool-icon">📅</div>
+        <div><div class="sidebar-tool-name">Date Duration</div><div class="sidebar-tool-desc">Days between dates &amp; deadlines</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+    <strong style="color:#0f0f0e;">For informational purposes only.</strong> Reading and speaking times are estimates based on average speeds and will vary by reader and material. All text is processed in your browser and never uploaded. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 11, 2026.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+let readWpm = 200;
+const SPEAK_WPM = 130;
+
+function setSpeed(wpm) {
+  readWpm = wpm;
+  document.getElementById('spSlow').classList.toggle('active', wpm === 100);
+  document.getElementById('spAvg').classList.toggle('active', wpm === 200);
+  document.getElementById('spFast').classList.toggle('active', wpm === 300);
+  count();
+}
+
+function fmtTime(minutes) {
+  const totalSec = Math.round(minutes * 60);
+  if (totalSec <= 0) return '0 sec';
+  if (totalSec < 60) return totalSec + ' sec';
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return s === 0 ? m + ' min' : m + ' min ' + s + ' sec';
+}
+
+function count() {
+  const text = document.getElementById('editor').value;
+  const trimmed = text.trim();
+
+  const words = trimmed ? trimmed.split(/\s+/).length : 0;
+  const chars = text.length;
+  const charsNs = text.replace(/\s/g, '').length;
+  const sentences = trimmed ? (trimmed.match(/[^.!?]+[.!?]+(\s|$)/g) || (trimmed ? [trimmed] : [])).length : 0;
+  const paragraphs = trimmed ? trimmed.split(/\n+/).filter(function (p) { return p.trim().length > 0; }).length : 0;
+
+  const readMin = words / readWpm;
+  const speakMin = words / SPEAK_WPM;
+
+  document.getElementById('wordStat').textContent = words.toLocaleString();
+  document.getElementById('readStat').textContent = fmtTime(readMin) + ' reading time';
+  document.getElementById('charStat').textContent = chars.toLocaleString();
+  document.getElementById('charNsStat').textContent = charsNs.toLocaleString();
+  document.getElementById('sentStat').textContent = sentences.toLocaleString();
+  document.getElementById('paraStat').textContent = paragraphs.toLocaleString();
+  document.getElementById('readTimeStat').textContent = fmtTime(readMin);
+  document.getElementById('speakStat').textContent = fmtTime(speakMin);
+}
+
+function clearText() {
+  document.getElementById('editor').value = '';
+  count();
+  document.getElementById('editor').focus();
+}
+
+count();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(function (b) {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>
