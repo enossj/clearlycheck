@@ -14,6 +14,14 @@ Currently **31 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Pet 3, 
 - Legacy tools (debt, salary, timezone, bmi, age) DO import from `assets/js/calculators/*.js` and are the only ones covered by Vitest tests.
 - Shared: `assets/css/base.css`, `assets/css/calculator.css`, `assets/js/faq.js`, `assets/js/contact*.js`, `assets/favicon.svg`.
 - Non-tool pages: `index.html` (homepage + tool grid), `about.html`, `contact.html`, `privacy-policy.html`, `terms-of-use.html`, `sitemap.html`, `sitemap.xml`, `robots.txt`, `ads.txt`.
+- **Category hub pages** (6, one per category): `finance-calculators.html`, `health-calculators.html`, `productivity-tools.html`, `utility-tools.html`, `pet-tools.html`, `education-tools.html`. Hub-and-spoke internal linking: each hub lists its category's tool cards (down), links the other 5 hubs + all-tools (mesh); each tool's breadcrumb is **Home › Tools › Category › Tool** linking back to its hub (up); homepage has a "Browse by category" `.cat-hub` row (index→hubs). Hubs are **generated** — never hand-edit them.
+
+## Build scripts (`scripts/`, all `.cjs` — package.json is `type:module`)
+
+- `build-hubs.cjs` — regenerates all 6 hub pages. Pulls tool cards from `index.html`; per-category intro/FAQ copy lives in its `CATS` config. **Re-run after adding a tool or editing a homepage card.**
+- `wire-breadcrumbs.cjs` — inserts the category crumb into every tool page's breadcrumb (visible + `BreadcrumbList` JSON-LD). Idempotent; run after adding a tool (add the new file to its category in the script's `CAT` map first).
+- `optimize-fonts.cjs` — converts Google Fonts `<link>` to async load + strips unused `opsz` axis. Idempotent; run on any new page.
+- `update-sitemap.js` — `lastmod` bumper; `urlMap` is stale/partial, verify manually.
 
 ## Commands
 
@@ -28,9 +36,10 @@ npm test           # vitest run — covers legacy calculator modules only
 Adding or renaming a tool means updating **all** of these together, or the site goes inconsistent:
 
 1. `index.html` — tool grid card (correct category tag) **and** every count reference: stat bar, FAQ list, prose, meta description.
-2. `sitemap.html` — human sitemap entry under the right category.
+2. `sitemap.html` — human sitemap entry under the right category (bump the category `(N)` count too).
 3. `sitemap.xml` — `<url>` block (run `node scripts/update-sitemap.js` note: its `urlMap` is stale/partial — verify manually).
 4. Any "N tools" text anywhere else.
+5. Add the new file to its category in `scripts/wire-breadcrumbs.cjs` (`CAT` map) + `scripts/build-hubs.cjs` (`CATS.tools`), then re-run both, plus `optimize-fonts.cjs`.
 
 Always grep for the old count (e.g. `grep -rn "31 tools\|31 free" *.html`) before/after.
 
