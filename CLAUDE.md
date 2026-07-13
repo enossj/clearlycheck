@@ -21,6 +21,7 @@ Currently **31 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Pet 3, 
 - `build-hubs.cjs` — regenerates all 6 hub pages. Pulls tool cards from `index.html`; per-category intro/FAQ copy lives in its `CATS` config. **Re-run after adding a tool or editing a homepage card.**
 - `wire-breadcrumbs.cjs` — inserts the category crumb into every tool page's breadcrumb (visible + `BreadcrumbList` JSON-LD). Idempotent; run after adding a tool (add the new file to its category in the script's `CAT` map first).
 - `optimize-fonts.cjs` — converts Google Fonts `<link>` to async load + strips unused `opsz` axis. Idempotent; run on any new page.
+- `add-article-schema.cjs` — injects `TechArticle` schema per tool (`datePublished` from git first-commit, `dateModified` from the page's "Last updated" date, `author`→Person `@id`, `publisher`→Org `@id`+logo). Idempotent; run on any new tool. Author entity `@id` `#enos` is defined on `about.html`; Organization `@id` `#organization` on `index.html`.
 - `update-sitemap.js` — `lastmod` bumper; `urlMap` is stale/partial, verify manually.
 
 ## Commands

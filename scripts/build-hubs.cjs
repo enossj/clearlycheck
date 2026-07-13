@@ -15,6 +15,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const SITE = 'https://clearlycheck.com';
 const TODAY = 'July 13, 2026';
+const TODAY_ISO = '2026-07-13';
 
 // --- Pull tool card data from the homepage grid -----------------------------
 function extractCards() {
@@ -174,7 +175,12 @@ function schema(cat, cards) {
     '@context': 'https://schema.org', '@type': 'CollectionPage',
     name: `${cat.h1} — ClearlyCheck`, url: `${SITE}/${cat.slug}.html`,
     description: plain(cat.metaDesc),
+    dateModified: TODAY_ISO,
     isPartOf: { '@type': 'WebSite', name: 'ClearlyCheck', url: SITE },
+    publisher: {
+      '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'ClearlyCheck', url: SITE,
+      logo: { '@type': 'ImageObject', url: `${SITE}/assets/og-image.svg` },
+    },
     mainEntity: { '@type': 'ItemList', itemListElement: items },
   };
   const breadcrumb = {
