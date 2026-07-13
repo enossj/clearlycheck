@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Cost Calculator — Yearly &amp; Lifetime Cost of a Dog or Cat | ClearlyCheck</title>
+<meta name="description" content="Estimate what a dog or cat really costs — startup, monthly, yearly, and lifetime totals. Adjust food, vet, insurance, and grooming to fit your budget. Free, private, no signup.">
+<meta name="keywords" content="pet cost calculator, cost of owning a dog, cost of owning a cat, how much does a dog cost per year, how much does a cat cost, pet budget calculator, lifetime pet cost, dog cost calculator, cat cost calculator">
+<link rel="canonical" href="https://clearlycheck.com/pet-cost-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pet Cost Calculator — Yearly &amp; Lifetime Cost of a Dog or Cat">
+<meta property="og:description" content="Estimate the true cost of a dog or cat: startup, monthly, yearly, and lifetime totals you can adjust to your budget. Free, no signup.">
+<meta property="og:url" content="https://clearlycheck.com/pet-cost-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pet Cost Calculator",
+  "description": "Free pet cost calculator. Estimates the startup, monthly, yearly, and lifetime cost of owning a dog or cat from adjustable line-item expenses.",
+  "url": "https://clearlycheck.com/pet-cost-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to own a dog per year?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For most dogs, ongoing costs run about $1,000 to $2,500 a year once you're past the first year, covering food, routine vet care, preventive medications, grooming, and pet insurance. The first year is higher — often $1,500 to $3,000 — because of one-time startup costs like adoption or purchase, spaying or neutering, initial supplies, and a first round of vaccinations. Large breeds cost more than small ones, mostly through food and medication doses." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a cat cost per year?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A cat typically costs about $700 to $1,500 a year in ongoing expenses — food, litter, routine vet visits, preventives, and insurance — with the first year running higher due to adoption, spay or neuter, microchipping, and starter supplies. Cats are usually cheaper than dogs because they eat less, rarely need professional grooming, and have lower licensing costs, though litter is an added recurring expense." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most expensive part of owning a pet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Over a pet's whole life the two biggest line items are usually food and veterinary care. Routine vet visits are predictable, but unexpected illness or injury can cost hundreds to several thousand dollars at once, which is why many owners either buy pet insurance or set aside an emergency fund. Pet insurance premiums themselves are a meaningful ongoing cost, so weigh the monthly premium against the peace of mind and potential payout." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should I budget for pet emergencies?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A common guideline is to keep an emergency fund of at least $1,000 to $2,000 per pet, or to carry pet insurance that covers accidents and illness. Serious emergencies — a swallowed object, a broken bone, or sudden illness — regularly cost $1,000 to $5,000. Building the fund gradually, or paying an insurance premium you've included in this calculator's monthly costs, keeps a surprise bill from becoming a crisis." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearlycheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://clearlycheck.com/#tools" },
+    { "@type": "ListItem", "position": 3, "name": "Pet Cost Calculator", "item": "https://clearlycheck.com/pet-cost-calculator.html" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0;}
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 24px 32px 28px; }
+
+  .mode-tabs { display: flex; gap: 6px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 5px; margin-bottom: 20px; }
+  .mode-tab { flex: 1; padding: 11px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; text-align: center; }
+  .mode-tab.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); font-weight: 700; }
+
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .field .help { font-size: 12px; color: var(--text-light); margin-top: 6px; line-height: 1.5; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap input, .input-wrap select { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; -webkit-appearance: none; appearance: none; }
+  .input-prefix { padding: 0 2px 0 14px; color: var(--text-light); font-size: 14px; white-space: nowrap; }
+  .input-suffix { padding: 0 14px 0 4px; color: var(--text-light); font-size: 13px; white-space: nowrap; }
+
+  .cost-group { margin-bottom: 22px; }
+  .cost-group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  .cost-group-head h3 { font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); }
+  .cost-group-sub { font-size: 12px; color: var(--text-light); font-weight: 300; }
+  .cost-row { display: grid; grid-template-columns: 1fr 128px; gap: 12px; align-items: center; margin-bottom: 10px; }
+  .cost-row label { font-size: 13.5px; color: var(--text-muted); font-weight: 400; margin: 0; }
+  .cost-row .input-wrap input { height: 42px; font-size: 14px; }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0;}
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-ready { background: var(--accent-light); color: var(--accent); }
+  .results-body { padding: 20px 24px; }
+
+  .verdict-hero { text-align: center; background: var(--accent-light); border-radius: var(--radius-sm); padding: 24px 16px; margin-bottom: 16px; }
+  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
+  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 40px; font-weight: 800; color: var(--text); line-height: 1.1; }
+  .verdict-sub { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+  .tax-table { width: 100%; border-collapse: collapse; }
+  .tax-table td { padding: 11px 0; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+  .tax-table tr:last-child td { border-bottom: none; }
+  .tax-table td:last-child { text-align: right; font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); }
+  .tax-table tr.big td { font-size: 15px; padding-top: 14px; }
+  .tax-table tr.big td:last-child { color: var(--accent); font-size: 16px; }
+
+  /* REFERENCE */
+  .reference-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 20px; }
+  .reference-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); margin-bottom: 28px; }
+  .reference-card h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 8px; }
+  .reference-card > p.ref-intro { font-size: 14.5px; color: var(--text-muted); font-weight: 300; margin-bottom: 20px; line-height: 1.7; }
+  .cost-scroll { overflow-x: auto; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px; }
+  .cost-table th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); }
+  .cost-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .cost-table td.row-name { font-weight: 600; color: var(--text); white-space: nowrap; }
+  .cost-table td.center { text-align: center; }
+
+  /* ARTICLE */
+  .article-section > div { min-width: 0; }
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
+  .table-scroll { overflow-x: auto; margin-bottom: 8px; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0;}
+  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul, .article ol { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .article .sources { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
+  .article table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
+  .article th, .article td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .article th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } .cost-row { grid-template-columns: 1fr 108px; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <span style="color:var(--text-muted);">Pet Cost Calculator</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🐾 Pet Tool</div>
+  <h1>Pet Cost Calculator</h1>
+  <p>See what a dog or cat really costs — startup, monthly, yearly, and over its whole life. Every figure below is editable, so you can swap in your own quotes for food, vet care, insurance, and grooming and get a total that fits your budget.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 13, 2026</div>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Your pet's costs</h2>
+      <p>Pick a species to load typical figures, then adjust any line to match your own quotes.</p>
+    </div>
+    <div class="calc-body">
+
+      <div class="field">
+        <label>Species</label>
+        <div class="mode-tabs">
+          <button class="mode-tab active" id="spDog" onclick="setSpecies('dog')">🐶 Dog</button>
+          <button class="mode-tab" id="spCat" onclick="setSpecies('cat')">🐱 Cat</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="currency">Currency</label>
+        <div class="input-wrap">
+          <select id="currency" onchange="calc()">
+            <option value="$" selected>$ — US / CA / AU dollar</option>
+            <option value="£">£ — British pound</option>
+            <option value="€">€ — Euro</option>
+            <option value="₹">₹ — Indian rupee</option>
+            <option value="R$">R$ — Brazilian real</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cost-group">
+        <div class="cost-group-head">
+          <h3>Startup</h3>
+          <span class="cost-group-sub">one-time</span>
+        </div>
+        <div id="startupFields"></div>
+      </div>
+
+      <div class="cost-group">
+        <div class="cost-group-head">
+          <h3>Monthly</h3>
+          <span class="cost-group-sub">every month</span>
+        </div>
+        <div id="monthlyFields"></div>
+      </div>
+
+      <div class="cost-group">
+        <div class="cost-group-head">
+          <h3>Yearly</h3>
+          <span class="cost-group-sub">once a year</span>
+        </div>
+        <div id="yearlyFields"></div>
+      </div>
+
+      <div class="field">
+        <label for="lifespan">Expected lifespan (for lifetime total)</label>
+        <div class="input-wrap"><input type="number" id="lifespan" value="12" min="1" max="30" step="1" oninput="calc()"><span class="input-suffix">years</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Cost summary</h3>
+      <span class="results-status status-ready" id="statusBadge">Ready</span>
+    </div>
+    <div class="results-body" id="resultsBody"></div>
+  </div>
+
+</div>
+</main>
+
+<div class="reference-section">
+  <div class="reference-card">
+    <h2>Typical cost ranges (United States)</h2>
+    <p class="ref-intro">Rough guide to what owners actually spend, drawn from national pet-ownership surveys. Your numbers will vary with location, breed, and lifestyle — use these to sanity-check the totals above, not as a quote.</p>
+    <div class="cost-scroll">
+      <table class="cost-table">
+        <thead>
+          <tr><th>Cost category</th><th>Dog / year</th><th>Cat / year</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="row-name">Food</td><td>$250 – $700</td><td>$200 – $500</td><td>Larger animals and premium diets cost more.</td></tr>
+          <tr><td class="row-name">Routine vet &amp; vaccines</td><td>$200 – $400</td><td>$150 – $350</td><td>Annual checkup, vaccines, dental.</td></tr>
+          <tr><td class="row-name">Preventives (flea/tick/worm)</td><td>$120 – $300</td><td>$100 – $200</td><td>Monthly or quarterly treatments.</td></tr>
+          <tr><td class="row-name">Pet insurance</td><td>$300 – $700</td><td>$150 – $400</td><td>Optional; replaces an emergency fund for many.</td></tr>
+          <tr><td class="row-name">Grooming</td><td>$0 – $600</td><td>$0 – $150</td><td>Breed-dependent; many cats need none.</td></tr>
+          <tr><td class="row-name">Litter (cats)</td><td>—</td><td>$150 – $350</td><td>Ongoing recurring cost for cats.</td></tr>
+          <tr><td class="row-name">Toys, treats &amp; misc</td><td>$100 – $300</td><td>$80 – $200</td><td>Beds, toys, treats, replacements.</td></tr>
+          <tr><td class="row-name"><strong>Typical ongoing total</strong></td><td><strong>$1,000 – $2,500</strong></td><td><strong>$700 – $1,500</strong></td><td>Excludes the higher first year.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="article-section">
+  <article class="article">
+    <h2>What it really costs to own a pet</h2>
+    <p>The adoption fee is the smallest part of owning a pet. The real cost is spread across years of food, vet visits, preventive medicine, grooming, insurance, and the occasional emergency. This calculator breaks that spending into three buckets — <strong>startup</strong> costs you pay once, <strong>monthly</strong> costs that recur every month, and <strong>yearly</strong> costs like the annual checkup — then rolls them into a first-year total, an ongoing yearly total, and a lifetime estimate.</p>
+
+    <h2>Startup vs ongoing costs</h2>
+    <p>Startup costs — adoption or purchase, spaying or neutering, a microchip, and the first round of supplies like a bed, crate, bowls, and a leash — land in the first few weeks and are easy to underestimate. Ongoing costs are quieter but far larger over time: at roughly $1,000–$2,500 a year for a dog, a pet you keep for a decade or more will cost many times its startup price. That's why the <strong>lifetime total</strong> is the most honest number to plan around.</p>
+
+    <h2>The biggest ongoing expenses</h2>
+    <p>For most owners, food and veterinary care dominate. Food scales with the animal's size, so a large-breed dog can cost several times what a cat does. Veterinary care splits into two parts: predictable routine care (checkups, vaccines, dental cleaning) and unpredictable emergencies. A single accident or illness commonly runs <strong>$1,000 to $5,000</strong>, which is why pet insurance or a dedicated emergency fund belongs in any realistic budget. Insurance premiums are themselves a recurring cost — include them in the monthly section if you carry a policy.</p>
+
+    <h2>How to budget and save</h2>
+    <ul>
+      <li><strong>Fund emergencies up front.</strong> Keep $1,000–$2,000 per pet set aside, or carry accident-and-illness insurance so a surprise bill doesn't derail you.</li>
+      <li><strong>Buy preventives, not cures.</strong> Flea, tick, and heartworm prevention is far cheaper than treating the diseases they cause.</li>
+      <li><strong>Keep up with dental and weight.</strong> Routine dental care and a healthy weight prevent expensive chronic problems later.</li>
+      <li><strong>Compare food by calories, not bag price.</strong> A denser food that costs more per bag can be cheaper per meal — our <a href="pet-food-calculator.html">pet food calculator</a> works out the daily portion.</li>
+      <li><strong>Adopt where you can.</strong> Shelter adoption fees often include the spay/neuter, first vaccines, and microchip that would otherwise be separate startup costs.</li>
+    </ul>
+
+    <h2>Sources &amp; method</h2>
+    <p class="sources">The default figures and typical ranges are drawn from national pet-ownership cost estimates published by the <strong>ASPCA</strong>, the <strong>American Pet Products Association (APPA)</strong> annual pet-owner survey, and lifetime-of-care estimates from pet-care providers. All amounts are editable and expressed in your chosen currency symbol without conversion — the tool does arithmetic on the numbers you enter. First-year total = startup + (12 × monthly) + yearly. Ongoing yearly = (12 × monthly) + yearly. Lifetime = startup + ongoing yearly × lifespan. These are planning estimates, not financial advice; real costs vary widely by location, breed, and health.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How much does it cost to own a dog per year?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Ongoing costs run about $1,000–$2,500 a year after the first year — food, routine vet care, preventives, grooming, and insurance. The first year is higher ($1,500–$3,000) because of one-time startup costs like adoption, spay/neuter, supplies, and initial vaccines. Large breeds cost more, mainly through food and medication doses.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much does a cat cost per year?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Around $700–$1,500 a year ongoing — food, litter, routine vet visits, preventives, and insurance — with a higher first year for adoption, spay/neuter, microchip, and starter supplies. Cats are usually cheaper than dogs because they eat less and rarely need professional grooming, though litter adds a recurring cost.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the most expensive part of owning a pet?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Over a lifetime, food and veterinary care are usually the two biggest items. Routine vet care is predictable, but an unexpected illness or injury can cost hundreds to several thousand dollars at once — which is why many owners carry pet insurance or keep an emergency fund.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much should I budget for pet emergencies?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Keep at least $1,000–$2,000 per pet set aside, or carry insurance covering accidents and illness. Serious emergencies regularly cost $1,000–$5,000. Building the fund gradually, or paying an insurance premium included in your monthly costs, keeps a surprise bill from becoming a crisis.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
+    <div class="sidebar-tools">
+      <a class="sidebar-tool" href="pet-food-calculator.html">
+        <div class="sidebar-tool-icon">🍽️</div>
+        <div><div class="sidebar-tool-name">Pet Food Calculator</div><div class="sidebar-tool-desc">Daily calories &amp; how much to feed</div></div>
+      </a>
+      <a class="sidebar-tool" href="pet-age-calculator.html">
+        <div class="sidebar-tool-icon">🐾</div>
+        <div><div class="sidebar-tool-name">Pet Age Calculator</div><div class="sidebar-tool-desc">Dog &amp; cat years to human years</div></div>
+      </a>
+      <a class="sidebar-tool" href="can-i-afford-this.html">
+        <div class="sidebar-tool-icon">💸</div>
+        <div><div class="sidebar-tool-name">Can I Afford This?</div><div class="sidebar-tool-desc">Income-based affordability check</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+    <strong style="color:#0f0f0e;">For informational purposes only.</strong> Cost figures are editable estimates based on national averages and vary widely with location, breed, and your pet's health. This is a budgeting aid, not financial advice. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 13, 2026.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+let species = 'dog';
+
+const FIELDS = {
+  startup: [
+    ['adopt', 'Adoption / purchase'],
+    ['supplies', 'Initial supplies (bed, bowls, crate)'],
+    ['fix', 'Spay/neuter &amp; microchip'],
+    ['firstvet', 'First vet visit &amp; vaccines']
+  ],
+  monthly: [
+    ['food', 'Food'],
+    ['treats', 'Treats &amp; chews'],
+    ['litter', 'Litter'],
+    ['groom', 'Grooming'],
+    ['insure', 'Pet insurance'],
+    ['prevent', 'Flea, tick &amp; worm prevention'],
+    ['toys', 'Toys &amp; misc']
+  ],
+  yearly: [
+    ['vet', 'Routine vet &amp; annual vaccines'],
+    ['license', 'License &amp; registration']
+  ]
+};
+
+const DEFAULTS = {
+  dog: {
+    adopt: 150, supplies: 250, fix: 300, firstvet: 150,
+    food: 55, treats: 15, litter: 0, groom: 40, insure: 45, prevent: 20, toys: 15,
+    vet: 250, license: 20, lifespan: 12
+  },
+  cat: {
+    adopt: 100, supplies: 200, fix: 250, firstvet: 130,
+    food: 35, treats: 10, litter: 25, groom: 10, insure: 30, prevent: 15, toys: 10,
+    vet: 180, license: 10, lifespan: 15
+  }
+};
+
+function sym() { return document.getElementById('currency').value; }
+
+function fmt(n) {
+  return sym() + Math.round(n).toLocaleString('en-US');
+}
+
+function rowHtml(id, label, value) {
+  return '<div class="cost-row">' +
+    '<label for="c_' + id + '">' + label + '</label>' +
+    '<div class="input-wrap"><span class="input-prefix cur-sym">' + sym() + '</span>' +
+    '<input type="number" id="c_' + id + '" value="' + value + '" min="0" step="1" inputmode="decimal" oninput="calc()"></div>' +
+  '</div>';
+}
+
+function buildFields() {
+  const d = DEFAULTS[species];
+  const groups = ['startup', 'monthly', 'yearly'];
+  const containers = { startup: 'startupFields', monthly: 'monthlyFields', yearly: 'yearlyFields' };
+  groups.forEach(function (g) {
+    document.getElementById(containers[g]).innerHTML =
+      FIELDS[g].map(function (f) { return rowHtml(f[0], f[1], d[f[0]]); }).join('');
+  });
+  document.getElementById('lifespan').value = d.lifespan;
+}
+
+function val(id) {
+  const el = document.getElementById('c_' + id);
+  if (!el) return 0;
+  const n = parseFloat(el.value);
+  return isNaN(n) || n < 0 ? 0 : n;
+}
+
+function groupSum(g) {
+  return FIELDS[g].reduce(function (t, f) { return t + val(f[0]); }, 0);
+}
+
+function setSpecies(s) {
+  species = s;
+  document.getElementById('spDog').classList.toggle('active', s === 'dog');
+  document.getElementById('spCat').classList.toggle('active', s === 'cat');
+  buildFields();
+  calc();
+}
+
+function calc() {
+  // keep currency symbols in the input prefixes in sync
+  const s = sym();
+  document.querySelectorAll('.cur-sym').forEach(function (el) { el.textContent = s; });
+
+  const startup = groupSum('startup');
+  const monthly = groupSum('monthly');
+  const yearly = groupSum('yearly');
+
+  let lifespan = parseInt(document.getElementById('lifespan').value, 10);
+  if (isNaN(lifespan) || lifespan < 1) lifespan = 1;
+  if (lifespan > 30) lifespan = 30;
+
+  const annualRecurring = monthly * 12 + yearly;
+  const firstYear = startup + annualRecurring;
+  const avgMonthYr1 = firstYear / 12;
+  const lifetime = startup + annualRecurring * lifespan;
+
+  document.getElementById('resultsBody').innerHTML =
+    '<div class="verdict-hero">' +
+      '<div class="verdict-label">First-year total</div>' +
+      '<div class="verdict-value">' + fmt(firstYear) + '</div>' +
+      '<div class="verdict-sub">about ' + fmt(avgMonthYr1) + ' / month in year one</div>' +
+    '</div>' +
+    '<table class="tax-table">' +
+      '<tr><td>Startup (one-time)</td><td>' + fmt(startup) + '</td></tr>' +
+      '<tr><td>Monthly costs</td><td>' + fmt(monthly) + ' / mo</td></tr>' +
+      '<tr><td>Monthly × 12</td><td>' + fmt(monthly * 12) + '</td></tr>' +
+      '<tr><td>Yearly costs</td><td>' + fmt(yearly) + '</td></tr>' +
+      '<tr class="big"><td>Ongoing per year</td><td>' + fmt(annualRecurring) + '</td></tr>' +
+      '<tr class="big"><td>Lifetime (' + lifespan + ' yrs)</td><td>' + fmt(lifetime) + '</td></tr>' +
+    '</table>';
+}
+
+buildFields();
+calc();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(function (b) {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>
