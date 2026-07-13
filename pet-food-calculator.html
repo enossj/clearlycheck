@@ -163,6 +163,19 @@
   .quick-val { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); }
   .quick-sub { font-size: 11px; color: var(--text-light); margin-top: 2px; }
 
+  .food-scroll { overflow-x: auto; }
+  .food-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px; }
+  .food-table th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); }
+  .food-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .food-table td.food-name { font-weight: 600; color: var(--text); white-space: nowrap; }
+  .food-table td.center { text-align: center; }
+  .food-table .grp td { background: var(--bg); font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); }
+  .yes { color: var(--accent); font-weight: 700; }
+  .some { color: #b7770d; font-weight: 700; }
+  .warn-box { background: #fbebe9; border: 1px solid rgba(176,54,44,0.25); border-radius: var(--radius-sm); padding: 16px 18px; margin-top: 20px; }
+  .warn-box strong { color: #8a1c12; }
+  .warn-box p { font-size: 13.5px; color: #7a3a33; line-height: 1.7; margin: 0; }
+
   /* ARTICLE */
   .article-section > div { min-width: 0; }
   .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
@@ -304,6 +317,40 @@
     <h2 id="chartTitle">Daily calories by weight</h2>
     <p class="ref-intro" id="chartIntro">Approximate maintenance calories for a spayed/neutered adult.</p>
     <div class="quick-grid" id="quickGrid"></div>
+  </div>
+
+  <div class="reference-card">
+    <h2>Safe treat calories (dog &amp; cat)</h2>
+    <p class="ref-intro">Healthy, vet-approved treats and their calories, so you can stay inside the 10% treat budget above. Serve everything <strong>plain</strong> — no salt, butter, oil, onion, or garlic — remove any seeds, pits, cores, skins, and bones, and introduce new foods in small amounts. Cats are meat-eaters, so fruits and veg are optional nibbles for them, while lean meats, fish, and egg suit both.</p>
+    <div class="food-scroll">
+      <table class="food-table">
+        <thead>
+          <tr><th>Food (plain)</th><th>Calories / 100 g</th><th>Small treat</th><th class="center">Dog</th><th class="center">Cat</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="6">Lean meat, fish &amp; egg — good for both</td></tr>
+          <tr><td class="food-name">Cooked chicken breast</td><td>~165 kcal</td><td>~17 kcal (10 g cube)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="yes">✓</span></td><td>Boneless, skinless, unseasoned.</td></tr>
+          <tr><td class="food-name">Cooked turkey</td><td>~135 kcal</td><td>~14 kcal (10 g)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="yes">✓</span></td><td>Plain, no skin, no bones.</td></tr>
+          <tr><td class="food-name">Cooked salmon</td><td>~206 kcal</td><td>~15 kcal (1 tsp)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="yes">✓</span></td><td>Fully cooked, deboned; never raw.</td></tr>
+          <tr><td class="food-name">Cooked egg</td><td>~155 kcal</td><td>~36 kcal (½ egg)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="yes">✓</span></td><td>Scrambled or boiled, no butter/salt.</td></tr>
+          <tr class="grp"><td colspan="6">Vegetables — great for dogs, optional for cats</td></tr>
+          <tr><td class="food-name">Carrot</td><td>~41 kcal</td><td>~4 kcal (baby carrot)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Raw or cooked; good crunchy chew.</td></tr>
+          <tr><td class="food-name">Green beans</td><td>~31 kcal</td><td>~2 kcal (1 bean)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Plain, no salt; filling and low-cal.</td></tr>
+          <tr><td class="food-name">Pumpkin (plain)</td><td>~34 kcal</td><td>~5 kcal (1 tbsp)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="yes">✓</span></td><td>Canned pure pumpkin, not pie filling.</td></tr>
+          <tr><td class="food-name">Cucumber</td><td>~15 kcal</td><td>~1 kcal (1 slice)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Hydrating, very low calorie.</td></tr>
+          <tr><td class="food-name">Sweet potato (cooked)</td><td>~90 kcal</td><td>~9 kcal (10 g cube)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Cooked, plain; never raw.</td></tr>
+          <tr><td class="food-name">Peas</td><td>~81 kcal</td><td>~2 kcal (10 peas)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Fresh or frozen, not canned/salted.</td></tr>
+          <tr class="grp"><td colspan="6">Fruit — dog-friendly, tiny amounts for cats</td></tr>
+          <tr><td class="food-name">Apple (no seeds)</td><td>~52 kcal</td><td>~10 kcal (1 slice)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Remove core and seeds (seeds are toxic).</td></tr>
+          <tr><td class="food-name">Blueberries</td><td>~57 kcal</td><td>~1 kcal (1 berry)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Antioxidant-rich; great training treat.</td></tr>
+          <tr><td class="food-name">Banana</td><td>~89 kcal</td><td>~9 kcal (1 cm slice)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>High in sugar — small amounts only.</td></tr>
+          <tr><td class="food-name">Watermelon (no seeds)</td><td>~30 kcal</td><td>~5 kcal (small cube)</td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="some">~</span></td><td>Remove rind and seeds; hydrating.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn-box">
+      <p><strong>Never feed these — toxic to dogs and cats:</strong> chocolate, xylitol (in sugar-free gum, candy, and some peanut butters), grapes and raisins, onions, garlic, chives and leeks, macadamia nuts, avocado, alcohol, caffeine (coffee, tea, energy drinks), raw bread dough, and cooked bones. If your pet eats any of these, contact your vet or a pet poison helpline right away.</p>
+    </div>
   </div>
 </div>
 
@@ -482,6 +529,7 @@ function calculate() {
       '<tr><td>Resting need (RER)</td><td>' + Math.round(rer).toLocaleString() + ' kcal</td></tr>' +
       '<tr><td>Life-stage factor</td><td>' + factor.toFixed(1) + '× RER</td></tr>' +
       '<tr><td>Daily calories</td><td>' + Math.round(mer).toLocaleString() + ' kcal</td></tr>' +
+      '<tr><td>10% treat budget</td><td>~' + Math.round(mer * 0.1).toLocaleString() + ' kcal</td></tr>' +
     '</table>';
 
   if (!isNaN(density) && density > 0) {
