@@ -6,7 +6,7 @@ Guidance for Claude Code when working in this repo.
 
 Static site of free browser-only calculators/tools. **No backend, no build step for deploy** — plain HTML/CSS/JS served as-is. Live at [clearlycheck.com](https://clearlycheck.com). Repo: `github.com/enossj/clearlycheck`. Default branch: `main` (deploys directly — treat `main` as production).
 
-Currently **27 tools**. AdSense context: site was rejected once for "low value content"; Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
+Currently **31 tools** (Finance 11, Productivity 5, Health, Pet 3, Other/Utility, Education). AdSense context: site was rejected once for "low value content"; Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
 
 ## Stack & layout
 
@@ -32,7 +32,7 @@ Adding or renaming a tool means updating **all** of these together, or the site 
 3. `sitemap.xml` — `<url>` block (run `node scripts/update-sitemap.js` note: its `urlMap` is stale/partial — verify manually).
 4. Any "N tools" text anywhere else.
 
-Always grep for the old count (e.g. `grep -rn "27 tools\|27 free" *.html`) before/after.
+Always grep for the old count (e.g. `grep -rn "31 tools\|31 free" *.html`) before/after.
 
 ## Tool page anatomy (copy an existing recent page, e.g. `pet-food-calculator.html`)
 
