@@ -6,7 +6,7 @@ Guidance for Claude Code when working in this repo.
 
 Static site of free browser-only calculators/tools. **No backend, no build step for deploy** — plain HTML/CSS/JS served as-is. Live at [clearlycheck.com](https://clearlycheck.com). Repo: `github.com/enossj/clearlycheck`. Default branch: `main` (deploys directly — treat `main` as production).
 
-Currently **31 tools** (Finance 11, Productivity 5, Health, Pet 3, Other/Utility, Education). AdSense context: site was rejected once for "low value content"; Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
+Currently **31 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Pet 3, Education 2). AdSense context: site was rejected once for "low value content"; Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
 
 ## Stack & layout
 
@@ -48,7 +48,7 @@ Every tool page must have:
 
 ## Categories
 
-Finance · Health · Productivity · Other/Utility · Pet. (Bra-size lives under Other/Utility, not Health.) Known cosmetic nit: homepage grid tags vs sitemap categories differ slightly for some Other/Utility items — cosmetic only.
+Finance · Health · Productivity · Utility · Pet · Education. Six categories, used **identically** in the homepage grid tags (`tag-<category>`) and sitemap.html sections — keep them in sync when adding/moving a tool. Utility is the catch-all (age, password, percentage, unit, bra-size, shoe-size); there is no separate "Other" bucket. Bra-size lives under Utility, not Health.
 
 ## Conventions
 
