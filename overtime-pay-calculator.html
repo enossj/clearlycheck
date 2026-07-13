@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overtime Pay Calculator — Time and a Half &amp; Double Time | ClearlyCheck</title>
+<meta name="description" content="Calculate your overtime pay in seconds. Enter your hourly rate and hours worked to see regular pay, time-and-a-half overtime, gross total, and effective hourly rate. Free, private, no signup.">
+<meta name="keywords" content="overtime calculator, overtime pay calculator, time and a half calculator, time and a half, double time calculator, how much is my overtime, overtime pay, FLSA overtime calculator, hourly overtime">
+<link rel="canonical" href="https://clearlycheck.com/overtime-pay-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Overtime Pay Calculator — Time and a Half &amp; Double Time">
+<meta property="og:description" content="Work out your overtime pay: regular pay, time-and-a-half, gross total, and blended hourly rate. Free, no signup.">
+<meta property="og:url" content="https://clearlycheck.com/overtime-pay-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Overtime Pay Calculator",
+  "description": "Free overtime pay calculator. Splits weekly hours into regular and overtime, applies a time-and-a-half (or custom) multiplier, and shows gross pay, overtime premium, and effective hourly rate.",
+  "url": "https://clearlycheck.com/overtime-pay-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate overtime pay?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Under the US federal rule, any hours over 40 in a workweek are paid at 1.5 times your regular hourly rate. Multiply your normal rate by 1.5 to get the overtime rate, multiply that by the number of overtime hours, and add it to your regular pay for the first 40 hours. For example, at $20 an hour working 47 hours: 40 hours × $20 = $800 regular, plus 7 hours × $30 = $210 overtime, for $1,010 gross that week." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is time and a half?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Time and a half means 1.5 times your normal hourly rate — the standard overtime rate required by the US Fair Labor Standards Act for non-exempt employees working more than 40 hours in a week. If you earn $18 an hour, time and a half is $27 an hour. Some employers pay double time (2×) for holidays or hours beyond a second threshold, but that's a policy or state rule, not the federal minimum." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is overtime taxed more than regular pay?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — overtime is taxed at exactly the same rates as the rest of your income. The confusion comes from paycheck withholding: a larger paycheck can push that single check into a higher withholding bracket for the pay period, so more tax is held back. But your actual tax is based on your total annual income, and any over-withholding comes back as a refund. Each overtime dollar is not taxed at a special higher rate." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is entitled to overtime pay?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most hourly (non-exempt) employees in the US are entitled to overtime after 40 hours in a workweek. Certain salaried workers in executive, administrative, professional, outside-sales, and some computer roles are 'exempt' and are not owed overtime if they meet salary and duties tests. Rules also vary by state — for example, California requires daily overtime after 8 hours. Check your state's labor department if you're unsure." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearlycheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://clearlycheck.com/#tools" },
+    { "@type": "ListItem", "position": 3, "name": "Overtime Pay Calculator", "item": "https://clearlycheck.com/overtime-pay-calculator.html" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0;}
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 24px 32px 28px; }
+
+  .mode-tabs { display: flex; gap: 6px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 5px; margin-bottom: 20px; }
+  .mode-tab { flex: 1; padding: 11px 10px; font-family: 'DM Sans', sans-serif; font-size: 13.5px; font-weight: 500; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; text-align: center; }
+  .mode-tab.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); font-weight: 700; }
+
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .field .help { font-size: 12px; color: var(--text-light); margin-top: 6px; line-height: 1.5; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap input, .input-wrap select { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; -webkit-appearance: none; appearance: none; }
+  .input-prefix { padding: 0 2px 0 14px; color: var(--text-light); font-size: 14px; white-space: nowrap; }
+  .input-suffix { padding: 0 14px 0 4px; color: var(--text-light); font-size: 13px; white-space: nowrap; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .mult-row { display: flex; gap: 8px; align-items: center; }
+  .mult-row .input-wrap { flex: 1; }
+  .mult-quick { display: flex; gap: 6px; }
+  .mult-btn { border: 1.5px solid var(--border); background: var(--bg); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: var(--text-muted); cursor: pointer; border-radius: var(--radius-sm); padding: 0 12px; height: 46px; transition: all 0.15s; white-space: nowrap; }
+  .mult-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent-dark); }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0;}
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-ready { background: var(--accent-light); color: var(--accent); }
+  .status-waiting { background: var(--bg); color: var(--text-light); }
+  .results-body { padding: 20px 24px; }
+  .empty-state { text-align: center; padding: 32px 12px; }
+  .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.6; }
+  .empty-text { font-size: 13.5px; color: var(--text-light); line-height: 1.6; }
+
+  .verdict-hero { text-align: center; background: var(--accent-light); border-radius: var(--radius-sm); padding: 24px 16px; margin-bottom: 16px; }
+  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
+  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 40px; font-weight: 800; color: var(--text); line-height: 1.1; }
+  .verdict-sub { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+  .tax-table { width: 100%; border-collapse: collapse; }
+  .tax-table td { padding: 11px 0; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+  .tax-table tr:last-child td { border-bottom: none; }
+  .tax-table td:last-child { text-align: right; font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); }
+  .tax-table tr.big td { font-size: 15px; padding-top: 14px; }
+  .tax-table tr.big td:last-child { color: var(--accent); font-size: 16px; }
+  .feed-box { background: var(--bg); border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 14px; text-align: center; }
+  .feed-box .fb-val { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; color: var(--accent); }
+  .feed-box .fb-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  /* REFERENCE */
+  .reference-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 20px; }
+  .reference-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); margin-bottom: 28px; }
+  .reference-card h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 8px; }
+  .reference-card > p.ref-intro { font-size: 14.5px; color: var(--text-muted); font-weight: 300; margin-bottom: 20px; line-height: 1.7; }
+  .cost-scroll { overflow-x: auto; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 520px; }
+  .cost-table th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); }
+  .cost-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .cost-table td.row-name { font-weight: 600; color: var(--text); white-space: nowrap; }
+
+  /* ARTICLE */
+  .article-section > div { min-width: 0; }
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
+  .table-scroll { overflow-x: auto; margin-bottom: 8px; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0;}
+  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul, .article ol { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .article .sources { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
+  .article table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
+  .article th, .article td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .article th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .article code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <span style="color:var(--text-muted);">Overtime Pay Calculator</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">💰 Finance Tool</div>
+  <h1>Overtime Pay Calculator</h1>
+  <p>Enter your hourly rate and the hours you worked to see exactly what your paycheck should be — regular pay, time-and-a-half overtime, gross total, and your real blended hourly rate. Adjust the multiplier and threshold to match your job or state.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 13, 2026</div>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Your hours &amp; rate</h2>
+      <p>Defaults follow the US federal rule: over 40 hours a week at 1.5× pay.</p>
+    </div>
+    <div class="calc-body">
+
+      <div class="field">
+        <label for="currency">Currency</label>
+        <div class="input-wrap">
+          <select id="currency" onchange="calc()">
+            <option value="$" selected>$ — US / CA / AU dollar</option>
+            <option value="£">£ — British pound</option>
+            <option value="€">€ — Euro</option>
+            <option value="₹">₹ — Indian rupee</option>
+            <option value="R$">R$ — Brazilian real</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="rate">Regular hourly rate</label>
+        <div class="input-wrap"><span class="input-prefix cur-sym">$</span><input type="number" id="rate" value="20" min="0" step="0.01" inputmode="decimal" oninput="calc()"><span class="input-suffix">/ hour</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="field">
+          <label for="hours">Total hours worked</label>
+          <div class="input-wrap"><input type="number" id="hours" value="47" min="0" step="0.25" inputmode="decimal" oninput="calc()"><span class="input-suffix">hrs</span></div>
+        </div>
+        <div class="field">
+          <label for="threshold">Overtime after</label>
+          <div class="input-wrap"><input type="number" id="threshold" value="40" min="0" step="1" inputmode="decimal" oninput="calc()"><span class="input-suffix">hrs</span></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="mult">Overtime multiplier</label>
+        <div class="mult-row">
+          <div class="input-wrap"><input type="number" id="mult" value="1.5" min="1" step="0.1" inputmode="decimal" oninput="onMultInput()"><span class="input-suffix">× rate</span></div>
+          <div class="mult-quick">
+            <button type="button" class="mult-btn active" id="m15" onclick="setMult(1.5)">1.5×</button>
+            <button type="button" class="mult-btn" id="m20" onclick="setMult(2)">2×</button>
+          </div>
+        </div>
+        <div class="help">1.5× is time-and-a-half (federal minimum). 2× is double time, used by some employers for holidays.</div>
+      </div>
+
+      <div class="field">
+        <label>Show pay for</label>
+        <div class="mode-tabs">
+          <button class="mode-tab active" data-period="1" onclick="setPeriod(this,1)">Weekly</button>
+          <button class="mode-tab" data-period="2" onclick="setPeriod(this,2)">Biweekly</button>
+          <button class="mode-tab" data-period="4.333333" onclick="setPeriod(this,4.333333)">Monthly</button>
+          <button class="mode-tab" data-period="52" onclick="setPeriod(this,52)">Annual</button>
+        </div>
+        <div class="help">Scales the weekly result assuming the same hours each week.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Your pay</h3>
+      <span class="results-status status-waiting" id="statusBadge">Waiting</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <div class="empty-state">
+        <div class="empty-icon" aria-hidden="true">💵</div>
+        <p class="empty-text">Enter your rate and hours<br>to see your overtime pay.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="reference-section">
+  <div class="reference-card">
+    <h2>Overtime rate by pay rate (time and a half)</h2>
+    <p class="ref-intro">Your overtime rate at 1.5× and 2× for common hourly pay rates. Find the row nearest your rate to sanity-check a paycheck at a glance.</p>
+    <div class="cost-scroll">
+      <table class="cost-table">
+        <thead>
+          <tr><th>Regular rate</th><th>Time and a half (1.5×)</th><th>Double time (2×)</th><th>5 OT hours at 1.5×</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="row-name">$12.00</td><td>$18.00</td><td>$24.00</td><td>$90.00</td></tr>
+          <tr><td class="row-name">$15.00</td><td>$22.50</td><td>$30.00</td><td>$112.50</td></tr>
+          <tr><td class="row-name">$18.00</td><td>$27.00</td><td>$36.00</td><td>$135.00</td></tr>
+          <tr><td class="row-name">$20.00</td><td>$30.00</td><td>$40.00</td><td>$150.00</td></tr>
+          <tr><td class="row-name">$25.00</td><td>$37.50</td><td>$50.00</td><td>$187.50</td></tr>
+          <tr><td class="row-name">$30.00</td><td>$45.00</td><td>$60.00</td><td>$225.00</td></tr>
+          <tr><td class="row-name">$40.00</td><td>$60.00</td><td>$80.00</td><td>$300.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="article-section">
+  <article class="article">
+    <h2>How overtime pay is calculated</h2>
+    <p>Under the US <strong>Fair Labor Standards Act (FLSA)</strong>, non-exempt employees must be paid at least <strong>1.5 times</strong> their regular hourly rate for every hour worked beyond <strong>40 in a workweek</strong>. The math is simple once you split your hours:</p>
+    <ol>
+      <li>Hours up to 40 are paid at your normal rate — that's your <strong>regular pay</strong>.</li>
+      <li>Hours over 40 are paid at your normal rate × 1.5 — that's your <strong>overtime pay</strong>.</li>
+      <li>Add them together for your <strong>gross pay</strong> that week.</li>
+    </ol>
+    <p>Example: at <code>$20/hour</code> working <code>47 hours</code> — 40 × $20 = $800 regular, plus 7 × $30 = $210 overtime, for <strong>$1,010 gross</strong>. This calculator does that split automatically and lets you change the 40-hour threshold or the 1.5× multiplier if your job or state uses different rules.</p>
+
+    <h2>Time and a half vs. double time</h2>
+    <p><strong>Time and a half (1.5×)</strong> is the federal overtime minimum. <strong>Double time (2×)</strong> is not required by federal law — it's an employer policy or a state rule. California, for instance, requires double time after 12 hours in a single day. If your employer pays double time for holidays or long shifts, set the multiplier to 2× above.</p>
+
+    <h2>Is overtime taxed more?</h2>
+    <p>This is the most common overtime myth. <strong>Overtime is taxed at the same rates as your regular pay</strong> — there is no special "overtime tax." What people notice is <em>withholding</em>: a bigger paycheck can look like it belongs to a higher-earning person, so payroll withholds more for that one check. Your actual tax is settled on your total annual income, and any extra withheld comes back at tax time. Every overtime dollar is worth just as much as a regular dollar.</p>
+
+    <h2>Who qualifies for overtime</h2>
+    <p>Most hourly workers are <strong>non-exempt</strong> and owed overtime. Some salaried employees in executive, administrative, professional, outside-sales, and certain computer roles are <strong>exempt</strong> if they meet federal salary and duties tests. States can be stricter than federal law — several require <strong>daily</strong> overtime — so the federal 40-hour rule is a floor, not a ceiling. If your situation is unusual, your state labor department is the authority.</p>
+
+    <h2>Common mistakes to avoid</h2>
+    <ul>
+      <li><strong>Forgetting the workweek is fixed.</strong> Overtime is per workweek, not per pay period — working 30 hours one week and 50 the next still earns 10 hours of overtime, even if the biweekly total is 80.</li>
+      <li><strong>Leaving out shift differentials or bonuses.</strong> Non-discretionary bonuses can raise your "regular rate" for overtime purposes. This tool uses the base rate you enter.</li>
+      <li><strong>Assuming salary means no overtime.</strong> Being paid a salary does not automatically make you exempt — the duties and salary-level tests decide.</li>
+    </ul>
+
+    <h2>Sources &amp; method</h2>
+    <p class="sources">Overtime rules follow the US Department of Labor <strong>Fair Labor Standards Act (FLSA)</strong> standard: 1.5× the regular rate for hours over 40 in a workweek. Calculations here use the rate, hours, threshold, and multiplier you enter: regular pay = (hours up to threshold) × rate; overtime pay = (hours over threshold) × rate × multiplier; effective rate = gross ÷ total hours. Period figures scale the weekly result (biweekly ×2, monthly ×52/12, annual ×52) assuming identical hours each week. This is a general estimate, not legal, tax, or payroll advice — state rules and individual circumstances vary, so confirm with your employer, payroll department, or your state labor office.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How do I calculate overtime pay?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Pay hours over 40 in a week at 1.5× your regular rate. Multiply your rate by 1.5 for the overtime rate, multiply by your overtime hours, and add your regular pay for the first 40 hours. At $20/hour for 47 hours: $800 regular + $210 overtime = $1,010 gross.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is time and a half?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Time and a half is 1.5× your normal hourly rate — the federal overtime rate for non-exempt employees over 40 hours a week. At $18/hour, time and a half is $27/hour. Double time (2×) exists too, but that's an employer or state rule, not the federal minimum.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is overtime taxed more than regular pay?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. Overtime is taxed at the same rates as the rest of your income. A larger paycheck can have more withheld for that period, which looks like a higher tax — but your real tax is based on annual income, and over-withholding is refunded. There's no special overtime tax rate.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Who is entitled to overtime pay?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Most hourly (non-exempt) US employees earn overtime after 40 hours a week. Some salaried executive, administrative, professional, outside-sales, and computer roles are exempt if they meet salary and duties tests. States can be stricter — California requires daily overtime after 8 hours. Check your state if unsure.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
+    <div class="sidebar-tools">
+      <a class="sidebar-tool" href="time-card-calculator.html">
+        <div class="sidebar-tool-icon">🕐</div>
+        <div><div class="sidebar-tool-name">Time Card Calculator</div><div class="sidebar-tool-desc">Add up work hours from clock in/out</div></div>
+      </a>
+      <a class="sidebar-tool" href="salary-converter.html">
+        <div class="sidebar-tool-icon">💵</div>
+        <div><div class="sidebar-tool-name">Salary Converter</div><div class="sidebar-tool-desc">Hourly to annual salary, both ways</div></div>
+      </a>
+      <a class="sidebar-tool" href="income-tax-calculator.html">
+        <div class="sidebar-tool-icon">🧾</div>
+        <div><div class="sidebar-tool-name">Income Tax Calculator</div><div class="sidebar-tool-desc">Estimate take-home after tax</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+    <strong style="color:#0f0f0e;">For informational purposes only.</strong> Overtime results are estimates based on the rate, hours, and rules you enter. State overtime laws and exemptions vary, and this is not legal, tax, or payroll advice — confirm your pay with your employer or state labor office. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 13, 2026.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+let periodMult = 1;
+let periodLabel = 'week';
+
+function sym() { return document.getElementById('currency').value; }
+function money(n) { return sym() + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function num(id) { const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+
+function setMult(m) {
+  document.getElementById('mult').value = m;
+  syncMultButtons();
+  calc();
+}
+function onMultInput() { syncMultButtons(); calc(); }
+function syncMultButtons() {
+  const m = num('mult');
+  document.getElementById('m15').classList.toggle('active', Math.abs(m - 1.5) < 1e-9);
+  document.getElementById('m20').classList.toggle('active', Math.abs(m - 2) < 1e-9);
+}
+
+const PERIOD_LABELS = { '1': 'week', '2': '2 weeks', '4.333333': 'month', '52': 'year' };
+function setPeriod(btn, mult) {
+  periodMult = mult;
+  periodLabel = PERIOD_LABELS[String(mult)] || 'week';
+  document.querySelectorAll('.mode-tab').forEach(function (b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  calc();
+}
+
+function calc() {
+  document.querySelectorAll('.cur-sym').forEach(function (el) { el.textContent = sym(); });
+
+  const rate = num('rate');
+  const hours = num('hours');
+  let threshold = num('threshold');
+  let mult = num('mult');
+  const badge = document.getElementById('statusBadge');
+
+  if (rate <= 0 || hours <= 0) {
+    badge.textContent = 'Waiting';
+    badge.className = 'results-status status-waiting';
+    document.getElementById('resultsBody').innerHTML =
+      '<div class="empty-state"><div class="empty-icon" aria-hidden="true">💵</div><p class="empty-text">Enter your rate and hours<br>to see your overtime pay.</p></div>';
+    return;
+  }
+  if (threshold < 0) threshold = 0;
+  if (mult < 1) mult = 1;
+
+  const otHours = Math.max(0, hours - threshold);
+  const regHours = hours - otHours;
+  const otRate = rate * mult;
+  const regPay = regHours * rate;
+  const otPay = otHours * otRate;
+  const weekly = regPay + otPay;
+  const straightWeekly = hours * rate;          // if every hour were paid straight
+  const premium = weekly - straightWeekly;       // extra earned from overtime
+  const effRate = weekly / hours;
+
+  const gross = weekly * periodMult;
+  const regPeriod = regPay * periodMult;
+  const otPeriod = otPay * periodMult;
+  const premiumPeriod = premium * periodMult;
+
+  badge.textContent = 'Ready';
+  badge.className = 'results-status status-ready';
+
+  let html =
+    '<div class="verdict-hero">' +
+      '<div class="verdict-label">Gross pay / ' + periodLabel + '</div>' +
+      '<div class="verdict-value">' + money(gross) + '</div>' +
+      '<div class="verdict-sub">' + fmtHrs(regHours) + ' reg + ' + fmtHrs(otHours) + ' OT at ' + mult.toFixed(2).replace(/\.00$/, '') + '×</div>' +
+    '</div>' +
+    '<table class="tax-table">' +
+      '<tr><td>Regular pay (' + fmtHrs(regHours) + ' × ' + money(rate) + ')</td><td>' + money(regPeriod) + '</td></tr>' +
+      '<tr><td>Overtime pay (' + fmtHrs(otHours) + ' × ' + money(otRate) + ')</td><td>' + money(otPeriod) + '</td></tr>' +
+      '<tr class="big"><td>Gross pay</td><td>' + money(gross) + '</td></tr>' +
+    '</table>' +
+    '<div class="feed-box">' +
+      '<div class="fb-val">' + money(effRate) + ' / hour</div>' +
+      '<div class="fb-sub">effective (blended) hourly rate</div>' +
+    '</div>';
+
+  if (otHours > 0) {
+    html += '<div class="feed-box" style="margin-top:10px;">' +
+      '<div class="fb-val">+' + money(premiumPeriod) + '</div>' +
+      '<div class="fb-sub">overtime premium — extra vs. all-straight-time pay</div>' +
+    '</div>';
+  }
+
+  document.getElementById('resultsBody').innerHTML = html;
+}
+
+function fmtHrs(h) {
+  const r = Math.round(h * 100) / 100;
+  return (Number.isInteger(r) ? r.toString() : r.toString()) + ' hr' + (r === 1 ? '' : 's');
+}
+
+syncMultButtons();
+calc();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(function (b) {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>
