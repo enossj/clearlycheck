@@ -137,10 +137,10 @@
   :root {
     --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
     --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
-    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: var(--accent-hover);
+    --blue: #1a4fa0; --blue-light: var(--tag-finance);
     --yellow: #b7770d; --yellow-light: #fef9ec;
-    --red: #b0362c; --red-light: #fbebe9;
+    --red: #b0362c; --red-light: var(--tag-safety);
     --radius: 16px; --radius-sm: 10px;
     --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
     --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
@@ -273,7 +273,7 @@
 
   .disclaimer-bar { background: #f0f0ef; border-top: 1px solid rgba(15,15,14,0.08); border-bottom: 1px solid rgba(15,15,14,0.08); padding: 16px 24px; margin-bottom: 40px; }
   .disclaimer-bar .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; gap: 12px; }
-  .disclaimer-bar p { font-size: 12px; color: #6b6a66; line-height: 1.6; margin: 0; }
+  .disclaimer-bar p { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
   footer { border-top: 1px solid var(--border); padding: 32px 24px; }
   .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
@@ -424,7 +424,7 @@
 <div class="disclaimer-bar">
   <div class="inner">
     <span style="font-size:16px;flex-shrink:0;">🏡</span>
-    <p><strong style="color:#0f0f0e;">This is an estimate, not a loan offer.</strong> Actual rates, taxes, insurance costs, and lender fees vary. This tool doesn't include closing costs or every fee a real mortgage may carry. Speak with a licensed lender for an accurate quote.</p>
+    <p><strong style="color:var(--text);">This is an estimate, not a loan offer.</strong> Actual rates, taxes, insurance costs, and lender fees vary. This tool doesn't include closing costs or every fee a real mortgage may carry. Speak with a licensed lender for an accurate quote.</p>
   </div>
 </div>
 

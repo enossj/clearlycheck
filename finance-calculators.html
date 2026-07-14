@@ -184,7 +184,7 @@
   :root {
     --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
     --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: var(--accent-hover);
     --tag-finance: #e8f0fe; --tag-finance-text: #1a4fa0;
     --tag-utility: #eceff1; --tag-utility-text: #455a64;
     --tag-health: #e6f4ea; --tag-health-text: #137333;
@@ -289,7 +289,7 @@
   <div class="tools-grid">
       <a class="tool-card" href="debt-free-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f5ef;">💸</div>
+          <div class="tool-icon" style="background:var(--accent-light);">💸</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">When Will I Be Debt Free?</div>
@@ -298,7 +298,7 @@
       </a>
       <a class="tool-card" href="net-worth-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f5ef;">💰</div>
+          <div class="tool-icon" style="background:var(--accent-light);">💰</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Net Worth Calculator</div>
@@ -307,7 +307,7 @@
       </a>
       <a class="tool-card" href="salary-converter.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f0fe;">💼</div>
+          <div class="tool-icon" style="background:var(--tag-finance);">💼</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Salary to Hourly Converter</div>
@@ -316,7 +316,7 @@
       </a>
       <a class="tool-card" href="can-i-afford-this.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#fff8e1;">🏠</div>
+          <div class="tool-icon" style="background:var(--tag-productivity);">🏠</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Can I Afford This?</div>
@@ -325,7 +325,7 @@
       </a>
       <a class="tool-card" href="rent-vs-buy.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f0fe;">🏡</div>
+          <div class="tool-icon" style="background:var(--tag-finance);">🏡</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Rent vs. Buy Calculator</div>
@@ -334,7 +334,7 @@
       </a>
       <a class="tool-card" href="overtime-pay-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f0fe;">💰</div>
+          <div class="tool-icon" style="background:var(--tag-finance);">💰</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Overtime Pay Calculator</div>
@@ -343,7 +343,7 @@
       </a>
       <a class="tool-card" href="tip-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e6f4ea;">🧾</div>
+          <div class="tool-icon" style="background:var(--tag-health);">🧾</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Tip Calculator</div>
@@ -352,7 +352,7 @@
       </a>
       <a class="tool-card" href="compound-interest-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f0fe;">📈</div>
+          <div class="tool-icon" style="background:var(--tag-finance);">📈</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Compound Interest Calculator</div>
@@ -361,7 +361,7 @@
       </a>
       <a class="tool-card" href="income-tax-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f0fe;">💵</div>
+          <div class="tool-icon" style="background:var(--tag-finance);">💵</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Income Tax Calculator</div>
@@ -370,7 +370,7 @@
       </a>
       <a class="tool-card" href="sales-tax-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f0fe;">💵</div>
+          <div class="tool-icon" style="background:var(--tag-finance);">💵</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Sales Tax Calculator</div>
@@ -379,7 +379,7 @@
       </a>
       <a class="tool-card" href="mortgage-calculator.html">
         <div class="tool-header">
-          <div class="tool-icon" style="background:#e8f0fe;">🏡</div>
+          <div class="tool-icon" style="background:var(--tag-finance);">🏡</div>
           <span class="tool-tag tag-finance">Finance</span>
         </div>
         <div class="tool-name">Mortgage Calculator</div>
@@ -420,8 +420,8 @@
 </div>
 
 <div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
-  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
-    <strong style="color:#0f0f0e;">For informational purposes only.</strong> These finance tools give informational estimates, not financial, tax, or legal advice. Confirm important decisions with a qualified professional. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 13, 2026.
+  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:var(--text-muted);line-height:1.6;">
+    <strong style="color:var(--text);">For informational purposes only.</strong> These finance tools give informational estimates, not financial, tax, or legal advice. Confirm important decisions with a qualified professional. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 13, 2026.
   </div>
 </div>
 
