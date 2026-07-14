@@ -40,13 +40,11 @@ for (const file of allPages) {
     changed = true;
   }
 
-  if (initFaqPattern.test(html)) {
-    html = html.replace(initFaqPattern, '<script src="assets/js/faq.js"></script>');
-    changed = true;
-  }
+  const afterFaq = html.replace(initFaqPattern, '<script src="assets/js/faq.js"></script>');
+  if (afterFaq !== html) { html = afterFaq; changed = true; }
 
-  html = html.replace(/href="index\.html"/g, 'href="/"');
-  if (html.includes('href="/"')) changed = true;
+  const afterHref = html.replace(/href="index\.html"/g, 'href="/"');
+  if (afterHref !== html) { html = afterHref; changed = true; }
 
   if (changed) {
     fs.writeFileSync(path.join(root, file), html);

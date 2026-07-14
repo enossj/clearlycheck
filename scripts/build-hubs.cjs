@@ -14,8 +14,10 @@ const path = require('path');
 
 const root = path.join(__dirname, '..');
 const SITE = 'https://clearlycheck.com';
-const TODAY = 'July 13, 2026';
-const TODAY_ISO = '2026-07-13';
+const TODAY_ISO = new Date().toISOString().slice(0, 10);
+const TODAY = new Date(`${TODAY_ISO}T00:00:00Z`).toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+});
 
 // --- Pull tool card data from the homepage grid -----------------------------
 function extractCards() {
@@ -27,12 +29,12 @@ function extractCards() {
     const body = m[2];
     out[m[1]] = {
       href: m[1],
-      icon: (body.match(/tool-icon"[^>]*>([^<]+)</) || [])[1].trim(),
-      bg: (body.match(/tool-icon" style="background:([^;"]+)/) || [])[1].trim(),
-      tagClass: (body.match(/tool-tag tag-([a-z]+)"/) || [])[1],
-      tagLabel: (body.match(/tool-tag tag-[a-z]+">([^<]+)</) || [])[1],
-      name: (body.match(/tool-name">([^<]+)</) || [])[1],
-      desc: (body.match(/tool-desc">([^<]+)</) || [])[1],
+      icon: (body.match(/tool-icon"[^>]*>([^<]+)</) || [])[1]?.trim() || '',
+      bg: (body.match(/tool-icon" style="background:([^;"]+)/) || [])[1]?.trim() || '',
+      tagClass: (body.match(/tool-tag tag-([a-z]+)"/) || [])[1] || '',
+      tagLabel: (body.match(/tool-tag tag-[a-z]+">([^<]+)</) || [])[1] || '',
+      name: (body.match(/tool-name">([^<]+)</) || [])[1] || '',
+      desc: (body.match(/tool-desc">([^<]+)</) || [])[1] || '',
     };
   }
   return out;

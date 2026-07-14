@@ -12,19 +12,16 @@ const root = path.join(__dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const today = new Date().toISOString().slice(0, 10);
 
-const urlMap = {
-  'index.html': 'https://clearlycheck.com/',
-  'debt-free-calculator.html': 'https://clearlycheck.com/debt-free-calculator.html',
-  'salary-converter.html': 'https://clearlycheck.com/salary-converter.html',
-  'can-i-afford-this.html': 'https://clearlycheck.com/can-i-afford-this.html',
-  'rent-vs-buy.html': 'https://clearlycheck.com/rent-vs-buy.html',
-  'timezone-planner.html': 'https://clearlycheck.com/timezone-planner.html',
-  'bmi-calculator.html': 'https://clearlycheck.com/bmi-calculator.html',
-  'age-calculator.html': 'https://clearlycheck.com/age-calculator.html',
-  'privacy-policy.html': 'https://clearlycheck.com/privacy-policy.html',
-  'terms-of-use.html': 'https://clearlycheck.com/terms-of-use.html',
-  'contact.html': 'https://clearlycheck.com/contact.html',
-};
+// Derive the filename -> canonical URL map from the html files actually on disk,
+// so new pages are covered without hand-editing. Non-indexable files excluded.
+// Entries whose <loc> is absent from sitemap.xml simply won't match — harmless.
+const SITE = 'https://clearlycheck.com';
+const EXCLUDE = new Set(['google1d81c29365628a0c.html']);
+const urlMap = Object.fromEntries(
+  fs.readdirSync(root)
+    .filter(f => f.endsWith('.html') && !EXCLUDE.has(f))
+    .map(f => [f, f === 'index.html' ? `${SITE}/` : `${SITE}/${f}`])
+);
 
 const args = process.argv.slice(2);
 const targets = args.length
