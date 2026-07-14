@@ -141,7 +141,7 @@ const CATS = [
     faq: [
       { q: 'Are these car calculators free?', a: 'Yes. Every tool is free, needs no signup, and runs entirely in your browser — the numbers you enter never leave your device.' },
       { q: 'How accurate is the auto loan payment?', a: 'It uses the standard amortization formula lenders use, so the arithmetic is exact for the price, APR, and term you enter. Your actual quote can differ with fees, dealer add-ons, and how sales tax and trade-in credits work in your state.' },
-      { q: 'Should I lease or buy?', a: 'The Lease vs Buy Calculator compares the total cost of leasing against financing and keeping the car, counting the resale value you keep at the end of the lease term. It is a starting point — it does not include mileage-overage fees, maintenance, or the time value of money.' },
+      { q: 'Should I lease or buy?', a: 'The Lease vs Buy Calculator compares the total cost of leasing against financing and keeping the car, crediting the resale value you keep at the end of the lease term net of any loan balance still owed. It is a starting point — it does not include mileage-overage fees, maintenance, or the time value of money.' },
     ],
     tools: ['auto-loan-calculator.html', 'fuel-cost-calculator.html', 'mpg-calculator.html', 'lease-vs-buy-calculator.html'],
   },
