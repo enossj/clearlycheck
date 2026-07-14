@@ -163,3 +163,7 @@ footer {
 @media (max-width: 600px) {
   .nav-links { display: none; }
 }
+
+/* The per-page `nav {}` rule makes every <nav> sticky; scope that to the header
+   only, so breadcrumb navs don't stick over the header while scrolling. */
+nav[aria-label="breadcrumb"] { position: static; z-index: auto; }
