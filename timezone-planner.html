@@ -708,7 +708,7 @@ function calculate() {
           return `<div class="slot-city-line">${cd.flag} ${cd.name}: ${formatTime(localStart)} – ${formatTime(localEnd)}</div>`;
         }).join('');
         return `<button type="button" class="slot-item ${si === 0 ? 'selected' : ''}" onclick="selectSlot(${si}, this)">
-          <div class="slot-time">${formatTime(s.utcEnd - s.utcStart === 1 ? s.utcStart : s.utcStart)} – ${formatTime(s.utcEnd)} UTC</div>
+          <div class="slot-time">${formatTime(s.utcStart)} – ${formatTime(s.utcEnd)} UTC</div>
           <div class="slot-cities">${cityTimes}</div>
         </button>`;
       }).join('');
