@@ -94,5 +94,5 @@
 }
 
 /* ── Dark mode: reduce raw-white surfaces that slip through inline styles ── */
-[data-theme="dark"] img { opacity: 0.92; }
-[data-theme="dark"] ::selection { background: var(--accent-dark); color: #fff; }
+:root[data-theme="dark"] img { opacity: 0.92; }
+:root[data-theme="dark"] ::selection { background: var(--accent-dark); color: #fff; }

@@ -165,7 +165,7 @@ footer {
 }
 
 /* ── Dark mode ─────────────────────────────────────────── */
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   --bg: #141413;
   --bg-card: #1e1e1c;
   --bg-dark: #0a0a09;
@@ -197,5 +197,5 @@ html { transition: background-color 0.2s ease, color 0.2s ease; }
 .theme-toggle:hover { color: var(--text); border-color: var(--border-hover); }
 .theme-toggle .icon-sun { display: none; }
 .theme-toggle .icon-moon { display: block; }
-[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
