@@ -24,7 +24,6 @@ const MAP = [
   ['#e8f0fe', 'var(--tag-finance)'],
   ['#e6f4ea', 'var(--tag-health)'],
   ['#fff8e1', 'var(--tag-productivity)'],
-  ['#fbebe9', 'var(--tag-safety)'],
   ['#fce8e6', 'var(--tag-safety)'],
   ['#1a6b4a', 'var(--accent)'],
   ['#145a3d', 'var(--accent-hover)'],
