@@ -155,7 +155,7 @@
   .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 34px; font-weight: 800; color: var(--text); line-height: 1.1; }
   .verdict-sub { font-size: 12.5px; color: var(--text-muted); margin-top: 6px; }
 
-  .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .metrics-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; margin-bottom: 18px; }
   .metric { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; }
   .metric-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 4px; }
   .metric-value { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.2; }
@@ -416,7 +416,7 @@ function calculate() {
       <div class="verdict-value">${fmtCurrency(out.monthly)}</div>
       <div class="verdict-sub">Over ${termMonths} months at ${apr}% APR</div>
     </div>
-    <div class="metrics-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="metrics-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
       <div class="metric">
         <div class="metric-label">Amount financed</div>
         <div class="metric-value accent">${fmtCurrency(out.financed)}</div>
