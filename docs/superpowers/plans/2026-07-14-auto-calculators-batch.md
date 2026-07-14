@@ -70,15 +70,15 @@ function computeAutoLoan({ price, down, tradeIn, taxRate, apr, termMonths }) {
 }
 const out = computeAutoLoan({ price: 30000, down: 3000, tradeIn: 2000, taxRate: 0.07, apr: 6, termMonths: 60 });
 console.assert(out.financed === 27100, 'financed', out.financed);
-console.assert(Math.abs(out.monthly - 523.94) < 0.01, 'monthly', out.monthly);
-console.assert(Math.abs(out.totalInterest - 4336.40) < 0.5, 'interest', out.totalInterest);
+console.assert(Math.abs(out.monthly - 523.92) < 0.01, 'monthly', out.monthly);
+console.assert(Math.abs(out.totalInterest - 4335.14) < 0.5, 'interest', out.totalInterest);
 console.log('OK', out);
 ```
 
 - [ ] **Step 2: Run test to verify the numbers**
 
 Run: `node /tmp/t1.js`
-Expected: `OK { financed: 27100, monthly: 523.94..., totalPaid: 31436.4..., totalInterest: 4336.4... }` with no assertion warnings. (This locks the math before it goes into the page.)
+Expected: `OK { financed: 27100, monthly: 523.918..., totalPaid: 31435.13..., totalInterest: 4335.13... }` with no assertion warnings. (This locks the math before it goes into the page.)
 
 - [ ] **Step 3: Build the page**
 
@@ -101,7 +101,7 @@ Start a server: `npx --yes serve . -l 5055` (background). Open `http://localhost
 (() => { const de=document.documentElement; return JSON.stringify({ overflow: de.scrollWidth-de.clientWidth }); })()
 ```
 
-Expected: `{"overflow":0}`. Then enter price 30000, down 3000, trade-in 2000, tax 7, APR 6, term 60 → the page must show a monthly payment of **$523.94** and total interest **$4,336.40**. Parse-check JSON-LD:
+Expected: `{"overflow":0}`. Then enter price 30000, down 3000, trade-in 2000, tax 7, APR 6, term 60 → the page must show a monthly payment of **$523.92** and total interest **$4,335.14**. Parse-check JSON-LD:
 
 ```js
 [...document.querySelectorAll('script[type="application/ld+json"]')].map(s=>{try{JSON.parse(s.textContent);return 'ok'}catch(e){return 'BAD'}})
