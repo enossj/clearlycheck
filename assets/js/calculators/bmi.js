@@ -4,7 +4,7 @@ export const BMI_CATEGORIES = [
   { max: 30, key: 'overweight', label: 'Overweight' },
   { max: 35, key: 'obese', label: 'Obese (Class I)' },
   { max: 40, key: 'obese2', label: 'Obese (Class II)' },
-  { max: Infinity, key: 'obese2', label: 'Obese (Class III)' }
+  { max: Infinity, key: 'obese3', label: 'Obese (Class III)' }
 ];
 
 export function calculateBMI(weightKg, heightM) {
