@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuel Cost Calculator — Trip Gas Cost | ClearlyCheck</title>
+<meta name="description" content="Free fuel cost calculator: work out the gas cost of any trip from distance, fuel economy, and price. Supports MPG or L/100km, round trips, and splitting the cost between passengers.">
+<meta name="keywords" content="fuel cost calculator, gas cost calculator, trip gas cost, road trip fuel cost calculator, mpg cost calculator, gas mileage cost calculator">
+<link rel="canonical" href="https://clearlycheck.com/fuel-cost-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fuel Cost Calculator — Trip Gas Cost">
+<meta property="og:description" content="Work out the gas cost of any trip from distance, fuel economy, and price. Supports MPG or L/100km, round trips, and splitting the cost between passengers. Free and private.">
+<meta property="og:url" content="https://clearlycheck.com/fuel-cost-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fuel Cost Calculator",
+  "description": "Free fuel cost calculator: work out the gas cost of any trip from distance, fuel economy, and price. Supports MPG or L/100km, round trips, and splitting the cost between passengers.",
+  "url": "https://clearlycheck.com/fuel-cost-calculator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is trip fuel cost calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This calculator divides your trip distance by your vehicle's fuel economy to get the fuel used, then multiplies that by the fuel price you enter. If you're using L/100km, fuel used is your distance multiplied by economy divided by 100. Checking the round-trip box doubles the distance before either calculation runs." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between MPG and L/100km?",
+      "acceptedAnswer": { "@type": "Answer", "text": "MPG and L/100km measure the same underlying fuel economy but move in opposite directions. A higher MPG means better fuel economy, while a lower L/100km means better fuel economy, since it takes less fuel to cover the same 100 kilometers. This calculator accepts either unit directly so you don't need to convert manually." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator use live gas prices?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. You enter the fuel price yourself, and the calculator doesn't fetch prices from any live feed or API. Gas prices vary by location, station, and day, so check a source like GasBuddy or your local prices before you enter one for an accurate estimate." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://clearlycheck.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://clearlycheck.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Auto",
+      "item": "https://clearlycheck.com/auto-calculators.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Fuel Cost",
+      "item": "https://clearlycheck.com/fuel-cost-calculator.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fuel Cost Calculator",
+  "description": "Free fuel cost calculator: work out the gas cost of any trip from distance, fuel economy, and price. Supports MPG or L/100km, round trips, and splitting the cost between passengers.",
+  "url": "https://clearlycheck.com/fuel-cost-calculator.html",
+  "mainEntityOfPage": "https://clearlycheck.com/fuel-cost-calculator.html",
+  "datePublished": "2026-07-14",
+  "dateModified": "2026-07-14",
+  "author": {
+    "@type": "Person",
+    "@id": "https://clearlycheck.com/#enos",
+    "name": "Enos"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://clearlycheck.com/#organization",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://clearlycheck.com/assets/og-image.svg"
+    }
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --yellow: #b7770d; --yellow-light: #fef9ec;
+    --red: #b0362c; --red-light: #fbebe9;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 24px 32px 28px; }
+
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap .prefix { padding: 0 4px 0 14px; color: var(--text-light); font-weight: 500; font-size: 15px; }
+  .input-wrap input { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; min-width: 0; }
+  .input-suffix { padding: 0 14px 0 4px; color: var(--text-light); font-size: 13px; white-space: nowrap; }
+  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  /* FIELD TOGGLE */
+  .field-toggle { display: flex; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 3px; gap: 3px; margin-top: 8px; }
+  .field-toggle button { flex: 1; padding: 8px 6px; font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 600; border: none; border-radius: 7px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; min-width: 0; }
+  .field-toggle button.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+
+  .checkbox-field { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 13.5px; font-weight: 500; color: var(--text-muted); }
+  .checkbox-field input { width: 17px; height: 17px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0; }
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-ready { background: var(--accent-light); color: var(--accent); }
+  .results-body { padding: 20px 24px; }
+
+  .verdict-hero { text-align: center; background: var(--accent-light); border-radius: var(--radius-sm); padding: 24px 16px; margin-bottom: 16px; }
+  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
+  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 34px; font-weight: 800; color: var(--text); line-height: 1.15; word-break: break-word; }
+  .verdict-sub { font-size: 12.5px; color: var(--text-muted); margin-top: 8px; }
+
+  .metrics-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .metric { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; min-width: 0; }
+  .metric-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 4px; }
+  .metric-value { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.2; overflow-wrap: break-word; }
+  .metric-value.accent { color: var(--accent); }
+  .metric-value.blue { color: var(--blue); }
+
+  /* ARTICLE */
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
+  .article-section > div { min-width: 0; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0; }
+  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .article .sources { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <a href="auto-calculators.html">Auto</a><span>›</span>
+      <span style="color:var(--text-muted);">Fuel Cost</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">⛽ Auto Tool</div>
+  <h1>Fuel Cost Calculator</h1>
+  <p>Work out the gas cost of any trip from distance, fuel economy, and price — supports MPG or L/100km, round trips, and splitting the cost between passengers.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 14, 2026</div>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Enter your trip details</h2>
+      <p>See your estimated fuel cost update as you type.</p>
+    </div>
+    <div class="calc-body">
+
+      <div class="field">
+        <label for="distance">Trip distance</label>
+        <div class="input-wrap"><input type="number" id="distance" value="300" min="0" step="any" oninput="calculate()"><span class="input-suffix" id="distanceUnitLabel">mi</span></div>
+        <div class="field-toggle">
+          <button type="button" class="active" id="btnDistMi" onclick="setDistanceUnit('mi')">Miles (mi)</button>
+          <button type="button" id="btnDistKm" onclick="setDistanceUnit('km')">Kilometers (km)</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="checkbox-field" for="roundTrip">
+          <input type="checkbox" id="roundTrip" onchange="calculate()">
+          This is a round trip (double the distance)
+        </label>
+      </div>
+
+      <div class="field">
+        <label for="efficiency">Fuel economy</label>
+        <div class="input-wrap"><input type="number" id="efficiency" value="30" min="0" step="any" oninput="calculate()"><span class="input-suffix" id="efficiencyUnitLabel">MPG</span></div>
+        <div class="field-toggle">
+          <button type="button" class="active" id="btnEffMpg" onclick="setEffUnit('mpg')">MPG</button>
+          <button type="button" id="btnEffL100" onclick="setEffUnit('l100km')">L/100km</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="price" id="priceLabel">Fuel price (per gallon)</label>
+        <div class="input-wrap"><span class="prefix">$</span><input type="number" id="price" value="3.50" min="0" step="0.01" oninput="calculate()"></div>
+      </div>
+
+      <div class="field">
+        <label for="people">Number of people splitting the cost</label>
+        <div class="input-wrap"><input type="number" id="people" value="1" min="1" step="1" oninput="calculate()"></div>
+        <p class="hint">Per-person cost only shows when this is more than 1.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Trip Fuel Cost</h3>
+      <span class="results-status status-ready" id="statusBadge">Ready</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="article-section">
+  <article class="article">
+    <h2>How trip fuel cost is calculated</h2>
+    <p>This calculator works backward from your vehicle's real-world fuel economy. First it figures out how much fuel your trip actually uses: divide the distance by your fuel economy in MPG, or multiply the distance by your economy in L/100km and divide by 100. That fuel amount, in gallons or liters, is then multiplied by the price you enter to get your total fuel cost. If you check the round-trip box, the distance is doubled before anything else is calculated, since a round trip means driving the route twice.</p>
+
+    <h2>MPG vs. L/100km: which is better?</h2>
+    <p>MPG (miles per gallon) and L/100km (liters per 100 kilometers) measure the same thing — how far a vehicle goes on a given amount of fuel — but they run in opposite directions. With MPG, a higher number means better fuel economy, since you're going further on each gallon. With L/100km, a lower number is better, since you're using less fuel to cover the same distance. That inverse relationship trips a lot of people up when comparing a US-spec car's MPG rating to a European-spec car's L/100km rating, so this calculator lets you enter either one directly without needing to convert by hand first.</p>
+
+    <h2>Tips for cutting your trip's fuel cost</h2>
+    <p>A few habits make a real dent in what you spend at the pump over a long trip:</p>
+    <ul>
+      <li><strong>Keep tires properly inflated.</strong> Underinflated tires increase rolling resistance and can lower fuel economy by several percent.</li>
+      <li><strong>Drive a steady speed.</strong> Fuel economy drops sharply above roughly 60 mph, and aggressive acceleration and braking waste fuel that a steady pace doesn't.</li>
+      <li><strong>Cut excess weight and drag.</strong> Roof boxes, bike racks, and a trunk full of unused gear all add drag or weight that increase how much fuel your engine burns.</li>
+      <li><strong>Shop around for price.</strong> Gas prices can vary by 20–30 cents a gallon between stations a few miles apart, especially near highway exits versus a mile or two off the interstate.</li>
+    </ul>
+
+    <h2>Sources &amp; method</h2>
+    <p class="sources">Fuel used is calculated with the standard formula: fuel = distance ÷ fuel economy (for MPG), or fuel = distance × (economy ÷ 100) (for L/100km). Total cost is fuel used multiplied by the price you enter. This calculator doesn't pull live fuel prices from any feed — enter the price you see at the pump or expect to pay, since prices vary by location, station, and day. Check a source like GasBuddy or AAA's fuel price tracker for current regional averages if you don't know your trip's expected price.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How is trip fuel cost calculated?<span class="faq-icon">+</span></button>
+        <div class="faq-a">This calculator divides your trip distance by your vehicle's fuel economy to get the fuel used, then multiplies that by the fuel price you enter. If you're using L/100km, fuel used is your distance multiplied by economy divided by 100. Checking the round-trip box doubles the distance before either calculation runs.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between MPG and L/100km?<span class="faq-icon">+</span></button>
+        <div class="faq-a">MPG and L/100km measure the same underlying fuel economy but move in opposite directions. A higher MPG means better fuel economy, while a lower L/100km means better fuel economy, since it takes less fuel to cover the same 100 kilometers. This calculator accepts either unit directly so you don't need to convert manually.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does this calculator use live gas prices?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. You enter the fuel price yourself, and the calculator doesn't fetch prices from any live feed or API. Gas prices vary by location, station, and day, so check a source like GasBuddy or your local prices before you enter one for an accurate estimate.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Auto Tools</p>
+    <div class="sidebar-tools">
+      <a class="sidebar-tool" href="auto-loan-calculator.html">
+        <div class="sidebar-tool-icon">🚗</div>
+        <div><div class="sidebar-tool-name">Auto Loan Calculator</div><div class="sidebar-tool-desc">Estimate your monthly car payment</div></div>
+      </a>
+      <a class="sidebar-tool" href="unit-converter.html">
+        <div class="sidebar-tool-icon">🧮</div>
+        <div><div class="sidebar-tool-name">Unit Converter</div><div class="sidebar-tool-desc">Convert distance, volume &amp; more</div></div>
+      </a>
+      <a class="sidebar-tool" href="sales-tax-calculator.html">
+        <div class="sidebar-tool-icon">🧾</div>
+        <div><div class="sidebar-tool-name">Sales Tax Calculator</div><div class="sidebar-tool-desc">Find pre-tax price or tax amount</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function computeFuelCost({ distance, roundTrip, efficiency, effUnit, price, people }) {
+  const d = roundTrip ? distance * 2 : distance;
+  const n = Math.max(1, people || 1);
+  if (efficiency <= 0) return { fuelUsed: 0, totalCost: 0, perPerson: 0 };
+  const fuelUsed = effUnit === 'l100km' ? d * (efficiency / 100) : d / efficiency;
+  const totalCost = fuelUsed * price;
+  return { fuelUsed, totalCost, perPerson: totalCost / n };
+}
+
+const KM_PER_MILE = 1.609344;
+let distanceUnit = 'mi';
+let effUnit = 'mpg';
+
+function getDistanceInEffUnit(distance, distUnit, unit) {
+  if (unit === 'mpg') {
+    return distUnit === 'mi' ? distance : distance / KM_PER_MILE;
+  }
+  return distUnit === 'km' ? distance : distance * KM_PER_MILE;
+}
+
+function fmtCurrency(n) {
+  return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+}
+
+function fmtFuel(n) {
+  if (!isFinite(n)) return '0';
+  return n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+}
+
+function setDistanceUnit(u) {
+  distanceUnit = u;
+  document.getElementById('btnDistMi').classList.toggle('active', u === 'mi');
+  document.getElementById('btnDistKm').classList.toggle('active', u === 'km');
+  document.getElementById('distanceUnitLabel').textContent = u;
+  calculate();
+}
+
+function setEffUnit(u) {
+  effUnit = u;
+  document.getElementById('btnEffMpg').classList.toggle('active', u === 'mpg');
+  document.getElementById('btnEffL100').classList.toggle('active', u === 'l100km');
+  document.getElementById('efficiencyUnitLabel').textContent = u === 'l100km' ? 'L/100km' : 'MPG';
+  document.getElementById('priceLabel').textContent = u === 'l100km' ? 'Fuel price (per liter)' : 'Fuel price (per gallon)';
+  calculate();
+}
+
+function calculate() {
+  const distance = parseFloat(document.getElementById('distance').value) || 0;
+  const roundTrip = document.getElementById('roundTrip').checked;
+  const efficiency = parseFloat(document.getElementById('efficiency').value) || 0;
+  const price = parseFloat(document.getElementById('price').value) || 0;
+  const people = Math.max(1, parseInt(document.getElementById('people').value, 10) || 1);
+
+  if (efficiency <= 0) {
+    document.getElementById('resultsBody').innerHTML = `
+      <div class="verdict-hero">
+        <div class="verdict-label">Total Fuel Cost</div>
+        <div class="verdict-value">—</div>
+        <div class="verdict-sub">Enter fuel economy above 0</div>
+      </div>
+    `;
+    return;
+  }
+
+  const adjDistance = getDistanceInEffUnit(distance, distanceUnit, effUnit);
+  const out = computeFuelCost({ distance: adjDistance, roundTrip, efficiency, effUnit, price, people });
+
+  const fuelLabel = effUnit === 'l100km' ? 'L' : 'gal';
+  const distLabel = distanceUnit === 'mi' ? 'miles' : 'km';
+  const tripSub = roundTrip
+    ? `For a round trip: ${fmtFuel(distance)} ${distLabel} each way, ${fmtFuel(distance * 2)} ${distLabel} total`
+    : `For a one-way trip of ${fmtFuel(distance)} ${distLabel}`;
+
+  let metricsHtml = `
+    <div class="metric">
+      <div class="metric-label">Fuel used</div>
+      <div class="metric-value accent">${fmtFuel(out.fuelUsed)} ${fuelLabel}</div>
+    </div>
+  `;
+  let gridCols = 'minmax(0, 1fr)';
+
+  if (people > 1) {
+    metricsHtml += `
+      <div class="metric">
+        <div class="metric-label">Per person (${people} people)</div>
+        <div class="metric-value blue">${fmtCurrency(out.perPerson)}</div>
+      </div>
+    `;
+    gridCols = 'minmax(0, 1fr) minmax(0, 1fr)';
+  }
+
+  document.getElementById('resultsBody').innerHTML = `
+    <div class="verdict-hero">
+      <div class="verdict-label">Total Fuel Cost</div>
+      <div class="verdict-value">${fmtCurrency(out.totalCost)}</div>
+      <div class="verdict-sub">${tripSub}</div>
+    </div>
+    <div class="metrics-grid" style="grid-template-columns: ${gridCols};">
+      ${metricsHtml}
+    </div>
+  `;
+}
+
+calculate();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>

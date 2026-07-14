@@ -70,15 +70,15 @@ function computeAutoLoan({ price, down, tradeIn, taxRate, apr, termMonths }) {
 }
 const out = computeAutoLoan({ price: 30000, down: 3000, tradeIn: 2000, taxRate: 0.07, apr: 6, termMonths: 60 });
 console.assert(out.financed === 27100, 'financed', out.financed);
-console.assert(Math.abs(out.monthly - 523.94) < 0.01, 'monthly', out.monthly);
-console.assert(Math.abs(out.totalInterest - 4336.40) < 0.5, 'interest', out.totalInterest);
+console.assert(Math.abs(out.monthly - 523.92) < 0.01, 'monthly', out.monthly);
+console.assert(Math.abs(out.totalInterest - 4335.14) < 0.5, 'interest', out.totalInterest);
 console.log('OK', out);
 ```
 
 - [ ] **Step 2: Run test to verify the numbers**
 
 Run: `node /tmp/t1.js`
-Expected: `OK { financed: 27100, monthly: 523.94..., totalPaid: 31436.4..., totalInterest: 4336.4... }` with no assertion warnings. (This locks the math before it goes into the page.)
+Expected: `OK { financed: 27100, monthly: 523.918..., totalPaid: 31435.13..., totalInterest: 4335.13... }` with no assertion warnings. (This locks the math before it goes into the page.)
 
 - [ ] **Step 3: Build the page**
 
@@ -101,7 +101,7 @@ Start a server: `npx --yes serve . -l 5055` (background). Open `http://localhost
 (() => { const de=document.documentElement; return JSON.stringify({ overflow: de.scrollWidth-de.clientWidth }); })()
 ```
 
-Expected: `{"overflow":0}`. Then enter price 30000, down 3000, trade-in 2000, tax 7, APR 6, term 60 → the page must show a monthly payment of **$523.94** and total interest **$4,336.40**. Parse-check JSON-LD:
+Expected: `{"overflow":0}`. Then enter price 30000, down 3000, trade-in 2000, tax 7, APR 6, term 60 → the page must show a monthly payment of **$523.92** and total interest **$4,335.14**. Parse-check JSON-LD:
 
 ```js
 [...document.querySelectorAll('script[type="application/ld+json"]')].map(s=>{try{JSON.parse(s.textContent);return 'ok'}catch(e){return 'BAD'}})
@@ -241,7 +241,7 @@ git commit -m "feat: add MPG fuel economy calculator (34th tool)"
 
 **Interfaces:**
 - Consumes: the amortization core from Task 1 (`computeAutoLoan`), reused here for the buy-side loan payment.
-- Produces: pure function `computeLeaseVsBuy({ leaseMonthly, leaseTerm, driveOff, buyPrice, buyApr, buyTerm, buyDown, resale })` returning `{ leaseTotal, buyNet, cheaper, delta }`.
+- Produces: pure function `computeLeaseVsBuy({ leaseMonthly, leaseTerm, driveOff, buyPrice, buyApr, buyTerm, buyDown, resale })` returning `{ leaseTotal, buyNet, cheaper, delta, pmt, paymentsInH, owed, equity }` (buy side credits resale value net of any loan balance still owed at the end of the lease term). Uses a `remainingBalance` helper alongside `loanPayment`.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -252,27 +252,38 @@ function loanPayment(financed, apr, term) {
   const r = apr / 1200;
   return r === 0 ? financed / term : financed * r / (1 - Math.pow(1 + r, -term));
 }
+function remainingBalance(financed, apr, term, k) {
+  // principal still owed after k payments of a term-month loan
+  if (k >= term) return 0;
+  const r = apr / 1200;
+  const pmt = loanPayment(financed, apr, term);
+  if (r === 0) return financed - pmt * k;
+  return financed * Math.pow(1 + r, k) - pmt * (Math.pow(1 + r, k) - 1) / r;
+}
 function computeLeaseVsBuy({ leaseMonthly, leaseTerm, driveOff, buyPrice, buyApr, buyTerm, buyDown, resale }) {
   const H = leaseTerm;
   const leaseTotal = driveOff + leaseMonthly * H;
   const financed = buyPrice - buyDown;
   const pmt = loanPayment(financed, buyApr, buyTerm);
   const paymentsInH = Math.min(H, buyTerm);
-  const buyNet = buyDown + pmt * paymentsInH - resale;
+  const owed = remainingBalance(financed, buyApr, buyTerm, paymentsInH);
+  const equity = resale - owed;                 // what you actually keep after paying off the loan
+  const buyNet = buyDown + pmt * paymentsInH - equity;
   const delta = Math.abs(buyNet - leaseTotal);
-  return { leaseTotal, buyNet, cheaper: buyNet < leaseTotal ? 'buy' : 'lease', delta };
+  return { leaseTotal, buyNet, cheaper: buyNet < leaseTotal ? 'buy' : 'lease', delta, pmt, paymentsInH, owed, equity };
 }
 const r = computeLeaseVsBuy({ leaseMonthly: 350, leaseTerm: 36, driveOff: 2000, buyPrice: 30000, buyApr: 5, buyTerm: 60, buyDown: 3000, resale: 18000 });
 console.assert(Math.abs(r.leaseTotal - 14600) < 1e-9, 'lease', r.leaseTotal);
-console.assert(Math.abs(r.buyNet - 3346.68) < 1, 'buyNet', r.buyNet);
-console.assert(r.cheaper === 'buy', 'cheaper', r.cheaper);
+console.assert(Math.abs(r.buyNet - 14956.86) < 1, 'buyNet', r.buyNet);
+console.assert(r.cheaper === 'lease', 'cheaper', r.cheaper);
+console.assert(Math.abs(r.delta - 356.86) < 1, 'delta', r.delta);
 console.log('OK', r);
 ```
 
 - [ ] **Step 2: Run test**
 
 Run: `node /tmp/t4.js`
-Expected: `OK { leaseTotal: 14600, buyNet: 3346.6..., cheaper: 'buy', delta: 11253.3... }`, no warnings.
+Expected: `OK { leaseTotal: 14600, buyNet: 14956.8..., cheaper: 'lease', delta: 356.8..., owed: 11614.0..., equity: 6385.9... }`, no warnings.
 
 - [ ] **Step 3: Build the page**
 
@@ -286,7 +297,7 @@ Copy `mortgage-calculator.html` → `lease-vs-buy-calculator.html`. Replace:
 
 - [ ] **Step 4: Verify in browser at 375px**
 
-Serve, 375px, overflow probe → `{"overflow":0}`. Enter lease $350/36mo/$2000 drive-off; buy $30000/5% APR/60mo/$3000 down/$18000 resale → lease total **$14,600**, buy net **≈ $3,347**, verdict **Buying is cheaper**. JSON-LD parse-check → `["ok","ok","ok"]`. Stop server.
+Serve, 375px, overflow probe → `{"overflow":0}`. Enter lease $350/36mo/$2000 drive-off; buy $30000/5% APR/60mo/$3000 down/$18000 resale → lease total **$14,600**, buy net **≈ $14,957** (resale credited net of the ~$11,614 loan balance still owed), verdict **Leasing is cheaper**. JSON-LD parse-check → `["ok","ok","ok"]`. Stop server.
 
 - [ ] **Step 5: Commit**
 
@@ -338,7 +349,7 @@ Append to the `CATS` array (before the closing `]`):
   faq: [
     { q: 'Are these car calculators free?', a: 'Yes. Every tool is free, needs no signup, and runs entirely in your browser — the numbers you enter never leave your device.' },
     { q: 'How accurate is the auto loan payment?', a: 'It uses the standard amortization formula lenders use, so the arithmetic is exact for the price, APR, and term you enter. Your actual quote can differ with fees, dealer add-ons, and how sales tax and trade-in credits work in your state.' },
-    { q: 'Should I lease or buy?', a: 'The Lease vs Buy Calculator compares the total cost of leasing against financing and keeping the car, counting the resale value you keep at the end of the lease term. It is a starting point — it does not include mileage-overage fees, maintenance, or the time value of money.' },
+    { q: 'Should I lease or buy?', a: 'The Lease vs Buy Calculator compares the total cost of leasing against financing and keeping the car, crediting the resale value you keep at the end of the lease term net of any loan balance still owed. It is a starting point — it does not include mileage-overage fees, maintenance, or the time value of money.' },
   ],
   tools: ['auto-loan-calculator.html', 'fuel-cost-calculator.html', 'mpg-calculator.html', 'lease-vs-buy-calculator.html'],
 },

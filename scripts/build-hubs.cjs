@@ -131,6 +131,20 @@ const CATS = [
     ],
     tools: ['gpa-calculator.html', 'grade-calculator.html'],
   },
+  {
+    slug: 'auto-calculators', label: 'Auto', pill: '🚗 Auto',
+    title: 'Auto Calculators — Car Loans, Fuel Cost &amp; MPG',
+    h1: 'Auto Calculators',
+    metaDesc: 'Free car calculators: estimate your auto loan monthly payment, the fuel cost of a trip, your MPG and L/100km, and whether leasing or buying is cheaper. No signup, runs in your browser.',
+    intro: `Running a car is a string of number questions, and these tools answer the four that come up most. Work out the monthly payment on an auto loan from the price, your down payment and trade-in, sales tax, the APR and the term — and see the total interest before you sign. Price the fuel for any trip from its distance, your car's economy and the pump price, with round-trip and split-between-passengers options. Check your real MPG from a tank of fuel, and convert freely between MPG, L/100km and km/L. And when a new car tempts you, compare leasing against buying and keeping it, resale value included, over the lease term. Every calculation runs in your browser, so nothing you enter leaves your device. None of these replace a dealer quote or a financial adviser, but they turn the guesswork into numbers in seconds.`,
+    disclaimer: 'These auto tools give informational estimates, not financial advice. Confirm loan, lease, and purchase decisions with the lender or a qualified professional.',
+    faq: [
+      { q: 'Are these car calculators free?', a: 'Yes. Every tool is free, needs no signup, and runs entirely in your browser — the numbers you enter never leave your device.' },
+      { q: 'How accurate is the auto loan payment?', a: 'It uses the standard amortization formula lenders use, so the arithmetic is exact for the price, APR, and term you enter. Your actual quote can differ with fees, dealer add-ons, and how sales tax and trade-in credits work in your state.' },
+      { q: 'Should I lease or buy?', a: 'The Lease vs Buy Calculator compares the total cost of leasing against financing and keeping the car, crediting the resale value you keep at the end of the lease term net of any loan balance still owed. It is a starting point — it does not include mileage-overage fees, maintenance, or the time value of money.' },
+    ],
+    tools: ['auto-loan-calculator.html', 'fuel-cost-calculator.html', 'mpg-calculator.html', 'lease-vs-buy-calculator.html'],
+  },
 ];
 
 // --- Rendering --------------------------------------------------------------
@@ -245,6 +259,7 @@ ${fontLinks()}
     --tag-health: #e6f4ea; --tag-health-text: #137333;
     --tag-productivity: #fff8e1; --tag-productivity-text: #8a6500;
     --tag-education: #f3e8fd; --tag-education-text: #7c3aed;
+    --tag-auto: #e8eef7; --tag-auto-text: #2d5a8a;
     --radius: 16px; --radius-sm: 10px;
     --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
     --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
@@ -279,6 +294,7 @@ ${fontLinks()}
   .tag-productivity { background: var(--tag-productivity); color: var(--tag-productivity-text); }
   .tag-education { background: var(--tag-education); color: var(--tag-education-text); }
   .tag-pet { background: #fbe9d8; color: #9a5b1e; }
+  .tag-auto { background: var(--tag-auto); color: var(--tag-auto-text); }
   .tool-name { font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; line-height: 1.2; }
   .tool-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
   .tool-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--accent); margin-top: auto; transition: gap 0.15s; }

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Lease vs Buy Calculator | ClearlyCheck</title>
+<meta name="description" content="Free lease vs buy calculator for cars: compare the total cost of leasing against financing and keeping the car, including resale value, over the lease term. Runs in your browser.">
+<meta name="keywords" content="lease vs buy calculator, car lease vs buy, should i lease or buy a car, lease vs finance calculator, car leasing calculator, buy vs lease comparison">
+<link rel="canonical" href="https://clearlycheck.com/lease-vs-buy-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Car Lease vs Buy Calculator">
+<meta property="og:description" content="Compare the total cost of leasing a car against financing and keeping it, including resale value, over the lease term. Free and private.">
+<meta property="og:url" content="https://clearlycheck.com/lease-vs-buy-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Car Lease vs Buy Calculator",
+  "description": "Free lease vs buy calculator for cars: compare the total cost of leasing against financing and keeping the car, including resale value, over the lease term. Runs in your browser.",
+  "url": "https://clearlycheck.com/lease-vs-buy-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does \"net cost of buying\" mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Net cost of buying is what financing and keeping the car actually costs you over the comparison window: your down payment plus the loan payments you make, minus the equity you'd hold at the end of that period. Equity is the car's estimated resale value minus any loan balance you'd still owe at that point (net of payoff) — because a car loan often outlasts the lease term, you may not own the car free and clear yet. If the loan is already paid off, you keep the full resale value. Either way, that equity offsets part of what you paid — unlike a lease, where you hand the car back with nothing to show for it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does this calculator compare costs over the lease term instead of the full loan term?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A lease naturally ends at a fixed point — the lease term — while a car loan usually runs longer. To compare the two fairly, this calculator looks only at what you'd have spent by the time the lease would have ended, then credits the buy side for the equity you'd hold at that same point — the car's resale value minus any loan balance still owed. Comparing a full loan payoff against a shorter lease would overstate the true cost of buying." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does this calculator leave out?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This calculator ignores the time value of money (a dollar today isn't worth the same as a dollar years from now), lease mileage-overage fees, and vehicle maintenance and repair costs — both leased and owned cars need upkeep, but maintenance costs vary too much by vehicle and driving habits to estimate reliably here. Treat the results as a starting point, not a complete financial picture." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://clearlycheck.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://clearlycheck.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Auto",
+      "item": "https://clearlycheck.com/auto-calculators.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Lease vs Buy",
+      "item": "https://clearlycheck.com/lease-vs-buy-calculator.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Car Lease vs Buy Calculator",
+  "description": "Free lease vs buy calculator for cars: compare the total cost of leasing against financing and keeping the car, including resale value, over the lease term. Runs in your browser.",
+  "url": "https://clearlycheck.com/lease-vs-buy-calculator.html",
+  "mainEntityOfPage": "https://clearlycheck.com/lease-vs-buy-calculator.html",
+  "datePublished": "2026-07-14",
+  "dateModified": "2026-07-14",
+  "author": {
+    "@type": "Person",
+    "@id": "https://clearlycheck.com/#enos",
+    "name": "Enos"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://clearlycheck.com/#organization",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://clearlycheck.com/assets/og-image.svg"
+    }
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --yellow: #b7770d; --yellow-light: #fef9ec;
+    --red: #b0362c; --red-light: #fbebe9;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; flex-wrap: wrap; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 620px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,420px); gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 24px 32px 28px; min-width: 0; }
+
+  .two-col { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 20px; }
+  .two-col > div { min-width: 0; }
+  .col-header { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); padding: 12px 16px; border-radius: var(--radius-sm); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .col-header.lease-header { background: var(--blue-light); color: var(--blue); }
+  .col-header.buy-header { background: var(--accent-light); color: var(--accent); }
+
+  .field-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin: 22px 0 12px; }
+  .field-section-label:first-child { margin-top: 0; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; min-width: 0; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap .prefix { padding: 0 4px 0 14px; color: var(--text-light); font-weight: 500; font-size: 15px; flex-shrink: 0; }
+  .input-wrap input { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; min-width: 0; -webkit-appearance: none; appearance: none; }
+  .input-suffix { padding: 0 14px 0 4px; color: var(--text-light); font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0; }
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+  .status-buy { background: var(--accent-light); color: var(--accent); }
+  .status-lease { background: var(--blue-light); color: var(--blue); }
+  .results-body { padding: 20px 24px; min-width: 0; }
+
+  .verdict-hero { text-align: center; border-radius: var(--radius-sm); padding: 22px 16px; margin-bottom: 16px; }
+  .verdict-hero.buy { background: var(--accent-light); }
+  .verdict-hero.lease { background: var(--blue-light); }
+  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .verdict-hero.buy .verdict-label { color: var(--accent-dark); }
+  .verdict-hero.lease .verdict-label { color: var(--blue); }
+  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.15; }
+  .verdict-hero.buy .verdict-value { color: var(--accent); }
+  .verdict-hero.lease .verdict-value { color: var(--blue); }
+  .verdict-sub { font-size: 12.5px; color: var(--text-muted); margin-top: 6px; }
+
+  .comparison { margin-bottom: 18px; }
+  .comp-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .comp-side-label { font-size: 11.5px; font-weight: 700; width: 46px; flex-shrink: 0; }
+  .comp-bar-wrap { flex: 1; height: 30px; background: var(--bg); border-radius: 8px; overflow: hidden; position: relative; min-width: 0; }
+  .comp-bar { height: 100%; border-radius: 8px; display: flex; align-items: center; padding-left: 10px; transition: width 0.5s ease; min-width: 32px; }
+  .comp-bar.lease-bar { background: var(--blue-light); }
+  .comp-bar.buy-bar { background: var(--accent-light); }
+  .comp-bar-val { font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+  .comp-bar.lease-bar .comp-bar-val { color: var(--blue); }
+  .comp-bar.buy-bar .comp-bar-val { color: var(--accent); }
+
+  .metrics-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; margin-bottom: 18px; }
+  .metric { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; min-width: 0; }
+  .metric-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 4px; }
+  .metric-value { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.2; overflow-wrap: break-word; }
+  .metric-value.accent { color: var(--accent); }
+  .metric-value.blue { color: var(--blue); }
+
+  .breakdown-wrap { margin-bottom: 8px; }
+  .breakdown-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 10px; }
+  .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; table-layout: fixed; }
+  .breakdown-table th { text-align: right; padding: 7px 6px; font-weight: 700; font-family: 'Roboto', sans-serif; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-light); border-bottom: 1px solid var(--border); }
+  .breakdown-table th:first-child { text-align: left; }
+  .breakdown-table th.th-lease { color: var(--blue); }
+  .breakdown-table th.th-buy { color: var(--accent); }
+  .breakdown-table td { padding: 8px 6px; color: var(--text-muted); border-bottom: 1px solid var(--border); text-align: right; font-variant-numeric: tabular-nums; overflow-wrap: break-word; }
+  .breakdown-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+  .breakdown-table td.dash { color: var(--text-light); }
+  .breakdown-table td.credit { color: var(--accent); }
+  .breakdown-table .cell-note { display: block; font-size: 10.5px; font-weight: 400; color: var(--text-light); margin-top: 2px; }
+  .breakdown-table tr.total-row td { border-top: 2px solid var(--border-hover); padding-top: 12px; font-family: 'DM Sans', sans-serif; font-weight: 800; font-size: 13.5px; color: #000; }
+
+  /* ARTICLE */
+  .article-section > div { min-width: 0; }
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,420px); gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: minmax(0,1fr); } }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0; }
+  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .article table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
+  .article th, .article td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .article th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .article .sources { font-size: 13.5px; color: var(--text-light); }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; min-width: 0; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+  .disclaimer-bar { background: #f0f0ef; border-top: 1px solid rgba(15,15,14,0.08); border-bottom: 1px solid rgba(15,15,14,0.08); padding: 16px 24px; margin-bottom: 40px; }
+  .disclaimer-bar .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; gap: 12px; }
+  .disclaimer-bar p { font-size: 12px; color: #6b6a66; line-height: 1.6; margin: 0; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: minmax(0,1fr); } .results-card { position: static; } }
+  @media (max-width: 600px) {
+    .calc-body { padding: 20px; }
+    .page-header { padding: 32px 20px 24px; }
+    .two-col { grid-template-columns: minmax(0,1fr); }
+    .metrics-grid { grid-template-columns: minmax(0,1fr); }
+    .breakdown-table { font-size: 11.5px; }
+  }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <a href="auto-calculators.html">Auto</a><span>›</span>
+      <span style="color:var(--text-muted);">Lease vs Buy</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🚗 Auto Tool</div>
+  <h1>Car Lease vs Buy Calculator</h1>
+  <p>Compare the total cost of leasing a car against financing and keeping it — including the car's resale value — over the length of the lease.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 14, 2026</div>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Enter your lease and financing numbers</h2>
+      <p>Fill in both sides to compare the total cost over the lease term.</p>
+    </div>
+    <div class="calc-body">
+
+      <div class="two-col">
+        <!-- LEASE SIDE -->
+        <div>
+          <div class="col-header lease-header">🔑 Leasing</div>
+          <div class="field">
+            <label for="leaseMonthly">Monthly lease payment</label>
+            <div class="input-wrap"><span class="prefix">$</span><input type="number" id="leaseMonthly" value="350" min="0" oninput="calculate()"></div>
+          </div>
+          <div class="field">
+            <label for="leaseTerm">Lease term</label>
+            <div class="input-wrap"><input type="number" id="leaseTerm" value="36" min="1" step="1" oninput="calculate()"><span class="input-suffix">months</span></div>
+            <p class="hint">Common lease terms are 24, 36, or 39 months.</p>
+          </div>
+          <div class="field">
+            <label for="driveOff">Drive-off / down + fees</label>
+            <div class="input-wrap"><span class="prefix">$</span><input type="number" id="driveOff" value="2000" min="0" oninput="calculate()"></div>
+            <p class="hint">Due at signing: first month, taxes, acquisition fee, and any cap cost reduction.</p>
+          </div>
+        </div>
+
+        <!-- BUY SIDE -->
+        <div>
+          <div class="col-header buy-header">🚘 Buying</div>
+          <div class="field">
+            <label for="buyPrice">Vehicle price</label>
+            <div class="input-wrap"><span class="prefix">$</span><input type="number" id="buyPrice" value="30000" min="0" oninput="calculate()"></div>
+          </div>
+          <div class="field">
+            <label for="buyDown">Down payment</label>
+            <div class="input-wrap"><span class="prefix">$</span><input type="number" id="buyDown" value="3000" min="0" oninput="calculate()"></div>
+          </div>
+          <div class="field">
+            <label for="buyApr">APR</label>
+            <div class="input-wrap"><input type="number" id="buyApr" value="5" min="0" max="30" step="0.01" oninput="calculate()"><span class="input-suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="buyTerm">Loan term</label>
+            <div class="input-wrap"><input type="number" id="buyTerm" value="60" min="1" step="1" oninput="calculate()"><span class="input-suffix">months</span></div>
+          </div>
+          <div class="field">
+            <label for="resale">Estimated resale value</label>
+            <div class="input-wrap"><span class="prefix">$</span><input type="number" id="resale" value="18000" min="0" oninput="calculate()"></div>
+            <p class="hint">What the car would be worth if sold at the end of the lease term.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Lease vs Buy</h3>
+      <span class="results-status status-buy" id="statusBadge">Ready</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="disclaimer-bar">
+  <div class="inner">
+    <span style="font-size:16px;flex-shrink:0;">🚗</span>
+    <p><strong style="color:#0f0f0e;">This is an estimate, not financial advice.</strong> Actual lease terms, loan rates, fees, and resale values vary by dealer, lender, and market. These estimates are informational only and not financial advice.</p>
+  </div>
+</div>
+
+<div class="article-section">
+  <article class="article">
+    <h2>How this lease vs buy calculator works</h2>
+    <p>Leasing and buying spread your money differently, which makes them hard to compare at a glance. This calculator puts both on the same footing by looking at the <strong>total cost of each option over the lease term</strong> — the natural end point of a lease. On the lease side, that's simply your drive-off costs (first month, taxes, and fees due at signing) plus every monthly payment through the end of the term. On the buy side, it's your down payment plus the loan payments you'd make during that same window, minus the <strong>equity</strong> you'd have in the car at that point — its resale value less any loan balance still owed.</p>
+
+    <h2>What "net cost of buying" means</h2>
+    <p>When you buy a car, part of every payment builds equity in an asset you still own. That's the key difference from leasing, where you make payments and then return the car with nothing to show for it. To capture this, the calculator computes a <strong>net cost of buying</strong>: your down payment plus the loan payments made during the comparison window, minus the equity you'd hold at the end of that window. Because a car loan often outlasts the lease term, at that point you may still owe money on the loan — so the equity credited is the car's estimated resale value <strong>minus any loan balance still owed</strong> (net of payoff), not the full resale value. If the loan is already paid off by then, you owe nothing and keep the full resale value. Netting the payoff against resale is what makes the comparison fair — it credits you only for the ownership stake you'd actually have, rather than treating every dollar of a car payment as pure expense the way a lease payment is.</p>
+
+    <h2>Why the comparison window is your lease term</h2>
+    <p>Car loans often run longer than lease terms — a 60-month loan against a 36-month lease is common. Comparing the full 60 months of loan payments to only 36 months of lease payments wouldn't be a fair comparison, since you'd be pricing in years the lease was never going to cover. Instead, this calculator counts only the loan payments made through the end of the lease term (or the full loan term, if it's shorter), and pairs that with the resale value the car would have at that same point in time. That way, both sides of the comparison cover the exact same period.</p>
+    <p>This also means the calculator isn't telling you which option is cheaper over the <em>full</em> life of the car — only over the length of time a lease would have run. If you'd keep the car well past the loan's payoff date, buying tends to look even better than this snapshot suggests, since you stop making payments while the car keeps holding value. If you'd trade in or sell right at the end of the lease term regardless, this comparison window is exactly the one that matters.</p>
+
+    <h2>Sources &amp; method</h2>
+    <p class="sources">Loan payments use the standard fixed-rate amortization formula applied to the amount financed (vehicle price minus down payment). The lease total is drive-off costs plus monthly payments across the full lease term. On the buy side, the calculator credits the car's estimated resale value <strong>minus any loan balance still owed</strong> at the end of the lease term (net of payoff), computed from the standard amortization schedule — so a loan that outlasts the lease is charged for the balance you'd still carry. This calculator intentionally simplifies the comparison: it ignores the <strong>time value of money</strong> (a dollar paid today is worth more than a dollar paid in the future), <strong>lease mileage-overage fees</strong> (charged if you exceed your annual mileage allowance), and <strong>maintenance and repair costs</strong> for either option, since these vary too widely by vehicle and driving habits to estimate reliably. These estimates are informational only and not financial advice.</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">What does "net cost of buying" mean?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Net cost of buying is what financing and keeping the car actually costs you over the comparison window: your down payment plus the loan payments you make, minus the equity you'd hold at the end of that period. Equity is the car's estimated resale value minus any loan balance you'd still owe at that point (net of payoff) — because a car loan often outlasts the lease term, you may not own the car free and clear yet. If the loan is already paid off, you keep the full resale value. Either way, that equity offsets part of what you paid — unlike a lease, where you hand the car back with nothing to show for it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why does this calculator compare costs over the lease term instead of the full loan term?<span class="faq-icon">+</span></button>
+        <div class="faq-a">A lease naturally ends at a fixed point — the lease term — while a car loan usually runs longer. To compare the two fairly, this calculator looks only at what you'd have spent by the time the lease would have ended, then credits the buy side for the equity you'd hold at that same point — the car's resale value minus any loan balance still owed. Comparing a full loan payoff against a shorter lease would overstate the true cost of buying.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What does this calculator leave out?<span class="faq-icon">+</span></button>
+        <div class="faq-a">This calculator ignores the time value of money (a dollar today isn't worth the same as a dollar years from now), lease mileage-overage fees, and vehicle maintenance and repair costs — both leased and owned cars need upkeep, but maintenance costs vary too much by vehicle and driving habits to estimate reliably here. Treat the results as a starting point, not a complete financial picture.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Auto Tools</p>
+    <div class="sidebar-tools">
+      <a class="sidebar-tool" href="auto-loan-calculator.html">
+        <div class="sidebar-tool-icon">🚗</div>
+        <div><div class="sidebar-tool-name">Auto Loan Calculator</div><div class="sidebar-tool-desc">Estimate your monthly car payment</div></div>
+      </a>
+      <a class="sidebar-tool" href="fuel-cost-calculator.html">
+        <div class="sidebar-tool-icon">⛽</div>
+        <div><div class="sidebar-tool-name">Fuel Cost Calculator</div><div class="sidebar-tool-desc">Estimate trip and monthly fuel costs</div></div>
+      </a>
+      <a class="sidebar-tool" href="mpg-calculator.html">
+        <div class="sidebar-tool-icon">📊</div>
+        <div><div class="sidebar-tool-name">MPG Calculator</div><div class="sidebar-tool-desc">Calculate your car's fuel economy</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function loanPayment(financed, apr, term) {
+  const r = apr / 1200;
+  return r === 0 ? financed / term : financed * r / (1 - Math.pow(1 + r, -term));
+}
+
+function remainingBalance(financed, apr, term, k) {
+  // principal still owed after k payments of a term-month loan
+  if (k >= term) return 0;
+  const r = apr / 1200;
+  const pmt = loanPayment(financed, apr, term);
+  if (r === 0) return financed - pmt * k;
+  return financed * Math.pow(1 + r, k) - pmt * (Math.pow(1 + r, k) - 1) / r;
+}
+
+function computeLeaseVsBuy({ leaseMonthly, leaseTerm, driveOff, buyPrice, buyApr, buyTerm, buyDown, resale }) {
+  const H = leaseTerm;
+  const leaseTotal = driveOff + leaseMonthly * H;
+  const financed = buyPrice - buyDown;
+  const pmt = loanPayment(financed, buyApr, buyTerm);
+  const paymentsInH = Math.min(H, buyTerm);
+  const owed = remainingBalance(financed, buyApr, buyTerm, paymentsInH);
+  const equity = resale - owed;                 // what you actually keep after paying off the loan
+  const buyNet = buyDown + pmt * paymentsInH - equity;
+  const delta = Math.abs(buyNet - leaseTotal);
+  return { leaseTotal, buyNet, cheaper: buyNet < leaseTotal ? 'buy' : 'lease', delta, pmt, paymentsInH, owed, equity };
+}
+
+function fmtCurrency(n) {
+  return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+}
+
+function calculate() {
+  const leaseMonthly = parseFloat(document.getElementById('leaseMonthly').value) || 0;
+  const leaseTerm = parseFloat(document.getElementById('leaseTerm').value) || 0;
+  const driveOff = parseFloat(document.getElementById('driveOff').value) || 0;
+  const buyPrice = parseFloat(document.getElementById('buyPrice').value) || 0;
+  const buyDown = parseFloat(document.getElementById('buyDown').value) || 0;
+  const buyApr = parseFloat(document.getElementById('buyApr').value) || 0;
+  const buyTerm = parseFloat(document.getElementById('buyTerm').value) || 0;
+  const resale = parseFloat(document.getElementById('resale').value) || 0;
+
+  if (leaseTerm <= 0 || buyTerm <= 0) {
+    document.getElementById('resultsBody').innerHTML = `
+      <div class="verdict-hero lease">
+        <div class="verdict-label">Lease vs Buy</div>
+        <div class="verdict-value">—</div>
+        <div class="verdict-sub">Enter a lease term and loan term</div>
+      </div>
+    `;
+    return;
+  }
+
+  const out = computeLeaseVsBuy({ leaseMonthly, leaseTerm, driveOff, buyPrice, buyApr, buyTerm, buyDown, resale });
+
+  const buyWins = out.cheaper === 'buy';
+  const maxTotal = Math.max(out.leaseTotal, out.buyNet, 1);
+  const leaseBarPct = Math.max((out.leaseTotal / maxTotal) * 100, 4);
+  const buyBarPct = Math.max((out.buyNet / maxTotal) * 100, 4);
+
+  document.getElementById('statusBadge').textContent = buyWins ? 'Buy' : 'Lease';
+  document.getElementById('statusBadge').className = 'results-status ' + (buyWins ? 'status-buy' : 'status-lease');
+
+  document.getElementById('resultsBody').innerHTML = `
+    <div class="verdict-hero ${buyWins ? 'buy' : 'lease'}">
+      <div class="verdict-label">Over ${leaseTerm} month${leaseTerm !== 1 ? 's' : ''} (your lease term)</div>
+      <div class="verdict-value">${buyWins ? 'Buying is cheaper' : 'Leasing is cheaper'}</div>
+      <div class="verdict-sub">by ${fmtCurrency(out.delta)}</div>
+    </div>
+
+    <div class="comparison">
+      <div class="comp-row">
+        <span class="comp-side-label" style="color:var(--blue);">LEASE</span>
+        <div class="comp-bar-wrap">
+          <div class="comp-bar lease-bar" style="width:${leaseBarPct}%">
+            <span class="comp-bar-val">${fmtCurrency(out.leaseTotal)}</span>
+          </div>
+        </div>
+      </div>
+      <div class="comp-row">
+        <span class="comp-side-label" style="color:var(--accent);">BUY</span>
+        <div class="comp-bar-wrap">
+          <div class="comp-bar buy-bar" style="width:${buyBarPct}%">
+            <span class="comp-bar-val">${fmtCurrency(out.buyNet)}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-label">Lease total</div>
+        <div class="metric-value blue">${fmtCurrency(out.leaseTotal)}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Buy net cost</div>
+        <div class="metric-value accent">${fmtCurrency(out.buyNet)}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Equity kept</div>
+        <div class="metric-value accent">${fmtCurrency(out.equity)}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Loan still owed</div>
+        <div class="metric-value blue">${fmtCurrency(out.owed)}</div>
+      </div>
+    </div>
+
+    <div class="breakdown-wrap">
+      <div class="breakdown-title">Cost Breakdown Over ${leaseTerm} Month${leaseTerm !== 1 ? 's' : ''}</div>
+      <table class="breakdown-table">
+        <thead>
+          <tr><th>Line item</th><th class="th-lease">Lease</th><th class="th-buy">Buy</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Drive-off / down payment</td>
+            <td>${fmtCurrency(driveOff)}</td>
+            <td>${fmtCurrency(buyDown)}</td>
+          </tr>
+          <tr>
+            <td>Monthly payments</td>
+            <td>${fmtCurrency(leaseMonthly * leaseTerm)}<span class="cell-note">${leaseTerm} mo.</span></td>
+            <td>${fmtCurrency(out.pmt * out.paymentsInH)}<span class="cell-note">${out.paymentsInH} mo.</span></td>
+          </tr>
+          <tr>
+            <td>Less: resale value</td>
+            <td class="dash">—</td>
+            <td class="credit">−${fmtCurrency(resale)}</td>
+          </tr>
+          ${out.owed > 0 ? `<tr>
+            <td>Plus: loan balance still owed</td>
+            <td class="dash">—</td>
+            <td>+${fmtCurrency(out.owed)}</td>
+          </tr>` : ''}
+          <tr class="total-row">
+            <td>Total cost</td>
+            <td>${fmtCurrency(out.leaseTotal)}</td>
+            <td>${fmtCurrency(out.buyNet)}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+calculate();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>
