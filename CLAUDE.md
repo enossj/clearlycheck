@@ -41,8 +41,6 @@ Adding or renaming a tool means updating **all** of these together, or the site 
 3. `sitemap.xml` — `<url>` block (run `node scripts/update-sitemap.js` note: its `urlMap` is stale/partial — verify manually).
 4. Any "N tools" text anywhere else.
 5. Add the new file to its category in `scripts/wire-breadcrumbs.cjs` (`CAT` map) + `scripts/build-hubs.cjs` (`CATS.tools`), then re-run both, plus `optimize-fonts.cjs`.
-6. Add the new slug (and 2–3 related slugs) to `scripts/related-tools-map.json`, then re-run `node scripts/add-related-tools.cjs` (warns if any tool lacks an entry).
-7. Run `node scripts/add-dark-mode.cjs` and `node scripts/tokenize-inline-colors.cjs` on the new page (both idempotent, safe sitewide).
 
 Always grep for the old count (e.g. `grep -rn "31 tools\|31 free" *.html`) before/after.
 
