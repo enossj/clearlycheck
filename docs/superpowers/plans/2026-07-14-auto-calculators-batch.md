@@ -264,7 +264,7 @@ function computeLeaseVsBuy({ leaseMonthly, leaseTerm, driveOff, buyPrice, buyApr
 }
 const r = computeLeaseVsBuy({ leaseMonthly: 350, leaseTerm: 36, driveOff: 2000, buyPrice: 30000, buyApr: 5, buyTerm: 60, buyDown: 3000, resale: 18000 });
 console.assert(Math.abs(r.leaseTotal - 14600) < 1e-9, 'lease', r.leaseTotal);
-console.assert(Math.abs(r.buyNet - 3346.68) < 1, 'buyNet', r.buyNet);
+console.assert(Math.abs(r.buyNet - 3342.84) < 1, 'buyNet', r.buyNet);
 console.assert(r.cheaper === 'buy', 'cheaper', r.cheaper);
 console.log('OK', r);
 ```
@@ -272,7 +272,7 @@ console.log('OK', r);
 - [ ] **Step 2: Run test**
 
 Run: `node /tmp/t4.js`
-Expected: `OK { leaseTotal: 14600, buyNet: 3346.6..., cheaper: 'buy', delta: 11253.3... }`, no warnings.
+Expected: `OK { leaseTotal: 14600, buyNet: 3342.8..., cheaper: 'buy', delta: 11257.1... }`, no warnings.
 
 - [ ] **Step 3: Build the page**
 
@@ -286,7 +286,7 @@ Copy `mortgage-calculator.html` → `lease-vs-buy-calculator.html`. Replace:
 
 - [ ] **Step 4: Verify in browser at 375px**
 
-Serve, 375px, overflow probe → `{"overflow":0}`. Enter lease $350/36mo/$2000 drive-off; buy $30000/5% APR/60mo/$3000 down/$18000 resale → lease total **$14,600**, buy net **≈ $3,347**, verdict **Buying is cheaper**. JSON-LD parse-check → `["ok","ok","ok"]`. Stop server.
+Serve, 375px, overflow probe → `{"overflow":0}`. Enter lease $350/36mo/$2000 drive-off; buy $30000/5% APR/60mo/$3000 down/$18000 resale → lease total **$14,600**, buy net **≈ $3,343**, verdict **Buying is cheaper**. JSON-LD parse-check → `["ok","ok","ok"]`. Stop server.
 
 - [ ] **Step 5: Commit**
 
