@@ -468,8 +468,10 @@ function calculate() {
   const out = computeFuelCost({ distance: adjDistance, roundTrip, efficiency, effUnit, price, people });
 
   const fuelLabel = effUnit === 'l100km' ? 'L' : 'gal';
-  const tripLabel = roundTrip ? 'round trip' : 'one-way trip';
   const distLabel = distanceUnit === 'mi' ? 'miles' : 'km';
+  const tripSub = roundTrip
+    ? `For a round trip: ${fmtFuel(distance)} ${distLabel} each way, ${fmtFuel(distance * 2)} ${distLabel} total`
+    : `For a one-way trip of ${fmtFuel(distance)} ${distLabel}`;
 
   let metricsHtml = `
     <div class="metric">
@@ -493,7 +495,7 @@ function calculate() {
     <div class="verdict-hero">
       <div class="verdict-label">Total Fuel Cost</div>
       <div class="verdict-value">${fmtCurrency(out.totalCost)}</div>
-      <div class="verdict-sub">For a ${tripLabel} of ${fmtFuel(distance)} ${distLabel}</div>
+      <div class="verdict-sub">${tripSub}</div>
     </div>
     <div class="metrics-grid" style="grid-template-columns: ${gridCols};">
       ${metricsHtml}

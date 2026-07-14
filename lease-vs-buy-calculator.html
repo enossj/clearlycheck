@@ -35,12 +35,12 @@
     {
       "@type": "Question",
       "name": "What does \"net cost of buying\" mean?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Net cost of buying is what financing and keeping the car actually costs you over the comparison window: your down payment plus the loan payments you make, minus the car's estimated resale value at the end of that period. Because you still own the car and could sell it, that resale value offsets part of what you paid — unlike a lease, where you hand the car back with nothing to show for it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Net cost of buying is what financing and keeping the car actually costs you over the comparison window: your down payment plus the loan payments you make, minus the equity you'd hold at the end of that period. Equity is the car's estimated resale value minus any loan balance you'd still owe at that point (net of payoff) — because a car loan often outlasts the lease term, you may not own the car free and clear yet. If the loan is already paid off, you keep the full resale value. Either way, that equity offsets part of what you paid — unlike a lease, where you hand the car back with nothing to show for it." }
     },
     {
       "@type": "Question",
       "name": "Why does this calculator compare costs over the lease term instead of the full loan term?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A lease naturally ends at a fixed point — the lease term — while a car loan usually runs longer. To compare the two fairly, this calculator looks only at what you'd have spent (or still owe) by the time the lease would have ended, then credits the buy side for the resale value the car would have at that same point. Comparing a full loan payoff against a shorter lease would overstate the true cost of buying." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A lease naturally ends at a fixed point — the lease term — while a car loan usually runs longer. To compare the two fairly, this calculator looks only at what you'd have spent by the time the lease would have ended, then credits the buy side for the equity you'd hold at that same point — the car's resale value minus any loan balance still owed. Comparing a full loan payoff against a shorter lease would overstate the true cost of buying." }
     },
     {
       "@type": "Question",
@@ -312,7 +312,7 @@
       <span style="color:var(--text-muted);">Lease vs Buy</span>
     </div>
   </nav>
-  <div class="tool-tag-pill">🚗 Finance Tool</div>
+  <div class="tool-tag-pill">🚗 Auto Tool</div>
   <h1>Car Lease vs Buy Calculator</h1>
   <p>Compare the total cost of leasing a car against financing and keeping it — including the car's resale value — over the length of the lease.</p>
   <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 14, 2026</div>
@@ -402,27 +402,27 @@
 <div class="article-section">
   <article class="article">
     <h2>How this lease vs buy calculator works</h2>
-    <p>Leasing and buying spread your money differently, which makes them hard to compare at a glance. This calculator puts both on the same footing by looking at the <strong>total cost of each option over the lease term</strong> — the natural end point of a lease. On the lease side, that's simply your drive-off costs (first month, taxes, and fees due at signing) plus every monthly payment through the end of the term. On the buy side, it's your down payment plus the loan payments you'd make during that same window, minus what the car would be worth if you sold it at that point.</p>
+    <p>Leasing and buying spread your money differently, which makes them hard to compare at a glance. This calculator puts both on the same footing by looking at the <strong>total cost of each option over the lease term</strong> — the natural end point of a lease. On the lease side, that's simply your drive-off costs (first month, taxes, and fees due at signing) plus every monthly payment through the end of the term. On the buy side, it's your down payment plus the loan payments you'd make during that same window, minus the <strong>equity</strong> you'd have in the car at that point — its resale value less any loan balance still owed.</p>
 
     <h2>What "net cost of buying" means</h2>
-    <p>When you buy a car, part of every payment builds equity in an asset you still own. That's the key difference from leasing, where you make payments and then return the car with nothing to show for it. To capture this, the calculator computes a <strong>net cost of buying</strong>: your down payment plus the loan payments made during the comparison window, minus the car's estimated resale value at the end of that window. Subtracting resale value is what makes the comparison fair — it credits you for the asset you'd still hold, rather than treating every dollar of a car payment as pure expense the way a lease payment is.</p>
+    <p>When you buy a car, part of every payment builds equity in an asset you still own. That's the key difference from leasing, where you make payments and then return the car with nothing to show for it. To capture this, the calculator computes a <strong>net cost of buying</strong>: your down payment plus the loan payments made during the comparison window, minus the equity you'd hold at the end of that window. Because a car loan often outlasts the lease term, at that point you may still owe money on the loan — so the equity credited is the car's estimated resale value <strong>minus any loan balance still owed</strong> (net of payoff), not the full resale value. If the loan is already paid off by then, you owe nothing and keep the full resale value. Netting the payoff against resale is what makes the comparison fair — it credits you only for the ownership stake you'd actually have, rather than treating every dollar of a car payment as pure expense the way a lease payment is.</p>
 
     <h2>Why the comparison window is your lease term</h2>
     <p>Car loans often run longer than lease terms — a 60-month loan against a 36-month lease is common. Comparing the full 60 months of loan payments to only 36 months of lease payments wouldn't be a fair comparison, since you'd be pricing in years the lease was never going to cover. Instead, this calculator counts only the loan payments made through the end of the lease term (or the full loan term, if it's shorter), and pairs that with the resale value the car would have at that same point in time. That way, both sides of the comparison cover the exact same period.</p>
     <p>This also means the calculator isn't telling you which option is cheaper over the <em>full</em> life of the car — only over the length of time a lease would have run. If you'd keep the car well past the loan's payoff date, buying tends to look even better than this snapshot suggests, since you stop making payments while the car keeps holding value. If you'd trade in or sell right at the end of the lease term regardless, this comparison window is exactly the one that matters.</p>
 
     <h2>Sources &amp; method</h2>
-    <p class="sources">Loan payments use the standard fixed-rate amortization formula applied to the amount financed (vehicle price minus down payment). The lease total is drive-off costs plus monthly payments across the full lease term. This calculator intentionally simplifies the comparison: it ignores the <strong>time value of money</strong> (a dollar paid today is worth more than a dollar paid in the future), <strong>lease mileage-overage fees</strong> (charged if you exceed your annual mileage allowance), and <strong>maintenance and repair costs</strong> for either option, since these vary too widely by vehicle and driving habits to estimate reliably. These estimates are informational only and not financial advice.</p>
+    <p class="sources">Loan payments use the standard fixed-rate amortization formula applied to the amount financed (vehicle price minus down payment). The lease total is drive-off costs plus monthly payments across the full lease term. On the buy side, the calculator credits the car's estimated resale value <strong>minus any loan balance still owed</strong> at the end of the lease term (net of payoff), computed from the standard amortization schedule — so a loan that outlasts the lease is charged for the balance you'd still carry. This calculator intentionally simplifies the comparison: it ignores the <strong>time value of money</strong> (a dollar paid today is worth more than a dollar paid in the future), <strong>lease mileage-overage fees</strong> (charged if you exceed your annual mileage allowance), and <strong>maintenance and repair costs</strong> for either option, since these vary too widely by vehicle and driving habits to estimate reliably. These estimates are informational only and not financial advice.</p>
 
     <div class="faq-section">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
         <button class="faq-q">What does "net cost of buying" mean?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Net cost of buying is what financing and keeping the car actually costs you over the comparison window: your down payment plus the loan payments you make, minus the car's estimated resale value at the end of that period. Because you still own the car and could sell it, that resale value offsets part of what you paid — unlike a lease, where you hand the car back with nothing to show for it.</div>
+        <div class="faq-a">Net cost of buying is what financing and keeping the car actually costs you over the comparison window: your down payment plus the loan payments you make, minus the equity you'd hold at the end of that period. Equity is the car's estimated resale value minus any loan balance you'd still owe at that point (net of payoff) — because a car loan often outlasts the lease term, you may not own the car free and clear yet. If the loan is already paid off, you keep the full resale value. Either way, that equity offsets part of what you paid — unlike a lease, where you hand the car back with nothing to show for it.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Why does this calculator compare costs over the lease term instead of the full loan term?<span class="faq-icon">+</span></button>
-        <div class="faq-a">A lease naturally ends at a fixed point — the lease term — while a car loan usually runs longer. To compare the two fairly, this calculator looks only at what you'd have spent (or still owe) by the time the lease would have ended, then credits the buy side for the resale value the car would have at that same point. Comparing a full loan payoff against a shorter lease would overstate the true cost of buying.</div>
+        <div class="faq-a">A lease naturally ends at a fixed point — the lease term — while a car loan usually runs longer. To compare the two fairly, this calculator looks only at what you'd have spent by the time the lease would have ended, then credits the buy side for the equity you'd hold at that same point — the car's resale value minus any loan balance still owed. Comparing a full loan payoff against a shorter lease would overstate the true cost of buying.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">What does this calculator leave out?<span class="faq-icon">+</span></button>
@@ -463,15 +463,26 @@ function loanPayment(financed, apr, term) {
   return r === 0 ? financed / term : financed * r / (1 - Math.pow(1 + r, -term));
 }
 
+function remainingBalance(financed, apr, term, k) {
+  // principal still owed after k payments of a term-month loan
+  if (k >= term) return 0;
+  const r = apr / 1200;
+  const pmt = loanPayment(financed, apr, term);
+  if (r === 0) return financed - pmt * k;
+  return financed * Math.pow(1 + r, k) - pmt * (Math.pow(1 + r, k) - 1) / r;
+}
+
 function computeLeaseVsBuy({ leaseMonthly, leaseTerm, driveOff, buyPrice, buyApr, buyTerm, buyDown, resale }) {
   const H = leaseTerm;
   const leaseTotal = driveOff + leaseMonthly * H;
   const financed = buyPrice - buyDown;
   const pmt = loanPayment(financed, buyApr, buyTerm);
   const paymentsInH = Math.min(H, buyTerm);
-  const buyNet = buyDown + pmt * paymentsInH - resale;
+  const owed = remainingBalance(financed, buyApr, buyTerm, paymentsInH);
+  const equity = resale - owed;                 // what you actually keep after paying off the loan
+  const buyNet = buyDown + pmt * paymentsInH - equity;
   const delta = Math.abs(buyNet - leaseTotal);
-  return { leaseTotal, buyNet, cheaper: buyNet < leaseTotal ? 'buy' : 'lease', delta, pmt, paymentsInH };
+  return { leaseTotal, buyNet, cheaper: buyNet < leaseTotal ? 'buy' : 'lease', delta, pmt, paymentsInH, owed, equity };
 }
 
 function fmtCurrency(n) {
@@ -545,12 +556,12 @@ function calculate() {
         <div class="metric-value accent">${fmtCurrency(out.buyNet)}</div>
       </div>
       <div class="metric">
-        <div class="metric-label">Difference</div>
-        <div class="metric-value">${fmtCurrency(out.delta)}</div>
+        <div class="metric-label">Equity kept</div>
+        <div class="metric-value accent">${fmtCurrency(out.equity)}</div>
       </div>
       <div class="metric">
-        <div class="metric-label">Comparison window</div>
-        <div class="metric-value">${leaseTerm} months</div>
+        <div class="metric-label">Loan still owed</div>
+        <div class="metric-value blue">${fmtCurrency(out.owed)}</div>
       </div>
     </div>
 
@@ -576,6 +587,11 @@ function calculate() {
             <td class="dash">—</td>
             <td class="credit">−${fmtCurrency(resale)}</td>
           </tr>
+          ${out.owed > 0 ? `<tr>
+            <td>Plus: loan balance still owed</td>
+            <td class="dash">—</td>
+            <td>+${fmtCurrency(out.owed)}</td>
+          </tr>` : ''}
           <tr class="total-row">
             <td>Total cost</td>
             <td>${fmtCurrency(out.leaseTotal)}</td>
