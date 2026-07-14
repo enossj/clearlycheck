@@ -47,7 +47,7 @@
       "name": "What free tools does ClearlyCheck offer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ClearlyCheck offers 31 free tools: a debt free calculator (find your exact payoff date), net worth calculator, salary to hourly converter, can I afford this calculator (income-based affordability check), rent vs buy calculator, timezone meeting planner, time card calculator, overtime pay calculator, meeting cost calculator, date duration calculator, word count and reading time tool, BMI calculator, height calculator, bra size calculator, age calculator, tip calculator, compound interest calculator, password generator, income tax calculator, sales tax calculator, calorie calculator, due date calculator, mortgage calculator, percentage calculator, unit converter, shoe size converter, GPA calculator, grade calculator, a dog and cat age calculator, a pet food and calorie calculator, and a pet cost calculator. All tools are free, require no signup, and run entirely in your browser."
+        "text": "ClearlyCheck offers 35 free tools: a debt free calculator (find your exact payoff date), net worth calculator, salary to hourly converter, can I afford this calculator (income-based affordability check), rent vs buy calculator, timezone meeting planner, time card calculator, overtime pay calculator, meeting cost calculator, date duration calculator, word count and reading time tool, BMI calculator, height calculator, bra size calculator, age calculator, tip calculator, compound interest calculator, password generator, income tax calculator, sales tax calculator, calorie calculator, due date calculator, mortgage calculator, percentage calculator, unit converter, shoe size converter, GPA calculator, grade calculator, a dog and cat age calculator, a pet food and calorie calculator, a pet cost calculator, an auto loan calculator, a fuel cost calculator, an MPG calculator, and a car lease vs buy calculator. All tools are free, require no signup, and run entirely in your browser."
       }
     },
     {
@@ -102,6 +102,8 @@
     --tag-productivity-text: #8a6500;
     --tag-education: #f3e8fd;
     --tag-education-text: #7c3aed;
+    --tag-auto: #e8eef7;
+    --tag-auto-text: #2d5a8a;
     --radius: 16px;
     --radius-sm: 10px;
     --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
@@ -452,6 +454,7 @@
   .tag-productivity { background: var(--tag-productivity); color: var(--tag-productivity-text); }
   .tag-education { background: var(--tag-education); color: var(--tag-education-text); }
   .tag-pet { background: #fbe9d8; color: #9a5b1e; }
+  .tag-auto { background: var(--tag-auto); color: var(--tag-auto-text); }
 
   .tool-name {
     font-family: 'Roboto', sans-serif;
@@ -682,7 +685,7 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-num">31</div>
+      <div class="stat-num">35</div>
       <div class="stat-label">Free tools live</div>
     </div>
     <div class="stat-item">
@@ -721,6 +724,7 @@
     <a class="cat-hub" href="utility-tools.html">🛠️ Utility</a>
     <a class="cat-hub" href="pet-tools.html">🐾 Pet</a>
     <a class="cat-hub" href="education-tools.html">🎓 Education</a>
+    <a class="cat-hub" href="auto-calculators.html">🚗 Auto</a>
   </nav>
 
   <div class="tools-grid" id="toolsGrid">
@@ -1096,6 +1100,58 @@
       </div>
     </a>
 
+    <a class="tool-card" href="auto-loan-calculator.html" data-name="auto loan calculator car loan monthly car payment calculator interest">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:#e8eef7;">🚗</div>
+        <span class="tool-tag tag-auto">Auto</span>
+      </div>
+      <div class="tool-name">Auto Loan Calculator</div>
+      <div class="tool-desc">Estimate your monthly car payment, total interest, and loan cost from price, down payment, trade-in, tax, APR, and term.</div>
+      <div class="tool-cta">
+        Use tool
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
+    <a class="tool-card" href="fuel-cost-calculator.html" data-name="fuel cost calculator gas cost calculator trip cost road trip mpg l100km">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:#e8eef7;">⛽</div>
+        <span class="tool-tag tag-auto">Auto</span>
+      </div>
+      <div class="tool-name">Fuel Cost Calculator</div>
+      <div class="tool-desc">Work out the gas cost of any trip from distance, fuel economy, and price — round trips and splitting between passengers included.</div>
+      <div class="tool-cta">
+        Use tool
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
+    <a class="tool-card" href="mpg-calculator.html" data-name="mpg calculator fuel economy calculator miles per gallon l100km km per liter converter">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:#e8eef7;">📊</div>
+        <span class="tool-tag tag-auto">Auto</span>
+      </div>
+      <div class="tool-name">MPG Calculator</div>
+      <div class="tool-desc">Find your car's real-world fuel economy from miles and fuel used, and convert between MPG, L/100km, and km/L.</div>
+      <div class="tool-cta">
+        Use tool
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
+    <a class="tool-card" href="lease-vs-buy-calculator.html" data-name="lease vs buy calculator car lease vs buy should i lease or buy a car">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:#e8eef7;">⚖️</div>
+        <span class="tool-tag tag-auto">Auto</span>
+      </div>
+      <div class="tool-name">Car Lease vs Buy Calculator</div>
+      <div class="tool-desc">Compare the total cost of leasing a car against financing and keeping it, resale value included.</div>
+      <div class="tool-cta">
+        Use tool
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -1133,7 +1189,7 @@
 <section class="home-content">
   <div class="home-content-inner">
     <h2>Free calculators for the decisions that actually matter</h2>
-    <p>ClearlyCheck is a small, independent collection of <strong>31 free online calculators</strong> covering the everyday money, health, education, and productivity questions most people would rather not do by hand. There's no signup, no paywall, and no account to create — every tool runs entirely in your browser, so the numbers you type never leave your device.</p>
+    <p>ClearlyCheck is a small, independent collection of <strong>35 free online calculators</strong> covering the everyday money, health, education, auto, and productivity questions most people would rather not do by hand. There's no signup, no paywall, and no account to create — every tool runs entirely in your browser, so the numbers you type never leave your device.</p>
 
     <h3>Money &amp; finance</h3>
     <p>The <a href="mortgage-calculator.html">mortgage calculator</a> breaks a monthly payment down into principal, interest, taxes, insurance, and PMI, then shows the full amortization schedule. The <a href="debt-free-calculator.html">debt-free calculator</a> tells you the exact date your balance hits zero, the <a href="compound-interest-calculator.html">compound interest calculator</a> shows how savings grow over time, and the <a href="income-tax-calculator.html">income tax calculator</a> estimates your federal bill for 2025 or 2026. The <a href="sales-tax-calculator.html">sales tax calculator</a> adds or removes sales tax from any price. Weighing a big decision? <a href="rent-vs-buy.html">Rent vs buy</a>, <a href="can-i-afford-this.html">can I afford this</a>, and the <a href="salary-converter.html">salary-to-hourly converter</a> turn vague questions into a clear number.</p>

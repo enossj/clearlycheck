@@ -25,6 +25,7 @@ const EXCLUDE = new Set([
   'privacy-policy.html', 'terms-of-use.html',
   'finance-calculators.html', 'health-calculators.html', 'productivity-tools.html',
   'utility-tools.html', 'pet-tools.html', 'education-tools.html',
+  'auto-calculators.html',
   'google1d81c29365628a0c.html',
 ]);
 

@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://clearlycheck.com/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,37 +11,43 @@
   <!-- Category hub pages -->
   <url>
     <loc>https://clearlycheck.com/finance-calculators.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/health-calculators.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/productivity-tools.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/utility-tools.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/pet-tools.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/education-tools.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://clearlycheck.com/auto-calculators.html</loc>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -49,116 +55,116 @@
   <!-- Finance tools -->
   <url>
     <loc>https://clearlycheck.com/debt-free-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/net-worth-calculator.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/salary-converter.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/can-i-afford-this.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/rent-vs-buy.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/tip-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/compound-interest-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/income-tax-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/sales-tax-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/mortgage-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/percentage-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://clearlycheck.com/time-card-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/overtime-pay-calculator.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/meeting-cost-calculator.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/date-duration-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/word-count-reading-time.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/pet-age-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/pet-food-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/pet-cost-calculator.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -166,37 +172,37 @@
   <!-- Health tools -->
   <url>
     <loc>https://clearlycheck.com/bmi-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/height-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/bra-size-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/shoe-size-converter.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/calorie-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/due-date-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -204,7 +210,7 @@
   <!-- Productivity tools -->
   <url>
     <loc>https://clearlycheck.com/timezone-planner.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -212,19 +218,19 @@
   <!-- Utility tools -->
   <url>
     <loc>https://clearlycheck.com/age-calculator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/password-generator.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/unit-converter.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -232,13 +238,39 @@
   <!-- Education tools -->
   <url>
     <loc>https://clearlycheck.com/gpa-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/grade-calculator.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Auto tools -->
+  <url>
+    <loc>https://clearlycheck.com/auto-loan-calculator.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://clearlycheck.com/fuel-cost-calculator.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://clearlycheck.com/mpg-calculator.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://clearlycheck.com/lease-vs-buy-calculator.html</loc>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -246,31 +278,31 @@
   <!-- Site pages -->
   <url>
     <loc>https://clearlycheck.com/about.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/sitemap.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/contact.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/privacy-policy.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://clearlycheck.com/terms-of-use.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
