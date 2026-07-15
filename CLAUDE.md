@@ -6,7 +6,7 @@ Guidance for Claude Code when working in this repo.
 
 Static site of free browser-only calculators/tools. **No backend, no build step for deploy** — plain HTML/CSS/JS served as-is. Live at [clearlycheck.com](https://clearlycheck.com). Repo: `github.com/enossj/clearlycheck`. Default branch: `main` (deploys directly — treat `main` as production).
 
-Currently **31 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Pet 3, Education 2). AdSense context: site was rejected once for "low value content"; Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
+Currently **35 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Auto 4, Pet 3, Education 2). AdSense context: site was rejected once for "low value content"; Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
 
 ## Stack & layout
 
@@ -14,11 +14,11 @@ Currently **31 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Pet 3, 
 - Legacy tools (debt, salary, timezone, bmi, age) DO import from `assets/js/calculators/*.js` and are the only ones covered by Vitest tests.
 - Shared: `assets/css/base.css`, `assets/css/calculator.css`, `assets/js/faq.js`, `assets/js/contact*.js`, `assets/favicon.svg`.
 - Non-tool pages: `index.html` (homepage + tool grid), `about.html`, `contact.html`, `privacy-policy.html`, `terms-of-use.html`, `sitemap.html`, `sitemap.xml`, `robots.txt`, `ads.txt`.
-- **Category hub pages** (6, one per category): `finance-calculators.html`, `health-calculators.html`, `productivity-tools.html`, `utility-tools.html`, `pet-tools.html`, `education-tools.html`. Hub-and-spoke internal linking: each hub lists its category's tool cards (down), links the other 5 hubs + all-tools (mesh); each tool's breadcrumb is **Home › Tools › Category › Tool** linking back to its hub (up); homepage has a "Browse by category" `.cat-hub` row (index→hubs). Hubs are **generated** — never hand-edit them.
+- **Category hub pages** (7, one per category): `finance-calculators.html`, `health-calculators.html`, `productivity-tools.html`, `utility-tools.html`, `auto-calculators.html`, `pet-tools.html`, `education-tools.html`. Hub-and-spoke internal linking: each hub lists its category's tool cards (down), links the other 5 hubs + all-tools (mesh); each tool's breadcrumb is **Home › Tools › Category › Tool** linking back to its hub (up); homepage has a "Browse by category" `.cat-hub` row (index→hubs). Hubs are **generated** — never hand-edit them.
 
 ## Build scripts (`scripts/`, all `.cjs` — package.json is `type:module`)
 
-- `build-hubs.cjs` — regenerates all 6 hub pages. Pulls tool cards from `index.html`; per-category intro/FAQ copy lives in its `CATS` config. **Re-run after adding a tool or editing a homepage card.**
+- `build-hubs.cjs` — regenerates all 7 hub pages. Pulls tool cards from `index.html`; per-category intro/FAQ copy lives in its `CATS` config. **Re-run after adding a tool or editing a homepage card.**
 - `wire-breadcrumbs.cjs` — inserts the category crumb into every tool page's breadcrumb (visible + `BreadcrumbList` JSON-LD). Idempotent; run after adding a tool (add the new file to its category in the script's `CAT` map first).
 - `optimize-fonts.cjs` — converts Google Fonts `<link>` to async load + strips unused `opsz` axis. Idempotent; run on any new page.
 - `add-article-schema.cjs` — injects `TechArticle` schema per tool (`datePublished` from git first-commit, `dateModified` from the page's "Last updated" date, `author`→Person `@id`, `publisher`→Org `@id`+logo). Idempotent; run on any new tool. Author entity `@id` `#enos` is defined on `about.html`; Organization `@id` `#organization` on `index.html`.
@@ -42,7 +42,7 @@ Adding or renaming a tool means updating **all** of these together, or the site 
 4. Any "N tools" text anywhere else.
 5. Add the new file to its category in `scripts/wire-breadcrumbs.cjs` (`CAT` map) + `scripts/build-hubs.cjs` (`CATS.tools`), then re-run both, plus `optimize-fonts.cjs`.
 
-Always grep for the old count (e.g. `grep -rn "31 tools\|31 free" *.html`) before/after.
+Always grep for the old count (e.g. `grep -rn "35 tools\|35 free" *.html`) before/after.
 
 ## Tool page anatomy (copy an existing recent page, e.g. `pet-food-calculator.html`)
 
@@ -58,7 +58,7 @@ Every tool page must have:
 
 ## Categories
 
-Finance · Health · Productivity · Utility · Pet · Education. Six categories, used **identically** in the homepage grid tags (`tag-<category>`) and sitemap.html sections — keep them in sync when adding/moving a tool. Utility is the catch-all (age, password, percentage, unit, bra-size, shoe-size); there is no separate "Other" bucket. Bra-size lives under Utility, not Health.
+Finance · Health · Productivity · Utility · Auto · Pet · Education. Seven categories, used **identically** in the homepage grid tags (`tag-<category>`) and sitemap.html sections — keep them in sync when adding/moving a tool. Utility is the catch-all (age, password, percentage, unit, bra-size, shoe-size); there is no separate "Other" bucket. Bra-size lives under Utility, not Health. Auto (auto-loan, fuel-cost, mpg, lease-vs-buy) is a finance-adjacent category — the auto-loan and lease-vs-buy pages carry the YMYL finance disclaimer + Sources & method; fuel-cost and mpg get a method note only.
 
 ## Conventions
 
