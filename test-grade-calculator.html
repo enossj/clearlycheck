@@ -487,12 +487,14 @@ function heroClassFor(percent) {
   return 'bad';
 }
 
-function renderEasyGrader(total) {
+function renderEasyGrader(total, currentWrong) {
   const rows = Math.min(Math.max(Math.floor(total), 0), 20);
+  const highlight = mode === 'questions' && currentWrong !== undefined ? Math.round(currentWrong) : -1;
   let html = '';
   for (let wrong = 0; wrong <= rows; wrong++) {
     const { percent, letter } = computeTestGrade({ mode: 'questions', total, wrong });
-    html += `<tr><td>${wrong}</td><td>${fmtPercent(percent)}%</td><td class="eg-letter">${letter}</td></tr>`;
+    const trClass = wrong === highlight ? ' class="eg-current"' : '';
+    html += `<tr${trClass}><td>${wrong}</td><td>${fmtPercent(percent)}%</td><td class="eg-letter">${letter}</td></tr>`;
   }
   document.getElementById('easyGraderBody').innerHTML = html;
 }
@@ -506,7 +508,7 @@ function calculate() {
     const wrong = parseFloat(document.getElementById('numWrong').value) || 0;
 
     if (total <= 0) {
-      document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the number of questions.</p></div>`;
+      document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the number of questions</p></div>`;
       document.getElementById('easyGraderBody').innerHTML = '';
       return;
     }
@@ -538,13 +540,13 @@ function calculate() {
       </div>
     `;
 
-    renderEasyGrader(total);
+    renderEasyGrader(total, w);
   } else {
     const earned = parseFloat(document.getElementById('pointsEarned').value) || 0;
     const possible = parseFloat(document.getElementById('pointsPossible').value) || 0;
 
     if (possible <= 0) {
-      document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the total points.</p></div>`;
+      document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the total points</p></div>`;
       return;
     }
 
