@@ -21,7 +21,7 @@ define('health-calculators', 'Health', ['bmi-calculator.html', 'height-calculato
 define('productivity-tools', 'Productivity', ['timezone-planner.html', 'time-card-calculator.html', 'meeting-cost-calculator.html', 'date-duration-calculator.html', 'word-count-reading-time.html']);
 define('utility-tools', 'Utility', ['age-calculator.html', 'password-generator.html', 'percentage-calculator.html', 'unit-converter.html', 'bra-size-calculator.html', 'shoe-size-converter.html']);
 define('pet-tools', 'Pet', ['pet-age-calculator.html', 'pet-food-calculator.html', 'pet-cost-calculator.html']);
-define('education-tools', 'Education', ['gpa-calculator.html', 'grade-calculator.html']);
+define('education-tools', 'Education', ['gpa-calculator.html', 'grade-calculator.html', 'test-grade-calculator.html', 'words-to-pages-calculator.html']);
 define('auto-calculators', 'Auto', ['auto-loan-calculator.html', 'fuel-cost-calculator.html', 'mpg-calculator.html', 'lease-vs-buy-calculator.html']);
 
 let visibleFixed = 0, jsonFixed = 0, skipped = 0, jsonSkipped = 0;

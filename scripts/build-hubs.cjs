@@ -1,5 +1,5 @@
 /**
- * Generates the 6 category hub pages (finance/health/productivity/utility/pet/education).
+ * Generates the 7 category hub pages (finance/health/productivity/utility/pet/education/auto).
  *
  * Each hub links DOWN to every tool in its category (spoke) and ACROSS to the
  * other five hubs (mesh). Tool cards are pulled from index.html so they stay
@@ -121,15 +121,17 @@ const CATS = [
     slug: 'education-tools', label: 'Education', pill: '🎓 Education',
     title: 'Education Tools — GPA and Grade Calculators',
     h1: 'Education Tools',
-    metaDesc: 'Free education calculators for students: work out your semester or cumulative GPA on the 4.0 scale, and find the exam score you need or your weighted class average. No signup, in your browser.',
-    intro: `Grades cause more anxiety than they need to, usually because the arithmetic behind them is fiddly. These two tools take that off your plate. The GPA Calculator turns your course grades and credit hours into a semester or cumulative grade point average on the standard 4.0 scale, with support for weighted honors and AP courses. The Grade Calculator answers the question every student asks before a final: what score do I need to hit the grade I want? It also works out your current weighted average from individual assignments and their weights. Both run instantly in your browser, keep your marks private, and save you from second-guessing a calculator app during exam season. Enter your numbers, see exactly where you stand, and plan the rest of the term with confidence.`,
+    metaDesc: 'Free education calculators for students: work out your semester or cumulative GPA on the 4.0 scale, find the exam score you need or your weighted class average, grade a test from questions missed, and convert word counts to pages. No signup, in your browser.',
+    intro: `Grades cause more anxiety than they need to, usually because the arithmetic behind them is fiddly. These four tools take that off your plate. The GPA Calculator turns your course grades and credit hours into a semester or cumulative grade point average on the standard 4.0 scale, with support for weighted honors and AP courses. The Grade Calculator answers the question every student asks before a final: what score do I need to hit the grade I want? It also works out your current weighted average from individual assignments and their weights. The Test Grade Calculator takes the number of questions missed, or points earned out of a total, and instantly returns the percentage score and letter grade with a full EasyGrader-style chart. The Words to Pages Calculator converts a word count into an estimated page count — or pages back into words — for whatever font, size, and spacing your assignment requires. All four run instantly in your browser, keep your work private, and save you from second-guessing a calculator app during exam season. Enter your numbers, see exactly where you stand, and plan the rest of the term with confidence.`,
     disclaimer: null,
     faq: [
       { q: 'How is GPA calculated?', a: 'Each grade is converted to points on the 4.0 scale, multiplied by the course\'s credit hours, summed, and divided by total credits. The GPA Calculator does this automatically and supports weighted honors and AP courses.' },
       { q: 'Can I find the exam score I need for a target grade?', a: 'Yes. The Grade Calculator takes your current grade, the final\'s weight, and your target, and tells you the exact score you need on the final exam.' },
-      { q: 'Are these tools free?', a: 'Both are free, need no signup, and run entirely in your browser.' },
+      { q: 'How do I turn missed questions into a grade?', a: 'The Test Grade Calculator takes the number of questions (or points) missed out of the total and returns the percentage score along with its corresponding letter grade.' },
+      { q: 'How many pages is my essay?', a: 'The Words to Pages Calculator estimates page count from a word count (or the reverse) based on the font, font size, and line spacing you choose, since those change how much text fits per page.' },
+      { q: 'Are these tools free?', a: 'All four are free, need no signup, and run entirely in your browser.' },
     ],
-    tools: ['gpa-calculator.html', 'grade-calculator.html'],
+    tools: ['gpa-calculator.html', 'grade-calculator.html', 'test-grade-calculator.html', 'words-to-pages-calculator.html'],
   },
   {
     slug: 'auto-calculators', label: 'Auto', pill: '🚗 Auto',
