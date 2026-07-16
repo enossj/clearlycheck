@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Words to Pages Calculator — Essay Length Estimator | ClearlyCheck</title>
+<meta name="description" content="Free words to pages calculator: convert a word count to page count (or pages back to words) for any font, size, and spacing — Times New Roman, Arial, Calibri, or Courier New, single or double spaced. Runs in your browser.">
+<meta name="keywords" content="words to pages calculator, word count to pages, pages to word count, essay length calculator, how many pages is 1000 words, double spaced page count">
+<link rel="canonical" href="https://clearlycheck.com/words-to-pages-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Words to Pages Calculator — Essay Length Estimator">
+<meta property="og:description" content="Convert a word count to page count (or pages back to words) for any font, size, and spacing. Free, private, no signup.">
+<meta property="og:url" content="https://clearlycheck.com/words-to-pages-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Words to Pages Calculator",
+  "description": "Free words to pages calculator: convert a word count to page count (or pages back to words) for any font, size, and spacing — Times New Roman, Arial, Calibri, or Courier New, single or double spaced.",
+  "url": "https://clearlycheck.com/words-to-pages-calculator.html",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many words are on a typical double-spaced page?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At 12-point Times New Roman, double-spaced, a page holds roughly 250 words — that's the classic \"250 words per page\" rule most style guides and word-count assignments assume. Single-spacing roughly doubles that to about 500 words per page, and 1.5 spacing lands in between at around 334 words per page." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does changing the font change the page count?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every font has a different average character width, so the same word count takes up more or less horizontal space depending on the typeface. This calculator adjusts for that with a font-width factor: Calibri is slightly narrower than Times New Roman, so it fits about 5% more words per page, while Courier New is a fixed-width font that takes up noticeably more room, fitting about 25% fewer words per page than Times New Roman at the same size and spacing." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this account for margins, headings, or paragraph breaks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — this calculator assumes standard 1-inch margins and continuous body text, which is the typical setup for essays and papers assigned by word count. Real documents almost always run a little longer on paper than the raw math suggests, because titles, headings, block quotes, bullet lists, and paragraph breaks all leave whitespace that doesn't hold as many words as dense body text. Treat the page count here as a solid estimate, not an exact page count once you've actually formatted the document." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://clearlycheck.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://clearlycheck.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Words to Pages",
+      "item": "https://clearlycheck.com/words-to-pages-calculator.html"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/calculator.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
+    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
+    --blue: #1a4fa0; --blue-light: #e8f0fe;
+    --yellow: #b7770d; --yellow-light: #fef9ec;
+    --red: #b0362c; --red-light: #fbebe9;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
+  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
+
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,380px); gap: 28px; align-items: start; }
+
+  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0; }
+  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
+  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+  .calc-body { padding: 24px 32px 28px; min-width: 0; }
+
+  .mode-toggle { display: flex; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px; gap: 4px; margin-bottom: 24px; }
+  .mode-btn { flex: 1; padding: 11px 8px; font-family: 'DM Sans', sans-serif; font-size: 13.5px; font-weight: 600; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
+  .mode-btn.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
+  .input-wrap input { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; min-width: 0; }
+  select.input-wrap-select { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); padding: 0 14px; height: 46px; width: 100%; min-width: 0; cursor: pointer; -webkit-appearance: none; appearance: none; }
+  select.input-wrap-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%233d3c39' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 11px; padding-right: 38px; -webkit-tap-highlight-color: transparent; }
+  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+  .field-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 12px; }
+
+  /* RESULTS */
+  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0; }
+  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-ready { background: var(--accent-light); color: var(--accent); }
+  .status-bad { background: var(--red-light); color: var(--red); }
+  .results-body { padding: 20px 24px; min-width: 0; }
+
+  .verdict-hero { text-align: center; background: var(--accent-light); border-radius: var(--radius-sm); padding: 24px 16px; margin-bottom: 16px; }
+  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
+  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 800; color: var(--text); line-height: 1.15; word-break: break-word; }
+  .verdict-sub { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+  .metrics-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px; margin-bottom: 4px; }
+  .metric { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; min-width: 0; }
+  .metric-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 4px; }
+  .metric-value { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.2; overflow-wrap: break-word; }
+  .metric-value.accent { color: var(--accent); }
+
+  .empty-state { text-align: center; padding: 32px 12px; }
+  .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.6; }
+  .empty-text { font-size: 13.5px; color: var(--text-light); line-height: 1.6; }
+
+  /* ARTICLE */
+  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,380px); gap: 28px; }
+  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
+  .article-section > div { min-width: 0; }
+  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0; }
+  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+  .article ul { padding-left: 20px; margin-bottom: 16px; }
+  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+  .article strong { color: var(--text); font-weight: 500; }
+  .article table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; min-width: 300px; }
+  .article th, .article td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
+  .article th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .article td:first-child, .article td:nth-child(2) { color: var(--text); font-weight: 500; }
+  .table-scroll { overflow-x: auto; margin-bottom: 8px; min-width: 0; }
+  .faq-section { margin-top: 32px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-q.open { color: var(--accent); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
+  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
+  .faq-a.open { display: block; }
+
+  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; min-width: 0; }
+  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
+  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
+  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { white-space: nowrap; }
+
+  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
+  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } .field-row { grid-template-columns: 1fr; } }
+
+  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .page-meta a:hover { text-decoration: underline; }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+      All Tools
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html#tools">Tools</a><span>›</span>
+      <span style="color:var(--text-muted);">Words to Pages</span>
+    </div>
+  </nav>
+  <div class="tool-tag-pill">🎓 Education Tool</div>
+  <h1>Words to Pages Calculator</h1>
+  <p>Convert a word count to an estimated page count — or pages back to words — for any font, size, and spacing.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 16, 2026</div>
+</div>
+
+<main>
+<div class="main-layout">
+
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Convert words and pages</h2>
+      <p>Choose a direction, then enter your value and formatting.</p>
+    </div>
+    <div class="calc-body">
+
+      <div class="mode-toggle">
+        <button type="button" class="mode-btn active" id="tabW2P" onclick="setMode('w2p')">Words → Pages</button>
+        <button type="button" class="mode-btn" id="tabP2W" onclick="setMode('p2w')">Pages → Words</button>
+      </div>
+
+      <div class="field">
+        <label for="valueInput" id="valueLabel">Number of words</label>
+        <div class="input-wrap"><input type="number" id="valueInput" value="1000" min="0" oninput="calculate()"></div>
+      </div>
+
+      <div class="field">
+        <label for="fontSelect">Font</label>
+        <select id="fontSelect" class="input-wrap-select" onchange="calculate()">
+          <option value="Times New Roman" selected>Times New Roman</option>
+          <option value="Arial">Arial</option>
+          <option value="Calibri">Calibri</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="sizeSelect">Font size</label>
+          <select id="sizeSelect" class="input-wrap-select" onchange="calculate()">
+            <option value="11">11 pt</option>
+            <option value="12" selected>12 pt</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="spacingSelect">Line spacing</label>
+          <select id="spacingSelect" class="input-wrap-select" onchange="calculate()">
+            <option value="single">Single</option>
+            <option value="1.5">1.5 lines</option>
+            <option value="double" selected>Double</option>
+          </select>
+        </div>
+      </div>
+      <p class="hint">Estimates assume standard 1-inch margins and continuous body text.</p>
+
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" role="region" aria-live="polite">
+    <div class="results-header">
+      <h3>Result</h3>
+      <span class="results-status status-ready" id="statusBadge">Ready</span>
+    </div>
+    <div class="results-body" id="resultsBody">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="article-section">
+  <article class="article">
+    <h2>How word-to-page estimates work</h2>
+    <p>A page count is really just a word count divided by however many words fit on one page — the tricky part is that "how many words fit on one page" changes depending on the font, size, and spacing you use. This calculator starts from a base rate of 500 words per page at 12-point Times New Roman single-spaced, then applies three adjustment factors: one for the font's average character width, one for font size, and one for line spacing. Multiply the base rate by all three factors and you get the words-per-page figure used to convert your word count into pages, or your page count back into words.</p>
+
+    <h2>Why font, size, and spacing all matter</h2>
+    <p>Line spacing has the biggest effect: double-spacing roughly halves how many lines fit on a page compared to single-spacing, and 1.5 spacing lands in between. Font size matters too — dropping from 12pt to 11pt lets about 10% more text fit in the same space, since each line of text takes up slightly less vertical room. Font choice is the subtlest factor: Times New Roman and Arial occupy roughly the same amount of space per word, Calibri is a touch narrower and fits about 5% more words per page, and Courier New is a fixed-width (monospace) font that reserves the same width for every character, so it fits noticeably fewer words per page — about 25% less than Times New Roman at the same size and spacing.</p>
+
+    <h2>Real length still varies</h2>
+    <p>These figures are typography averages, not a guarantee of how many pages your finished document will run to. Titles, headings, block quotes, bullet lists, tables, images, and the paragraph breaks between sections all use space without holding a proportional number of words, so a real document with lots of structure will usually run a little longer on paper than the raw word-count math predicts. A dense wall of continuous prose, on the other hand, will land close to the estimate. Use the numbers here as a solid planning figure — for a length requirement your instructor or editor will actually check, always confirm against the formatted document itself.</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Font</th><th>Size</th><th>Spacing</th><th>~Words per page</th></tr></thead>
+        <tbody>
+          <tr><td>Times New Roman</td><td>12pt</td><td>Double</td><td>250</td></tr>
+          <tr><td>Times New Roman</td><td>12pt</td><td>Single</td><td>500</td></tr>
+          <tr><td>Times New Roman</td><td>11pt</td><td>Double</td><td>275</td></tr>
+          <tr><td>Arial</td><td>12pt</td><td>Double</td><td>250</td></tr>
+          <tr><td>Calibri</td><td>12pt</td><td>Double</td><td>263</td></tr>
+          <tr><td>Courier New</td><td>12pt</td><td>Double</td><td>188</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How many words are on a typical double-spaced page?<span class="faq-icon">+</span></button>
+        <div class="faq-a">At 12-point Times New Roman, double-spaced, a page holds roughly 250 words — that's the classic "250 words per page" rule most style guides and word-count assignments assume. Single-spacing roughly doubles that to about 500 words per page, and 1.5 spacing lands in between at around 334 words per page.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why does changing the font change the page count?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Every font has a different average character width, so the same word count takes up more or less horizontal space depending on the typeface. This calculator adjusts for that with a font-width factor: Calibri is slightly narrower than Times New Roman, so it fits about 5% more words per page, while Courier New is a fixed-width font that takes up noticeably more room, fitting about 25% fewer words per page than Times New Roman at the same size and spacing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does this account for margins, headings, or paragraph breaks?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No — this calculator assumes standard 1-inch margins and continuous body text, which is the typical setup for essays and papers assigned by word count. Real documents almost always run a little longer on paper than the raw math suggests, because titles, headings, block quotes, bullet lists, and paragraph breaks all leave whitespace that doesn't hold as many words as dense body text. Treat the page count here as a solid estimate, not an exact page count once you've actually formatted the document.</div>
+      </div>
+    </div>
+  </article>
+
+  <div>
+    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Education Tools</p>
+    <div class="sidebar-tools">
+      <a class="sidebar-tool" href="test-grade-calculator.html">
+        <div class="sidebar-tool-icon">🎓</div>
+        <div><div class="sidebar-tool-name">Test Grade Calculator</div><div class="sidebar-tool-desc">EasyGrader score &amp; letter grade</div></div>
+      </a>
+      <a class="sidebar-tool" href="grade-calculator.html">
+        <div class="sidebar-tool-icon">🎓</div>
+        <div><div class="sidebar-tool-name">Grade Calculator</div><div class="sidebar-tool-desc">Final grade needed &amp; weighted average</div></div>
+      </a>
+      <a class="sidebar-tool" href="gpa-calculator.html">
+        <div class="sidebar-tool-icon">🎓</div>
+        <div><div class="sidebar-tool-name">GPA Calculator</div><div class="sidebar-tool-desc">Semester &amp; cumulative GPA</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+    <strong style="color:#0f0f0e;">How this is calculated.</strong> Page counts are estimates from typical typography (for example, Times New Roman at 12pt double-spaced runs about 250 words per page). Margins, paragraph breaks, and headings will shift the real total. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 16, 2026.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+let mode = 'w2p';
+
+// --- verbatim from spec ---
+const FF = { 'Times New Roman': 1.0, 'Arial': 1.0, 'Calibri': 1.05, 'Courier New': 0.75 };
+const SF = { 12: 1.0, 11: 1.10 };
+const SP = { single: 1.0, '1.5': 0.667, double: 0.5 };
+function wordsPerPage({ font, size, spacing }) { return 500 * FF[font] * SF[size] * SP[spacing]; }
+function wordsToPages({ words, font, size, spacing }) { return words / wordsPerPage({ font, size, spacing }); }
+function pagesToWords({ pages, font, size, spacing }) { return Math.round(pages * wordsPerPage({ font, size, spacing })); }
+// --- end verbatim ---
+
+function setMode(m) {
+  mode = m;
+  document.getElementById('tabW2P').classList.toggle('active', m === 'w2p');
+  document.getElementById('tabP2W').classList.toggle('active', m === 'p2w');
+  document.getElementById('valueLabel').textContent = m === 'w2p' ? 'Number of words' : 'Number of pages';
+  calculate();
+}
+
+function fmtWords(n) {
+  return Math.round(n).toLocaleString();
+}
+function fmtPages(n) {
+  return n.toFixed(1);
+}
+function fmtWpp(n) {
+  return (Math.round(n * 10) / 10).toLocaleString();
+}
+
+function calculate() {
+  const rawValue = parseFloat(document.getElementById('valueInput').value);
+  const font = document.getElementById('fontSelect').value;
+  const size = parseInt(document.getElementById('sizeSelect').value, 10);
+  const spacing = document.getElementById('spacingSelect').value;
+  const wpp = wordsPerPage({ font, size, spacing });
+
+  if (!(rawValue > 0)) {
+    document.getElementById('statusBadge').textContent = 'Needs input';
+    document.getElementById('statusBadge').className = 'results-status status-bad';
+    document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">📄</div><p class="empty-text">Enter a value above 0</p></div>`;
+    return;
+  }
+
+  document.getElementById('statusBadge').textContent = 'Ready';
+  document.getElementById('statusBadge').className = 'results-status status-ready';
+
+  const assumption = `Assuming ~${fmtWpp(wpp)} words per page (${font}, ${size}pt, ${spacing === '1.5' ? '1.5-spaced' : spacing + '-spaced'}).`;
+
+  if (mode === 'w2p') {
+    const pages = wordsToPages({ words: rawValue, font, size, spacing });
+    document.getElementById('resultsBody').innerHTML = `
+      <div class="verdict-hero">
+        <div class="verdict-label">Estimated pages</div>
+        <div class="verdict-value">${fmtPages(pages)}</div>
+        <div class="verdict-sub">${fmtWords(rawValue)} words ≈ ${fmtPages(pages)} pages</div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-label">Words per page</div>
+          <div class="metric-value accent">${fmtWpp(wpp)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Words entered</div>
+          <div class="metric-value">${fmtWords(rawValue)}</div>
+        </div>
+      </div>
+      <div class="hint" style="margin-top:12px; text-align:center;">${assumption}</div>
+    `;
+  } else {
+    const words = pagesToWords({ pages: rawValue, font, size, spacing });
+    document.getElementById('resultsBody').innerHTML = `
+      <div class="verdict-hero">
+        <div class="verdict-label">Estimated words</div>
+        <div class="verdict-value">${fmtWords(words)}</div>
+        <div class="verdict-sub">${fmtPages(rawValue)} pages ≈ ${fmtWords(words)} words</div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-label">Words per page</div>
+          <div class="metric-value accent">${fmtWpp(wpp)}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Pages entered</div>
+          <div class="metric-value">${fmtPages(rawValue)}</div>
+        </div>
+      </div>
+      <div class="hint" style="margin-top:12px; text-align:center;">${assumption}</div>
+    `;
+  }
+}
+
+calculate();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+  });
+});
+</script>
+</body>
+</html>
