@@ -3,7 +3,8 @@
  * signals already shown as the byline and "Last updated" date:
  *   - author  -> Person @id (defined on about.html)
  *   - publisher -> Organization @id with logo
- *   - datePublished -> the file's first git commit (added) date
+ *   - datePublished -> the file's first git commit (added) date, clamped to
+ *                      never exceed dateModified (so multi-day batches stay valid)
  *   - dateModified  -> the visible "Last updated <Month D, YYYY>" on the page
  *
  * Sits alongside the existing WebApplication/FAQPage/BreadcrumbList schemas.
@@ -77,9 +78,14 @@ for (const file of fs.readdirSync(root)) {
   const name = (webApp && webApp.name) || titleName(html);
   const desc = (webApp && webApp.description) || metaDesc(html);
 
-  const published = firstCommitDate(file);
-  const modified = lastUpdatedDate(html) || published;
+  let published = firstCommitDate(file);
   if (!published) { console.warn(`  ? ${file}: no git date, skipping`); warned++; continue; }
+  const modified = lastUpdatedDate(html) || published;
+  // A page can't be modified before it was published. When a batch is built
+  // across two calendar days (byline "Last updated" date earlier than the
+  // git-add date), clamp datePublished down to the modified date so the
+  // structured data stays valid. ISO YYYY-MM-DD strings compare lexicographically.
+  if (published > modified) published = modified;
 
   const article = {
     '@context': 'https://schema.org',
