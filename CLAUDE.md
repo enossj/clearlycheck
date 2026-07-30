@@ -6,7 +6,9 @@ Guidance for Claude Code when working in this repo.
 
 Static site of free browser-only calculators/tools. **No backend, no build step for deploy** — plain HTML/CSS/JS served as-is. Live at [clearlycheck.com](https://clearlycheck.com). Repo: `github.com/enossj/clearlycheck`. Default branch: `main` (deploys directly — treat `main` as production).
 
-Currently **35 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Auto 4, Pet 3, Education 2). AdSense context: site was rejected once for "low value content"; Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
+Currently **39 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Auto 4, Pet 3, Education 6). AdSense context: the site was rejected once for "low value content" and has **not been reapplied** since; the auto-ads script is on every page but no ads serve. Phase 1 fixed E-E-A-T/compliance gaps, Phase 2 grew the tool count. Keep every new page AdSense-safe (see Conventions).
+
+**Traffic reality (Search Console, 3 months to 2026-07-17):** 77 impressions, 2 clicks, average position 31.1. The site is effectively invisible in search. There is **no analytics** installed (no gtag/Plausible/umami) — Search Console is the only data source.
 
 ## Stack & layout
 
@@ -22,7 +24,10 @@ Currently **35 tools** (Finance 11, Productivity 5, Utility 6, Health 4, Auto 4,
 - `wire-breadcrumbs.cjs` — inserts the category crumb into every tool page's breadcrumb (visible + `BreadcrumbList` JSON-LD). Idempotent; run after adding a tool (add the new file to its category in the script's `CAT` map first).
 - `optimize-fonts.cjs` — converts Google Fonts `<link>` to async load + strips unused `opsz` axis. Idempotent; run on any new page.
 - `add-article-schema.cjs` — injects `TechArticle` schema per tool (`datePublished` from git first-commit, `dateModified` from the page's "Last updated" date, `author`→Person `@id`, `publisher`→Org `@id`+logo). Idempotent; run on any new tool. Author entity `@id` `#enos` is defined on `about.html`; Organization `@id` `#organization` on `index.html`.
+- `add-analytics.cjs` — injects the Cloudflare Web Analytics beacon (cookieless RUM, token `94c2b9e...`) before `</head>` on every root `*.html`. Idempotent (skips pages already carrying the beacon host); run on any new page. Skips `google*.html` verification file (no `<head>`).
 - `update-sitemap.js` — `lastmod` bumper; `urlMap` is stale/partial, verify manually.
+
+**Analytics/ads note:** Cloudflare Web Analytics is the traffic instrument (Search Console only counts Google-search clicks; there is no GA). The `meeting-cost-calculator.html` page has its AdSense script **removed** on purpose — it's the link-building landing page and needs a clean "no cookies, no third-party ad tracking" story for Reddit/HN. All other pages keep the auto-ads script. Note the meeting page still loads Google Fonts, so it is not literally "zero third-party requests."
 
 ## Commands
 
@@ -42,7 +47,7 @@ Adding or renaming a tool means updating **all** of these together, or the site 
 4. Any "N tools" text anywhere else.
 5. Add the new file to its category in `scripts/wire-breadcrumbs.cjs` (`CAT` map) + `scripts/build-hubs.cjs` (`CATS.tools`), then re-run both, plus `optimize-fonts.cjs`.
 
-Always grep for the old count (e.g. `grep -rn "35 tools\|35 free" *.html`) before/after.
+Always grep for the old count (e.g. `grep -rn "39 tools\|39 free" *.html`) before/after.
 
 ## Tool page anatomy (copy an existing recent page, e.g. `pet-food-calculator.html`)
 
