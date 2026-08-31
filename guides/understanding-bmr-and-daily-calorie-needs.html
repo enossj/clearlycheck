@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding BMR and Daily Calorie Needs | ClearlyCheck</title>
+<meta name="description" content="What is BMR and how do you calculate your daily calorie needs? We walk through the Mifflin-St Jeor equation with a full worked example, TDEE activity multipliers, and what the numbers mean for your health goals.">
+<meta name="keywords" content="what is BMR, basal metabolic rate, how to calculate daily calorie needs, TDEE calculator, Mifflin-St Jeor equation, how many calories should I eat, calorie deficit, BMI explained, calorie needs by activity level">
+<link rel="canonical" href="https://clearlycheck.com/guides/understanding-bmr-and-daily-calorie-needs.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding BMR and Daily Calorie Needs">
+<meta property="og:description" content="We walk through the Mifflin-St Jeor equation with a full worked example and TDEE multipliers so you know exactly how many calories your body needs each day.">
+<meta property="og:url" content="https://clearlycheck.com/guides/understanding-bmr-and-daily-calorie-needs.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Understanding BMR and Daily Calorie Needs",
+  "description": "A step-by-step guide to calculating basal metabolic rate and total daily energy expenditure using the Mifflin-St Jeor equation.",
+  "url": "https://clearlycheck.com/guides/understanding-bmr-and-daily-calorie-needs.html",
+  "mainEntityOfPage": "https://clearlycheck.com/guides/understanding-bmr-and-daily-calorie-needs.html",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "author": {"@type":"Person","@id":"https://clearlycheck.com/#enos","name":"Enos"},
+  "publisher": {"@type":"Organization","@id":"https://clearlycheck.com/#organization","name":"ClearlyCheck","url":"https://clearlycheck.com","logo":{"@type":"ImageObject","url":"https://clearlycheck.com/assets/og-image.svg"}},
+  "isPartOf": {"@type":"WebSite","name":"ClearlyCheck","url":"https://clearlycheck.com"}
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://clearlycheck.com"},
+    {"@type":"ListItem","position":2,"name":"Guides","item":"https://clearlycheck.com/guides/"},
+    {"@type":"ListItem","position":3,"name":"Understanding BMR and Daily Calorie Needs","item":"https://clearlycheck.com/guides/understanding-bmr-and-daily-calorie-needs.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is basal metabolic rate (BMR)?",
+      "acceptedAnswer": {"@type":"Answer","text":"Basal metabolic rate is the number of calories your body burns at complete rest just to maintain basic functions — breathing, circulation, cell repair, and temperature regulation. It represents roughly 60–70% of the total calories most people burn in a day. BMR is calculated from your weight, height, age, and sex using formulas like the Mifflin-St Jeor equation."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my daily calorie needs?",
+      "acceptedAnswer": {"@type":"Answer","text":"First calculate your BMR using the Mifflin-St Jeor equation (for women: BMR = 10×weight_kg + 6.25×height_cm − 5×age − 161; for men: BMR = 10×weight_kg + 6.25×height_cm − 5×age + 5). Then multiply your BMR by an activity factor: 1.2 for sedentary, 1.375 for lightly active, 1.55 for moderately active, 1.725 for very active, 1.9 for extremely active. The result is your TDEE — the calories needed to maintain your current weight."}
+    },
+    {
+      "@type": "Question",
+      "name": "How many calories do I need to lose weight?",
+      "acceptedAnswer": {"@type":"Answer","text":"To lose roughly 1 pound per week, eat approximately 500 calories less than your TDEE per day (a 3,500-calorie weekly deficit ≈ 1 lb of fat). To lose 0.5 lb/week, reduce by 250 calories. Most health professionals advise against going below 1,200 calories/day for women or 1,500 for men without medical supervision."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between BMR and TDEE?",
+      "acceptedAnswer": {"@type":"Answer","text":"BMR is the calories your body needs at rest. TDEE (Total Daily Energy Expenditure) is the total calories you burn in a day, including physical activity. TDEE = BMR × activity multiplier. Your TDEE is the number to use when planning a diet — eating at TDEE maintains weight, below it loses weight, above it gains weight."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is BMI the same as BMR?",
+      "acceptedAnswer": {"@type":"Answer","text":"No. BMI (Body Mass Index) measures your body weight relative to your height and categorises it as underweight, normal, overweight, or obese. BMR (Basal Metabolic Rate) measures how many calories you burn at rest. They are completely different metrics — BMI is a screening tool for weight classification, BMR is a calorie calculation for nutrition planning."}
+    }
+  ]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28;
+    --text-light: #6b6a66; --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-hover: #145a3d;
+    --radius: 16px; --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .back-link:hover { color: var(--text); }
+  .back-link svg { width: 16px; height: 16px; }
+  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 36px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; flex-wrap: wrap; }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { color: var(--border-hover); }
+  .article-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #137333; background: #e6f4ea; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1.2px; line-height: 1.15; color: var(--text); margin-bottom: 14px; }
+  .page-header .lead { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 640px; line-height: 1.7; }
+  .page-meta { font-size: 13px; color: var(--text-light); margin-top: 20px; }
+  .page-meta a { color: var(--text-light); text-decoration: none; }
+  .content-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
+  article h2 { font-family: 'Roboto', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; margin: 36px 0 12px; line-height: 1.3; }
+  article h2:first-child { margin-top: 0; }
+  article h3 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin: 26px 0 10px; }
+  article p { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 16px; }
+  article p:last-child { margin-bottom: 0; }
+  article strong { color: var(--text); font-weight: 600; }
+  article ul, article ol { padding-left: 22px; margin-bottom: 16px; }
+  article li { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 6px; }
+  article li strong { color: var(--text); }
+  article a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  article a:hover { text-decoration: underline; }
+  .example-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 22px 24px; margin: 24px 0; }
+  .example-box .ex-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+  .example-box p { margin-bottom: 8px; font-size: 15px; }
+  .example-box p:last-child { margin-bottom: 0; }
+  .formula-box { font-family: 'Roboto', monospace; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 24px; font-size: 14px; color: var(--text); line-height: 2; margin: 20px 0; overflow-x: auto; }
+  .data-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .data-table th { background: var(--bg); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .data-table td { padding: 12px 16px; color: var(--text-muted); border-bottom: 1px solid var(--border); font-weight: 300; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--bg); }
+  .data-table .num { font-family: 'Roboto', sans-serif; font-weight: 600; color: var(--text); }
+  .data-table .accent { color: var(--accent); font-weight: 600; }
+  .key-takeaway { background: var(--accent-light); border: 1px solid rgba(26,107,74,0.2); border-radius: var(--radius-sm); padding: 20px 24px; margin: 28px 0; }
+  .key-takeaway .kt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+  .key-takeaway p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.7; font-weight: 400; }
+  .key-takeaway strong { color: var(--text); }
+  .cta-box { background: #0f0f0e; border-radius: var(--radius-sm); padding: 24px 28px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .cta-box p { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 300; margin: 0; line-height: 1.6; }
+  .cta-box strong { color: #fff; }
+  .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; padding: 11px 20px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.18s; white-space: nowrap; flex-shrink: 0; }
+  .btn-cta:hover { background: var(--accent-hover); transform: translateY(-1px); text-decoration: none; }
+  .faq-section { margin-top: 40px; }
+  .faq-section h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: none; border: none; text-align: left; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); cursor: pointer; transition: color 0.15s; }
+  .faq-q:hover { color: var(--accent); }
+  .faq-icon { font-size: 18px; color: var(--text-light); flex-shrink: 0; transition: transform 0.2s; }
+  .faq-q.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
+  .faq-a { display: none; padding: 0 0 16px; font-size: 15px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+  .faq-a.open { display: block; }
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+  .sidebar-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+  .sidebar-title { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+  .sidebar-tool { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: all 0.15s; }
+  .sidebar-tool:last-child { border-bottom: none; padding-bottom: 0; }
+  .sidebar-tool:hover .sidebar-tool-name { color: var(--accent); }
+  .sidebar-tool-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .sidebar-tool-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .sidebar-tool-desc { font-size: 12px; color: var(--text-light); font-weight: 300; margin-top: 2px; }
+  .sidebar-guide { display: block; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; }
+  .sidebar-guide:last-child { border-bottom: none; padding-bottom: 0; }
+  .sidebar-guide-title { font-size: 13px; font-weight: 500; color: var(--text); transition: color 0.15s; line-height: 1.4; }
+  .sidebar-guide:hover .sidebar-guide-title { color: var(--accent); }
+  .sidebar-guide-meta { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+  .footer-copy a { color: var(--text-light); text-decoration: none; }
+  @media (max-width: 860px) { .content-layout { grid-template-columns: 1fr; gap: 32px; } .sidebar { order: -1; } }
+  @media (max-width: 600px) { .page-header { padding: 36px 20px 28px; } .content-layout { padding: 0 20px 60px; } .cta-box { flex-direction: column; align-items: flex-start; } }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <a class="back-link" href="/guides/">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      All Guides
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <nav aria-label="breadcrumb">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/guides/">Guides</a><span>›</span>
+      <span>Understanding BMR and Daily Calorie Needs</span>
+    </div>
+  </nav>
+  <div class="article-tag">Health &amp; Nutrition</div>
+  <h1>Understanding BMR and Daily Calorie Needs</h1>
+  <p class="lead">How many calories does your body actually need? We walk through the Mifflin-St Jeor equation step by step — the same formula used by dietitians and our calorie calculator.</p>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated August 31, 2026 · 7 min read</div>
+</div>
+
+<div class="content-layout">
+<article>
+
+  <p>"How many calories should I eat?" is one of the most Googled health questions — and one of the most poorly answered. The vague "2,000 calories a day" figure on food labels is an average for an average person, which means it's wrong for almost everyone reading it. Your actual calorie needs depend on four measurable inputs: your weight, height, age, and how active you are.</p>
+
+  <p>This guide explains exactly how to calculate your <strong>Basal Metabolic Rate (BMR)</strong> and your <strong>Total Daily Energy Expenditure (TDEE)</strong> — the two numbers that actually matter for any weight or nutrition goal.</p>
+
+  <div class="cta-box">
+    <p><strong>Skip the manual math.</strong> Our free Calorie Calculator runs the Mifflin-St Jeor equation for you and shows your TDEE at every activity level instantly.</p>
+    <a class="btn-cta" href="../calorie-calculator.html">Open Calorie Calculator →</a>
+  </div>
+
+  <h2>What Is BMR?</h2>
+
+  <p>Your <strong>Basal Metabolic Rate</strong> is the number of calories your body burns at complete rest just to keep you alive — breathing, pumping blood, maintaining body temperature, repairing cells, and running your organs. It's what you'd burn if you lay in bed doing nothing for 24 hours.</p>
+
+  <p>BMR typically accounts for <strong>60–70% of the total calories most people burn in a day</strong>. Even if you're sedentary, the majority of your calorie expenditure comes from these involuntary processes. This is why crash diets that drop calories dramatically often backfire — the body adapts by slowing BMR over time.</p>
+
+  <h2>The Mifflin-St Jeor Equation</h2>
+
+  <p>Several formulas exist to estimate BMR. The <strong>Mifflin-St Jeor equation</strong>, developed in 1990, is consistently rated as the most accurate for most adults in clinical research and is the formula used by our calorie calculator.</p>
+
+  <div class="formula-box">For women:
+  BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age in years) − 161
+
+For men:
+  BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age in years) + 5</div>
+
+  <p>The only difference between the male and female formulas is the final constant (+5 vs −161), which accounts for average differences in body composition at the same weight and height.</p>
+
+  <h2>Worked Example: Calculating BMR</h2>
+
+  <p>Let's use a concrete example: a <strong>35-year-old woman</strong> who is <strong>5 feet 6 inches tall (167.6 cm)</strong> and weighs <strong>150 pounds (68 kg)</strong>.</p>
+
+  <div class="example-box">
+    <div class="ex-label">Step 1 — Convert to metric</div>
+    <p><strong>Weight:</strong> 150 lbs ÷ 2.205 = 68.0 kg</p>
+    <p><strong>Height:</strong> 5'6" = 66 inches × 2.54 = 167.6 cm</p>
+    <p><strong>Age:</strong> 35 years</p>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-label">Step 2 — Apply the Mifflin-St Jeor formula (female)</div>
+    <p>BMR = (10 × 68.0) + (6.25 × 167.6) − (5 × 35) − 161</p>
+    <p>BMR = 680 + 1,047.5 − 175 − 161</p>
+    <p><strong>BMR = 1,391.5 calories/day</strong></p>
+    <p>This is what her body burns at complete rest. It's the absolute floor — she burns at least this many calories every single day regardless of activity.</p>
+  </div>
+
+  <h2>From BMR to TDEE: Adding Activity</h2>
+
+  <p>BMR alone doesn't tell you how much to eat. You also burn calories through movement, exercise, digestion (the thermic effect of food), and non-exercise activity (fidgeting, standing, walking around). Together these are captured in your <strong>Total Daily Energy Expenditure (TDEE)</strong>.</p>
+
+  <p>TDEE is calculated by multiplying BMR by an <strong>activity factor</strong>:</p>
+
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Activity Level</th><th>Description</th><th>Multiplier</th><th>TDEE (our example)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sedentary</td><td>Desk job, little or no exercise</td><td class="num">× 1.2</td><td class="num">1,670 cal/day</td></tr>
+        <tr><td>Lightly active</td><td>Light exercise 1–3 days/week</td><td class="num">× 1.375</td><td class="num">1,913 cal/day</td></tr>
+        <tr><td>Moderately active</td><td>Moderate exercise 3–5 days/week</td><td class="num">× 1.55</td><td class="accent">2,157 cal/day</td></tr>
+        <tr><td>Very active</td><td>Hard exercise 6–7 days/week</td><td class="num">× 1.725</td><td class="num">2,400 cal/day</td></tr>
+        <tr><td>Extremely active</td><td>Physical job + intense training</td><td class="num">× 1.9</td><td class="num">2,644 cal/day</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>If our example woman exercises moderately three to four times per week, her TDEE is approximately <strong>2,157 calories/day</strong>. Eating this amount maintains her current weight. Less than this causes weight loss; more causes weight gain.</p>
+
+  <div class="key-takeaway">
+    <div class="kt-label">The Key Number</div>
+    <p>TDEE is your maintenance calories — the level at which your weight stays stable. <strong>Eat below it to lose weight, above it to gain.</strong> A 500-calorie daily deficit creates roughly a 1-pound loss per week. A 250-calorie deficit creates a 0.5-pound loss per week.</p>
+  </div>
+
+  <h2>How BMI Fits In</h2>
+
+  <p><strong>BMI (Body Mass Index)</strong> is a separate metric that classifies your weight relative to your height — it is not a calorie calculation. The formula is:</p>
+
+  <div class="formula-box">BMI = weight (kg) ÷ height² (m²)
+
+Our example: 68.0 ÷ (1.676)² = 68.0 ÷ 2.809 = <strong>24.2</strong></div>
+
+  <p>A BMI of 24.2 falls in the <strong>Normal weight</strong> category (18.5–24.9) according to World Health Organization classifications. The full scale:</p>
+
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>BMI Range</th><th>WHO Classification</th></tr></thead>
+      <tbody>
+        <tr><td>Below 18.5</td><td>Underweight</td></tr>
+        <tr><td>18.5 – 24.9</td><td class="accent">Normal weight</td></tr>
+        <tr><td>25.0 – 29.9</td><td>Overweight</td></tr>
+        <tr><td>30.0 and above</td><td>Obese</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>BMI has known limitations: it doesn't distinguish between muscle and fat, which means it can overclassify muscular athletes as overweight and underclassify people with low muscle mass. Use it as a rough screening tool, not a definitive health verdict. Our <a href="../bmi-calculator.html">BMI calculator</a> shows your classification alongside an explanation of what it does and doesn't mean.</p>
+
+  <h2>Putting It Together: Calorie Targets for Common Goals</h2>
+
+  <h3>Weight loss</h3>
+  <p>Subtract 250–500 calories from your TDEE. Using our example at moderate activity (TDEE 2,157): a <strong>500-calorie deficit gives a target of 1,657 cal/day</strong>, aiming for ~1 lb loss per week. Most health professionals advise staying above 1,200 cal/day for women without medical supervision.</p>
+
+  <h3>Weight gain / muscle building</h3>
+  <p>Add 250–500 calories above TDEE. A <strong>surplus of 300 cal/day</strong> paired with resistance training supports lean muscle gain while minimising fat gain.</p>
+
+  <h3>Weight maintenance</h3>
+  <p>Eat at TDEE. This is harder than it sounds — most people don't realise how many calories are in the foods they eat regularly, which is why tracking for even a few weeks is eye-opening.</p>
+
+  <h2>Why These Are Estimates, Not Exact Numbers</h2>
+
+  <p>The Mifflin-St Jeor equation estimates BMR with roughly <strong>±10% accuracy</strong> for most people, and the activity multipliers add more variation on top. Individual factors — genetics, hormones, gut microbiome, sleep quality, and medication — all affect actual calorie burn in ways no formula can fully capture.</p>
+
+  <p>Treat your calculated TDEE as a <strong>starting point</strong>. Track your actual intake against it for two to four weeks, observe whether your weight moves as expected, and adjust accordingly. Most people find their real maintenance calories within 100–200 calories of their TDEE estimate after a few weeks of tracking.</p>
+
+  <div class="cta-box">
+    <p><strong>Get your numbers.</strong> Our BMI calculator uses the WHO classification; our calorie calculator runs the full Mifflin-St Jeor equation with activity levels.</p>
+    <a class="btn-cta" href="../calorie-calculator.html">Calculate My Calorie Needs →</a>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q">What is basal metabolic rate (BMR)?<span class="faq-icon">+</span></button>
+      <div class="faq-a">BMR is the number of calories your body burns at complete rest to maintain basic functions — breathing, circulation, temperature, and cell repair. It typically accounts for 60–70% of total daily calorie burn and is calculated from weight, height, age, and sex using the Mifflin-St Jeor or Harris-Benedict equations.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How do I calculate my daily calorie needs?<span class="faq-icon">+</span></button>
+      <div class="faq-a">First calculate BMR using the Mifflin-St Jeor equation, then multiply by your activity factor (1.2 for sedentary up to 1.9 for extremely active) to get your TDEE. Eat at TDEE to maintain weight, below it to lose, above it to gain. Our free calorie calculator does this calculation instantly.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How many calories should I eat to lose weight?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Subtract 250–500 calories from your TDEE. A 500-calorie daily deficit produces roughly 1 pound of weight loss per week (since 1 lb of fat ≈ 3,500 calories). A 250-calorie deficit produces about 0.5 lb/week. Most health professionals advise women not to go below 1,200 calories/day and men not below 1,500 without medical supervision.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is BMI the same as BMR?<span class="faq-icon">+</span></button>
+      <div class="faq-a">No — they measure completely different things. BMI (Body Mass Index) classifies your weight relative to your height as underweight, normal, overweight, or obese. BMR (Basal Metabolic Rate) measures how many calories you burn at rest. BMI is a screening tool; BMR is a calorie calculation used in nutrition planning.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How accurate is the Mifflin-St Jeor equation?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Studies show it predicts measured BMR within ±10% for most healthy adults and is more accurate than the older Harris-Benedict equation. It is less accurate for people at extremes of body composition — very muscular individuals may have a higher true BMR than calculated, while those with very high body fat may have a lower one. Use it as a starting point and adjust based on real-world results.</div>
+    </div>
+  </div>
+
+  <div style="background:#f0f0ef;border-radius:var(--radius-sm);padding:16px 20px;margin-top:40px;">
+    <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;"><strong style="color:#0f0f0e;">For informational purposes only.</strong> BMR and TDEE figures are estimates based on population averages and may not reflect individual metabolic variation. This is not medical or dietary advice. Consult a qualified healthcare professional or registered dietitian before making significant changes to your diet. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated August 31, 2026.</p>
+  </div>
+
+</article>
+
+<aside class="sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-title">Health Calculators</div>
+    <a class="sidebar-tool" href="../calorie-calculator.html">
+      <div class="sidebar-tool-icon">🔥</div>
+      <div><div class="sidebar-tool-name">Calorie Calculator</div><div class="sidebar-tool-desc">BMR + TDEE at every activity level</div></div>
+    </a>
+    <a class="sidebar-tool" href="../bmi-calculator.html">
+      <div class="sidebar-tool-icon">⚖️</div>
+      <div><div class="sidebar-tool-name">BMI Calculator</div><div class="sidebar-tool-desc">WHO weight classification</div></div>
+    </a>
+    <a class="sidebar-tool" href="../height-calculator.html">
+      <div class="sidebar-tool-icon">📏</div>
+      <div><div class="sidebar-tool-name">Height Calculator</div><div class="sidebar-tool-desc">Predict adult height from parents'</div></div>
+    </a>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-title">More Guides</div>
+    <a class="sidebar-guide" href="the-true-cost-of-pet-ownership.html">
+      <div class="sidebar-guide-title">The True Cost of Pet Ownership</div>
+      <div class="sidebar-guide-meta">7 min read · Pets</div>
+    </a>
+    <a class="sidebar-guide" href="debt-snowball-vs-avalanche.html">
+      <div class="sidebar-guide-title">Debt Snowball vs. Avalanche</div>
+      <div class="sidebar-guide-meta">7 min read · Debt Strategy</div>
+    </a>
+    <a class="sidebar-guide" href="understanding-credit-card-apr.html">
+      <div class="sidebar-guide-title">Understanding Credit Card APR</div>
+      <div class="sidebar-guide-meta">6 min read · Credit Cards</div>
+    </a>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <p class="footer-copy">© 2026 ClearlyCheck · <a href="/guides/">Guides</a> · <a href="/about.html">About</a> · <a href="/sitemap.html">Sitemap</a> · <a href="/contact.html">Contact</a> · <a href="/terms-of-use.html">Terms of Use</a> · <a href="/privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = btn.nextElementSibling;
+      var isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q.open').forEach(function(b) { b.classList.remove('open'); if (b.nextElementSibling) b.nextElementSibling.classList.remove('open'); });
+      if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+    });
+  });
+</script>
+</body>
+</html>

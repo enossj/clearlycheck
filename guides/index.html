@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Finance Guides | ClearlyCheck</title>
+<meta name="description" content="In-depth personal finance guides: debt payoff strategies, understanding APR, calculating your debt-free date, and more. Free, jargon-free explanations with worked examples.">
+<meta name="keywords" content="personal finance guides, debt payoff strategies, how to pay off debt, understanding APR, debt snowball vs avalanche, calculate debt free date, credit card interest explained">
+<link rel="canonical" href="https://clearlycheck.com/guides/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal Finance Guides | ClearlyCheck">
+<meta property="og:description" content="In-depth, jargon-free personal finance guides with worked examples and free calculator links.">
+<meta property="og:url" content="https://clearlycheck.com/guides/">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Personal Finance Guides | ClearlyCheck">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Personal Finance Guides",
+  "description": "In-depth personal finance guides with worked examples.",
+  "url": "https://clearlycheck.com/guides/",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://clearlycheck.com/#organization",
+    "name": "ClearlyCheck"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://clearlycheck.com"},
+    {"@type":"ListItem","position":2,"name":"Guides","item":"https://clearlycheck.com/guides/"}
+  ]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8f7f4;
+    --bg-card: #ffffff;
+    --bg-dark: #0f0f0e;
+    --text: #0f0f0e;
+    --text-muted: #2b2a28;
+    --text-light: #6b6a66;
+    --border: rgba(15,15,14,0.10);
+    --border-hover: rgba(15,15,14,0.20);
+    --accent: #1a6b4a;
+    --accent-light: #e8f5ef;
+    --accent-hover: #145a3d;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; }
+  .nav-links a:hover { color: var(--text); background: var(--border); }
+  .nav-links a.active { color: var(--accent); background: var(--accent-light); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+  .mobile-nav-panel { display: none; }
+  .mobile-nav-panel.open { display: flex; flex-direction: column; gap: 2px; padding: 12px 24px 16px; border-top: 1px solid var(--border); background: var(--bg-card); }
+  .mobile-nav-panel a { padding: 12px 4px; font-size: 15px; font-weight: 500; color: var(--text); text-decoration: none; border-radius: 8px; }
+  .mobile-nav-panel a:hover { background: var(--bg); }
+
+  /* HERO */
+  .guides-hero { max-width: 1100px; margin: 0 auto; padding: 72px 24px 56px; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; letter-spacing: 0.02em; }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+  .guides-hero h1 { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 50px); line-height: 1.1; letter-spacing: -1.5px; color: var(--text); margin-bottom: 18px; }
+  .guides-hero h1 em { font-style: normal; color: var(--accent); }
+  .guides-hero p { font-size: 18px; color: var(--text-muted); font-weight: 300; line-height: 1.7; max-width: 580px; }
+
+  /* ARTICLES GRID */
+  .guides-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+  .section-tag { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; }
+  .section-title { font-family: 'Roboto', sans-serif; font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.8px; color: var(--text); margin-bottom: 32px; }
+
+  .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+
+  .guide-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow); transition: all 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0; position: relative; overflow: hidden; }
+  .guide-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease; }
+  .guide-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); border-color: var(--border-hover); }
+  .guide-card:hover::before { transform: scaleX(1); }
+
+  .guide-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+  .guide-category { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #1a4fa0; background: #e8f0fe; padding: 4px 10px; border-radius: 100px; }
+  .guide-read-time { font-size: 12px; color: var(--text-light); font-weight: 400; }
+  .guide-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+  .guide-title { font-family: 'Roboto', sans-serif; font-size: 19px; font-weight: 700; color: var(--text); line-height: 1.3; letter-spacing: -0.3px; margin-bottom: 10px; }
+  .guide-excerpt { font-size: 14.5px; color: var(--text-muted); font-weight: 300; line-height: 1.7; margin-bottom: 22px; flex: 1; }
+  .guide-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--accent); transition: gap 0.15s; }
+  .guide-card:hover .guide-cta { gap: 10px; }
+  .guide-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* TOOL PROMO */
+  .tools-promo { background: var(--bg-dark); border-radius: var(--radius); padding: 48px 40px; margin-bottom: 80px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .tools-promo-text h2 { font-family: 'Roboto', sans-serif; font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #fff; letter-spacing: -0.8px; margin-bottom: 10px; }
+  .tools-promo-text p { font-size: 16px; color: rgba(255,255,255,0.6); font-weight: 300; max-width: 420px; }
+  .btn-promo { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 13px 24px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.18s; white-space: nowrap; }
+  .btn-promo:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+  /* FOOTER */
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; list-style: none; }
+  .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.15s; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-copy { font-size: 13px; color: var(--text-light); }
+
+  @media (max-width: 768px) {
+    .guides-hero { padding: 48px 20px 40px; }
+    .guides-section { padding: 0 20px 60px; }
+    .guides-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .tools-promo { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Clearly<span>Check</span></a>
+    <ul class="nav-links">
+      <li><a href="/">All Tools</a></li>
+      <li><a href="/guides/" class="active">Guides</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNavPanel" aria-label="Toggle menu" onclick="toggleMobileNav()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-panel" id="mobileNavPanel">
+    <a href="/" onclick="closeMobileNav()">All Tools</a>
+    <a href="/guides/" onclick="closeMobileNav()">Guides</a>
+  </div>
+</nav>
+
+<nav aria-label="breadcrumb" style="background:var(--bg-card);border-bottom:1px solid var(--border);padding:10px 24px;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-light);">
+    <a href="/" style="color:var(--text-light);text-decoration:none;">Home</a>
+    <span>›</span>
+    <span style="color:var(--text);">Guides</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="guides-hero">
+    <div class="hero-eyebrow">Personal Finance Explained</div>
+    <h1>Make smarter money decisions<br>with <em>clear</em> guides.</h1>
+    <p>We break down the personal finance concepts behind our calculators — with real numbers, worked examples, and no jargon. Read the guide, then use the tool.</p>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="guides-section">
+  <div class="section-tag">All Guides</div>
+  <h2 class="section-title">Debt &amp; Credit</h2>
+
+  <div class="guides-grid">
+
+    <a class="guide-card" href="debt-snowball-vs-avalanche.html">
+      <span class="guide-icon">⛰️</span>
+      <div class="guide-meta">
+        <span class="guide-category">Debt Strategy</span>
+        <span class="guide-read-time">7 min read</span>
+      </div>
+      <div class="guide-title">Debt Snowball vs. Avalanche: Which Pays Off Your Debt Faster?</div>
+      <p class="guide-excerpt">Two proven strategies, one clear winner for saving money — but the other might actually get you out of debt sooner. We run the numbers on a real three-debt example so you can decide.</p>
+      <span class="guide-cta">
+        Read guide
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+
+    <a class="guide-card" href="understanding-credit-card-apr.html">
+      <span class="guide-icon">💳</span>
+      <div class="guide-meta">
+        <span class="guide-category">Credit Cards</span>
+        <span class="guide-read-time">6 min read</span>
+      </div>
+      <div class="guide-title">Understanding Credit Card APR: What It Really Costs You</div>
+      <p class="guide-excerpt">APR is just a number until you see the daily math. We show exactly how credit card interest compounds, what a minimum-payment trap looks like in dollars, and how to compare cards properly.</p>
+      <span class="guide-cta">
+        Read guide
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+
+    <a class="guide-card" href="how-to-calculate-debt-free-date.html">
+      <span class="guide-icon">📅</span>
+      <div class="guide-meta">
+        <span class="guide-category">Debt Payoff</span>
+        <span class="guide-read-time">8 min read</span>
+      </div>
+      <div class="guide-title">How to Calculate Your Debt-Free Date (The Formula, Explained)</div>
+      <p class="guide-excerpt">The amortization formula looks intimidating, but it's just three inputs. We walk through it step by step on a $12,000 example and show how adding $100/month changes everything.</p>
+      <span class="guide-cta">
+        Read guide
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<section class="guides-section">
+  <h2 class="section-title">Health &amp; Wellness</h2>
+  <div class="guides-grid guides-grid--1">
+    <a class="guide-card" href="understanding-bmr-and-daily-calorie-needs.html">
+      <span class="guide-icon">🔥</span>
+      <div class="guide-meta">
+        <span class="guide-category" style="color:#137333;background:#e6f4ea;">Health &amp; Nutrition</span>
+        <span class="guide-read-time">7 min read</span>
+      </div>
+      <div class="guide-title">Understanding BMR and Daily Calorie Needs</div>
+      <p class="guide-excerpt">How many calories does your body actually need? We walk through the Mifflin-St Jeor equation — the same formula dietitians use — with a full worked example and TDEE activity table.</p>
+      <span class="guide-cta">
+        Read guide
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="guides-section">
+  <h2 class="section-title">Pets &amp; Animals</h2>
+  <div class="guides-grid guides-grid--1">
+    <a class="guide-card" href="the-true-cost-of-pet-ownership.html">
+      <span class="guide-icon">🐾</span>
+      <div class="guide-meta">
+        <span class="guide-category" style="color:#7c4a00;background:#fff3e0;">Pets</span>
+        <span class="guide-read-time">7 min read</span>
+      </div>
+      <div class="guide-title">The True Cost of Pet Ownership: A Complete Breakdown</div>
+      <p class="guide-excerpt">Before you adopt, know your numbers. First-year, annual, and lifetime costs for dogs and cats — including the expenses most new owners don't see coming until they arrive.</p>
+      <span class="guide-cta">
+        Read guide
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="guides-section">
+  <h2 class="section-title">Education</h2>
+  <div class="guides-grid guides-grid--1">
+    <a class="guide-card" href="how-to-calculate-and-improve-your-gpa.html">
+      <span class="guide-icon">🎓</span>
+      <div class="guide-meta">
+        <span class="guide-category" style="color:#5b21b6;background:#f3e8fd;">Education</span>
+        <span class="guide-read-time">7 min read</span>
+      </div>
+      <div class="guide-title">How to Calculate and Improve Your GPA</div>
+      <p class="guide-excerpt">GPA is a credit-hour weighted average. Once you understand the formula, you can calculate exactly what grades you need in remaining courses to hit any target.</p>
+      <span class="guide-cta">
+        Read guide
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="guides-section">
+  <h2 class="section-title">Auto &amp; Transportation</h2>
+  <div class="guides-grid guides-grid--1">
+    <a class="guide-card" href="car-lease-vs-buy-making-the-right-choice.html">
+      <span class="guide-icon">🚗</span>
+      <div class="guide-meta">
+        <span class="guide-category">Auto</span>
+        <span class="guide-read-time">8 min read</span>
+      </div>
+      <div class="guide-title">Car Lease vs. Buy: Making the Right Choice</div>
+      <p class="guide-excerpt">The lease payment is lower — but what does it really cost over three years? We run the full numbers on a $35,000 car and show the true equity and total-cost comparison.</p>
+      <span class="guide-cta">
+        Read guide
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- TOOL PROMO -->
+<section style="max-width:1100px;margin:0 auto;padding:0 24px 80px;">
+  <div class="tools-promo">
+    <div class="tools-promo-text">
+      <h2>Read the guide. Use the tool.</h2>
+      <p>Every guide on ClearlyCheck connects to a free calculator so you can apply the concepts to your own numbers — no sign-up required.</p>
+    </div>
+    <a class="btn-promo" href="../debt-free-calculator.html">
+      Try a Calculator
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+    <ul class="footer-links">
+      <li><a href="/">All Tools</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../sitemap.html">Sitemap</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../terms-of-use.html">Terms of Use</a></li>
+      <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 ClearlyCheck. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMobileNav() {
+  const panel = document.getElementById('mobileNavPanel');
+  const btn = document.getElementById('navToggle');
+  const isOpen = panel.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+function closeMobileNav() {
+  document.getElementById('mobileNavPanel').classList.remove('open');
+  document.getElementById('navToggle').setAttribute('aria-expanded', 'false');
+}
+</script>
+</body>
+</html>
