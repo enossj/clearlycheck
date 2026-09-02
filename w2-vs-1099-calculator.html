@@ -39,21 +39,42 @@
     {
       "@type": "Question",
       "name": "How much more should a 1099 freelancer charge compared to a W-2 salary?",
-      "acceptedAnswer": { "@type": "Answer", "text": "As a general rule of thumb, a 1099 freelancer needs to charge 25% to 35% more than an equivalent W-2 salary to take home the same net standard of living, largely due to self-employment taxes, paying for their own health insurance, and absorbing unpaid vacation days." }
+      "acceptedAnswer": { "@type": "Answer", "text": "As a general rule of thumb, a 1099 freelancer needs to charge 25% to 35% more than an equivalent W-2 salary to take home the same net standard of living. This premium accounts for self-employment taxes (the additional 7.65% employer FICA match you must now pay yourself), purchasing your own health insurance (which can cost $6,000–$18,000+ per year depending on plan type and family size), absorbing unpaid vacation and sick days, funding your own retirement without an employer match, and covering business overhead expenses like software, equipment, and liability insurance." }
     },
     {
       "@type": "Question",
       "name": "What is the Self-Employment tax penalty for 1099 workers?",
-      "acceptedAnswer": { "@type": "Answer", "text": "W-2 employees split their FICA taxes (Social Security and Medicare) with their employer, paying 7.65% while the employer pays the other 7.65%. 1099 independent contractors must pay the full 15.3% self-employment tax themselves on net business earnings." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The 'penalty' is structural, not punitive. W-2 employees split their FICA taxes (Social Security at 6.2% + Medicare at 1.45%) with their employer—you pay 7.65% and your employer matches with another 7.65%. As a 1099 independent contractor, you must pay the full 15.3% via IRS Schedule SE. The IRS does allow you to compute this on 92.35% of net self-employment earnings (rather than 100%), and you can deduct half of the SE tax as an above-the-line adjustment on Form 1040. Even so, on $100,000 of net earnings, the SE tax totals approximately $14,130—roughly $7,065 more than a W-2 employee would pay on the same gross income." }
     },
     {
       "@type": "Question",
       "name": "How do you calculate a freelance hourly rate from a salary?",
-      "acceptedAnswer": { "@type": "Answer", "text": "To find your true freelance hourly rate, take your target annual gross contract amount (which includes your desired salary, overhead expenses, health insurance, and self-employment taxes) and divide it by your billable working hours per year (typically around 1,500 to 1,800 hours)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Start by computing your target annual gross contract amount. This is not your salary—it includes your desired take-home pay plus self-employment taxes, health insurance premiums, business overhead, and the cash value of any PTO you plan to take. Divide that gross figure by your realistic annual billable hours. Most independent consultants bill between 1,500 and 1,800 hours per year after accounting for vacations, holidays, sick days, and non-billable administrative time. For example, a $120,000 gross contract ÷ 1,650 billable hours = $72.73/hour." }
+    },
+    {
+      "@type": "Question",
+      "name": "What business expenses can a 1099 contractor deduct?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Common deductible expenses for independent contractors include: a dedicated home office (simplified method: $5/sq ft up to 300 sq ft), computer equipment and software subscriptions, professional liability or E&O insurance, health insurance premiums (deductible on Form 1040, not Schedule C, if you qualify), business travel and mileage (IRS standard rate), continuing education and professional development, accounting and legal fees, and marketing costs. These deductions reduce your net self-employment income, which in turn reduces both your income tax and self-employment tax liability." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to pay quarterly estimated taxes as a 1099 contractor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Unlike W-2 employees who have taxes withheld from each paycheck, 1099 contractors must make quarterly estimated tax payments using IRS Form 1040-ES. Payments are due on April 15, June 15, September 15, and January 15 of the following year. The IRS generally requires you to pay at least 90% of your current-year tax liability or 100% of your prior-year liability (110% if your AGI exceeds $150,000) to avoid underpayment penalties." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I form an LLC or S-Corp as a 1099 freelancer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This depends on your income level and risk profile. A single-member LLC provides liability protection but is a 'disregarded entity' for tax purposes—you still pay self-employment tax on all net earnings. An S-Corp election allows you to split income into a 'reasonable salary' (subject to FICA) and distributions (not subject to SE tax), potentially saving thousands at higher income levels. Most CPAs recommend considering an S-Corp election once net self-employment income consistently exceeds $60,000–$80,000/year." }
+    },
+    {
+      "@type": "Question",
+      "name": "What retirement accounts are available to 1099 freelancers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Freelancers have several tax-advantaged retirement options: a SEP-IRA allows contributions up to 25% of net self-employment income (after the SE tax deduction), with a maximum of $70,000. A Solo 401(k) is often more advantageous, allowing both employee deferrals (up to $23,500 for those under 50, $31,000 for those 50+) and employer profit-sharing contributions (up to 25% of net income), with the same $70,000 combined cap. A Solo 401(k) also permits Roth contributions for tax-free growth. None of these come with an employer match." }
     }
   ]
 }
 </script>
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -906,55 +927,228 @@
     </div>
   </div>
 
+  <div class="page-meta" style="max-width:1100px;margin:0 auto;padding:0 24px 8px;font-size:13px;color:var(--text-light);">Built &amp; reviewed by <a href="/about.html" style="color:var(--accent);text-decoration:none;">Enos</a>, ClearlyCheck · Last updated September 2, 2026</div>
+
   <div class="article-section">
     <article class="article">
       <h2>Why a $100k Salary Does Not Equal a $100k Freelance Contract</h2>
-      <p>When transitioning from corporate employment to independent contracting, one of the most common pitfalls is
-        engaging in "salary matching." If an employee earning an $85,000 W-2 salary accepts an $85,000 1099 contract,
-        they are taking an immediate and severe pay cut.</p>
+      <p>When transitioning from corporate employment to independent contracting, one of the most common—and most
+        expensive—pitfalls is engaging in "salary matching." A software engineer earning $100,000 as a W-2 employee who
+        accepts a $100,000 annual 1099 contract is not breaking even; they are taking an immediate and significant pay
+        cut that can amount to $25,000 or more per year in lost compensation.</p>
 
-      <p>As a W-2 employee, your employer covers substantial hidden costs on your behalf. When you switch to 1099
-        status, all of those financial burdens shift entirely onto your shoulders.</p>
+      <p>The reason is straightforward: as a W-2 employee, your employer absorbs a substantial portion of your total
+        compensation cost behind the scenes. These hidden expenses include half of your FICA payroll taxes, the employer
+        share of health insurance premiums, paid time off, workers' compensation insurance, unemployment insurance
+        contributions (FUTA and SUTA), and often a matching contribution to your retirement plan. When you become a 1099
+        independent contractor, every single one of these financial obligations shifts directly onto your balance sheet.
+        Understanding each component is essential to pricing your freelance services accurately.</p>
 
-      <h3>1. The 15.3% Self-Employment Tax Trap</h3>
-      <p>W-2 employees split their FICA taxes with their employers—you pay 7.65% from your paycheck, and your employer
-        matches it with another 7.65%. As an independent contractor, you file Schedule SE and must pay the entire 15.3%
-        yourself on 92.35% of your net self-employment earnings.</p>
+      <h2>The 15.3% Self-Employment Tax Trap</h2>
+      <p>The single largest financial shock for new freelancers is the self-employment (SE) tax, which funds Social
+        Security and Medicare. As a W-2 employee, your paycheck stub shows a 7.65% FICA deduction—6.2% for Social
+        Security (on earnings up to the wage base, which is $176,100 for 2026) and 1.45% for Medicare. What you may not
+        realize is that your employer quietly pays an identical 7.65% match on your behalf, bringing the total FICA
+        contribution to 15.3% of your wages. You never see your employer's half because it never appears on your pay
+        stub.</p>
 
-      <h3>2. The Cost of Unpaid Time Off (PTO)</h3>
-      <p>Corporate employees receive paid vacation days, federal holidays, and sick leave. Freelancers do not get paid
-        when they take a day off. If you take 3 weeks of vacation and public holidays off, your annual billable capacity
-        drops significantly, meaning your working hours must generate enough revenue to cover those non-working periods.
-      </p>
+      <p>When you file taxes as a 1099 contractor, there is no employer to cover the other half. You are responsible for
+        the <strong>entire 15.3%</strong>. The IRS requires you to calculate this via <strong>Schedule SE</strong>
+        (Self-Employment Tax), which works as follows:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Determine your net self-employment earnings (gross 1099 income minus allowable
+          business deductions).</li>
+        <li><strong>Step 2:</strong> Multiply net earnings by <strong>92.35%</strong> (0.9235). The IRS allows this
+          adjustment to simulate the fact that employers do not pay FICA on the employer-share portion itself. This
+          taxable base is your "net earnings from self-employment."</li>
+        <li><strong>Step 3:</strong> Apply the combined 15.3% rate (12.4% Social Security + 2.9% Medicare) to that
+          adjusted figure.</li>
+        <li><strong>Step 4:</strong> You may deduct 50% of the SE tax paid as an above-the-line adjustment on your Form
+          1040, reducing your adjusted gross income—but you still owe the full SE tax amount.</li>
+      </ul>
+      <p>For example, on $100,000 of net self-employment income, you would compute: $100,000 × 0.9235 = $92,350 taxable
+        base. Then $92,350 × 0.153 = <strong>$14,130 in self-employment tax</strong>. As a W-2 employee at the same
+        income, you would have paid only $7,065 in FICA (7.65%), while your employer paid the other $7,065 invisibly.
+        The net additional cost of going 1099 is therefore approximately <strong>$7,065 per year on a $100k
+          income</strong>—money that must come from somewhere in your freelance pricing.</p>
 
-      <h3>3. Valuing Employer-Provided Benefits</h3>
-      <p>Health insurance premiums, dental plans, life insurance, and 401(k) matching contributions represent thousands
-        of dollars in hidden compensation. A true freelance contract target must build in enough margin to purchase
-        private health insurance and fund your own retirement accounts without an employer match.</p>
+      <p>High earners face an additional wrinkle: the 0.9% Additional Medicare Tax on earned income above $200,000
+        (single filers) or $250,000 (married filing jointly). This surtax applies to both W-2 and 1099 income, but
+        W-2 employees have it withheld automatically, while 1099 contractors must estimate and prepay it through
+        quarterly estimated tax payments (Form 1040-ES) to avoid underpayment penalties.</p>
+
+      <h2>The Cost of Unpaid Time Off (PTO)</h2>
+      <p>Corporate employees rarely think about the monetary value of their paid time off because the money simply keeps
+        arriving every pay period, even when they are on vacation. Consider a typical corporate benefits package: 10–15
+        vacation days, 10–11 federal holidays, and 3–5 sick days. Added together, that represents roughly
+        <strong>23–31 paid non-working days per year</strong>—or between 4.5 and 6 full working weeks.</p>
+
+      <p>A standard work year has approximately 260 weekdays (52 weeks × 5 days). If an employee takes 25 paid days off,
+        they actually work 235 days, or about 1,880 hours (at 8 hours per day), while being paid for all 2,080 hours.
+        For a freelancer, every day off is a day with zero revenue. If a 1099 contractor takes those same 25 days off,
+        their annual billable capacity drops from 2,080 potential hours to roughly <strong>1,640–1,800 billable
+          hours</strong> (accounting for administrative time, business development, and invoicing overhead that W-2
+        employees never face).</p>
+
+      <p>This reduced billable capacity has a compounding effect. Not only must the freelancer earn their target annual
+        income in fewer hours, but every non-billable hour (prospecting, contract negotiation, bookkeeping, continuing
+        education) further erodes the denominator. Industry benchmarks suggest that independent consultants spend 15–25%
+        of their total working time on non-billable administrative tasks. Our calculator defaults to 1,650 billable hours
+        per year, which assumes approximately 3 weeks of vacation and holidays plus modest administrative overhead.</p>
+
+      <h2>Valuing Employer-Provided Benefits</h2>
+      <p>Beyond salary and payroll taxes, corporate employers provide a benefits package whose true replacement cost is
+        frequently underestimated by aspiring freelancers. Understanding the dollar value of each component is critical
+        to setting an accurate 1099 rate:</p>
+      <ul>
+        <li><strong>Health Insurance:</strong> According to the Kaiser Family Foundation's 2025 Employer Health Benefits
+          Survey, the average annual premium for employer-sponsored family health coverage was $25,572, with employers
+          paying an average of 73% ($18,668). Single coverage averaged $9,084, with employers covering approximately 83%
+          ($7,540). When you go freelance, you bear the <em>entire</em> premium—often at higher individual-market rates
+          without the group pricing advantage that large employers negotiate.</li>
+        <li><strong>Dental and Vision:</strong> Employer-sponsored dental plans typically cost $500–$800/year per
+          employee; vision coverage adds another $100–$200. These are modest but add up when combined with other
+          benefits.</li>
+        <li><strong>Life and Disability Insurance:</strong> Many employers provide basic group life insurance (typically
+          1–2× annual salary) and short-term/long-term disability coverage at no cost to the employee. Purchasing
+          equivalent individual policies on the open market can cost $1,000–$3,000/year depending on age, health, and
+          coverage amount.</li>
+        <li><strong>401(k) Matching:</strong> A common employer match is 50% of contributions up to 6% of salary, or a
+          dollar-for-dollar match up to 3–4%. On an $85,000 salary, a 4% match equals $3,400 in free retirement money
+          per year. As a freelancer, you can contribute to a SEP-IRA or Solo 401(k), but there is no employer match—the
+          entire contribution comes from your own revenue.</li>
+        <li><strong>Other Perks:</strong> Professional development budgets, gym memberships, commuter benefits, employee
+          stock purchase plans, and equipment stipends can collectively add $2,000–$5,000 in annual value depending on
+          the employer.</li>
+      </ul>
+
+      <p>When you total these hidden costs—$7,000+ in employer FICA match, $6,000–$18,000+ in health insurance, $3,000+
+        in retirement matching, and the cash value of 4–6 weeks of paid time off—a typical W-2 employee at an $85,000
+        salary is receiving total compensation closer to <strong>$110,000–$125,000</strong>. This is the number that your
+        1099 contract must match or exceed, not the base salary alone.</p>
+
+      <h2>How This Calculator Works</h2>
+      <p>Our W-2 vs. 1099 True Wage Calculator uses a straightforward methodology to determine the minimum gross 1099
+        contract you need to replace your W-2 compensation package:</p>
+      <ul>
+        <li><strong>Total W-2 Compensation:</strong> Base salary + employer health insurance value + PTO cash value
+          (calculated as your daily rate × PTO days).</li>
+        <li><strong>Gross-Up for SE Tax:</strong> The total compensation is divided by 0.8587 (which is 1 − [0.9235 ×
+          0.153]) to reverse-engineer the gross contract amount needed before self-employment taxes consume their
+          share.</li>
+        <li><strong>Add Business Expenses:</strong> Annual overhead costs (software, hardware, co-working space, liability
+          insurance) are added on top, since these are pre-deduction costs that come out of your gross revenue.</li>
+        <li><strong>Hourly Rate:</strong> The total gross contract is divided by your estimated annual billable hours to
+          produce a target hourly rate.</li>
+      </ul>
+
+      <p>The result is a <em>minimum floor</em>—the gross contract amount that leaves you no better and no worse off
+        than your W-2 position. In practice, most financial advisors recommend adding a 10–15% margin above this floor
+        to account for income volatility, gaps between contracts, and the lack of unemployment insurance eligibility that
+        W-2 employees enjoy.</p>
 
       <div class="faq-section">
         <h2>Frequently Asked Questions</h2>
+
         <div class="faq-item">
           <button class="faq-q">How much more should a 1099 freelancer charge compared to a W-2 salary?<span
               class="faq-icon">+</span></button>
-          <div class="faq-a">As a general rule of thumb, a 1099 freelancer needs to charge 25% to 35% more than an
-            equivalent W-2 salary to take home the same net standard of living, largely due to self-employment taxes,
-            paying for their own health insurance, and absorbing unpaid vacation days.</div>
+          <div class="faq-a">As a general rule of thumb, a 1099 freelancer needs to charge <strong>25% to 35%
+              more</strong> than an equivalent W-2 salary to take home the same net standard of living. This premium
+            accounts for self-employment taxes (the additional 7.65% employer FICA match you must now pay yourself),
+            purchasing your own health insurance (which can cost $6,000–$18,000+ per year depending on plan type and
+            family size), absorbing unpaid vacation and sick days, funding your own retirement without an employer match,
+            and covering business overhead expenses like software, equipment, and liability insurance.</div>
         </div>
+
         <div class="faq-item">
           <button class="faq-q">What is the Self-Employment tax penalty for 1099 workers?<span
               class="faq-icon">+</span></button>
-          <div class="faq-a">W-2 employees split their FICA taxes (Social Security and Medicare) with their employer,
-            paying 7.65% while the employer pays the other 7.65%. 1099 independent contractors must pay the full 15.3%
-            self-employment tax themselves on net business earnings.</div>
+          <div class="faq-a">The "penalty" is structural, not punitive. W-2 employees split their FICA taxes (Social
+            Security at 6.2% + Medicare at 1.45%) with their employer—you pay 7.65% and your employer matches with
+            another 7.65%. As a 1099 independent contractor, you must pay the <strong>full 15.3%</strong> via IRS
+            Schedule SE. The IRS does allow you to compute this on 92.35% of net self-employment earnings (rather than
+            100%), and you can deduct half of the SE tax as an above-the-line adjustment on Form 1040. Even so, on
+            $100,000 of net earnings, the SE tax totals approximately $14,130—roughly $7,065 more than a W-2 employee
+            would pay on the same gross income.</div>
         </div>
+
         <div class="faq-item">
           <button class="faq-q">How do you calculate a freelance hourly rate from a salary?<span
               class="faq-icon">+</span></button>
-          <div class="faq-a">To find your true freelance hourly rate, take your target annual gross contract amount
-            (which includes your desired salary, overhead expenses, health insurance, and self-employment taxes) and
-            divide it by your billable working hours per year (typically around 1,500 to 1,800 hours).</div>
+          <div class="faq-a">Start by computing your target annual gross contract amount. This is not your salary—it
+            includes your desired take-home pay <em>plus</em> self-employment taxes, health insurance premiums, business
+            overhead, and the cash value of any PTO you plan to take. Divide that gross figure by your realistic annual
+            billable hours. Most independent consultants bill between 1,500 and 1,800 hours per year after accounting for
+            vacations, holidays, sick days, and non-billable administrative time. For example, a $120,000 gross contract
+            ÷ 1,650 billable hours = $72.73/hour.</div>
         </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What business expenses can a 1099 contractor deduct?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Common deductible expenses for independent contractors include: a dedicated home office
+            (simplified method: $5/sq ft up to 300 sq ft), computer equipment and software subscriptions, professional
+            liability or errors-and-omissions (E&amp;O) insurance, health insurance premiums (deductible on Form 1040,
+            not Schedule C, if you qualify), business travel and mileage (IRS standard rate for 2026), continuing
+            education and professional development, accounting and legal fees, and marketing costs. These deductions
+            reduce your net self-employment income, which in turn reduces both your income tax and self-employment tax
+            liability.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Do I need to pay quarterly estimated taxes as a 1099 contractor?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes. Unlike W-2 employees who have taxes withheld from each paycheck, 1099 contractors must
+            make quarterly estimated tax payments using IRS Form 1040-ES. Payments are due on April 15, June 15,
+            September 15, and January 15 of the following year. The IRS generally requires you to pay at least 90% of
+            your current-year tax liability or 100% of your prior-year liability (110% if your AGI exceeds $150,000) to
+            avoid underpayment penalties. Failing to make timely quarterly payments can result in interest charges even if
+            you pay your full balance at tax time.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Should I form an LLC or S-Corp as a 1099 freelancer?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">This depends on your income level and risk profile. A single-member LLC provides liability
+            protection but is a "disregarded entity" for tax purposes—you still pay self-employment tax on all net
+            earnings. An S-Corp election (available to LLCs or corporations) allows you to split income into a
+            "reasonable salary" (subject to FICA) and distributions (not subject to SE tax), potentially saving thousands
+            in self-employment taxes at higher income levels. However, S-Corps require additional payroll processing,
+            tax filings (Form 1120-S), and administrative costs. Most CPAs recommend considering an S-Corp election once
+            net self-employment income consistently exceeds $60,000–$80,000/year. This calculator estimates taxes under
+            the default sole proprietor / Schedule C structure.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What retirement accounts are available to 1099 freelancers?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Freelancers have several tax-advantaged retirement options: a <strong>SEP-IRA</strong>
+            allows contributions up to 25% of net self-employment income (after the SE tax deduction), with a maximum of
+            $70,000 for 2025. A <strong>Solo 401(k)</strong> is often more advantageous, allowing both employee deferrals
+            (up to $23,500 for those under 50, $31,000 for those 50+) and employer profit-sharing contributions (up to
+            25% of net income), with the same $70,000 combined cap. A Solo 401(k) also permits Roth contributions,
+            giving you tax-free growth. Traditional and Roth IRAs are available to everyone but have lower limits
+            ($7,000/$8,000). None of these come with an employer match—the entire contribution comes from your
+            revenue.</div>
+        </div>
+
+      </div>
+
+      <div class="sources-section" style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border);">
+        <h2>Sources &amp; Method</h2>
+        <p>This calculator applies standard IRS self-employment tax rules (Schedule SE) using the 92.35% net earnings
+          adjustment and combined 15.3% FICA rate (12.4% Social Security + 2.9% Medicare). PTO valuation uses a 260-day
+          work year (52 weeks × 5 days). The gross-up formula divides total required compensation by (1 − effective SE
+          tax rate) to solve for the pre-tax contract amount. This tool provides general estimates for educational
+          purposes and does not constitute tax, legal, or financial advice.</p>
+        <ul>
+          <li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" target="_blank" rel="noopener" style="color:var(--accent);">IRS: Self-Employment Tax (Social Security and Medicare Taxes)</a></li>
+          <li><a href="https://www.irs.gov/forms-pubs/about-schedule-se-form-1040" target="_blank" rel="noopener" style="color:var(--accent);">IRS: About Schedule SE (Form 1040)</a></li>
+          <li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener" style="color:var(--accent);">IRS: Estimated Taxes for Individuals</a></li>
+          <li><a href="https://www.kff.org/health-costs/report/employer-health-benefits-annual-survey/" target="_blank" rel="noopener" style="color:var(--accent);">Kaiser Family Foundation: Employer Health Benefits Survey</a></li>
+          <li><a href="https://www.bls.gov/news.release/ecec.nr0.htm" target="_blank" rel="noopener" style="color:var(--accent);">Bureau of Labor Statistics: Employer Costs for Employee Compensation (ECEC)</a></li>
+        </ul>
       </div>
     </article>
 
@@ -982,6 +1176,13 @@
           <div>
             <div class="sidebar-tool-name">Salary to Hourly Converter</div>
             <div class="sidebar-tool-desc">Find the W-2 equivalent wage</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="overtime-pay-calculator.html">
+          <div class="sidebar-tool-icon">💰</div>
+          <div>
+            <div class="sidebar-tool-name">Overtime Pay Calculator</div>
+            <div class="sidebar-tool-desc">Calculate overtime wages owed</div>
           </div>
         </a>
       </div>
@@ -1106,3 +1307,5 @@
       });
     });
   </script>
+</body>
+</html>
