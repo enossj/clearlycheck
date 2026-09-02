@@ -23,6 +23,31 @@
   "url": "https://clearlycheck.com/fuel-cost-calculator.html",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuel Cost Calculator — Trip Gas Cost | ClearlyCheck</title>
+<meta name="description" content="Free fuel cost calculator: work out the gas cost of any trip from distance, fuel economy, and price. Supports MPG or L/100km, round trips, and splitting the cost between passengers.">
+<meta name="keywords" content="fuel cost calculator, gas cost calculator, trip gas cost, road trip fuel cost calculator, mpg cost calculator, gas mileage cost calculator">
+<link rel="canonical" href="https://clearlycheck.com/fuel-cost-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fuel Cost Calculator — Trip Gas Cost">
+<meta property="og:description" content="Work out the gas cost of any trip from distance, fuel economy, and price. Supports MPG or L/100km, round trips, and splitting the cost between passengers. Free and private.">
+<meta property="og:url" content="https://clearlycheck.com/fuel-cost-calculator.html">
+<meta property="og:site_name" content="ClearlyCheck">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fuel Cost Calculator",
+  "description": "Free fuel cost calculator: work out the gas cost of any trip from distance, fuel economy, and price. Supports MPG or L/100km, round trips, and splitting the cost between passengers.",
+  "url": "https://clearlycheck.com/fuel-cost-calculator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
 }
@@ -46,6 +71,26 @@
       "@type": "Question",
       "name": "Does this calculator use live gas prices?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. You enter the fuel price yourself, and the calculator doesn't fetch prices from any live feed or API. Gas prices vary by location, station, and day, so check a source like GasBuddy or your local prices before you enter one for an accurate estimate." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do aerodynamics and speed affect fuel consumption?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Aerodynamic drag increases exponentially with speed. Driving 75 mph instead of 65 mph can lower your fuel economy by up to 15%. Maintaining a steady, moderate highway speed is one of the most effective ways to reduce your fuel cost on a road trip." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does using air conditioning increase my fuel cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, running the air conditioning forces your engine to work harder, which can reduce fuel economy by up to 20% in hot weather. However, at highway speeds, running the AC is actually more fuel-efficient than driving with the windows down, because open windows create massive aerodynamic drag." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does vehicle weight impact fuel economy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Extra weight requires more energy to move. An extra 100 pounds in your vehicle could reduce your MPG by about 1%. To improve fuel efficiency, clear unnecessary heavy items out of your trunk and remove exterior cargo racks when they aren't in use." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best way to estimate fuel cost if I don't know my exact MPG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If you don't know your exact real-world fuel economy, you can look up the EPA's 'Combined' rating for your specific vehicle year, make, and model online. It serves as a good baseline, though your actual economy will vary based on your driving habits and terrain." }
     }
   ]
 }
@@ -91,7 +136,7 @@
   "url": "https://clearlycheck.com/fuel-cost-calculator.html",
   "mainEntityOfPage": "https://clearlycheck.com/fuel-cost-calculator.html",
   "datePublished": "2026-07-14",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-09-02",
   "author": {
     "@type": "Person",
     "@id": "https://clearlycheck.com/#enos",
@@ -246,137 +291,6 @@
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
-</head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="/">Clearly<span>Check</span></a>
-    <a class="back-link" href="/">
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
-      All Tools
-    </a>
-  </div>
-</nav>
-
-<div class="page-header">
-  <nav aria-label="breadcrumb">
-    <div class="breadcrumb">
-      <a href="/">Home</a><span>›</span>
-      <a href="index.html#tools">Tools</a><span>›</span>
-      <a href="auto-calculators.html">Auto</a><span>›</span>
-      <span style="color:var(--text-muted);">Fuel Cost</span>
-    </div>
-  </nav>
-  <div class="tool-tag-pill">⛽ Auto Tool</div>
-  <h1>Fuel Cost Calculator</h1>
-  <p>Work out the gas cost of any trip from distance, fuel economy, and price — supports MPG or L/100km, round trips, and splitting the cost between passengers.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 14, 2026</div>
-</div>
-
-<main>
-<div class="main-layout">
-
-  <div class="calc-card">
-    <div class="calc-header">
-      <h2>Enter your trip details</h2>
-      <p>See your estimated fuel cost update as you type.</p>
-    </div>
-    <div class="calc-body">
-
-      <div class="field">
-        <label for="distance">Trip distance</label>
-        <div class="input-wrap"><input type="number" id="distance" value="300" min="0" step="any" oninput="calculate()"><span class="input-suffix" id="distanceUnitLabel">mi</span></div>
-        <div class="field-toggle">
-          <button type="button" class="active" id="btnDistMi" onclick="setDistanceUnit('mi')">Miles (mi)</button>
-          <button type="button" id="btnDistKm" onclick="setDistanceUnit('km')">Kilometers (km)</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="checkbox-field" for="roundTrip">
-          <input type="checkbox" id="roundTrip" onchange="calculate()">
-          This is a round trip (double the distance)
-        </label>
-      </div>
-
-      <div class="field">
-        <label for="efficiency">Fuel economy</label>
-        <div class="input-wrap"><input type="number" id="efficiency" value="30" min="0" step="any" oninput="calculate()"><span class="input-suffix" id="efficiencyUnitLabel">MPG</span></div>
-        <div class="field-toggle">
-          <button type="button" class="active" id="btnEffMpg" onclick="setEffUnit('mpg')">MPG</button>
-          <button type="button" id="btnEffL100" onclick="setEffUnit('l100km')">L/100km</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="price" id="priceLabel">Fuel price (per gallon)</label>
-        <div class="input-wrap"><span class="prefix">$</span><input type="number" id="price" value="3.50" min="0" step="0.01" oninput="calculate()"></div>
-      </div>
-
-      <div class="field">
-        <label for="people">Number of people splitting the cost</label>
-        <div class="input-wrap"><input type="number" id="people" value="1" min="1" step="1" oninput="calculate()"></div>
-        <p class="hint">Per-person cost only shows when this is more than 1.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="results-card" role="region" aria-live="polite">
-    <div class="results-header">
-      <h3>Trip Fuel Cost</h3>
-      <span class="results-status status-ready" id="statusBadge">Ready</span>
-    </div>
-    <div class="results-body" id="resultsBody">
-      <!-- filled by JS -->
-    </div>
-  </div>
-
-</div>
-</main>
-
-<div class="article-section">
-  <article class="article">
-    <h2>How trip fuel cost is calculated</h2>
-    <p>This calculator works backward from your vehicle's real-world fuel economy. First it figures out how much fuel your trip actually uses: divide the distance by your fuel economy in MPG, or multiply the distance by your economy in L/100km and divide by 100. That fuel amount, in gallons or liters, is then multiplied by the price you enter to get your total fuel cost. If you check the round-trip box, the distance is doubled before anything else is calculated, since a round trip means driving the route twice.</p>
-
-    <h2>MPG vs. L/100km: which is better?</h2>
-    <p>MPG (miles per gallon) and L/100km (liters per 100 kilometers) measure the same thing — how far a vehicle goes on a given amount of fuel — but they run in opposite directions. With MPG, a higher number means better fuel economy, since you're going further on each gallon. With L/100km, a lower number is better, since you're using less fuel to cover the same distance. That inverse relationship trips a lot of people up when comparing a US-spec car's MPG rating to a European-spec car's L/100km rating, so this calculator lets you enter either one directly without needing to convert by hand first.</p>
-
-    <h2>Tips for cutting your trip's fuel cost</h2>
-    <p>A few habits make a real dent in what you spend at the pump over a long trip:</p>
-    <ul>
-      <li><strong>Keep tires properly inflated.</strong> Underinflated tires increase rolling resistance and can lower fuel economy by several percent.</li>
-      <li><strong>Drive a steady speed.</strong> Fuel economy drops sharply above roughly 60 mph, and aggressive acceleration and braking waste fuel that a steady pace doesn't.</li>
-      <li><strong>Cut excess weight and drag.</strong> Roof boxes, bike racks, and a trunk full of unused gear all add drag or weight that increase how much fuel your engine burns.</li>
-      <li><strong>Shop around for price.</strong> Gas prices can vary by 20–30 cents a gallon between stations a few miles apart, especially near highway exits versus a mile or two off the interstate.</li>
-    </ul>
-
-    <h2>Sources &amp; method</h2>
-    <p class="sources">Fuel used is calculated with the standard formula: fuel = distance ÷ fuel economy (for MPG), or fuel = distance × (economy ÷ 100) (for L/100km). Total cost is fuel used multiplied by the price you enter. This calculator doesn't pull live fuel prices from any feed — enter the price you see at the pump or expect to pay, since prices vary by location, station, and day. Check a source like GasBuddy or AAA's fuel price tracker for current regional averages if you don't know your trip's expected price.</p>
-
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <button class="faq-q">How is trip fuel cost calculated?<span class="faq-icon">+</span></button>
-        <div class="faq-a">This calculator divides your trip distance by your vehicle's fuel economy to get the fuel used, then multiplies that by the fuel price you enter. If you're using L/100km, fuel used is your distance multiplied by economy divided by 100. Checking the round-trip box doubles the distance before either calculation runs.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What's the difference between MPG and L/100km?<span class="faq-icon">+</span></button>
-        <div class="faq-a">MPG and L/100km measure the same underlying fuel economy but move in opposite directions. A higher MPG means better fuel economy, while a lower L/100km means better fuel economy, since it takes less fuel to cover the same 100 kilometers. This calculator accepts either unit directly so you don't need to convert manually.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Does this calculator use live gas prices?<span class="faq-icon">+</span></button>
-        <div class="faq-a">No. You enter the fuel price yourself, and the calculator doesn't fetch prices from any live feed or API. Gas prices vary by location, station, and day, so check a source like GasBuddy or your local prices before you enter one for an accurate estimate.</div>
-      </div>
-    </div>
-  </article>
-
-  <div>
-    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Auto Tools</p>
-    <div class="sidebar-tools">
       <a class="sidebar-tool" href="auto-loan-calculator.html">
         <div class="sidebar-tool-icon">🚗</div>
         <div><div class="sidebar-tool-name">Auto Loan Calculator</div><div class="sidebar-tool-desc">Estimate your monthly car payment</div></div>
