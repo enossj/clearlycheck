@@ -71,7 +71,7 @@
   "url": "https://clearlycheck.com/timezone-planner.html",
   "mainEntityOfPage": "https://clearlycheck.com/timezone-planner.html",
   "datePublished": "2026-06-07",
-  "dateModified": "2026-07-11",
+  "dateModified": "2026-09-02",
   "author": {
     "@type": "Person",
     "@id": "https://clearlycheck.com/#enos",
@@ -102,10 +102,50 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "How do you find overlapping work hours across different time zones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add each participant's city to a timezone planner tool and define the working hours for your team (e.g., 9 AM to 6 PM local time). The tool converts each city's working hours into UTC and finds the intersection—the hours when all participants are simultaneously within their work window. For a US East Coast and UK team, the overlap is typically 9 AM–1 PM EST (2–6 PM GMT). For US and India, the overlap narrows to about 8–9:30 AM EST (6:30–8 PM IST)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do some countries and states not observe Daylight Saving Time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DST was originally introduced to extend daylight during evening hours and reduce energy consumption. Countries near the equator (India, Singapore, most of Africa) skip DST because their day length varies little across seasons. Some jurisdictions opted out for practical reasons: Arizona does not observe DST because extending evening daylight would increase air-conditioning costs, while Hawaii's tropical latitude makes DST unnecessary. China, despite spanning five geographical time zones, uses a single standard time (UTC+8) with no DST."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Coordinated Universal Time (UTC) and how is it used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UTC (Coordinated Universal Time) is the primary time standard by which the world regulates clocks and time. It is maintained by a network of atomic clocks worldwide and does not observe Daylight Saving Time. All civil time zones are defined as a positive or negative offset from UTC. For example, New York is UTC−5 in winter (EST) and UTC−4 in summer (EDT), while Tokyo is always UTC+9. UTC replaced GMT as the international standard in 1960 and is used in aviation, computing, weather forecasting, and international communications."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What is the best time for a meeting between the US and India?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best overlap between US Eastern Time and India Standard Time (IST) is typically 8:00–9:30 AM EST, which is 6:30–8:00 PM IST. This keeps both parties within reasonable working hours. Morning US time is usually the only practical window given the 10.5-hour difference."
+        "text": "The best overlap between US Eastern Time and India Standard Time (IST) is typically 8:00–9:30 AM EST, which corresponds to 6:30–8:00 PM IST. This keeps both parties within reasonable working hours. Morning US time is usually the only practical window given the 10.5-hour difference. For US Pacific Time, the gap is 13.5 hours, making real-time overlap during normal business hours nearly impossible without one side working outside standard hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Daylight Saving Time affect meeting schedules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DST changes shift the UTC offset of participating time zones by one hour, which can move your established meeting time forward or backward. Critically, different countries change clocks on different dates: the US springs forward on the second Sunday of March, while Europe changes on the last Sunday of March, creating a 2–3 week period where the US-Europe offset is one hour different than usual. If your calendar app uses IANA timezone identifiers, it will adjust automatically. If you schedule in raw UTC, no adjustment occurs and local times will shift."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are IANA timezone identifiers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IANA timezone identifiers (e.g., 'America/New_York', 'Europe/London', 'Asia/Kolkata') are standardized names maintained by the Internet Assigned Numbers Authority in the tz database. Unlike abbreviations like EST or IST (which are ambiguous—IST can mean India Standard Time, Irish Standard Time, or Israel Standard Time), IANA identifiers uniquely specify both the base UTC offset and all historical and future DST transition rules for a location. Our planner uses IANA identifiers via the JavaScript Intl API to ensure accurate time conversions."
       }
     },
     {
@@ -113,7 +153,7 @@
       "name": "How do I schedule a meeting across multiple time zones?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use a timezone meeting planner tool — add each participant's city, then look for overlapping working hours (typically 9 AM to 6 PM local time). When no overlap exists, aim for a time that is early morning for one party and end of day for another, rotating who takes the inconvenient slot."
+        "text": "Add each participant's city to a timezone planner, set your working hours, and look for the overlap window. When no clean overlap exists, aim for a time that is early morning for one party and end of day for another. Best practice is to rotate who takes the inconvenient slot across meetings so no single team member consistently bears the burden. For teams with zero overlap, consider asynchronous communication (recorded video updates, written briefs) instead of forcing a live meeting."
       }
     }
   ]
@@ -338,7 +378,7 @@
   <div class="tool-tag-pill">🌍 Productivity Tool</div>
   <h1>Timezone Meeting<br>Planner</h1>
   <p>Add up to 5 cities, see everyone's working hours side by side, and find the best overlap window. Copy a ready-to-paste meeting summary in one click.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 11, 2026</div>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September 2, 2026</div>
 </div>
 
 <main>
@@ -417,41 +457,116 @@
 
 <div class="article-section">
   <article class="article">
-    <h2>How to find the best meeting time across timezones</h2>
-    <p>Scheduling across timezones is one of the most common frustrations for remote teams. The key is identifying the <strong>overlap window</strong> — the hours when all participants are within their normal working day. This tool does that automatically, but here are the principles behind it.</p>
+    <h2>The Complexities of Global Time Zones</h2>
+    <p>The world is divided into <strong>24 primary time zones</strong>, each roughly 15 degrees of longitude wide, radiating outward from the prime meridian at Greenwich, England. In theory, this creates a clean grid where each zone is exactly one hour offset from its neighbors. In practice, time zones are shaped by national borders, political decisions, and historical conventions that make the global time map far more complex than a simple 24-slice pie.</p>
 
-    <h2>Common timezone overlaps</h2>
+    <p>All civil time zones are defined as a positive or negative offset from <strong>Coordinated Universal Time (UTC)</strong>, the world's primary time standard. UTC is maintained by a global network of over 400 atomic clocks and does not observe Daylight Saving Time. It replaced Greenwich Mean Time (GMT) as the international reference point in 1960, though the terms are still often used interchangeably in casual conversation. Technically, GMT is a time zone (UTC+0), while UTC is the time standard itself.</p>
+
+    <p>Offsets range from <strong>UTC−12</strong> (Baker Island, uninhabited) to <strong>UTC+14</strong> (Line Islands, Kiribati), meaning there are actually <strong>26+ hours of difference</strong> around the globe at any given moment. Some offsets are not whole hours: India uses UTC+5:30, Nepal uses UTC+5:45, and the Chatham Islands (New Zealand) use UTC+12:45. These fractional offsets create additional complexity when computing overlap windows.</p>
+
+    <p>To further complicate matters, some countries span multiple time zones while choosing to use just one. <strong>China</strong>, despite stretching across five geographical time zones (from UTC+5 to UTC+9), uses a single national standard: UTC+8 (Beijing Time). This means that sunrise in Kashgar (western China) can occur as late as 10:00 AM local time in winter. <strong>India</strong> similarly uses a single timezone (UTC+5:30) across its entire breadth, even though the country spans nearly 30 degrees of longitude.</p>
+
+    <h2>Navigating Daylight Saving Time (DST) Traps</h2>
+    <p>Daylight Saving Time is perhaps the single greatest source of scheduling errors in international business. DST shifts clocks forward by one hour in spring ("spring forward") and back by one hour in autumn ("fall back"), but the critical complication is that <strong>different countries change on different dates</strong>—and many skip DST entirely.</p>
+
+    <p>Here is how DST transition dates vary across major regions:</p>
     <ul>
-      <li><strong>US East Coast + UK:</strong> 9 AM–1 PM EST (2 PM–6 PM GMT) — 4 hours of clean overlap</li>
-      <li><strong>US East Coast + India:</strong> 8–9:30 AM EST (6:30–8 PM IST) — tight 1.5 hour window</li>
-      <li><strong>US West Coast + India:</strong> Nearly impossible during normal hours — 13.5 hour gap</li>
-      <li><strong>UK + India:</strong> 9 AM–1 PM GMT (2:30–6:30 PM IST) — comfortable 4 hour overlap</li>
-      <li><strong>US East + Europe:</strong> 9 AM–1 PM EST (3–7 PM CET) — good overlap</li>
-      <li><strong>Australia + US:</strong> Very difficult — consider async communication instead</li>
+      <li><strong>United States and Canada:</strong> Spring forward on the <strong>second Sunday of March</strong>; fall back on the <strong>first Sunday of November</strong>.</li>
+      <li><strong>European Union:</strong> Spring forward on the <strong>last Sunday of March</strong>; fall back on the <strong>last Sunday of October</strong>.</li>
+      <li><strong>Australia (SE states):</strong> Spring forward on the <strong>first Sunday of October</strong>; fall back on the <strong>first Sunday of April</strong>. (Note: this is the opposite season from the Northern Hemisphere.)</li>
+      <li><strong>No DST observed:</strong> Most of Asia (India, China, Japan, South Korea, Singapore), most of Africa, most of South America, Arizona (US), Hawaii (US), and Iceland.</li>
     </ul>
 
-    <h2>Tips for scheduling across difficult timezones</h2>
+    <p>The mismatch in transition dates creates dangerous "gap weeks." For example, in 2026 the US springs forward on <strong>March 8</strong>, but Europe does not spring forward until <strong>March 29</strong>. During those three weeks, the US–UK time difference is <strong>4 hours instead of the usual 5</strong>. If your team has a standing 9:00 AM ET / 2:00 PM GMT meeting, it will temporarily become 9:00 AM ET / 1:00 PM GMT without anyone realizing it unless the calendar software handles IANA timezone identifiers (more on that below). This is the most common source of "I showed up an hour early/late" confusion in globally distributed teams.</p>
+
+    <p><strong>Arizona</strong> (except the Navajo Nation) does not observe DST. This means Arizona is on Mountain Standard Time (UTC−7) year-round, which matches Pacific Daylight Time (UTC−7) in summer but Mountain Standard Time in winter, while neighboring states shift around it. <strong>India</strong>, <strong>Japan</strong>, and <strong>China</strong> never change their clocks, making them reliable anchors for scheduling—but also meaning the US–India and US–Japan time gaps vary by one hour depending on whether the US is on standard or daylight time.</p>
+
+    <h2>Best Practices for Scheduling International Remote Meetings</h2>
+    <p>Finding the elusive "golden hours" of overlap for distributed teams requires a combination of tooling, empathy, and process discipline. Here are actionable strategies used by successful remote-first companies:</p>
+
+    <h3>1. Map the Overlap Windows First</h3>
+    <p>Before scheduling anything, use a timezone planner (like this one) to identify the hours when all participants are within their working day. Common overlap windows for frequently paired regions:</p>
     <ul>
-      <li><strong>Rotate the inconvenient slot.</strong> If one person always takes the early morning or late evening call, rotate who bears that burden fairly.</li>
-      <li><strong>Use async-first.</strong> For teams with no overlap window, consider whether a recorded Loom video or a detailed written brief can replace the meeting entirely.</li>
-      <li><strong>Book at the edge.</strong> 8 AM for one person and 6 PM for another is far better than 6 AM or 8 PM.</li>
-      <li><strong>Be explicit about timezones.</strong> Always include the timezone when sending a meeting invite — write "3:00 PM EST / 8:00 PM GMT" to avoid confusion.</li>
-      <li><strong>Account for DST changes.</strong> Daylight Saving Time shifts the US and Europe at different times, briefly changing your usual overlap by an hour.</li>
+      <li><strong>US East Coast + UK/Europe:</strong> 9:00 AM – 1:00 PM ET (2:00 – 6:00 PM GMT / 3:00 – 7:00 PM CET) — 4 hours of clean overlap.</li>
+      <li><strong>US East Coast + India (IST):</strong> 8:00 – 9:30 AM ET (6:30 – 8:00 PM IST) — a tight 1.5-hour window, the only practical slot given the 10.5-hour offset.</li>
+      <li><strong>US West Coast + India:</strong> Essentially no overlap during standard business hours (13.5-hour gap). One side must work outside normal hours.</li>
+      <li><strong>UK + India:</strong> 9:00 AM – 1:30 PM GMT (2:30 – 7:00 PM IST) — a comfortable 4.5-hour window.</li>
+      <li><strong>US + Australia (Sydney):</strong> Very difficult. Sydney is 14–16 hours ahead of the US West Coast depending on DST. The only overlap is late US evening / early Australian morning.</li>
     </ul>
 
-    <h2>What is UTC offset?</h2>
-    <p>UTC (Coordinated Universal Time) is the global time standard. All timezones are defined as an offset from UTC. For example, New York is UTC-5 in winter (EST) and UTC-4 in summer (EDT). Mumbai is always UTC+5:30. When you see a time listed as "15:00 UTC," that is 3:00 PM at the prime meridian, and you add or subtract your offset to find your local time.</p>
+    <h3>2. Rotate the Inconvenient Slot</h3>
+    <p>When overlap requires one person to join at 7:00 AM or 8:00 PM, establish a rotation so no single team member consistently bears the burden of early morning or late evening calls. Document the rotation in a shared calendar to ensure fairness.</p>
 
-    <div style="margin-top:32px;">
+    <h3>3. Default to Async-First Communication</h3>
+    <p>Many meetings can be replaced by a 5-minute recorded video update (Loom, Vidyard), a written brief in Notion or Confluence, or a structured Slack thread. Reserve synchronous meetings for decisions that require real-time discussion, brainstorming, or sensitive conversations that benefit from live tone and context.</p>
+
+    <h3>4. Always Specify Timezone in Invitations</h3>
+    <p>Never write "3:00 PM" in a meeting invite without specifying the timezone. Best practice: include <strong>both</strong> the organizer's local time and UTC, e.g., "3:00 PM EST (20:00 UTC)." Better yet, use calendar tools that automatically convert to each recipient's local time.</p>
+
+    <h3>5. Use IANA Timezone Identifiers</h3>
+    <p>Timezone abbreviations like "EST" and "IST" are ambiguous—IST can mean India Standard Time, Irish Standard Time, or Israel Standard Time. The <strong>IANA timezone database</strong> (also called the tz database or Olson database) uses unambiguous identifiers like <code>America/New_York</code>, <code>Europe/London</code>, and <code>Asia/Kolkata</code>. These identifiers encode both the base UTC offset and all historical and future DST transition rules. Our planner uses IANA identifiers via the browser's built-in <code>Intl</code> API, ensuring that time conversions are accurate even during DST transition periods.</p>
+
+    <h3>6. Account for Half-Hour and Quarter-Hour Offsets</h3>
+    <p>India (UTC+5:30), Nepal (UTC+5:45), Iran (UTC+3:30), Afghanistan (UTC+4:30), Myanmar (UTC+6:30), and the Chatham Islands (UTC+12:45) all use non-whole-hour offsets. When scheduling with participants in these regions, a "9:00 AM" meeting in New York starts at 7:30 PM in Mumbai, not 8:00 PM. Failing to account for the 30-minute offset is a surprisingly common error.</p>
+
+    <h2>How This Planner Works</h2>
+    <p>Our Timezone Meeting Planner uses the browser's native <code>Intl.DateTimeFormat</code> API with IANA timezone identifiers to perform all time conversions. Here is the process:</p>
+    <ul>
+      <li><strong>City selection:</strong> You pick up to 5 cities from our database of 35+ major global hubs. Each city maps to an IANA timezone (e.g., "New York" → <code>America/New_York</code>).</li>
+      <li><strong>Working hours definition:</strong> You set the start and end of the business day (default 9 AM – 6 PM).</li>
+      <li><strong>Overlap computation:</strong> For each UTC hour (0–23), the planner converts to each city's local time and checks whether all cities are within working hours. Consecutive overlapping hours are grouped into "meeting windows."</li>
+      <li><strong>24-hour timeline:</strong> A visual grid shows working hours (light green), overlap windows (dark green), and off-hours (gray) for every selected city, providing an at-a-glance view of the entire day.</li>
+      <li><strong>Copy summary:</strong> One click copies a formatted meeting summary with all cities' current times, ready to paste into Slack, email, or a calendar invitation.</li>
+    </ul>
+
+    <div class="faq-section">
       <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-q">How do you find overlapping work hours across different time zones?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Add each participant's city to a timezone planner and define working hours (e.g., 9 AM – 6 PM). The tool converts each city's local working hours into UTC and finds the intersection—the hours when every participant is simultaneously within their work window. For a US East Coast and UK team, the overlap is typically 9 AM – 1 PM EST (2 – 6 PM GMT). For US and India, it narrows to about 8 – 9:30 AM EST (6:30 – 8 PM IST). When no overlap exists, rotate who takes the off-hours call or default to async communication.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Why do some countries and states not observe Daylight Saving Time?<span class="faq-icon">+</span></button>
+        <div class="faq-a">DST was introduced to extend daylight into evening hours and reduce energy consumption. Countries near the equator (India, Singapore, most of Africa, and South America) skip DST because their day length varies little across seasons. Some jurisdictions opt out for practical reasons: Arizona does not observe DST because extending evening daylight in a desert climate would increase air-conditioning demand. Hawaii's tropical latitude makes DST unnecessary. China uses a single standard time (UTC+8) with no DST despite spanning five geographical zones. Japan abolished DST after a brief post-WWII experiment.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What is Coordinated Universal Time (UTC) and how is it used?<span class="faq-icon">+</span></button>
+        <div class="faq-a">UTC (Coordinated Universal Time) is the primary time standard by which the world regulates clocks. It is maintained by a network of over 400 atomic clocks and does not observe Daylight Saving Time. All civil time zones are defined as a positive or negative offset from UTC—for example, New York is UTC−5 in winter (EST) and UTC−4 in summer (EDT), while Tokyo is always UTC+9. UTC replaced GMT as the international standard in 1960 and is used in aviation, computing, weather forecasting, server logs, and international communications because of its universal, unambiguous nature.</div>
+      </div>
+
       <div class="faq-item">
         <button class="faq-q">What is the best time for a meeting between the US and India?<span class="faq-icon">+</span></button>
-        <div class="faq-a">The best window is typically 8:00–9:30 AM US Eastern Time, which translates to 6:30–8:00 PM India Standard Time. This is the only practical overlap that keeps both parties within reasonable hours given the 10.5-hour difference.</div>
+        <div class="faq-a">The best overlap between US Eastern Time and India Standard Time (IST) is typically 8:00 – 9:30 AM EST, which corresponds to 6:30 – 8:00 PM IST. This is the only practical window that keeps both sides within reasonable hours given the 10.5-hour difference. For US Pacific Time teams, the gap widens to 13.5 hours, making real-time overlap during normal business hours nearly impossible without one side working outside standard hours.</div>
       </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How does Daylight Saving Time affect meeting schedules?<span class="faq-icon">+</span></button>
+        <div class="faq-a">DST shifts the UTC offset of participating time zones by one hour, which can move your established meeting time forward or backward. Critically, different countries change clocks on different dates—the US springs forward on the second Sunday of March, while Europe changes on the last Sunday of March, creating a 2–3 week period where the US–Europe time difference is one hour different than usual. If your calendar uses IANA timezone identifiers (like America/New_York), it adjusts automatically. If you schedule in raw UTC, no local-time adjustment occurs and participants may show up at the wrong time.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What are IANA timezone identifiers?<span class="faq-icon">+</span></button>
+        <div class="faq-a">IANA timezone identifiers (e.g., 'America/New_York', 'Europe/London', 'Asia/Kolkata') are standardized names maintained by the Internet Assigned Numbers Authority in the tz database. Unlike abbreviations like EST or IST (which are ambiguous), IANA identifiers uniquely specify both the base UTC offset and all historical and future DST transition rules for a specific location. Our planner uses IANA identifiers via the JavaScript Intl API to ensure accurate time conversions year-round.</div>
+      </div>
+
       <div class="faq-item">
         <button class="faq-q">How do I schedule a meeting across multiple time zones?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Add each participant's city to a timezone planner tool, set your working hours, and look for the overlap window. When no clean overlap exists, aim for early morning in one timezone and end of day in another, and rotate who takes the inconvenient slot.</div>
+        <div class="faq-a">Add each participant's city to a timezone planner, set your working hours, and look for overlap windows. When no clean overlap exists, aim for early morning in one timezone and end of day in another. Rotate who takes the inconvenient slot across meetings so the burden is shared fairly. For teams with zero overlap, consider async communication—recorded video updates, written briefs, or structured Slack threads—instead of forcing a live meeting at antisocial hours.</div>
       </div>
+    </div>
+
+    <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border);">
+      <h2>Sources &amp; Method</h2>
+      <p>Time conversions use the browser's native <code>Intl.DateTimeFormat</code> API with IANA timezone identifiers from the tz database, ensuring automatic handling of DST transitions and fractional-hour offsets. Overlap computation tests each UTC hour (0–23) against all selected cities' local working hours. This tool provides schedule suggestions for planning purposes only and does not guarantee accuracy across all DST edge cases—always verify critical meetings against your calendar application's timezone support.</p>
+      <ul>
+        <li><a href="https://www.iana.org/time-zones" target="_blank" rel="noopener" style="color:var(--accent);">IANA Time Zone Database</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time" target="_blank" rel="noopener" style="color:var(--accent);">Wikipedia: Coordinated Universal Time (UTC)</a></li>
+        <li><a href="https://www.timeanddate.com/time/dst/" target="_blank" rel="noopener" style="color:var(--accent);">timeanddate.com: Daylight Saving Time Worldwide</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" target="_blank" rel="noopener" style="color:var(--accent);">MDN: Intl.DateTimeFormat (JavaScript timezone API)</a></li>
+      </ul>
     </div>
   </article>
 
@@ -465,6 +580,13 @@
           <div class="sidebar-tool-desc">What that meeting really costs</div>
         </div>
       </a>
+      <a class="sidebar-tool" href="date-duration-calculator.html">
+        <div class="sidebar-tool-icon">📅</div>
+        <div>
+          <div class="sidebar-tool-name">Date Duration Calculator</div>
+          <div class="sidebar-tool-desc">Days between any two dates</div>
+        </div>
+      </a>
       <a class="sidebar-tool" href="salary-to-hourly-converter.html">
         <div class="sidebar-tool-icon">💼</div>
         <div>
@@ -472,42 +594,26 @@
           <div class="sidebar-tool-desc">Convert any salary instantly</div>
         </div>
       </a>
-      <a class="sidebar-tool" href="debt-free-calculator.html">
-        <div class="sidebar-tool-icon">💸</div>
+      <a class="sidebar-tool" href="reading-time-calculator.html">
+        <div class="sidebar-tool-icon">📖</div>
         <div>
-          <div class="sidebar-tool-name">Debt Free Calculator</div>
-          <div class="sidebar-tool-desc">Find your exact debt payoff date</div>
-        </div>
-      </a>
-      <a class="sidebar-tool" href="can-i-afford-this.html">
-        <div class="sidebar-tool-icon">🏠</div>
-        <div>
-          <div class="sidebar-tool-name">Can I Afford This?</div>
-          <div class="sidebar-tool-desc">Income-based affordability check</div>
+          <div class="sidebar-tool-name">Reading Time Calculator</div>
+          <div class="sidebar-tool-desc">Estimate read time for any text</div>
         </div>
       </a>
     </div>
   </div>
 </div>
 
-
 <!-- DISCLAIMER -->
-<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);padding:16px 24px;">
+<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:12px;">
     <span style="font-size:16px;flex-shrink:0;">⚠️</span>
     <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;font-family:'DM Sans',sans-serif;">
       <strong style="color:#0f0f0e;">For informational purposes only.</strong>
-      Results from this tool are estimates based on the information you provide and standard financial guidelines.
-      They do not constitute financial, legal, tax, or professional advice.
-      Always consult a qualified professional before making major financial or life decisions.
-      ClearlyCheck accepts no liability for decisions made based on these results.
+      Suggested meeting times are based on the timezones and dates you select. Verify against daylight-saving changes before scheduling. Time conversions use the browser's Intl API with IANA timezone identifiers. ClearlyCheck accepts no liability for scheduling errors.
+      Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated September 2, 2026.
     </p>
-  </div>
-</div>
-
-<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
-  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
-    <strong style="color:#0f0f0e;">For informational purposes only.</strong> Suggested meeting times are based on the timezones and dates you select. Verify against daylight-saving changes before scheduling. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 11, 2026.
   </div>
 </div>
 

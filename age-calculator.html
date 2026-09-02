@@ -35,10 +35,34 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "How is chronological age calculated precisely across leap years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chronological age is calculated by counting completed years, months, and days from the date of birth to the target date. The algorithm handles leap years by checking whether each intervening year is divisible by 4 (and by 400 for century years), adjusting February's day count accordingly. It also accounts for varying month lengths (28–31 days) when computing the remaining days after full months are subtracted. This approach ensures sub-day precision even across centuries of elapsed time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the Gregorian and Julian calendars when calculating dates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Julian calendar, introduced by Julius Caesar in 46 BC, used a simple leap-year rule: one extra day every 4 years, producing an average year of 365.25 days. This overestimates the solar year (365.2422 days) by about 11 minutes per year. By 1582, the calendar had drifted 10 days. Pope Gregory XIII corrected this with the Gregorian calendar, which skips leap years on centuries not divisible by 400. This produces an average year of 365.2425 days, accurate to within 26 seconds per year. Our calculator uses the Gregorian system exclusively."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many days are in a typical human lifespan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Based on current global life expectancy of approximately 73 years (WHO, 2024), a typical human lifespan spans roughly 26,645 days, or about 639,480 hours. In the United States, where life expectancy is approximately 77.5 years, this rises to about 28,288 days. The exact count varies depending on how many leap years fall within the lifespan."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How do I calculate my exact age?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Enter your date of birth into the ClearlyCheck Age Calculator. It instantly shows your exact age in years, months, days, hours and minutes, updated in real time."
+        "text": "Enter your date of birth into the calculator above. It instantly computes your exact age in years, months, days, hours, and minutes, updated in real time every second. You can also enter a custom target date to calculate your age at any historical or future point in time."
       }
     },
     {
@@ -46,7 +70,23 @@
       "name": "How many days old am I?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To find out how many days old you are, enter your date of birth in the age calculator. It calculates the total number of days between your birth date and today."
+        "text": "Enter your date of birth above and the calculator displays your total age in days. For example, a 30-year-old has lived approximately 10,957 days (including 7–8 leap days). The exact number depends on how many leap years have occurred since your birth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I was born on February 29 (Leap Day)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "People born on February 29 only experience their actual calendar birthday once every four years. In non-leap years, most legal jurisdictions treat March 1 as the official birthday for age-related purposes. Our calculator correctly handles leap-day births and counts full elapsed years regardless of whether the current year is a leap year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate the age difference between two dates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. By default the calculator uses today as the end date, but you can change the 'Age at date' field to any date you choose. This lets you calculate how old someone was on a specific historical date, how old they will be on a future date, or the duration between any two calendar dates in years, months, and days."
       }
     }
   ]
@@ -94,7 +134,7 @@
   "url": "https://clearlycheck.com/age-calculator.html",
   "mainEntityOfPage": "https://clearlycheck.com/age-calculator.html",
   "datePublished": "2026-06-10",
-  "dateModified": "2026-07-11",
+  "dateModified": "2026-09-02",
   "author": {
     "@type": "Person",
     "@id": "https://clearlycheck.com/#enos",
@@ -301,7 +341,7 @@
   <div class="tool-tag-pill">🎂 Utility Tool</div>
   <h1>Age Calculator</h1>
   <p>Enter your date of birth and find out your exact age in years, months, days, hours and minutes — plus how many days until your next birthday.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 11, 2026</div>
+  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September 2, 2026</div>
 </div>
 
 <main>
@@ -353,57 +393,125 @@
 
 <div class="article-section">
   <article class="article">
-    <h2>How is age calculated?</h2>
-    <p>Age is calculated by finding the difference between your date of birth and today's date (or any target date you choose). The calculation accounts for leap years, varying month lengths, and the exact time of day to give you a precise result down to the minute.</p>
-    <p>The most common way to express age is in <strong>completed years</strong> — meaning you are not considered a year older until your actual birthday has passed. So if you were born on December 31 and today is December 30, you are still the previous age even though you are one day away from your birthday.</p>
+    <h2>The Complexity of Calculating Exact Age</h2>
+    <p>Calculating your exact age sounds deceptively simple: subtract your birth year from the current year. But anyone who has tried to compute the precise number of days, months, and hours they have lived quickly discovers that calendar arithmetic is far more complex than basic subtraction.</p>
 
-    <h2>Why does age matter?</h2>
-    <p>Age is used in countless important decisions: eligibility for driving licences, voting, retirement benefits, school enrolment, health screening guidelines, and insurance pricing. Knowing your exact age in days or months can also be useful for medical contexts, legal documents, and milestone planning.</p>
+    <p>The first complication is <strong>varying month lengths</strong>. The twelve months of the Gregorian calendar range from 28 to 31 days: January has 31, February has 28 (or 29 in a leap year), March has 31, April has 30, and so on. When calculating the "days" component of an age like "32 years, 7 months, and 14 days," the algorithm must determine how many days were in the specific month being subtracted. If you were born on January 31 and you are calculating your age on March 2, the "months" and "days" components depend on whether February had 28 or 29 days that year.</p>
 
-    <h2>Interesting age facts</h2>
+    <p>The second complication is <strong>leap years</strong>. A leap year adds one extra day (February 29) to the calendar. The Gregorian leap year rule states that a year is a leap year if it is divisible by 4—<em>unless</em> it is divisible by 100, in which case it is <em>not</em> a leap year—<em>unless</em> it is also divisible by 400, in which case it <em>is</em> a leap year. Under this rule, the year 2000 was a leap year (divisible by 400), 1900 was not (divisible by 100 but not 400), and 2024 was (divisible by 4, not a century year). Over a 400-year cycle, there are exactly 97 leap years, producing an average year length of 365.2425 days.</p>
+
+    <p>The third complication is <strong>edge cases around month boundaries</strong>. What is the age of someone born on March 31 when the current date is April 30? Is it exactly one month, even though April 30 is only 30 days after March 31? Most age calculation algorithms—including ours—treat this as "1 month and 0 days" because a full calendar month has elapsed, regardless of the differing day counts. The same logic applies to people born on the 29th, 30th, or 31st of a month when the subsequent month has fewer days.</p>
+
+    <p>Our calculator handles all of these edge cases by performing a <strong>year-month-day subtraction</strong> with borrow logic: if the day component goes negative, it borrows from the month component (using the actual number of days in the preceding month); if the month component goes negative, it borrows from the year component. This approach matches how humans intuitively think about age and produces results consistent with legal and medical age conventions worldwide.</p>
+
+    <h2>The History of Our Calendar System</h2>
+    <p>Understanding why age calculation is complicated requires a brief tour through the history of the calendar systems we use today.</p>
+
+    <p>The <strong>Julian calendar</strong>, introduced by Julius Caesar in 46 BC on the advice of the Alexandrian astronomer Sosigenes, was a major reform of the earlier Roman calendar. It established the 365-day year with a leap day every four years, producing an average year of exactly 365.25 days. This was remarkably accurate for its time, but it overestimates the actual tropical year (the time it takes Earth to complete one orbit relative to the vernal equinox) by approximately <strong>11 minutes and 14 seconds per year</strong>.</p>
+
+    <p>Over centuries, this small annual error accumulated. By the 16th century, the Julian calendar had drifted approximately 10 days out of alignment with the astronomical seasons. The spring equinox, which determines the date of Easter in the Christian liturgical calendar, was falling on March 11 instead of March 21. In 1582, <strong>Pope Gregory XIII</strong> issued the papal bull <em>Inter gravissimas</em>, introducing the <strong>Gregorian calendar</strong>. The reform made two key changes:</p>
     <ul>
-      <li>If you are <strong>30 years old</strong>, you have lived approximately <strong>10,950 days</strong> or <strong>262,800 hours</strong>.</li>
-      <li>People born on <strong>February 29</strong> (leap day) only have a "real" birthday every 4 years — they are technically only a quarter of their age in birthdays.</li>
-      <li>The <strong>oldest verified human</strong> ever was Jeanne Calment of France, who lived to 122 years and 164 days.</li>
-      <li>In <strong>South Korea</strong>, a different age system is traditionally used — everyone becomes one year older on New Year's Day rather than on their birthday.</li>
-      <li>In many cultures, turning <strong>60 or 61</strong> is celebrated as a second birth — a full return through the zodiac cycle.</li>
+      <li><strong>Immediate correction:</strong> Ten days were dropped from October 1582—Thursday, October 4 was followed directly by Friday, October 15.</li>
+      <li><strong>Refined leap year rule:</strong> Century years (1700, 1800, 1900, 2100) would no longer be leap years <em>unless</em> divisible by 400 (1600, 2000, 2400). This reduces the average year to 365.2425 days, which is accurate to within <strong>26 seconds per year</strong>—or one day every 3,236 years.</li>
     </ul>
+
+    <p>Catholic countries adopted the Gregorian calendar immediately, but Protestant and Orthodox nations resisted for decades or centuries. Britain and its colonies (including what would become the United States) did not switch until <strong>1752</strong>, by which point 11 days had to be dropped (September 2 was followed by September 14). Russia waited until 1918, and Greece until 1923. This means that historical date calculations—especially for events before the 18th century—require knowing which calendar was in use in the relevant country. Our calculator uses the proleptic Gregorian calendar (extending Gregorian rules backward in time) for all calculations, which is the standard approach for modern computing per ISO 8601.</p>
+
+    <h2>Interesting Age Milestones &amp; Time Metrics</h2>
+    <p>Looking at your age through different units of time can provide a fascinating—and sometimes humbling—perspective on the human lifespan. Here are some notable milestones and metrics:</p>
+    <ul>
+      <li><strong>1 billion seconds:</strong> You reach your billionth second of life at approximately <strong>31 years, 251 days, 7 hours, 46 minutes, and 40 seconds</strong>. This milestone is increasingly celebrated as a modern "metric birthday."</li>
+      <li><strong>10,000 days:</strong> You turn 10,000 days old at about <strong>27 years and 4.5 months</strong>. A 30-year-old has lived roughly 10,957 days (including 7–8 leap days).</li>
+      <li><strong>Total heartbeats:</strong> The average human heart beats about 100,000 times per day, or roughly 37 million times per year. By age 70, your heart will have beaten approximately <strong>2.5 billion times</strong>.</li>
+      <li><strong>Total breaths:</strong> At an average resting rate of 12–20 breaths per minute, a person takes roughly 17,000–29,000 breaths per day. Over a 78-year lifespan, that totals approximately <strong>672 million breaths</strong>.</li>
+      <li><strong>Weeks in a lifetime:</strong> A 78-year lifespan contains approximately <strong>4,056 weeks</strong>. This framing—popularized by Tim Urban's "Your Life in Weeks" essay—puts the finite nature of time into sharp visual relief.</li>
+      <li><strong>Leap day birthdays:</strong> People born on February 29 ("leaplings") only celebrate their actual calendar birthday once every four years. By their 80th year of life, they have experienced only 20 "real" birthdays. In most legal jurisdictions, their official birthday in non-leap years is treated as either February 28 or March 1, depending on local law.</li>
+    </ul>
+
+    <p>Different cultures also count age differently. The traditional <strong>East Asian age reckoning</strong> system (historically used in China, Japan, Korea, and Vietnam) counts a person as 1 year old at birth and adds a year every Lunar New Year rather than on the individual's birthday. Under this system, a baby born on December 31 would be considered 2 years old the very next day (January 1). South Korea officially <a href="https://en.wikipedia.org/wiki/East_Asian_age_reckoning" target="_blank" rel="noopener" style="color:var(--accent);">abolished this system for legal purposes in June 2023</a>, switching to the international (Western) age counting method, though the traditional counting still persists in everyday conversation.</p>
+
+    <p>The <strong>oldest verified human</strong> in recorded history was Jeanne Calment of France, who lived to <strong>122 years and 164 days</strong> (February 21, 1875 – August 4, 1997). That is approximately 44,724 days, 1.07 million hours, or 3.86 billion seconds of life. Current global life expectancy, according to the WHO's 2024 data, is approximately <strong>73.3 years</strong>—roughly 26,754 days.</p>
+
+    <h2>How This Calculator Works</h2>
+    <p>Our age calculator uses a <strong>year-month-day subtraction algorithm</strong> that mirrors how humans naturally think about age:</p>
+    <ul>
+      <li>It subtracts the birth date from the target date component by component (year, month, day).</li>
+      <li>If the day value goes negative, it borrows one month and adds the number of days in the previous month.</li>
+      <li>If the month value goes negative, it borrows one year and adds 12 months.</li>
+      <li>Total units (days, weeks, hours, minutes, seconds) are calculated using millisecond-precision arithmetic based on JavaScript's <code>Date</code> object.</li>
+      <li>When "Age at date" is left blank, the calculator defaults to the current moment and updates every second to provide a live, ticking display.</li>
+    </ul>
+    <p>The next-birthday countdown computes the next occurrence of your birth month and day, and displays the number of days remaining. If your birthday falls on the current date, it shows a special celebration message. If it is within 30 days, it highlights the upcoming date in an amber alert box.</p>
 
     <div class="faq-section">
       <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-q">How is chronological age calculated precisely across leap years?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Chronological age is calculated by counting completed years, months, and days from the date of birth to the target date. The algorithm handles leap years by checking whether each intervening year is divisible by 4 (and by 400 for century years), adjusting February's day count accordingly. It also accounts for varying month lengths (28–31 days) when computing the remaining days after full months are subtracted. This approach ensures sub-day precision even across centuries of elapsed time.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What is the difference between the Gregorian and Julian calendars when calculating dates?<span class="faq-icon">+</span></button>
+        <div class="faq-a">The Julian calendar, introduced in 46 BC, used a simple leap-year rule—one extra day every 4 years—producing an average year of 365.25 days. This overestimates the solar year by about 11 minutes per year. By 1582, the calendar had drifted 10 days. Pope Gregory XIII corrected this with the Gregorian calendar, which skips leap years on centuries not divisible by 400 (so 1900 was not a leap year, but 2000 was). The Gregorian calendar produces an average year of 365.2425 days, accurate to within 26 seconds per year. Our calculator uses the Gregorian system exclusively, which is the worldwide standard for civil timekeeping.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How many days are in a typical human lifespan?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Based on current global life expectancy of approximately 73 years (WHO, 2024), a typical human lifespan spans roughly 26,645 days, or about 639,480 hours. In the United States, where life expectancy is approximately 77.5 years, this rises to about 28,288 days. In Japan, with one of the world's highest life expectancies at around 84 years, it is approximately 30,660 days. The exact count varies slightly depending on how many leap years fall within the lifespan.</div>
+      </div>
+
       <div class="faq-item">
         <button class="faq-q">How do I calculate my exact age?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Enter your date of birth into the calculator above. It instantly shows your exact age in years, months, days, hours and minutes, updated to the current moment. You can also enter a custom target date to calculate your age at any point in time.</div>
+        <div class="faq-a">Enter your date of birth into the calculator above. It instantly computes your exact age in years, months, days, hours, and minutes, updated in real time every second. You can also enter a custom target date to calculate your age at any historical or future point in time.</div>
       </div>
+
       <div class="faq-item">
         <button class="faq-q">How many days old am I?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Enter your date of birth above and the calculator shows your total age in days. For example, a 30-year-old is approximately 10,950 days old. The exact number depends on how many leap years have occurred since your birth.</div>
+        <div class="faq-a">Enter your date of birth above and the calculator displays your total age in days. For example, a 30-year-old has lived approximately 10,957 days (including 7–8 leap days). The exact number depends on how many leap years have occurred since your birth and which months are covered by the span.</div>
       </div>
+
       <div class="faq-item">
-        <button class="faq-q">How long until my next birthday?<span class="faq-icon">+</span></button>
-        <div class="faq-a">The calculator automatically shows how many days until your next birthday. If your birthday is today it shows a special birthday message. If it is within 30 days it highlights the upcoming date so you do not miss it.</div>
+        <button class="faq-q">What happens if I was born on February 29 (Leap Day)?<span class="faq-icon">+</span></button>
+        <div class="faq-a">People born on February 29 ("leaplings") only experience their actual calendar birthday once every four years. In non-leap years, most legal jurisdictions treat March 1 as the official birthday for age-related purposes (some use February 28). Our calculator correctly handles leap-day births and counts full elapsed years regardless of whether the current year is a leap year.</div>
       </div>
+
       <div class="faq-item">
-        <button class="faq-q">Can I calculate the age between two dates?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes. By default the calculator uses today as the end date, but you can change the "Age at date" field to any date you choose. This lets you calculate how old someone was on a specific date, or how old they will be in the future.</div>
+        <button class="faq-q">Can I calculate the age difference between two dates?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. By default the calculator uses today as the end date, but you can change the "Age at date" field to any date you choose. This lets you calculate how old someone was on a specific historical date, how old they will be on a future date, or the exact duration between any two calendar dates expressed in years, months, days, hours, and minutes.</div>
       </div>
+    </div>
+
+    <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border);">
+      <h2>Sources &amp; Method</h2>
+      <p>Age calculations use standard year-month-day subtraction with borrow logic on the Gregorian calendar. Total elapsed time (days, hours, minutes, seconds) is computed via JavaScript millisecond-precision <code>Date</code> arithmetic. This tool provides general calculations for informational and educational purposes only. For legal or official age verification, always use official government-issued documentation.</p>
+      <ul>
+        <li><a href="https://www.timeanddate.com/date/leapyear.html" target="_blank" rel="noopener" style="color:var(--accent);">timeanddate.com: Leap Year Rules</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Gregorian_calendar" target="_blank" rel="noopener" style="color:var(--accent);">Wikipedia: Gregorian Calendar</a></li>
+        <li><a href="https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy" target="_blank" rel="noopener" style="color:var(--accent);">WHO: Life Expectancy and Healthy Life Expectancy Data</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/East_Asian_age_reckoning" target="_blank" rel="noopener" style="color:var(--accent);">Wikipedia: East Asian Age Reckoning</a></li>
+      </ul>
     </div>
   </article>
 
   <div>
     <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
     <div class="sidebar-tools">
+      <a class="sidebar-tool" href="date-duration-calculator.html">
+        <div class="sidebar-tool-icon">📅</div>
+        <div><div class="sidebar-tool-name">Date Duration Calculator</div><div class="sidebar-tool-desc">Days between any two dates</div></div>
+      </a>
       <a class="sidebar-tool" href="bmi-calculator.html">
         <div class="sidebar-tool-icon">⚖️</div>
         <div><div class="sidebar-tool-name">BMI Calculator</div><div class="sidebar-tool-desc">Calculate your Body Mass Index</div></div>
       </a>
+      <a class="sidebar-tool" href="due-date-calculator.html">
+        <div class="sidebar-tool-icon">🤰</div>
+        <div><div class="sidebar-tool-name">Due Date Calculator</div><div class="sidebar-tool-desc">Estimate your due date</div></div>
+      </a>
       <a class="sidebar-tool" href="debt-free-calculator.html">
         <div class="sidebar-tool-icon">💸</div>
         <div><div class="sidebar-tool-name">Debt Free Calculator</div><div class="sidebar-tool-desc">Find your exact debt payoff date</div></div>
-      </a>
-      <a class="sidebar-tool" href="salary-to-hourly-converter.html">
-        <div class="sidebar-tool-icon">💼</div>
-        <div><div class="sidebar-tool-name">Salary to Hourly</div><div class="sidebar-tool-desc">Convert any salary instantly</div></div>
       </a>
     </div>
   </div>
@@ -412,7 +520,7 @@
 <div class="disclaimer-bar">
   <div class="inner">
     <span style="font-size:16px;flex-shrink:0;">⚠️</span>
-    <p><strong style="color:#0f0f0e;">For informational purposes only.</strong> Age calculations are based on the dates you enter. For legal or official purposes, always verify your age with official documentation. ClearlyCheck accepts no liability for decisions made based on these results. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 11, 2026.</p>
+    <p><strong style="color:#0f0f0e;">For informational purposes only.</strong> Age calculations are based on the dates you enter. For legal or official purposes, always verify your age with official documentation. ClearlyCheck accepts no liability for decisions made based on these results. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated September 2, 2026.</p>
   </div>
 </div>
 
