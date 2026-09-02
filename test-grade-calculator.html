@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Test Grade Calculator — EasyGrader Score & Letter Grade | ClearlyCheck</title>
-<meta name="description" content="Free test grade calculator: enter the number of questions and how many were wrong (or points earned out of total) to get the percentage score and letter grade instantly, plus a full EasyGrader chart. Runs in your browser.">
-<meta name="keywords" content="test grade calculator, easygrader, grade calculator, percentage to letter grade, test score calculator, points to percentage calculator, grading chart">
-<link rel="canonical" href="https://clearlycheck.com/test-grade-calculator.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Test Grade Calculator — EasyGrader Score & Letter Grade">
-<meta property="og:description" content="Enter the number of questions and how many were wrong (or points earned out of total) to get your percentage score, letter grade, and a full EasyGrader chart. Free, private, no signup.">
-<meta property="og:url" content="https://clearlycheck.com/test-grade-calculator.html">
-<meta property="og:site_name" content="ClearlyCheck">
-<meta name="twitter:card" content="summary">
 
-<script type="application/ld+json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Grade Calculator — EasyGrader Score & Letter Grade | ClearlyCheck</title>
+  <meta name="description"
+    content="Free test grade calculator: enter the number of questions and how many were wrong (or points earned out of total) to get the percentage score and letter grade instantly, plus a full EasyGrader chart. Runs in your browser.">
+  <meta name="keywords"
+    content="test grade calculator, easygrader, grade calculator, percentage to letter grade, test score calculator, points to percentage calculator, grading chart">
+  <link rel="canonical" href="https://clearlycheck.com/test-grade-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Test Grade Calculator — EasyGrader Score & Letter Grade">
+  <meta property="og:description"
+    content="Enter the number of questions and how many were wrong (or points earned out of total) to get your percentage score, letter grade, and a full EasyGrader chart. Free, private, no signup.">
+  <meta property="og:url" content="https://clearlycheck.com/test-grade-calculator.html">
+  <meta property="og:site_name" content="ClearlyCheck">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -27,30 +31,50 @@
   "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
 }
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is an EasyGrader chart?",
-      "acceptedAnswer": { "@type": "Answer", "text": "An EasyGrader chart (sometimes sold as a plastic grading slide or wheel) lists every possible number of wrong answers for a given number of questions, next to the percentage and letter grade that results. Instead of dividing by hand for each paper, a teacher scans down the number-wrong column and reads off the score. This calculator generates the same chart for any test length up to 20 questions, right in Questions mode." }
+      "name": "How do I calculate my test grade if I know how many questions I missed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "To calculate your test grade, subtract the number of questions you missed from the total number of questions to find the number of correct answers. Then, divide the correct answers by the total questions and multiply by 100 to get your percentage score. For example, if you missed 5 questions out of 40, you got 35 correct. 35 divided by 40 is 0.875, which means your score is 87.5%." }
     },
     {
       "@type": "Question",
-      "name": "What's the difference between Questions mode and Points mode?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Questions mode assumes every question is worth the same amount and calculates your score from the total number of questions and how many you got wrong. Points mode is for tests where questions carry different point values — you enter the total points you earned and the total points possible, and the calculator divides one by the other. Use whichever matches how your test was graded." }
+      "name": "What is the standard letter grade scale for a 90% or 80%?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In the standard US 10-point grading scale, a 90% to 100% is typically considered an A, reflecting excellent performance. An 80% to 89% represents a B, indicating above-average work. These ranges may be further divided into plus and minus grades (e.g., 90-92% as an A-, 80-82% as a B-). However, always check your specific class syllabus, as some schools or professors use modified scales." }
     },
     {
       "@type": "Question",
-      "name": "Why do letter grade cutoffs vary by school?",
-      "acceptedAnswer": { "@type": "Answer", "text": "There's no universal rule defining what percentage counts as an A or a B — each school, district, or individual instructor sets its own grading scale. This calculator uses the most common US convention (a 10-point scale with plus/minus grades), but always check your syllabus or gradebook for the exact cutoffs your class uses, since some instructors don't use plus/minus grades at all, or shift the boundaries slightly." }
+      "name": "How does weighted grading affect my overall class grade?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In a weighted grading system, different categories of assignments count for different percentages of your final grade. For instance, exams might be worth 50%, homework 30%, and quizzes 20%. In this system, doing poorly on a heavily weighted exam will lower your overall grade much more significantly than missing a few homework assignments, even if the raw point values are the same." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a percentage grade and a GPA?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A percentage grade reflects your score on a specific test or in a specific class out of 100 (e.g., 85%). A Grade Point Average (GPA) is a standardized numeric value, typically on a 4.0 scale, representing your average academic performance across all your classes. Letter grades (derived from percentages) are converted into GPA points (e.g., an A is 4.0, a B is 3.0), which are then averaged to calculate your cumulative GPA." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do extra credit points affect my final test percentage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Extra credit points are added to your total earned points but do not increase the total possible points. For example, if you scored 85 out of 100 (85%) and earned 5 extra credit points, your new score is 90 out of 100 (90%). This allows your percentage to improve without changing the baseline against which the score is measured." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a passing grade on most standard academic scales?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On most standard US academic scales, a passing grade is a D or higher, which typically requires a percentage score of 60% or above. However, many higher education institutions and specific degree programs require a C (usually 70% or higher) to pass or to earn credit toward major requirements." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I calculate what score I need on my final exam to pass the class?",
+      "acceptedAnswer": { "@type": "Answer", "text": "To find out what you need on a final exam, you need to know your current grade, the grade you want to achieve, and the weight of the final exam. The formula is: [Target Grade - (Current Grade × (1 - Exam Weight))] ÷ Exam Weight. For example, if you want an 80% overall, have a 75% currently, and the final is worth 30% (0.3): [80 - (75 × 0.70)] ÷ 0.30 = 91.6% required on the final." }
     }
   ]
 }
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -82,7 +106,7 @@
   ]
 }
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -115,414 +139,1177 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/calculator.css">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
-    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
-    --blue: #1a4fa0; --blue-light: #e8f0fe;
-    --yellow: #b7770d; --yellow-light: #fef9ec;
-    --red: #b0362c; --red-light: #fbebe9;
-    --radius: 16px; --radius-sm: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
-  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
-  .logo span { color: var(--accent); }
-  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
-  .back-link:hover { color: var(--text); }
-
-  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
-  .breadcrumb a { color: var(--text-light); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
-  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
-  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
-
-  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,380px); gap: 28px; align-items: start; }
-
-  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0; }
-  .calc-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); }
-  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-  .calc-header p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
-  .calc-body { padding: 24px 32px 28px; min-width: 0; }
-
-  .mode-toggle { display: flex; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px; gap: 4px; margin-bottom: 24px; }
-  .mode-btn { flex: 1; padding: 11px 8px; font-family: 'DM Sans', sans-serif; font-size: 13.5px; font-weight: 600; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
-  .mode-btn.active { background: var(--bg-card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-
-  .field { margin-bottom: 16px; }
-  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
-  .input-wrap { display: flex; align-items: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
-  .input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.10); }
-  .input-wrap input { flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); background: transparent; padding: 0 14px; height: 46px; width: 100%; min-width: 0; }
-  .input-suffix { padding: 0 14px 0 4px; color: var(--text-light); font-size: 13px; white-space: nowrap; }
-  .hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
-
-  .easygrader-wrap { margin-top: 8px; }
-  .easygrader-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 10px; }
-  .table-scroll { overflow-x: auto; margin-bottom: 8px; min-width: 0; }
-  .easygrader-table { width: 100%; border-collapse: collapse; min-width: 320px; font-size: 13.5px; }
-  .easygrader-table th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); padding: 0 8px 8px; border-bottom: 1px solid var(--border); }
-  .easygrader-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
-  .easygrader-table tr:last-child td { border-bottom: none; }
-  .easygrader-table td.eg-letter { font-weight: 700; color: var(--text); }
-  .easygrader-table tr.eg-current { background: var(--accent-light); }
-  .easygrader-table tr.eg-current td { color: var(--text); font-weight: 600; }
-
-  /* RESULTS */
-  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0; }
-  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
-  .results-status { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .status-ready { background: var(--accent-light); color: var(--accent); }
-  .status-warn { background: var(--yellow-light); color: var(--yellow); }
-  .status-bad { background: var(--red-light); color: var(--red); }
-  .results-body { padding: 20px 24px; min-width: 0; }
-
-  .verdict-hero { text-align: center; border-radius: var(--radius-sm); padding: 22px 16px; margin-bottom: 16px; }
-  .verdict-hero.good { background: var(--accent-light); }
-  .verdict-hero.warn { background: var(--yellow-light); }
-  .verdict-hero.bad { background: var(--red-light); }
-  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
-  .verdict-hero.good .verdict-label { color: var(--accent-dark); }
-  .verdict-hero.warn .verdict-label { color: #7a5000; }
-  .verdict-hero.bad .verdict-label { color: #8b1a0f; }
-  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 40px; font-weight: 800; color: var(--text); line-height: 1.1; }
-  .verdict-letter { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 800; color: var(--text); margin-top: 2px; }
-  .verdict-sub { font-size: 12.5px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
-
-  .metrics-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px; margin-bottom: 4px; }
-  .metric { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; min-width: 0; }
-  .metric-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 4px; }
-  .metric-value { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.2; overflow-wrap: break-word; }
-  .metric-value.accent { color: var(--accent); }
-  .metric-value.blue { color: var(--blue); }
-
-  .empty-state { text-align: center; padding: 32px 12px; }
-  .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.6; }
-  .empty-text { font-size: 13.5px; color: var(--text-light); line-height: 1.6; }
-
-  /* ARTICLE */
-  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,380px); gap: 28px; }
-  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
-  .article-section > div { min-width: 0; }
-  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0; }
-  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
-  .article h2:first-child { margin-top: 0; }
-  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
-  .article ul { padding-left: 20px; margin-bottom: 16px; }
-  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
-  .article strong { color: var(--text); font-weight: 500; }
-  .article table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; min-width: 300px; }
-  .article th, .article td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
-  .article th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .article code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; word-break: break-word; }
-  .faq-section { margin-top: 32px; }
-  .faq-item { border-top: 1px solid var(--border); }
-  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
-  .faq-q:hover { color: var(--accent); }
-  .faq-q.open { color: var(--accent); }
-  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
-  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
-  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
-  .faq-a.open { display: block; }
-
-  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
-  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; min-width: 0; }
-  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
-  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
-  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
-
-  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: var(--text-light); }
-  .footer-copy a { white-space: nowrap; }
-
-  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
-  @media (max-width: 600px) { .calc-body { padding: 20px; } .page-header { padding: 32px 20px 24px; } }
-
-  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
-  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
-  .page-meta a:hover { text-decoration: underline; }
-</style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
-</head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="/">Clearly<span>Check</span></a>
-    <a class="back-link" href="/">
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
-      All Tools
-    </a>
-  </div>
-</nav>
-
-<div class="page-header">
-  <nav aria-label="breadcrumb">
-    <div class="breadcrumb">
-      <a href="/">Home</a><span>›</span>
-      <a href="index.html#tools">Tools</a><span>›</span>
-      <a href="education-tools.html">Education</a><span>›</span>
-      <span style="color:var(--text-muted);">Test Grade</span>
-    </div>
-  </nav>
-  <div class="tool-tag-pill">🎓 Education Tool</div>
-  <h1>Test Grade Calculator</h1>
-  <p>Enter your questions and wrong answers (or points earned and possible) to get your percentage score, letter grade, and a full EasyGrader chart.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 16, 2026</div>
-</div>
-
-<main>
-<div class="main-layout">
-
-  <div class="calc-card">
-    <div class="calc-header">
-      <h2>Enter your test results</h2>
-      <p>Choose how your test was scored.</p>
-    </div>
-    <div class="calc-body">
-
-      <div class="mode-toggle">
-        <button type="button" class="mode-btn active" id="tabQuestions" onclick="setMode('questions')">Questions</button>
-        <button type="button" class="mode-btn" id="tabPoints" onclick="setMode('points')">Points</button>
-      </div>
-
-      <div id="panelQuestions">
-        <div class="field">
-          <label for="totalQuestions">Total number of questions</label>
-          <div class="input-wrap"><input type="number" id="totalQuestions" value="20" min="1" oninput="calculate()"></div>
-        </div>
-        <div class="field">
-          <label for="numWrong">Number wrong</label>
-          <div class="input-wrap"><input type="number" id="numWrong" value="1" min="0" oninput="calculate()"></div>
-          <p class="hint">Everything else is assumed correct. The EasyGrader chart below shows every possible score for this test length.</p>
-        </div>
-
-        <div class="easygrader-wrap" id="easyGraderWrap">
-          <div class="easygrader-title">EasyGrader Chart</div>
-          <div class="table-scroll">
-            <table class="easygrader-table">
-              <thead><tr><th>Wrong</th><th>Score</th><th>Grade</th></tr></thead>
-              <tbody id="easyGraderBody"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div id="panelPoints" style="display:none;">
-        <div class="field">
-          <label for="pointsEarned">Points earned</label>
-          <div class="input-wrap"><input type="number" id="pointsEarned" value="45" min="0" oninput="calculate()"></div>
-        </div>
-        <div class="field">
-          <label for="pointsPossible">Points possible</label>
-          <div class="input-wrap"><input type="number" id="pointsPossible" value="50" min="0" oninput="calculate()"></div>
-          <p class="hint">Use this mode when questions are worth different amounts of points.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="results-card" role="region" aria-live="polite">
-    <div class="results-header">
-      <h3>Result</h3>
-      <span class="results-status status-ready" id="statusBadge">Ready</span>
-    </div>
-    <div class="results-body" id="resultsBody">
-      <!-- filled by JS -->
-    </div>
-  </div>
-
-</div>
-</main>
-
-<div class="article-section">
-  <article class="article">
-    <h2>How test scores become percentages and letter grades</h2>
-    <p>A test score is really just a fraction turned into a percentage. If every question is worth the same amount, the calculation is <strong>(total questions − wrong answers) ÷ total questions × 100</strong>. If questions carry different point values, it's <strong>points earned ÷ points possible × 100</strong>. Either way, once you have a percentage, a letter grade is just that percentage sorted into a bucket — 93% and up is usually an A, 90–92% is an A-, and so on down to F below 60%. This calculator does both steps at once: enter your raw numbers in whichever mode matches how the test was graded, and it returns the percentage and letter grade instantly.</p>
-
-    <h2>Questions mode vs. Points mode — which should I use?</h2>
-    <p><strong>Questions mode</strong> is the right choice for tests where every question counts equally — a 20-question multiple-choice quiz, for example, where each question is worth 5%. You only need two numbers: how many questions were on the test, and how many you got wrong. <strong>Points mode</strong> is for tests where questions are worth different amounts — a short-answer test where one question is worth 2 points and another is worth 10. There, you need the total points you earned and the total points the test was worth. Using the wrong mode won't necessarily break the math, but it can give a misleading percentage if question weights actually vary, so match the mode to how your teacher actually graded the test.</p>
-
-    <h2>What is an EasyGrader chart, and why does it only appear in Questions mode?</h2>
-    <p>Long before spreadsheets, teachers used printed "EasyGrader" charts or plastic grading wheels to skip the arithmetic entirely — the chart lists, for a given number of questions, the percentage and letter grade attached to every possible number of wrong answers. This calculator reproduces that chart automatically for Questions mode, covering everything from a perfect score down to missing every question (or the first 20 rows, whichever comes first, so the table stays a manageable size). Points mode doesn't have an equivalent chart, since the number of ways to lose points varies question by question rather than following a simple count.</p>
-
-    <h2>Why letter grade cutoffs differ from school to school</h2>
-    <p>There's no single authority that defines what percentage counts as a B or a C — grading scales are set locally, by a school district, an individual school, or sometimes an individual instructor. The 10-point scale with plus and minus grades shown below is the most common convention used across US schools and colleges, and it's what this calculator uses by default. But some instructors skip the plus/minus distinctions entirely, some shift a cutoff by a point or two, and some use entirely different scales. Treat the letter grade here as a well-informed estimate, and check your syllabus or gradebook for the cutoffs that actually apply to your class.</p>
-
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th>Percentage</th><th>Letter Grade</th></tr></thead>
-        <tbody>
-          <tr><td>97–100%</td><td>A+</td></tr>
-          <tr><td>93–96%</td><td>A</td></tr>
-          <tr><td>90–92%</td><td>A-</td></tr>
-          <tr><td>87–89%</td><td>B+</td></tr>
-          <tr><td>83–86%</td><td>B</td></tr>
-          <tr><td>80–82%</td><td>B-</td></tr>
-          <tr><td>77–79%</td><td>C+</td></tr>
-          <tr><td>73–76%</td><td>C</td></tr>
-          <tr><td>70–72%</td><td>C-</td></tr>
-          <tr><td>67–69%</td><td>D+</td></tr>
-          <tr><td>63–66%</td><td>D</td></tr>
-          <tr><td>60–62%</td><td>D-</td></tr>
-          <tr><td>Below 60%</td><td>F</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin-top:-8px; font-size: 13px;">This is a common convention, but grading scales vary by school and even by individual instructor — check your syllabus for the exact cutoffs used in your class.</p>
-
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <button class="faq-q">What is an EasyGrader chart?<span class="faq-icon">+</span></button>
-        <div class="faq-a">An EasyGrader chart (sometimes sold as a plastic grading slide or wheel) lists every possible number of wrong answers for a given number of questions, next to the percentage and letter grade that results. Instead of dividing by hand for each paper, a teacher scans down the number-wrong column and reads off the score. This calculator generates the same chart for any test length up to 20 questions, right in Questions mode.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What's the difference between Questions mode and Points mode?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Questions mode assumes every question is worth the same amount and calculates your score from the total number of questions and how many you got wrong. Points mode is for tests where questions carry different point values — you enter the total points you earned and the total points possible, and the calculator divides one by the other. Use whichever matches how your test was graded.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Why do letter grade cutoffs vary by school?<span class="faq-icon">+</span></button>
-        <div class="faq-a">There's no universal rule defining what percentage counts as an A or a B — each school, district, or individual instructor sets its own grading scale. This calculator uses the most common US convention (a 10-point scale with plus/minus grades), but always check your syllabus or gradebook for the exact cutoffs your class uses, since some instructors don't use plus/minus grades at all, or shift the boundaries slightly.</div>
-      </div>
-    </div>
-  </article>
-
-  <div>
-    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Education Tools</p>
-    <div class="sidebar-tools">
-      <a class="sidebar-tool" href="grade-calculator.html">
-        <div class="sidebar-tool-icon">🎓</div>
-        <div><div class="sidebar-tool-name">Grade Calculator</div><div class="sidebar-tool-desc">Final grade needed &amp; weighted average</div></div>
-      </a>
-      <a class="sidebar-tool" href="gpa-calculator.html">
-        <div class="sidebar-tool-icon">🎓</div>
-        <div><div class="sidebar-tool-name">GPA Calculator</div><div class="sidebar-tool-desc">Semester &amp; cumulative GPA</div></div>
-      </a>
-      <a class="sidebar-tool" href="percentage-calculator.html">
-        <div class="sidebar-tool-icon">🧮</div>
-        <div><div class="sidebar-tool-name">Percentage Calculator</div><div class="sidebar-tool-desc">Find, compare, and change percentages</div></div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
-  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
-    <strong style="color:#0f0f0e;">How this is calculated.</strong> The percentage shown is exact arithmetic for the numbers you enter — no rounding tricks. The letter grade uses the standard 10-point +/- scale above, but schools and instructors set their own cutoffs, so confirm the exact scale against your syllabus. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated July 16, 2026.
-  </div>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
-  </div>
-</footer>
-
-<script>
-let mode = 'questions';
-
-// --- verbatim from spec: pure grading functions ---
-function letterFor(p) {
-  const t = [[97,'A+'],[93,'A'],[90,'A-'],[87,'B+'],[83,'B'],[80,'B-'],[77,'C+'],[73,'C'],[70,'C-'],[67,'D+'],[63,'D'],[60,'D-'],[0,'F']];
-  for (const [min, l] of t) if (p >= min) return l;
-  return 'F';
-}
-function computeTestGrade({ mode, total, wrong, earned, possible }) {
-  let percent;
-  if (mode === 'points') {
-    if (possible <= 0) return { percent: 0, letter: 'F' };
-    percent = earned / possible * 100;
-  } else {
-    if (total <= 0) return { percent: 0, letter: 'F' };
-    const w = Math.min(Math.max(wrong, 0), total);
-    percent = (total - w) / total * 100;
-  }
-  return { percent, letter: letterFor(percent) };
-}
-// --- end verbatim ---
-
-function setMode(m) {
-  mode = m;
-  document.getElementById('tabQuestions').classList.toggle('active', m === 'questions');
-  document.getElementById('tabPoints').classList.toggle('active', m === 'points');
-  document.getElementById('panelQuestions').style.display = m === 'questions' ? '' : 'none';
-  document.getElementById('panelPoints').style.display = m === 'points' ? '' : 'none';
-  calculate();
-}
-
-function fmtPercent(n) {
-  return n.toFixed(1);
-}
-
-function heroClassFor(percent) {
-  if (percent >= 80) return 'good';
-  if (percent >= 60) return 'warn';
-  return 'bad';
-}
-
-function renderEasyGrader(total, currentWrong) {
-  const rows = Math.min(Math.max(Math.floor(total), 0), 20);
-  const highlight = mode === 'questions' && currentWrong !== undefined ? Math.round(currentWrong) : -1;
-  let html = '';
-  for (let wrong = 0; wrong <= rows; wrong++) {
-    const { percent, letter } = computeTestGrade({ mode: 'questions', total, wrong });
-    const trClass = wrong === highlight ? ' class="eg-current"' : '';
-    html += `<tr${trClass}><td>${wrong}</td><td>${fmtPercent(percent)}%</td><td class="eg-letter">${letter}</td></tr>`;
-  }
-  document.getElementById('easyGraderBody').innerHTML = html;
-}
-
-function calculate() {
-  document.getElementById('statusBadge').textContent = 'Ready';
-  document.getElementById('statusBadge').className = 'results-status status-ready';
-
-  if (mode === 'questions') {
-    const total = parseFloat(document.getElementById('totalQuestions').value) || 0;
-    const wrong = parseFloat(document.getElementById('numWrong').value) || 0;
-
-    if (total <= 0) {
-      document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the number of questions</p></div>`;
-      document.getElementById('easyGraderBody').innerHTML = '';
-      return;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/calculator.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    const w = Math.min(Math.max(wrong, 0), total);
-    const correct = total - w;
-    const { percent, letter } = computeTestGrade({ mode: 'questions', total, wrong });
-    const heroClass = heroClassFor(percent);
+    :root {
+      --bg: #f8f7f4;
+      --bg-card: #ffffff;
+      --text: #0f0f0e;
+      --text-muted: #2b2a28;
+      --text-light: #3d3c39;
+      --border: rgba(15, 15, 14, 0.10);
+      --border-hover: rgba(15, 15, 14, 0.20);
+      --accent: #1a6b4a;
+      --accent-light: #e8f5ef;
+      --accent-dark: #145a3d;
+      --blue: #1a4fa0;
+      --blue-light: #e8f0fe;
+      --yellow: #b7770d;
+      --yellow-light: #fef9ec;
+      --red: #b0362c;
+      --red-light: #fbebe9;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.10);
+    }
 
-    document.getElementById('statusBadge').textContent = letter;
-    document.getElementById('statusBadge').className = 'results-status ' + (heroClass === 'good' ? 'status-ready' : heroClass === 'warn' ? 'status-warn' : 'status-bad');
+    html {
+      scroll-behavior: smooth;
+    }
 
-    document.getElementById('resultsBody').innerHTML = `
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .page-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 40px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .tool-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .page-header p {
+      font-size: 17px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .main-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .calc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .calc-header {
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .calc-header h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .calc-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .calc-body {
+      padding: 24px 32px 28px;
+      min-width: 0;
+    }
+
+    .mode-toggle {
+      display: flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 11px 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mode-btn.active {
+      background: var(--bg-card);
+      color: var(--text);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .input-wrap {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .input-wrap:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(26, 107, 74, 0.10);
+    }
+
+    .input-wrap input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      background: transparent;
+      padding: 0 14px;
+      height: 46px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .input-suffix {
+      padding: 0 14px 0 4px;
+      color: var(--text-light);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 6px;
+    }
+
+    .easygrader-wrap {
+      margin-top: 8px;
+    }
+
+    .easygrader-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-bottom: 8px;
+      min-width: 0;
+    }
+
+    .easygrader-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 320px;
+      font-size: 13.5px;
+    }
+
+    .easygrader-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      padding: 0 8px 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .easygrader-table td {
+      padding: 7px 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .easygrader-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .easygrader-table td.eg-letter {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .easygrader-table tr.eg-current {
+      background: var(--accent-light);
+    }
+
+    .easygrader-table tr.eg-current td {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* RESULTS */
+    .results-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 88px;
+      min-width: 0;
+    }
+
+    .results-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .results-header h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .results-status {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-ready {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .status-warn {
+      background: var(--yellow-light);
+      color: var(--yellow);
+    }
+
+    .status-bad {
+      background: var(--red-light);
+      color: var(--red);
+    }
+
+    .results-body {
+      padding: 20px 24px;
+      min-width: 0;
+    }
+
+    .verdict-hero {
+      text-align: center;
+      border-radius: var(--radius-sm);
+      padding: 22px 16px;
+      margin-bottom: 16px;
+    }
+
+    .verdict-hero.good {
+      background: var(--accent-light);
+    }
+
+    .verdict-hero.warn {
+      background: var(--yellow-light);
+    }
+
+    .verdict-hero.bad {
+      background: var(--red-light);
+    }
+
+    .verdict-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .verdict-hero.good .verdict-label {
+      color: var(--accent-dark);
+    }
+
+    .verdict-hero.warn .verdict-label {
+      color: #7a5000;
+    }
+
+    .verdict-hero.bad .verdict-label {
+      color: #8b1a0f;
+    }
+
+    .verdict-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .verdict-letter {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 2px;
+    }
+
+    .verdict-sub {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .metric {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      min-width: 0;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      overflow-wrap: break-word;
+    }
+
+    .metric-value.accent {
+      color: var(--accent);
+    }
+
+    .metric-value.blue {
+      color: var(--blue);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 32px 12px;
+    }
+
+    .empty-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      opacity: 0.6;
+    }
+
+    .empty-text {
+      font-size: 13.5px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ARTICLE */
+    .article-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+      gap: 28px;
+    }
+
+    @media (max-width: 1024px) {
+      .article-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .article-section>div {
+      min-width: 0;
+    }
+
+    .article {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .article h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+
+    .article h2:first-child {
+      margin-top: 0;
+    }
+
+    .article p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .article ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .article li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+
+    .article strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      min-width: 300px;
+    }
+
+    .article th,
+    .article td {
+      text-align: left;
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .article th {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .article code {
+      background: var(--bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      word-break: break-word;
+    }
+
+    .faq-section {
+      margin-top: 32px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      padding: 18px 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.15s;
+    }
+
+    .faq-q:hover {
+      color: var(--accent);
+    }
+
+    .faq-q.open {
+      color: var(--accent);
+    }
+
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s;
+      color: var(--text-muted);
+    }
+
+    .faq-q.open .faq-icon {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      padding: 0 0 18px 0;
+      display: none;
+    }
+
+    .faq-a.open {
+      display: block;
+    }
+
+    .sidebar-tools {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-tool {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow);
+      transition: all 0.18s;
+      min-width: 0;
+    }
+
+    .sidebar-tool:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--border-hover);
+    }
+
+    .sidebar-tool-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-tool-name {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .sidebar-tool-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .footer-copy a {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .results-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .calc-body {
+        padding: 20px;
+      }
+
+      .page-header {
+        padding: 32px 20px 24px;
+      }
+    }
+
+    .page-meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .page-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .page-meta a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973"
+    crossorigin="anonymous"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">Clearly<span>Check</span></a>
+      <a class="back-link" href="/">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+        All Tools
+      </a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <nav aria-label="breadcrumb">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="index.html#tools">Tools</a><span>›</span>
+        <a href="education-tools.html">Education</a><span>›</span>
+        <span style="color:var(--text-muted);">Test Grade</span>
+      </div>
+    </nav>
+    <div class="tool-tag-pill">🎓 Education Tool</div>
+    <h1>Test Grade Calculator</h1>
+    <p>Find your test percentage score and letter grade instantly. Features standard grading scales and an EasyGrader
+      breakdown chart.</p>
+    <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated July 16,
+      2026</div>
+  </div>
+
+  <main>
+    <div class="main-layout">
+
+      <!-- CALCULATOR CARD -->
+      <div class="calc-card">
+        <div class="calc-header">
+          <h2>Score Inputs</h2>
+          <p>Calculate by number of questions missed or total points.</p>
+        </div>
+        <div class="calc-body">
+
+          <div class="mode-toggle">
+            <button type="button" id="tabQuestions" class="mode-btn active" onclick="setMode('questions')">By Questions
+              Missed</button>
+            <button type="button" id="tabPoints" class="mode-btn" onclick="setMode('points')">By Total Points</button>
+          </div>
+
+          <!-- QUESTIONS MISSED PANEL -->
+          <div id="panelQuestions">
+            <div class="field">
+              <label><strong>Total questions</strong></label>
+              <div class="input-wrap">
+                <input type="number" id="totalQuestions" value="40" min="1" max="1000" step="1" oninput="calculate()">
+              </div>
+            </div>
+
+            <div class="field">
+              <label><strong>Number wrong</strong></label>
+              <div class="input-wrap">
+                <input type="number" id="numWrong" value="5" min="0" max="1000" step="1" oninput="calculate()">
+              </div>
+              <div class="hint">Correct answers will be calculated automatically.</div>
+            </div>
+
+            <div class="easygrader-wrap">
+              <div class="easygrader-title">EasyGrader Reference Chart</div>
+              <div class="table-scroll">
+                <table class="easygrader-table">
+                  <thead>
+                    <tr>
+                      <th>Missed</th>
+                      <th>Percent</th>
+                      <th>Grade</th>
+                    </tr>
+                  </thead>
+                  <tbody id="easyGraderBody">
+                    <!-- Injected via JS -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="hint">Highlighted row matches your current missed count.</div>
+            </div>
+          </div>
+
+          <!-- TOTAL POINTS PANEL -->
+          <div id="panelPoints" style="display:none;">
+            <div class="field">
+              <label><strong>Points earned</strong></label>
+              <div class="input-wrap">
+                <input type="number" id="pointsEarned" value="88" min="0" max="10000" step="any" oninput="calculate()">
+              </div>
+            </div>
+
+            <div class="field">
+              <label><strong>Points possible</strong></label>
+              <div class="input-wrap">
+                <input type="number" id="pointsPossible" value="100" min="1" max="10000" step="any"
+                  oninput="calculate()">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RESULTS CARD -->
+      <div class="results-card" role="region" aria-live="polite">
+        <div class="results-header">
+          <h3>Grade Result</h3>
+          <span class="results-status status-ready" id="statusBadge">Ready</span>
+        </div>
+        <div class="results-body" id="resultsBody">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ARTICLE & FAQ SECTION -->
+  <div class="article-section">
+    <article class="article">
+      <h2>How Test Grades and Percentages Are Calculated</h2>
+      <p>Calculating your test grade accurately relies on finding the ratio of correct answers to the total pool of
+        questions. The universal formula divides your correct answers by the total questions, then multiplies the result
+        by 100 to determine your final percentage score. For instance, getting 35 correct answers out of 40 total
+        questions yields <code>35 ÷ 40 = 0.875</code>, resulting in an 87.5%.</p>
+
+      <h2>Understanding Standard Letter Grade Scales</h2>
+      <p>Most academic institutions rely on a standard 10-point scale or modified percentage brackets to assign letter
+        grades. While instructors have flexibility, typical benchmarks include:</p>
+      <ul>
+        <li><strong>A Range (90% – 100%):</strong> Denotes exceptional mastery and outstanding understanding of the
+          material.</li>
+        <li><strong>B Range (80% – 89%):</strong> Represents above-average proficiency and solid comprehension.</li>
+        <li><strong>C Range (70% – 79%):</strong> Indicates satisfactory performance meeting baseline standards.</li>
+        <li><strong>D Range (60% – 69%):</strong> Signifies minimal passing achievement or low credit status.</li>
+        <li><strong>F (Below 60%):</strong> Failing grade requiring course remediation or credit recovery.</li>
+      </ul>
+
+      <h2>Weighted Grading vs. Unweighted Grading</h2>
+      <p>Understanding how individual test scores fit into your broader academic standing requires knowing whether your
+        class uses a weighted or unweighted grading system. In an unweighted setup, every assignment carries equal
+        weight based on raw points. In a weighted system, categories like major exams, laboratory reports, quizzes, and
+        homework are portioned into distinct percentage weights toward your final grade.</p>
+
+      <h2>How Exam Scores Impact Cumulative GPA</h2>
+      <p>Test and assignment grades feed directly into your cumulative Grade Point Average (GPA) on a 4.0 scale. Letter
+        grades are converted into grade points (e.g., an A equals 4.0, a B equals 3.0), which are then averaged across
+        course credit hours to determine overall academic standing.</p>
+
+      <h2>Sources &amp; Method</h2>
+      <p class="sources">Grade conversion equations utilize standard arithmetic percentages aligned with educational
+        assessment guidelines published by the <strong>U.S. Department of Education</strong>.</p>
+
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <button class="faq-q">How do I calculate my test grade if I know how many questions I missed?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">To calculate your test grade, subtract the number of questions you missed from the total
+            number of questions to find the number of correct answers. Then, divide the correct answers by the total
+            questions and multiply by 100 to get your percentage score. For example, if you missed 5 questions out of
+            40, you got 35 correct. 35 divided by 40 is 0.875, which means your score is 87.5%.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the standard letter grade scale for a 90% or 80%?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">In the standard US 10-point grading scale, a 90% to 100% is typically considered an A,
+            reflecting excellent performance. An 80% to 89% represents a B, indicating above-average work. These ranges
+            may be further divided into plus and minus grades (e.g., 90-92% as an A-, 80-82% as a B-). However, always
+            check your specific class syllabus, as some schools or professors use modified scales.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How does weighted grading affect my overall class grade?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">In a weighted grading system, different categories of assignments count for different
+            percentages of your final grade. For instance, exams might be worth 50%, homework 30%, and quizzes 20%. In
+            this system, doing poorly on a heavily weighted exam will lower your overall grade much more significantly
+            than missing a few homework assignments, even if the raw point values are the same.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the difference between a percentage grade and a GPA?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">A percentage grade reflects your score on a specific test or in a specific class out of 100
+            (e.g., 85%). A Grade Point Average (GPA) is a standardized numeric value, typically on a 4.0 scale,
+            representing your average academic performance across all your classes. Letter grades (derived from
+            percentages) are converted into GPA points (e.g., an A is 4.0, a B is 3.0), which are then averaged to
+            calculate your cumulative GPA.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do extra credit points affect my final test percentage?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Extra credit points are added to your total earned points but do not increase the total
+            possible points. For example, if you scored 85 out of 100 (85%) and earned 5 extra credit points, your new
+            score is 90 out of 100 (90%). This allows your percentage to improve without changing the baseline against
+            which the score is measured.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is a passing grade on most standard academic scales?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">On most standard US academic scales, a passing grade is a D or higher, which typically
+            requires a percentage score of 60% or above. However, many higher education institutions and specific degree
+            programs require a C (usually 70% or higher) to pass or to earn credit toward major requirements.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How can I calculate what score I need on my final exam to pass the class?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">To find out what you need on a final exam, you need to know your current grade, the grade
+            you want to achieve, and the weight of the final exam. The formula is: [Target Grade - (Current Grade × (1 -
+            Exam Weight))] ÷ Exam Weight. For example, if you want an 80% overall, have a 75% currently, and the final
+            is worth 30% (0.3): [80 - (75 × 0.70)] ÷ 0.30 = 91.6% required on the final.</div>
+        </div>
+      </div>
+    </article>
+
+    <div>
+      <p
+        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
+        More Tools</p>
+      <div class="sidebar-tools">
+        <a class="sidebar-tool" href="grade-calculator.html">
+          <div class="sidebar-tool-icon">🎓</div>
+          <div>
+            <div class="sidebar-tool-name">Grade Calculator</div>
+            <div class="sidebar-tool-desc">Final grade needed &amp; weighted average</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="gpa-calculator.html">
+          <div class="sidebar-tool-icon">🎓</div>
+          <div>
+            <div class="sidebar-tool-name">GPA Calculator</div>
+            <div class="sidebar-tool-desc">Semester &amp; cumulative GPA</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="percentage-calculator.html">
+          <div class="sidebar-tool-icon">🧮</div>
+          <div>
+            <div class="sidebar-tool-name">Percentage Calculator</div>
+            <div class="sidebar-tool-desc">Find, compare, and change percentages</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+    <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+      <strong style="color:#0f0f0e;">How this is calculated.</strong> The percentage shown is exact arithmetic for the
+      numbers you enter — no rounding tricks. The letter grade uses the standard 10-point +/- scale above, but schools
+      and instructors set their own cutoffs, so confirm the exact scale against your syllabus. Reviewed by <a
+        href="/about.html" style="color:inherit;">Enos</a> · Last updated July 16, 2026.
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+      <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html"
+          style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html"
+          style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html"
+          style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html"
+          style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html"
+          style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <script>
+    let mode = 'questions';
+
+    function letterFor(p) {
+      const t = [[97, 'A+'], [93, 'A'], [90, 'A-'], [87, 'B+'], [83, 'B'], [80, 'B-'], [77, 'C+'], [73, 'C'], [70, 'C-'], [67, 'D+'], [63, 'D'], [60, 'D-'], [0, 'F']];
+      for (const [min, l] of t) if (p >= min) return l;
+      return 'F';
+    }
+    function computeTestGrade({ mode, total, wrong, earned, possible }) {
+      let percent;
+      if (mode === 'points') {
+        if (possible <= 0) return { percent: 0, letter: 'F' };
+        percent = earned / possible * 100;
+      } else {
+        if (total <= 0) return { percent: 0, letter: 'F' };
+        const w = Math.min(Math.max(wrong, 0), total);
+        percent = (total - w) / total * 100;
+      }
+      return { percent, letter: letterFor(percent) };
+    }
+
+    function setMode(m) {
+      mode = m;
+      document.getElementById('tabQuestions').classList.toggle('active', m === 'questions');
+      document.getElementById('tabPoints').classList.toggle('active', m === 'points');
+      document.getElementById('panelQuestions').style.display = m === 'questions' ? '' : 'none';
+      document.getElementById('panelPoints').style.display = m === 'points' ? '' : 'none';
+      calculate();
+    }
+
+    function fmtPercent(n) {
+      return n.toFixed(1);
+    }
+
+    function heroClassFor(percent) {
+      if (percent >= 80) return 'good';
+      if (percent >= 60) return 'warn';
+      return 'bad';
+    }
+
+    function renderEasyGrader(total, currentWrong) {
+      const rows = Math.min(Math.max(Math.floor(total), 0), 20);
+      const highlight = mode === 'questions' && currentWrong !== undefined ? Math.round(currentWrong) : -1;
+      let html = '';
+      for (let wrong = 0; wrong <= rows; wrong++) {
+        const { percent, letter } = computeTestGrade({ mode: 'questions', total, wrong });
+        const trClass = wrong === highlight ? ' class="eg-current"' : '';
+        html += `<tr${trClass}><td>${wrong}</td><td>${fmtPercent(percent)}%</td><td class="eg-letter">${letter}</td></tr>`;
+      }
+      document.getElementById('easyGraderBody').innerHTML = html;
+    }
+
+    function calculate() {
+      document.getElementById('statusBadge').textContent = 'Ready';
+      document.getElementById('statusBadge').className = 'results-status status-ready';
+
+      if (mode === 'questions') {
+        const total = parseFloat(document.getElementById('totalQuestions').value) || 0;
+        const wrong = parseFloat(document.getElementById('numWrong').value) || 0;
+
+        if (total <= 0) {
+          document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the number of questions</p></div>`;
+          document.getElementById('easyGraderBody').innerHTML = '';
+          return;
+        }
+
+        const w = Math.min(Math.max(wrong, 0), total);
+        const correct = total - w;
+        const { percent, letter } = computeTestGrade({ mode: 'questions', total, wrong });
+        const heroClass = heroClassFor(percent);
+
+        document.getElementById('statusBadge').textContent = letter;
+        document.getElementById('statusBadge').className = 'results-status ' + (heroClass === 'good' ? 'status-ready' : heroClass === 'warn' ? 'status-warn' : 'status-bad');
+
+        document.getElementById('resultsBody').innerHTML = `
       <div class="verdict-hero ${heroClass}">
         <div class="verdict-label">Score</div>
         <div class="verdict-value">${fmtPercent(percent)}%</div>
@@ -541,23 +1328,23 @@ function calculate() {
       </div>
     `;
 
-    renderEasyGrader(total, w);
-  } else {
-    const earned = parseFloat(document.getElementById('pointsEarned').value) || 0;
-    const possible = parseFloat(document.getElementById('pointsPossible').value) || 0;
+        renderEasyGrader(total, w);
+      } else {
+        const earned = parseFloat(document.getElementById('pointsEarned').value) || 0;
+        const possible = parseFloat(document.getElementById('pointsPossible').value) || 0;
 
-    if (possible <= 0) {
-      document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the total points</p></div>`;
-      return;
-    }
+        if (possible <= 0) {
+          document.getElementById('resultsBody').innerHTML = `<div class="empty-state"><div class="empty-icon">🎓</div><p class="empty-text">Enter the total points</p></div>`;
+          return;
+        }
 
-    const { percent, letter } = computeTestGrade({ mode: 'points', earned, possible });
-    const heroClass = heroClassFor(percent);
+        const { percent, letter } = computeTestGrade({ mode: 'points', earned, possible });
+        const heroClass = heroClassFor(percent);
 
-    document.getElementById('statusBadge').textContent = letter;
-    document.getElementById('statusBadge').className = 'results-status ' + (heroClass === 'good' ? 'status-ready' : heroClass === 'warn' ? 'status-warn' : 'status-bad');
+        document.getElementById('statusBadge').textContent = letter;
+        document.getElementById('statusBadge').className = 'results-status ' + (heroClass === 'good' ? 'status-ready' : heroClass === 'warn' ? 'status-warn' : 'status-bad');
 
-    document.getElementById('resultsBody').innerHTML = `
+        document.getElementById('resultsBody').innerHTML = `
       <div class="verdict-hero ${heroClass}">
         <div class="verdict-label">Score</div>
         <div class="verdict-value">${fmtPercent(percent)}%</div>
@@ -575,23 +1362,24 @@ function calculate() {
         </div>
       </div>
     `;
-  }
-}
+      }
+    }
 
-calculate();
+    calculate();
 
-// FAQ accordion
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const answer = btn.nextElementSibling;
-    const isOpen = btn.classList.contains('open');
-    document.querySelectorAll('.faq-q.open').forEach(b => {
-      b.classList.remove('open');
-      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-q.open').forEach(b => {
+          b.classList.remove('open');
+          if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+        });
+        if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+      });
     });
-    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
-  });
-});
-</script>
+  </script>
 </body>
+
 </html>
