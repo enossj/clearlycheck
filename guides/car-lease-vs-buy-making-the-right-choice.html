@@ -562,25 +562,44 @@
       background: var(--accent-dark);
     }
 
+    /* Footer */
     footer {
       border-top: 1px solid var(--border);
       padding: 32px 24px;
-      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
     }
 
     .footer-copy {
       font-size: 14px;
       color: var(--text-light);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      align-items: center;
+      margin: 0;
     }
 
     .footer-copy a {
       color: var(--text-light);
       text-decoration: none;
+      margin: 0 4px;
     }
 
     .footer-copy a:hover {
@@ -707,7 +726,6 @@
           <li><a href="#faq">Frequently Asked Questions</a></li>
         </ul>
       </nav>
-
     </aside>
 
     <article class="article-content">
@@ -818,6 +836,9 @@
         their pocket.</p>
 
       <h3>The 5-Year Picture (The "Perpetual Payment" Trap)</h3>
+
+
+
       <p>This is where leasing destroys long-term wealth. At Month 60, the buyer makes their final payment. They now own
         a $17,000 asset free and clear, and they have <strong>zero monthly car payments</strong> moving forward.</p>
 
@@ -866,8 +887,7 @@
 
       <h2 id="buyout" class="scroll-section">The Lease Buyout Option</h2>
       <p>What happens if you lease a car, fall in love with it, and want to keep it after three years? You can execute a
-        <strong>Lease Buyout</strong>.
-      </p>
+        <strong>Lease Buyout</strong>.</p>
 
       <p>Your original contract states exactly what the car's "Residual Value" will be at the end of the lease. You have
         the right to purchase the car from the dealership for that exact price. This can sometimes be a massive
@@ -927,4 +947,75 @@
           <summary>Should I put money down on a lease?</summary>
           <div class="faq-content">Financial advisors strongly recommend putting <strong>$0 down on a lease</strong>
             (often called a "sign and drive" lease). If you put $3,000 down to lower your monthly payments, and the car
-            is totaled driving off the lot the next day, that $3,000
+            is totaled driving off the lot the next day, that $3,000 is gone forever. Keep the cash in your bank account
+            and pay the slightly higher monthly fee.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What is the best financial option for a car?</summary>
+          <div class="faq-content">The single most mathematically optimal way to own a car is to buy a reliable
+            3-year-old used vehicle in cash. Let the original owner take the massive 40% depreciation hit, and you drive
+            it payment-free for the next decade.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What are the typical mileage limits on a lease?</summary>
+          <div class="faq-content">Standard leases offer 10,000, 12,000, or 15,000 miles per year. If you know you drive
+            18,000 miles a year, you should buy the car. If you absolutely must lease, negotiate a high-mileage lease
+            upfront; paying for extra miles at the beginning is much cheaper than paying the penalty rate at the end.
+          </div>
+        </details>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="../">Clearly<span>Check</span></a>
+      <p class="footer-copy">© 2026 ClearlyCheck · <a href="./">Guides</a> · <a href="../about.html">About</a> · <a
+          href="../sitemap.html">Sitemap</a> · <a href="../contact.html">Contact</a> · <a
+          href="../terms-of-use.html">Terms of Use</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(faq => {
+      faq.addEventListener('toggle', () => {
+        if (faq.open) {
+          faqItems.forEach(otherFaq => {
+            if (otherFaq !== faq) {
+              otherFaq.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
+
+    // ScrollSpy Logic for Table of Contents
+    const sections = document.querySelectorAll('.scroll-section');
+    const navLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        // Adjust offset trigger to account for sticky header
+        if (window.scrollY >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
