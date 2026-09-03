@@ -162,7 +162,7 @@
       margin: 0 auto;
       padding: 24px 24px 80px;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 260px minmax(0, 1fr);
       gap: 64px;
       align-items: start;
     }
@@ -494,7 +494,7 @@
     /* Mobile Optimization */
     @media (max-width: 900px) {
       .guide-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 32px;
         padding: 16px 16px 60px;
       }
@@ -632,7 +632,8 @@
       <h2 id="snowball" class="scroll-section">1. The Debt Snowball Method: Behavioral Psychology at Work</h2>
       <p>Popularized by personal finance experts like Dave Ramsey, the debt snowball focuses entirely on
         <strong>psychological motivation and behavioral change</strong> rather than raw mathematics. It operates on the
-        premise that personal finance is 80% behavior and 20% head knowledge.</p>
+        premise that personal finance is 80% behavior and 20% head knowledge.
+      </p>
 
       <h3>How It Works</h3>
       <ol>

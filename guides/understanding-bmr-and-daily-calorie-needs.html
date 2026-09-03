@@ -173,7 +173,7 @@
       margin: 0 auto;
       padding: 24px 24px 80px;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 260px minmax(0, 1fr);
       gap: 64px;
       align-items: start;
     }
@@ -570,7 +570,7 @@
     /* Mobile Optimization */
     @media (max-width: 900px) {
       .guide-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 32px;
         padding: 16px 16px 60px;
       }
@@ -712,7 +712,8 @@
 
         <p>This guide explains exactly how to calculate your <strong>Basal Metabolic Rate (BMR)</strong> and your
           <strong>Total Daily Energy Expenditure (TDEE)</strong>—the only two numbers that actually matter when
-          programming your nutrition.</p>
+          programming your nutrition.
+        </p>
       </div>
 
       <h2 id="what-is-bmr" class="scroll-section">What Is BMR? (Your "Coma Calories")</h2>

@@ -178,7 +178,7 @@
       margin: 0 auto;
       padding: 24px 24px 80px;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 260px minmax(0, 1fr);
       gap: 64px;
       align-items: start;
     }
@@ -599,7 +599,7 @@
     /* Mobile Optimization */
     @media (max-width: 900px) {
       .guide-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 32px;
         padding: 16px 16px 60px;
       }
@@ -816,7 +816,8 @@
 
       <h2 id="formula" class="scroll-section">The GPA Formula Explained</h2>
       <p>The most common mistake students make is adding up their grade points and dividing by the number of classes.
-        <strong>GPA is not a simple average. It is a credit-hour weighted average.</strong></p>
+        <strong>GPA is not a simple average. It is a credit-hour weighted average.</strong>
+      </p>
 
       <p>A class worth 4 credits impacts your GPA twice as much as a class worth 2 credits. To calculate this
         mathematically, universities use "Quality Points."</p>

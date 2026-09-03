@@ -178,7 +178,7 @@
       margin: 0 auto;
       padding: 24px 24px 80px;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 260px minmax(0, 1fr);
       gap: 64px;
       align-items: start;
     }
@@ -590,7 +590,7 @@
     /* Mobile Optimization */
     @media (max-width: 900px) {
       .guide-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 32px;
         padding: 16px 16px 60px;
       }
@@ -866,7 +866,8 @@
 
       <h2 id="buyout" class="scroll-section">The Lease Buyout Option</h2>
       <p>What happens if you lease a car, fall in love with it, and want to keep it after three years? You can execute a
-        <strong>Lease Buyout</strong>.</p>
+        <strong>Lease Buyout</strong>.
+      </p>
 
       <p>Your original contract states exactly what the car's "Residual Value" will be at the end of the lease. You have
         the right to purchase the car from the dealership for that exact price. This can sometimes be a massive

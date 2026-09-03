@@ -173,7 +173,7 @@
       margin: 0 auto;
       padding: 24px 24px 80px;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 260px minmax(0, 1fr);
       gap: 64px;
       align-items: start;
     }
@@ -530,7 +530,7 @@
     /* Mobile Optimization */
     @media (max-width: 900px) {
       .guide-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 32px;
         padding: 16px 16px 60px;
       }
@@ -674,7 +674,8 @@
 
       <p>However, the key word is "annual"—but credit card interest doesn't work on an annual schedule. It accrues
         <em>every single day</em>. To figure out what you are being charged daily, credit card issuers convert your APR
-        into a metric called the <strong>Daily Periodic Rate (DPR)</strong>.</p>
+        into a metric called the <strong>Daily Periodic Rate (DPR)</strong>.
+      </p>
 
       <div class="formula-box">
         Daily Periodic Rate (DPR) = APR ÷ 365

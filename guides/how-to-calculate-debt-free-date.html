@@ -173,7 +173,7 @@
       margin: 0 auto;
       padding: 24px 24px 80px;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 260px minmax(0, 1fr);
       gap: 64px;
       align-items: start;
     }
@@ -579,7 +579,7 @@
     /* Mobile Optimization */
     @media (max-width: 900px) {
       .guide-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 32px;
         padding: 16px 16px 60px;
       }
@@ -903,7 +903,8 @@
 
       <p>Let's run the exact same formula, on the exact same $12,000 balance at 19% APR. But this time, you cut a
         subscription and do a few hours of side-hustle work to increase your payment by just $100, making it
-        <strong>$400 a month</strong>.</p>
+        <strong>$400 a month</strong>.
+      </p>
 
       <div class="article-table-wrapper">
         <table>
