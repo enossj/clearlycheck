@@ -1,434 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Car Lease vs. Buy: Making the Right Choice | ClearlyCheck</title>
-<meta name="description" content="Should you lease or buy your next car? We run the real numbers on a $35,000 vehicle — monthly payments, total cost, equity, and break-even — so you can make the decision that's right for your situation.">
-<meta name="keywords" content="car lease vs buy, should I lease or buy a car, is leasing or buying a car better, leasing vs financing, car lease vs purchase calculator, total cost of leasing vs buying, lease break even calculator, auto loan vs lease">
-<link rel="canonical" href="https://clearlycheck.com/guides/car-lease-vs-buy-making-the-right-choice.html">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Car Lease vs. Buy: Making the Right Choice">
-<meta property="og:description" content="We run the real numbers on a $35,000 vehicle — monthly payments, total cost, equity, and break-even — comparing leasing vs buying with financing.">
-<meta property="og:url" content="https://clearlycheck.com/guides/car-lease-vs-buy-making-the-right-choice.html">
-<meta property="og:site_name" content="ClearlyCheck">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Car Lease vs. Buy: Making the Right Choice",
-  "description": "A detailed financial comparison of leasing vs buying a car, with a full worked $35,000 example, monthly payment calculations, and a decision framework.",
-  "url": "https://clearlycheck.com/guides/car-lease-vs-buy-making-the-right-choice.html",
-  "mainEntityOfPage": "https://clearlycheck.com/guides/car-lease-vs-buy-making-the-right-choice.html",
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-08-31",
-  "author": {"@type":"Person","@id":"https://clearlycheck.com/#enos","name":"Enos"},
-  "publisher": {"@type":"Organization","@id":"https://clearlycheck.com/#organization","name":"ClearlyCheck","url":"https://clearlycheck.com","logo":{"@type":"ImageObject","url":"https://clearlycheck.com/assets/og-image.svg"}},
-  "isPartOf": {"@type":"WebSite","name":"ClearlyCheck","url":"https://clearlycheck.com"}
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://clearlycheck.com"},
-    {"@type":"ListItem","position":2,"name":"Guides","item":"https://clearlycheck.com/guides/"},
-    {"@type":"ListItem","position":3,"name":"Car Lease vs. Buy: Making the Right Choice","item":"https://clearlycheck.com/guides/car-lease-vs-buy-making-the-right-choice.html"}
-  ]
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is it better to lease or buy a car?",
-      "acceptedAnswer": {"@type":"Answer","text":"Buying is better for long-term ownership and lower total lifetime costs — once the loan is paid off, you own the car free and clear. Leasing is better for those who want lower monthly payments, always want a new car under warranty, drive limited miles, and don't mind never owning the vehicle. Most financial advisors recommend buying for people who keep cars 5+ years; leasing works for those who trade every 2–3 years and can stay within mileage limits."}
-    },
-    {
-      "@type": "Question",
-      "name": "What are the hidden costs of leasing a car?",
-      "acceptedAnswer": {"@type":"Answer","text":"Key lease costs beyond the monthly payment include: acquisition fee ($500–$1,000 upfront), disposition fee at lease end ($300–$500 if you don't buy), excess mileage charges ($0.15–$0.30/mile over the limit), excess wear-and-tear fees, gap insurance (often required), and the cost of continuous lease cycling if you always lease rather than eventually owning."}
-    },
-    {
-      "@type": "Question",
-      "name": "How is a lease payment calculated?",
-      "acceptedAnswer": {"@type":"Answer","text":"A lease payment = depreciation charge + finance charge. Depreciation charge = (Capitalised cost − Residual value) ÷ lease term months. Finance charge = (Capitalised cost + Residual value) × Money factor (the lease equivalent of interest rate, where Money factor = APR ÷ 2400). Example: $35,000 car, $22,000 residual, 36 months, 6% APR (money factor 0.0025): Depreciation = ($35,000 − $22,000) ÷ 36 = $361; Finance = ($35,000 + $22,000) × 0.0025 = $142; Base payment = $503/month before tax."}
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good MPG for a car?",
-      "acceptedAnswer": {"@type":"Answer","text":"The US EPA defines a fuel-efficient vehicle as achieving 40+ MPG combined for gasoline cars. Average new car fuel economy in the US is around 28–30 MPG. For context, at 15,000 miles/year and $3.50/gallon: a 28 MPG car costs ~$1,875/year in fuel; a 40 MPG car costs ~$1,313/year; a 50 MPG hybrid costs ~$1,050/year. Our MPG calculator shows your exact annual fuel cost at any efficiency and gas price."}
-    }
-  ]
-}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/css/base.css">
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28;
-    --text-light: #6b6a66; --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-hover: #145a3d;
-    --radius: 16px; --radius-sm: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
-  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
-  .logo span { color: var(--accent); }
-  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
-  .back-link:hover { color: var(--text); }
-  .back-link svg { width: 16px; height: 16px; }
-  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 36px; }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; flex-wrap: wrap; }
-  .breadcrumb a { color: var(--text-light); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .breadcrumb span { color: var(--border-hover); }
-  .article-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #1a4fa0; background: #e8f0fe; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
-  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1.2px; line-height: 1.15; color: var(--text); margin-bottom: 14px; }
-  .page-header .lead { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 640px; line-height: 1.7; }
-  .page-meta { font-size: 13px; color: var(--text-light); margin-top: 20px; }
-  .page-meta a { color: var(--text-light); text-decoration: none; }
-  .content-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
-  article h2 { font-family: 'Roboto', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; margin: 36px 0 12px; line-height: 1.3; }
-  article h2:first-child { margin-top: 0; }
-  article h3 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin: 26px 0 10px; }
-  article p { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 16px; }
-  article p:last-child { margin-bottom: 0; }
-  article strong { color: var(--text); font-weight: 600; }
-  article ul, article ol { padding-left: 22px; margin-bottom: 16px; }
-  article li { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 6px; }
-  article li strong { color: var(--text); }
-  article a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  article a:hover { text-decoration: underline; }
-  .example-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 22px 24px; margin: 24px 0; }
-  .example-box .ex-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
-  .example-box p { margin-bottom: 8px; font-size: 15px; }
-  .example-box p:last-child { margin-bottom: 0; }
-  .formula-box { font-family: 'Roboto', monospace; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 24px; font-size: 14px; color: var(--text); line-height: 2; margin: 20px 0; overflow-x: auto; }
-  .data-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius-sm); border: 1px solid var(--border); }
-  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  .data-table th { background: var(--bg); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
-  .data-table td { padding: 12px 16px; color: var(--text-muted); border-bottom: 1px solid var(--border); font-weight: 300; }
-  .data-table tr:last-child td { border-bottom: none; }
-  .data-table tr:hover td { background: var(--bg); }
-  .data-table .num { font-family: 'Roboto', sans-serif; font-weight: 600; color: var(--text); }
-  .data-table .accent { color: var(--accent); font-weight: 600; }
-  .data-table .muted { color: var(--text-light); }
-  .data-table .total { background: var(--bg); font-weight: 600; }
-  .key-takeaway { background: var(--accent-light); border: 1px solid rgba(26,107,74,0.2); border-radius: var(--radius-sm); padding: 20px 24px; margin: 28px 0; }
-  .key-takeaway .kt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
-  .key-takeaway p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.7; font-weight: 400; }
-  .key-takeaway strong { color: var(--text); }
-  .cta-box { background: #0f0f0e; border-radius: var(--radius-sm); padding: 24px 28px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .cta-box p { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 300; margin: 0; line-height: 1.6; }
-  .cta-box strong { color: #fff; }
-  .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; padding: 11px 20px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.18s; white-space: nowrap; flex-shrink: 0; }
-  .btn-cta:hover { background: var(--accent-hover); transform: translateY(-1px); text-decoration: none; }
-  .decision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
-  .decision-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; }
-  .decision-box h3 { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-  .decision-box ul { padding-left: 18px; margin: 0; }
-  .decision-box li { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; margin-bottom: 4px; }
-  .faq-section { margin-top: 40px; }
-  .faq-section h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
-  .faq-item { border-bottom: 1px solid var(--border); }
-  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: none; border: none; text-align: left; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); cursor: pointer; transition: color 0.15s; }
-  .faq-q:hover { color: var(--accent); }
-  .faq-icon { font-size: 18px; color: var(--text-light); flex-shrink: 0; transition: transform 0.2s; }
-  .faq-q.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
-  .faq-a { display: none; padding: 0 0 16px; font-size: 15px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
-  .faq-a.open { display: block; }
-  .sidebar { display: flex; flex-direction: column; gap: 20px; }
-  .sidebar-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-  .sidebar-title { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
-  .sidebar-tool { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: all 0.15s; }
-  .sidebar-tool:last-child { border-bottom: none; padding-bottom: 0; }
-  .sidebar-tool:hover .sidebar-tool-name { color: var(--accent); }
-  .sidebar-tool-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-  .sidebar-tool-name { font-size: 13px; font-weight: 500; color: var(--text); }
-  .sidebar-tool-desc { font-size: 12px; color: var(--text-light); font-weight: 300; margin-top: 2px; }
-  .sidebar-guide { display: block; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; }
-  .sidebar-guide:last-child { border-bottom: none; padding-bottom: 0; }
-  .sidebar-guide-title { font-size: 13px; font-weight: 500; color: var(--text); transition: color 0.15s; line-height: 1.4; }
-  .sidebar-guide:hover .sidebar-guide-title { color: var(--accent); }
-  .sidebar-guide-meta { font-size: 11px; color: var(--text-light); margin-top: 3px; }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: var(--text-light); }
-  .footer-copy a { color: var(--text-light); text-decoration: none; }
-  @media (max-width: 860px) { .content-layout { grid-template-columns: 1fr; gap: 32px; } .sidebar { order: -1; } .decision-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 600px) { .page-header { padding: 36px 20px 28px; } .content-layout { padding: 0 20px 60px; } .cta-box { flex-direction: column; align-items: flex-start; } }
-</style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
-</head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="/">Clearly<span>Check</span></a>
-    <a class="back-link" href="/guides/">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      All Guides
-    </a>
-  </div>
-</nav>
 
-<div class="page-header">
-  <nav aria-label="breadcrumb">
-    <div class="breadcrumb">
-      <a href="/">Home</a><span>›</span>
-      <a href="/guides/">Guides</a><span>›</span>
-      <span>Car Lease vs. Buy</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Lease vs. Buy: Making the Right Choice | ClearlyCheck</title>
+  <meta name="description"
+    content="Should you lease or buy your next car? We run the real numbers on a $35,000 vehicle—monthly payments, total cost, equity, and hidden fees—to help you decide.">
+  <meta name="keywords"
+    content="car lease vs buy, should I lease or buy a car, leasing vs financing, car lease vs purchase calculator, money factor, lease residual value, auto loan vs lease, hidden lease fees">
+  <link rel="canonical" href="https://clearlycheck.com/guides/car-lease-vs-buy-making-the-right-choice.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Car Lease vs. Buy: Making the Right Choice",
+    "url": "https://clearlycheck.com/guides/car-lease-vs-buy-making-the-right-choice.html",
+    "author": { "@type": "Person", "name": "Enos" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    :root {
+      --bg: #f8f7f4;
+      --bg-card: #ffffff;
+      --text: #0f0f0e;
+      --text-muted: #2b2a28;
+      --text-light: #5e5c58;
+      --border: rgba(15, 15, 14, 0.10);
+      --border-hover: rgba(15, 15, 14, 0.20);
+      --accent: #1a6b4a;
+      --accent-light: #e8f5ef;
+      --accent-dark: #145a3d;
+      --danger: #c0392b;
+      --danger-light: #fdf0ef;
+      --warning: #f39c12;
+      --warning-light: #fdfae6;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    /* Layout */
+    .page-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 24px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .guide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1a4fa0;
+      background: #e8f0fe;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--text);
+      max-width: 800px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 700px;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    .guide-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 24px 80px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .author-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .author-info strong {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+      font-size: 14px;
+    }
+
+    .toc h4 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .toc ul {
+      list-style: none;
+      border-left: 2px solid var(--border);
+    }
+
+    .toc li {
+      margin-bottom: 12px;
+    }
+
+    .toc a {
+      display: block;
+      padding-left: 16px;
+      font-size: 14px;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.2s;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    .toc a::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: transparent;
+      transition: background 0.2s;
+    }
+
+    .toc a:hover::before {
+      background: var(--border-hover);
+    }
+
+    /* ScrollSpy Active State */
+    .toc a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .toc a.active::before {
+      background: var(--accent);
+    }
+
+    /* Article Content */
+    .article-content {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .article-content p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .article-content h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-top: 56px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 100px;
+    }
+
+    .article-content h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      padding-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    .article-content li {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .article-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .callout-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 32px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .callout-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .warning-box {
+      background: var(--warning-light);
+      border: 1px solid rgba(243, 156, 18, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      margin: 32px 0;
+    }
+
+    .warning-box h4 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #a66a0b;
+      margin-bottom: 8px;
+      margin-top: 0;
+    }
+
+    .formula-box {
+      font-family: 'Roboto', monospace;
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.9;
+      margin: 24px 0;
+      font-weight: 600;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    /* Responsive Tables */
+    .article-table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    .article-content th,
+    .article-content td {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .article-content th {
+      background: rgba(248, 247, 244, 0.5);
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .article-content tr:last-child td {
+      border-bottom: none;
+    }
+
+    .accent-text {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .danger-text {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    /* Decision Grid */
+    .decision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .decision-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .decision-box h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .decision-box ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .decision-box li {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    /* FAQ */
+    .faq-wrapper {
+      margin-top: 24px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      margin-bottom: 0;
+      background: transparent;
+    }
+
+    .faq-item summary {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      padding: 20px 0;
+      cursor: pointer;
+      list-style: none;
+      transition: color 0.15s ease-in-out;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item[open] summary {
+      color: var(--accent);
+    }
+
+    .faq-content {
+      padding: 0 0 24px 0;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: var(--text);
+      color: white;
+      border-radius: var(--radius-sm);
+      padding: 48px 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      margin-top: 0;
+      border: none;
+    }
+
+    .cta-box p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.15s;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .btn-cta:hover {
+      background: var(--accent-dark);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 14px;
+      color: var(--text-light);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-copy a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .footer-copy a:hover {
+      color: var(--text);
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 900px) {
+      .guide-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 16px 16px 60px;
+      }
+
+      .sidebar {
+        position: static;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 24px;
+      }
+
+      .page-header {
+        padding: 40px 16px 16px;
+      }
+
+      .author-block {
+        margin-bottom: 24px;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .toc ul {
+        border-left: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .toc a {
+        padding-left: 0;
+        border-left: none;
+      }
+
+      .toc a::before {
+        display: none;
+      }
+
+      .toc a.active {
+        padding-left: 12px;
+        border-left: 2px solid var(--accent);
+      }
+
+      .decision-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .cta-box {
+        padding: 32px 20px;
+      }
+
+      .btn-cta {
+        width: 100%;
+      }
+
+      .article-content p,
+      .article-content li {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../">Clearly<span>Check</span></a>
+      <a class="back-link" href="./">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        All Guides
+      </a>
     </div>
   </nav>
-  <div class="article-tag">Auto &amp; Transportation</div>
-  <h1>Car Lease vs. Buy: Making the Right Choice</h1>
-  <p class="lead">The lease payment is lower — but what does it actually cost over three years? We run the full numbers on a $35,000 car so you can see the real trade-off between leasing and buying.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated August 31, 2026 · 8 min read</div>
-</div>
 
-<div class="content-layout">
-<article>
+  <header class="page-header">
+    <nav aria-label="breadcrumb">
+      <div class="breadcrumb">
+        <a href="../">Home</a><span>›</span>
+        <a href="./">Guides</a><span>›</span>
+        <span style="color:var(--text-muted);">Car Lease vs. Buy</span>
+      </div>
+    </nav>
+    <div class="guide-tag">Auto & Transportation</div>
+    <h1>Car Lease vs. Buy: Making the Right Choice</h1>
+    <p class="lead">The lease payment is undeniably lower—but what does it actually cost you over a decade? We run the
+      real numbers on a $35,000 car so you can navigate the dealership without getting played.</p>
+  </header>
 
-  <p>The car dealership knows something most buyers don't: when you're focused on the monthly payment, you're not focused on the total cost. A lease will almost always have a lower monthly payment than a loan for the same car. But that's not the whole picture — and understanding what leasing actually means financially changes how you evaluate the decision.</p>
+  <main class="guide-layout">
 
-  <p>This guide explains exactly how lease payments are calculated, runs a side-by-side comparison on a $35,000 vehicle, and gives you a clear framework for which option makes sense for your situation.</p>
+    <aside class="sidebar">
+      <div class="author-block">
+        <div class="author-avatar">E</div>
+        <div class="author-info">
+          <strong>Written by Enos</strong>
+          ClearlyCheck Editor<br>
+          Updated Sep 3, 2026
+        </div>
+      </div>
 
-  <h2>What Leasing Actually Means</h2>
+      <nav class="toc">
+        <h4>In this guide</h4>
+        <ul>
+          <li><a href="#intro" class="active">The Dealership Trap</a></li>
+          <li><a href="#what-is-leasing">What Leasing Actually Means</a></li>
+          <li><a href="#math">The Math Behind the Payments</a></li>
+          <li><a href="#comparison">3-Year vs. 5-Year Comparison</a></li>
+          <li><a href="#decision">When to Lease vs. Buy</a></li>
+          <li><a href="#hidden-costs">The Hidden Costs of Leasing</a></li>
+          <li><a href="#buyout">The Lease Buyout Option</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </nav>
 
-  <p>When you lease a car, you're not buying it — you're renting the portion of its value that depreciates over the lease term. You pay for the difference between what the car is worth today and what it will be worth when you return it (its <strong>residual value</strong>), plus a financing charge on the full value of the car.</p>
+    </aside>
 
-  <p>At the end of a lease, you hand the car back (or pay to buy it at the residual value). You own nothing and start over. That's the fundamental trade-off: lower monthly payments in exchange for no equity built, ever.</p>
+    <article class="article-content">
 
-  <h2>How a Lease Payment Is Calculated</h2>
+      <div id="intro" class="scroll-section">
+        <p>Walk into any car dealership, and the salesperson will immediately ask you one question: <em>"What monthly
+            payment are you looking for?"</em></p>
 
-  <p>Unlike a car loan, lease payments are not widely understood. Here's the actual formula:</p>
+        <p>This is a trap. The dealership knows something that most consumers forget in the heat of the moment: when you
+          are entirely focused on the monthly payment, you lose sight of the total cost. By design, a car lease will
+          almost always have a lower monthly payment than a standard 60-month auto loan for the exact same car.</p>
 
-  <div class="formula-box">Monthly Lease Payment = Depreciation Charge + Finance Charge
+        <p>Because the payment is lower, leasing feels like a "deal." But what are you actually trading away in exchange
+          for that lower payment? This guide pulls back the curtain on how lease math is calculated, compares a $35,000
+          lease head-to-head with a loan, and reveals the hidden fees embedded in the fine print.</p>
+      </div>
 
-  Depreciation Charge = (Capitalised Cost − Residual Value) ÷ Lease Term (months)
-  Finance Charge = (Capitalised Cost + Residual Value) × Money Factor
+      <h2 id="what-is-leasing" class="scroll-section">What Leasing Actually Means</h2>
+      <p>When you buy a car with an auto loan, your payments are buying equity. When you make your final payment, the
+        bank sends you the title, and the car is 100% yours.</p>
 
-  Where Money Factor = APR ÷ 2400 (convert APR to monthly lease rate)</div>
+      <p>When you lease a car, you are not buying a car—<strong>you are renting the depreciation.</strong></p>
 
-  <div class="example-box">
-    <div class="ex-label">Lease Calculation — $35,000 Car, 36 months</div>
-    <p><strong>Capitalised cost (MSRP, no down payment):</strong> $35,000</p>
-    <p><strong>Residual value (63% of MSRP after 3 years):</strong> $22,050</p>
-    <p><strong>APR:</strong> 6% → Money factor = 6 ÷ 2,400 = <strong>0.0025</strong></p>
-    <p style="margin-top:10px;"><strong>Depreciation charge:</strong> ($35,000 − $22,050) ÷ 36 = $12,950 ÷ 36 = <strong>$359.72/month</strong></p>
-    <p><strong>Finance charge:</strong> ($35,000 + $22,050) × 0.0025 = $57,050 × 0.0025 = <strong>$142.63/month</strong></p>
-    <p><strong>Base monthly payment:</strong> $359.72 + $142.63 = <strong>~$502/month</strong> (before tax)</p>
-  </div>
+      <p>A new car loses value the second you drive it off the lot. If a car costs $35,000 today, the dealership
+        estimates it will only be worth $22,000 three years from now. That $22,000 figure is called the <strong>Residual
+          Value</strong>. When you lease, you are simply paying the dealership for the $13,000 in value that the car
+        loses over those three years, plus a financing fee.</p>
 
-  <h2>How a Car Loan Payment Is Calculated</h2>
+      <p>At the end of month 36, you hand the keys back. You own absolutely nothing, you have no equity to trade in, and
+        you have to start the cycle all over again.</p>
 
-  <p>A car loan uses the standard amortization formula. You finance the purchase price minus any down payment and pay it off over the loan term.</p>
+      <h2 id="math" class="scroll-section">The Math Behind the Payments</h2>
+      <p>Car loans are easy to calculate using standard loan amortization. Lease calculations are intentionally complex
+        to prevent consumers from easily comparing rates.</p>
 
-  <div class="example-box">
-    <div class="ex-label">Loan Calculation — $35,000 Car, $3,500 down, 60 months at 6.5% APR</div>
-    <p><strong>Loan amount:</strong> $35,000 − $3,500 = $31,500</p>
-    <p><strong>Monthly rate:</strong> 6.5% ÷ 12 = 0.5417%</p>
-    <p><strong>Formula:</strong> M = P × r(1+r)ⁿ / ((1+r)ⁿ − 1)</p>
-    <p>M = $31,500 × 0.005417 × (1.005417)⁶⁰ / ((1.005417)⁶⁰ − 1)</p>
-    <p>M = $31,500 × 0.005417 × 1.3831 / 0.3831 = <strong>~$614/month</strong></p>
-    <p><strong>Total paid (loan):</strong> $3,500 + (60 × $614) = $3,500 + $36,840 = <strong>$40,340</strong></p>
-    <p><strong>Total interest paid:</strong> $40,340 − $35,000 = <strong>$5,340</strong></p>
-  </div>
+      <h3>How a Lease is Calculated</h3>
+      <p>A lease payment is made of two parts: the Depreciation Charge (the value lost) and the Finance Charge (the
+        interest). Dealerships hide the interest rate by expressing it as a "Money Factor." To find the true APR, you
+        must multiply the Money Factor by 2,400.</p>
 
-  <h2>Side-by-Side: 3-Year Comparison</h2>
+      <div class="formula-box">Monthly Lease Payment = Depreciation + Finance Charge
 
-  <p>To compare apples to apples, let's look at both options over the same 3-year period:</p>
+        Depreciation = (Capitalized Cost − Residual Value) ÷ Lease Term
+        Finance Charge = (Capitalized Cost + Residual Value) × Money Factor
 
-  <div class="data-table-wrap">
-    <table class="data-table">
-      <thead><tr><th>Metric</th><th>Lease (36 months)</th><th>Buy with Loan (60 months, 3 yr in)</th></tr></thead>
-      <tbody>
-        <tr><td>Monthly payment</td><td class="accent">~$502</td><td class="num">~$614</td></tr>
-        <tr><td>Money paid in 36 months</td><td class="num">$18,072</td><td class="num">$3,500 + $22,104 = $25,604</td></tr>
-        <tr><td>Car value at end of 36 months</td><td class="muted">$22,050 (you don't own it)</td><td class="num">$22,050 (you own it)</td></tr>
-        <tr><td>Your net cost (paid − value owned)</td><td class="accent"><strong>$18,072</strong></td><td class="num"><strong>$3,554</strong></td></tr>
-        <tr><td>What you own at month 36</td><td class="muted">Nothing — return the car</td><td class="accent">A $22,050 asset with 24 payments left</td></tr>
-      </tbody>
-    </table>
-  </div>
+        *Money Factor = APR ÷ 2400</div>
 
-  <div class="key-takeaway">
-    <div class="kt-label">The 3-Year Picture</div>
-    <p>After 3 years, the lease has cost you <strong>$18,072 net</strong> with nothing to show. Buying has cost you <strong>$3,554 net</strong> — but you own a $22,050 car and have 24 payments remaining. Leasing is not "cheaper." It's lower monthly payments in exchange for zero equity accumulation.</p>
-  </div>
+      <div class="callout-box">
+        <strong>Real Example: $35,000 Car on a 36-Month Lease</strong><br>
+        • Cap Cost (MSRP): $35,000<br>
+        • Residual Value (Value after 3 years): $22,050<br>
+        • APR: 6% (Money factor = 0.0025)<br><br>
+        <strong>Depreciation:</strong> ($35,000 - $22,050) ÷ 36 = $359.72<br>
+        <strong>Finance Charge:</strong> ($35,000 + $22,050) × 0.0025 = $142.63<br>
+        <strong>Monthly Lease Payment:</strong> $359.72 + $142.63 = <strong>$502/month</strong>
+      </div>
 
-  <h2>The 5-Year View: Full Loan Payoff</h2>
+      <h3>How an Auto Loan is Calculated</h3>
+      <p>If we take that exact same $35,000 car and buy it using a standard 60-month loan at 6.5% APR (with a 10% down
+        payment of $3,500), the formula yields a payment of <strong>$616/month</strong>.</p>
 
-  <p>After 5 years, the comparison shifts even more decisively toward buying:</p>
+      <p>Looking purely at cash flow, the lease saves you $114 a month. But what happens over time?</p>
 
-  <div class="data-table-wrap">
-    <table class="data-table">
-      <thead><tr><th>Metric</th><th>Lease (1.67 cycles)</th><th>Buy and Own for 5 Years</th></tr></thead>
-      <tbody>
-        <tr><td>Total payments made</td><td class="num">~$30,120 (60 months × $502)</td><td class="num">$40,340 ($3,500 down + 60 payments)</td></tr>
-        <tr><td>Estimated car value at 5 years</td><td class="muted">Nothing (continuous lease cycle)</td><td class="num">~$17,500 (50% residual)</td></tr>
-        <tr><td>Net cost (paid − value owned)</td><td class="accent"><strong>~$30,120</strong></td><td class="num"><strong>~$22,840</strong></td></tr>
-        <tr><td>Monthly cost going forward</td><td class="muted">Another lease payment forever</td><td class="accent"><strong>$0</strong> — car is paid off</td></tr>
-      </tbody>
-    </table>
-  </div>
+      <h2 id="comparison" class="scroll-section">3-Year vs. 5-Year Comparison</h2>
 
-  <p>The owned car's ongoing cost drops to <strong>zero</strong> after the loan is paid, while the lease perpetually requires a monthly payment. Every additional year of ownership after loan payoff makes buying look better.</p>
+      <h3>The 3-Year Picture (End of Lease)</h3>
+      <div class="article-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Leasing (36 Months)</th>
+              <th>Buying (Month 36 of 60)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly Payment</td>
+              <td class="accent-text">$502</td>
+              <td>$616</td>
+            </tr>
+            <tr>
+              <td>Total Cash Paid in 3 years</td>
+              <td>$18,072</td>
+              <td>$25,676 (Includes down payment)</td>
+            </tr>
+            <tr>
+              <td>Value of the Car Today</td>
+              <td class="danger-text">$0 (You don't own it)</td>
+              <td class="accent-text">$22,050 (It's yours)</td>
+            </tr>
+            <tr>
+              <td>Remaining Loan Debt</td>
+              <td>$0</td>
+              <td>-$13,800</td>
+            </tr>
+            <tr>
+              <td><strong>Your True Net Worth</strong></td>
+              <td class="danger-text">-$18,072</td>
+              <td class="accent-text">-$17,426 (You have $8k in equity)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-  <h2>When Leasing Actually Makes Sense</h2>
+      <p>At the 3-year mark, buying has mathematically beaten leasing. The buyer has paid more cash out of pocket, but
+        because they can sell the car and pay off the remaining loan, they actually walk away with positive equity in
+        their pocket.</p>
 
-  <p>Despite the math above, leasing is the right choice for some people in specific situations:</p>
+      <h3>The 5-Year Picture (The "Perpetual Payment" Trap)</h3>
+      <p>This is where leasing destroys long-term wealth. At Month 60, the buyer makes their final payment. They now own
+        a $17,000 asset free and clear, and they have <strong>zero monthly car payments</strong> moving forward.</p>
 
-  <div class="decision-grid">
-    <div class="decision-box">
-      <h3>✅ Lease makes sense if you…</h3>
+      <p>The lessee, however, had to return their car at Month 36 and sign a brand new 3-year lease. The lessee will
+        continue paying $500+ a month, forever, in a perpetual cycle of renting. Over 10 years, the buyer will save tens
+        of thousands of dollars simply by holding onto their paid-off vehicle.</p>
+
+      <h2 id="decision" class="scroll-section">When to Lease vs. Buy</h2>
+      <p>Despite the math favoring buying in the long run, leasing is a highly valuable tool for certain lifestyles.</p>
+
+      <div class="decision-grid">
+        <div class="decision-box">
+          <h3>✅ Leasing Makes Sense If:</h3>
+          <ul>
+            <li>You absolutely require a brand-new car every 3 years for prestige or safety features.</li>
+            <li>You use the car for a business (lease payments can often be written off as a business expense).</li>
+            <li>You drive very predictable, low mileage (under 12,000 miles a year).</li>
+            <li>You want the peace of mind of a bumper-to-bumper warranty that never expires.</li>
+          </ul>
+        </div>
+        <div class="decision-box">
+          <h3>✅ Buying Makes Sense If:</h3>
+          <ul>
+            <li>You plan to keep the car for 5 to 10+ years.</li>
+            <li>You drive more than 15,000 miles a year.</li>
+            <li>You want the financial freedom of eventually having no monthly car payment.</li>
+            <li>You want to customize, modify, or ride with messy pets without fear of return penalties.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="hidden-costs" class="scroll-section">The Hidden Costs of Leasing</h2>
+      <p>If you choose to lease, you must budget for the fees hidden in the fine print:</p>
+
       <ul>
-        <li>Prefer a new car every 2–3 years</li>
-        <li>Drive limited, predictable miles (under 12,000–15,000/year)</li>
-        <li>Always keep the car under warranty</li>
-        <li>Use the car for business (lease payments are often fully deductible)</li>
-        <li>Value low monthly cash flow commitment</li>
-        <li>Won't stress about wear-and-tear or mileage overages</li>
+        <li><strong>Acquisition Fee:</strong> A $500 to $1,000 fee charged just for initiating the lease. It is often
+          rolled into the capitalized cost.</li>
+        <li><strong>Disposition Fee:</strong> A $300 to $500 fee charged when you hand the keys back at the end of the
+          lease to cover the dealer's cost of prepping it for resale.</li>
+        <li><strong>The Mileage Penalty:</strong> Leases usually cap at 10k or 12k miles a year. If you go over, you
+          will be charged $0.15 to $0.30 per mile. If you drive 5,000 miles over your limit, you will owe a surprise
+          $1,250 bill when you return the car.</li>
+        <li><strong>Excess Wear and Tear:</strong> If your kids spill juice on the seats, or you scrape the alloy wheels
+          on a curb, the dealership will charge you repair fees at the end of the lease.</li>
       </ul>
-    </div>
-    <div class="decision-box">
-      <h3>✅ Buy makes sense if you…</h3>
-      <ul>
-        <li>Drive 15,000+ miles per year</li>
-        <li>Plan to keep the car 5+ years</li>
-        <li>Want eventual zero-payment ownership</li>
-        <li>Customise your vehicle (not allowed in leases)</li>
-        <li>Have variable annual mileage (trips, life changes)</li>
-        <li>Are building long-term net worth</li>
-      </ul>
-    </div>
-  </div>
 
-  <h2>The Hidden Costs of Leasing</h2>
+      <h2 id="buyout" class="scroll-section">The Lease Buyout Option</h2>
+      <p>What happens if you lease a car, fall in love with it, and want to keep it after three years? You can execute a
+        <strong>Lease Buyout</strong>.</p>
 
-  <p>The advertised lease payment is rarely your full cost:</p>
+      <p>Your original contract states exactly what the car's "Residual Value" will be at the end of the lease. You have
+        the right to purchase the car from the dealership for that exact price. This can sometimes be a massive
+        financial win for you.</p>
 
-  <ul>
-    <li><strong>Acquisition fee:</strong> $500–$1,000 due at signing, often buried in the capitalised cost</li>
-    <li><strong>Disposition fee:</strong> $300–$500 at lease end if you don't buy the car</li>
-    <li><strong>Excess mileage charges:</strong> $0.15–$0.30 per mile over your allotted annual miles — 5,000 extra miles at $0.25 = $1,250</li>
-    <li><strong>Excess wear and tear:</strong> Dings, scratches, and worn tires above lease-defined standards result in charges at return</li>
-    <li><strong>Gap insurance:</strong> Required by most lessors; covers the difference between the car's value and what you owe if it's totalled</li>
-  </ul>
+      <p>For example, if your contract states the residual value is $20,000, but due to a crazy used-car market, the car
+        is actually worth $26,000 on Kelley Blue Book, you can buy the car for $20,000 and immediately have $6,000 in
+        instant equity. (Conversely, if the car is only worth $15,000, you simply hand the keys back and let the bank
+        eat the $5,000 loss).</p>
 
-  <h2>Running Costs: Fuel Efficiency Matters Too</h2>
+      <div class="cta-box">
+        <h3>Run Your Own Numbers</h3>
+        <p>Don't rely on dealership math. Plug the MSRP, interest rate, and down payment into our calculator to see
+          exactly how much total interest a loan will cost you vs. the total cost of a lease.</p>
+        <a class="btn-cta" href="../lease-vs-buy-calculator.html">Launch Lease vs. Buy Calculator →</a>
+      </div>
 
-  <p>Whether you lease or buy, the car's fuel efficiency has a significant impact on your total transportation cost. At 15,000 miles/year and $3.50/gallon:</p>
+      <h2 id="faq" class="scroll-section">Frequently Asked Questions</h2>
+      <div class="faq-wrapper">
+        <details class="faq-item" name="faq-accordion">
+          <summary>Is it financially better to lease or buy a car?</summary>
+          <div class="faq-content">From a pure net-worth perspective, buying is mathematically superior over a
+            5-to-10-year horizon. Once a car loan is paid off, you own a depreciating—but valuable—asset with zero
+            monthly payments. Leasing ensures you have a permanent monthly bill.</div>
+        </details>
 
-  <div class="data-table-wrap">
-    <table class="data-table">
-      <thead><tr><th>Fuel Economy (MPG)</th><th>Gallons/Year</th><th>Annual Fuel Cost</th><th>5-Year Fuel Cost</th></tr></thead>
-      <tbody>
-        <tr><td>20 MPG</td><td class="num">750</td><td class="num">$2,625</td><td class="num">$13,125</td></tr>
-        <tr><td>28 MPG (avg new car)</td><td class="num">536</td><td class="num">$1,875</td><td class="num">$9,375</td></tr>
-        <tr><td>35 MPG</td><td class="num">429</td><td class="num">$1,500</td><td class="num">$7,500</td></tr>
-        <tr><td>45 MPG (hybrid)</td><td class="num">333</td><td class="num">$1,167</td><td class="accent">$5,833</td></tr>
-      </tbody>
-    </table>
-  </div>
+        <details class="faq-item" name="faq-accordion">
+          <summary>What is a "Money Factor" in leasing?</summary>
+          <div class="faq-content">The Money Factor is how dealerships express the interest rate on a lease. To find out
+            what interest rate they are actually charging you, multiply the money factor by 2,400. For example, a money
+            factor of 0.0030 is equal to a 7.2% APR (0.0030 × 2400).</div>
+        </details>
 
-  <p>Moving from a 20 MPG to a 35 MPG vehicle saves <strong>$1,125/year</strong> in fuel — that's $93/month, which more than offsets a higher monthly payment on a more efficient car. Use our <a href="../mpg-calculator.html">MPG Calculator</a> to see your exact annual fuel cost at any efficiency and gas price, and our <a href="../auto-loan-calculator.html">Auto Loan Calculator</a> to model monthly payments on any purchase price.</p>
+        <details class="faq-item" name="faq-accordion">
+          <summary>What happens if I crash a leased car?</summary>
+          <div class="faq-content">If you total a leased car, your auto insurance will pay the bank the current market
+            value of the car. If you owe more on the lease than the car is worth, you are liable for the difference.
+            This is why almost all leases require you to carry <strong>Gap Insurance</strong> to cover that deficit.
+          </div>
+        </details>
 
-  <div class="cta-box">
-    <p><strong>Model your specific deal.</strong> Use our Lease vs Buy and Auto Loan calculators to compare any two scenarios with your actual numbers.</p>
-    <a class="btn-cta" href="../lease-vs-buy-calculator.html">Open Lease vs Buy Calculator →</a>
-  </div>
+        <details class="faq-item" name="faq-accordion">
+          <summary>Can I negotiate a lease price?</summary>
+          <div class="faq-content">Yes! You can and should negotiate the "Capitalized Cost" (the purchase price of the
+            vehicle) just as if you were buying it. You can also negotiate the Money Factor. The only number that is
+            strictly non-negotiable is the Residual Value, which is set by the manufacturer's bank.</div>
+        </details>
 
-  <div class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <button class="faq-q">Is it better to lease or buy a car?<span class="faq-icon">+</span></button>
-      <div class="faq-a">Financially, buying is better for most people in most situations — especially if you keep the car beyond the loan payoff. Once paid off, an owned car has no monthly payment. Leasing has lower monthly payments but you own nothing and always have a payment. Leasing makes sense if you drive limited miles, want new technology every few years, or use the car for business where payments are deductible.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">How is a lease payment calculated?<span class="faq-icon">+</span></button>
-      <div class="faq-a">A lease payment = depreciation charge + finance charge. The depreciation charge is (cap cost − residual value) ÷ months. The finance charge is (cap cost + residual value) × money factor. The money factor is the interest rate expressed as APR ÷ 2400. A lower residual value or higher money factor increases the monthly payment significantly.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">What happens if I go over mileage on a lease?<span class="faq-icon">+</span></button>
-      <div class="faq-a">Excess mileage is charged at return, typically $0.15–$0.30 per mile over the contracted limit. If your lease allows 10,000 miles/year and you drive 14,000, you owe overage charges for 4,000 miles × the per-mile rate — potentially $600–$1,200 at lease end. If you expect to exceed the limit, negotiate more miles upfront (cheaper) or choose to buy instead.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">What is a good MPG for a car?<span class="faq-icon">+</span></button>
-      <div class="faq-a">The EPA considers 40+ MPG combined to be fuel-efficient for gasoline vehicles. The average new car achieves 28–30 MPG. At 15,000 miles/year and $3.50/gallon, moving from 20 MPG to 35 MPG saves about $1,125 per year in fuel. Our MPG calculator shows your exact annual and per-mile fuel cost at any efficiency and gas price.</div>
-    </div>
-  </div>
+        <details class="faq-item" name="faq-accordion">
+          <summary>Can I end my lease early?</summary>
+          <div class="faq-content">Yes, but it is incredibly expensive. You will generally have to pay an early
+            termination fee, plus the remaining balance of your lease payments. A better option is to use a
+            lease-swapping service where someone else takes over your contract.</div>
+        </details>
 
-  <div style="background:#f0f0ef;border-radius:var(--radius-sm);padding:16px 20px;margin-top:40px;">
-    <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;"><strong style="color:#0f0f0e;">For informational purposes only.</strong> Calculations use illustrative figures. Actual loan rates, residual values, money factors, and fees vary by lender, manufacturer, and market conditions. This is not financial advice. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated August 31, 2026.</p>
-  </div>
-
-</article>
-
-<aside class="sidebar">
-  <div class="sidebar-card">
-    <div class="sidebar-title">Auto Tools</div>
-    <a class="sidebar-tool" href="../lease-vs-buy-calculator.html">
-      <div class="sidebar-tool-icon">🚗</div>
-      <div><div class="sidebar-tool-name">Lease vs Buy Calculator</div><div class="sidebar-tool-desc">Total cost comparison</div></div>
-    </a>
-    <a class="sidebar-tool" href="../auto-loan-calculator.html">
-      <div class="sidebar-tool-icon">💰</div>
-      <div><div class="sidebar-tool-name">Auto Loan Calculator</div><div class="sidebar-tool-desc">Monthly payment &amp; total interest</div></div>
-    </a>
-    <a class="sidebar-tool" href="../mpg-calculator.html">
-      <div class="sidebar-tool-icon">⛽</div>
-      <div><div class="sidebar-tool-name">MPG Calculator</div><div class="sidebar-tool-desc">Annual fuel cost at any efficiency</div></div>
-    </a>
-    <a class="sidebar-tool" href="../fuel-cost-calculator.html">
-      <div class="sidebar-tool-icon">🛣️</div>
-      <div><div class="sidebar-tool-name">Fuel Cost Calculator</div><div class="sidebar-tool-desc">Road trip cost estimator</div></div>
-    </a>
-  </div>
-  <div class="sidebar-card">
-    <div class="sidebar-title">More Guides</div>
-    <a class="sidebar-guide" href="how-to-calculate-debt-free-date.html">
-      <div class="sidebar-guide-title">How to Calculate Your Debt-Free Date</div>
-      <div class="sidebar-guide-meta">8 min read · Debt Payoff</div>
-    </a>
-    <a class="sidebar-guide" href="understanding-credit-card-apr.html">
-      <div class="sidebar-guide-title">Understanding Credit Card APR</div>
-      <div class="sidebar-guide-meta">6 min read · Credit Cards</div>
-    </a>
-    <a class="sidebar-guide" href="how-to-calculate-and-improve-your-gpa.html">
-      <div class="sidebar-guide-title">How to Calculate and Improve Your GPA</div>
-      <div class="sidebar-guide-meta">7 min read · Education</div>
-    </a>
-  </div>
-</aside>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="/guides/">Guides</a> · <a href="/about.html">About</a> · <a href="/sitemap.html">Sitemap</a> · <a href="/contact.html">Contact</a> · <a href="/terms-of-use.html">Terms of Use</a> · <a href="/privacy-policy.html">Privacy Policy</a></p>
-  </div>
-</footer>
-<script>
-  document.querySelectorAll('.faq-q').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var answer = btn.nextElementSibling;
-      var isOpen = btn.classList.contains('open');
-      document.querySelectorAll('.faq-q.open').forEach(function(b) { b.classList.remove('open'); if (b.nextElementSibling) b.nextElementSibling.classList.remove('open'); });
-      if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
-    });
-  });
-</script>
-</body>
-</html>
+        <details class="faq-item" name="faq-accordion">
+          <summary>Should I put money down on a lease?</summary>
+          <div class="faq-content">Financial advisors strongly recommend putting <strong>$0 down on a lease</strong>
+            (often called a "sign and drive" lease). If you put $3,000 down to lower your monthly payments, and the car
+            is totaled driving off the lot the next day, that $3,000

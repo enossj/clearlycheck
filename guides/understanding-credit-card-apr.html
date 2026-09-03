@@ -1,514 +1,952 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Understanding Credit Card APR: What It Really Costs You | ClearlyCheck</title>
-<meta name="description" content="Credit card APR explained with real numbers. Learn how daily periodic rate works, what your balance actually costs per day, and why minimum payments keep you in debt for years.">
-<meta name="keywords" content="what is credit card APR, how does credit card interest work, daily periodic rate, APR vs APY, minimum payment trap, credit card interest explained, how interest is calculated on credit cards">
-<link rel="canonical" href="https://clearlycheck.com/guides/understanding-credit-card-apr.html">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Understanding Credit Card APR: What It Really Costs You">
-<meta property="og:description" content="We show exactly how credit card interest compounds — with a real worked example and daily math.">
-<meta property="og:url" content="https://clearlycheck.com/guides/understanding-credit-card-apr.html">
-<meta property="og:site_name" content="ClearlyCheck">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Understanding Credit Card APR: What It Really Costs You",
-  "description": "A detailed explanation of credit card APR, daily periodic rate, and the minimum payment trap — with worked dollar examples.",
-  "url": "https://clearlycheck.com/guides/understanding-credit-card-apr.html",
-  "mainEntityOfPage": "https://clearlycheck.com/guides/understanding-credit-card-apr.html",
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-08-31",
-  "author": {
-    "@type": "Person",
-    "@id": "https://clearlycheck.com/#enos",
-    "name": "Enos"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://clearlycheck.com/#organization",
-    "name": "ClearlyCheck",
-    "url": "https://clearlycheck.com",
-    "logo": {"@type": "ImageObject", "url": "https://clearlycheck.com/assets/og-image.svg"}
-  },
-  "isPartOf": {"@type": "WebSite", "name": "ClearlyCheck", "url": "https://clearlycheck.com"}
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://clearlycheck.com"},
-    {"@type":"ListItem","position":2,"name":"Guides","item":"https://clearlycheck.com/guides/"},
-    {"@type":"ListItem","position":3,"name":"Understanding Credit Card APR","item":"https://clearlycheck.com/guides/understanding-credit-card-apr.html"}
-  ]
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does APR mean on a credit card?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "APR stands for Annual Percentage Rate. It is the yearly interest rate charged on your outstanding credit card balance. Most credit cards charge APR daily using the daily periodic rate (APR ÷ 365), so interest accrues every day you carry a balance."
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Credit Card APR: What It Really Costs You | ClearlyCheck</title>
+  <meta name="description"
+    content="A comprehensive 2026 guide to credit card APR. Learn how daily periodic rate works, the trailing interest trap, and why minimum payments keep you in debt.">
+  <meta name="keywords"
+    content="what is credit card APR, how does credit card interest work, daily periodic rate, APR vs APY, minimum payment trap, trailing interest, average daily balance, lower my APR">
+  <link rel="canonical" href="https://clearlycheck.com/guides/understanding-credit-card-apr.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Understanding Credit Card APR: What It Really Costs You",
+    "url": "https://clearlycheck.com/guides/understanding-credit-card-apr.html",
+    "author": { "@type": "Person", "name": "Enos" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    :root {
+      --bg: #f8f7f4;
+      --bg-card: #ffffff;
+      --text: #0f0f0e;
+      --text-muted: #2b2a28;
+      --text-light: #5e5c58;
+      --border: rgba(15, 15, 14, 0.10);
+      --border-hover: rgba(15, 15, 14, 0.20);
+      --accent: #1a6b4a;
+      --accent-light: #e8f5ef;
+      --accent-dark: #145a3d;
+      --danger: #c0392b;
+      --danger-light: #fdf0ef;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    /* Layout */
+    .page-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 24px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .guide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--text);
+      max-width: 800px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 700px;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    .guide-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 24px 80px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .author-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .author-info strong {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+      font-size: 14px;
+    }
+
+    .toc h4 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .toc ul {
+      list-style: none;
+      border-left: 2px solid var(--border);
+    }
+
+    .toc li {
+      margin-bottom: 12px;
+    }
+
+    .toc a {
+      display: block;
+      padding-left: 16px;
+      font-size: 14px;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.2s;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    .toc a::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: transparent;
+      transition: background 0.2s;
+    }
+
+    .toc a:hover::before {
+      background: var(--border-hover);
+    }
+
+    /* ScrollSpy Active State */
+    .toc a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .toc a.active::before {
+      background: var(--accent);
+    }
+
+    /* Article Content */
+    .article-content {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .article-content p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .article-content h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-top: 56px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 100px;
+    }
+
+    .article-content h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      padding-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    .article-content li {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .article-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .callout-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 32px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .callout-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .formula-box {
+      font-family: 'Roboto', monospace;
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.9;
+      margin: 24px 0;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Responsive Tables */
+    .article-table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    .article-content th,
+    .article-content td {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .article-content th {
+      background: rgba(248, 247, 244, 0.5);
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .article-content tr:last-child td {
+      border-bottom: none;
+    }
+
+    .danger-text {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .success-text {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* FAQ */
+    .faq-wrapper {
+      margin-top: 24px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      margin-bottom: 0;
+      background: transparent;
+    }
+
+    .faq-item summary {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      padding: 20px 0;
+      cursor: pointer;
+      list-style: none;
+      transition: color 0.15s ease-in-out;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item[open] summary {
+      color: var(--accent);
+    }
+
+    .faq-content {
+      padding: 0 0 24px 0;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: var(--text);
+      color: white;
+      border-radius: var(--radius-sm);
+      padding: 48px 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      margin-top: 0;
+      border: none;
+    }
+
+    .cta-box p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.15s;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .btn-cta:hover {
+      background: var(--accent-dark);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 14px;
+      color: var(--text-light);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-copy a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .footer-copy a:hover {
+      color: var(--text);
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 900px) {
+      .guide-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 16px 16px 60px;
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How is credit card interest calculated?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Credit card issuers typically calculate interest using the Average Daily Balance method. They divide your APR by 365 to get the daily periodic rate, multiply it by your average daily balance, then multiply by the number of days in the billing cycle. For example, on a $5,000 balance at 22.99% APR for a 30-day cycle: ($5,000 × 22.99% / 365) × 30 = approximately $94.49 in interest."
+
+      .sidebar {
+        position: static;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 24px;
       }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good APR for a credit card?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "As of 2026, the average credit card APR in the US is around 20–22%. A rate below 20% is generally considered good. Premium rewards cards often carry rates of 24–29.99%. The best rate is 0% — which you get by paying your statement balance in full each month before the due date, so no interest is charged at all."
+
+      .page-header {
+        padding: 40px 16px 16px;
       }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between APR and APY?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "APR (Annual Percentage Rate) is the base yearly rate without accounting for compounding. APY (Annual Percentage Yield) includes the effect of compounding. For credit cards, the true cost of carrying a balance is slightly higher than the stated APR because daily compounding means you pay interest on interest. APY gives a more accurate picture of the true annual cost."
+
+      .author-block {
+        margin-bottom: 24px;
+        border-bottom: none;
+        padding-bottom: 0;
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does paying only the minimum keep me in debt so long?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Minimum payments are typically 1–3% of your balance, or around $25–35, whichever is greater. On a $5,000 balance at 22.99% APR, the minimum is roughly $125/month — but about $95 of that goes to interest, leaving only $30 to reduce the actual balance. At that rate, it takes over 10 years to pay off $5,000 and costs more than $5,000 in interest alone."
+
+      .toc ul {
+        border-left: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .toc a {
+        padding-left: 0;
+        border-left: none;
+      }
+
+      .toc a::before {
+        display: none;
+      }
+
+      .toc a.active {
+        padding-left: 12px;
+        border-left: 2px solid var(--accent);
       }
     }
-  ]
-}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/css/base.css">
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg: #f8f7f4;
-    --bg-card: #ffffff;
-    --text: #0f0f0e;
-    --text-muted: #2b2a28;
-    --text-light: #6b6a66;
-    --border: rgba(15,15,14,0.10);
-    --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a;
-    --accent-light: #e8f5ef;
-    --accent-hover: #145a3d;
-    --danger: #c0392b;
-    --danger-light: #fdf0ef;
-    --radius: 16px;
-    --radius-sm: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
-  }
+    @media (max-width: 500px) {
+      .cta-box {
+        padding: 32px 20px;
+      }
 
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+      .btn-cta {
+        width: 100%;
+      }
 
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
-  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
-  .logo span { color: var(--accent); }
-  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
-  .back-link:hover { color: var(--text); }
-  .back-link svg { width: 16px; height: 16px; }
-
-  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 36px; }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; flex-wrap: wrap; }
-  .breadcrumb a { color: var(--text-light); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .breadcrumb span { color: var(--border-hover); }
-  .article-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #1a4fa0; background: #e8f0fe; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
-  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1.2px; line-height: 1.15; color: var(--text); margin-bottom: 14px; }
-  .page-header .lead { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 640px; line-height: 1.7; }
-  .page-meta { font-size: 13px; color: var(--text-light); margin-top: 20px; }
-  .page-meta a { color: var(--text-light); text-decoration: none; }
-
-  .content-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
-
-  article h2 { font-family: 'Roboto', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; margin: 36px 0 12px; line-height: 1.3; }
-  article h2:first-child { margin-top: 0; }
-  article h3 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin: 26px 0 10px; }
-  article p { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 16px; }
-  article p:last-child { margin-bottom: 0; }
-  article strong { color: var(--text); font-weight: 600; }
-  article ul, article ol { padding-left: 22px; margin-bottom: 16px; }
-  article li { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 6px; }
-  article li strong { color: var(--text); }
-  article a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  article a:hover { text-decoration: underline; }
-
-  .example-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 22px 24px; margin: 24px 0; }
-  .example-box .ex-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
-  .example-box p { margin-bottom: 8px; font-size: 15px; }
-  .example-box p:last-child { margin-bottom: 0; }
-
-  .formula-box { font-family: 'Roboto', monospace; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 24px; font-size: 14px; color: var(--text); line-height: 1.9; margin: 20px 0; }
-
-  .data-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius-sm); border: 1px solid var(--border); }
-  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  .data-table th { background: var(--bg); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
-  .data-table td { padding: 12px 16px; color: var(--text-muted); border-bottom: 1px solid var(--border); font-weight: 300; }
-  .data-table tr:last-child td { border-bottom: none; }
-  .data-table tr:hover td { background: var(--bg); }
-  .data-table .num { font-family: 'Roboto', sans-serif; font-weight: 600; color: var(--text); }
-  .data-table .danger { color: var(--danger); font-weight: 600; }
-
-  .alert-box { background: var(--danger-light); border: 1px solid rgba(192,57,43,0.2); border-radius: var(--radius-sm); padding: 20px 24px; margin: 24px 0; }
-  .alert-box .alert-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--danger); margin-bottom: 8px; }
-  .alert-box p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.7; }
-
-  .key-takeaway { background: var(--accent-light); border: 1px solid rgba(26,107,74,0.2); border-radius: var(--radius-sm); padding: 20px 24px; margin: 28px 0; }
-  .key-takeaway .kt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
-  .key-takeaway p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.7; font-weight: 400; }
-  .key-takeaway strong { color: var(--text); }
-
-  .cta-box { background: #0f0f0e; border-radius: var(--radius-sm); padding: 24px 28px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .cta-box p { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 300; margin: 0; line-height: 1.6; }
-  .cta-box strong { color: #fff; }
-  .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; padding: 11px 20px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.18s; white-space: nowrap; flex-shrink: 0; }
-  .btn-cta:hover { background: var(--accent-hover); transform: translateY(-1px); text-decoration: none; }
-
-  .faq-section { margin-top: 40px; }
-  .faq-section h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
-  .faq-item { border-bottom: 1px solid var(--border); }
-  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: none; border: none; text-align: left; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); cursor: pointer; transition: color 0.15s; }
-  .faq-q:hover { color: var(--accent); }
-  .faq-icon { font-size: 18px; color: var(--text-light); flex-shrink: 0; transition: transform 0.2s; }
-  .faq-q.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
-  .faq-a { display: none; padding: 0 0 16px; font-size: 15px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
-  .faq-a.open { display: block; }
-
-  .sidebar { display: flex; flex-direction: column; gap: 20px; }
-  .sidebar-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-  .sidebar-title { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
-  .sidebar-tool { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: all 0.15s; }
-  .sidebar-tool:last-child { border-bottom: none; padding-bottom: 0; }
-  .sidebar-tool:hover .sidebar-tool-name { color: var(--accent); }
-  .sidebar-tool-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-  .sidebar-tool-name { font-size: 13px; font-weight: 500; color: var(--text); }
-  .sidebar-tool-desc { font-size: 12px; color: var(--text-light); font-weight: 300; margin-top: 2px; }
-  .sidebar-guide { display: block; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; }
-  .sidebar-guide:last-child { border-bottom: none; padding-bottom: 0; }
-  .sidebar-guide-title { font-size: 13px; font-weight: 500; color: var(--text); transition: color 0.15s; line-height: 1.4; }
-  .sidebar-guide:hover .sidebar-guide-title { color: var(--accent); }
-  .sidebar-guide-meta { font-size: 11px; color: var(--text-light); margin-top: 3px; }
-
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: var(--text-light); }
-  .footer-copy a { color: var(--text-light); text-decoration: none; }
-
-  @media (max-width: 860px) {
-    .content-layout { grid-template-columns: 1fr; gap: 32px; }
-    .sidebar { order: -1; }
-  }
-  @media (max-width: 600px) {
-    .page-header { padding: 36px 20px 28px; }
-    .content-layout { padding: 0 20px 60px; }
-    .cta-box { flex-direction: column; align-items: flex-start; }
-  }
-</style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+      .article-content p,
+      .article-content li {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="/">Clearly<span>Check</span></a>
-    <a class="back-link" href="/guides/">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      All Guides
-    </a>
-  </div>
-</nav>
-
-<div class="page-header">
-  <nav aria-label="breadcrumb">
-    <div class="breadcrumb">
-      <a href="/">Home</a>
-      <span>›</span>
-      <a href="/guides/">Guides</a>
-      <span>›</span>
-      <span>Understanding Credit Card APR</span>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../">Clearly<span>Check</span></a>
+      <a class="back-link" href="./">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l-4 4m-4 4h18" />
+        </svg>
+        All Guides
+      </a>
     </div>
   </nav>
-  <div class="article-tag">Credit Cards</div>
-  <h1>Understanding Credit Card APR: What It Really Costs You</h1>
-  <p class="lead">APR is just a number until you run the daily math. Here's exactly what that 22.99% rate is costing you — per day, per month, and over a year — on a real balance.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated August 31, 2026 · 6 min read</div>
-</div>
 
-<div class="content-layout">
-  <article>
-
-    <p>Most people know their credit card's APR the same way they know their car's horsepower — as a number they've seen but don't fully understand. The difference is that your car's horsepower doesn't show up as a charge on your monthly statement. Your APR does, and it can easily cost more than the original purchase if you carry a balance long enough.</p>
-
-    <p>This guide breaks down exactly what APR means, how credit card issuers calculate your interest charge every single day, and why the minimum payment trap is so much worse than it looks.</p>
-
-    <h2>What APR Actually Means</h2>
-
-    <p><strong>APR stands for Annual Percentage Rate.</strong> It is the yearly interest rate your credit card issuer charges on any balance you carry beyond your grace period. If your card has a 22.99% APR, your issuer charges the equivalent of 22.99% per year on your outstanding balance.</p>
-
-    <p>The key word is "annual" — but credit card interest doesn't work annually. It accrues <em>daily</em>. Credit card issuers convert your APR into a <strong>Daily Periodic Rate (DPR)</strong>:</p>
-
-    <div class="formula-box">
-Daily Periodic Rate = APR ÷ 365
-
-Example: 22.99% APR ÷ 365 = 0.06299% per day
-    </div>
-
-    <p>That 0.063% daily rate doesn't sound like much. Over 30 days on a $5,000 balance, it adds up to $94.49. Over a full year, it's $1,149 in interest alone — on a balance that never changes.</p>
-
-    <h2>How Your Monthly Interest Charge Is Calculated</h2>
-
-    <p>Most credit card issuers use the <strong>Average Daily Balance</strong> method. Here is how it works:</p>
-
-    <ol>
-      <li>They track your balance for every day in the billing cycle.</li>
-      <li>They calculate the average of those daily balances.</li>
-      <li>They multiply the average balance by the daily periodic rate, then by the number of days in the billing cycle.</li>
-    </ol>
-
-    <div class="formula-box">
-Monthly Interest = Average Daily Balance × (APR ÷ 365) × Days in Cycle
-    </div>
-
-    <div class="example-box">
-      <div class="ex-label">Worked Example — $5,000 Balance at 22.99% APR</div>
-      <p><strong>Daily Periodic Rate:</strong> 22.99% ÷ 365 = 0.0006299 (0.06299% per day)</p>
-      <p><strong>Average Daily Balance:</strong> $5,000 (assume constant for simplicity)</p>
-      <p><strong>Days in billing cycle:</strong> 30</p>
-      <p><strong>Monthly interest charge:</strong> $5,000 × 0.0006299 × 30 = <strong>$94.49</strong></p>
-      <p style="margin-top:12px;"><strong>Annual cost at this rate:</strong> $94.49 × 12 = <strong>$1,133.88/year</strong></p>
-      <p>That is what you pay each year just to carry a $5,000 balance — before paying down a single cent of the principal.</p>
-    </div>
-
-    <h2>APR vs APY: The Compounding Difference</h2>
-
-    <p>You may see APY (Annual Percentage Yield) mentioned alongside APR in financial products. The distinction matters:</p>
-
-    <ul>
-      <li><strong>APR</strong> is the stated annual rate, not accounting for compounding.</li>
-      <li><strong>APY</strong> reflects the true yearly cost after compounding is applied.</li>
-    </ul>
-
-    <p>Because credit card interest compounds daily (you pay interest on the interest that accrues), the true annual cost of a 22.99% APR card is slightly higher than 22.99%. The equivalent APY is approximately <strong>25.77%</strong>.</p>
-
-    <div class="formula-box">
-APY = (1 + APR / 365)<sup>365</sup> − 1
-
-Example: (1 + 0.2299 / 365)<sup>365</sup> − 1 ≈ 25.77%
-    </div>
-
-    <p>For everyday decisions, the APR is the number to compare. But if you want to understand the true compounding cost of carrying a long-term balance, APY is more accurate.</p>
-
-    <h2>The Grace Period: How to Pay Zero Interest</h2>
-
-    <p>Here is the piece most people miss: if you pay your <strong>full statement balance</strong> by the due date every month, you pay <strong>zero interest</strong> — regardless of your APR. This is the grace period, and it's one of the most valuable features of a credit card used correctly.</p>
-
-    <div class="key-takeaway">
-      <div class="kt-label">The Rule</div>
-      <p>Pay your <strong>full statement balance</strong> (not just the minimum) before the due date every month, and your credit card's APR is irrelevant. Interest only accrues when you carry a balance past the grace period.</p>
-    </div>
-
-    <p>The grace period typically applies only to purchases — not cash advances or balance transfers, which usually begin accruing interest from day one at a higher rate.</p>
-
-    <h2>The Minimum Payment Trap: Real Numbers</h2>
-
-    <p>Credit card minimum payments are designed to keep you in debt as long as possible while maintaining the appearance of manageable monthly payments. Here's what that looks like with actual numbers.</p>
-
-    <div class="example-box">
-      <div class="ex-label">Scenario: $5,000 Balance, 22.99% APR, Minimum Payments Only</div>
-      <p>Typical minimum payment: 2% of balance or $25, whichever is greater</p>
-      <p><strong>Month 1:</strong> Balance $5,000 · Minimum payment $100 · Interest charge $94.49 · Principal reduced by $5.51</p>
-      <p><strong>Month 2:</strong> Balance $4,994.49 · Minimum payment ~$99.90 · Interest charge $94.38 · Principal reduced by $5.52</p>
-      <p>At this pace — paying only the minimum — it takes approximately <strong>10 years and 4 months</strong> to clear the balance, and you pay roughly <strong>$5,340 in interest</strong> on top of the $5,000 you borrowed.</p>
-    </div>
-
-    <div class="alert-box">
-      <div class="alert-label">The Real Cost</div>
-      <p>On a $5,000 balance at 22.99% APR with minimum payments only, you pay back roughly <strong>$10,340 total</strong> — more than double what you borrowed. You spend 124 months — over a decade — making payments, and for the first two years, almost every dollar goes to interest rather than reducing your balance.</p>
-    </div>
-
-    <p>Compare that to paying a fixed <strong>$200/month</strong>:</p>
-
-    <div class="data-table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Monthly Payment</th>
-            <th>Time to Pay Off</th>
-            <th>Total Interest</th>
-            <th>Total Paid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Minimum only (~$100)</td>
-            <td class="danger">124 months (10+ years)</td>
-            <td class="danger">~$5,340</td>
-            <td class="danger">~$10,340</td>
-          </tr>
-          <tr>
-            <td>$150/month (fixed)</td>
-            <td>49 months (4 years)</td>
-            <td class="num">~$2,260</td>
-            <td class="num">~$7,260</td>
-          </tr>
-          <tr>
-            <td>$200/month (fixed)</td>
-            <td class="num">33 months (2 years 9 months)</td>
-            <td class="num">~$1,400</td>
-            <td class="num">~$6,400</td>
-          </tr>
-          <tr>
-            <td>$350/month (fixed)</td>
-            <td class="num" style="color:var(--accent);">17 months (1 year 5 months)</td>
-            <td class="num" style="color:var(--accent);">~$700</td>
-            <td class="num" style="color:var(--accent);">~$5,700</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p>Doubling your payment from $150 to $300 cuts the repayment time by more than half and saves roughly $1,800 in interest. The math heavily rewards higher payments.</p>
-
-    <div class="cta-box">
-      <p><strong>See your exact numbers.</strong> Enter your credit card balance, APR, and monthly payment into our free calculator to get your precise payoff date and total interest cost.</p>
-      <a class="btn-cta" href="../debt-free-calculator.html">Use the Debt Calculator →</a>
-    </div>
-
-    <h2>How to Compare Credit Cards by APR</h2>
-
-    <p>When comparing cards, the APR matters only if you plan to carry a balance. If you pay in full every month, the rewards rate and annual fee matter far more than the APR.</p>
-
-    <p>If you do carry a balance, here's how to compare cards properly:</p>
-
-    <ul>
-      <li><strong>Look at the APR range,</strong> not just the advertised rate. Cards typically show a range like "17.99%–29.99% variable APR." The rate you receive depends on your credit score.</li>
-      <li><strong>Check for a 0% intro period.</strong> Balance transfer cards often offer 0% APR for 12–21 months — this can be a powerful tool if you can pay down a balance during that window.</li>
-      <li><strong>Watch for penalty APR.</strong> Missing a payment can trigger a penalty APR — sometimes 29.99% or higher — that applies to your entire balance.</li>
-      <li><strong>Variable vs fixed.</strong> Almost all consumer credit cards now carry variable APRs tied to the Prime Rate. When the Fed raises rates, your credit card APR rises too.</li>
-    </ul>
-
-    <h2>One Rule That Beats Any APR</h2>
-
-    <p>The single most effective way to deal with credit card APR is to never carry a balance past the grace period. For anyone currently carrying a balance, the next best move is to find out your exact payoff date and total interest cost — because seeing the real numbers is often the most motivating thing you can do.</p>
-
-    <p>Use our <a href="../compound-interest-calculator.html">compound interest calculator</a> to see how the same money grows when invested, versus what it costs when borrowed. The contrast is striking.</p>
-
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <button class="faq-q">What does APR mean on a credit card?<span class="faq-icon">+</span></button>
-        <div class="faq-a">APR (Annual Percentage Rate) is the yearly interest rate charged on your outstanding credit card balance. Most cards charge interest daily using the daily periodic rate (APR ÷ 365). If you pay your full statement balance before the due date each month, no interest is charged regardless of the APR.</div>
+  <header class="page-header">
+    <nav aria-label="breadcrumb">
+      <div class="breadcrumb">
+        <a href="../">Home</a><span>›</span>
+        <a href="./">Guides</a><span>›</span>
+        <!-- Removed font-weight:600 so it matches the other links visually -->
+        <span style="color:var(--text-muted);">Understanding Credit Card APR</span>
       </div>
-      <div class="faq-item">
-        <button class="faq-q">How is credit card interest calculated each month?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Most issuers use the Average Daily Balance method: they track your balance for every day in the billing cycle, average those balances, then multiply by the daily periodic rate (APR ÷ 365) and the number of days in the cycle. On a constant $5,000 balance at 22.99% APR for a 30-day cycle, the charge is approximately $94.49.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What is a good credit card APR?<span class="faq-icon">+</span></button>
-        <div class="faq-a">As of 2026, the average US credit card APR is around 20–22%. Below 20% is generally considered good. Rewards and travel cards often carry 24–29.99% APR. The best scenario is 0% — which happens when you pay your full balance every month, because the grace period makes APR irrelevant.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Why does paying only the minimum take so long?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Minimum payments are typically 1–3% of your balance. On a $5,000 balance at 22.99% APR, the minimum is about $100/month — but roughly $94.50 goes to interest, leaving only $5.50 to reduce the actual debt. At that rate, paying off $5,000 takes over 10 years and costs more than $5,000 in interest. Paying a fixed $200/month instead takes under 3 years and costs about $1,400 in interest.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What is the difference between APR and APY?<span class="faq-icon">+</span></button>
-        <div class="faq-a">APR is the stated annual rate without compounding. APY (Annual Percentage Yield) is the true annual cost after daily compounding is factored in. A 22.99% APR credit card has an effective APY of approximately 25.77% because interest compounds daily. For comparing cards, use APR. For understanding the true annual cost of a long-term balance, APY is more accurate.</div>
-      </div>
-    </div>
+    </nav>
+    <div class="guide-tag">Financial Education</div>
+    <h1>Understanding Credit Card APR: What It Really Costs You</h1>
+    <p class="lead">APR is just a vague number until you run the daily math. Here is exactly what a standard 22.99% rate
+      is costing you—per day, per month, and over a decade—on a real credit card balance.</p>
+  </header>
 
-    <div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-radius:var(--radius-sm);padding:16px 20px;margin-top:40px;">
-      <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;"><strong style="color:#0f0f0e;">For informational purposes only.</strong> Interest calculations above use simplified models for illustration. Actual charges depend on your billing cycle, payment timing, and card issuer's calculation method. This is not financial advice. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated August 31, 2026.</p>
-    </div>
+  <main class="guide-layout">
 
-  </article>
-
-  <aside class="sidebar">
-    <div class="sidebar-card">
-      <div class="sidebar-title">Related Tools</div>
-      <a class="sidebar-tool" href="../debt-free-calculator.html">
-        <div class="sidebar-tool-icon">📅</div>
-        <div>
-          <div class="sidebar-tool-name">Debt Free Calculator</div>
-          <div class="sidebar-tool-desc">Your exact payoff date</div>
+    <!-- LEFT SIDEBAR / MOBILE TOP BAR -->
+    <aside class="sidebar">
+      <div class="author-block">
+        <div class="author-avatar">E</div>
+        <div class="author-info">
+          <strong>Written by Enos</strong>
+          ClearlyCheck Editor<br>
+          Updated Sep 3, 2026
         </div>
-      </a>
-      <a class="sidebar-tool" href="../compound-interest-calculator.html">
-        <div class="sidebar-tool-icon">📈</div>
-        <div>
-          <div class="sidebar-tool-name">Compound Interest</div>
-          <div class="sidebar-tool-desc">See how savings grow over time</div>
-        </div>
-      </a>
-      <a class="sidebar-tool" href="../mortgage-calculator.html">
-        <div class="sidebar-tool-icon">🏠</div>
-        <div>
-          <div class="sidebar-tool-name">Mortgage Calculator</div>
-          <div class="sidebar-tool-desc">Principal, interest &amp; amortization</div>
-        </div>
-      </a>
+      </div>
+
+      <nav class="toc">
+        <h4>In this guide</h4>
+        <ul>
+          <li><a href="#intro" class="active">The Illusion of the Number</a></li>
+          <li><a href="#what-is-apr">What APR Actually Means</a></li>
+          <li><a href="#daily-math">How Daily Interest is Calculated</a></li>
+          <li><a href="#grace-period">The Grace Period (0% Cheat Code)</a></li>
+          <li><a href="#minimum-trap">The Minimum Payment Trap</a></li>
+          <li><a href="#apr-vs-apy">APR vs APY: The Compounding Effect</a></li>
+          <li><a href="#hidden-traps">Hidden Traps: Penalty & Cash Advances</a></li>
+          <li><a href="#how-to-lower">How to Lower Your APR Today</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <article class="article-content">
+
+      <div id="intro" class="scroll-section">
+        <p>Most people know their credit card's Annual Percentage Rate (APR) the same way they know their car's
+          horsepower—as a number they've seen on a sheet of paper but don't fully understand in practical terms. The
+          critical difference is that your car's horsepower doesn't show up as a penalty charge on your monthly
+          statement. Your APR does, and it can easily cost more than your original purchases if you carry a balance long
+          enough.</p>
+
+        <p>In 2026, the average credit card APR in the United States hovers around 21.5%, with premium travel and
+          rewards cards often touching 29.99%. When interest rates are this high, debt compounds with terrifying speed.
+        </p>
+
+        <p>This comprehensive guide breaks down exactly what APR means, how credit card issuers calculate your interest
+          charge every single day, the devastating reality of the minimum payment trap, and actionable steps you can
+          take today to lower your rate.</p>
+      </div>
+
+      <h2 id="what-is-apr" class="scroll-section">What APR Actually Means</h2>
+      <p><strong>APR stands for Annual Percentage Rate.</strong> It represents the yearly cost of borrowing money on
+        your credit card, assuming you carry a balance beyond your grace period. If your card has a 22.99% APR, your
+        issuer charges the equivalent of 22.99% per year on your outstanding balance.</p>
+
+      <p>However, the key word is "annual"—but credit card interest doesn't work on an annual schedule. It accrues
+        <em>every single day</em>. To figure out what you are being charged daily, credit card issuers convert your APR
+        into a metric called the <strong>Daily Periodic Rate (DPR)</strong>.</p>
+
+      <div class="formula-box">
+        Daily Periodic Rate (DPR) = APR ÷ 365
+      </div>
+
+      <p>If your APR is 22.99%, your math looks like this: <code>22.99% ÷ 365 = 0.06298% per day</code>. That
+        microscopic daily rate doesn't sound threatening. But over 30 days on a $5,000 balance, it adds up to almost
+        $95. Over a full year, it is over $1,100 in interest alone—on a balance that never even changed.</p>
+
+      <h2 id="daily-math" class="scroll-section">How Your Monthly Interest Charge Is Calculated</h2>
+      <p>Most major credit card issuers calculate your interest using the <strong>Average Daily Balance</strong> method.
+        It is a highly precise way for banks to ensure they get paid for every single day you hold their money. Here is
+        exactly how the bank computes your monthly fee:</p>
+
+      <ol>
+        <li><strong>Track Daily Balances:</strong> They log your exact balance at the end of every day in the billing
+          cycle.</li>
+        <li><strong>Calculate the Average:</strong> They add up all those daily balances and divide by the number of
+          days in the billing cycle (usually 30 or 31) to find your Average Daily Balance.</li>
+        <li><strong>Apply the Math:</strong> They multiply that Average Daily Balance by your Daily Periodic Rate, and
+          then multiply that result by the days in the cycle.</li>
+      </ol>
+
+      <div class="callout-box">
+        <strong>Real World Example:</strong><br>
+        Let's say you hold a steady $5,000 balance for a 30-day billing cycle on a card with a 22.99% APR.<br><br>
+        • DPR: 0.0006298 (0.06298%)<br>
+        • Average Daily Balance: $5,000<br>
+        • <strong>$5,000 × 0.0006298 × 30 days = $94.47 in interest this month.</strong><br><br>
+        That is $94.47 you are paying the bank just for the privilege of owing them money, before you pay down a single
+        cent of your actual debt.
+      </div>
+
+      <h2 id="grace-period" class="scroll-section">The Grace Period: The 0% Cheat Code</h2>
+      <p>Here is the most important rule of credit cards, and the piece of information banks hope you ignore: <strong>If
+          you pay your full statement balance by the due date every single month, you pay zero interest.</strong></p>
+
+      <p>This is known as the <em>Grace Period</em>. By law, credit card issuers must give you at least 21 days between
+        the end of your billing cycle and your payment due date. If you pay the balance in full, your APR is completely
+        irrelevant. It could be 5% or 500%; you will never pay a dime in interest.</p>
+
+      <p><strong>The Trailing Interest Trap:</strong> If you leave even $1 unpaid on your statement balance, you lose
+        the grace period. Not just for that $1, but for <em>all new purchases</em> you make moving forward. Once you
+        carry a balance, interest begins accruing on new purchases the exact day you swipe the card. To regain your
+        grace period, you typically have to pay your balance in full for two consecutive billing cycles.</p>
+
+      <h2 id="minimum-trap" class="scroll-section">The Minimum Payment Trap: Real Numbers</h2>
+      <p>Credit card minimum payments are mathematically designed by banks to keep you in debt as long as legally
+        possible while maintaining the illusion of manageable monthly payments. Minimums are usually calculated as 1% to
+        3% of your total balance, plus interest and fees, or a flat $25—whichever is higher.</p>
+
+      <p>Let's look at the devastating reality of making only minimum payments on a $5,000 balance at 22.99% APR.</p>
+
+      <div class="article-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Monthly Payment</th>
+              <th>Time to Pay Off</th>
+              <th>Total Interest Paid</th>
+              <th>Total Out of Pocket</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Minimum Only (~$125 decreasing)</td>
+              <td class="danger-text">124 Months (10+ Years)</td>
+              <td class="danger-text">$5,340</td>
+              <td class="danger-text">$10,340</td>
+            </tr>
+            <tr>
+              <td>$150 Fixed Payment</td>
+              <td>49 Months (4 Years)</td>
+              <td>$2,260</td>
+              <td>$7,260</td>
+            </tr>
+            <tr>
+              <td>$250 Fixed Payment</td>
+              <td>26 Months (2.1 Years)</td>
+              <td>$1,270</td>
+              <td>$6,270</td>
+            </tr>
+            <tr>
+              <td>$400 Fixed Payment</td>
+              <td class="success-text">15 Months (1.2 Years)</td>
+              <td class="success-text">$680</td>
+              <td class="success-text">$5,680</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>If you only pay the minimum, you will spend over a decade paying back a $5,000 balance, and you will pay more
+        in interest ($5,340) than the original debt itself. By simply fixing your payment at $250 a month, you shave
+        eight years off your timeline and save over $4,000.</p>
+
+      <h2 id="apr-vs-apy" class="scroll-section">APR vs APY: The Compounding Effect</h2>
+      <p>You may see APY (Annual Percentage Yield) mentioned in financial literature. The distinction is vital for
+        understanding long-term debt:</p>
+
+      <ul>
+        <li><strong>APR (Annual Percentage Rate)</strong> is the stated annual rate, without accounting for compounding.
+        </li>
+        <li><strong>APY (Annual Percentage Yield)</strong> reflects the true yearly cost after daily compounding is
+          applied.</li>
+      </ul>
+
+      <p>Because credit card interest compounds daily (meaning tomorrow, you pay interest on the interest that accrued
+        today), the true annual cost of your card is higher than the stated APR. A 22.99% APR credit card actually has
+        an effective APY of approximately <strong>25.77%</strong>. The longer you hold the debt, the more aggressive the
+        compounding becomes.</p>
+
+      <h2 id="hidden-traps" class="scroll-section">Hidden Traps: Penalty Rates and Cash Advances</h2>
+      <p>Not all APRs on your credit card are the same. Your card agreement actually contains multiple APRs for
+        different actions:</p>
+
+      <ul>
+        <li><strong>Purchase APR:</strong> The standard rate for buying groceries, gas, and retail items.</li>
+        <li><strong>Cash Advance APR:</strong> If you use your credit card at an ATM to withdraw cash, the interest rate
+          is usually much higher (often 29.99%). Worse, <em>there is no grace period for cash advances</em>. Interest
+          begins compounding the second the ATM dispenses the money.</li>
+        <li><strong>Penalty APR:</strong> If you miss a minimum payment by more than 60 days, your issuer can legally
+          trigger a Penalty APR, rocketing your rate up to 29.99% indefinitely on your entire balance.</li>
+      </ul>
+
+      <h2 id="how-to-lower" class="scroll-section">How to Lower Your APR Today</h2>
+      <p>If you are drowning in a 25% APR, you are not powerless. Here are three immediate actions you can take to lower
+        your rate:</p>
+
+      <ol>
+        <li><strong>Call and Ask:</strong> It sounds too simple, but it works. Call the number on the back of your card.
+          Use this script: <em>"I've been a loyal customer for X years and have a strong history of on-time payments.
+            However, my APR of 24% is too high, and I've received balance transfer offers from competitors. Are you able
+            to lower my standard purchase APR today so I can keep my balance here?"</em> Studies show over 70% of people
+          who ask receive a reduction.</li>
+        <li><strong>0% Balance Transfer Cards:</strong> If your credit score is above 670, you can apply for a balance
+          transfer card. These cards offer 0% APR for 12 to 21 months. You move your high-interest debt to the new card,
+          paying a 3% to 5% transfer fee, and attack the principal with zero interest slowing you down.</li>
+        <li><strong>Debt Consolidation Loans:</strong> Take out a fixed-rate personal loan (often 8% to 12% depending on
+          credit) and use the cash to completely pay off your 25% credit cards. You now only have one fixed, much
+          cheaper monthly payment.</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Stop Guessing. See Your Exact Numbers.</h3>
+        <p>Don't let the banks win through confusion. Enter your credit card balance, current APR, and monthly payment
+          into our free debt calculator to see your exact payoff date and total interest cost.</p>
+        <a class="btn-cta" href="../debt-free-calculator.html">Launch Debt Free Calculator →</a>
+      </div>
+
+      <h2 id="faq" class="scroll-section">Frequently Asked Questions</h2>
+      <div class="faq-wrapper">
+        <details class="faq-item" name="faq-accordion">
+          <summary>Is a 24% APR bad for a credit card?</summary>
+          <div class="faq-content">In 2026, the national average is around 21.5%. While 24% is common for premium
+            rewards cards or store credit cards, it is still exceptionally high for carrying long-term debt. Any APR
+            over 20% makes it mathematically difficult to pay off large balances efficiently.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Does my credit score affect my APR?</summary>
+          <div class="faq-content">Yes. When you apply for a card, the issuer advertises a range (e.g., 17.99% -
+            29.99%). If you have an excellent credit score (740+), you will receive the lower end of the range. If you
+            have fair credit (650), you will receive the highest APR.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Why did my credit card APR suddenly go up?</summary>
+          <div class="faq-content">Most credit cards have "Variable APRs" tied to the U.S. Prime Rate. When the Federal
+            Reserve raises interest rates to combat inflation, your credit card APR automatically increases within a
+            billing cycle or two. Alternatively, if you were 60 days late on a payment, you may have triggered a Penalty
+            APR.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What is a 0% introductory APR?</summary>
+          <div class="faq-content">A 0% intro APR is a promotional interest rate offered to new cardholders, usually
+            lasting between 6 and 21 months. During this period, you pay no interest on new purchases (and sometimes
+            balance transfers). However, once the promotional period ends, any remaining balance will be subject to the
+            standard, much higher APR.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What is a Penalty APR?</summary>
+          <div class="faq-content">A penalty APR is a significantly higher interest rate (often up to 29.99%) that a
+            credit card issuer can apply to your account if you violate the terms of your agreement, most commonly by
+            missing a payment by 60 days or more. It can take six months of consecutive on-time payments to have the
+            penalty APR removed.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Do cash advances have a different APR?</summary>
+          <div class="faq-content">Yes. Using your credit card to get cash from an ATM triggers a Cash Advance APR. This
+            rate is usually much higher than your standard purchase APR, and more importantly, there is no grace period.
+            Interest begins compounding the exact day you withdraw the cash.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>How can I completely avoid paying APR?</summary>
+          <div class="faq-content">By paying your "Statement Balance" in full, on or before your due date, every single
+            month. By doing this, you utilize the 21-day grace period, meaning the bank loans you money for a month
+            completely free of charge.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What is trailing interest or residual interest?</summary>
+          <div class="faq-content">If you carry a balance from month to month, interest accrues daily. If you decide to
+            finally pay your balance in full on the 15th of the month, the bank will still generate a bill next month
+            for the interest that accrued between the 1st and the 15th. This leftover charge is called trailing
+            interest.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What is "Deferred Interest" on store credit cards?</summary>
+          <div class="faq-content">Many retail store credit cards offer "0% interest if paid in full within 12 months."
+            This is a deferred interest promotion. If you leave even $1 unpaid when the 12 months end, the bank will
+            retroactively charge you all the interest that would have accrued over the entire year from the original
+            purchase date.</div>
+        </details>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-copy">
+      <span>© 2026 ClearlyCheck</span>
+      <a href="../about.html">About</a>
+      <a href="../sitemap.html">Sitemap</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms-of-use.html">Term of use</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
     </div>
+  </footer>
 
-    <div class="sidebar-card">
-      <div class="sidebar-title">More Guides</div>
-      <a class="sidebar-guide" href="debt-snowball-vs-avalanche.html">
-        <div class="sidebar-guide-title">Debt Snowball vs. Avalanche</div>
-        <div class="sidebar-guide-meta">7 min read · Debt Strategy</div>
-      </a>
-      <a class="sidebar-guide" href="how-to-calculate-debt-free-date.html">
-        <div class="sidebar-guide-title">How to Calculate Your Debt-Free Date</div>
-        <div class="sidebar-guide-meta">8 min read · Debt Payoff</div>
-      </a>
-    </div>
-  </aside>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="/guides/">Guides</a> · <a href="/about.html">About</a> · <a href="/sitemap.html">Sitemap</a> · <a href="/contact.html">Contact</a> · <a href="/terms-of-use.html">Terms of Use</a> · <a href="/privacy-policy.html">Privacy Policy</a></p>
-  </div>
-</footer>
-
-<script>
-  document.querySelectorAll('.faq-q').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var answer = btn.nextElementSibling;
-      var isOpen = btn.classList.contains('open');
-      document.querySelectorAll('.faq-q.open').forEach(function(b) {
-        b.classList.remove('open');
-        if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+  <script>
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(faq => {
+      faq.addEventListener('toggle', () => {
+        if (faq.open) {
+          faqItems.forEach(otherFaq => {
+            if (otherFaq !== faq) {
+              otherFaq.removeAttribute('open');
+            }
+          });
+        }
       });
-      if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
     });
-  });
-</script>
 
+    // ScrollSpy Logic for Table of Contents
+    const sections = document.querySelectorAll('.scroll-section');
+    const navLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        // Adjust offset trigger to account for sticky header
+        if (window.scrollY >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

@@ -1,600 +1,1096 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Calculate Your Debt-Free Date (The Formula, Explained) | ClearlyCheck</title>
-<meta name="description" content="Learn exactly how to calculate your debt-free date using the amortization formula. Worked step-by-step example with a $12,000 balance, plus what happens when you pay $100 more per month.">
-<meta name="keywords" content="how to calculate debt free date, amortization formula explained, debt payoff calculation, how long to pay off debt calculator, loan payoff formula, how to calculate loan payoff date, debt free date formula">
-<link rel="canonical" href="https://clearlycheck.com/guides/how-to-calculate-debt-free-date.html">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How to Calculate Your Debt-Free Date (The Formula, Explained)">
-<meta property="og:description" content="We walk through the amortization formula step-by-step on a $12,000 example. See exactly how the math works — and what paying $100 more per month actually saves.">
-<meta property="og:url" content="https://clearlycheck.com/guides/how-to-calculate-debt-free-date.html">
-<meta property="og:site_name" content="ClearlyCheck">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Calculate Your Debt-Free Date (The Formula, Explained)",
-  "description": "A step-by-step walkthrough of the loan amortization formula with a full worked example on a $12,000 debt at 19% APR.",
-  "url": "https://clearlycheck.com/guides/how-to-calculate-debt-free-date.html",
-  "mainEntityOfPage": "https://clearlycheck.com/guides/how-to-calculate-debt-free-date.html",
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-08-31",
-  "author": {
-    "@type": "Person",
-    "@id": "https://clearlycheck.com/#enos",
-    "name": "Enos"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://clearlycheck.com/#organization",
-    "name": "ClearlyCheck",
-    "url": "https://clearlycheck.com",
-    "logo": {"@type": "ImageObject", "url": "https://clearlycheck.com/assets/og-image.svg"}
-  },
-  "isPartOf": {"@type": "WebSite", "name": "ClearlyCheck", "url": "https://clearlycheck.com"}
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://clearlycheck.com"},
-    {"@type":"ListItem","position":2,"name":"Guides","item":"https://clearlycheck.com/guides/"},
-    {"@type":"ListItem","position":3,"name":"How to Calculate Your Debt-Free Date","item":"https://clearlycheck.com/guides/how-to-calculate-debt-free-date.html"}
-  ]
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the formula to calculate debt payoff time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The formula is: n = -ln(1 - (r × P) / M) / ln(1 + r), where P is the current balance, r is the monthly interest rate (annual rate ÷ 12), M is the monthly payment, and n is the number of months to payoff. For example, on a $12,000 balance at 19% APR paying $300/month: r = 19%/12 = 1.583%, n = -ln(1 - (0.01583 × 12000)/300) / ln(1.01583) ≈ 64 months."
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Your Debt-Free Date (The Formula, Explained) | ClearlyCheck</title>
+  <meta name="description"
+    content="Learn exactly how to calculate your debt-free date using the amortization formula. Worked step-by-step example with a $12,000 balance, plus the math behind extra payments.">
+  <meta name="keywords"
+    content="how to calculate debt free date, amortization formula explained, debt payoff calculation, how long to pay off debt calculator, loan payoff formula, debt free date formula, negative amortization">
+  <link rel="canonical" href="https://clearlycheck.com/guides/how-to-calculate-debt-free-date.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Calculate Your Debt-Free Date (The Formula, Explained)",
+    "url": "https://clearlycheck.com/guides/how-to-calculate-debt-free-date.html",
+    "author": { "@type": "Person", "name": "Enos" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    :root {
+      --bg: #f8f7f4;
+      --bg-card: #ffffff;
+      --text: #0f0f0e;
+      --text-muted: #2b2a28;
+      --text-light: #5e5c58;
+      --border: rgba(15, 15, 14, 0.10);
+      --border-hover: rgba(15, 15, 14, 0.20);
+      --accent: #1a6b4a;
+      --accent-light: #e8f5ef;
+      --accent-dark: #145a3d;
+      --danger: #c0392b;
+      --danger-light: #fdf0ef;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    /* Layout */
+    .page-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 24px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .guide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--text);
+      max-width: 800px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 700px;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    .guide-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 24px 80px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .author-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .author-info strong {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+      font-size: 14px;
+    }
+
+    .toc h4 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .toc ul {
+      list-style: none;
+      border-left: 2px solid var(--border);
+    }
+
+    .toc li {
+      margin-bottom: 12px;
+    }
+
+    .toc a {
+      display: block;
+      padding-left: 16px;
+      font-size: 14px;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.2s;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    .toc a::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: transparent;
+      transition: background 0.2s;
+    }
+
+    .toc a:hover::before {
+      background: var(--border-hover);
+    }
+
+    /* ScrollSpy Active State */
+    .toc a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .toc a.active::before {
+      background: var(--accent);
+    }
+
+    /* Article Content */
+    .article-content {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .article-content p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .article-content h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-top: 56px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 100px;
+    }
+
+    .article-content h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      padding-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    .article-content li {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .article-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .callout-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 32px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .callout-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .formula-box {
+      font-family: 'Roboto', monospace;
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.9;
+      margin: 24px 0;
+      font-weight: 600;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    /* Numbered Step Blocks */
+    .steps {
+      counter-reset: step-counter;
+      margin: 32px 0;
+    }
+
+    .step-block {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 56px;
+      margin-bottom: 32px;
+    }
+
+    .step-block::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .step-block h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .step-block p {
+      margin-bottom: 12px;
+    }
+
+    .step-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Responsive Tables */
+    .article-table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    .article-content th,
+    .article-content td {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .article-content th {
+      background: rgba(248, 247, 244, 0.5);
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .article-content tr:last-child td {
+      border-bottom: none;
+    }
+
+    .danger-text {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .success-text {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .muted-text {
+      color: var(--text-light);
+    }
+
+    /* FAQ */
+    .faq-wrapper {
+      margin-top: 24px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      margin-bottom: 0;
+      background: transparent;
+    }
+
+    .faq-item summary {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      padding: 20px 0;
+      cursor: pointer;
+      list-style: none;
+      transition: color 0.15s ease-in-out;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item[open] summary {
+      color: var(--accent);
+    }
+
+    .faq-content {
+      padding: 0 0 24px 0;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: var(--text);
+      color: white;
+      border-radius: var(--radius-sm);
+      padding: 48px 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      margin-top: 0;
+      border: none;
+    }
+
+    .cta-box p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.15s;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .btn-cta:hover {
+      background: var(--accent-dark);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 14px;
+      color: var(--text-light);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-copy a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .footer-copy a:hover {
+      color: var(--text);
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 900px) {
+      .guide-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 16px 16px 60px;
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I calculate total interest paid on a loan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Total interest = (Monthly Payment × Number of Months) − Original Balance. For example, if you pay $300/month for 64 months on a $12,000 balance: total paid = $300 × 64 = $19,200, total interest = $19,200 − $12,000 = $7,200."
+
+      .sidebar {
+        position: static;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 24px;
       }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens to my payoff date if I pay extra each month?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Extra payments reduce your balance faster, which reduces the interest that accrues next month, which means more of your next payment goes to principal — compounding the benefit. On our $12,000 example at 19% APR, increasing from $300 to $400/month cuts the payoff from 64 months to 41 months (saving 23 months) and reduces total interest from $7,200 to $4,400 (saving $2,800)."
+
+      .page-header {
+        padding: 40px 16px 16px;
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does my balance seem to barely drop in the early months?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "This is how amortization works: in the early months, your balance is highest, so the interest charge is highest, and most of your payment goes to interest rather than principal. As the balance drops month by month, the interest portion shrinks and the principal portion grows. This is why the last few months of a loan feel much faster than the first few."
+
+      .author-block {
+        margin-bottom: 24px;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .toc ul {
+        border-left: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .toc a {
+        padding-left: 0;
+        border-left: none;
+      }
+
+      .toc a::before {
+        display: none;
+      }
+
+      .toc a.active {
+        padding-left: 12px;
+        border-left: 2px solid var(--accent);
       }
     }
-  ]
-}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/css/base.css">
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg: #f8f7f4;
-    --bg-card: #ffffff;
-    --text: #0f0f0e;
-    --text-muted: #2b2a28;
-    --text-light: #6b6a66;
-    --border: rgba(15,15,14,0.10);
-    --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a;
-    --accent-light: #e8f5ef;
-    --accent-hover: #145a3d;
-    --radius: 16px;
-    --radius-sm: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
-  }
+    @media (max-width: 500px) {
+      .cta-box {
+        padding: 32px 20px;
+      }
 
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+      .btn-cta {
+        width: 100%;
+      }
 
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
-  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
-  .logo span { color: var(--accent); }
-  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
-  .back-link:hover { color: var(--text); }
-  .back-link svg { width: 16px; height: 16px; }
+      .article-content p,
+      .article-content li {
+        font-size: 16px;
+      }
 
-  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 36px; }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; flex-wrap: wrap; }
-  .breadcrumb a { color: var(--text-light); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .breadcrumb span { color: var(--border-hover); }
-  .article-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #1a4fa0; background: #e8f0fe; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
-  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1.2px; line-height: 1.15; color: var(--text); margin-bottom: 14px; }
-  .page-header .lead { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 640px; line-height: 1.7; }
-  .page-meta { font-size: 13px; color: var(--text-light); margin-top: 20px; }
-  .page-meta a { color: var(--text-light); text-decoration: none; }
+      .step-block {
+        padding-left: 48px;
+      }
 
-  .content-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
-
-  article h2 { font-family: 'Roboto', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; margin: 36px 0 12px; line-height: 1.3; }
-  article h2:first-child { margin-top: 0; }
-  article h3 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin: 26px 0 10px; }
-  article p { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 16px; }
-  article p:last-child { margin-bottom: 0; }
-  article strong { color: var(--text); font-weight: 600; }
-  article ul, article ol { padding-left: 22px; margin-bottom: 16px; }
-  article li { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 6px; }
-  article li strong { color: var(--text); }
-  article a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  article a:hover { text-decoration: underline; }
-
-  .example-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 22px 24px; margin: 24px 0; }
-  .example-box .ex-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
-  .example-box p { margin-bottom: 8px; font-size: 15px; }
-  .example-box p:last-child { margin-bottom: 0; }
-
-  .formula-box { font-family: 'Roboto', monospace; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 24px; font-size: 14px; color: var(--text); line-height: 2; margin: 20px 0; overflow-x: auto; }
-
-  .step-block { counter-increment: step-counter; position: relative; padding-left: 52px; margin-bottom: 28px; }
-  .step-block::before { content: counter(step-counter); position: absolute; left: 0; top: 2px; width: 36px; height: 36px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 15px; }
-  .steps { counter-reset: step-counter; margin: 24px 0; }
-  .step-block h3 { font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin: 0 0 8px; }
-  .step-block p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; font-weight: 300; }
-
-  .data-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius-sm); border: 1px solid var(--border); }
-  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  .data-table th { background: var(--bg); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
-  .data-table td { padding: 12px 16px; color: var(--text-muted); border-bottom: 1px solid var(--border); font-weight: 300; }
-  .data-table tr:last-child td { border-bottom: none; }
-  .data-table tr:hover td { background: var(--bg); }
-  .data-table .num { font-family: 'Roboto', sans-serif; font-weight: 600; color: var(--text); }
-  .data-table .accent { color: var(--accent); font-weight: 600; }
-  .data-table .muted { color: var(--text-light); }
-
-  .key-takeaway { background: var(--accent-light); border: 1px solid rgba(26,107,74,0.2); border-radius: var(--radius-sm); padding: 20px 24px; margin: 28px 0; }
-  .key-takeaway .kt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
-  .key-takeaway p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.7; font-weight: 400; }
-  .key-takeaway strong { color: var(--text); }
-
-  .cta-box { background: #0f0f0e; border-radius: var(--radius-sm); padding: 24px 28px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .cta-box p { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 300; margin: 0; line-height: 1.6; }
-  .cta-box strong { color: #fff; }
-  .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; padding: 11px 20px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.18s; white-space: nowrap; flex-shrink: 0; }
-  .btn-cta:hover { background: var(--accent-hover); transform: translateY(-1px); text-decoration: none; }
-
-  .faq-section { margin-top: 40px; }
-  .faq-section h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
-  .faq-item { border-bottom: 1px solid var(--border); }
-  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: none; border: none; text-align: left; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); cursor: pointer; transition: color 0.15s; }
-  .faq-q:hover { color: var(--accent); }
-  .faq-icon { font-size: 18px; color: var(--text-light); flex-shrink: 0; transition: transform 0.2s; }
-  .faq-q.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
-  .faq-a { display: none; padding: 0 0 16px; font-size: 15px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
-  .faq-a.open { display: block; }
-
-  .sidebar { display: flex; flex-direction: column; gap: 20px; }
-  .sidebar-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-  .sidebar-title { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
-  .sidebar-tool { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: all 0.15s; }
-  .sidebar-tool:last-child { border-bottom: none; padding-bottom: 0; }
-  .sidebar-tool:hover .sidebar-tool-name { color: var(--accent); }
-  .sidebar-tool-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-  .sidebar-tool-name { font-size: 13px; font-weight: 500; color: var(--text); }
-  .sidebar-tool-desc { font-size: 12px; color: var(--text-light); font-weight: 300; margin-top: 2px; }
-  .sidebar-guide { display: block; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; }
-  .sidebar-guide:last-child { border-bottom: none; padding-bottom: 0; }
-  .sidebar-guide-title { font-size: 13px; font-weight: 500; color: var(--text); transition: color 0.15s; line-height: 1.4; }
-  .sidebar-guide:hover .sidebar-guide-title { color: var(--accent); }
-  .sidebar-guide-meta { font-size: 11px; color: var(--text-light); margin-top: 3px; }
-
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: var(--text-light); }
-  .footer-copy a { color: var(--text-light); text-decoration: none; }
-
-  @media (max-width: 860px) {
-    .content-layout { grid-template-columns: 1fr; gap: 32px; }
-    .sidebar { order: -1; }
-  }
-  @media (max-width: 600px) {
-    .page-header { padding: 36px 20px 28px; }
-    .content-layout { padding: 0 20px 60px; }
-    .cta-box { flex-direction: column; align-items: flex-start; }
-    .step-block { padding-left: 44px; }
-    .step-block::before { width: 30px; height: 30px; font-size: 13px; }
-  }
-</style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+      .step-block::before {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="/">Clearly<span>Check</span></a>
-    <a class="back-link" href="/guides/">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      All Guides
-    </a>
-  </div>
-</nav>
-
-<div class="page-header">
-  <nav aria-label="breadcrumb">
-    <div class="breadcrumb">
-      <a href="/">Home</a>
-      <span>›</span>
-      <a href="/guides/">Guides</a>
-      <span>›</span>
-      <span>How to Calculate Your Debt-Free Date</span>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../">Clearly<span>Check</span></a>
+      <a class="back-link" href="./">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l-4 4m-4 4h18" />
+        </svg>
+        All Guides
+      </a>
     </div>
   </nav>
-  <div class="article-tag">Debt Payoff</div>
-  <h1>How to Calculate Your Debt-Free Date (The Formula, Explained)</h1>
-  <p class="lead">Three inputs. One formula. Your exact payoff date. We walk through the amortization math step by step — and show what adding $100/month really saves.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated August 31, 2026 · 8 min read</div>
-</div>
 
-<div class="content-layout">
-  <article>
-
-    <p>Most people know roughly how much debt they have. Very few know exactly when they'll be free of it — or what it's actually going to cost them in total. The answer lives inside a formula that looks intimidating but is really just arithmetic once you understand what each piece means.</p>
-
-    <p>This guide walks through the <strong>loan amortization formula</strong> step by step on a real $12,000 example, shows you the early months of the payment schedule in detail, and demonstrates exactly how adding $100/month to your payment changes everything. By the end, you'll understand precisely how the math works — and have a link to do it in two seconds instead of twenty minutes.</p>
-
-    <h2>The Three Numbers You Need</h2>
-
-    <p>To calculate your debt-free date, you only need three pieces of information:</p>
-
-    <ol>
-      <li><strong>P — Your current balance</strong> (the amount you owe right now)</li>
-      <li><strong>r — Your monthly interest rate</strong> (your annual APR divided by 12)</li>
-      <li><strong>M — Your monthly payment</strong> (the fixed amount you pay each month)</li>
-    </ol>
-
-    <p>One critical constraint: your monthly payment must be greater than the monthly interest charge. If it isn't, your balance grows every month and you'll never pay it off. We'll come back to this.</p>
-
-    <h2>The Formula</h2>
-
-    <p>The standard loan amortization formula calculates <strong>n</strong>, the number of months until the balance reaches zero:</p>
-
-    <div class="formula-box">n = −ln(1 − (r × P) / M) / ln(1 + r)
-
-Where:
-  P = current balance
-  r = monthly interest rate (APR ÷ 12, as a decimal)
-  M = monthly payment
-  n = number of months to payoff
-  ln = natural logarithm</div>
-
-    <p>If the term "natural logarithm" makes you want to close the tab — don't. You don't need to calculate it by hand. We'll walk through the numbers on a real example, and then show you how to get the answer in two seconds using our calculator.</p>
-
-    <div class="cta-box">
-      <p><strong>Skip the manual math.</strong> Our free Debt Free Calculator does all of this instantly — enter three numbers and get your exact payoff date.</p>
-      <a class="btn-cta" href="../debt-free-calculator.html">Get My Payoff Date →</a>
-    </div>
-
-    <h2>Step-by-Step: The $12,000 Example</h2>
-
-    <p>Let's say you have a personal loan or credit card with these details:</p>
-
-    <div class="example-box">
-      <div class="ex-label">The Scenario</div>
-      <p><strong>Balance (P):</strong> $12,000</p>
-      <p><strong>Annual interest rate (APR):</strong> 19%</p>
-      <p><strong>Monthly payment (M):</strong> $300</p>
-    </div>
-
-    <div class="steps">
-      <div class="step-block">
-        <h3>Convert APR to monthly rate</h3>
-        <p>Divide the annual rate by 12 to get r: 19% ÷ 12 = 1.5833% per month = 0.015833 as a decimal.</p>
+  <header class="page-header">
+    <nav aria-label="breadcrumb">
+      <div class="breadcrumb">
+        <a href="../">Home</a><span>›</span>
+        <a href="./">Guides</a><span>›</span>
+        <span style="color:var(--text-muted);">How to Calculate Your Debt-Free Date</span>
       </div>
+    </nav>
+    <div class="guide-tag">Debt Payoff</div>
+    <h1>How to Calculate Your Debt-Free Date (The Formula, Explained)</h1>
+    <p class="lead">Three inputs. One formula. Your exact payoff date. We walk through the amortization math
+      step-by-step—and show you what adding just $100 a month to your payment actually saves.</p>
+  </header>
 
-      <div class="step-block">
-        <h3>Check that the payment covers the interest</h3>
-        <p>Monthly interest in Month 1: $12,000 × 0.015833 = $190.00. Your $300 payment covers this with $110 left over to reduce the balance. Good — you'll make progress every month.</p>
-      </div>
+  <main class="guide-layout">
 
-      <div class="step-block">
-        <h3>Plug into the formula</h3>
-        <p>n = −ln(1 − (0.015833 × 12,000) / 300) / ln(1 + 0.015833)</p>
-        <p>n = −ln(1 − 190.00 / 300) / ln(1.015833)</p>
-        <p>n = −ln(1 − 0.6333) / ln(1.015833)</p>
-        <p>n = −ln(0.3667) / 0.015709</p>
-        <p>n = −(−1.0030) / 0.015709</p>
-        <p>n = 1.0030 / 0.015709 ≈ <strong>63.9 months → round up to 64 months</strong></p>
-      </div>
-
-      <div class="step-block">
-        <h3>Convert months to years and months</h3>
-        <p>64 months = 5 years and 4 months. If you start paying today (September 2026), your debt-free date is approximately January 2032.</p>
-      </div>
-
-      <div class="step-block">
-        <h3>Calculate total interest paid</h3>
-        <p>Total paid = monthly payment × number of months = $300 × 64 = $19,200. Total interest = $19,200 − $12,000 = <strong>$7,200 in interest</strong> on top of your $12,000 balance.</p>
-      </div>
-    </div>
-
-    <div class="key-takeaway">
-      <div class="kt-label">Result: $300/month payment</div>
-      <p>Payoff: <strong>64 months (5 years, 4 months)</strong> · Total interest: <strong>$7,200</strong> · Total paid: <strong>$19,200</strong></p>
-    </div>
-
-    <h2>How the Balance Actually Drops Month by Month</h2>
-
-    <p>It's not just about the end date — understanding the month-by-month pattern explains why your balance feels slow to move early on. Here's what the first six months of payments look like:</p>
-
-    <div class="data-table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Month</th>
-            <th>Payment</th>
-            <th>Interest Portion</th>
-            <th>Principal Portion</th>
-            <th>Remaining Balance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td class="num">$300</td>
-            <td class="muted">$190.00</td>
-            <td class="muted">$110.00</td>
-            <td class="num">$11,890.00</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td class="num">$300</td>
-            <td class="muted">$188.26</td>
-            <td class="muted">$111.74</td>
-            <td class="num">$11,778.26</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td class="num">$300</td>
-            <td class="muted">$186.49</td>
-            <td class="muted">$113.51</td>
-            <td class="num">$11,664.75</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td class="num">$300</td>
-            <td class="muted">$181.24</td>
-            <td class="muted">$118.76</td>
-            <td class="num">$11,326.83</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td class="num">$300</td>
-            <td class="muted">$171.42</td>
-            <td class="muted">$128.58</td>
-            <td class="num">$10,678.57</td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td class="num">$300</td>
-            <td class="muted">$148.60</td>
-            <td class="muted">$151.40</td>
-            <td class="num">$9,182.29</td>
-          </tr>
-          <tr>
-            <td>48</td>
-            <td class="num">$300</td>
-            <td class="muted">$84.90</td>
-            <td class="muted">$215.10</td>
-            <td class="num">$5,142.31</td>
-          </tr>
-          <tr>
-            <td>64 (final)</td>
-            <td class="accent">~$299</td>
-            <td class="muted">~$4.72</td>
-            <td class="accent">~$294</td>
-            <td class="accent">$0</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p>Notice how in Month 1, <strong>63% of your payment goes to interest</strong> ($190 out of $300). By Month 48, the split has flipped — now 72% goes to principal. This is why the final months of any loan feel so much faster: each payment makes a much bigger dent in the balance.</p>
-
-    <h2>What Adding $100/Month Does</h2>
-
-    <p>Now let's run the same scenario but with $400/month instead of $300. Same formula, same balance, same rate — just one number changes.</p>
-
-    <div class="example-box">
-      <div class="ex-label">Same Loan, $400/Month Payment</div>
-      <p>r = 0.015833, P = $12,000, M = $400</p>
-      <p>n = −ln(1 − (0.015833 × 12,000) / 400) / ln(1.015833)</p>
-      <p>n = −ln(1 − 190.00 / 400) / ln(1.015833)</p>
-      <p>n = −ln(1 − 0.475) / 0.015709</p>
-      <p>n = −ln(0.525) / 0.015709</p>
-      <p>n = −(−0.6444) / 0.015709</p>
-      <p>n = 0.6444 / 0.015709 ≈ <strong>41.0 months → 41 months</strong></p>
-    </div>
-
-    <div class="key-takeaway">
-      <div class="kt-label">Result: $400/month payment</div>
-      <p>Payoff: <strong>41 months (3 years, 5 months)</strong> · Total interest: <strong>$4,400</strong> · Total paid: <strong>$16,400</strong></p>
-    </div>
-
-    <p>Let's put those side by side:</p>
-
-    <div class="data-table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Monthly Payment</th>
-            <th>Months to Payoff</th>
-            <th>Total Interest</th>
-            <th>Total Paid</th>
-            <th>vs. $300/mo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$300/month</td>
-            <td class="num">64 months</td>
-            <td class="num">$7,200</td>
-            <td class="num">$19,200</td>
-            <td class="muted">Baseline</td>
-          </tr>
-          <tr>
-            <td>$350/month</td>
-            <td class="num">50 months</td>
-            <td class="num">$5,385</td>
-            <td class="num">$17,385</td>
-            <td class="muted">−14 months / −$1,815</td>
-          </tr>
-          <tr>
-            <td>$400/month</td>
-            <td class="accent">41 months</td>
-            <td class="accent">$4,400</td>
-            <td class="accent">$16,400</td>
-            <td class="accent">−23 months / −$2,800</td>
-          </tr>
-          <tr>
-            <td>$500/month</td>
-            <td class="accent">29 months</td>
-            <td class="accent">$2,887</td>
-            <td class="accent">$14,887</td>
-            <td class="accent">−35 months / −$4,313</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p>Adding just $100 to your monthly payment — from $300 to $400 — cuts 23 months off your timeline and saves $2,800 in interest. That $2,800 is money that would otherwise go to the lender instead of staying in your pocket.</p>
-
-    <h2>What If My Payment Barely Covers the Interest?</h2>
-
-    <p>If your monthly interest charge equals or exceeds your payment, the formula breaks down — and so does your debt payoff. On a $12,000 balance at 19% APR, the minimum payment needed just to stop the balance from growing is <strong>$190.01/month</strong>. Anything less and the debt grows indefinitely.</p>
-
-    <p>This is the danger zone for high-APR credit cards with very low minimums. If you find yourself in this situation, the most urgent move is to find any way to increase your payment above the monthly interest charge — even $20 more per month gives you forward momentum.</p>
-
-    <h2>Using the Calculator Instead of Manual Math</h2>
-
-    <p>Now that you understand what the formula is doing, you don't need to run it by hand. Our <a href="../debt-free-calculator.html">Debt Free Calculator</a> runs the full month-by-month amortization, shows you the exact payoff date as a calendar date (not just a month count), calculates your total interest, and lets you model the impact of extra payments — all instantly.</p>
-
-    <p>For people with multiple debts, the calculation becomes more complex. You might also want to pair this with our guide on <a href="debt-snowball-vs-avalanche.html">debt snowball vs. avalanche</a> to decide which debt to attack first.</p>
-
-    <div class="cta-box">
-      <p><strong>Try it with your own numbers.</strong> Enter your balance, interest rate, and monthly payment to get your exact payoff date, total interest, and a full payment schedule.</p>
-      <a class="btn-cta" href="../debt-free-calculator.html">Open Debt Calculator →</a>
-    </div>
-
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <button class="faq-q">What is the formula to calculate debt payoff time?<span class="faq-icon">+</span></button>
-        <div class="faq-a">The formula is: n = −ln(1 − (r × P) / M) / ln(1 + r), where P is the current balance, r is the monthly interest rate (APR ÷ 12 expressed as a decimal), M is the monthly payment, and n is the number of months to payoff. On a $12,000 balance at 19% APR paying $300/month, this gives approximately 64 months.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">How do I calculate the total interest I'll pay?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Total interest = (Monthly Payment × Number of Months) − Original Balance. If you pay $300/month for 64 months on a $12,000 balance: total paid = $300 × 64 = $19,200, so total interest = $19,200 − $12,000 = $7,200. Note that the last payment is usually slightly less than the standard amount, so the true total may vary by a few dollars.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Why does my balance seem to barely drop in the early months?<span class="faq-icon">+</span></button>
-        <div class="faq-a">This is how amortization works. When your balance is highest, the interest charge is highest, so most of your payment goes to interest. As the balance falls, the interest portion shrinks and more of each payment reduces the principal. On a $12,000 debt at 19% APR, 63% of your first payment goes to interest. By the final payments, nearly all of the payment goes to principal.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What happens if I make an extra payment?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Any extra payment goes entirely to principal, which reduces next month's interest charge, which means more of next month's regular payment also goes to principal — and so on. This compounding effect is why extra payments in the early months of a loan have a disproportionately large impact on the total interest paid.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Is the debt-free date calculated from today?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes — our calculator uses today's date as the starting point. If your next payment is due in two weeks rather than one month, the actual calendar date may shift slightly, but the number of months calculation is accurate based on the balance, rate, and payment you enter.</div>
-      </div>
-    </div>
-
-    <div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-radius:var(--radius-sm);padding:16px 20px;margin-top:40px;">
-      <p style="font-size:12px;color:#6b6a66;line-height:1.6;margin:0;"><strong style="color:#0f0f0e;">For informational purposes only.</strong> Calculations assume a fixed interest rate and consistent monthly payments. Actual results will differ with rate adjustments, fees, rounding, and irregular payment timing. This is not financial advice. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated August 31, 2026.</p>
-    </div>
-
-  </article>
-
-  <aside class="sidebar">
-    <div class="sidebar-card">
-      <div class="sidebar-title">Use the Calculator</div>
-      <a class="sidebar-tool" href="../debt-free-calculator.html">
-        <div class="sidebar-tool-icon">📅</div>
-        <div>
-          <div class="sidebar-tool-name">Debt Free Calculator</div>
-          <div class="sidebar-tool-desc">Your exact payoff date</div>
+    <aside class="sidebar">
+      <div class="author-block">
+        <div class="author-avatar">E</div>
+        <div class="author-info">
+          <strong>Written by Enos</strong>
+          ClearlyCheck Editor<br>
+          Updated Sep 3, 2026
         </div>
-      </a>
-      <a class="sidebar-tool" href="../mortgage-calculator.html">
-        <div class="sidebar-tool-icon">🏠</div>
-        <div>
-          <div class="sidebar-tool-name">Mortgage Calculator</div>
-          <div class="sidebar-tool-desc">Full amortization schedule</div>
+      </div>
+
+      <nav class="toc">
+        <h4>In this guide</h4>
+        <ul>
+          <li><a href="#intro" class="active">The Fog of Debt</a></li>
+          <li><a href="#variables">The Three Variables</a></li>
+          <li><a href="#formula">The Amortization Formula</a></li>
+          <li><a href="#step-by-step">Step-by-Step Math Example</a></li>
+          <li><a href="#curve">The Amortization Curve</a></li>
+          <li><a href="#extra-payments">The Power of Extra Payments</a></li>
+          <li><a href="#danger-zone">The Danger Zone: Negative Amortization</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <article class="article-content">
+
+      <div id="intro" class="scroll-section">
+        <p>Most people know roughly how much debt they have. They know they owe around $10,000 on a credit card, or
+          $20,000 on a car. But very few people know exactly when they will be completely free of it—or what that debt
+          is actually going to cost them in total interest.</p>
+
+        <p>This uncertainty creates the "fog of debt." When you don't know the exact finish line, making extra payments
+          feels like throwing a cup of water on a forest fire. You don't see the immediate impact, so you lose
+          motivation, revert to paying just the minimums, and stay in debt for years longer than necessary.</p>
+
+        <p>The cure for that fog is mathematics. The exact date you will be debt-free lives inside a standard financial
+          equation called the <strong>amortization formula</strong>. It looks intimidating on paper, but it is entirely
+          predictable. This guide walks you through the formula step-by-step on a real $12,000 example, shows you why
+          your balance barely drops in the first few months, and demonstrates exactly how adding an extra $100 a month
+          changes your entire financial timeline.</p>
+      </div>
+
+      <h2 id="variables" class="scroll-section">The Three Core Variables</h2>
+      <p>To calculate your precise debt-free date, you only need to gather three pieces of information. You can find all
+        of these on your most recent statement:</p>
+
+      <ul>
+        <li><strong>P (Principal):</strong> Your current outstanding balance.</li>
+        <li><strong>r (Monthly Interest Rate):</strong> Your Annual Percentage Rate (APR) divided by 12.</li>
+        <li><strong>M (Monthly Payment):</strong> The fixed dollar amount you plan to pay every single month.</li>
+      </ul>
+
+      <p><em>Crucial Rule:</em> Your monthly payment (M) must be greater than your monthly interest charge. If it isn't,
+        the math breaks down because your balance will grow every month instead of shrinking. We will address this
+        "Danger Zone" later in the guide.</p>
+
+      <h2 id="formula" class="scroll-section">The Amortization Formula</h2>
+      <p>The standard loan amortization formula calculates <strong>n</strong>, which represents the total number of
+        months it will take for your balance to reach exactly zero.</p>
+
+      <div class="formula-box">n = −ln(1 − (r × P) / M) / ln(1 + r)
+
+        Where:
+        P = Current principal balance
+        r = Monthly interest rate (APR ÷ 12, expressed as a decimal)
+        M = Fixed monthly payment
+        n = Number of months to payoff
+        ln = Natural logarithm function</div>
+
+      <p>If the term "natural logarithm" makes you want to close this tab—don't panic. You do not need to calculate it
+        by hand in your daily life. We are going to walk through the numbers on a real example so you understand how the
+        mechanics work. Afterward, you can simply plug your own numbers into our calculator to let the software do the
+        heavy lifting.</p>
+
+      <h2 id="step-by-step" class="scroll-section">Step-by-Step: The $12,000 Example</h2>
+      <p>Let's say you have a personal loan or a high-balance credit card with the following details. You've decided to
+        aggressively pay $300 every month until it is gone.</p>
+
+      <div class="callout-box">
+        <strong>The Scenario:</strong><br>
+        • Balance (P): $12,000<br>
+        • Annual Interest Rate (APR): 19%<br>
+        • Fixed Monthly Payment (M): $300
+      </div>
+
+      <div class="steps">
+        <div class="step-block">
+          <h3>Convert APR to a monthly rate</h3>
+          <p>The bank charges you an Annual Percentage Rate, but interest accrues monthly (or daily). Divide the annual
+            rate by 12 to get <strong>r</strong>.</p>
+          <p><code>19% ÷ 12 = 1.5833% per month</code></p>
+          <p>As a decimal for the formula, that is <strong>0.015833</strong>.</p>
         </div>
-      </a>
-      <a class="sidebar-tool" href="../net-worth-calculator.html">
-        <div class="sidebar-tool-icon">💰</div>
-        <div>
-          <div class="sidebar-tool-name">Net Worth Calculator</div>
-          <div class="sidebar-tool-desc">Assets minus all debts</div>
+
+        <div class="step-block">
+          <h3>Verify your payment beats the interest</h3>
+          <p>Before doing the complex math, make sure your payment is actually reducing the principal. Your monthly
+            interest in Month 1 is your balance multiplied by the monthly rate.</p>
+          <p><code>$12,000 × 0.015833 = $190.00</code></p>
+          <p>Your $300 payment covers the $190 interest charge, leaving $110 to reduce the actual debt. You are clear to
+            proceed.</p>
         </div>
-      </a>
+
+        <div class="step-block">
+          <h3>Plug the variables into the formula</h3>
+          <p><code>n = −ln(1 − (0.015833 × 12,000) / 300) / ln(1 + 0.015833)</code></p>
+          <p><code>n = −ln(1 − 190.00 / 300) / ln(1.015833)</code></p>
+          <p><code>n = −ln(1 − 0.6333) / ln(1.015833)</code></p>
+          <p><code>n = −ln(0.3667) / 0.015709</code></p>
+          <p><code>n = −(−1.0032) / 0.015709</code></p>
+          <p><code>n = 1.0032 / 0.015709 ≈ 63.86 months</code></p>
+          <p>Round up to <strong>64 months</strong>.</p>
+        </div>
+
+        <div class="step-block">
+          <h3>Calculate your Total Interest Paid</h3>
+          <p>Now that you know it takes 64 months, you can find the true cost of this debt. Multiply your monthly
+            payment by the total months, then subtract the original borrowed amount.</p>
+          <p><code>$300 × 64 months = $19,200 Total Paid</code></p>
+          <p><code>$19,200 − $12,000 Principal = $7,200 Total Interest</code></p>
+        </div>
+      </div>
+
+      <p>By running this formula, the fog is lifted. If you pay $300 a month on this $12,000 debt, it will take you
+        exactly <strong>5 years and 4 months</strong> to pay off, and it will cost you a staggering <strong>$7,200 in
+          interest</strong>.</p>
+
+      <h2 id="curve" class="scroll-section">The Amortization Curve: Why the Early Months Suck</h2>
+      <p>A common frustration in debt repayment is looking at your statement after six months of hard work and feeling
+        like the balance has barely moved. This is caused by the mechanics of the <strong>amortization curve</strong>.
+      </p>
+
+      <p>When your balance is at its highest (Month 1), your interest charge is also at its highest. Therefore, the vast
+        majority of your payment goes straight to the bank as profit, rather than reducing your principal. Here is what
+        the first year of our $12,000 example actually looks like behind the scenes:</p>
+
+      <div class="article-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Fixed Payment</th>
+              <th>Lost to Interest</th>
+              <th>Goes to Principal</th>
+              <th>Remaining Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>$300</td>
+              <td class="danger-text">$190.00</td>
+              <td class="muted-text">$110.00</td>
+              <td class="success-text">$11,890.00</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>$300</td>
+              <td class="danger-text">$188.26</td>
+              <td class="muted-text">$111.74</td>
+              <td class="success-text">$11,778.26</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>$300</td>
+              <td class="danger-text">$186.49</td>
+              <td class="muted-text">$113.51</td>
+              <td class="success-text">$11,664.75</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>$300</td>
+              <td class="danger-text">$181.24</td>
+              <td class="muted-text">$118.76</td>
+              <td class="success-text">$11,326.83</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>$300</td>
+              <td class="danger-text">$171.42</td>
+              <td class="muted-text">$128.58</td>
+              <td class="success-text">$10,678.57</td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>$300</td>
+              <td class="danger-text">$148.60</td>
+              <td class="muted-text">$151.40</td>
+              <td class="success-text">$9,182.29</td>
+            </tr>
+            <tr>
+              <td>48</td>
+              <td>$300</td>
+              <td class="danger-text">$84.90</td>
+              <td class="muted-text">$215.10</td>
+              <td class="success-text">$5,142.31</td>
+            </tr>
+            <tr>
+              <td>64 (Final)</td>
+              <td>~$299</td>
+              <td class="danger-text">~$4.72</td>
+              <td class="muted-text">~$294.28</td>
+              <td class="success-text">$0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Notice that in Month 1, an infuriating <strong>63% of your payment is vaporized by interest</strong>. You paid
+        $300 out of pocket, but your debt only went down by $110.</p>
+
+      <p>However, look at Month 48. The mathematics have finally flipped in your favor. Because the balance is smaller,
+        the interest charge has plummeted to $84. Now, 72% of your payment is aggressively killing the principal. This
+        is why the final few months of any loan payoff feel incredibly fast—the snowball effect has finally taken over.
+      </p>
+
+      <h2 id="extra-payments" class="scroll-section">The Power of Extra Payments ($100 changes everything)</h2>
+      <p>Because the amortization curve is so heavily weighted with interest in the beginning, any extra money you throw
+        at the debt <em>early on</em> is devastatingly effective. When you make an extra payment, 100% of it bypasses
+        interest and attacks the principal directly.</p>
+
+      <p>Let's run the exact same formula, on the exact same $12,000 balance at 19% APR. But this time, you cut a
+        subscription and do a few hours of side-hustle work to increase your payment by just $100, making it
+        <strong>$400 a month</strong>.</p>
+
+      <div class="article-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Monthly Payment</th>
+              <th>Months to Payoff</th>
+              <th>Total Interest Paid</th>
+              <th>Total Out of Pocket</th>
+              <th>Net Savings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$300 / month</td>
+              <td>64 months (5.3 yrs)</td>
+              <td>$7,200</td>
+              <td>$19,200</td>
+              <td class="muted-text">Baseline</td>
+            </tr>
+            <tr>
+              <td>$350 / month</td>
+              <td>50 months (4.1 yrs)</td>
+              <td>$5,385</td>
+              <td>$17,385</td>
+              <td class="success-text">Saved 14 mos / $1,815</td>
+            </tr>
+            <tr>
+              <td>$400 / month</td>
+              <td class="success-text">41 months (3.4 yrs)</td>
+              <td class="success-text">$4,400</td>
+              <td class="success-text">$16,400</td>
+              <td class="success-text">Saved 23 mos / $2,800</td>
+            </tr>
+            <tr>
+              <td>$500 / month</td>
+              <td class="success-text">29 months (2.4 yrs)</td>
+              <td class="success-text">$2,887</td>
+              <td class="success-text">$14,887</td>
+              <td class="success-text">Saved 35 mos / $4,313</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>By simply adding $100 to your monthly payment, you cut almost <strong>two full years</strong> off your
+        repayment timeline. More importantly, you keep <strong>$2,800 of your hard-earned money</strong> instead of
+        handing it to the bank as interest.</p>
+
+      <h2 id="danger-zone" class="scroll-section">The Danger Zone: Negative Amortization</h2>
+      <p>What happens if your monthly payment doesn't cover the monthly interest charge? This is a catastrophic
+        financial state known as <strong>negative amortization</strong>.</p>
+
+      <p>Going back to our $12,000 example at 19% APR, the interest charge for the very first month is $190.00. If you
+        experience a financial hardship and only pay $150 that month, the remaining $40 in interest doesn't just
+        disappear. It is added to your principal.</p>
+
+      <p>Next month, your balance isn't $12,000 anymore; it is $12,040. Because your balance is higher, next month's
+        interest charge will be higher, too. If you continue making payments that fall short of the interest charge,
+        your debt will mathematically grow forever until you default.</p>
+
+      <p>This is precisely why minimum payments on credit cards are so dangerous. Banks usually set minimums just barely
+        above the interest charge (often interest + 1% of the principal), ensuring you stay trapped in the amortization
+        curve for a decade or more.</p>
+
+      <div class="cta-box">
+        <h3>Skip the Manual Math. Get Your Date Instantly.</h3>
+        <p>You don't need to break out a scientific calculator to run natural logarithms. Enter your current balance,
+          interest rate, and monthly payment into our free tool to generate your exact payoff calendar and interest
+          savings instantly.</p>
+        <a class="btn-cta" href="../debt-free-calculator.html">Launch Debt Free Calculator →</a>
+      </div>
+
+      <h2 id="faq" class="scroll-section">Frequently Asked Questions</h2>
+      <div class="faq-wrapper">
+        <details class="faq-item" name="faq-accordion">
+          <summary>What is the exact formula to calculate debt payoff time?</summary>
+          <div class="faq-content">The formula is: <code>n = −ln(1 − (r × P) / M) / ln(1 + r)</code>. P is the current
+            balance, r is the monthly interest rate (annual rate ÷ 12), M is your monthly payment, and n is the number
+            of months until the balance hits zero.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>How do I calculate the total interest I will pay?</summary>
+          <div class="faq-content">First, multiply your monthly payment by the total number of months it takes to pay
+            off the loan. This gives you your "Total Paid." Next, subtract your original starting balance from that
+            Total Paid amount. The difference is the total interest the bank collected.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Do bi-weekly payments change my payoff date?</summary>
+          <div class="faq-content">Yes, significantly. If you pay half your monthly payment every two weeks, you end up
+            making 26 half-payments a year, which equals 13 full monthly payments instead of 12. This "stealth" extra
+            payment accelerates your amortization curve and shaves months off your timeline.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Why does my balance seem to barely drop in the early months?</summary>
+          <div class="faq-content">This is a standard feature of the amortization curve. When your balance is high, the
+            interest charge generated on that balance is also high. In the first few months, the vast majority of your
+            fixed monthly payment goes toward satisfying that interest charge, leaving only a tiny sliver to reduce the
+            actual principal.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What happens to the formula if I miss a payment?</summary>
+          <div class="faq-content">If you miss a payment, the interest that accrued during that month is capitalized
+            (added to your principal balance). Furthermore, the bank will likely charge a late fee, which also gets
+            added to the balance. The formula resets with a higher "P" (Principal), extending your debt-free date
+            considerably.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What happens if I make an extra payment?</summary>
+          <div class="faq-content">Any extra payment you make goes 100% toward the principal (assuming you have
+            satisfied the current month's interest). Because your principal drops immediately, next month's interest
+            charge will be lower. This creates a compounding effect, allowing regular payments to kill the debt faster.
+          </div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Does the debt snowball method change this math?</summary>
+          <div class="faq-content">The math of the individual formula remains the same, but the <em>inputs</em> change.
+            When you use the debt snowball method, you aggressively increase "M" (your monthly payment) on your smallest
+            debt. When that debt is cleared, you take that massive payment and roll it into the "M" variable of your
+            next debt, accelerating the payoff date.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Is the debt-free date calculated starting from today?</summary>
+          <div class="faq-content">Yes. When you use our calculator or the manual formula, it assumes your payments
+            begin in the current month. If your next payment isn't due for 45 days, the actual calendar date may shift
+            slightly, but the total number of payments required remains accurate.</div>
+        </details>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-copy">
+      <span>© 2026 ClearlyCheck</span>
+      <a href="../about.html">About</a>
+      <a href="../sitemap.html">Sitemap</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms-of-use.html">Term of use</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
     </div>
+  </footer>
 
-    <div class="sidebar-card">
-      <div class="sidebar-title">Related Guides</div>
-      <a class="sidebar-guide" href="debt-snowball-vs-avalanche.html">
-        <div class="sidebar-guide-title">Debt Snowball vs. Avalanche</div>
-        <div class="sidebar-guide-meta">7 min read · Debt Strategy</div>
-      </a>
-      <a class="sidebar-guide" href="understanding-credit-card-apr.html">
-        <div class="sidebar-guide-title">Understanding Credit Card APR</div>
-        <div class="sidebar-guide-meta">6 min read · Credit Cards</div>
-      </a>
-    </div>
-  </aside>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="/guides/">Guides</a> · <a href="/about.html">About</a> · <a href="/sitemap.html">Sitemap</a> · <a href="/contact.html">Contact</a> · <a href="/terms-of-use.html">Terms of Use</a> · <a href="/privacy-policy.html">Privacy Policy</a></p>
-  </div>
-</footer>
-
-<script>
-  document.querySelectorAll('.faq-q').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var answer = btn.nextElementSibling;
-      var isOpen = btn.classList.contains('open');
-      document.querySelectorAll('.faq-q.open').forEach(function(b) {
-        b.classList.remove('open');
-        if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+  <script>
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(faq => {
+      faq.addEventListener('toggle', () => {
+        if (faq.open) {
+          faqItems.forEach(otherFaq => {
+            if (otherFaq !== faq) {
+              otherFaq.removeAttribute('open');
+            }
+          });
+        }
       });
-      if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
     });
-  });
-</script>
 
+    // ScrollSpy Logic for Table of Contents
+    const sections = document.querySelectorAll('.scroll-section');
+    const navLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        // Adjust offset trigger to account for sticky header
+        if (window.scrollY >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
