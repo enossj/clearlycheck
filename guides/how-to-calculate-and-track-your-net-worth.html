@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calculate and Track Your Net Worth | ClearlyCheck</title>
+    <meta name="description"
+        content="Learn how to calculate your true net worth. We explain assets, liabilities, liquid wealth, and average net worth benchmarks by age.">
+    <meta name="keywords"
+        content="how to calculate net worth, what is liquid net worth, net worth by age, average net worth, calculate wealth, do cars count as net worth">
+    <link rel="canonical" href="https://clearlycheck.com/guides/how-to-calculate-and-track-your-net-worth.html">
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Calculate and Track Your Net Worth",
+    "url": "https://clearlycheck.com/guides/how-to-calculate-and-track-your-net-worth.html",
+    "author": { "@type": "Person", "name": "Enos" }
+  }
+  </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        :root {
+            --bg: #f8f7f4;
+            --bg-card: #ffffff;
+            --text: #0f0f0e;
+            --text-muted: #2b2a28;
+            --text-light: #5e5c58;
+            --border: rgba(15, 15, 14, 0.10);
+            --border-hover: rgba(15, 15, 14, 0.20);
+            --accent: #1a6b4a;
+            --accent-light: #e8f5ef;
+            --accent-dark: #145a3d;
+            --danger: #c0392b;
+            --danger-light: #fdf0ef;
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav.top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        .page-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 52px 24px 24px;
+        }
+
+        .guide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #1a4fa0;
+            background: #e8f0fe;
+            padding: 5px 12px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(28px, 5vw, 46px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            color: var(--text);
+            max-width: 850px;
+        }
+
+        .lead {
+            font-size: 18px;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 720px;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .guide-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 24px 80px;
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 64px;
+            align-items: start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .author-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            color: var(--accent-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .author-info {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .author-info strong {
+            color: var(--text);
+            font-weight: 600;
+            display: block;
+            font-size: 14px;
+        }
+
+        .toc h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .toc ul {
+            list-style: none;
+            border-left: 2px solid var(--border);
+        }
+
+        .toc li {
+            margin-bottom: 12px;
+        }
+
+        .toc a {
+            display: block;
+            padding-left: 16px;
+            font-size: 14px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.2s;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .toc a:hover {
+            color: var(--accent);
+        }
+
+        .toc a::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: transparent;
+            transition: background 0.2s;
+        }
+
+        .toc a:hover::before {
+            background: var(--border-hover);
+        }
+
+        .toc a.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .toc a.active::before {
+            background: var(--accent);
+        }
+
+        .article-content {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        .article-content p {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        .article-content h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(22px, 4vw, 28px);
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            color: var(--text);
+            margin-top: 56px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            scroll-margin-top: 100px;
+        }
+
+        .article-content h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(18px, 3vw, 22px);
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+
+        .article-content li {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        .article-content strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .callout-box {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .callout-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .formula-box {
+            font-family: 'Roboto', monospace;
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.9;
+            margin: 24px 0;
+            font-weight: 600;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .article-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 32px;
+            -webkit-overflow-scrolling: touch;
+            background: var(--bg-card);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .article-content th,
+        .article-content td {
+            border-bottom: 1px solid var(--border);
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .article-content th {
+            background: rgba(248, 247, 244, 0.5);
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        .accent-text {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .danger-text {
+            color: var(--danger);
+            font-weight: 700;
+        }
+
+        .faq-wrapper {
+            margin-top: 24px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--border);
+            margin-bottom: 0;
+            background: transparent;
+        }
+
+        .faq-item summary {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            padding: 20px 0;
+            cursor: pointer;
+            list-style: none;
+            transition: color 0.15s ease-in-out;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: var(--accent);
+        }
+
+        .faq-content {
+            padding: 0 0 24px 0;
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .cta-box {
+            background: var(--text);
+            color: white;
+            border-radius: var(--radius-sm);
+            padding: 48px 32px;
+            margin-top: 64px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            margin-top: 0;
+            border: none;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: background 0.15s;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .btn-cta:hover {
+            background: var(--accent-dark);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .footer-copy a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+        .footer-copy a:hover {
+            color: var(--text);
+        }
+
+        @media (max-width: 900px) {
+            .guide-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 32px;
+                padding: 16px 16px 60px;
+            }
+
+            .sidebar {
+                position: static;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 24px;
+            }
+
+            .page-header {
+                padding: 40px 16px 16px;
+            }
+
+            .author-block {
+                margin-bottom: 24px;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .toc ul {
+                border-left: none;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .toc a {
+                padding-left: 0;
+                border-left: none;
+            }
+
+            .toc a::before {
+                display: none;
+            }
+
+            .toc a.active {
+                padding-left: 12px;
+                border-left: 2px solid var(--accent);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .cta-box {
+                padding: 32px 20px;
+            }
+
+            .btn-cta {
+                width: 100%;
+            }
+
+            .article-content p,
+            .article-content li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a class="logo" href="../">Clearly<span>Check</span></a>
+            <a class="back-link" href="./">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                All Guides
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="guide-tag">Wealth Tracking</div>
+        <h1>How to Calculate and Track Your Net Worth</h1>
+        <p class="lead">A high salary does not automatically equal true wealth. To understand your actual financial
+            health, you need to track your net worth. Here is exactly what counts as an asset, what counts as a
+            liability, and how to measure your progress.</p>
+    </header>
+
+    <main class="guide-layout">
+
+        <aside class="sidebar">
+            <div class="author-block">
+                <div class="author-avatar">E</div>
+                <div class="author-info">
+                    <strong>Written by Enos</strong>
+                    ClearlyCheck Editor<br>
+                    Updated Sep 5, 2026
+                </div>
+            </div>
+
+            <nav class="toc">
+                <h4>In this guide</h4>
+                <ul>
+                    <li><a href="#income-illusion" class="active">The Income Illusion</a></li>
+                    <li><a href="#formula">The Simple Formula</a></li>
+                    <li><a href="#assets">What Counts as an Asset?</a></li>
+                    <li><a href="#liabilities">What Counts as a Liability?</a></li>
+                    <li><a href="#liquid-vs-total">Liquid vs. Total Net Worth</a></li>
+                    <li><a href="#benchmarks">Average Net Worth by Age</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <article class="article-content">
+
+            <div id="income-illusion" class="scroll-section">
+                <p>Society often equates financial success with a large paycheck. We see someone driving a luxury
+                    vehicle or living in a massive home and immediately assume they are wealthy. However, income only
+                    measures how much money flows into your bank account. It tells you nothing about how much money
+                    actually stays there.</p>
+
+                <p>If you earn $200,000 a year but spend $195,000 on lifestyle expenses and debt payments, you are
+                    highly dependent on your next paycheck. True wealth is measured by your net worth. It is the
+                    ultimate financial scorecard.</p>
+            </div>
+
+            <h2 id="formula" class="scroll-section">The Simple Formula</h2>
+            <p>Your net worth is essentially a snapshot of your financial life at a specific moment in time. The formula
+                is incredibly straightforward.</p>
+
+            <div class="formula-box">Total Assets - Total Liabilities = Net Worth</div>
+
+            <p>If you sold everything you owned today and used that cash to pay off every single debt you owe, the money
+                left over is your net worth. If the number is positive, you own more than you owe. If the number is
+                negative, you owe more than you own.</p>
+
+            <h2 id="assets" class="scroll-section">What Counts as an Asset?</h2>
+            <p>An asset is anything you own that holds significant monetary value. When adding up your assets, you
+                should focus on items that could reasonably be converted into cash. We typically divide these into three
+                categories.</p>
+
+            <ul>
+                <li><strong>Cash and Equivalents:</strong> Checking accounts, savings accounts, emergency funds, and
+                    physical cash.</li>
+                <li><strong>Investments:</strong> Retirement accounts like a 401(k) or IRA, standard brokerage accounts,
+                    stocks, bonds, and mutual funds.</li>
+                <li><strong>Real Property:</strong> The current market value of your primary residence, investment
+                    properties, and land.</li>
+            </ul>
+
+            <p>A very common question is whether you should include your cars, furniture, or jewelry. You can
+                technically include them, but you must be careful. Cars are depreciating assets. Their value drops
+                constantly. If you choose to list your vehicle as an asset, you must use its current trade-in value, not
+                the price you originally paid for it.</p>
+
+            <h2 id="liabilities" class="scroll-section">What Counts as a Liability?</h2>
+            <p>A liability is any money you owe to another person or institution. You must be completely honest when
+                totaling your liabilities, or your net worth calculation will be useless.</p>
+
+            <ul>
+                <li><strong>Secured Debt:</strong> Your home mortgage balance and your auto loan balances. Note that you
+                    list the total remaining loan balance, not just your monthly payment.</li>
+                <li><strong>Unsecured Debt:</strong> Credit card balances, personal loans, and payday loans.</li>
+                <li><strong>Educational Debt:</strong> The total outstanding balance of all student loans.</li>
+                <li><strong>Tax Liabilities:</strong> Any back taxes owed to the government.</li>
+            </ul>
+
+            <div class="callout-box">
+                <strong>The House Equity Example:</strong><br>
+                If your house is worth $400,000 and you owe $300,000 on the mortgage, your house is an asset ($400k) and
+                your mortgage is a liability ($300k). The net positive impact on your total wealth is the $100,000 in
+                equity.
+            </div>
+
+            <h2 id="liquid-vs-total" class="scroll-section">Liquid vs. Total Net Worth</h2>
+            <p>As your finances grow, tracking a single number is no longer enough. You need to understand the
+                difference between your total wealth and your liquid wealth.</p>
+
+            <p><strong>Total Net Worth</strong> includes absolutely everything. It includes the equity in your house and
+                the balance of your retirement accounts. This is a great metric for measuring your overall financial
+                trajectory.</p>
+
+            <p><strong>Liquid Net Worth</strong> excludes assets that are difficult to sell quickly. You cannot buy
+                groceries with home equity, and withdrawing money from a 401(k) early triggers severe tax penalties.
+                Liquid net worth only counts cash, high-yield savings, and standard taxable investment accounts. This
+                number tells you exactly how much accessible capital you have in case of a major life emergency.</p>
+
+            <h2 id="benchmarks" class="scroll-section">Average Net Worth by Age</h2>
+            <p>People naturally want to know how they compare to their peers. It is completely normal to have a negative
+                net worth in your twenties, especially if you took out student loans to fund your education. Wealth
+                building takes decades.</p>
+
+            <p>When looking at benchmarks, you should always look at the median rather than the average. Extremely
+                wealthy individuals heavily skew the average upward. The median represents the exact middle point of the
+                population.</p>
+
+            <div class="article-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Age Bracket</th>
+                            <th>Median Net Worth</th>
+                            <th>Average Net Worth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Under 35</td>
+                            <td class="accent-text">$39,000</td>
+                            <td>$183,500</td>
+                        </tr>
+                        <tr>
+                            <td>35 to 44</td>
+                            <td class="accent-text">$135,600</td>
+                            <td>$549,600</td>
+                        </tr>
+                        <tr>
+                            <td>45 to 54</td>
+                            <td class="accent-text">$247,200</td>
+                            <td>$975,800</td>
+                        </tr>
+                        <tr>
+                            <td>55 to 64</td>
+                            <td class="accent-text">$320,700</td>
+                            <td>$1,566,900</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cta-box">
+                <h3>Calculate Your Exact Number</h3>
+                <p>Stop guessing about your financial health. Input your specific assets and liabilities into our free
+                    calculator to see your exact net worth today.</p>
+                <a class="btn-cta" href="../net-worth-calculator.html">Launch Net Worth Calculator →</a>
+            </div>
+
+            <h2 id="faq" class="scroll-section">Frequently Asked Questions</h2>
+            <div class="faq-wrapper">
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Does my house count toward my net worth?</summary>
+                    <div class="faq-content">Yes. You count the current market value of your house as an asset, and you
+                        count the remaining balance of your mortgage as a liability. The difference between the two is
+                        your home equity, which directly increases your total net worth.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Should I include my car as an asset?</summary>
+                    <div class="faq-content">You can include it, but you should use the current Kelley Blue Book
+                        trade-in value. Cars are depreciating assets, meaning they lose value every month. If your auto
+                        loan balance is higher than the car's current value, the vehicle is negatively impacting your
+                        net worth.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Why is my net worth negative?</summary>
+                    <div class="faq-content">A negative net worth simply means your total debts are larger than your
+                        total assets. This is incredibly common for recent college graduates who have large student
+                        loans but have not had time to build savings or buy property yet.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Should I include my 401(k) or IRA?</summary>
+                    <div class="faq-content">Yes. Your retirement accounts are major assets and should absolutely be
+                        included in your total net worth. However, they should generally be excluded when you are
+                        calculating your liquid net worth, due to the penalties associated with early withdrawal.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Do I subtract future taxes from my net worth?</summary>
+                    <div class="faq-content">For a basic personal net worth calculation, most people do not calculate
+                        future tax liabilities on their retirement accounts or unsold property. However, highly detailed
+                        financial planners will sometimes calculate a post-tax net worth to show a more conservative
+                        estimate of available wealth.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>How often should I calculate my net worth?</summary>
+                    <div class="faq-content">Tracking it once a quarter or twice a year is plenty for most people.
+                        Tracking it daily or weekly can cause unnecessary stress due to normal stock market
+                        fluctuations. The goal is to monitor the long-term trend, not daily changes.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Do my personal belongings like electronics and furniture count?</summary>
+                    <div class="faq-content">Most financial experts advise ignoring smaller personal items. Unless you
+                        own fine art, rare collectibles, or expensive jewelry that holds objective market value, trying
+                        to calculate the resale value of a used couch or television just clutters your math.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>What is a good net worth by age 30?</summary>
+                    <div class="faq-content">A common financial rule of thumb suggests aiming to have a net worth equal
+                        to half of your annual salary by age 30. If you earn $60,000 a year, hitting a $30,000 net worth
+                        shows you are successfully paying down debt and building early investments.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Is my salary part of my net worth?</summary>
+                    <div class="faq-content">No. Your salary is income, not an asset. Income only increases your net
+                        worth if you successfully save or invest that money rather than spending it.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Does getting a loan increase my net worth?</summary>
+                    <div class="faq-content">Taking out a personal cash loan increases your assets (cash in hand) but
+                        equally increases your liabilities (the money owed). The immediate net effect is zero. If you
+                        spend that loan money on a vacation, your asset disappears, leaving only the liability, which
+                        decreases your net worth.</div>
+                </details>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <a class="footer-logo" href="../">Clearly<span>Check</span></a>
+            <p class="footer-copy">© 2026 ClearlyCheck · <a href="./">Guides</a> · <a href="../about.html">About</a> ·
+                <a href="../sitemap.html">Sitemap</a> · <a href="../contact.html">Contact</a> · <a
+                    href="../terms-of-use.html">Terms of Use</a> · <a href="../privacy-policy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(faq => {
+            faq.addEventListener('toggle', () => {
+                if (faq.open) {
+                    faqItems.forEach(otherFaq => {
+                        if (otherFaq !== faq) {
+                            otherFaq.removeAttribute('open');
+                        }
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('.scroll-section');
+        const navLinks = document.querySelectorAll('.toc a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
