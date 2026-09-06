@@ -282,10 +282,24 @@
       text-decoration: none;
     }
 
-    /* Paste it here, above the media queries */
     ul.sitemap-list {
-      padding-left: 36px !important;
-      list-style-position: outside !important;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul.sitemap-list li {
+      position: relative;
+      padding-left: 28px;
+      /* space reserved for bullet + gap */
+      margin-bottom: 10px;
+    }
+
+    ul.sitemap-list li::before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      top: 0;
     }
 
     @media (max-width: 700px) {
@@ -298,14 +312,15 @@
       .tool-list {
         column-count: 1;
       }
+    }
 
-      h1 {
-        font-size: 28px;
-      }
+    h1 {
+      font-size: 28px;
+    }
 
-      .page-wrap {
-        padding: 32px 20px 60px;
-      }
+    .page-wrap {
+      padding: 32px 20px 60px;
+    }
     }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973"
