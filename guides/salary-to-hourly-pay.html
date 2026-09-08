@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary to Hourly Guide: How to Calculate Your True Pay | ClearlyCheck</title>
+    <meta name="description"
+        content="Learn how to convert your annual salary into an accurate hourly wage. We explain the 2,080-hour rule, gross vs. net pay, and hidden benefits.">
+    <meta name="keywords"
+        content="salary to hourly, hourly to salary, how to calculate hourly wage from salary, 50k an hour, annual salary to hourly rate, gross vs net pay">
+    <link rel="canonical" href="https://clearlycheck.com/guides/salary-to-hourly-pay.html">
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Salary to Hourly Guide: How to Calculate Your True Pay",
+    "url": "https://clearlycheck.com/guides/salary-to-hourly-pay.html",
+    "author": { "@type": "Person", "name": "Enos" }
+  }
+  </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        :root {
+            --bg: #f8f7f4;
+            --bg-card: #ffffff;
+            --text: #0f0f0e;
+            --text-muted: #2b2a28;
+            --text-light: #5e5c58;
+            --border: rgba(15, 15, 14, 0.10);
+            --border-hover: rgba(15, 15, 14, 0.20);
+            --accent: #1a6b4a;
+            --accent-light: #e8f5ef;
+            --accent-dark: #145a3d;
+            --danger: #c0392b;
+            --danger-light: #fdf0ef;
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav.top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        .page-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 52px 24px 24px;
+        }
+
+        .guide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #047857;
+            background: #d1fae5;
+            padding: 5px 12px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(28px, 5vw, 46px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            color: var(--text);
+            max-width: 850px;
+        }
+
+        .lead {
+            font-size: 18px;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 720px;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .guide-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 24px 80px;
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 64px;
+            align-items: start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .author-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            color: var(--accent-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .author-info {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .author-info strong {
+            color: var(--text);
+            font-weight: 600;
+            display: block;
+            font-size: 14px;
+        }
+
+        .toc h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .toc ul {
+            list-style: none;
+            border-left: 2px solid var(--border);
+        }
+
+        .toc li {
+            margin-bottom: 12px;
+        }
+
+        .toc a {
+            display: block;
+            padding-left: 16px;
+            font-size: 14px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.2s;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .toc a:hover {
+            color: var(--accent);
+        }
+
+        .toc a::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: transparent;
+            transition: background 0.2s;
+        }
+
+        .toc a:hover::before {
+            background: var(--border-hover);
+        }
+
+        .toc a.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .toc a.active::before {
+            background: var(--accent);
+        }
+
+        .article-content {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        .article-content p {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        .article-content h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(22px, 4vw, 28px);
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            color: var(--text);
+            margin-top: 56px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            scroll-margin-top: 100px;
+        }
+
+        .article-content h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(18px, 3vw, 22px);
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+
+        .article-content li {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        .article-content strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .callout-box {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .callout-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .formula-box {
+            font-family: 'Roboto', monospace;
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.9;
+            margin: 24px 0;
+            font-weight: 600;
+            overflow-x: auto;
+            white-space: pre-line;
+        }
+
+        .article-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 32px;
+            -webkit-overflow-scrolling: touch;
+            background: var(--bg-card);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .article-content th,
+        .article-content td {
+            border-bottom: 1px solid var(--border);
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .article-content th {
+            background: rgba(248, 247, 244, 0.5);
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        .accent-text {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .faq-wrapper {
+            margin-top: 24px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--border);
+            margin-bottom: 0;
+            background: transparent;
+        }
+
+        .faq-item summary {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            padding: 20px 0;
+            cursor: pointer;
+            list-style: none;
+            transition: color 0.15s ease-in-out;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: var(--accent);
+        }
+
+        .faq-content {
+            padding: 0 0 24px 0;
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .cta-box {
+            background: var(--text);
+            color: white;
+            border-radius: var(--radius-sm);
+            padding: 48px 32px;
+            margin-top: 64px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            margin-top: 0;
+            border: none;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: background 0.15s;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .btn-cta:hover {
+            background: var(--accent-dark);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .footer-copy a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+        .footer-copy a:hover {
+            color: var(--text);
+        }
+
+        @media (max-width: 900px) {
+            .guide-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 32px;
+                padding: 16px 16px 60px;
+            }
+
+            .sidebar {
+                position: static;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 24px;
+            }
+
+            .page-header {
+                padding: 40px 16px 16px;
+            }
+
+            .author-block {
+                margin-bottom: 24px;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .toc ul {
+                border-left: none;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .toc a {
+                padding-left: 0;
+                border-left: none;
+            }
+
+            .toc a::before {
+                display: none;
+            }
+
+            .toc a.active {
+                padding-left: 12px;
+                border-left: 2px solid var(--accent);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .cta-box {
+                padding: 32px 20px;
+            }
+
+            .btn-cta {
+                width: 100%;
+            }
+
+            .article-content p,
+            .article-content li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a class="logo" href="../">Clearly<span>Check</span></a>
+            <a class="back-link" href="./">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                All Guides
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <nav aria-label="breadcrumb">
+            <div class="breadcrumb" style="font-size: 14px; margin-bottom: 16px;">
+                <a href="../" style="color:var(--text-muted); text-decoration:none;">Home</a> <span
+                    style="margin: 0 8px; color:var(--border-hover);">›</span>
+                <a href="./" style="color:var(--text-muted); text-decoration:none;">Guides</a> <span
+                    style="margin: 0 8px; color:var(--border-hover);">›</span>
+                <span style="color:var(--text);">Salary to Hourly Pay</span>
+            </div>
+        </nav>
+        <div class="guide-tag">Income & Career</div>
+        <h1>Salary to Hourly: How to Calculate Your True Pay</h1>
+        <p class="lead">Comparing a salary offer to an hourly job can be incredibly confusing. We break down the exact
+            math needed to figure out exactly how much you make per hour so you can budget accurately and negotiate
+            better offers.</p>
+    </header>
+
+    <main class="guide-layout">
+
+        <aside class="sidebar">
+            <div class="author-block">
+                <div class="author-avatar">E</div>
+                <div class="author-info">
+                    <strong>Written by Enos</strong>
+                    ClearlyCheck Editor<br>
+                    Updated Sep 8, 2026
+                </div>
+            </div>
+
+            <nav class="toc">
+                <h4>In this guide</h4>
+                <ul>
+                    <li><a href="#the-formula" class="active">The 2,080 Hour Rule</a></li>
+                    <li><a href="#work-hours">2,080 vs. 2,000 Hours</a></li>
+                    <li><a href="#master-chart">Master Conversion Chart</a></li>
+                    <li><a href="#hidden-benefits">The Hidden Value of a Salary</a></li>
+                    <li><a href="#gross-vs-net">Gross Pay vs. Net Pay</a></li>
+                    <li><a href="#salary-vs-hourly">Salary vs. Hourly Differences</a></li>
+                    <li><a href="#overtime">Understanding Overtime</a></li>
+                    <li><a href="#reverse-math">Hourly to Salary (Reverse)</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <article class="article-content">
+
+            <div id="the-formula" class="scroll-section">
+                <p>When you sit down to create a monthly budget or consider a new job offer, you need to know exactly
+                    what your time is worth. If you are offered an annual salary of $60,000, it is very difficult to
+                    compare that directly to an hourly job offering $28 an hour without doing some specific math.</p>
+
+                <p>The standard way to figure out your hourly rate is by using what human resource professionals call
+                    the 2,080-hour rule. This number represents a standard, full-time working year in the United States.
+                </p>
+
+                <div class="callout-box">
+                    <strong>How We Get 2,080 Hours:</strong><br>
+                    • 40 hours worked per week<br>
+                    • Multiplied by 52 weeks in a calendar year<br>
+                    • Equals exactly 2,080 standard working hours.
+                </div>
+
+                <p>To find your hourly wage, you simply take your gross annual salary before taxes and divide it by
+                    2,080.</p>
+
+                <div class="formula-box">The Calculation:
+                    Hourly Wage = Annual Salary ÷ 2,080
+                    Example: $50,000 ÷ 2,080 = $24.04 per hour</div>
+            </div>
+
+            <h2 id="work-hours" class="scroll-section">2,080 Hours vs. 2,000 Hours</h2>
+            <p>While 2,080 is the standard corporate calculation, some workers prefer to use a 2,000-hour base instead.
+                This lower number provides a slightly different perspective on your earning power.</p>
+
+            <ul>
+                <li><strong>The 2,080-Hour Model:</strong> This assumes you are paid for every single hour of a 40-hour
+                    week. It includes paid time off and paid holidays.</li>
+                <li><strong>The 2,000-Hour Model:</strong> This model subtracts unpaid time. If you take two full weeks
+                    of unpaid vacation per year, you only work 50 weeks. At 40 hours a week, that equals 2,000 hours.
+                    Dividing your salary by 2,000 results in a slightly higher calculated hourly rate.</li>
+            </ul>
+
+            <h2 id="master-chart" class="scroll-section">Master Conversion Chart</h2>
+            <p>Use this reference table to quickly translate common salary milestones into their hourly equivalents.
+                These numbers assume you are working a standard 40-hour week for 52 weeks out of the year.</p>
+
+            <div class="article-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Annual Salary</th>
+                            <th>Hourly Rate</th>
+                            <th>Monthly Pay (Gross)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$30,000</td>
+                            <td class="accent-text">$14.42</td>
+                            <td>$2,500</td>
+                        </tr>
+                        <tr>
+                            <td>$40,000</td>
+                            <td class="accent-text">$19.23</td>
+                            <td>$3,333</td>
+                        </tr>
+                        <tr>
+                            <td>$50,000</td>
+                            <td class="accent-text">$24.04</td>
+                            <td>$4,167</td>
+                        </tr>
+                        <tr>
+                            <td>$60,000</td>
+                            <td class="accent-text">$28.85</td>
+                            <td>$5,000</td>
+                        </tr>
+                        <tr>
+                            <td>$75,000</td>
+                            <td class="accent-text">$36.06</td>
+                            <td>$6,250</td>
+                        </tr>
+                        <tr>
+                            <td>$90,000</td>
+                            <td class="accent-text">$43.27</td>
+                            <td>$7,500</td>
+                        </tr>
+                        <tr>
+                            <td>$100,000</td>
+                            <td class="accent-text">$48.08</td>
+                            <td>$8,333</td>
+                        </tr>
+                        <tr>
+                            <td>$125,000</td>
+                            <td class="accent-text">$60.10</td>
+                            <td>$10,417</td>
+                        </tr>
+                        <tr>
+                            <td>$150,000</td>
+                            <td class="accent-text">$72.12</td>
+                            <td>$12,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="hidden-benefits" class="scroll-section">The Hidden Value of a Salary</h2>
+            <p>When comparing an hourly rate to a salary offer, the base math does not tell the whole story. Salaried
+                positions frequently include a Total Compensation Package that drastically increases your actual
+                earnings.</p>
+
+            <ul>
+                <li><strong>Health Insurance Subsidies:</strong> Employers often pay a large portion of your monthly
+                    health, dental, and vision insurance premiums. This can save you thousands of dollars a year
+                    compared to buying a private plan as an independent hourly contractor.</li>
+                <li><strong>401(k) Matching:</strong> If your company matches 3% of your retirement contributions, that
+                    is essentially free money added on top of your base salary.</li>
+                <li><strong>Paid Time Off (PTO):</strong> Salaried employees are typically granted paid sick days,
+                    vacation days, and federal holidays. You continue to earn your standard rate even while you are
+                    sitting on a beach.</li>
+                <li><strong>Performance Bonuses:</strong> Many corporate salary structures include end-of-year bonuses
+                    or profit-sharing options that are rarely available to hourly wage earners.</li>
+            </ul>
+
+            <h2 id="gross-vs-net" class="scroll-section">Gross Pay vs. Net Pay</h2>
+            <p>The numbers listed in the chart above represent your Gross Pay. This is the total amount of money your
+                employer pays you before the government steps in.</p>
+
+            <p>Your Net Pay is the actual amount of money that gets deposited into your bank account on payday. Taxes
+                will take a massive bite out of your gross hourly rate. Depending on your state, you must account for
+                Federal Income Tax, State Income Tax, Medicare, and Social Security (FICA) deductions. A $50,000 salary
+                might look like $4,167 a month on paper, but after taxes and insurance premiums, your take-home pay
+                might only be $3,200.</p>
+
+            <h2 id="salary-vs-hourly" class="scroll-section">Salary vs. Hourly Differences</h2>
+            <p>Beyond the math, there are structural lifestyle differences between being an hourly worker and a salaried
+                employee.</p>
+
+            <p><strong>The Salaried Advantage:</strong> Being on a salary provides tremendous financial stability. Your
+                paycheck is the exact same size every single pay period. If the office closes early on a Friday, your
+                income does not drop. This predictability makes paying rent and managing subscriptions much easier.</p>
+
+            <p><strong>The Hourly Advantage:</strong> Hourly workers are strictly compensated for the exact amount of
+                time they give the company. When you clock out, you are entirely disconnected from work. If management
+                asks you to stay late, your paycheck physically grows. Salaried workers often find themselves working 45
+                to 50 hours a week without seeing a single extra dime.</p>
+
+            <h2 id="overtime" class="scroll-section">Understanding Overtime</h2>
+            <p>By federal law in the United States, eligible hourly workers must receive overtime pay if they work more
+                than 40 hours in a single workweek. Overtime is calculated at a rate of time and a half.</p>
+
+            <p>If your standard hourly rate is $20.00, your overtime rate becomes $30.00 for every extra hour you work.
+                This means an hourly job with frequent overtime opportunities can often outpace a seemingly higher
+                salaried job over the course of a year. Most salaried employees are considered "exempt" and do not
+                qualify for overtime pay.</p>
+
+            <h2 id="reverse-math" class="scroll-section">Hourly to Salary (Reverse Math)</h2>
+            <p>If you are currently working an hourly job and want to know what your equivalent annual salary is, you
+                just reverse the standard calculation. You multiply your hourly rate by the number of hours you work in
+                a year.</p>
+
+            <div class="formula-box">The Reverse Calculation:
+                Annual Salary = Hourly Wage × 2,080
+                Example: $25.00 per hour × 2,080 = $52,000 a year</div>
+
+            <div class="cta-box">
+                <h3>Run Your Custom Calculation</h3>
+                <p>Want to see exactly how your salary breaks down by day, week, and month after taxes? Head over to our
+                    dedicated tool to calculate your precise pay.</p>
+                <a class="btn-cta" href="../salary-to-hourly-converter.html">Launch Pay Calculator →</a>
+            </div>
+
+            <h2 id="faq" class="scroll-section">Frequently Asked Questions</h2>
+            <div class="faq-wrapper">
+                <details class="faq-item" name="faq-accordion">
+                    <summary>How much is $50k a year hourly?</summary>
+                    <div class="faq-content">If you work a standard 40-hour week for 52 weeks, a $50,000 salary equals
+                        exactly $24.04 per hour.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Does my salary calculation include paid time off?</summary>
+                    <div class="faq-content">Yes. Because you are paid your standard rate even when taking vacation or
+                        sick days, those hours are included in the 2,080 hour working year base calculation.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>What is time and a half?</summary>
+                    <div class="faq-content">Time and a half is the standard overtime premium required by law for
+                        eligible hourly workers. You take your base hourly pay and multiply it by 1.5 to find your
+                        overtime rate.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>How many working days are in a year?</summary>
+                    <div class="faq-content">There are generally 260 standard working days in a calendar year. This
+                        excludes weekends but includes federal holidays.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Is a $60,000 salary considered good?</summary>
+                    <div class="faq-content">It largely depends on your location. A $60k salary is slightly above the
+                        national average and can provide a comfortable life in the Midwest, but it will stretch your
+                        budget very thin in high-cost cities like San Francisco or New York.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Do salaried employees get overtime?</summary>
+                    <div class="faq-content">Usually no. Most salaried employees are considered exempt under the Fair
+                        Labor Standards Act, meaning they are not legally entitled to overtime pay regardless of how
+                        many hours they work.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>How do I calculate my bi-weekly pay?</summary>
+                    <div class="faq-content">If you are paid bi-weekly, you will receive 26 paychecks in a year. Simply
+                        take your total annual salary and divide it by 26 to find your gross bi-weekly pay amount before
+                        taxes.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>What is the formula to convert hourly to salary?</summary>
+                    <div class="faq-content">To reverse the math, take your hourly rate and multiply it by 2,080. If you
+                        make $25 an hour, multiplying it by 2,080 equals an annual salary of $52,000.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>Is it better to be paid salary or hourly?</summary>
+                    <div class="faq-content">Neither is universally better. Salary offers stability and benefits, while
+                        hourly pay guarantees you are fairly compensated for every single hour you dedicate to the
+                        company. It depends on your lifestyle preferences.</div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary>How much is $100k a year hourly?</summary>
+                    <div class="faq-content">A six-figure salary of $100,000 translates to an hourly rate of exactly
+                        $48.08 based on a standard 40-hour work week.</div>
+                </details>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <a class="footer-logo" href="../">Clearly<span>Check</span></a>
+            <p class="footer-copy">© 2026 ClearlyCheck · <a href="./">Guides</a> · <a href="../about.html">About</a> ·
+                <a href="../sitemap.html">Sitemap</a> · <a href="../contact.html">Contact</a> · <a
+                    href="../terms-of-use.html">Terms of Use</a> · <a href="../privacy-policy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(faq => {
+            faq.addEventListener('toggle', () => {
+                if (faq.open) {
+                    faqItems.forEach(otherFaq => {
+                        if (otherFaq !== faq) {
+                            otherFaq.removeAttribute('open');
+                        }
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('.scroll-section');
+        const navLinks = document.querySelectorAll('.toc a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
