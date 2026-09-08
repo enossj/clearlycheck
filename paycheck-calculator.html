@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paycheck Calculator — Free Take-Home Pay Estimator (2026) | ClearlyCheck</title>
+  <meta name="description"
+    content="Free paycheck calculator to estimate your take-home pay after FICA, federal, and state taxes. Works for salary or hourly — see your net pay per paycheck in seconds.">
+  <meta name="keywords"
+    content="paycheck calculator, take home pay calculator, how to calculate your check, estimate check, net pay calculator, check calculator, paycheck estimator, salary after taxes, hourly wage calculator after taxes, free paycheck calculator, payroll tax calculator, how much will my paycheck be, calculate my paycheck, gross to net pay, paycheck deductions calculator">
+  <link rel="canonical" href="https://clearlycheck.com/paycheck-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paycheck Calculator — Free Take-Home Pay Estimator | ClearlyCheck">
+  <meta property="og:description"
+    content="Estimate your real take-home pay after federal, state, and FICA taxes. Works for salary or hourly wages.">
+  <meta property="og:url" content="https://clearlycheck.com/paycheck-calculator.html">
+  <meta property="og:site_name" content="ClearlyCheck">
+  <meta name="twitter:card" content="summary">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ClearlyCheck Paycheck Calculator",
+  "description": "Free paycheck calculator to estimate your net take-home pay after FICA, federal, and state tax deductions. Supports both annual salary and hourly wage inputs.",
+  "url": "https://clearlycheck.com/paycheck-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my paycheck?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Start with your gross pay (annual salary divided by the number of pay periods, or hourly rate times hours worked). Then subtract FICA taxes (7.65%), your federal income tax withholding, and your state income tax. The remaining amount is your estimated net take-home pay." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is FICA and why is 7.65% deducted?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FICA stands for the Federal Insurance Contributions Act. It funds Social Security (6.2% on wages up to $168,600 in 2024) and Medicare (1.45% on all wages). Together, that's 7.65%. Your employer pays a matching 7.65%, but only the employee portion is deducted from your paycheck." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is a $60,000 salary per paycheck?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On a bi-weekly schedule (26 paychecks per year), a $60,000 salary yields a gross paycheck of about $2,307.69. After estimated deductions (7.65% FICA, 12% federal, 4% state), your net take-home pay would be roughly $1,762 per paycheck. Actual results depend on your W-4, pre-tax deductions, and state." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between gross pay and net pay?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Gross pay is the total amount you earn before any deductions. Net pay (also called take-home pay) is what you actually receive after federal taxes, state taxes, FICA, and any other withholdings like health insurance or 401(k) contributions are subtracted." }
+    },
+    {
+      "@type": "Question",
+      "name": "How often do most Americans get paid?",
+      "acceptedAnswer": { "@type": "Answer", "text": "According to the Bureau of Labor Statistics, bi-weekly pay (every two weeks, 26 paychecks per year) is the most common schedule in the United States. Semi-monthly (24 paychecks), weekly (52 paychecks), and monthly (12 paychecks) are also used." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which states have no income tax?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire (taxes only interest and dividends), South Dakota, Tennessee, Texas, Washington, and Wyoming. If you live in one of these states, set the state tax rate to 0% in the calculator." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is $25 an hour after taxes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At $25/hour working 40 hours per week, your annual gross is $52,000. After estimated deductions (7.65% FICA, ~12% federal, ~4% state), your take-home pay would be about $39,692 per year, or roughly $1,527 per bi-weekly paycheck." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are pre-tax deductions and how do they affect my paycheck?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pre-tax deductions (like 401(k) contributions, health insurance premiums, and HSA contributions) are subtracted from your gross pay before taxes are calculated. This lowers your taxable income, which means you pay less in federal and state taxes, increasing your net take-home pay relative to what it would be without those deductions." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an effective tax rate vs. a marginal tax rate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your marginal tax rate is the rate applied to your last dollar of income — the highest bracket you fall into. Your effective tax rate is the actual overall percentage of your total income that goes to taxes. Because the US uses progressive brackets, your effective rate is always lower than your marginal rate." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this paycheck calculator accurate for my exact situation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This calculator provides a solid estimate based on flat federal and state tax rates you enter. For exact results, you'd need to account for your specific W-4 elections, pre-tax deductions (401k, health insurance, HSA), local taxes, and the progressive federal bracket system. Use this as a quick planning tool, not a substitute for official payroll software." }
+    }
+  ]
+}
+</script>
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearlycheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://clearlycheck.com/#tools" },
+    { "@type": "ListItem", "position": 3, "name": "Finance", "item": "https://clearlycheck.com/finance-calculators.html" },
+    { "@type": "ListItem", "position": 4, "name": "Paycheck Calculator", "item": "https://clearlycheck.com/paycheck-calculator.html" }
+  ]
+}
+</script>
+  <!-- TechArticle Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Paycheck Calculator — How to Calculate Your Take-Home Pay",
+  "description": "A complete guide to understanding your paycheck, FICA taxes, federal and state withholdings, and how to estimate your net take-home pay.",
+  "url": "https://clearlycheck.com/paycheck-calculator.html",
+  "mainEntityOfPage": "https://clearlycheck.com/paycheck-calculator.html",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "author": {
+    "@type": "Person",
+    "@id": "https://clearlycheck.com/#enos",
+    "name": "Enos"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://clearlycheck.com/#organization",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://clearlycheck.com/assets/og-image.svg"
+    }
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com"
+  }
+}
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/calculator.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f8f7f4;
+      --bg-card: #ffffff;
+      --text: #0f0f0e;
+      --text-muted: #2b2a28;
+      --text-light: #3d3c39;
+      --border: rgba(15, 15, 14, 0.10);
+      --border-hover: rgba(15, 15, 14, 0.20);
+      --accent: #1a6b4a;
+      --accent-light: #e8f5ef;
+      --accent-dark: #145a3d;
+      --blue: #1a4fa0;
+      --blue-light: #e8f0fe;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.10);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .page-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 40px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .tool-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .page-header p {
+      font-size: 17px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .page-meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .page-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .page-meta a:hover {
+      text-decoration: underline;
+    }
+
+    /* CALCULATOR LAYOUT */
+    .main-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .calc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .calc-header {
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .calc-header h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .calc-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .calc-body {
+      padding: 24px 32px 28px;
+      min-width: 0;
+    }
+
+    /* TABS */
+    .mode-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+
+    .mode-tab {
+      flex: 1;
+      padding: 11px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+    }
+
+    .mode-tab.active {
+      background: var(--bg-card);
+      color: var(--text);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      font-weight: 700;
+    }
+
+    /* FIELDS */
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .field .help {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .input-wrap {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-width: 0;
+    }
+
+    .input-wrap:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(26, 107, 74, 0.10);
+    }
+
+    .input-wrap input,
+    .input-wrap select {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      background: transparent;
+      padding: 0 14px;
+      height: 46px;
+      width: 100%;
+      min-width: 0;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .input-suffix {
+      padding: 0 14px 0 4px;
+      color: var(--text-light);
+      font-size: 13px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tax-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .section-divider {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 20px 0 12px;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    /* RESULTS */
+    .results-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 88px;
+      min-width: 0;
+    }
+
+    .results-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .results-header h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .results-status {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-ready {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .results-body {
+      padding: 20px 24px;
+      min-width: 0;
+    }
+
+    .verdict-hero {
+      text-align: center;
+      background: var(--accent-light);
+      border-radius: var(--radius-sm);
+      padding: 24px 16px;
+      margin-bottom: 16px;
+    }
+
+    .verdict-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-dark);
+      margin-bottom: 8px;
+    }
+
+    .verdict-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+      word-break: break-word;
+    }
+
+    .verdict-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .tax-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 0;
+    }
+
+    .tax-table td {
+      padding: 11px 0;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      overflow-wrap: break-word;
+    }
+
+    .tax-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tax-table td:last-child {
+      text-align: right;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .tax-table .deduction td:last-child {
+      color: #b0362c;
+    }
+
+    .summary-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .summary-box {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      text-align: center;
+    }
+
+    .summary-box .sb-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .summary-box .sb-val {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    /* ARTICLE */
+    .article-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+      gap: 28px;
+    }
+
+    .article-section>div {
+      min-width: 0;
+    }
+
+    .article {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .article h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+
+    .article h2:first-child {
+      margin-top: 0;
+    }
+
+    .article h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .article p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .article ul,
+    .article ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .article li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+
+    .article strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .article a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .article a:hover {
+      text-decoration: underline;
+    }
+
+    .article .sources {
+      font-size: 13.5px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      min-width: 300px;
+    }
+
+    .article th,
+    .article td {
+      text-align: left;
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .article th {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .callout-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      margin: 16px 0 20px;
+    }
+
+    .callout-box p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .callout-box strong {
+      color: var(--accent-dark);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-bottom: 8px;
+      min-width: 0;
+    }
+
+    /* FAQ */
+    .faq-section {
+      margin-top: 32px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      padding: 18px 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.15s;
+    }
+
+    .faq-q:hover {
+      color: var(--accent);
+    }
+
+    .faq-q.open {
+      color: var(--accent);
+    }
+
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s;
+      color: var(--text-muted);
+    }
+
+    .faq-q.open .faq-icon {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      padding: 0 0 18px 0;
+      display: none;
+    }
+
+    .faq-a.open {
+      display: block;
+    }
+
+    .faq-a a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .faq-a a:hover {
+      text-decoration: underline;
+    }
+
+    /* SIDEBAR */
+    .sidebar-tools {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-tool {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow);
+      transition: all 0.18s;
+      min-width: 0;
+    }
+
+    .sidebar-tool:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--border-hover);
+    }
+
+    .sidebar-tool-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-tool-name {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .sidebar-tool-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .footer-copy a {
+      white-space: nowrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .results-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .article-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .calc-body {
+        padding: 20px;
+      }
+
+      .page-header {
+        padding: 32px 20px 24px;
+      }
+
+      .tax-row {
+        grid-template-columns: 1fr;
+      }
+
+      .article {
+        padding: 24px 20px;
+      }
+
+      .summary-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973"
+    crossorigin="anonymous"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">Clearly<span>Check</span></a>
+      <a class="back-link" href="/">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+        All Tools
+      </a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <nav aria-label="breadcrumb">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="index.html#tools">Tools</a><span>›</span>
+        <a href="finance-calculators.html">Finance</a><span>›</span>
+        <span style="color:var(--text-muted);">Paycheck Calculator</span>
+      </div>
+    </nav>
+    <div class="tool-tag-pill">💰 Finance</div>
+    <h1>Paycheck Calculator</h1>
+    <p>Estimate your actual take-home pay by calculating your gross income minus FICA, federal, and state tax
+      deductions — whether you're on a salary or paid hourly.</p>
+    <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated
+      September 8, 2026</div>
+  </div>
+
+  <main>
+    <div class="main-layout">
+
+      <!-- INPUT PANEL -->
+      <div class="calc-card">
+        <div class="calc-header">
+          <h2>Your income</h2>
+          <p>Enter your salary or hourly wage, pay frequency, and estimated tax rates.</p>
+        </div>
+        <div class="calc-body">
+
+          <div class="field">
+            <label>Pay type</label>
+            <div class="mode-tabs">
+              <button type="button" class="mode-tab active" id="tabSalary" onclick="setPayType('salary')">Annual
+                Salary</button>
+              <button type="button" class="mode-tab" id="tabHourly" onclick="setPayType('hourly')">Hourly
+                Rate</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label id="incomeLabel" for="incomeInput">Gross annual salary</label>
+            <div class="input-wrap"><span class="input-suffix" style="padding:0 4px 0 14px;">$</span><input
+                type="number" id="incomeInput" value="60000" min="0" step="1000" oninput="calculatePay()"></div>
+          </div>
+
+          <div class="field" id="hoursGroup" style="display:none;">
+            <label for="hoursInput">Hours worked per week</label>
+            <div class="input-wrap"><input type="number" id="hoursInput" value="40" min="1" max="168"
+                oninput="calculatePay()"><span class="input-suffix">hrs</span></div>
+          </div>
+
+          <div class="field">
+            <label for="payFrequency">How often are you paid?</label>
+            <div class="input-wrap">
+              <select id="payFrequency" onchange="calculatePay()">
+                <option value="52">Weekly (52 checks/yr)</option>
+                <option value="26" selected>Bi-weekly (26 checks/yr)</option>
+                <option value="24">Semi-monthly (24 checks/yr)</option>
+                <option value="12">Monthly (12 checks/yr)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="section-divider">Estimated taxes (%)</div>
+
+          <div class="tax-row">
+            <div class="field">
+              <label for="fedTaxInput">Federal tax rate</label>
+              <div class="input-wrap"><input type="number" id="fedTaxInput" value="12" min="0" max="100" step="0.1"
+                  oninput="calculatePay()"><span class="input-suffix">%</span></div>
+            </div>
+            <div class="field">
+              <label for="stateTaxInput">State tax rate</label>
+              <div class="input-wrap"><input type="number" id="stateTaxInput" value="4" min="0" max="100" step="0.1"
+                  oninput="calculatePay()"><span class="input-suffix">%</span></div>
+            </div>
+          </div>
+
+          <div class="help">*Standard FICA (7.65%) for Social Security &amp; Medicare is automatically applied.</div>
+
+        </div>
+      </div>
+
+      <!-- RESULTS PANEL -->
+      <div class="results-card" role="region" aria-live="polite">
+        <div class="results-header">
+          <h3>Paycheck breakdown</h3>
+          <span class="results-status status-ready">Ready</span>
+        </div>
+        <div class="results-body" id="resultsBody">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ARTICLE + SIDEBAR -->
+  <div class="article-section">
+    <article class="article">
+
+      <h2>How to Calculate Your Paycheck: The Complete Guide</h2>
+      <p>You accepted the job offer. The salary looked great. And then your first paycheck arrived, and the number was
+        way smaller than you expected. Sound familiar? You're not alone. Millions of Americans are surprised by the gap
+        between what they earn on paper and what actually hits their bank account.</p>
+      <p>This guide breaks down exactly how your paycheck is calculated, what each deduction means, and how to estimate
+        your take-home pay before you even start a new job. No jargon, no filler — just the straight facts.</p>
+
+      <h2>Gross Pay vs. Net Pay: What's the Difference?</h2>
+      <p>Let's start with the basics, because this is where most of the confusion lives:</p>
+      <ul>
+        <li><strong>Gross pay</strong> is the total amount your employer owes you before any deductions. If your offer
+          letter says $60,000 per year, that's your gross annual salary. If you're paid $25/hour, your gross pay for a
+          40-hour week is $1,000.</li>
+        <li><strong>Net pay</strong> (also called "take-home pay") is what you actually receive after taxes and
+          deductions are subtracted. This is the number that shows up in your bank account on payday.</li>
+      </ul>
+      <p>The difference between these two numbers can be substantial. For most workers, <strong>20% to 30% of gross pay
+          goes to taxes and mandatory deductions</strong>, sometimes more depending on your state and income level.</p>
+      <p>If you're salaried and want to know what your base hourly rate works out to, use our <a
+          href="salary-to-hourly-converter.html">Salary to Hourly Converter</a> to get the full breakdown — including
+        monthly, weekly, and daily rates.</p>
+
+      <h2>Understanding FICA Taxes (Social Security &amp; Medicare)</h2>
+      <p>FICA is probably the most misunderstood deduction on your pay stub. It stands for the <strong>Federal Insurance
+          Contributions Act</strong>, and it funds two programs:</p>
+      <ul>
+        <li><strong>Social Security (6.2%):</strong> This tax applies to every dollar you earn up to the annual wage
+          base limit ($168,600 in 2024, adjusted annually for inflation). Once your earnings pass that threshold, you
+          stop paying the Social Security portion for the rest of the year.</li>
+        <li><strong>Medicare (1.45%):</strong> This tax applies to <em>all</em> of your earnings with no cap. If you
+          earn above $200,000 ($250,000 for married filing jointly), an additional 0.9% Medicare surtax kicks in.</li>
+      </ul>
+      <p>Combined, the standard employee FICA rate is <strong>7.65%</strong>. Your employer pays a matching 7.65% on top
+        of that, but only the employee portion appears on your pay stub.</p>
+
+      <div class="callout-box">
+        <p><strong>Quick math:</strong> On a $60,000 salary, FICA alone takes $4,590 per year — that's $176.54 per
+          bi-weekly paycheck gone before federal or state taxes even touch your income.</p>
+      </div>
+
+      <h3>Why FICA Matters More Than You Think</h3>
+      <p>Unlike federal income tax, FICA is a flat-rate tax. There are no brackets, no deductions, no credits to reduce
+        it. Whether you earn $30,000 or $150,000, you pay 7.65% from dollar one. That makes it the single largest
+        payroll deduction for most workers earning under $50,000.</p>
+
+      <h2>Federal Income Tax Brackets (2024)</h2>
+      <p>The United States uses a <strong>progressive tax system</strong>. That means you don't pay one flat rate on
+        all your income. Instead, your income is split into chunks, and each chunk is taxed at a progressively higher
+        rate.</p>
+      <p>Here's the current bracket structure for a single filer:</p>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Taxable Income</th>
+              <th>Tax Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$0 – $11,600</td>
+              <td>10%</td>
+            </tr>
+            <tr>
+              <td>$11,601 – $47,150</td>
+              <td>12%</td>
+            </tr>
+            <tr>
+              <td>$47,151 – $100,525</td>
+              <td>22%</td>
+            </tr>
+            <tr>
+              <td>$100,526 – $191,950</td>
+              <td>24%</td>
+            </tr>
+            <tr>
+              <td>$191,951 – $243,725</td>
+              <td>32%</td>
+            </tr>
+            <tr>
+              <td>$243,726 – $609,350</td>
+              <td>35%</td>
+            </tr>
+            <tr>
+              <td>$609,351+</td>
+              <td>37%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Marginal vs. Effective Tax Rate</h3>
+      <p>This is a point that trips people up all the time. If you earn $60,000, you do <em>not</em> pay 22% on the
+        entire $60,000. Here's how it actually works:</p>
+      <ul>
+        <li>The first $11,600 is taxed at 10% = $1,160</li>
+        <li>The next $35,550 ($11,601 – $47,150) is taxed at 12% = $4,266</li>
+        <li>The remaining $12,850 ($47,151 – $60,000) is taxed at 22% = $2,827</li>
+      </ul>
+      <p><strong>Total federal tax: $8,253</strong>, which works out to an <strong>effective rate of about
+          13.8%</strong> — not 22%. Your marginal rate (the rate on your last dollar) is 22%, but your effective rate is
+        always lower because of how the brackets stack.</p>
+      <p>In the calculator above, we use a single estimated federal rate for simplicity. If you know your effective
+        federal rate, plug it in directly for a more accurate result.</p>
+
+      <h2>State Income Taxes: The Wild Card</h2>
+      <p>State taxes vary dramatically across the country. This single variable can make a huge difference in your
+        take-home pay.</p>
+
+      <h3>States With No Income Tax</h3>
+      <p>Nine states don't tax your wages at all:</p>
+      <ul>
+        <li>Alaska</li>
+        <li>Florida</li>
+        <li>Nevada</li>
+        <li>New Hampshire (taxes only interest and dividends)</li>
+        <li>South Dakota</li>
+        <li>Tennessee</li>
+        <li>Texas</li>
+        <li>Washington</li>
+        <li>Wyoming</li>
+      </ul>
+      <p>If you live in one of these states, set the state tax rate to <strong>0%</strong> in the calculator above.</p>
+
+      <h3>States With the Highest Income Taxes</h3>
+      <p>On the other end of the spectrum, some states take a significant cut:</p>
+      <ul>
+        <li><strong>California:</strong> up to 13.3% (highest top marginal rate in the US)</li>
+        <li><strong>Hawaii:</strong> up to 11%</li>
+        <li><strong>New Jersey:</strong> up to 10.75%</li>
+        <li><strong>Oregon:</strong> up to 9.9%</li>
+        <li><strong>Minnesota:</strong> up to 9.85%</li>
+        <li><strong>New York:</strong> up to 10.9% (plus NYC local tax of up to 3.876%)</li>
+      </ul>
+      <p>Most states fall somewhere in the 3% to 6% range. For a rough estimate, 4% to 5% is a reasonable default if
+        you're not sure of your exact state rate.</p>
+
+      <h2>Pay Frequency: How It Affects Your Paycheck</h2>
+      <p>Your pay frequency doesn't change how much you earn per year, but it does change the size of each individual
+        paycheck. Here's how the same $60,000 salary looks across different schedules:</p>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Pay Frequency</th>
+              <th>Checks/Year</th>
+              <th>Gross Per Check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Weekly</td>
+              <td>52</td>
+              <td>$1,153.85</td>
+            </tr>
+            <tr>
+              <td>Bi-weekly</td>
+              <td>26</td>
+              <td>$2,307.69</td>
+            </tr>
+            <tr>
+              <td>Semi-monthly</td>
+              <td>24</td>
+              <td>$2,500.00</td>
+            </tr>
+            <tr>
+              <td>Monthly</td>
+              <td>12</td>
+              <td>$5,000.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Bi-weekly</strong> is the most common pay schedule in the US. One bonus: in two months each year, you'll
+        receive three paychecks instead of two, which can feel like a nice financial boost (even though the annual total
+        is the same).</p>
+
+      <h2>How to Read Your Pay Stub</h2>
+      <p>Your pay stub is the receipt for your paycheck. Whether it's paper or digital, it contains a wealth of
+        information. Here's what each section typically includes:</p>
+
+      <h3>Earnings Section</h3>
+      <ul>
+        <li><strong>Regular hours/salary:</strong> Your base pay for the period</li>
+        <li><strong>Overtime:</strong> Hours worked beyond 40/week, typically paid at 1.5x your regular rate</li>
+        <li><strong>Bonuses or commissions:</strong> Additional compensation earned during the period</li>
+        <li><strong>Year-to-date (YTD) totals:</strong> Cumulative earnings from January 1 through the current pay
+          date</li>
+      </ul>
+
+      <h3>Deductions Section</h3>
+      <ul>
+        <li><strong>Federal income tax:</strong> Based on your W-4 withholding elections</li>
+        <li><strong>State income tax:</strong> Varies by state</li>
+        <li><strong>Social Security (OASDI):</strong> The 6.2% portion of FICA</li>
+        <li><strong>Medicare:</strong> The 1.45% portion of FICA</li>
+        <li><strong>Health insurance:</strong> Your employee portion of medical, dental, or vision premiums</li>
+        <li><strong>401(k) or retirement contributions:</strong> Pre-tax or Roth contributions</li>
+        <li><strong>HSA/FSA contributions:</strong> Pre-tax health savings or flexible spending</li>
+        <li><strong>Local taxes:</strong> City or county taxes (applies in some jurisdictions like NYC, Philadelphia,
+          and various Ohio cities)</li>
+      </ul>
+
+      <h3>Net Pay Section</h3>
+      <p>This is the bottom line — the amount deposited into your bank account. It's your gross pay minus every
+        deduction listed above. If the number feels shockingly small compared to your salary, now you know exactly where
+        the money went.</p>
+
+      <h2>Pre-Tax Deductions: How to Keep More of Your Paycheck</h2>
+      <p>Pre-tax deductions are your best tool for reducing your tax burden legally. These amounts are subtracted from
+        your gross pay <em>before</em> taxes are calculated, which lowers your taxable income.</p>
+
+      <h3>Common Pre-Tax Deductions</h3>
+      <ul>
+        <li><strong>Traditional 401(k) contributions:</strong> Up to $23,000 in 2024 ($30,500 if you're 50 or older).
+          Every dollar you contribute reduces your taxable income dollar-for-dollar.</li>
+        <li><strong>Health insurance premiums:</strong> Most employer-sponsored plans use pre-tax payroll deductions.
+        </li>
+        <li><strong>Health Savings Account (HSA):</strong> If you have a high-deductible health plan, you can contribute
+          up to $4,150 (individual) or $8,300 (family) pre-tax in 2024.</li>
+        <li><strong>Flexible Spending Account (FSA):</strong> Up to $3,200 in 2024 for healthcare expenses, deducted
+          pre-tax.</li>
+        <li><strong>Commuter benefits:</strong> Up to $315/month pre-tax for transit or parking.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>Example:</strong> If you earn $60,000 and contribute $6,000 to your 401(k), your taxable income drops
+          to $54,000. At a 22% marginal rate, that saves you $1,320 in federal taxes alone — meaning your $6,000
+          contribution effectively only "costs" you about $4,680 in reduced take-home pay.</p>
+      </div>
+
+      <h2>Salary vs. Hourly: How It Affects Your Paycheck</h2>
+      <p>Whether you're salaried or hourly changes how your gross pay is calculated, but the tax deductions work the
+        same way.</p>
+      <ul>
+        <li><strong>Salaried employees:</strong> Your gross pay per period is simply your annual salary divided by the
+          number of pay periods. It's the same every paycheck (assuming no overtime or bonuses).</li>
+        <li><strong>Hourly employees:</strong> Your gross pay per period is your hourly rate × hours worked. This can
+          fluctuate week to week. For a standard 40-hour week, annual gross = hourly rate × 40 × 52.</li>
+      </ul>
+      <p>For a deeper look at how salary and hourly wages compare, including cost-of-living adjustments, check out our
+        <a href="guides/salary-to-hourly-pay.html">Salary to Hourly Pay guide</a>.</p>
+
+      <h2>Real-World Paycheck Example: $60,000 Salary</h2>
+      <p>Let's walk through a concrete example so you can see exactly how the math works. Assumptions: single filer,
+        bi-weekly pay, 12% effective federal rate, 4% state tax rate, no pre-tax deductions.</p>
+      <ol>
+        <li><strong>Gross pay per paycheck:</strong> $60,000 ÷ 26 = $2,307.69</li>
+        <li><strong>FICA (7.65%):</strong> $2,307.69 × 0.0765 = −$176.54</li>
+        <li><strong>Federal tax (12%):</strong> $2,307.69 × 0.12 = −$276.92</li>
+        <li><strong>State tax (4%):</strong> $2,307.69 × 0.04 = −$92.31</li>
+        <li><strong>Net take-home pay:</strong> $2,307.69 − $176.54 − $276.92 − $92.31 = <strong>$1,761.92</strong>
+        </li>
+      </ol>
+      <p>Over a full year, that's <strong>$45,809.92</strong> in actual take-home pay — meaning $14,190.08 (23.65%) of
+        your salary went to taxes. And that's before any health insurance, retirement contributions, or local taxes.</p>
+
+      <h2>Common Paycheck Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Confusing gross for net:</strong> When budgeting, always use your net pay. A $60,000 salary does
+          <em>not</em> give you $5,000/month to spend.</li>
+        <li><strong>Ignoring state taxes:</strong> If you're moving to a new state, factor in the tax difference. Going
+          from Texas (0%) to California (9%+) on a $70,000 salary costs you $6,300+ per year.</li>
+        <li><strong>Not adjusting your W-4:</strong> If you're getting a huge tax refund every year, you're
+          over-withholding. That's essentially giving the IRS an interest-free loan. Adjust your W-4 to take home more
+          each paycheck.</li>
+        <li><strong>Forgetting about FICA:</strong> When people say "my tax rate is 12%," they usually forget the 7.65%
+          FICA on top of that. Your actual combined tax burden is closer to 24%.</li>
+        <li><strong>Skipping retirement contributions:</strong> A 401(k) match is free money. If your employer matches
+          up to 4%, contributing less than 4% means you're leaving compensation on the table.</li>
+      </ul>
+
+      <h2>Tips for Maximizing Your Take-Home Pay</h2>
+      <ul>
+        <li><strong>Max out pre-tax deductions.</strong> Every dollar in your 401(k) or HSA reduces your taxable income
+          and shrinks your tax bill.</li>
+        <li><strong>Claim all eligible tax credits.</strong> Credits like the Earned Income Tax Credit (EITC), Child Tax
+          Credit, and Saver's Credit directly reduce your tax liability.</li>
+        <li><strong>Adjust your W-4 withholdings.</strong> Use the IRS Tax Withholding Estimator to fine-tune your
+          withholdings so you're not over- or under-paying throughout the year.</li>
+        <li><strong>Consider your state carefully.</strong> If you have location flexibility (remote work, for example),
+          living in a no-income-tax state can save you thousands annually.</li>
+        <li><strong>Use a Roth 401(k) strategically.</strong> If you're in a low bracket now but expect higher income
+          later, Roth contributions (taxed now, tax-free later) can save you money long-term — though they won't reduce
+          your current tax bill.</li>
+      </ul>
+
+      <p class="sources"><strong>Sources &amp; method:</strong> FICA rates per IRS Publication 15 (2024). Federal
+        brackets per IRS Rev. Proc. 2023-34. State rates from the Tax Foundation's 2024 state tax data. This calculator
+        applies flat estimated rates for simplicity — actual withholdings depend on W-4 elections, pre-tax deductions,
+        and local taxes. Not a substitute for professional tax advice.</p>
+
+      <!-- FAQ SECTION -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">How do I calculate my paycheck?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Start with your gross pay — that's your annual salary divided by the number of pay
+            periods, or your hourly rate times hours worked. Then subtract FICA taxes (7.65%), federal income tax, and
+            state income tax. The remaining amount is your estimated net take-home pay. Use the calculator above to get
+            your number instantly.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is FICA and why is 7.65% deducted from my check?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">FICA stands for the Federal Insurance Contributions Act. It funds Social Security (6.2% on
+            wages up to $168,600) and Medicare (1.45% on all wages). Combined, that's 7.65%. Your employer pays a
+            matching 7.65%, but only the employee's share appears on your pay stub.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How much is a $60,000 salary per paycheck?<span class="faq-icon">+</span></button>
+          <div class="faq-a">On a bi-weekly schedule (26 paychecks/year), $60,000 yields a gross paycheck of $2,307.69.
+            After typical deductions (7.65% FICA, 12% federal, 4% state), your net take-home would be roughly $1,762 per
+            paycheck. Actual amounts depend on your W-4, pre-tax deductions, and specific state rates.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What's the difference between gross pay and net pay?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Gross pay is the total amount you earn before any deductions. Net pay is what actually
+            lands in your bank account after federal taxes, state taxes, FICA, and any other withholdings (health
+            insurance, retirement contributions, etc.) are subtracted. For most workers, net pay is 70–80% of gross pay.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How often do most Americans get paid?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Bi-weekly (every two weeks, 26 paychecks per year) is the most common pay schedule in the
+            US. Other options include weekly (52 paychecks), semi-monthly (24 paychecks), and monthly (12 paychecks).
+            Your pay frequency doesn't affect your annual salary — it just changes the size of each individual check.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Which states have no income tax?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Nine states have no state income tax on wages: Alaska, Florida, Nevada, New Hampshire
+            (interest and dividends only), South Dakota, Tennessee, Texas, Washington, and Wyoming. If you live in one
+            of these states, set the state tax field to 0% in the calculator.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How much is $25 an hour after taxes?<span class="faq-icon">+</span></button>
+          <div class="faq-a">At $25/hour working 40 hours per week, your gross annual income is $52,000. After estimated
+            deductions (7.65% FICA, ~12% federal, ~4% state), take-home pay would be about $39,692/year or roughly
+            $1,527 per bi-weekly paycheck. Use our <a href="salary-to-hourly-converter.html">Salary to Hourly
+              Converter</a> for a complete breakdown.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is an effective tax rate vs. a marginal tax rate?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Your marginal tax rate is the rate applied to your last dollar of income — the highest
+            bracket you fall into. Your effective tax rate is the overall percentage of your total income that goes to
+            taxes. Because the US uses progressive brackets, your effective rate is always lower than your marginal rate.
+            For example, earning $60,000 puts you in the 22% bracket, but your effective federal rate is closer to
+            13.8%.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What are pre-tax deductions and how do they help?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Pre-tax deductions (401(k) contributions, health insurance premiums, HSA/FSA
+            contributions) are subtracted from your gross pay before taxes are calculated. This lowers your taxable
+            income, so you pay less in federal and state taxes. For instance, contributing $500/month to a 401(k) on a
+            $60,000 salary reduces your taxable income by $6,000/year.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Is this paycheck calculator accurate for my exact situation?<span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">This calculator provides a reliable estimate based on the flat tax rates you enter. For
+            exact results, you'd need to account for your W-4 elections, pre-tax deductions (401k, insurance, HSA),
+            local/city taxes, and the progressive federal bracket system. It's designed as a quick planning tool — not a
+            replacement for official payroll software or a tax advisor.</div>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <div>
+      <p
+        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
+        More Tools</p>
+      <div class="sidebar-tools">
+        <a class="sidebar-tool" href="salary-to-hourly-converter.html">
+          <div class="sidebar-tool-icon">💼</div>
+          <div>
+            <div class="sidebar-tool-name">Salary to Hourly Converter</div>
+            <div class="sidebar-tool-desc">Convert salary to hourly rate</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="income-tax-calculator.html">
+          <div class="sidebar-tool-icon">📋</div>
+          <div>
+            <div class="sidebar-tool-name">Income Tax Calculator</div>
+            <div class="sidebar-tool-desc">Estimate your tax liability</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="overtime-pay-calculator.html">
+          <div class="sidebar-tool-icon">💰</div>
+          <div>
+            <div class="sidebar-tool-name">Overtime Pay Calculator</div>
+            <div class="sidebar-tool-desc">Calculate time-and-a-half pay</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="w2-vs-1099-calculator.html">
+          <div class="sidebar-tool-icon">📑</div>
+          <div>
+            <div class="sidebar-tool-name">W-2 vs. 1099 Calculator</div>
+            <div class="sidebar-tool-desc">Compare true wages</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER BAR -->
+  <div
+    style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+    <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+      <strong style="color:#0f0f0e;">For informational purposes only.</strong> This calculator provides estimates based
+      on flat tax rates you enter. Actual withholdings depend on your W-4 elections, pre-tax deductions (401k, health
+      insurance, HSA), local taxes, and the progressive federal bracket system. Not a substitute for professional tax
+      advice. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated September 8, 2026.
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+      <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html"
+          style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html"
+          style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html"
+          style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html"
+          style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html"
+          style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <script>
+    let currentType = 'salary';
+
+    const formatCurrency = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
+    const formatCurrencyShort = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
+
+    function setPayType(type) {
+      currentType = type;
+      document.getElementById('tabSalary').classList.toggle('active', type === 'salary');
+      document.getElementById('tabHourly').classList.toggle('active', type === 'hourly');
+
+      if (type === 'hourly') {
+        document.getElementById('incomeLabel').textContent = 'Hourly wage';
+        document.getElementById('incomeInput').value = 25;
+        document.getElementById('incomeInput').step = '0.25';
+        document.getElementById('hoursGroup').style.display = 'block';
+      } else {
+        document.getElementById('incomeLabel').textContent = 'Gross annual salary';
+        document.getElementById('incomeInput').value = 60000;
+        document.getElementById('incomeInput').step = '1000';
+        document.getElementById('hoursGroup').style.display = 'none';
+      }
+      calculatePay();
+    }
+
+    function calculatePay() {
+      const incomeVal = parseFloat(document.getElementById('incomeInput').value) || 0;
+      const hoursVal = parseFloat(document.getElementById('hoursInput').value) || 0;
+      const freqVal = parseInt(document.getElementById('payFrequency').value) || 26;
+      const fedRate = (parseFloat(document.getElementById('fedTaxInput').value) || 0) / 100;
+      const stateRate = (parseFloat(document.getElementById('stateTaxInput').value) || 0) / 100;
+      const ficaRate = 0.0765;
+
+      let annualGross = currentType === 'salary' ? incomeVal : incomeVal * hoursVal * 52;
+
+      const periodGross = annualGross / freqVal;
+      const periodFica = periodGross * ficaRate;
+      const periodFed = periodGross * fedRate;
+      const periodState = periodGross * stateRate;
+      const periodNet = periodGross - periodFica - periodFed - periodState;
+      const annualNet = periodNet * freqVal;
+      const totalDeductions = periodFica + periodFed + periodState;
+      const effRate = periodGross > 0 ? (totalDeductions / periodGross) * 100 : 0;
+
+      const freqMap = { '52': 'weekly', '26': 'bi-weekly', '24': 'semi-monthly', '12': 'monthly' };
+      const freqLabel = freqMap[freqVal] || 'bi-weekly';
+
+      document.getElementById('resultsBody').innerHTML =
+        '<div class="verdict-hero">' +
+        '<div class="verdict-label">Estimated net take-home pay</div>' +
+        '<div class="verdict-value">' + formatCurrency(periodNet) + '</div>' +
+        '<div class="verdict-sub">per ' + freqLabel + ' paycheck</div>' +
+        '</div>' +
+        '<table class="tax-table">' +
+        '<tr><td>Gross pay</td><td>' + formatCurrency(periodGross) + '</td></tr>' +
+        '<tr class="deduction"><td>FICA (7.65%)</td><td>−' + formatCurrency(periodFica) + '</td></tr>' +
+        '<tr class="deduction"><td>Federal taxes</td><td>−' + formatCurrency(periodFed) + '</td></tr>' +
+        '<tr class="deduction"><td>State taxes</td><td>−' + formatCurrency(periodState) + '</td></tr>' +
+        '</table>' +
+        '<div class="summary-row">' +
+        '<div class="summary-box"><div class="sb-label">Annual net</div><div class="sb-val">' + formatCurrencyShort(annualNet) + '</div></div>' +
+        '<div class="summary-box"><div class="sb-label">Effective rate</div><div class="sb-val">' + effRate.toFixed(1) + '%</div></div>' +
+        '</div>';
+    }
+
+    // Run on load
+    calculatePay();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-q.open').forEach(function (b) {
+          b.classList.remove('open');
+          if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+        });
+        if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+      });
+    });
+  </script>
+</body>
+
+</html>
