@@ -158,6 +158,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://clearlycheck.com/reality-check-calculator.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://clearlycheck.com/sales-tax-calculator.html</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>yearly</changefreq>
