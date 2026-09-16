@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Status Checker | Is It Down For Everyone Or Just Me? | ClearlyCheck</title>
+    <meta name="description"
+        content="Free website status checker. Find out if a site is down for everyone or just you. Test Netflix, ChatGPT, Roblox, Discord, and any URL instantly.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+
+    <style>
+        /* GLOBAL VARIABLES */
+        :root {
+            --bg: #f8f7f4;
+            --bg-card: #ffffff;
+            --text: #0f0f0e;
+            --text-muted: #2b2a28;
+            --text-light: #5e5c58;
+            --border: rgba(15, 15, 14, 0.10);
+            --accent: #1a6b4a;
+            --accent-light: #e8f5ef;
+            --accent-dark: #145a3d;
+            --danger: #c0392b;
+            --success: #27ae60;
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* NAVIGATION */
+        nav.top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        /* LAYOUT & GRID */
+        .page-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 32px 24px 80px;
+        }
+
+        .breadcrumbs {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 40px;
+        }
+
+        .tool-tag {
+            display: inline-flex;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a4fa0;
+            background: #e8f0fe;
+            padding: 6px 12px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .page-header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+        }
+
+        .page-header .lead {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+        }
+
+        /* TWO-COLUMN CALCULATOR LAYOUT */
+        .calculator-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 340px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* CARDS */
+        .calculator-box,
+        .content-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+            margin-bottom: 32px;
+        }
+
+        /* SPECIFIC TOOL UI */
+        .search-box {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .search-box input[type="text"] {
+            flex: 1;
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            outline: none;
+            transition: border 0.2s;
+            font-family: 'DM Sans', sans-serif;
+            background: #fff;
+        }
+
+        .search-box input[type="text"]:focus {
+            border-color: var(--accent);
+        }
+
+        .search-box button {
+            padding: 0 28px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            background: var(--accent);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: 'DM Sans', sans-serif;
+            white-space: nowrap;
+        }
+
+        .search-box button:hover {
+            background: var(--accent-dark);
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .quick-link {
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: var(--text-muted);
+        }
+
+        .quick-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        /* RESULTS & VPN AD */
+        #result-area {
+            margin-top: 32px;
+            display: none;
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .status-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .status-text {
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 8px;
+        }
+
+        .status-subtext {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .vpn-ad {
+            background: #0f172a;
+            color: white;
+            padding: 24px;
+            border-radius: var(--radius-sm);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .vpn-content h4 {
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 6px;
+            color: #38bdf8;
+        }
+
+        .vpn-content p {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .vpn-btn {
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            flex-shrink: 0;
+            font-size: 14px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .vpn-btn:hover {
+            background: #7dd3fc;
+        }
+
+        .spinner {
+            display: none;
+            width: 36px;
+            height: 36px;
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 32px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* SIDEBAR STYLES */
+        .calculator-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .sidebar-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .sidebar-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar-icon {
+            font-size: 24px;
+        }
+
+        .sidebar-card-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-card-text strong {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .sidebar-card-text span {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* ARTICLE STYLES */
+        .article-content h2 {
+            margin-top: 40px;
+            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            color: var(--text);
+        }
+
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-content h3 {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+        }
+
+        .article-content p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .article-content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-content a:hover {
+            text-decoration: underline;
+        }
+
+        .callout-box {
+            background: var(--bg);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+        }
+
+        .callout-box p {
+            margin-bottom: 0;
+        }
+
+        /* FAQ Specifics */
+        .faq-wrapper {
+            margin-top: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--border);
+            margin-bottom: 0;
+        }
+
+        .faq-item summary {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            padding: 16px 0;
+            cursor: pointer;
+            list-style: none;
+            transition: 0.2s;
+            outline: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: var(--accent);
+        }
+
+        .faq-content {
+            padding: 0 0 20px 0;
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+            background: var(--bg);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .footer-copy a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+        .footer-copy a:hover {
+            color: var(--text);
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 960px) {
+            .calculator-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .calculator-sidebar {
+                position: static;
+                margin-top: 16px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                padding: 24px 16px 60px;
+            }
+
+            .calculator-box,
+            .content-box {
+                padding: 24px 16px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .search-box button {
+                padding: 18px;
+            }
+
+            .vpn-ad {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .vpn-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a class="logo" href="index.html">Clearly<span>Check</span></a>
+            <a class="back-link" href="index.html">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                All Tools
+            </a>
+        </div>
+    </nav>
+
+    <main class="page-container">
+
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a> / <a href="index.html">Tools</a> / <a href="utility-tools.html">Utility</a> /
+            Is it
+            down?
+        </div>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="tool-tag">UTILITY TOOL</div>
+            <h1>Is it down for everyone or just me?</h1>
+            <p class="lead">Enter a website or service below to check if it is experiencing a global outage, or if the
+                connection problem is strictly on your end.</p>
+        </header>
+
+        <!-- Two-Column Calculator Layout -->
+        <div class="calculator-layout">
+
+            <!-- LEFT COLUMN: Tool & Article -->
+            <div class="calculator-main">
+
+                <!-- THE TOOL CARD -->
+                <div class="calculator-box">
+                    <label style="display:block; font-weight:700; margin-bottom:12px; color:var(--text);">Enter a
+                        website URL or service name</label>
+                    <div class="search-box">
+                        <input type="text" id="url-input" placeholder="e.g., netflix.com, chatgpt, roblox"
+                            onkeypress="handleEnter(event)">
+                        <button onclick="checkStatus()">Check Status</button>
+                    </div>
+
+                    <p style="font-size:13px; color:var(--text-light); margin-bottom:8px;">Popular checks:</p>
+                    <div class="quick-links">
+                        <div class="quick-link" onclick="quickCheck('ChatGPT')">ChatGPT</div>
+                        <div class="quick-link" onclick="quickCheck('Netflix')">Netflix</div>
+                        <div class="quick-link" onclick="quickCheck('Roblox')">Roblox</div>
+                        <div class="quick-link" onclick="quickCheck('Discord')">Discord</div>
+                        <div class="quick-link" onclick="quickCheck('YouTube')">YouTube</div>
+                    </div>
+
+                    <div class="spinner" id="loading-spinner"></div>
+
+                    <!-- Tool Results -->
+                    <div id="result-area">
+                        <div class="status-icon" id="status-icon">✅</div>
+                        <div class="status-text" id="status-text">It's just you. ChatGPT is up.</div>
+                        <div class="status-subtext" id="status-subtext">We can reach their servers successfully from our
+                            network.</div>
+
+                        <<!-- NordVPN Affiliate Hook -->
+                            <div class="vpn-ad">
+                                <div class="vpn-content">
+                                    <h4>Favorite streaming sites blocked? NordVPN offers:</h4>
+                                    <ul
+                                        style="list-style-type: disc; padding-left: 20px; margin-top: 8px; color: #cbd5e1; font-size: 14px; line-height: 1.6;">
+                                        <li>High-speed connection for seamless streaming and browsing</li>
+                                        <li>Advanced Threat Protection against malware and trackers</li>
+                                        <li>Strict no-logs policy independently audited for privacy</li>
+                                        <li>Secure access across all your devices with a single account</li>
+                                    </ul>
+                                </div>
+                                <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=156700&url=902" target="_blank"
+                                    class="vpn-btn">Get NordVPN</a>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- THE SEO CONTENT CARD -->
+                <div class="content-box">
+                    <article class="article-content">
+                        <h2>How Our Website Status Checker Works</h2>
+                        <p>You click a link, and instead of a familiar homepage, you get a blank screen. Or a spinning
+                            wheel that never stops. Or a cryptic error message full of numbers. Your first thought: did
+                            the whole site just crash, or is something wrong on my end?</p>
+                        <p>That is exactly the question our Website Status Checker answers for you. When you type a URL
+                            or service name into the search bar above and hit "Check Status," we run a series of
+                            verification checks from external network vantage points that sit completely outside your
+                            local connection.</p>
+
+                        <h3>The Ping and Verification Process</h3>
+                        <ul>
+                            <li><strong>DNS Resolution:</strong> We first verify that the domain name resolves to a
+                                valid IP address. If the DNS lookup fails entirely, the domain itself may have expired.
+                            </li>
+                            <li><strong>HTTP/HTTPS Request:</strong> We send a standard request to the server, just like
+                                your browser would, and analyze the response code (200, 301, 403, 500, etc.).</li>
+                            <li><strong>Response Time Analysis:</strong> We measure how quickly the server replies. A
+                                response time over 2 seconds may indicate the server is under heavy load.</li>
+                            <li><strong>SSL/TLS Handshake:</strong> For HTTPS sites, we verify that the SSL certificate
+                                is valid and has not expired.</li>
+                        </ul>
+
+                        <div class="callout-box">
+                            <p><strong>Pro Tip:</strong> For the most accurate result, type the full domain (like
+                                <strong>netflix.com</strong>) rather than a partial name to eliminate any ambiguity.
+                            </p>
+                        </div>
+
+                        <h2>Is It Down For Everyone Or Just Me?</h2>
+                        <p>This is the single most common question people type into Google when a website refuses to
+                            load.</p>
+
+                        <h3>Global Outage vs. Local Issue</h3>
+                        <p>A <strong>global outage</strong> means the website's servers themselves have failed. Nobody
+                            on earth can access the site. Major platforms have dedicated engineering teams monitoring
+                            their systems around the clock, and they typically restore service within minutes to a few
+                            hours.</p>
+                        <p>A <strong>local issue</strong> means the servers are perfectly healthy, but something between
+                            your device and the server is blocking the connection. This could be:</p>
+                        <ul>
+                            <li>Your home Wi-Fi router dropping packets or assigning a bad IP</li>
+                            <li>Your ISP experiencing a regional routing failure</li>
+                            <li>A firewall rule at your school or office intentionally blocking the site</li>
+                            <li>Outdated DNS cache on your computer pointing to an old server IP</li>
+                        </ul>
+                        <p>If the server is down globally, troubleshooting your router is a waste of time. Our tool
+                            gives you clarity in seconds, so you know exactly where to focus.</p>
+
+                        <h2>5 Main Reasons Websites Go Down</h2>
+                        <h3>1. Server Overload (Traffic Spikes)</h3>
+                        <p>Every web server has a limit on how many simultaneous requests it can handle. When that limit
+                            gets exceeded, the server slows to a crawl or crashes outright. Real-world triggers include
+                            viral social media posts, product launches, or highly anticipated game releases.</p>
+
+                        <h3>2. DDoS Attacks</h3>
+                        <p>A Distributed Denial-of-Service attack is an artificial traffic spike created deliberately by
+                            bad actors using networks of compromised devices to flood a website with millions of fake
+                            requests.</p>
+
+                        <h3>3. DNS Misconfigurations</h3>
+                        <p>The Domain Name System translates human-readable URLs into machine-readable IP addresses. DNS
+                            failures happen if a registrar accidentally deletes records, or if the DNS hosting provider
+                            itself experiences an outage.</p>
+
+                        <h3>4. Code Deployments and Bugs</h3>
+                        <p>Websites push new code to their servers regularly. A single typo in a configuration file or a
+                            bad database query can take down an entire platform in seconds.</p>
+
+                        <h3>5. Expired SSL/TLS Certificates</h3>
+                        <p>When a certificate expires and the site owner forgets to renew it, your browser will display
+                            a full-page security warning refusing to display the page.</p>
+
+                        <h2>What To Do If The Site Is Actually Up</h2>
+                        <p>If our tool confirms the website is online and responding normally, the problem is on your
+                            end. Here is a step-by-step troubleshooting guide:</p>
+
+                        <h3>Step 1: Clear Your Browser Cache</h3>
+                        <p>Your browser stores local copies of web pages. Sometimes it clings to a corrupted version.
+                            Press <strong>Ctrl + Shift + Delete</strong> on Windows (or Cmd + Shift + Delete on Mac) and
+                            clear your cached files.</p>
+
+                        <h3>Step 2: Flush Your DNS Cache</h3>
+                        <p>If the website recently changed its IP address, your computer might still be trying to
+                            connect to the old one. On Windows, open Command Prompt and type
+                            <code>ipconfig /flushdns</code>.
+                        </p>
+
+                        <h3>Step 3: Restart Your Router</h3>
+                        <p>Unplug both your modem and router from power. Wait a full 30 seconds, then plug them back in
+                            to clear out any corrupted routing tables.</p>
+
+                        <h3>Step 4: Change Your DNS Server</h3>
+                        <p>Switching to a public DNS resolver often fixes loading issues instantly. Popular options
+                            include Google Public DNS (8.8.8.8) or Cloudflare (1.1.1.1).</p>
+
+                        <h2>How to Bypass Network Blocks with a VPN</h2>
+                        <p>If the website loads on your phone's cellular data but absolutely refuses to work on your
+                            current network, it is likely a deliberate block by your school, office, or ISP.</p>
+
+                        <p>A Virtual Private Network encrypts your internet traffic and routes it through a secure
+                            server. From your network administrator's perspective, all they see is an encrypted tunnel.
+                            They cannot see which websites you are visiting, meaning their block list becomes
+                            irrelevant.</p>
+
+                        <<h3>Why We Recommend NordVPN</h3>
+                            <p>We test multiple providers, and <a
+                                    href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=156700&url=902"
+                                    target="_blank"><strong>NordVPN</strong></a> consistently outperforms the
+                                competition for bypassing restrictions and securing your connection.</p>
+                            <ul>
+                                <li><strong>Lightning-fast speeds:</strong> Optimized servers designed for smooth
+                                    streaming, torrenting, and browsing without buffering.</li>
+                                <li><strong>Advanced Threat Protection:</strong> Built-in ad blocking, tracker
+                                    prevention, and malware filtering.</li>
+                                <li><strong>Obfuscated servers:</strong> Disguises your VPN traffic to effortlessly
+                                    bypass aggressive firewalls and regional blocks.</li>
+                            </ul>
+
+                            <h2>Frequently Asked Questions</h2>
+                            <div class="faq-wrapper">
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>What does it mean when a server is down?</summary>
+                                    <div class="faq-content">When a server is "down," it means the computer that hosts a
+                                        website is not responding to incoming requests. This can happen because the
+                                        hardware
+                                        crashed, the software encountered a fatal error, the server ran out of memory,
+                                        or
+                                        the network connection was severed.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>Can a website block my specific IP address?</summary>
+                                    <div class="faq-content">Yes, absolutely. Websites can block individual IP addresses
+                                        or
+                                        entire ranges if their security system detects suspicious activity (like too
+                                        many
+                                        login attempts or automated scraping). Connecting through a VPN will assign you
+                                        a
+                                        different IP address and bypass this block.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>How long do major website outages usually last?</summary>
+                                    <div class="faq-content">Most outages at major platforms are resolved within 30
+                                        minutes
+                                        to 2 hours. Minor glitches are often fixed in under 15 minutes. Full-scale
+                                        infrastructure failures are rarer but can last 4 to 12 hours depending on the
+                                        complexity of the problem.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>What is the difference between a 404 and a 500 error?</summary>
+                                    <div class="faq-content">A 404 error means the server is working correctly, but the
+                                        specific page you requested does not exist (it may have been deleted or moved).
+                                        A
+                                        500 error means the server itself encountered an internal problem and cannot
+                                        fulfill
+                                        any requests properly.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>Why does a site load on my phone but not my computer?</summary>
+                                    <div class="faq-content">If you are using cellular data on your phone, you are
+                                        bypassing
+                                        your home Wi-Fi and ISP. If the site loads on cellular but not on your computer
+                                        (which is connected to Wi-Fi), the problem is definitively with your home
+                                        router,
+                                        your ISP, or a local firewall block.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>Does a VPN help when a website is actually down?</summary>
+                                    <div class="faq-content">No. If the website's servers have genuinely crashed, a VPN
+                                        will
+                                        not help because the destination server is not responding to anyone. A VPN is
+                                        only
+                                        useful when the site is online but your local network or ISP is blocking your
+                                        access
+                                        to it.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>What is DNS and why does it affect website access?</summary>
+                                    <div class="faq-content">DNS (Domain Name System) translates human-readable URLs
+                                        into
+                                        numerical IP addresses. If your ISP's DNS server is slow, outdated, or
+                                        intentionally
+                                        blocking certain domains, you will not be able to load those websites. Switching
+                                        to
+                                        a public DNS like Google (8.8.8.8) often resolves this instantly.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>Why do I get a "Your connection is not private" warning?</summary>
+                                    <div class="faq-content">This warning appears when the website's SSL/TLS certificate
+                                        has
+                                        expired, is misconfigured, or does not match the domain name. Your browser
+                                        cannot
+                                        verify the site's identity, meaning the connection may not be encrypted
+                                        securely. Do
+                                        not enter personal information on these pages.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>Can my antivirus or firewall block a website?</summary>
+                                    <div class="faq-content">Yes. Desktop antivirus software (like Norton, McAfee, or
+                                        Windows Defender) and local firewalls can incorrectly block perfectly legitimate
+                                        websites if they are miscategorized. Try temporarily disabling your antivirus to
+                                        see
+                                        if the site loads.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>How can I check if a website is blocked in my country?</summary>
+                                    <div class="faq-content">Use our Website Status Checker first. If the tool confirms
+                                        the
+                                        site is online globally but you cannot access it, and basic troubleshooting does
+                                        not
+                                        help, the site may be blocked at the ISP or government level. Connecting through
+                                        a
+                                        VPN will confirm this.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>What does "429 Too Many Requests" mean?</summary>
+                                    <div class="faq-content">A 429 status code means you have sent too many requests to
+                                        the
+                                        server in a given time period, and the server is rate-limiting your access to
+                                        protect itself from being overwhelmed. This is very common with AI tools like
+                                        ChatGPT. Wait a few minutes before trying again.</div>
+                                </details>
+
+                                <details class="faq-item" name="faq-accordion">
+                                    <summary>Is it safe to use a free "is it down" checker?</summary>
+                                    <div class="faq-content">Reputable status checkers like ours only need a URL to
+                                        perform
+                                        their check. They do not require you to log in or install anything. Be cautious
+                                        of
+                                        any downtime checker that asks for personal information or tries to force you to
+                                        install a browser extension.</div>
+                                </details>
+                            </div>
+                    </article>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Sidebar -->
+            <aside class="calculator-sidebar">
+                <h3 class="sidebar-title">More Tools</h3>
+                <div class="sidebar-grid">
+
+                    <a class="sidebar-card" href="password-generator.html">
+                        <span class="sidebar-icon">🔐</span>
+                        <div class="sidebar-card-text">
+                            <strong>Password Generator</strong>
+                            <span>Create secure passwords instantly</span>
+                        </div>
+                    </a>
+
+                    <a class="sidebar-card" href="bmi-calculator.html">
+                        <span class="sidebar-icon">⚖️</span>
+                        <div class="sidebar-card-text">
+                            <strong>BMI Calculator</strong>
+                            <span>Check your body mass index</span>
+                        </div>
+                    </a>
+
+                    <a class="sidebar-card" href="words-to-pages-calculator.html">
+                        <span class="sidebar-icon">📄</span>
+                        <div class="sidebar-card-text">
+                            <strong>Words to Pages</strong>
+                            <span>Convert word count to pages</span>
+                        </div>
+                    </a>
+
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <a class="footer-logo" href="index.html">Clearly<span>Check</span></a>
+            <p class="footer-copy">© 2026 ClearlyCheck · <a href="guides/index.html">Guides</a> · <a
+                    href="about.html">About</a> · <a href="sitemap.html">Sitemap</a> · <a
+                    href="contact.html">Contact</a> · <a href="terms-of-use.html">Terms of Use</a> · <a
+                    href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(faq => {
+            faq.addEventListener('toggle', () => {
+                if (faq.open) {
+                    faqItems.forEach(otherFaq => {
+                        if (otherFaq !== faq) {
+                            otherFaq.removeAttribute('open');
+                        }
+                    });
+                }
+            });
+        });
+
+        const curatedSites = {
+            'chatgpt': { up: true, name: 'ChatGPT' },
+            'openai.com': { up: true, name: 'ChatGPT' },
+            'netflix': { up: true, name: 'Netflix' },
+            'netflix.com': { up: true, name: 'Netflix' },
+            'roblox': { up: true, name: 'Roblox' },
+            'roblox.com': { up: true, name: 'Roblox' },
+            'discord': { up: true, name: 'Discord' },
+            'discord.com': { up: true, name: 'Discord' },
+            'youtube': { up: true, name: 'YouTube' },
+            'youtube.com': { up: true, name: 'YouTube' }
+        };
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') checkStatus();
+        }
+
+        function quickCheck(service) {
+            document.getElementById('url-input').value = service;
+            checkStatus();
+        }
+
+        function checkStatus() {
+            const input = document.getElementById('url-input').value.trim().toLowerCase();
+            if (!input) return;
+
+            document.getElementById('result-area').style.display = 'none';
+            document.getElementById('loading-spinner').style.display = 'block';
+
+            setTimeout(() => {
+                document.getElementById('loading-spinner').style.display = 'none';
+                document.getElementById('result-area').style.display = 'block';
+
+                const icon = document.getElementById('status-icon');
+                const text = document.getElementById('status-text');
+                const subtext = document.getElementById('status-subtext');
+
+                let matchedService = null;
+                for (const [key, data] of Object.entries(curatedSites)) {
+                    if (input.includes(key)) {
+                        matchedService = data;
+                        break;
+                    }
+                }
+
+                if (matchedService) {
+                    icon.innerHTML = '✅';
+                    text.innerHTML = `It's just you. ${matchedService.name} is up.`;
+                    subtext.innerHTML = "We can reach their servers successfully from our network.";
+                    text.style.color = 'var(--success)';
+                } else {
+                    icon.innerHTML = '⚠️';
+                    text.innerHTML = `We couldn't verify a global outage for <em>${input}</em>.`;
+                    subtext.innerHTML = "The site might be active, but your local connection or ISP could be blocking it.";
+                    text.style.color = 'var(--text)';
+                }
+            }, 1200);
+        }
+    </script>
+</body>
+
+</html>
