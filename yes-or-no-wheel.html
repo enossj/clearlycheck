@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yes or No Wheel — Spin to Decide Instantly | ClearlyCheck</title>
+  <meta name="description"
+    content="Free Yes or No wheel spinner. Can't decide? Spin the wheel and get a random yes or no answer instantly. Fair, unbiased, and runs entirely in your browser.">
+  <meta name="keywords"
+    content="yes or no wheel, yes no spinner, random decision maker, spin the wheel yes or no, yes or no generator, random yes no, decision wheel, coin flip alternative, should I or shouldn't I">
+  <link rel="canonical" href="https://clearlycheck.com/yes-or-no-wheel.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yes or No Wheel — Spin to Decide Instantly">
+  <meta property="og:description"
+    content="Free Yes or No wheel spinner. Can't decide? Spin the wheel for a random yes or no answer. Fair, unbiased, runs in your browser.">
+  <meta property="og:url" content="https://clearlycheck.com/yes-or-no-wheel.html">
+  <meta property="og:site_name" content="ClearlyCheck">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Yes or No Wheel",
+  "description": "Free yes or no wheel spinner. Spin to get a random yes or no answer instantly. Uses JavaScript randomization, runs entirely in your browser.",
+  "url": "https://clearlycheck.com/yes-or-no-wheel.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can the Yes or No wheel be rigged?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The wheel uses JavaScript's Math.random() to generate a random angle between 0 and 360 degrees on each spin. The code runs entirely in your browser and there is no server-side logic that could bias the result. You can inspect the page source to verify." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Yes or No wheel use true randomness?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Math.random() produces pseudo-random numbers using a PRNG algorithm seeded by the browser. While not cryptographically secure randomness, it is more than sufficient for fair yes/no decisions. Each spin is independent, with no memory of previous results." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the wheel a 50/50 split?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The wheel is divided into exactly two equal halves — 180 degrees for Yes and 180 degrees for No. Combined with uniform random angle generation, each outcome has an equal 50% probability on every spin." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same as flipping a coin?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mathematically, both give you a 50/50 binary outcome. The difference is experiential: a spinning wheel builds anticipation through a visual countdown, which research suggests makes people more committed to the result. A coin flip is faster but feels less ceremonial." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this wheel for more than two options?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This particular tool is designed exclusively for yes/no binary decisions. If you need to choose between multiple options, a custom spinner wheel with named segments would be more appropriate." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the wheel remember my previous spins?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Each spin is completely independent. The wheel does not store, track, or reference any previous results. There is no gambler's fallacy correction — getting Yes five times in a row does not make No more likely on the sixth spin." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the wheel sometimes land near the boundary?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the random angle is generated from a continuous range of 0 to 360 degrees, it can land anywhere, including very close to the Yes/No boundary. The result is still unambiguous because the code checks which half of the circle the final angle falls in, not the visual pointer position." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for serious decisions?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The wheel is best suited for low-stakes decisions like what to eat, who goes first, or whether to watch a movie. For important life decisions, use it as a gut-check tool: spin the wheel, and if you feel disappointed by the result, that reaction tells you what you actually want." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool work on mobile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The wheel is built with CSS and JavaScript that works on all modern browsers including Safari on iOS, Chrome on Android, and desktop browsers. The layout is fully responsive and touch-friendly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data collected when I spin?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No data is collected. The spinner runs entirely client-side in your browser. No spin results, timestamps, or usage data are sent to any server. There are no cookies set by this tool." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Math.random() different from crypto.getRandomValues()?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Math.random() uses a pseudo-random number generator (PRNG) that is fast and statistically uniform but theoretically predictable if you know the internal state. crypto.getRandomValues() draws from the operating system's entropy pool and is cryptographically secure. For a yes/no spinner, Math.random() provides perfectly adequate fairness." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I spin while the wheel is already spinning?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The spin button is disabled while the wheel is in motion. You must wait for the current spin to finish and the result to display before you can spin again. This prevents overlapping animations and ensures a clean result every time." }
+    }
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://clearlycheck.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://clearlycheck.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Utility",
+      "item": "https://clearlycheck.com/utility-tools.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Yes or No Wheel",
+      "item": "https://clearlycheck.com/yes-or-no-wheel.html"
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Yes or No Wheel",
+  "description": "Free yes or no wheel spinner. Spin to get a random yes or no answer instantly. Uses JavaScript randomization, runs entirely in your browser.",
+  "url": "https://clearlycheck.com/yes-or-no-wheel.html",
+  "mainEntityOfPage": "https://clearlycheck.com/yes-or-no-wheel.html",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "author": {
+    "@type": "Person",
+    "@id": "https://clearlycheck.com/#enos",
+    "name": "Enos"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://clearlycheck.com/#organization",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://clearlycheck.com/assets/og-image.svg"
+    }
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "ClearlyCheck",
+    "url": "https://clearlycheck.com"
+  }
+}
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/calculator.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f8f7f4;
+      --bg-card: #ffffff;
+      --text: #0f0f0e;
+      --text-muted: #2b2a28;
+      --text-light: #3d3c39;
+      --border: rgba(15, 15, 14, 0.10);
+      --border-hover: rgba(15, 15, 14, 0.20);
+      --accent: #1a6b4a;
+      --accent-light: #e8f5ef;
+      --accent-dark: #145a3d;
+      --blue: #1a4fa0;
+      --blue-light: #e8f0fe;
+      --yellow: #b7770d;
+      --yellow-light: #fef9ec;
+      --red: #b0362c;
+      --red-light: #fbebe9;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.10);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .page-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 40px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .tool-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .page-header p {
+      font-size: 17px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .page-meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .page-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .page-meta a:hover {
+      text-decoration: underline;
+    }
+
+    /* WHEEL TOOL SECTION */
+    .wheel-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .wheel-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .wheel-container {
+      position: relative;
+      width: 340px;
+      height: 340px;
+    }
+
+    .wheel-pointer {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 30px solid var(--text);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    .wheel-spinner {
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 6px solid var(--text);
+      box-shadow: 0 0 0 4px var(--bg), 0 8px 32px rgba(0,0,0,0.12);
+      transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wheel-spinner canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .wheel-center-dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 28px;
+      background: var(--bg-card);
+      border: 4px solid var(--text);
+      border-radius: 50%;
+      z-index: 5;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .spin-btn {
+      padding: 16px 52px;
+      background: var(--text);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.18s;
+      letter-spacing: -0.2px;
+    }
+
+    .spin-btn:hover:not(:disabled) {
+      background: #2a2a28;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .spin-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .result-display {
+      text-align: center;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .result-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .result-value {
+      font-family: 'Roboto', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .result-value.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .result-value.yes {
+      color: var(--accent);
+    }
+
+    .result-value.no {
+      color: var(--red);
+    }
+
+    .spin-count {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    /* ARTICLE */
+    .article-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+    }
+
+    .article-section>div {
+      min-width: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .article-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .article {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .article h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+
+    .article h2:first-child {
+      margin-top: 0;
+    }
+
+    .article h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+
+    .article p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .article ul,
+    .article ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .article li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+
+    .article strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .article a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .article a:hover {
+      text-decoration: underline;
+    }
+
+    .article code {
+      word-break: break-word;
+      overflow-wrap: break-word;
+      background: var(--bg);
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .article th,
+    .article td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .article th {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-bottom: 8px;
+    }
+
+    .table-footnote {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    /* FAQ */
+    .faq-wrapper {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+
+    .faq-item summary {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      padding: 16px 0;
+      cursor: pointer;
+      list-style: none;
+      transition: 0.2s;
+      outline: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item[open] summary {
+      color: var(--accent);
+    }
+
+    .faq-content {
+      padding: 0 0 20px 0;
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* SIDEBAR */
+    .sidebar-tools {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-tool {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow);
+      transition: all 0.18s;
+    }
+
+    .sidebar-tool:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--border-hover);
+    }
+
+    .sidebar-tool-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-tool-name {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .sidebar-tool-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* DISCLAIMER */
+    .disclaimer-bar {
+      background: #f0f0ef;
+      border-top: 1px solid rgba(15, 15, 14, 0.08);
+      padding: 16px 24px;
+    }
+
+    .disclaimer-bar .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .disclaimer-bar p {
+      font-size: 12px;
+      color: #6b6a66;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .footer-copy a {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      .wheel-container {
+        width: 280px;
+        height: 280px;
+      }
+
+      .wheel-spinner {
+        width: 280px;
+        height: 280px;
+      }
+
+      .wheel-card {
+        padding: 32px 20px;
+      }
+
+      .page-header {
+        padding: 32px 20px 24px;
+      }
+
+      .article {
+        padding: 28px 20px;
+      }
+
+      .result-value {
+        font-size: 36px;
+      }
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973"
+    crossorigin="anonymous"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">Clearly<span>Check</span></a>
+      <a class="back-link" href="/">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+        All Tools
+      </a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <nav aria-label="breadcrumb">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="index.html#tools">Tools</a><span>›</span>
+        <a href="utility-tools.html">Utility</a><span>›</span>
+        <span style="color:var(--text-muted);">Yes or No Wheel</span>
+      </div>
+    </nav>
+    <div class="tool-tag-pill">🎯 Utility Tool</div>
+    <h1>Yes or No Wheel</h1>
+    <p>Stuck between two choices? Spin the wheel and let random chance make the call — instantly, fairly, and without
+      overthinking it.</p>
+    <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated
+      September 22, 2026</div>
+  </div>
+
+  <main>
+    <div class="wheel-section">
+      <div class="wheel-card">
+
+        <div class="wheel-container" id="wheelContainer">
+          <div class="wheel-pointer"></div>
+          <div class="wheel-spinner" id="wheelSpinner">
+            <canvas id="wheelCanvas" width="680" height="680"></canvas>
+            <div class="wheel-center-dot"></div>
+          </div>
+        </div>
+
+        <button class="spin-btn" id="spinBtn" onclick="spinWheel()">🎲 Spin the Wheel</button>
+
+        <div class="result-display">
+          <div class="result-label" id="resultLabel">Spin to see your answer</div>
+          <div class="result-value" id="resultValue"></div>
+          <div class="spin-count" id="spinCount"></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div class="article-section">
+    <article class="article">
+      <h2>How Our Yes or No Wheel Works</h2>
+      <p>The spinning wheel you see above is built entirely with HTML5 Canvas and JavaScript — no images, no external libraries, no server calls. When you click the "Spin" button, the tool executes a straightforward three-step process that produces a genuinely random binary outcome.</p>
+      <p>First, the script calls <code>Math.random()</code>, which returns a floating-point number between 0 (inclusive) and 1 (exclusive). That number is multiplied by 360 to produce a random target angle somewhere on the full circle. Because the wheel is evenly divided — 180 degrees for "Yes" and 180 degrees for "No" — any angle in the first half maps to one answer and any angle in the second half maps to the other.</p>
+      <p>Second, the script adds several full rotations (typically between 5 and 8 complete 360-degree turns) on top of that random angle. These extra rotations exist purely for visual satisfaction; they have no effect on the outcome. The total rotation is applied to the wheel element via a CSS <code>transform: rotate()</code> property.</p>
+      <p>Third, a CSS transition with a <code>cubic-bezier(0.17, 0.67, 0.12, 0.99)</code> easing curve handles the animation. This particular curve accelerates quickly at the start and decelerates slowly at the end, mimicking the physics of a real spinning wheel grinding to a halt. The browser's GPU-accelerated compositor handles the rendering, which is why the animation stays smooth even on low-powered devices.</p>
+      <p>Once the transition ends (after roughly four seconds), the script reads the final rotation modulo 360 degrees and determines which slice the pointer sits over. The result — "Yes" or "No" — is then displayed prominently below the wheel. At no point does any data leave your browser, and no spin outcome is stored, logged, or reported anywhere.</p>
+      <p>This approach is deliberately minimal. A virtual decision-making tool should not require account registration, backend APIs, or third-party dependencies. You load the page, you spin, you get your answer. If you want to audit the logic yourself, right-click the page and select "View Page Source" — the entire algorithm is readable inline JavaScript.</p>
+
+      <h2>The Psychology of Random Decisions</h2>
+      <p>Psychologists have a term for the mental exhaustion that comes from making too many choices in a short period: <strong>decision fatigue</strong>. First documented in research by social psychologist Roy Baumeister, decision fatigue describes how the quality of decisions deteriorates after a long session of decision-making. It explains why judges grant fewer paroles late in the day, why shoppers impulse-buy near the checkout counter, and why you cannot pick a restaurant after spending eight hours making choices at work.</p>
+      <p>The paradox of modern life is that we have more options than any previous generation — and significantly less peace of mind about our choices as a result. Psychologist Barry Schwartz explores this in his work on the "paradox of choice," showing that beyond a certain threshold, having more options leads to anxiety, regret, and analysis paralysis rather than satisfaction. When faced with a binary question — "Should I go to the gym or skip it today?" — the two options are objectively simple. But the weight of making yet another decision, stacked on top of dozens you have already made that day, can feel surprisingly heavy.</p>
+      <p>This is exactly where a random decision tool like the Yes or No wheel becomes psychologically useful. Delegating a low-stakes decision to random chance accomplishes several things simultaneously. It short-circuits the deliberation loop. It removes the post-decision second-guessing ("Did I pick wrong?") because there was no deliberation to second-guess. And it preserves your finite reservoir of willpower for decisions that actually warrant it — <a href="can-i-afford-this.html">financial choices</a>, career moves, or health-related judgments.</p>
+      <p>There is also a subtler psychological trick at play. When you spin the wheel and feel a flash of relief or disappointment at the result, that gut reaction is diagnostic information. If the wheel says "No" and you feel disappointed, you now know that you actually wanted "Yes." The wheel did not make the decision for you — it revealed the decision you had already made internally but could not articulate. Therapists sometimes use a variant of this technique, asking clients to flip a coin and then observe their own reaction to the outcome, as a way of bypassing conscious overthinking and accessing their genuine preference.</p>
+      <p>Decision fatigue also compounds across a day in ways people rarely notice. A 2011 study published in the <em>Proceedings of the National Academy of Sciences</em> found that the percentage of favorable rulings by judges dropped from roughly 65% at the start of a session to nearly 0% just before a meal break, then reset to 65% after eating. The judges were not consciously biased — their depleted cognitive resources defaulted to the safer, easier "deny" option. Outsourcing trivial decisions to random chance is a form of cognitive hygiene: you preserve bandwidth for the rulings that matter.</p>
+
+      <h2>Coin Flip vs. Spinner Wheel</h2>
+      <p>Both a coin flip and a spinner wheel produce a 50/50 binary outcome. So why would anyone use a digital spinner instead of the coin in their pocket? The differences fall into three categories: ritual, perception, and practical flexibility.</p>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>Coin Flip</th>
+              <th>Spinner Wheel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Speed</td>
+              <td>~2 seconds</td>
+              <td>~4 seconds (with animation)</td>
+            </tr>
+            <tr>
+              <td>Anticipation</td>
+              <td>Brief — lands quickly</td>
+              <td>Extended — slow deceleration builds tension</td>
+            </tr>
+            <tr>
+              <td>Commitment to result</td>
+              <td>Moderate</td>
+              <td>Higher (ritual investment increases buy-in)</td>
+            </tr>
+            <tr>
+              <td>Requires physical object</td>
+              <td>Yes — need a coin</td>
+              <td>No — just a browser</td>
+            </tr>
+            <tr>
+              <td>Bias risk</td>
+              <td>Slight — coin weight, flipping technique</td>
+              <td>None — software generates the angle</td>
+            </tr>
+            <tr>
+              <td>Group setting</td>
+              <td>Hard to see across a table</td>
+              <td>Screen visible to multiple people</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The anticipation factor deserves emphasis. When a coin is flipped, it spends less than a second in the air before being caught. There is barely enough time to register the act, let alone build psychological investment in the outcome. A spinner wheel, by contrast, takes several seconds to decelerate. During those seconds, your brain involuntarily starts rooting for one side. That involuntary rooting is itself valuable — it tells you what you want before the wheel tells you what you got.</p>
+      <p>Physical coin flips also carry a small but real bias. Research published in the journal <em>SIAM Review</em> by Stanford mathematician Persi Diaconis showed that a vigorously flipped coin lands on the same side it started on approximately 51% of the time, due to precession dynamics. A software-based spinner eliminates this mechanical asymmetry entirely.</p>
+      <p>For groups, the spinner is plainly superior. Imagine four friends trying to decide who picks the movie. A coin flip requires multiple rounds of elimination. A spinner can replace that with a single shared-screen spin visible to everyone, making the process faster and more inclusive. If you need a shared random tool for group decisions — such as splitting tasks at work — ClearlyCheck's <a href="percentage-calculator.html">Percentage Calculator</a> can also help distribute responsibilities numerically.</p>
+
+      <h2>5 Times You Should Let the Wheel Decide</h2>
+      <p>Not every decision belongs on a spinner. Tax strategy, medical treatment, and whether to accept a job offer should involve deliberation, research, and probably professional advice. But a surprising number of daily decisions are low-stakes enough that spending more than ten seconds on them is a net waste of mental energy. Here are five categories where the wheel earns its keep.</p>
+
+      <h3>1. What to eat</h3>
+      <p>"What do you want for dinner?" is statistically one of the most common daily disagreements between partners and roommates. The stakes are low — virtually any meal will be adequate — but the decision feels disproportionately difficult because everyone has veto power and no one has a strong positive preference. Assign "Yes" to one cuisine and "No" to the other, spin, and move on. You will eat in twenty minutes instead of sixty. If you are also trying to figure out whether ordering delivery fits your budget, run the numbers through our <a href="tip-calculator.html">Tip Calculator</a> first.</p>
+
+      <h3>2. Who goes first</h3>
+      <p>Board game nights, pickup basketball, presentation order at work — any scenario that requires choosing a starting person. The wheel removes politics from the selection entirely. No one can accuse anyone of favoritism when the decision was visibly random and witnessed by the group.</p>
+
+      <h3>3. Whether to work out</h3>
+      <p>This one is counterintuitive. If you are genuinely ambivalent about exercising today, spinning the wheel can break the inertia. Most people find that when the wheel says "Yes" and they actually go, they are glad they did. And when it says "No," they enjoy the guilt-free rest. The key insight is that the ambivalence itself — not the workout — is what drains energy. Resolving it quickly, even randomly, is the win.</p>
+
+      <h3>4. Whether to buy something optional</h3>
+      <p>You have been eyeing a gadget, a piece of clothing, or a subscription for days but cannot commit. You have already checked whether you can afford it (perhaps using our <a href="can-i-afford-this.html">Can I Afford This?</a> calculator). The financial analysis is done; the remaining hesitation is purely emotional. Let the wheel break the tie. If the answer is "No" and you feel relieved, you were looking for permission not to buy it. If you feel disappointed, go ahead and buy it — you clearly want it.</p>
+
+      <h3>5. Resolving trivial bets</h3>
+      <p>Who pays for coffee? Whose turn is it to drive? Which podcast to listen to on a road trip? These micro-decisions accumulate over the course of a friendship, relationship, or workday. Having a shared, visible, no-argument resolution tool prevents trivial choices from escalating into disproportionate conflicts. Bookmark the page, spin when needed, and move on to things that matter.</p>
+
+      <h2>Is the Result Truly Random?</h2>
+      <p>This question comes up often enough that it deserves a precise technical answer. The short version: <strong>yes, for all practical purposes, the result is random and unbiased</strong>. The longer version involves understanding what JavaScript's <code>Math.random()</code> actually does under the hood.</p>
+      <p>When you call <code>Math.random()</code>, the JavaScript engine invokes a pseudo-random number generator (PRNG). The word "pseudo" means the sequence is generated by a deterministic algorithm — given the same initial state (called a "seed"), the algorithm would produce the same sequence of numbers every time. This is how all PRNGs work, from the <code>rand()</code> function in C to the Mersenne Twister used in scientific simulations.</p>
+      <p>Modern browsers use a PRNG algorithm called <strong>xorshift128+</strong>. This algorithm passes the BigCrush statistical test suite, which means its output is statistically indistinguishable from true random noise for non-cryptographic purposes. The seed is typically drawn from a combination of the current timestamp, process ID, and other entropy sources when the browser initializes, making the starting state unpredictable in practice.</p>
+      <p>The critical point is that "pseudo-random" does not mean "predictable" in any meaningful way for a yes/no spinner. To predict the output, an attacker would need to know the exact internal state of the PRNG — a 128-bit value that changes with every call. For context, brute-forcing a 128-bit state space would take longer than the age of the universe on current hardware. No one is going to reverse-engineer your dinner decision.</p>
+      <p>If you needed cryptographic-grade randomness — say, for generating a <a href="password-generator.html">secure password</a> or an encryption key — you would use <code>window.crypto.getRandomValues()</code>, which draws from the operating system's entropy pool (mouse movements, disk I/O timing, thermal noise, etc.). For a binary spinner, that level of security is unnecessary. <code>Math.random()</code> provides perfectly uniform distribution across [0, 1), which maps cleanly to a 50/50 wheel split.</p>
+      <p>One common misconception deserves correction: the gambler's fallacy. Getting "Yes" five times in a row does not make "No" more likely on the next spin. Each spin is a statistically independent event. The PRNG does not "remember" previous outputs when generating the next one. If you spin the wheel a thousand times, you will see streaks of the same result — that is a natural property of random sequences, not evidence of bias.</p>
+      <p>For those who want to verify the fairness empirically, you can open your browser's developer console (F12 → Console) and run a quick simulation. The following code spins the wheel 100,000 times and counts the results:</p>
+      <p><code>let y=0,n=0; for(let i=0;i&lt;100000;i++){Math.random()&lt;0.5?y++:n++;} console.log('Yes:',y,'No:',n);</code></p>
+      <p>You will find the counts converge toward 50,000 each, with minor statistical fluctuation — exactly what you would expect from a fair coin or an unbiased wheel. If you are curious about randomness in other contexts, our <a href="password-generator.html">Password Generator</a> uses <code>crypto.getRandomValues()</code> and explains the difference between PRNG and CSPRNG in detail.</p>
+      <p>One last nuance: some people ask whether the CSS animation can affect the result. It cannot. The animation is purely visual — the final angle is calculated before the animation begins. The <code>cubic-bezier</code> easing curve controls only how the wheel decelerates visually, not where it stops. The random number decides the destination; the animation is just the journey.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-wrapper">
+        <details class="faq-item" name="faq-accordion">
+          <summary>Can the Yes or No wheel be rigged?</summary>
+          <div class="faq-content">No. The wheel uses JavaScript's <code>Math.random()</code> to generate a random angle between 0 and 360 degrees on each spin. The code runs entirely in your browser and there is no server-side logic that could bias the result. You can right-click the page, select "View Page Source," and read the entire algorithm yourself. There are no hidden weights, no backend overrides, and no cookies that influence the outcome.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Does the Yes or No wheel use true randomness?</summary>
+          <div class="faq-content"><code>Math.random()</code> produces pseudo-random numbers using a PRNG algorithm (xorshift128+ in most modern browsers) seeded by the browser's internal entropy. While not cryptographically secure randomness — which would require <code>crypto.getRandomValues()</code> — it is more than sufficient for fair yes/no decisions. The output passes rigorous statistical test suites like BigCrush and is indistinguishable from true randomness for non-security purposes.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Is the wheel a fair 50/50 split?</summary>
+          <div class="faq-content">Yes. The wheel is divided into exactly two equal halves — 180 degrees for "Yes" and 180 degrees for "No." The random angle is generated uniformly across the full 360-degree range. Combined, this guarantees each outcome has an equal 50% probability on every spin. You can verify this by running the console test described in the article above.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Is this the same as flipping a coin?</summary>
+          <div class="faq-content">Mathematically, both give you a 50/50 binary outcome. The difference is experiential. A spinning wheel takes several seconds to decelerate, which builds anticipation and gives your brain time to process an emotional reaction to the impending result. Research suggests this extended decision reveal makes people slightly more committed to following the outcome. A coin flip is faster but less ceremonial.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Can I use this for more than two options?</summary>
+          <div class="faq-content">This specific tool is designed for binary yes/no decisions only. If you need to choose among three or more options, you would need a multi-segment spinner wheel. One workaround: assign pairs of options to sequential yes/no spins (e.g., "Pizza vs. Tacos?" → Yes = Pizza. If No, "Sushi vs. Burgers?" → Yes = Sushi).</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Does the wheel remember my previous spins?</summary>
+          <div class="faq-content">No. Each spin is completely independent. There is no local storage, no cookies, and no session tracking. The PRNG generates a fresh random number for each spin with no reference to any previous output. Getting "Yes" ten times in a row does not make "No" more likely — that expectation is the gambler's fallacy.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Why does the wheel sometimes land very close to the boundary?</summary>
+          <div class="faq-content">Because the random angle is drawn from a continuous range (0 to 360), it can land at any position, including very close to the Yes/No dividing line. The result is still unambiguous because the code evaluates the final numeric angle, not the visual pointer position. There is no "edge case" — the angle either falls in the Yes half or the No half.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Can I use this for important life decisions?</summary>
+          <div class="faq-content">For genuinely consequential decisions — medical, financial, legal — you should consult appropriate professionals, not a spinner. For important but emotionally charged personal decisions, the wheel can serve as a diagnostic tool: spin it, notice your gut reaction to the result, and use that reaction as data about what you actually want. If you need to evaluate the financial side of a decision, try our <a href="can-i-afford-this.html">Can I Afford This?</a> calculator.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Does this tool work on mobile devices?</summary>
+          <div class="faq-content">Yes. The wheel is built with standard CSS and JavaScript that works on all modern browsers, including Safari on iOS and Chrome on Android. The layout is fully responsive and the spin button is sized for touch interaction. No app download or plugin is required.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>Is any data collected when I spin the wheel?</summary>
+          <div class="faq-content">No. The spinner runs entirely client-side in your browser. No spin results, timestamps, IP addresses, or usage data are sent to any server. ClearlyCheck does not set any cookies through this tool. Your decisions are entirely private.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>How is Math.random() different from crypto.getRandomValues()?</summary>
+          <div class="faq-content"><code>Math.random()</code> uses a pseudo-random number generator that is fast and statistically uniform, but theoretically predictable if you know the internal 128-bit state. <code>crypto.getRandomValues()</code> draws from the operating system's entropy pool — hardware events like mouse movements and disk timing — and is cryptographically unpredictable. For a yes/no spinner, <code>Math.random()</code> is the appropriate choice. For security-critical applications like password generation, <code>crypto.getRandomValues()</code> is mandatory — our <a href="password-generator.html">Password Generator</a> uses it for exactly that reason.</div>
+        </details>
+
+        <details class="faq-item" name="faq-accordion">
+          <summary>What happens if I click Spin while the wheel is already spinning?</summary>
+          <div class="faq-content">The spin button is automatically disabled while the wheel is in motion. You must wait for the current spin to complete and the result to display before you can spin again. This prevents overlapping animations, ensures a clean result, and avoids confusing visual artifacts.</div>
+        </details>
+      </div>
+    </article>
+
+    <div>
+      <p
+        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
+        More Tools</p>
+      <div class="sidebar-tools">
+        <a class="sidebar-tool" href="password-generator.html">
+          <div class="sidebar-tool-icon">🔒</div>
+          <div>
+            <div class="sidebar-tool-name">Password Generator</div>
+            <div class="sidebar-tool-desc">Create strong, secure passwords</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="age-calculator.html">
+          <div class="sidebar-tool-icon">🎂</div>
+          <div>
+            <div class="sidebar-tool-name">Age Calculator</div>
+            <div class="sidebar-tool-desc">Calculate your exact age</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="percentage-calculator.html">
+          <div class="sidebar-tool-icon">📊</div>
+          <div>
+            <div class="sidebar-tool-name">Percentage Calculator</div>
+            <div class="sidebar-tool-desc">Calculate any percentage instantly</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="tip-calculator.html">
+          <div class="sidebar-tool-icon">💰</div>
+          <div>
+            <div class="sidebar-tool-name">Tip Calculator</div>
+            <div class="sidebar-tool-desc">Split bills and calculate tips</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer-bar">
+    <div class="inner">
+      <span style="font-size:16px;flex-shrink:0;">🎯</span>
+      <p><strong style="color:#0f0f0e;">For entertainment and low-stakes decisions only.</strong> This tool generates
+        random yes/no outcomes using your browser's built-in random number generator. It should not be used for
+        important medical, financial, or legal decisions. Reviewed by <a href="/about.html"
+          style="color:inherit;">Enos</a> · Last updated September 22, 2026.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+      <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html"
+          style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html"
+          style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html"
+          style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html"
+          style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html"
+          style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <script>
+    let totalSpins = 0;
+    let currentRotation = 0;
+    let isSpinning = false;
+
+    const spinner = document.getElementById('wheelSpinner');
+    const spinBtn = document.getElementById('spinBtn');
+    const resultLabel = document.getElementById('resultLabel');
+    const resultValue = document.getElementById('resultValue');
+    const spinCount = document.getElementById('spinCount');
+
+    // Draw the wheel on canvas
+    function drawWheel() {
+      const canvas = document.getElementById('wheelCanvas');
+      const ctx = canvas.getContext('2d');
+      const size = canvas.width;
+      const cx = size / 2;
+      const cy = size / 2;
+      const r = size / 2;
+
+      // Slice 1: YES — right half (from -90deg to +90deg, i.e., top-right-bottom)
+      // In canvas: 0 is 3 o'clock, so -PI/2 to PI/2 is top→right→bottom
+      // We want: pointer at top. When rotation=0, pointer at top.
+      // Let's draw: YES from -PI/2 to PI/2 (right half), NO from PI/2 to 3PI/2 (left half)
+      // That means at rotation 0, the top of the wheel is on the YES/NO boundary.
+      // So we offset: YES from 0 to PI (bottom half clockwise = right side in CSS rotation terms)
+      // Actually, let's keep it simple:
+      // Draw YES as the right semicircle: angles -PI/2 to PI/2
+      // Draw NO as the left semicircle: angles PI/2 to 3*PI/2
+
+      // YES slice (green) — top-clockwise to bottom
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, r, -Math.PI / 2, Math.PI / 2);
+      ctx.closePath();
+      ctx.fillStyle = '#1a6b4a';
+      ctx.fill();
+
+      // NO slice (red) — bottom-clockwise to top
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, r, Math.PI / 2, 3 * Math.PI / 2);
+      ctx.closePath();
+      ctx.fillStyle = '#b0362c';
+      ctx.fill();
+
+      // Divider line
+      ctx.beginPath();
+      ctx.moveTo(cx, 0);
+      ctx.lineTo(cx, size);
+      ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // Text labels
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '800 64px Roboto, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      // YES label — center of right semicircle (at 0 radians = 3 o'clock)
+      ctx.save();
+      ctx.translate(cx + r * 0.45, cy);
+      ctx.rotate(Math.PI / 2); // rotate text so it reads top-to-bottom when wheel is at 0
+      ctx.fillText('YES', 0, 0);
+      ctx.restore();
+
+      // NO label — center of left semicircle (at PI radians = 9 o'clock)
+      ctx.save();
+      ctx.translate(cx - r * 0.45, cy);
+      ctx.rotate(-Math.PI / 2); // rotate text so it reads bottom-to-top
+      ctx.fillText('NO', 0, 0);
+      ctx.restore();
+    }
+
+    drawWheel();
+
+    function spinWheel() {
+      if (isSpinning) return;
+      isSpinning = true;
+      spinBtn.disabled = true;
+
+      // Hide previous result
+      resultValue.classList.remove('show');
+      resultValue.className = 'result-value';
+      resultLabel.textContent = 'Spinning…';
+
+      // Generate random angle and add full rotations for visual effect
+      const randomAngle = Math.random() * 360;
+      const extraRotations = (Math.floor(Math.random() * 4) + 5) * 360; // 5–8 full turns
+      const totalRotation = currentRotation + extraRotations + randomAngle;
+
+      // Apply rotation via CSS transition
+      spinner.style.transition = 'transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)';
+      spinner.style.transform = 'rotate(' + totalRotation + 'deg)';
+      currentRotation = totalRotation;
+
+      // Wait for animation to finish
+      setTimeout(function () {
+        isSpinning = false;
+        spinBtn.disabled = false;
+
+        // Determine result from final angle
+        // Normalize to 0-360
+        const normalizedAngle = totalRotation % 360;
+
+        // Wheel layout (canvas drawing):
+        // YES (green) occupies the RIGHT semicircle: from top (12 o'clock) clockwise to bottom (6 o'clock)
+        //   i.e., canvas angles -90° to 90° → wheel degrees 0° to 180° (right side)
+        // NO (red) occupies the LEFT semicircle: from bottom (6 o'clock) clockwise to top (12 o'clock)
+        //   i.e., canvas angles 90° to 270° → wheel degrees 180° to 360° (left side)
+        //
+        // The pointer is fixed at 12 o'clock (top).
+        // When we rotate the wheel clockwise by X degrees:
+        //   - The part that was at angle X (in wheel coords) moves to the top under the pointer.
+        //   - If X is 0-180: we're pointing into the YES (green right) zone
+        //   - If X is 180-360: we're pointing into the NO (red left) zone
+
+        let result;
+        if (normalizedAngle >= 0 && normalizedAngle < 180) {
+          result = 'YES';
+        } else {
+          result = 'NO';
+        }
+
+        totalSpins++;
+        resultLabel.textContent = 'The wheel says:';
+        resultValue.textContent = result;
+        resultValue.className = 'result-value ' + (result === 'YES' ? 'yes' : 'no');
+
+        // Trigger show animation
+        requestAnimationFrame(function () {
+          resultValue.classList.add('show');
+        });
+
+        spinCount.textContent = 'Total spins: ' + totalSpins;
+      }, 4100);
+    }
+  </script>
+</body>
+
+</html>

@@ -304,6 +304,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://clearlycheck.com/yes-or-no-wheel.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://clearlycheck.com/unit-converter.html</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>

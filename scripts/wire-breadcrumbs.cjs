@@ -19,7 +19,7 @@ const define = (slug, label, files) => files.forEach(f => (CAT[f] = { slug, labe
 define('finance-calculators', 'Finance', ['debt-free-calculator.html', 'net-worth-calculator.html', 'salary-converter.html', 'can-i-afford-this.html', 'rent-vs-buy.html', 'overtime-pay-calculator.html', 'tip-calculator.html', 'compound-interest-calculator.html', 'income-tax-calculator.html', 'sales-tax-calculator.html', 'mortgage-calculator.html']);
 define('health-calculators', 'Health', ['bmi-calculator.html', 'height-calculator.html', 'calorie-calculator.html', 'due-date-calculator.html']);
 define('productivity-tools', 'Productivity', ['timezone-planner.html', 'time-card-calculator.html', 'meeting-cost-calculator.html', 'date-duration-calculator.html', 'word-count-reading-time.html']);
-define('utility-tools', 'Utility', ['age-calculator.html', 'password-generator.html', 'percentage-calculator.html', 'unit-converter.html', 'bra-size-calculator.html', 'shoe-size-converter.html']);
+define('utility-tools', 'Utility', ['age-calculator.html', 'password-generator.html', 'yes-or-no-wheel.html', 'percentage-calculator.html', 'unit-converter.html', 'bra-size-calculator.html', 'shoe-size-converter.html']);
 define('pet-tools', 'Pet', ['pet-age-calculator.html', 'pet-food-calculator.html', 'pet-cost-calculator.html']);
 define('education-tools', 'Education', ['gpa-calculator.html', 'grade-calculator.html', 'test-grade-calculator.html', 'words-to-pages-calculator.html', 'gpa-to-percentage-calculator.html', 'reading-time-calculator.html']);
 define('auto-calculators', 'Auto', ['auto-loan-calculator.html', 'fuel-cost-calculator.html', 'mpg-calculator.html', 'lease-vs-buy-calculator.html']);

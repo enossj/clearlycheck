@@ -101,7 +101,7 @@ const CATS = [
       { q: 'What can the unit converter handle?', a: 'Length, weight, volume, temperature, area, time, speed, and digital storage — with instant two-way conversion between common units.' },
       { q: 'Are these tools free and private?', a: 'Every utility tool is free, needs no signup, and runs entirely in your browser, so nothing you enter leaves your device.' },
     ],
-    tools: ['age-calculator.html', 'password-generator.html', 'percentage-calculator.html', 'unit-converter.html', 'bra-size-calculator.html', 'shoe-size-converter.html'],
+    tools: ['age-calculator.html', 'password-generator.html', 'yes-or-no-wheel.html', 'percentage-calculator.html', 'unit-converter.html', 'bra-size-calculator.html', 'shoe-size-converter.html'],
   },
   {
     slug: 'pet-tools', label: 'Pet', pill: '🐾 Pet',
