@@ -133,7 +133,7 @@ const CATS = [
       { q: 'How long will it take to read my document?', a: 'The Reading Time Calculator divides your word count by a reading speed (slow, average, or fast) to estimate reading time, and by a slower speaking rate to estimate how long it takes to read aloud.' },
       { q: 'Are these tools free?', a: 'All six are free, need no signup, and run entirely in your browser.' },
     ],
-    tools: ['gpa-calculator.html', 'grade-calculator.html', 'test-grade-calculator.html', 'words-to-pages-calculator.html', 'gpa-to-percentage-calculator.html', 'reading-time-calculator.html'],
+    tools: ['gpa-calculator.html', 'grade-calculator.html', 'test-grade-calculator.html', 'words-to-pages-calculator.html', 'gpa-to-percentage-calculator.html', 'reading-time-calculator.html', 'word-unscrambler.html'],
   },
   {
     slug: 'auto-calculators', label: 'Auto', pill: '🚗 Auto',
