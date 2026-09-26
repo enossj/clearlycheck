@@ -125,7 +125,7 @@
   "url": "https://clearlycheck.com/height-calculator.html",
   "mainEntityOfPage": "https://clearlycheck.com/height-calculator.html",
   "datePublished": "2026-07-11",
-  "dateModified": "2026-09-25",
+  "dateModified": "2026-09-26",
   "author": {
     "@type": "Person",
     "@id": "https://clearlycheck.com/#enos",
@@ -505,6 +505,29 @@
       font-weight: 700;
     }
 
+    /* Mobile reordering rules */
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .calc-card {
+        order: 1;
+      }
+
+      #resultsCard {
+        order: 2;
+      }
+
+      .main-layout+.article-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+    }
+
     @media (max-width: 600px) {
       .advanced-grid {
         grid-template-columns: 1fr;
@@ -820,6 +843,118 @@
       margin-bottom: 8px;
     }
 
+    /* Standalone Internal Linking Card Styles */
+    .article-left-column {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .related-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .related-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-right: 4px;
+    }
+
+    .related-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .related-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      background: var(--accent-light);
+    }
+
+    /* Sidebar Navigation Block */
+    .nav-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-top: 0;
+    }
+
+    .nav-block h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .nav-grid a {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-grid a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .nav-hubs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-hubs a {
+      font-size: 12.5px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-hubs a:hover {
+      color: var(--accent);
+    }
+
+    .nav-hubs .sep {
+      color: var(--border-hover);
+      font-size: 12px;
+    }
+
     /* ARTICLE */
     .article-section>div {
       min-width: 0;
@@ -1018,51 +1153,6 @@
       display: none;
     }
 
-    .sidebar-tools {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .sidebar-tool {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      box-shadow: var(--shadow);
-      transition: all 0.18s;
-    }
-
-    .sidebar-tool:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
-      border-color: var(--border-hover);
-    }
-
-    .sidebar-tool-icon {
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-
-    .sidebar-tool-name {
-      font-family: 'Roboto', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    .sidebar-tool-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 300;
-    }
-
     /* Converter Tool */
     .converter-box {
       background: var(--blue-light);
@@ -1157,14 +1247,6 @@
     }
 
     @media (max-width: 900px) {
-      .main-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .results-card {
-        position: static;
-      }
-
       .visual-grid {
         height: 140px;
       }
@@ -1417,7 +1499,7 @@
 
             <div class="range-box" id="krResultBox" style="display: none;">
               <div class="range-label">More Personalized Estimate</div>
-              <div class="range-values">
+              <div class="range-values" style="justify-content: center;">
                 <span id="krCm">0 cm</span>
               </div>
               <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;" id="krFt">≈ 0 ft 0 in</div>
@@ -1467,257 +1549,303 @@
   </main>
 
   <div class="article-section">
-    <article class="article">
-      <h2>How Tall Will I Be?</h2>
-      <p>Wondering how tall you will be as an adult? Adult height is influenced strongly by genetics, but growth also
-        depends on a child's growth pattern, puberty timing, nutrition, health, and other factors. A parents-only height
-        calculator gives a useful genetic target, but it cannot account for every factor that affects an individual
-        child's growth.</p>
+    <!-- Left Column Wrapper to maintain Grid -->
+    <div class="article-left-column">
 
-      <h2>How Tall Will My Child Be?</h2>
-      <p>This parents' height calculator uses the measured heights of the biological mother and father as an important
-        starting point for estimating adult height. The mid-parental height method calculates a sex-adjusted target
-        height. The American Academy of Pediatrics describes this as a rough estimate with a margin of error of about 4
-        inches in either direction, so it should be treated as a guide rather than a promise.</p>
-
-      <h2>What Determines Height?</h2>
-      <h3>Genetics &amp; Parents' Height</h3>
-      <p>Human height is a polygenic trait, meaning many genetic variants contribute to adult stature. Parents' heights
-        therefore provide useful information about a child's likely height, although the relationship is not exact and
-        children of the same parents can still differ in adult height.</p>
-
-      <h3>Nutrition</h3>
-      <p>Adequate nutrition supports normal growth and bone development. Protein, energy, calcium, vitamin D, and other
-        nutrients are important, while significant or prolonged undernutrition or illness can interfere with normal
-        growth. Nutrition does not let a healthy child reliably exceed their genetic growth potential.</p>
-
-      <h3>Sleep &amp; Physical Activity</h3>
-      <p>Sleep and physical activity are part of healthy childhood development. Good sleep supports normal hormone
-        regulation and recovery, while regular physical activity supports bone and muscle health. These habits help
-        support normal growth but are not a way to override genetic height potential.</p>
-
-      <h3>Puberty &amp; Growth Plates</h3>
-      <p>Long bones grow at areas of cartilage called epiphyseal, or growth, plates. Puberty changes growth rate and
-        eventually leads the growth plates to close. After growth plates have fused, the long bones no longer lengthen
-        naturally.</p>
-
-      <h2>How Is Adult Height Predicted?</h2>
-
-      <h3>Mid-Parental Height Formula</h3>
-      <p>This is the method used by this calculator. The parents' heights are averaged, then 13 cm is added to the
-        average for a boy or 13 cm is subtracted for a girl before dividing by two. Equivalently: <strong>Boy = (mother
-          + father + 13 cm) ÷ 2</strong>; <strong>Girl = (mother + father − 13 cm) ÷ 2</strong>.</p>
-
-      <h3>Khamis-Roche Method</h3>
-      <p>The Khamis-Roche method is a statistical model that uses a child's age, current height, current weight, and
-        mid-parental height. The original model was developed from longitudinal data on healthy white American children
-        and is designed to predict adult stature without a skeletal-age X-ray. Because the model depends on a child's
-        current measurements, it is a separate option from this parents-only calculator.</p>
-
-      <h3>Greulich-Pyle Method &amp; Bone Age</h3>
-      <p>Bone-age methods use an X-ray of the hand and wrist to estimate skeletal maturity. Greulich-Pyle is one
-        commonly used atlas-based approach. A clinician can combine bone age with current height and growth history when
-        a more individualized assessment of remaining growth is needed.</p>
-
-      <h2>Growth Charts and Height Percentiles</h2>
-      <p>Pediatric growth charts compare height-for-age with a reference population. A 50th percentile means the
-        measurement is near the middle of the reference distribution; a 75th percentile means the child is taller than
-        about 75% of the reference population of the same age and sex. Growth charts are most useful for following a
-        child's pattern over time rather than treating one percentile as a diagnosis. The CDC provides stature-for-age
-        references for children and adolescents ages 2 to 20 in the United States.</p>
-
-      <h2>Average Height by Age</h2>
-      <p>There is no single ideal height for a child. The table below shows selected <strong>50th-percentile (median)
-          heights</strong> from the CDC stature-for-age reference for U.S. children. These figures describe a population
-        reference and are not predictions of an individual child's adult height.</p>
-      <div class="table-wrap">
-        <table class="height-table">
-          <caption>Selected CDC 50th-percentile height references</caption>
-          <thead>
-            <tr>
-              <th scope="col">Age</th>
-              <th scope="col">Boys</th>
-              <th scope="col">Girls</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">4 years</th>
-              <td>102.5 cm</td>
-              <td>101.5 cm</td>
-            </tr>
-            <tr>
-              <th scope="row">8 years</th>
-              <td>127.5 cm</td>
-              <td>126.5 cm</td>
-            </tr>
-            <tr>
-              <th scope="row">10 years</th>
-              <td>138.4 cm</td>
-              <td>137.9 cm</td>
-            </tr>
-            <tr>
-              <th scope="row">12 years</th>
-              <td>149.1 cm</td>
-              <td>150.9 cm</td>
-            </tr>
-            <tr>
-              <th scope="row">14 years</th>
-              <td>163.8 cm</td>
-              <td>160.5 cm</td>
-            </tr>
-            <tr>
-              <th scope="row">18 years</th>
-              <td>177.0 cm</td>
-              <td>163.5 cm</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="table-note">Source: <a href="https://www.cdc.gov/growthcharts/cdc-data-files.htm" target="_blank"
-          rel="noopener noreferrer">CDC 2000 Growth Charts</a>, stature-for-age, ages 2–20 years. U.S. reference values;
-        rounded for readability. A child's percentile and growth pattern are more informative than comparing with one
-        average.</p>
-
-      <h2>How to Get Taller?</h2>
-      <h3>Can You Still Grow Taller?</h3>
-      <p>If you are still growing, the goal is to support normal growth rather than chase a guaranteed height increase.
-        Adequate nutrition, sufficient sleep, physical activity, and appropriate medical care can help you reach your
-        individual growth potential. If growth seems unusually slow or fast, a pediatrician can review the growth
-        pattern and decide whether further evaluation is needed.</p>
-
-      <h3>Can Adults Grow Taller?</h3>
-      <p>Once growth plates have fused, the long bones cannot naturally lengthen. The timing varies from person to
-        person and is linked to puberty, so there is no single age that applies to everyone. Adults can improve posture
-        and spinal alignment, which may change how tall they appear or how they measure during the day, but this is not
-        the same as increasing bone length.</p>
-
-      <!-- Compact Height Converter Tool -->
-      <div class="converter-box">
-        <h3>Quick Height Converter</h3>
-        <div class="conv-flex">
-          <input type="number" id="convCm" class="conv-input" placeholder="cm">
-          <button class="conv-btn" onclick="convToFt()">to ft/in →</button>
-          <span id="convResFt" class="conv-result"></span>
-        </div>
-        <div class="conv-flex" style="margin-top: 12px;">
-          <input type="number" id="convFt" class="conv-input" placeholder="ft" style="width: 70px;">
-          <input type="number" id="convIn" class="conv-input" placeholder="in" style="width: 70px;">
-          <button class="conv-btn" onclick="convToCm()">to cm →</button>
-          <span id="convResCm" class="conv-result"></span>
-        </div>
+      <!-- Standalone Related Tools Card -->
+      <div class="related-card">
+        <span class="related-label">MORE HEALTH TOOLS:</span>
+        <a href="bmi-calculator.html" class="related-pill">BMI Calculator</a>
+        <a href="calorie-calculator.html" class="related-pill">Calorie Calculator</a>
+        <a href="age-calculator.html" class="related-pill">Age Calculator</a>
       </div>
 
-      <div class="sources">
-        <strong>Sources &amp; Methodology:</strong> This calculator uses the mid-parental height method: the parents'
-        heights are averaged, with a 13 cm sex adjustment before averaging. An optional Khamis–Roche estimate is
-        available
-        for children aged 4–17.5 when current age, height, weight, and parental heights are provided. The displayed
-        target range is ±8.5 cm, a
-        commonly used family target range corresponding approximately to the 3rd–97th percentiles for anticipated adult
-        height. This is an educational estimate, not a diagnosis. Sources: <a
-          href="https://www.healthychildren.org/English/health-issues/conditions/Glands-Growth-Disorders/Pages/Predicting-a-Childs-Adult-Height.aspx"
-          target="_blank" rel="noopener noreferrer">American Academy of Pediatrics</a>, <a
-          href="https://www.cdc.gov/growthcharts/cdc-data-files.htm" target="_blank" rel="noopener noreferrer">CDC
-          Growth Charts</a>, and <a
-          href="https://publications.aap.org/pediatrics/article/94/4/504/59488/Predicting-Adult-Stature-Without-Using-Skeletal"
-          target="_blank" rel="noopener noreferrer">Khamis &amp; Roche (1994)</a>. If you are concerned about a child's
-        growth or development, speak with a qualified pediatrician.
-      </div>
+      <article class="article">
+        <h2>How Tall Will I Be?</h2>
+        <p>Wondering how tall you will be as an adult? Adult height is influenced strongly by genetics, but growth also
+          depends on a child's growth pattern, puberty timing, nutrition, health, and other factors. A parents-only
+          height
+          calculator gives a useful genetic target, but it cannot account for every factor that affects an individual
+          child's growth.</p>
 
-      <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
+        <h2>How Tall Will My Child Be?</h2>
+        <p>This parents' height calculator uses the measured heights of the biological mother and father as an important
+          starting point for estimating adult height. The mid-parental height method calculates a sex-adjusted target
+          height. The American Academy of Pediatrics describes this as a rough estimate with a margin of error of about
+          4
+          inches in either direction, so it should be treated as a guide rather than a promise.</p>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How accurate is a height prediction
-            calculator?<span class="faq-icon">+</span></button>
-          <div class="faq-a">The mid-parental method is a rough statistical estimate, not a guarantee. A commonly used
-            target range is about 8.5 cm (3.3 inches) above or below the calculated target height, approximately
-            covering the 3rd to 97th percentiles for anticipated adult height. Individual results can differ because
-            growth and puberty vary between children.</div>
+        <h2>What Determines Height?</h2>
+        <h3>Genetics &amp; Parents' Height</h3>
+        <p>Human height is a polygenic trait, meaning many genetic variants contribute to adult stature. Parents'
+          heights
+          therefore provide useful information about a child's likely height, although the relationship is not exact and
+          children of the same parents can still differ in adult height.</p>
+
+        <h3>Nutrition</h3>
+        <p>Adequate nutrition supports normal growth and bone development. Protein, energy, calcium, vitamin D, and
+          other
+          nutrients are important, while significant or prolonged undernutrition or illness can interfere with normal
+          growth. Nutrition does not let a healthy child reliably exceed their genetic growth potential.</p>
+
+        <h3>Sleep &amp; Physical Activity</h3>
+        <p>Sleep and physical activity are part of healthy childhood development. Good sleep supports normal hormone
+          regulation and recovery, while regular physical activity supports bone and muscle health. These habits help
+          support normal growth but are not a way to override genetic height potential.</p>
+
+        <h3>Puberty &amp; Growth Plates</h3>
+        <p>Long bones grow at areas of cartilage called epiphyseal, or growth, plates. Puberty changes growth rate and
+          eventually leads the growth plates to close. After growth plates have fused, the long bones no longer lengthen
+          naturally.</p>
+
+        <h2>How Is Adult Height Predicted?</h2>
+
+        <h3>Mid-Parental Height Formula</h3>
+        <p>This is the method used by this calculator. The parents' heights are averaged, then 13 cm is added to the
+          average for a boy or 13 cm is subtracted for a girl before dividing by two. Equivalently: <strong>Boy =
+            (mother
+            + father + 13 cm) ÷ 2</strong>; <strong>Girl = (mother + father − 13 cm) ÷ 2</strong>.</p>
+
+        <h3>Khamis-Roche Method</h3>
+        <p>The Khamis-Roche method is a statistical model that uses a child's age, current height, current weight, and
+          mid-parental height. The original model was developed from longitudinal data on healthy white American
+          children
+          and is designed to predict adult stature without a skeletal-age X-ray. Because the model depends on a child's
+          current measurements, it is a separate option from this parents-only calculator.</p>
+
+        <h3>Greulich-Pyle Method &amp; Bone Age</h3>
+        <p>Bone-age methods use an X-ray of the hand and wrist to estimate skeletal maturity. Greulich-Pyle is one
+          commonly used atlas-based approach. A clinician can combine bone age with current height and growth history
+          when
+          a more individualized assessment of remaining growth is needed.</p>
+
+        <h2>Growth Charts and Height Percentiles</h2>
+        <p>Pediatric growth charts compare height-for-age with a reference population. A 50th percentile means the
+          measurement is near the middle of the reference distribution; a 75th percentile means the child is taller than
+          about 75% of the reference population of the same age and sex. Growth charts are most useful for following a
+          child's pattern over time rather than treating one percentile as a diagnosis. The CDC provides stature-for-age
+          references for children and adolescents ages 2 to 20 in the United States.</p>
+
+        <h2>Average Height by Age</h2>
+        <p>There is no single ideal height for a child. The table below shows selected <strong>50th-percentile (median)
+            heights</strong> from the CDC stature-for-age reference for U.S. children. These figures describe a
+          population
+          reference and are not predictions of an individual child's adult height.</p>
+        <div class="table-wrap">
+          <table class="height-table">
+            <caption>Selected CDC 50th-percentile height references</caption>
+            <thead>
+              <tr>
+                <th scope="col">Age</th>
+                <th scope="col">Boys</th>
+                <th scope="col">Girls</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">4 years</th>
+                <td>102.5 cm</td>
+                <td>101.5 cm</td>
+              </tr>
+              <tr>
+                <th scope="row">8 years</th>
+                <td>127.5 cm</td>
+                <td>126.5 cm</td>
+              </tr>
+              <tr>
+                <th scope="row">10 years</th>
+                <td>138.4 cm</td>
+                <td>137.9 cm</td>
+              </tr>
+              <tr>
+                <th scope="row">12 years</th>
+                <td>149.1 cm</td>
+                <td>150.9 cm</td>
+              </tr>
+              <tr>
+                <th scope="row">14 years</th>
+                <td>163.8 cm</td>
+                <td>160.5 cm</td>
+              </tr>
+              <tr>
+                <th scope="row">18 years</th>
+                <td>177.0 cm</td>
+                <td>163.5 cm</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <p class="table-note">Source: <a href="https://www.cdc.gov/growthcharts/cdc-data-files.htm" target="_blank"
+            rel="noopener noreferrer">CDC 2000 Growth Charts</a>, stature-for-age, ages 2–20 years. U.S. reference
+          values;
+          rounded for readability. A child's percentile and growth pattern are more informative than comparing with one
+          average.</p>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What age do boys stop growing?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Many boys continue growing through the mid-to-late teen years, but the timing varies with
-            puberty. Growth stops after the growth plates fuse, so there is no single age that applies to every boy. If
-            puberty or growth seems unusually early, late, slow, or rapid, a pediatrician can assess the growth pattern.
+        <h2>How to Get Taller?</h2>
+        <h3>Can You Still Grow Taller?</h3>
+        <p>If you are still growing, the goal is to support normal growth rather than chase a guaranteed height
+          increase.
+          Adequate nutrition, sufficient sleep, physical activity, and appropriate medical care can help you reach your
+          individual growth potential. If growth seems unusually slow or fast, a pediatrician can review the growth
+          pattern and decide whether further evaluation is needed.</p>
+
+        <h3>Can Adults Grow Taller?</h3>
+        <p>Once growth plates have fused, the long bones cannot naturally lengthen. The timing varies from person to
+          person and is linked to puberty, so there is no single age that applies to everyone. Adults can improve
+          posture
+          and spinal alignment, which may change how tall they appear or how they measure during the day, but this is
+          not
+          the same as increasing bone length.</p>
+
+        <!-- Compact Height Converter Tool -->
+        <div class="converter-box">
+          <h3>Quick Height Converter</h3>
+          <div class="conv-flex">
+            <input type="number" id="convCm" class="conv-input" placeholder="cm">
+            <button class="conv-btn" onclick="convToFt()">to ft/in →</button>
+            <span id="convResFt" class="conv-result"></span>
+          </div>
+          <div class="conv-flex" style="margin-top: 12px;">
+            <input type="number" id="convFt" class="conv-input" placeholder="ft" style="width: 70px;">
+            <input type="number" id="convIn" class="conv-input" placeholder="in" style="width: 70px;">
+            <button class="conv-btn" onclick="convToCm()">to cm →</button>
+            <span id="convResCm" class="conv-result"></span>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What age do girls stop growing?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Girls usually have their main pubertal growth spurt earlier than boys, and growth slows
-            after puberty progresses. Final adult height varies from person to person and is reached after the growth
-            plates close. The American Academy of Pediatrics notes that growth timing differs between children.</div>
+        <div class="sources">
+          <strong>Sources &amp; Methodology:</strong> This calculator uses the mid-parental height method: the parents'
+          heights are averaged, with a 13 cm sex adjustment before averaging. An optional Khamis–Roche estimate is
+          available
+          for children aged 4–17.5 when current age, height, weight, and parental heights are provided. The displayed
+          target range is ±8.5 cm, a
+          commonly used family target range corresponding approximately to the 3rd–97th percentiles for anticipated
+          adult
+          height. This is an educational estimate, not a diagnosis. Sources: <a
+            href="https://www.healthychildren.org/English/health-issues/conditions/Glands-Growth-Disorders/Pages/Predicting-a-Childs-Adult-Height.aspx"
+            target="_blank" rel="noopener noreferrer">American Academy of Pediatrics</a>, <a
+            href="https://www.cdc.gov/growthcharts/cdc-data-files.htm" target="_blank" rel="noopener noreferrer">CDC
+            Growth Charts</a>, and <a
+            href="https://publications.aap.org/pediatrics/article/94/4/504/59488/Predicting-Adult-Stature-Without-Using-Skeletal"
+            target="_blank" rel="noopener noreferrer">Khamis &amp; Roche (1994)</a>. If you are concerned about a
+          child's
+          growth or development, speak with a qualified pediatrician.
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What is bone age?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Bone age is an indicator of skeletal maturity, determined by taking an X-ray of the left
-            hand and wrist. Doctors use it to see if a child's skeleton is developing faster or slower than their
-            chronological age, which helps predict remaining growth potential.</div>
-        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What does a height percentile mean?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">A height percentile compares a child's height with a reference population of children of
-            the same age and sex. For example, the 75th percentile means the child is taller than about 75% of the
-            reference population. A percentile is not a prediction of adult height or a diagnosis.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What is the difference between
-            mid-parental height and Khamis-Roche?<span class="faq-icon">+</span></button>
-          <div class="faq-a">The mid-parental method uses only the parents' heights and the child's sex. Khamis-Roche
-            also uses the child's age, current height, and current weight, and was developed to predict adult stature
-            without a bone-age X-ray. This page's calculator uses the simpler mid-parental method.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can a height calculator predict my exact
-            adult height?<span class="faq-icon">+</span></button>
-          <div class="faq-a">No. Adult height prediction is inherently uncertain. Parent-height formulas estimate a
-            family target, while methods that include current growth measurements or bone age can provide more
-            individualized estimates. Puberty timing, health, nutrition, and other factors can change the final result.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How accurate is a height prediction
+              calculator?<span class="faq-icon">+</span></button>
+            <div class="faq-a">The mid-parental method is a rough statistical estimate, not a guarantee. A commonly used
+              target range is about 8.5 cm (3.3 inches) above or below the calculated target height, approximately
+              covering the 3rd to 97th percentiles for anticipated adult height. Individual results can differ because
+              growth and puberty vary between children.</div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What age do boys stop growing?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Many boys continue growing through the mid-to-late teen years, but the timing varies with
+              puberty. Growth stops after the growth plates fuse, so there is no single age that applies to every boy.
+              If
+              puberty or growth seems unusually early, late, slow, or rapid, a pediatrician can assess the growth
+              pattern.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What age do girls stop growing?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Girls usually have their main pubertal growth spurt earlier than boys, and growth slows
+              after puberty progresses. Final adult height varies from person to person and is reached after the growth
+              plates close. The American Academy of Pediatrics notes that growth timing differs between children.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What is bone age?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Bone age is an indicator of skeletal maturity, determined by taking an X-ray of the left
+              hand and wrist. Doctors use it to see if a child's skeleton is developing faster or slower than their
+              chronological age, which helps predict remaining growth potential.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What does a height percentile
+              mean?<span class="faq-icon">+</span></button>
+            <div class="faq-a">A height percentile compares a child's height with a reference population of children of
+              the same age and sex. For example, the 75th percentile means the child is taller than about 75% of the
+              reference population. A percentile is not a prediction of adult height or a diagnosis.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What is the difference between
+              mid-parental height and Khamis-Roche?<span class="faq-icon">+</span></button>
+            <div class="faq-a">The mid-parental method uses only the parents' heights and the child's sex. Khamis-Roche
+              also uses the child's age, current height, and current weight, and was developed to predict adult stature
+              without a bone-age X-ray. This page's calculator uses the simpler mid-parental method.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can a height calculator predict my
+              exact
+              adult height?<span class="faq-icon">+</span></button>
+            <div class="faq-a">No. Adult height prediction is inherently uncertain. Parent-height formulas estimate a
+              family target, while methods that include current growth measurements or bone age can provide more
+              individualized estimates. Puberty timing, health, nutrition, and other factors can change the final
+              result.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can adults grow taller?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">No. Once your growth plates have completely fused (usually by late teens), natural
+              vertical
+              bone growth stops completely. Adults can temporarily lose a fraction of an inch throughout the day due to
+              spinal compression and regain it through sleep or stretching, but skeletal lengthening is impossible.
+            </div>
+          </div>
+
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can adults grow taller?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">No. Once your growth plates have completely fused (usually by late teens), natural vertical
-            bone growth stops completely. Adults can temporarily lose a fraction of an inch throughout the day due to
-            spinal compression and regain it through sleep or stretching, but skeletal lengthening is impossible.</div>
-        </div>
-
-      </div>
-
-    </article>
+      </article>
+    </div>
 
     <div>
-      <p
-        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
-        More Health Tools</p>
-      <div class="sidebar-tools">
-        <a class="sidebar-tool" href="bmi-calculator.html">
-          <div class="sidebar-tool-icon">⚖️</div>
-          <div>
-            <div class="sidebar-tool-name">BMI Calculator</div>
-            <div class="sidebar-tool-desc">Check your Body Mass Index</div>
-          </div>
-        </a>
-        <a class="sidebar-tool" href="calorie-calculator.html">
-          <div class="sidebar-tool-icon">🍎</div>
-          <div>
-            <div class="sidebar-tool-name">Calorie Calculator</div>
-            <div class="sidebar-tool-desc">Find your daily calorie needs</div>
-          </div>
-        </a>
+      <!-- Mega Internal Linking Block -->
+      <div class="nav-block">
+        <h3>Other Calculators</h3>
+        <div class="nav-grid">
+          <a href="income-tax-calculator.html">Income Tax</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="debt-free-calculator.html">Debt Free</a>
+          <a href="paycheck-calculator.html">Paycheck</a>
+          <a href="gpa-calculator.html">GPA</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="words-to-pages-calculator.html">Words to Pages</a>
+          <a href="reading-time-calculator.html">Reading Time</a>
+          <a href="auto-loan-calculator.html">Auto Loan</a>
+          <a href="mpg-calculator.html">MPG</a>
+          <a href="pet-age-calculator.html">Pet Age</a>
+          <a href="pet-cost-calculator.html">Pet Cost</a>
+          <a href="timezone-planner.html">Timezone Planner</a>
+          <a href="password-generator.html">Password Gen</a>
+          <a href="reality-check-calculator.html">Reality Check</a>
+          <a href="unit-converter.html">Unit Converter</a>
+        </div>
+
+        <div class="nav-hubs">
+          <a href="finance-calculators.html">Finance</a><span class="sep">|</span>
+          <a href="health-calculators.html">Health</a><span class="sep">|</span>
+          <a href="pet-tools.html">Pets</a><span class="sep">|</span>
+          <a href="productivity-tools.html">Productivity</a><span class="sep">|</span>
+          <a href="utility-tools.html">Utility</a><span class="sep">|</span>
+          <a href="education-tools.html">Education</a><span class="sep">|</span>
+          <a href="auto-calculators.html">Auto</a><span class="sep">|</span>
+          <a href="/guides/index.html">Guides</a>
+        </div>
       </div>
     </div>
   </div>
