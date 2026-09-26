@@ -399,6 +399,127 @@
       margin-bottom: 8px;
     }
 
+    .advanced-toggle {
+      width: 100%;
+      margin: 4px 0 22px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .advanced-toggle:hover {
+      border-color: var(--border-hover);
+    }
+
+    .advanced-toggle .toggle-arrow {
+      transition: transform 0.2s ease;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .advanced-toggle[aria-expanded="true"] .toggle-arrow {
+      transform: rotate(180deg);
+    }
+
+    .advanced-panel {
+      display: none;
+      margin: -6px 0 22px;
+      padding: 18px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    .advanced-panel.open {
+      display: block;
+    }
+
+    .advanced-note {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    .advanced-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .advanced-grid .field {
+      margin-bottom: 0;
+    }
+
+    .advanced-grid .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .advanced-input {
+      width: 100%;
+      height: 46px;
+      padding: 0 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      outline: none;
+    }
+
+    .advanced-input:focus {
+      border-color: var(--accent);
+    }
+
+    .advanced-result-note {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .method-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 600px) {
+      .advanced-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .advanced-grid .full-width {
+        grid-column: auto;
+      }
+
+      .advanced-panel {
+        padding: 16px;
+      }
+    }
+
+
     /* Smart Unit Input Layout */
     .smart-input-group {
       display: flex;
@@ -1136,9 +1257,10 @@
     <div class="tool-tag-pill">🩺 Health Tool</div>
     <h1>Height Calculator</h1>
     <h2 class="subhead">How tall will you or your child be as an adult?</h2>
-    <p>Find out how tall you or your child may be as an adult. Enter the parents' measured heights to get a mid-parental
-      adult-height estimate and an expected family range. The result is a statistical estimate, not a guarantee.</p>
-    <div class="page-meta">Built by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September 25, 2026</div>
+    <p>Your adult height is influenced mostly by genetics, especially your parents' heights. This calculator uses the
+      mid-parental height method to estimate a target adult height and expected range. For children aged 4–17.5, you can
+      also add current height, weight, and age for a more personalized Khamis–Roche estimate.</p>
+    <div class="page-meta">Built by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September 26, 2026</div>
   </div>
 
   <main>
@@ -1195,6 +1317,71 @@
           </div>
 
 
+          <button type="button" class="advanced-toggle" id="advancedToggle" aria-expanded="false"
+            aria-controls="advancedPanel" onclick="toggleAdvanced()">
+            <span>More Personalized Estimate</span>
+            <span class="toggle-arrow" aria-hidden="true">▼</span>
+          </button>
+
+          <div class="advanced-panel" id="advancedPanel">
+            <p class="advanced-note">
+              If this is for a child aged 4–17.5, you can add their current age, height, and weight.
+              This enables a Khamis–Roche estimate alongside the simpler parent-height estimate.
+            </p>
+
+            <div class="advanced-grid">
+              <div class="field">
+                <label for="childAge">Child's Age</label>
+                <input class="advanced-input" type="number" id="childAge" min="4" max="17.5" step="0.1"
+                  placeholder="e.g., 10" inputmode="decimal" aria-describedby="advancedHelp">
+              </div>
+
+              <div class="field">
+                <label for="childWeight">Current Weight</label>
+                <div class="smart-input-group">
+                  <div class="input-wrap">
+                    <input type="number" id="childWeight" placeholder="e.g., 35" min="10" max="150" step="0.1"
+                      inputmode="decimal" aria-label="Child's current weight">
+                  </div>
+                  <div class="unit-select-wrap">
+                    <select class="unit-dropdown" id="childWeightUnit" onchange="toggleWeightUnit()"
+                      aria-label="Child's weight unit">
+                      <option value="kg">kg</option>
+                      <option value="lb">lb</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field full-width">
+                <label for="childHeightVal">Current Height</label>
+                <div class="smart-input-group">
+                  <div class="input-wrap">
+                    <input type="number" id="childHeightVal" placeholder="e.g., 140" min="90" max="220" step="0.1"
+                      inputmode="decimal" aria-label="Child's current height">
+                  </div>
+                  <div class="input-wrap" id="childHeightInWrap" style="display:none;">
+                    <input type="number" id="childHeightIn" placeholder="in" min="0" max="11.9" step="0.1"
+                      inputmode="decimal" aria-label="Child's current height in inches">
+                  </div>
+                  <div class="unit-select-wrap">
+                    <select class="unit-dropdown" id="childHeightUnit" onchange="toggleChildHeightUnit()"
+                      aria-label="Child's current height unit">
+                      <option value="cm">cm</option>
+                      <option value="ft">ft/in</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p id="advancedHelp" class="advanced-result-note">
+              The Khamis–Roche method was developed from longitudinal data on healthy white American children.
+              Its use for other populations is an extrapolation, so treat this as an additional statistical estimate,
+              not a precise prediction.
+            </p>
+          </div>
+
         </div>
       </div>
 
@@ -1228,12 +1415,23 @@
               <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;" id="rangeFt">0 ft - 0 ft</div>
             </div>
 
+            <div class="range-box" id="krResultBox" style="display: none;">
+              <div class="range-label">More Personalized Estimate</div>
+              <div class="range-values">
+                <span id="krCm">0 cm</span>
+              </div>
+              <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;" id="krFt">≈ 0 ft 0 in</div>
+              <span class="method-badge">Khamis–Roche method</span>
+              <div style="font-size: 12.5px; color: var(--text-light); margin-top: 10px; line-height: 1.55;"
+                id="krNote"></div>
+            </div>
+
             <details class="explain-box" style="display: block;">
               <summary>How is this calculated?</summary>
-              <span id="formulaText">The mid-parental height method averages the parents' heights and adjusts the result
-                by 6.5 cm (2.5 inches) for the child's sex. The displayed range is the target height ±8.5 cm, a commonly
-                used family target range that approximates the 3rd to 97th percentiles for anticipated adult
-                height.</span>
+              <span id="formulaText">The mid-parental height method uses the parents' heights and adjusts the average by
+                6.5 cm
+                (2.5 inches) based on the child's sex. The displayed range is the target height ±8.5 cm. If you use the
+                optional personalized fields, a Khamis–Roche estimate is also shown.</span>
             </details>
 
             <div class="visual-box" style="display: block;">
@@ -1412,7 +1610,10 @@
 
       <div class="sources">
         <strong>Sources &amp; Methodology:</strong> This calculator uses the mid-parental height method: the parents'
-        heights are averaged, with a 13 cm sex adjustment before averaging. The displayed target range is ±8.5 cm, a
+        heights are averaged, with a 13 cm sex adjustment before averaging. An optional Khamis–Roche estimate is
+        available
+        for children aged 4–17.5 when current age, height, weight, and parental heights are provided. The displayed
+        target range is ±8.5 cm, a
         commonly used family target range corresponding approximately to the 3rd–97th percentiles for anticipated adult
         height. This is an educational estimate, not a diagnosis. Sources: <a
           href="https://www.healthychildren.org/English/health-issues/conditions/Glands-Growth-Disorders/Pages/Predicting-a-Childs-Adult-Height.aspx"
@@ -1536,13 +1737,60 @@
   <script>
     let currentSex = 'boy';
 
+    // Khamis–Roche coefficients (age-specific, half-year increments).
+    // Equation in inches: adult height = b0 + b1*current height + b2*weight + b3*mid-parental height.
+    // Coefficients are from Khamis & Roche (1994), with the published erratum applied.
+    const KR_BOYS = [
+      [4.0, -10.2567, 1.23812, -0.087235, 0.50286], [4.5, -10.7190, 1.15964, -0.074454, 0.52887],
+      [5.0, -11.0213, 1.10674, -0.064778, 0.53919], [5.5, -11.1556, 1.07480, -0.057760, 0.53691],
+      [6.0, -11.1138, 1.05923, -0.052947, 0.52513], [6.5, -11.0221, 1.05542, -0.049892, 0.50692],
+      [7.0, -10.9984, 1.05877, -0.048144, 0.48538], [7.5, -11.0214, 1.06467, -0.047256, 0.46361],
+      [8.0, -11.0696, 1.06853, -0.046778, 0.44469], [8.5, -11.1220, 1.06572, -0.046261, 0.43171],
+      [9.0, -11.1571, 1.05166, -0.045254, 0.42776], [9.5, -11.1405, 1.02174, -0.043311, 0.43593],
+      [10.0, -11.0380, 0.97135, -0.039981, 0.45932], [10.5, -10.8286, 0.89589, -0.034814, 0.50101],
+      [11.0, -10.4917, 0.81239, -0.029050, 0.54781], [11.5, -10.0065, 0.74134, -0.024167, 0.58409],
+      [12.0, -9.3522, 0.68325, -0.020076, 0.60927], [12.5, -8.6055, 0.63869, -0.016681, 0.62279],
+      [13.0, -7.8632, 0.60818, -0.013895, 0.62407], [13.5, -7.1348, 0.59228, -0.011624, 0.61253],
+      [14.0, -6.4299, 0.59151, -0.009776, 0.58762], [14.5, -5.7578, 0.60643, -0.008261, 0.54875],
+      [15.0, -5.1282, 0.63757, -0.006988, 0.49536], [15.5, -4.5092, 0.68548, -0.005863, 0.42687],
+      [16.0, -3.9292, 0.75069, -0.004795, 0.34271], [16.5, -3.4873, 0.83375, -0.003695, 0.24231],
+      [17.0, -3.2830, 0.93520, -0.002470, 0.12510], [17.5, -3.4156, 1.05558, -0.001027, -0.00950]
+    ];
+
+    const KR_GIRLS = [
+      [4.0, -8.1325, 1.24768, -0.194350, 0.44774], [4.5, -6.47656, 1.22177, -0.185190, 0.41381],
+      [5.0, -5.13582, 1.19932, -0.175300, 0.38467], [5.5, -4.13791, 1.17880, -0.164840, 0.36039],
+      [6.0, -3.51039, 1.15866, -0.154000, 0.34105], [6.5, -3.14322, 1.13737, -0.142940, 0.32672],
+      [7.0, -2.87645, 1.11342, -0.131840, 0.31748], [7.5, -2.66291, 1.08525, -0.120860, 0.31340],
+      [8.0, -2.45559, 1.05135, -0.110190, 0.31457], [8.5, -2.20728, 1.01018, -0.099990, 0.32105],
+      [9.0, -1.87098, 0.96020, -0.090440, 0.33291], [9.5, -1.06330, 0.89989, -0.081710, 0.35025],
+      [10.0, 0.33468, 0.82771, -0.073970, 0.37312], [10.5, 1.97366, 0.74213, -0.067390, 0.40161],
+      [11.0, 3.50436, 0.67173, -0.061360, 0.42042], [11.5, 4.57747, 0.64150, -0.055180, 0.41686],
+      [12.0, 4.84365, 0.64452, -0.048940, 0.39490], [12.5, 4.27869, 0.67386, -0.042720, 0.35850],
+      [13.0, 3.21417, 0.72260, -0.036610, 0.31163], [13.5, 1.83456, 0.78383, -0.030670, 0.25826],
+      [14.0, 0.32425, 0.85062, -0.025000, 0.20235], [14.5, -1.13224, 0.91605, -0.019670, 0.14787],
+      [15.0, -2.35055, 0.97319, -0.014770, 0.09880], [15.5, -3.10326, 1.01514, -0.010370, 0.05909],
+      [16.0, -3.17885, 1.03496, -0.006550, 0.03272], [16.5, -2.41657, 1.02573, -0.003400, 0.02364],
+      [17.0, -0.65579, 0.98054, -0.001000, 0.03584], [17.5, 2.26429, 0.89246, 0.000570, 0.07327]
+    ];
+
     function setSex(sex) {
       currentSex = sex;
       document.getElementById('sexBoy').classList.toggle('active', sex === 'boy');
       document.getElementById('sexGirl').classList.toggle('active', sex === 'girl');
-
-      // Update visual child icon
       document.getElementById('visChildIcon').textContent = sex === 'boy' ? '👦' : '👧';
+      autoCalculateHeight();
+    }
+
+    function toggleAdvanced() {
+      const button = document.getElementById('advancedToggle');
+      const panel = document.getElementById('advancedPanel');
+      const open = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!open));
+      panel.classList.toggle('open', !open);
+      if (open) {
+        document.getElementById('krResultBox').style.display = 'none';
+      }
       autoCalculateHeight();
     }
 
@@ -1556,59 +1804,97 @@
         valInput.placeholder = 'ft';
         inWrap.style.display = 'block';
 
-        // Auto convert CM to FT/IN if there's a value
-        let cm = parseFloat(valInput.value);
+        const cm = parseFloat(valInput.value);
         if (!isNaN(cm)) {
-          let totalIn = cm / 2.54;
-          let ft = Math.floor(totalIn / 12);
-          let inch = Math.round(totalIn % 12);
-          valInput.value = ft;
-          inInput.value = inch;
+          const totalIn = cm / 2.54;
+          const ft = Math.floor(totalIn / 12);
+          const inch = Math.round(totalIn % 12);
+          valInput.value = inch === 12 ? ft + 1 : ft;
+          inInput.value = inch === 12 ? 0 : inch;
         }
       } else {
         valInput.placeholder = 'e.g., 170';
         inWrap.style.display = 'none';
 
-        // Auto convert FT/IN to CM if there's a value
-        let ft = parseFloat(valInput.value);
-        let inc = parseFloat(inInput.value) || 0;
+        const ft = parseFloat(valInput.value);
+        const inc = parseFloat(inInput.value) || 0;
         if (!isNaN(ft)) {
-          let cm = Math.round((ft * 12 + inc) * 2.54);
-          valInput.value = cm;
+          valInput.value = ((ft * 12 + inc) * 2.54).toFixed(1);
           inInput.value = '';
         }
       }
       autoCalculateHeight();
     }
 
-    function autoCalculateHeight() {
-      const momCm = getCmValue('mom');
-      const dadCm = getCmValue('dad');
-
-      // Keep the result hidden until both parent heights are valid.
-      if (momCm === null || dadCm === null) {
-        document.getElementById('emptyState').style.display = 'block';
-        document.getElementById('resultState').style.display = 'none';
-        document.getElementById('momErr').style.display = 'none';
-        document.getElementById('dadErr').style.display = 'none';
-        return;
+    function toggleWeightUnit() {
+      const input = document.getElementById('childWeight');
+      const unit = document.getElementById('childWeightUnit').value;
+      const value = parseFloat(input.value);
+      if (!isNaN(value)) {
+        input.value = unit === 'lb' ? (value * 2.20462).toFixed(1) : (value / 2.20462).toFixed(1);
       }
+      input.placeholder = unit === 'lb' ? 'e.g., 77' : 'e.g., 35';
+      autoCalculateHeight();
+    }
 
-      calculateHeight();
+    function toggleChildHeightUnit() {
+      const unit = document.getElementById('childHeightUnit').value;
+      const valInput = document.getElementById('childHeightVal');
+      const inWrap = document.getElementById('childHeightInWrap');
+      const inInput = document.getElementById('childHeightIn');
+
+      if (unit === 'ft') {
+        valInput.placeholder = 'ft';
+        inWrap.style.display = 'block';
+        const cm = parseFloat(valInput.value);
+        if (!isNaN(cm)) {
+          const totalIn = cm / 2.54;
+          const ft = Math.floor(totalIn / 12);
+          const inch = Math.round(totalIn % 12);
+          valInput.value = inch === 12 ? ft + 1 : ft;
+          inInput.value = inch === 12 ? 0 : inch;
+        }
+      } else {
+        valInput.placeholder = 'e.g., 140';
+        inWrap.style.display = 'none';
+        const ft = parseFloat(valInput.value);
+        const inc = parseFloat(inInput.value) || 0;
+        if (!isNaN(ft)) {
+          valInput.value = ((ft * 12 + inc) * 2.54).toFixed(1);
+          inInput.value = '';
+        }
+      }
+      autoCalculateHeight();
     }
 
     function getCmValue(parent) {
       const unit = document.getElementById(parent + 'Unit').value;
       const val = parseFloat(document.getElementById(parent + 'Val').value);
-
       if (isNaN(val)) return null;
 
-      if (unit === 'cm') {
-        return val;
-      } else {
-        const inc = parseFloat(document.getElementById(parent + 'In').value) || 0;
-        return (val * 12 + inc) * 2.54;
-      }
+      if (unit === 'cm') return val;
+
+      const inc = parseFloat(document.getElementById(parent + 'In').value);
+      if (isNaN(inc)) return null;
+      if (inc < 0 || inc >= 12) return null;
+      return (val * 12 + inc) * 2.54;
+    }
+
+    function getChildHeightCm() {
+      const unit = document.getElementById('childHeightUnit').value;
+      const val = parseFloat(document.getElementById('childHeightVal').value);
+      if (isNaN(val)) return null;
+      if (unit === 'cm') return val;
+
+      const inc = parseFloat(document.getElementById('childHeightIn').value);
+      if (isNaN(inc) || inc < 0 || inc >= 12) return null;
+      return (val * 12 + inc) * 2.54;
+    }
+
+    function getChildWeightKg() {
+      const value = parseFloat(document.getElementById('childWeight').value);
+      if (isNaN(value)) return null;
+      return document.getElementById('childWeightUnit').value === 'lb' ? value / 2.20462 : value;
     }
 
     function formatFtIn(cm) {
@@ -1618,20 +1904,77 @@
       return `${ft} ft ${inc} in`;
     }
 
-    function calculateHeight() {
+    function getKrCoefficients(sex, age) {
+      const table = sex === 'boy' ? KR_BOYS : KR_GIRLS;
+      if (age < 4 || age > 17.5) return null;
+
+      const exact = table.find(row => Math.abs(row[0] - age) < 0.001);
+      if (exact) return exact.slice(1);
+
+      for (let i = 0; i < table.length - 1; i++) {
+        const a1 = table[i][0], a2 = table[i + 1][0];
+        if (age > a1 && age < a2) {
+          const t = (age - a1) / (a2 - a1);
+          return table[i].slice(1).map((v, idx) => v + t * (table[i + 1][idx + 1] - v));
+        }
+      }
+      return null;
+    }
+
+    function calculateKhamisRoche(momCm, dadCm) {
+      const age = parseFloat(document.getElementById('childAge').value);
+      const heightCm = getChildHeightCm();
+      const weightKg = getChildWeightKg();
+
+      if (!Number.isFinite(age) || age < 4 || age > 17.5 ||
+        !Number.isFinite(heightCm) || heightCm < 90 || heightCm > 220 ||
+        !Number.isFinite(weightKg) || weightKg < 10 || weightKg > 150) {
+        return null;
+      }
+
+      const coeff = getKrCoefficients(currentSex, age);
+      if (!coeff) return null;
+
+      const heightIn = heightCm / 2.54;
+      const weightLb = weightKg * 2.2046226218;
+      const midParentIn = ((momCm + dadCm) / 2) / 2.54;
+
+      const predictedIn = coeff[0] + coeff[1] * heightIn + coeff[2] * weightLb + coeff[3] * midParentIn;
+      const predictedCm = predictedIn * 2.54;
+
+      if (!Number.isFinite(predictedCm) || predictedCm < 120 || predictedCm > 230) return null;
+      return predictedCm;
+    }
+
+    function autoCalculateHeight() {
       const momCm = getCmValue('mom');
       const dadCm = getCmValue('dad');
 
+      if (momCm === null || dadCm === null) {
+        document.getElementById('emptyState').style.display = 'block';
+        document.getElementById('resultState').style.display = 'none';
+        document.getElementById('momErr').style.display = 'none';
+        document.getElementById('dadErr').style.display = 'none';
+        document.getElementById('krResultBox').style.display = 'none';
+        return;
+      }
+
+      calculateHeight();
+    }
+
+    function calculateHeight() {
+      const momCm = getCmValue('mom');
+      const dadCm = getCmValue('dad');
       let error = false;
 
-      if (!momCm || momCm < 90 || momCm > 250) {
+      if (!Number.isFinite(momCm) || momCm < 90 || momCm > 250) {
         document.getElementById('momErr').style.display = 'block';
         error = true;
       } else {
         document.getElementById('momErr').style.display = 'none';
       }
 
-      if (!dadCm || dadCm < 90 || dadCm > 250) {
+      if (!Number.isFinite(dadCm) || dadCm < 90 || dadCm > 250) {
         document.getElementById('dadErr').style.display = 'block';
         error = true;
       } else {
@@ -1641,29 +1984,39 @@
       if (error) {
         document.getElementById('emptyState').style.display = 'block';
         document.getElementById('resultState').style.display = 'none';
+        document.getElementById('krResultBox').style.display = 'none';
         return;
       }
 
-      // Calculation Logic: Mid-Parental Height Method
-      // Boy: (mother + father + 13 cm) / 2
-      // Girl: (mother + father - 13 cm) / 2
       const adjust = currentSex === 'boy' ? 13 : -13;
       const predictedCm = (momCm + dadCm + adjust) / 2;
       const rangeLow = predictedCm - 8.5;
       const rangeHigh = predictedCm + 8.5;
 
-      // Display Text Results
       document.getElementById('emptyState').style.display = 'none';
       document.getElementById('resultState').style.display = 'block';
 
       document.getElementById('resCm').textContent = `${Math.round(predictedCm)} cm`;
       document.getElementById('resFt').textContent = `≈ ${formatFtIn(predictedCm)}`;
-
       document.getElementById('rangeLow').textContent = `${Math.round(rangeLow)} cm`;
       document.getElementById('rangeHigh').textContent = `${Math.round(rangeHigh)} cm`;
       document.getElementById('rangeFt').textContent = `${formatFtIn(rangeLow)} - ${formatFtIn(rangeHigh)}`;
 
-      // Update Visual Chart Heights (safe relative scaling for short or tall inputs)
+      const krPredictedCm = calculateKhamisRoche(momCm, dadCm);
+      const advancedOpen = document.getElementById('advancedPanel').classList.contains('open');
+
+      if (krPredictedCm !== null && advancedOpen) {
+        document.getElementById('krResultBox').style.display = 'block';
+        document.getElementById('krCm').textContent = `${Math.round(krPredictedCm)} cm`;
+        document.getElementById('krFt').textContent = `≈ ${formatFtIn(krPredictedCm)}`;
+
+        const age = parseFloat(document.getElementById('childAge').value);
+        document.getElementById('krNote').textContent =
+          `Uses age ${age.toFixed(1)} years, current height, current weight, and parental heights. This is an additional statistical estimate, not a guarantee.`;
+      } else {
+        document.getElementById('krResultBox').style.display = 'none';
+      }
+
       const heights = [momCm, dadCm, predictedCm];
       const minHt = Math.min(...heights);
       const maxHt = Math.max(...heights);
@@ -1675,10 +2028,8 @@
 
       document.getElementById('visMomBar').style.height = barHeight(momCm);
       document.getElementById('visMomHt').textContent = `${Math.round(momCm)} cm`;
-
       document.getElementById('visDadBar').style.height = barHeight(dadCm);
       document.getElementById('visDadHt').textContent = `${Math.round(dadCm)} cm`;
-
       document.getElementById('visChildBar').style.height = barHeight(predictedCm);
       document.getElementById('visChildHt').textContent = `${Math.round(predictedCm)} cm`;
 
@@ -1705,7 +2056,7 @@
     }
 
     // Recalculate automatically as the user enters or changes values.
-    ['momVal', 'momIn', 'dadVal', 'dadIn'].forEach((id) => {
+    ['momVal', 'momIn', 'dadVal', 'dadIn', 'childAge', 'childHeightVal', 'childHeightIn', 'childWeight'].forEach((id) => {
       const input = document.getElementById(id);
       if (input) input.addEventListener('input', autoCalculateHeight);
     });
