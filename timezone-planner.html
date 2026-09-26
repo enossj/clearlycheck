@@ -178,6 +178,8 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/calculator.css">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="icon" href="/favicon.png" sizes="48x48" type="image/png">
   <meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
   <style>
     *,
@@ -1260,7 +1262,8 @@
         <strong>China</strong>, despite stretching across five geographical time zones (from UTC+5 to UTC+9), uses a
         single national standard: UTC+8 (Beijing Time). This means that sunrise in Kashgar (western China) can occur as
         late as 10:00 AM local time in winter. <strong>India</strong> similarly uses a single timezone (UTC+5:30) across
-        its entire breadth, even though the country spans nearly 30 degrees of longitude.</p>
+        its entire breadth, even though the country spans nearly 30 degrees of longitude.
+      </p>
 
       <h2>Navigating Daylight Saving Time (DST) Traps</h2>
       <p>Daylight Saving Time is perhaps the single greatest source of scheduling errors in international business. DST
@@ -1286,14 +1289,16 @@
         weeks, the US–UK time difference is <strong>4 hours instead of the usual 5</strong>. If your team has a standing
         9:00 AM ET / 2:00 PM GMT meeting, it will temporarily become 9:00 AM ET / 1:00 PM GMT without anyone realizing
         it unless the calendar software handles IANA timezone identifiers (more on that below). This is the most common
-        source of "I showed up an hour early/late" confusion in globally distributed teams.</p>
+        source of "I showed up an hour early/late" confusion in globally distributed teams.
+      </p>
 
       <p><strong>Arizona</strong> (except the Navajo Nation) does not observe DST. This means Arizona is on Mountain
         Standard Time (UTC−7) year-round, which matches Pacific Daylight Time (UTC−7) in summer but Mountain Standard
         Time in winter, while neighboring states shift around it. <strong>India</strong>, <strong>Japan</strong>, and
         <strong>China</strong> never change their clocks, making them reliable anchors for scheduling—but also meaning
         the US–India and US–Japan time gaps vary by one hour depending on whether the US is on standard or daylight
-        time.</p>
+        time.
+      </p>
 
       <h2>Best Practices for Scheduling International Remote Meetings</h2>
       <p>Finding the elusive "golden hours" of overlap for distributed teams requires a combination of tooling, empathy,
@@ -1328,7 +1333,8 @@
       <h3>4. Always Specify Timezone in Invitations</h3>
       <p>Never write "3:00 PM" in a meeting invite without specifying the timezone. Best practice: include
         <strong>both</strong> the organizer's local time and UTC, e.g., "3:00 PM EST (20:00 UTC)." Better yet, use
-        calendar tools that automatically convert to each recipient's local time.</p>
+        calendar tools that automatically convert to each recipient's local time.
+      </p>
 
       <h3>5. Use IANA Timezone Identifiers</h3>
       <p>Timezone abbreviations like "EST" and "IST" are ambiguous—IST can mean India Standard Time, Irish Standard
@@ -1336,7 +1342,8 @@
         database) uses unambiguous identifiers like <code>America/New_York</code>, <code>Europe/London</code>, and
         <code>Asia/Kolkata</code>. These identifiers encode both the base UTC offset and all historical and future DST
         transition rules. Our planner uses IANA identifiers via the browser's built-in <code>Intl</code> API, ensuring
-        that time conversions are accurate even during DST transition periods.</p>
+        that time conversions are accurate even during DST transition periods.
+      </p>
 
       <h3>6. Account for Half-Hour and Quarter-Hour Offsets</h3>
       <p>India (UTC+5:30), Nepal (UTC+5:45), Iran (UTC+3:30), Afghanistan (UTC+4:30), Myanmar (UTC+6:30), and the

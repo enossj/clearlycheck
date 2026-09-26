@@ -12,7 +12,8 @@ const allPages = fs.readdirSync(root).filter(f => f.endsWith('.html'));
 
 const assetLinks = `<link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/calculator.css">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">`;
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="48x48" type="image/png">`;
 
 const initFaqPattern = /<script>\s*\(function\(\)\s*\{\s*function initFAQ\(\)[\s\S]*?\}\)\(\);\s*<\/script>/g;
 
@@ -24,7 +25,7 @@ for (const file of allPages) {
     if (file === 'index.html') {
       html = html.replace(
         /(<link href="https:\/\/fonts\.googleapis\.com[^"]+" rel="stylesheet">)/,
-        `$1\n<link rel="stylesheet" href="assets/css/base.css">\n<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">\n<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">`
+        `$1\n<link rel="stylesheet" href="assets/css/base.css">\n<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">\n<link rel="icon" href="/favicon.png" sizes="48x48" type="image/png">\n<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">`
       );
     } else if (calculators.includes(file) || file === 'bmi-calculator.html' || file === 'age-calculator.html') {
       html = html.replace(
@@ -34,7 +35,7 @@ for (const file of allPages) {
     } else if (['contact.html', 'privacy-policy.html', 'terms-of-use.html'].includes(file)) {
       html = html.replace(
         /(<link href="https:\/\/fonts\.googleapis\.com[^"]+" rel="stylesheet">)/,
-        `$1\n<link rel="stylesheet" href="assets/css/base.css">\n<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">`
+        `$1\n<link rel="stylesheet" href="assets/css/base.css">\n<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">\n<link rel="icon" href="/favicon.png" sizes="48x48" type="image/png">`
       );
     }
     changed = true;

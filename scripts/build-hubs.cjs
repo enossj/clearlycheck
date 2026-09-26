@@ -251,6 +251,8 @@ ${schema(cat, cards)}
 ${fontLinks()}
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+<link rel="icon" href="/favicon.png" sizes="48x48" type="image/png">
 <meta property="og:image" content="${SITE}/assets/og-image.svg">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
