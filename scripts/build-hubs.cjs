@@ -175,7 +175,7 @@ function toolCard(t) {
 
 function faqAccordion(faq) {
   return faq.map(f =>
-`      <div class="faq-item">
+    `      <div class="faq-item">
         <button class="faq-q">${f.q}<span class="faq-icon">+</span></button>
         <div class="faq-a">${f.a}</div>
       </div>`).join('\n');
@@ -250,7 +250,7 @@ ${schema(cat, cards)}
 
 ${fontLinks()}
 <link rel="stylesheet" href="assets/css/base.css">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <meta property="og:image" content="${SITE}/assets/og-image.svg">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

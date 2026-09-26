@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Word Unscrambler — Find Words From Scrambled Letters | ClearlyCheck</title>
-<meta name="description" content="Free word unscrambler: type up to 15 scrambled letters and instantly find every valid English word hiding in them. Dominate Scrabble, Wordle, and Words With Friends. No signup, runs in your browser.">
-<meta name="keywords" content="word unscrambler, unscramble words, anagram solver, scrabble word finder, wordle helper, words with friends cheat, scrambled letters solver, word game helper, find words from letters, anagram generator, letter unscrambler">
-<link rel="canonical" href="https://clearlycheck.com/word-unscrambler.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Word Unscrambler — Find Words From Scrambled Letters">
-<meta property="og:description" content="Type scrambled letters and instantly find every valid English word hiding in them. Free, private, no signup.">
-<meta property="og:url" content="https://clearlycheck.com/word-unscrambler.html">
-<meta property="og:site_name" content="ClearlyCheck">
-<meta name="twitter:card" content="summary">
 
-<script type="application/ld+json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Unscrambler — Find Words From Scrambled Letters | ClearlyCheck</title>
+  <meta name="description"
+    content="Free word unscrambler: type up to 15 scrambled letters and instantly find every valid English word hiding in them. Dominate Scrabble, Wordle, and Words With Friends. No signup, runs in your browser.">
+  <meta name="keywords"
+    content="word unscrambler, unscramble words, anagram solver, scrabble word finder, wordle helper, words with friends cheat, scrambled letters solver, word game helper, find words from letters, anagram generator, letter unscrambler">
+  <link rel="canonical" href="https://clearlycheck.com/word-unscrambler.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Word Unscrambler — Find Words From Scrambled Letters">
+  <meta property="og:description"
+    content="Type scrambled letters and instantly find every valid English word hiding in them. Free, private, no signup.">
+  <meta property="og:url" content="https://clearlycheck.com/word-unscrambler.html">
+  <meta property="og:site_name" content="ClearlyCheck">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -27,7 +31,7 @@
   "publisher": { "@type": "Organization", "name": "ClearlyCheck", "url": "https://clearlycheck.com" }
 }
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -95,7 +99,7 @@
   ]
 }
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -127,7 +131,7 @@
   ]
 }
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -160,615 +164,1448 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/calculator.css">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #f8f7f4; --bg-card: #ffffff; --text: #0f0f0e; --text-muted: #2b2a28; --text-light: #3d3c39;
-    --border: rgba(15,15,14,0.10); --border-hover: rgba(15,15,14,0.20);
-    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-dark: #145a3d;
-    --blue: #1a4fa0; --blue-light: #e8f0fe;
-    --radius: 16px; --radius-sm: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-    --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.10);
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/calculator.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
-  .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
-  .logo span { color: var(--accent); }
-  .back-link { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
-  .back-link:hover { color: var(--text); }
+    :root {
+      --bg: #f8f7f4;
+      --bg-card: #ffffff;
+      --text: #0f0f0e;
+      --text-muted: #2b2a28;
+      --text-light: #3d3c39;
+      --border: rgba(15, 15, 14, 0.10);
+      --border-hover: rgba(15, 15, 14, 0.20);
+      --accent: #1a6b4a;
+      --accent-light: #e8f5ef;
+      --accent-dark: #145a3d;
+      --blue: #1a4fa0;
+      --blue-light: #e8f0fe;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.10);
+    }
 
-  .page-header { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); margin-bottom: 20px; flex-wrap: wrap; }
-  .breadcrumb a { color: var(--text-light); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .tool-tag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
-  .page-header h1 { font-family: 'Roboto', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 14px; }
-  .page-header p { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 600px; line-height: 1.7; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  .main-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 1fr 360px; gap: 28px; align-items: start; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-width: 0; }
-  .calc-header { padding: 22px 28px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .calc-header h2 { font-family: 'Roboto', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); }
-  .clear-btn { font-size: 12.5px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; cursor: pointer; transition: all 0.15s; }
-  .clear-btn:hover { border-color: var(--accent); color: var(--accent); }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
 
-  .tool-body { padding: 24px 28px; }
-  .input-group { margin-bottom: 18px; }
-  .input-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
-  .input-group input[type="text"] { width: 100%; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--text); border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--bg); outline: none; transition: border-color 0.2s; }
-  .input-group input[type="text"]:focus { border-color: var(--accent); }
-  .input-group input[type="text"]::placeholder { font-size: 16px; font-weight: 400; letter-spacing: 1px; text-transform: none; color: var(--text-light); }
-  .input-hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  .filter-row { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
-  .filter-btn { padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 600; border: 1px solid var(--border); border-radius: 100px; background: var(--bg); color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
-  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .filter-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+    .logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
 
-  .unscramble-btn { width: 100%; padding: 16px; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 700; color: #fff; background: var(--accent); border: none; border-radius: var(--radius-sm); cursor: pointer; transition: background 0.15s; letter-spacing: 0.02em; }
-  .unscramble-btn:hover { background: var(--accent-dark); }
+    .logo span {
+      color: var(--accent);
+    }
 
-  /* RESULTS */
-  .results-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 88px; min-width: 0; }
-  .results-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-  .results-header h3 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
-  .results-count { font-size: 13px; color: var(--text-light); font-weight: 500; }
-  .results-body { padding: 20px 24px; max-height: 520px; overflow-y: auto; }
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
 
-  .verdict-hero { text-align: center; background: var(--accent-light); border-radius: var(--radius-sm); padding: 22px 16px; margin-bottom: 16px; }
-  .verdict-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
-  .verdict-value { font-family: 'DM Sans', sans-serif; font-size: 34px; font-weight: 800; color: var(--text); line-height: 1.1; }
-  .verdict-sub { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+    .back-link:hover {
+      color: var(--text);
+    }
 
-  .word-group { margin-bottom: 16px; }
-  .word-group-label { font-family: 'Roboto', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-  .word-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .word-chip { display: inline-block; padding: 6px 12px; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 600; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); letter-spacing: 0.5px; transition: all 0.15s; cursor: default; }
-  .word-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-  .word-chip.long { background: var(--accent-light); border-color: rgba(26,107,74,0.2); color: var(--accent-dark); }
+    .page-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 40px;
+    }
 
-  .empty-state { text-align: center; padding: 40px 16px; color: var(--text-light); }
-  .empty-state .empty-icon { font-size: 40px; margin-bottom: 12px; }
-  .empty-state p { font-size: 14px; font-weight: 300; line-height: 1.6; }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
 
-  /* ARTICLE */
-  .article-section > div { min-width: 0; }
-  .article-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr 360px; gap: 28px; }
-  @media (max-width: 1024px) { .article-section { grid-template-columns: 1fr; } }
-  .article { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); min-width: 0; }
-  .article h2 { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 12px; margin-top: 28px; }
-  .article h2:first-child { margin-top: 0; }
-  .article p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
-  .article ul, .article ol { padding-left: 20px; margin-bottom: 16px; }
-  .article li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
-  .article strong { color: var(--text); font-weight: 500; }
-  .article a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  .article a:hover { text-decoration: underline; }
-  .article .sources { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
-  .article table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
-  .article th, .article td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 300; }
-  .article th { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--text); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .table-scroll { overflow-x: auto; margin-bottom: 8px; }
+    .breadcrumb a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
 
-  .faq-wrapper { margin-top: 32px; }
-  .faq-section { margin-top: 32px; }
-  .faq-section > h2 { font-family: 'Roboto', sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -0.4px; color: var(--text); margin-bottom: 8px; }
-  .faq-item { border-top: 1px solid var(--border); }
-  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 18px 0; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); background: none; border: none; cursor: pointer; text-align: left; transition: color 0.15s; }
-  .faq-q:hover { color: var(--accent); }
-  .faq-q.open { color: var(--accent); }
-  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; transition: all 0.2s; color: var(--text-muted); }
-  .faq-q.open .faq-icon { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
-  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; padding: 0 0 18px 0; display: none; }
-  .faq-a.open { display: block; }
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
 
-  .sidebar-tools { display: flex; flex-direction: column; gap: 12px; }
-  .sidebar-tool { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); transition: all 0.18s; }
-  .sidebar-tool:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border-hover); }
-  .sidebar-tool-icon { font-size: 22px; flex-shrink: 0; }
-  .sidebar-tool-name { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-  .sidebar-tool-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+    .tool-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
 
-  footer { border-top: 1px solid var(--border); padding: 32px 24px; }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Roboto', sans-serif; font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: var(--text-light); }
-  .footer-copy a { white-space: nowrap; }
+    .page-header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
 
-  @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } .results-card { position: static; } }
-  @media (max-width: 600px) { .tool-body { padding: 18px 16px; } .page-header { padding: 32px 20px 24px; } .article { padding: 24px 20px; } }
+    .page-header p {
+      font-size: 17px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 600px;
+      line-height: 1.7;
+    }
 
-  .page-meta { margin-top: 16px; font-size: 13px; color: var(--text-light); font-weight: 400; }
-  .page-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
-  .page-meta a:hover { text-decoration: underline; }
-</style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973" crossorigin="anonymous"></script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
+    .main-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .calc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .calc-header {
+      padding: 22px 28px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .calc-header h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .clear-btn {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .clear-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tool-body {
+      padding: 24px 28px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .input-group input[type="text"] {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-group input[type="text"]:focus {
+      border-color: var(--accent);
+    }
+
+    .input-group input[type="text"]::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: none;
+      color: var(--text-light);
+    }
+
+    .input-hint {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 6px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: var(--bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .filter-btn:hover:not(.active) {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .unscramble-btn {
+      width: 100%;
+      padding: 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.15s;
+      letter-spacing: 0.02em;
+    }
+
+    .unscramble-btn:hover {
+      background: var(--accent-dark);
+    }
+
+    /* RESULTS */
+    .results-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 88px;
+      min-width: 0;
+    }
+
+    .results-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .results-header h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .results-count {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .results-body {
+      padding: 20px 24px;
+      max-height: 520px;
+      overflow-y: auto;
+    }
+
+    .verdict-hero {
+      text-align: center;
+      background: var(--accent-light);
+      border-radius: var(--radius-sm);
+      padding: 22px 16px;
+      margin-bottom: 16px;
+    }
+
+    .verdict-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-dark);
+      margin-bottom: 8px;
+    }
+
+    .verdict-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .verdict-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .word-group {
+      margin-bottom: 16px;
+    }
+
+    .word-group-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-dark);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .word-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .word-chip {
+      display: inline-block;
+      padding: 6px 12px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      transition: all 0.15s;
+      cursor: default;
+    }
+
+    .word-chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .word-chip.long {
+      background: var(--accent-light);
+      border-color: rgba(26, 107, 74, 0.2);
+      color: var(--accent-dark);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--text-light);
+    }
+
+    .empty-state .empty-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .empty-state p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ARTICLE */
+    .article-section>div {
+      min-width: 0;
+    }
+
+    .article-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 28px;
+    }
+
+    @media (max-width: 1024px) {
+      .article-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .article {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .article h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+
+    .article h2:first-child {
+      margin-top: 0;
+    }
+
+    .article p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .article ul,
+    .article ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .article li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+
+    .article strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .article a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .article a:hover {
+      text-decoration: underline;
+    }
+
+    .article .sources {
+      font-size: 13.5px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+    }
+
+    .article th,
+    .article td {
+      text-align: left;
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .article th {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-bottom: 8px;
+    }
+
+    .faq-wrapper {
+      margin-top: 32px;
+    }
+
+    .faq-section {
+      margin-top: 32px;
+    }
+
+    .faq-section>h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      padding: 18px 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.15s;
+    }
+
+    .faq-q:hover {
+      color: var(--accent);
+    }
+
+    .faq-q.open {
+      color: var(--accent);
+    }
+
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s;
+      color: var(--text-muted);
+    }
+
+    .faq-q.open .faq-icon {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      padding: 0 0 18px 0;
+      display: none;
+    }
+
+    .faq-a.open {
+      display: block;
+    }
+
+    .sidebar-tools {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-tool {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow);
+      transition: all 0.18s;
+    }
+
+    .sidebar-tool:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--border-hover);
+    }
+
+    .sidebar-tool-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-tool-name {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .sidebar-tool-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .footer-copy a {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .results-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tool-body {
+        padding: 18px 16px;
+      }
+
+      .page-header {
+        padding: 32px 20px 24px;
+      }
+
+      .article {
+        padding: 24px 20px;
+      }
+    }
+
+    .page-meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .page-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .page-meta a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973"
+    crossorigin="anonymous"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "94c2b9e732bc45deb6ebafa8912d2594"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="/">Clearly<span>Check</span></a>
-    <a class="back-link" href="/">
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
-      All Tools
-    </a>
-  </div>
-</nav>
-
-<div class="page-header">
-  <nav aria-label="breadcrumb">
-    <div class="breadcrumb">
-      <a href="/">Home</a><span>›</span>
-      <a href="index.html#tools">Tools</a><span>›</span>
-      <a href="education-tools.html">Education</a><span>›</span>
-      <span style="color:var(--text-muted);">Word Unscrambler</span>
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">Clearly<span>Check</span></a>
+      <a class="back-link" href="/">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+        All Tools
+      </a>
     </div>
   </nav>
-  <div class="tool-tag-pill">🎓 Education Tool</div>
-  <h1>Word Unscrambler</h1>
-  <p>Type up to 15 scrambled letters and instantly find every valid English word hiding in them. Use a <strong>?</strong> for blank tiles. Everything runs in your browser — nothing is uploaded.</p>
-  <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September 24, 2026</div>
-</div>
 
-<main>
-<div class="main-layout">
-
-  <div class="calc-card">
-    <div class="calc-header">
-      <h2>Enter your letters</h2>
-      <button class="clear-btn" onclick="clearInput()">Clear</button>
-    </div>
-    <div class="tool-body">
-      <div class="input-group">
-        <label for="letterInput">Scrambled Letters</label>
-        <input type="text" id="letterInput" maxlength="15" placeholder="e.g. RETLAS" autocomplete="off" autocapitalize="off" spellcheck="false">
-        <div class="input-hint">Use <strong>?</strong> for blank/wildcard tiles (max 2). Letters only, up to 15.</div>
+  <div class="page-header">
+    <nav aria-label="breadcrumb">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="index.html#tools">Tools</a><span>›</span>
+        <a href="education-tools.html">Education</a><span>›</span>
+        <span style="color:var(--text-muted);">Word Unscrambler</span>
       </div>
-      <div class="filter-row" id="filterRow">
-        <button class="filter-btn active" data-len="0" onclick="setFilter(0)">All lengths</button>
-        <button class="filter-btn" data-len="2" onclick="setFilter(2)">2</button>
-        <button class="filter-btn" data-len="3" onclick="setFilter(3)">3</button>
-        <button class="filter-btn" data-len="4" onclick="setFilter(4)">4</button>
-        <button class="filter-btn" data-len="5" onclick="setFilter(5)">5</button>
-        <button class="filter-btn" data-len="6" onclick="setFilter(6)">6+</button>
-      </div>
-      <button class="unscramble-btn" id="unscrambleBtn" onclick="unscramble()">🔠 Unscramble</button>
-    </div>
+    </nav>
+    <div class="tool-tag-pill">🎓 Education Tool</div>
+    <h1>Word Unscrambler</h1>
+    <p>Type up to 15 scrambled letters and instantly find every valid English word hiding in them. Use a
+      <strong>?</strong> for blank tiles. Everything runs in your browser — nothing is uploaded.</p>
+    <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September
+      24, 2026</div>
   </div>
 
-  <!-- RESULTS -->
-  <div class="results-card" role="region" aria-live="polite">
-    <div class="results-header">
-      <h3>Results</h3>
-      <span class="results-count" id="resultsCount"></span>
-    </div>
-    <div class="results-body" id="resultsBody">
-      <div class="empty-state">
-        <div class="empty-icon">🔠</div>
-        <p>Type your scrambled letters and hit <strong>Unscramble</strong> to find every valid word.</p>
-      </div>
-    </div>
-  </div>
+  <main>
+    <div class="main-layout">
 
-</div>
-</main>
-
-<div class="article-section">
-  <article class="article">
-    <h2>How Our Word Unscrambler Works</h2>
-    <p>At its core, every word unscrambler is an exercise in <strong>combinatorial matching</strong>. When you type a set of scrambled letters — say, <em>RETLAS</em> — the algorithm's job is to figure out which permutations and subsets of those letters form legitimate English words. Our tool uses a technique called <strong>sorted-signature indexing</strong>, the same foundational approach that powers professional-grade anagram solvers used in competitive Scrabble software.</p>
-    <p>Here is how the process works, step by step. First, every word in the dictionary is preprocessed: its letters are sorted alphabetically to produce a unique "signature." The word <em>STARE</em> sorts to <em>AERST</em>, and so does <em>RATES</em>, <em>TEARS</em>, <em>ASTER</em>, and <em>TARES</em>. All five words share the same signature, meaning they are all anagrams of one another. This preprocessing happens once, when the page loads, and creates a lookup table from signatures to word lists.</p>
-    <p>When you click Unscramble, the algorithm generates every possible <strong>subset</strong> of your input letters (from two-letter pairs up to the full set), sorts each subset alphabetically, and checks the resulting signature against the lookup table. If a match is found, every word associated with that signature is added to the results. This is why the tool doesn't just find full anagrams — it finds <em>all</em> valid words of every length hidden inside your letters, from two-letter words like <em>AT</em> and <em>AS</em> all the way up to six-letter rearrangements.</p>
-    <p>The <strong>wildcard system</strong> adds another layer of complexity. When you type a question mark (<strong>?</strong>), the solver runs the subset generation 26 times — once for every letter of the alphabet substituted into that position. Two wildcards mean 26 × 26 = 676 passes. It sounds computationally expensive, but because the dictionary lookup is a hash-table operation (constant time), the entire process completes in milliseconds on any modern device.</p>
-    <p>More sophisticated commercial solvers use <strong>trie data structures</strong> (prefix trees) that allow the algorithm to prune impossible branches early, or <strong>bitmask hashing</strong> where each letter is represented by a prime number and the dictionary is indexed by the product of a word's letter-primes. Our approach — sorted signatures with hash-map lookup — is the sweet spot between simplicity and speed for a browser-based tool with no server dependency. Your letters never leave your device, the dictionary is embedded in the page, and results appear instantly.</p>
-
-    <h2>Dominate Scrabble, Wordle, and Words With Friends</h2>
-    <p>An unscrambler is more than a shortcut — it is a <strong>vocabulary-building machine</strong> if you use it intentionally. Here are concrete strategies to turn this tool into a competitive advantage across three of the most popular word games in the world.</p>
-    <p><strong>Scrabble.</strong> The secret to a high Scrabble score is not just knowing long words — it is knowing <em>short, high-value words</em> that let you play parallel to an existing word and score on two axes at once. After every game, type your leftover rack letters into this unscrambler and study the words you missed. Pay special attention to two-letter words: the Official Scrabble Players Dictionary includes over 100 valid two-letter combinations (like <em>QI</em>, <em>ZA</em>, <em>XI</em>, <em>JO</em>), and knowing them is the single biggest skill gap between casual and competitive players. Every word this tool surfaces that you did not know is a word you now own for future games.</p>
-    <p><strong>Wordle.</strong> In Wordle, you know the word is exactly five letters and you usually have some positional clues (green and yellow tiles). Type all the confirmed letters into the unscrambler, use wildcards (<strong>?</strong>) for the unknown positions, then filter the results to five-letter words. You will often narrow the field to just a handful of candidates. The tool won't tell you which one is the day's answer, but it will make sure you never waste a guess on a non-word.</p>
-    <p><strong>Words With Friends.</strong> The WWF board layout rewards different strategies than Scrabble — the premium squares are in different positions, and the tile values differ slightly. But the vocabulary overlap is enormous. Use this tool to practice "rack dumps": enter seven random letters and try to find the longest possible word before checking the results. Over time, you train your brain's pattern-recognition system to spot words faster during timed play. For deeper writing and document analysis, pair this tool with our <a href="word-count-reading-time.html">Word Count &amp; Reading Time calculator</a> to measure the complexity of your vocabulary in written work.</p>
-    <p>One underrated strategy across all three games: <strong>learn the "hooks."</strong> A hook is a single letter that turns an existing word into a longer one (adding an S, or turning <em>HOST</em> into <em>GHOST</em>). When this unscrambler shows you a word, mentally ask: can I add a letter to extend it? That habit will compound into hundreds of extra points over a season of play.</p>
-
-    <h2>The Cognitive Benefits of Anagrams</h2>
-    <p>Solving anagrams is not just entertainment — there is a growing body of cognitive science research demonstrating that <strong>word puzzles enhance brain function</strong> in measurable ways. Here is what the evidence says, and why a daily five-minute session with an unscrambler might be one of the easiest upgrades you can make to your mental fitness routine.</p>
-    <p><strong>Neuroplasticity and pattern recognition.</strong> Anagram solving activates the brain's <em>left inferior frontal gyrus</em> (Broca's area) and the <em>angular gyrus</em>, regions responsible for language processing and the manipulation of symbolic representations. Repeatedly engaging these circuits strengthens the synaptic connections between them — a process neuroscientists call <strong>neuroplasticity</strong>. In practical terms, you get faster at recognizing word patterns, which spills over into reading speed, writing fluency, and even foreign-language acquisition.</p>
-    <p><strong>Working memory.</strong> Unscrambling a set of letters requires you to hold multiple candidate arrangements in your mind simultaneously while testing each one against your internal dictionary. This taxes and trains <strong>working memory</strong> — the cognitive workspace where you juggle information in real time. Studies published in the <em>Journal of Experimental Psychology</em> consistently link working-memory training tasks (including anagram solving) with improved performance on unrelated reasoning and comprehension tests.</p>
-    <p><strong>Vocabulary breadth.</strong> Every word you discover via an unscrambler that you did not already know is a genuine vocabulary acquisition event. Unlike passive reading, where unfamiliar words are often skipped, the anagram context forces you to <em>actively engage</em> with the word — you see its letters, you verify it exists, and you process its meaning. Active engagement produces stronger memory traces than passive exposure, according to decades of research on the <strong>testing effect</strong> (also known as retrieval practice).</p>
-    <p><strong>Stress reduction.</strong> Engaging in low-stakes puzzle-solving has been shown to reduce cortisol levels and activate the brain's default-mode network in a constructive way. Unlike doomscrolling, which also reduces effort but increases anxiety, word puzzles provide a state of <em>flow</em> — focused attention on a tractable challenge — that is associated with improved mood and lower perceived stress. If you are looking for a healthier screen habit, ten minutes with an anagram solver is a remarkably effective substitute.</p>
-    <p>For students, these benefits compound. The same letter-manipulation skills that help in Scrabble also help when studying vocabulary for the SAT or GRE, and the working-memory gains improve performance on timed exams. If you need to know how many pages your study notes would fill, try the <a href="words-to-pages-calculator.html">Words to Pages Calculator</a> for a quick conversion.</p>
-
-    <h2>High-Scoring Letters You Should Memorize</h2>
-    <p>In Scrabble, the four rarest and highest-value tiles are <strong>Q (10 pts), Z (10 pts), J (8 pts), and X (8 pts)</strong>. In Words With Friends, the values differ slightly (Z is 10, Q is 10, X is 8, J is 10), but the strategy is the same: <strong>learn every short word that uses these letters</strong>, because playing them without wasting a turn is the fastest path to a high score.</p>
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th>Letter</th><th>Scrabble Pts</th><th>Key 2–3 Letter Words</th><th>Longer Words to Know</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Q</strong></td><td>10</td><td>QI, QOPH, QAT, QANAT</td><td>QUAFF, SQUAB, TRANQ, QINTAR</td></tr>
-          <tr><td><strong>Z</strong></td><td>10</td><td>ZA, ZO, ZAP, ZIT</td><td>PRIZE, FROZE, WALTZ, PIZZA</td></tr>
-          <tr><td><strong>J</strong></td><td>8</td><td>JO, JAB, JAG, JIN</td><td>JULEP, FJORD, MAJOR, JAUNTY</td></tr>
-          <tr><td><strong>X</strong></td><td>8</td><td>XI, XU, AX, EX, OX</td><td>EXPAT, PIXEL, HEXED, FOXES</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>The single most important word to memorize is <strong>QI</strong> — the only standard two-letter Q-word playable without a U. It is worth 11 points on a bare tile, and far more when placed on a premium square. <strong>ZA</strong> (slang for pizza, accepted in tournament play) is similarly valuable: it opens up the Z tile for parallel plays that would otherwise be impossible.</p>
-    <p>Another critical skill: <strong>know the vowel-dump words.</strong> When your rack is clogged with vowels and you cannot find a high-scoring play, short words like <em>AA</em> (a type of lava), <em>AE</em> (one, in Scottish), and <em>OE</em> (a whirlwind off the Faeroe Islands) let you shed dead tiles without losing a turn. This unscrambler is the easiest way to build that short-word vocabulary: type your worst-case rack letters, study the results, and commit the surprises to memory.</p>
-    <p>For the mathematical minds: a standard Scrabble bag contains 100 tiles with a total face value of 187 points. The average game score for a competitive player is around 350–400 points (the gap comes from premium squares, bingos, and challenges). Landing a <strong>bingo</strong> — using all seven rack tiles in one play — earns a 50-point bonus, which is why seven-letter words are so prized. Use this tool to practice: give yourself seven random letters and see how quickly you can spot the bingo.</p>
-
-    <h2>Blank Tiles and Wildcards</h2>
-    <p>In Scrabble, each game includes <strong>two blank tiles</strong> worth zero points that can represent any letter. In Words With Friends, the same concept applies. These blanks are paradoxically the most valuable tiles in the bag — not for their point value, but for the <strong>flexibility</strong> they provide. A blank turns an otherwise unplayable rack into a bingo opportunity.</p>
-    <p>Advanced players follow a strict rule: <strong>never waste a blank on a play worth less than 25–30 points above your next-best alternative.</strong> The reason is opportunity cost. A blank used for a mediocre play today is a blank you do not have tomorrow when you draw the letters for a bingo. In competitive Scrabble, holding a blank increases your expected score by roughly 30 points over the remainder of the game — so spending it on a play that gains you only 10 extra points is a net loss.</p>
-    <p>In this tool, type <strong>?</strong> (question mark) to simulate a blank tile. The solver substitutes every letter of the alphabet and returns all valid results. This is exactly how you should practice: give yourself your current rack letters plus a <strong>?</strong>, and study the expanded possibilities. You will often discover bingos and high-scoring plays that are invisible when you are only thinking about the specific letters in front of you.</p>
-    <p>Some specific blank-tile strategies worth memorizing:</p>
-    <ul>
-      <li><strong>Hold blanks for bingos.</strong> If your rack has five or six common letters (like RSTLNE), a single blank can complete dozens of seven-letter words. The 50-point bonus more than compensates for the blank's zero face value.</li>
-      <li><strong>Simulate early.</strong> As soon as you draw a blank, start running your remaining letters through an unscrambler with a wildcard. This gives you a menu of possibilities to watch for as the board develops.</li>
-      <li><strong>Track the opponent's blanks.</strong> If you have not seen either blank after 60 tiles have been played, your opponent has at least one. Adjust your strategy accordingly — they may be holding for a bingo.</li>
-      <li><strong>In Words With Friends, blanks are even more powerful</strong> because the ENABLE dictionary is slightly larger than the TWL (Tournament Word List). More valid words mean more bingo opportunities.</li>
-    </ul>
-    <p>The combination of wildcard support and length filtering in this tool lets you replicate exactly the kind of rack analysis that top tournament players do between rounds. Use it during practice games, and the patterns will start appearing in real time during competitive play.</p>
-
-    <h2>Sources &amp; method</h2>
-    <p class="sources">This tool uses a curated, browser-embedded dictionary of common English words optimized for word-game play. The anagram-solving algorithm uses sorted-letter signatures matched against a hash-map index, with wildcard expansion for blank tiles. All processing happens locally in JavaScript — no data is transmitted. Tile values and strategy advice reference the Official Scrabble Players Dictionary (OSPD) and the Tournament Word List (TWL). Cognitive science references draw from published research in the <em>Journal of Experimental Psychology</em> and general neuroplasticity literature. Reading-speed figures referenced in internal links use the same methodology described in our <a href="word-count-reading-time.html">Word Count &amp; Reading Time tool</a>.</p>
-
-    <div class="faq-wrapper">
-      <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <button class="faq-q">Is using a word unscrambler cheating?<span class="faq-icon">+</span></button>
-          <div class="faq-a">It depends on context. In casual play, most people consider it a learning tool — you discover words you didn't know existed and remember them for next time. In competitive tournaments, external aids are typically prohibited. For solo games like Wordle, it's entirely your call. Many players use an unscrambler after a round to learn what they missed.</div>
+      <div class="calc-card">
+        <div class="calc-header">
+          <h2>Enter your letters</h2>
+          <button class="clear-btn" onclick="clearInput()">Clear</button>
         </div>
-        <div class="faq-item">
-          <button class="faq-q">What is the longest word you can make with 7 letters?<span class="faq-icon">+</span></button>
-          <div class="faq-a">With seven letters, you can form seven-letter words if all the letters cooperate. Common examples include 'strange', 'plastic', 'chapter', and 'panther'. The longest possible word from any set of letters depends entirely on which letters you have. This tool finds them all instantly.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How do anagram solvers work technically?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Most anagram solvers sort the letters of every dictionary word alphabetically to create a signature. When you enter scrambled letters, the solver generates every possible subset, sorts each one, and checks it against the signature index. Matching signatures mean the subset's letters can form that word. More advanced solvers use trie data structures or bitmask hashing for speed.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Can I use a blank tile or wildcard?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Yes. Type a question mark (?) to represent a blank tile. The solver will try every letter of the alphabet in that position and return all valid words. You can use up to two wildcards.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">What dictionary does this tool use?<span class="faq-icon">+</span></button>
-          <div class="faq-a">This tool uses a curated list of common English words built into the page. Since it runs entirely in your browser with no server, the dictionary is optimized for the most frequently played words in Scrabble, Words With Friends, and everyday vocabulary.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How many words can you make from 5 random letters?<span class="faq-icon">+</span></button>
-          <div class="faq-a">It varies enormously depending on which letters you have. A vowel-heavy set like A-E-I-O-U might yield very few words, while a balanced set like S-T-A-R-E can produce dozens — including 'stare', 'rates', 'tears', 'aster', 'tares', 'star', 'rate', 'ear', and many more.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Why are Q, Z, J, and X worth so many points in Scrabble?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Scrabble tile values reflect letter frequency in English. Q, Z, J, and X appear in very few words, making them harder to play. Their high point values (8–10 points each) reward players who memorize the short, obscure words that use them.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Does this tool work for Words With Friends?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Yes. While Words With Friends uses a slightly different dictionary (called ENABLE), most common words overlap with standard Scrabble dictionaries. This tool's word list covers the vast majority of playable words in both games.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Can I use this for Wordle?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Absolutely. If you know some letters but not their arrangement, type them in and filter the results to five-letter words. It's a great way to brainstorm candidates when you're stuck on a Wordle puzzle.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Is my text sent to a server?<span class="faq-icon">+</span></button>
-          <div class="faq-a">No. Everything runs locally in your browser using JavaScript. Your letters are never transmitted, stored, or logged anywhere. The entire dictionary is embedded in the page itself.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">What is the difference between an anagram and an unscramble?<span class="faq-icon">+</span></button>
-          <div class="faq-a">An anagram uses all the letters of a word to form a different word (e.g., 'listen' → 'silent'). Unscrambling is broader — it finds all valid words from any subset of the given letters, not just rearrangements that use every letter.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How can word games improve my vocabulary?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Word games force you to recall and recognize words under constraints, which strengthens retrieval pathways in memory. Studies show that active recall — pulling a word from memory rather than passively reading it — is one of the most effective ways to learn vocabulary. An unscrambler accelerates this by exposing you to words you wouldn't encounter otherwise.</div>
+        <div class="tool-body">
+          <div class="input-group">
+            <label for="letterInput">Scrambled Letters</label>
+            <input type="text" id="letterInput" maxlength="15" placeholder="e.g. RETLAS" autocomplete="off"
+              autocapitalize="off" spellcheck="false">
+            <div class="input-hint">Use <strong>?</strong> for blank/wildcard tiles (max 2). Letters only, up to 15.
+            </div>
+          </div>
+          <div class="filter-row" id="filterRow">
+            <button class="filter-btn active" data-len="0" onclick="setFilter(0)">All lengths</button>
+            <button class="filter-btn" data-len="2" onclick="setFilter(2)">2</button>
+            <button class="filter-btn" data-len="3" onclick="setFilter(3)">3</button>
+            <button class="filter-btn" data-len="4" onclick="setFilter(4)">4</button>
+            <button class="filter-btn" data-len="5" onclick="setFilter(5)">5</button>
+            <button class="filter-btn" data-len="6" onclick="setFilter(6)">6+</button>
+          </div>
+          <button class="unscramble-btn" id="unscrambleBtn" onclick="unscramble()">🔠 Unscramble</button>
         </div>
       </div>
+
+      <!-- RESULTS -->
+      <div class="results-card" role="region" aria-live="polite">
+        <div class="results-header">
+          <h3>Results</h3>
+          <span class="results-count" id="resultsCount"></span>
+        </div>
+        <div class="results-body" id="resultsBody">
+          <div class="empty-state">
+            <div class="empty-icon">🔠</div>
+            <p>Type your scrambled letters and hit <strong>Unscramble</strong> to find every valid word.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </article>
+  </main>
 
-  <div>
-    <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">More Tools</p>
-    <div class="sidebar-tools">
-      <a class="sidebar-tool" href="words-to-pages-calculator.html">
-        <div class="sidebar-tool-icon">📄</div>
-        <div><div class="sidebar-tool-name">Words to Pages Calculator</div><div class="sidebar-tool-desc">Word count to page count &amp; back</div></div>
-      </a>
-      <a class="sidebar-tool" href="word-count-reading-time.html">
-        <div class="sidebar-tool-icon">📖</div>
-        <div><div class="sidebar-tool-name">Word Count &amp; Reading Time</div><div class="sidebar-tool-desc">Count words &amp; estimate reading time</div></div>
-      </a>
-      <a class="sidebar-tool" href="reading-time-calculator.html">
-        <div class="sidebar-tool-icon">⏱️</div>
-        <div><div class="sidebar-tool-name">Reading Time Calculator</div><div class="sidebar-tool-desc">Estimate reading &amp; speaking time</div></div>
-      </a>
-      <a class="sidebar-tool" href="gpa-calculator.html">
-        <div class="sidebar-tool-icon">🎓</div>
-        <div><div class="sidebar-tool-name">GPA Calculator</div><div class="sidebar-tool-desc">Semester &amp; cumulative GPA</div></div>
-      </a>
+  <div class="article-section">
+    <article class="article">
+      <h2>How Our Word Unscrambler Works</h2>
+      <p>At its core, every word unscrambler is an exercise in <strong>combinatorial matching</strong>. When you type a
+        set of scrambled letters — say, <em>RETLAS</em> — the algorithm's job is to figure out which permutations and
+        subsets of those letters form legitimate English words. Our tool uses a technique called
+        <strong>sorted-signature indexing</strong>, the same foundational approach that powers professional-grade
+        anagram solvers used in competitive Scrabble software.</p>
+      <p>Here is how the process works, step by step. First, every word in the dictionary is preprocessed: its letters
+        are sorted alphabetically to produce a unique "signature." The word <em>STARE</em> sorts to <em>AERST</em>, and
+        so does <em>RATES</em>, <em>TEARS</em>, <em>ASTER</em>, and <em>TARES</em>. All five words share the same
+        signature, meaning they are all anagrams of one another. This preprocessing happens once, when the page loads,
+        and creates a lookup table from signatures to word lists.</p>
+      <p>When you click Unscramble, the algorithm generates every possible <strong>subset</strong> of your input letters
+        (from two-letter pairs up to the full set), sorts each subset alphabetically, and checks the resulting signature
+        against the lookup table. If a match is found, every word associated with that signature is added to the
+        results. This is why the tool doesn't just find full anagrams — it finds <em>all</em> valid words of every
+        length hidden inside your letters, from two-letter words like <em>AT</em> and <em>AS</em> all the way up to
+        six-letter rearrangements.</p>
+      <p>The <strong>wildcard system</strong> adds another layer of complexity. When you type a question mark
+        (<strong>?</strong>), the solver runs the subset generation 26 times — once for every letter of the alphabet
+        substituted into that position. Two wildcards mean 26 × 26 = 676 passes. It sounds computationally expensive,
+        but because the dictionary lookup is a hash-table operation (constant time), the entire process completes in
+        milliseconds on any modern device.</p>
+      <p>More sophisticated commercial solvers use <strong>trie data structures</strong> (prefix trees) that allow the
+        algorithm to prune impossible branches early, or <strong>bitmask hashing</strong> where each letter is
+        represented by a prime number and the dictionary is indexed by the product of a word's letter-primes. Our
+        approach — sorted signatures with hash-map lookup — is the sweet spot between simplicity and speed for a
+        browser-based tool with no server dependency. Your letters never leave your device, the dictionary is embedded
+        in the page, and results appear instantly.</p>
+
+      <h2>Dominate Scrabble, Wordle, and Words With Friends</h2>
+      <p>An unscrambler is more than a shortcut — it is a <strong>vocabulary-building machine</strong> if you use it
+        intentionally. Here are concrete strategies to turn this tool into a competitive advantage across three of the
+        most popular word games in the world.</p>
+      <p><strong>Scrabble.</strong> The secret to a high Scrabble score is not just knowing long words — it is knowing
+        <em>short, high-value words</em> that let you play parallel to an existing word and score on two axes at once.
+        After every game, type your leftover rack letters into this unscrambler and study the words you missed. Pay
+        special attention to two-letter words: the Official Scrabble Players Dictionary includes over 100 valid
+        two-letter combinations (like <em>QI</em>, <em>ZA</em>, <em>XI</em>, <em>JO</em>), and knowing them is the
+        single biggest skill gap between casual and competitive players. Every word this tool surfaces that you did not
+        know is a word you now own for future games.</p>
+      <p><strong>Wordle.</strong> In Wordle, you know the word is exactly five letters and you usually have some
+        positional clues (green and yellow tiles). Type all the confirmed letters into the unscrambler, use wildcards
+        (<strong>?</strong>) for the unknown positions, then filter the results to five-letter words. You will often
+        narrow the field to just a handful of candidates. The tool won't tell you which one is the day's answer, but it
+        will make sure you never waste a guess on a non-word.</p>
+      <p><strong>Words With Friends.</strong> The WWF board layout rewards different strategies than Scrabble — the
+        premium squares are in different positions, and the tile values differ slightly. But the vocabulary overlap is
+        enormous. Use this tool to practice "rack dumps": enter seven random letters and try to find the longest
+        possible word before checking the results. Over time, you train your brain's pattern-recognition system to spot
+        words faster during timed play. For deeper writing and document analysis, pair this tool with our <a
+          href="word-count-reading-time.html">Word Count &amp; Reading Time calculator</a> to measure the complexity of
+        your vocabulary in written work.</p>
+      <p>One underrated strategy across all three games: <strong>learn the "hooks."</strong> A hook is a single letter
+        that turns an existing word into a longer one (adding an S, or turning <em>HOST</em> into <em>GHOST</em>). When
+        this unscrambler shows you a word, mentally ask: can I add a letter to extend it? That habit will compound into
+        hundreds of extra points over a season of play.</p>
+
+      <h2>The Cognitive Benefits of Anagrams</h2>
+      <p>Solving anagrams is not just entertainment — there is a growing body of cognitive science research
+        demonstrating that <strong>word puzzles enhance brain function</strong> in measurable ways. Here is what the
+        evidence says, and why a daily five-minute session with an unscrambler might be one of the easiest upgrades you
+        can make to your mental fitness routine.</p>
+      <p><strong>Neuroplasticity and pattern recognition.</strong> Anagram solving activates the brain's <em>left
+          inferior frontal gyrus</em> (Broca's area) and the <em>angular gyrus</em>, regions responsible for language
+        processing and the manipulation of symbolic representations. Repeatedly engaging these circuits strengthens the
+        synaptic connections between them — a process neuroscientists call <strong>neuroplasticity</strong>. In
+        practical terms, you get faster at recognizing word patterns, which spills over into reading speed, writing
+        fluency, and even foreign-language acquisition.</p>
+      <p><strong>Working memory.</strong> Unscrambling a set of letters requires you to hold multiple candidate
+        arrangements in your mind simultaneously while testing each one against your internal dictionary. This taxes and
+        trains <strong>working memory</strong> — the cognitive workspace where you juggle information in real time.
+        Studies published in the <em>Journal of Experimental Psychology</em> consistently link working-memory training
+        tasks (including anagram solving) with improved performance on unrelated reasoning and comprehension tests.</p>
+      <p><strong>Vocabulary breadth.</strong> Every word you discover via an unscrambler that you did not already know
+        is a genuine vocabulary acquisition event. Unlike passive reading, where unfamiliar words are often skipped, the
+        anagram context forces you to <em>actively engage</em> with the word — you see its letters, you verify it
+        exists, and you process its meaning. Active engagement produces stronger memory traces than passive exposure,
+        according to decades of research on the <strong>testing effect</strong> (also known as retrieval practice).</p>
+      <p><strong>Stress reduction.</strong> Engaging in low-stakes puzzle-solving has been shown to reduce cortisol
+        levels and activate the brain's default-mode network in a constructive way. Unlike doomscrolling, which also
+        reduces effort but increases anxiety, word puzzles provide a state of <em>flow</em> — focused attention on a
+        tractable challenge — that is associated with improved mood and lower perceived stress. If you are looking for a
+        healthier screen habit, ten minutes with an anagram solver is a remarkably effective substitute.</p>
+      <p>For students, these benefits compound. The same letter-manipulation skills that help in Scrabble also help when
+        studying vocabulary for the SAT or GRE, and the working-memory gains improve performance on timed exams. If you
+        need to know how many pages your study notes would fill, try the <a href="words-to-pages-calculator.html">Words
+          to Pages Calculator</a> for a quick conversion.</p>
+
+      <h2>High-Scoring Letters You Should Memorize</h2>
+      <p>In Scrabble, the four rarest and highest-value tiles are <strong>Q (10 pts), Z (10 pts), J (8 pts), and X (8
+          pts)</strong>. In Words With Friends, the values differ slightly (Z is 10, Q is 10, X is 8, J is 10), but the
+        strategy is the same: <strong>learn every short word that uses these letters</strong>, because playing them
+        without wasting a turn is the fastest path to a high score.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Letter</th>
+              <th>Scrabble Pts</th>
+              <th>Key 2–3 Letter Words</th>
+              <th>Longer Words to Know</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Q</strong></td>
+              <td>10</td>
+              <td>QI, QOPH, QAT, QANAT</td>
+              <td>QUAFF, SQUAB, TRANQ, QINTAR</td>
+            </tr>
+            <tr>
+              <td><strong>Z</strong></td>
+              <td>10</td>
+              <td>ZA, ZO, ZAP, ZIT</td>
+              <td>PRIZE, FROZE, WALTZ, PIZZA</td>
+            </tr>
+            <tr>
+              <td><strong>J</strong></td>
+              <td>8</td>
+              <td>JO, JAB, JAG, JIN</td>
+              <td>JULEP, FJORD, MAJOR, JAUNTY</td>
+            </tr>
+            <tr>
+              <td><strong>X</strong></td>
+              <td>8</td>
+              <td>XI, XU, AX, EX, OX</td>
+              <td>EXPAT, PIXEL, HEXED, FOXES</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The single most important word to memorize is <strong>QI</strong> — the only standard two-letter Q-word
+        playable without a U. It is worth 11 points on a bare tile, and far more when placed on a premium square.
+        <strong>ZA</strong> (slang for pizza, accepted in tournament play) is similarly valuable: it opens up the Z tile
+        for parallel plays that would otherwise be impossible.</p>
+      <p>Another critical skill: <strong>know the vowel-dump words.</strong> When your rack is clogged with vowels and
+        you cannot find a high-scoring play, short words like <em>AA</em> (a type of lava), <em>AE</em> (one, in
+        Scottish), and <em>OE</em> (a whirlwind off the Faeroe Islands) let you shed dead tiles without losing a turn.
+        This unscrambler is the easiest way to build that short-word vocabulary: type your worst-case rack letters,
+        study the results, and commit the surprises to memory.</p>
+      <p>For the mathematical minds: a standard Scrabble bag contains 100 tiles with a total face value of 187 points.
+        The average game score for a competitive player is around 350–400 points (the gap comes from premium squares,
+        bingos, and challenges). Landing a <strong>bingo</strong> — using all seven rack tiles in one play — earns a
+        50-point bonus, which is why seven-letter words are so prized. Use this tool to practice: give yourself seven
+        random letters and see how quickly you can spot the bingo.</p>
+
+      <h2>Blank Tiles and Wildcards</h2>
+      <p>In Scrabble, each game includes <strong>two blank tiles</strong> worth zero points that can represent any
+        letter. In Words With Friends, the same concept applies. These blanks are paradoxically the most valuable tiles
+        in the bag — not for their point value, but for the <strong>flexibility</strong> they provide. A blank turns an
+        otherwise unplayable rack into a bingo opportunity.</p>
+      <p>Advanced players follow a strict rule: <strong>never waste a blank on a play worth less than 25–30 points above
+          your next-best alternative.</strong> The reason is opportunity cost. A blank used for a mediocre play today is
+        a blank you do not have tomorrow when you draw the letters for a bingo. In competitive Scrabble, holding a blank
+        increases your expected score by roughly 30 points over the remainder of the game — so spending it on a play
+        that gains you only 10 extra points is a net loss.</p>
+      <p>In this tool, type <strong>?</strong> (question mark) to simulate a blank tile. The solver substitutes every
+        letter of the alphabet and returns all valid results. This is exactly how you should practice: give yourself
+        your current rack letters plus a <strong>?</strong>, and study the expanded possibilities. You will often
+        discover bingos and high-scoring plays that are invisible when you are only thinking about the specific letters
+        in front of you.</p>
+      <p>Some specific blank-tile strategies worth memorizing:</p>
+      <ul>
+        <li><strong>Hold blanks for bingos.</strong> If your rack has five or six common letters (like RSTLNE), a single
+          blank can complete dozens of seven-letter words. The 50-point bonus more than compensates for the blank's zero
+          face value.</li>
+        <li><strong>Simulate early.</strong> As soon as you draw a blank, start running your remaining letters through
+          an unscrambler with a wildcard. This gives you a menu of possibilities to watch for as the board develops.
+        </li>
+        <li><strong>Track the opponent's blanks.</strong> If you have not seen either blank after 60 tiles have been
+          played, your opponent has at least one. Adjust your strategy accordingly — they may be holding for a bingo.
+        </li>
+        <li><strong>In Words With Friends, blanks are even more powerful</strong> because the ENABLE dictionary is
+          slightly larger than the TWL (Tournament Word List). More valid words mean more bingo opportunities.</li>
+      </ul>
+      <p>The combination of wildcard support and length filtering in this tool lets you replicate exactly the kind of
+        rack analysis that top tournament players do between rounds. Use it during practice games, and the patterns will
+        start appearing in real time during competitive play.</p>
+
+      <h2>Sources &amp; method</h2>
+      <p class="sources">This tool uses a curated, browser-embedded dictionary of common English words optimized for
+        word-game play. The anagram-solving algorithm uses sorted-letter signatures matched against a hash-map index,
+        with wildcard expansion for blank tiles. All processing happens locally in JavaScript — no data is transmitted.
+        Tile values and strategy advice reference the Official Scrabble Players Dictionary (OSPD) and the Tournament
+        Word List (TWL). Cognitive science references draw from published research in the <em>Journal of Experimental
+          Psychology</em> and general neuroplasticity literature. Reading-speed figures referenced in internal links use
+        the same methodology described in our <a href="word-count-reading-time.html">Word Count &amp; Reading Time
+          tool</a>.</p>
+
+      <div class="faq-wrapper">
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-q">Is using a word unscrambler cheating?<span class="faq-icon">+</span></button>
+            <div class="faq-a">It depends on context. In casual play, most people consider it a learning tool — you
+              discover words you didn't know existed and remember them for next time. In competitive tournaments,
+              external aids are typically prohibited. For solo games like Wordle, it's entirely your call. Many players
+              use an unscrambler after a round to learn what they missed.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">What is the longest word you can make with 7 letters?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">With seven letters, you can form seven-letter words if all the letters cooperate. Common
+              examples include 'strange', 'plastic', 'chapter', and 'panther'. The longest possible word from any set of
+              letters depends entirely on which letters you have. This tool finds them all instantly.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How do anagram solvers work technically?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Most anagram solvers sort the letters of every dictionary word alphabetically to create a
+              signature. When you enter scrambled letters, the solver generates every possible subset, sorts each one,
+              and checks it against the signature index. Matching signatures mean the subset's letters can form that
+              word. More advanced solvers use trie data structures or bitmask hashing for speed.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Can I use a blank tile or wildcard?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Yes. Type a question mark (?) to represent a blank tile. The solver will try every letter
+              of the alphabet in that position and return all valid words. You can use up to two wildcards.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">What dictionary does this tool use?<span class="faq-icon">+</span></button>
+            <div class="faq-a">This tool uses a curated list of common English words built into the page. Since it runs
+              entirely in your browser with no server, the dictionary is optimized for the most frequently played words
+              in Scrabble, Words With Friends, and everyday vocabulary.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How many words can you make from 5 random letters?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">It varies enormously depending on which letters you have. A vowel-heavy set like
+              A-E-I-O-U might yield very few words, while a balanced set like S-T-A-R-E can produce dozens — including
+              'stare', 'rates', 'tears', 'aster', 'tares', 'star', 'rate', 'ear', and many more.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Why are Q, Z, J, and X worth so many points in Scrabble?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Scrabble tile values reflect letter frequency in English. Q, Z, J, and X appear in very
+              few words, making them harder to play. Their high point values (8–10 points each) reward players who
+              memorize the short, obscure words that use them.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Does this tool work for Words With Friends?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Yes. While Words With Friends uses a slightly different dictionary (called ENABLE), most
+              common words overlap with standard Scrabble dictionaries. This tool's word list covers the vast majority
+              of playable words in both games.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Can I use this for Wordle?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Absolutely. If you know some letters but not their arrangement, type them in and filter
+              the results to five-letter words. It's a great way to brainstorm candidates when you're stuck on a Wordle
+              puzzle.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Is my text sent to a server?<span class="faq-icon">+</span></button>
+            <div class="faq-a">No. Everything runs locally in your browser using JavaScript. Your letters are never
+              transmitted, stored, or logged anywhere. The entire dictionary is embedded in the page itself.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">What is the difference between an anagram and an unscramble?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">An anagram uses all the letters of a word to form a different word (e.g., 'listen' →
+              'silent'). Unscrambling is broader — it finds all valid words from any subset of the given letters, not
+              just rearrangements that use every letter.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How can word games improve my vocabulary?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Word games force you to recall and recognize words under constraints, which strengthens
+              retrieval pathways in memory. Studies show that active recall — pulling a word from memory rather than
+              passively reading it — is one of the most effective ways to learn vocabulary. An unscrambler accelerates
+              this by exposing you to words you wouldn't encounter otherwise.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div>
+      <p
+        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
+        More Tools</p>
+      <div class="sidebar-tools">
+        <a class="sidebar-tool" href="words-to-pages-calculator.html">
+          <div class="sidebar-tool-icon">📄</div>
+          <div>
+            <div class="sidebar-tool-name">Words to Pages Calculator</div>
+            <div class="sidebar-tool-desc">Word count to page count &amp; back</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="word-count-reading-time.html">
+          <div class="sidebar-tool-icon">📖</div>
+          <div>
+            <div class="sidebar-tool-name">Word Count &amp; Reading Time</div>
+            <div class="sidebar-tool-desc">Count words &amp; estimate reading time</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="reading-time-calculator.html">
+          <div class="sidebar-tool-icon">⏱️</div>
+          <div>
+            <div class="sidebar-tool-name">Reading Time Calculator</div>
+            <div class="sidebar-tool-desc">Estimate reading &amp; speaking time</div>
+          </div>
+        </a>
+        <a class="sidebar-tool" href="gpa-calculator.html">
+          <div class="sidebar-tool-icon">🎓</div>
+          <div>
+            <div class="sidebar-tool-name">GPA Calculator</div>
+            <div class="sidebar-tool-desc">Semester &amp; cumulative GPA</div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-<div style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
-  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
-    <strong style="color:#0f0f0e;">For informational purposes only.</strong> This tool uses a curated word list and may not include every valid word in official tournament dictionaries. All processing happens in your browser and nothing is uploaded. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated September 24, 2026.
+  <div
+    style="background:#f0f0ef;border-top:1px solid rgba(15,15,14,0.08);border-bottom:1px solid rgba(15,15,14,0.08);padding:16px 24px;margin-bottom:40px;">
+    <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#6b6a66;line-height:1.6;">
+      <strong style="color:#0f0f0e;">For informational purposes only.</strong> This tool uses a curated word list and
+      may not include every valid word in official tournament dictionaries. All processing happens in your browser and
+      nothing is uploaded. Reviewed by <a href="/about.html" style="color:inherit;">Enos</a> · Last updated September
+      24, 2026.
+    </div>
   </div>
-</div>
 
-<footer>
-  <div class="footer-inner">
-    <a class="footer-logo" href="/">Clearly<span>Check</span></a>
-    <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html" style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html" style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html" style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html" style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html" style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
-  </div>
-</footer>
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="/">Clearly<span>Check</span></a>
+      <p class="footer-copy">© 2026 ClearlyCheck · <a href="about.html"
+          style="color:var(--text-light);text-decoration:none;">About</a> · <a href="sitemap.html"
+          style="color:var(--text-light);text-decoration:none;">Sitemap</a> · <a href="contact.html"
+          style="color:var(--text-light);text-decoration:none;">Contact</a> · <a href="terms-of-use.html"
+          style="color:var(--text-light);text-decoration:none;">Terms of Use</a> · <a href="privacy-policy.html"
+          style="color:var(--text-light);text-decoration:none;">Privacy Policy</a></p>
+    </div>
+  </footer>
 
-<script>
-// ========== DICTIONARY (500+ common English words) ==========
-const WORDS = [
-  "aa","ab","ad","ae","ag","ah","ai","al","am","an","ar","as","at","aw","ax","ay",
-  "ba","be","bi","bo","by",
-  "da","de","do",
-  "ed","ef","eh","el","em","en","er","es","et","ex",
-  "fa","go","ha","he","hi","ho",
-  "id","if","in","is","it",
-  "jo",
-  "ka","la","li","lo",
-  "ma","me","mi","mo","mu","my",
-  "na","ne","no","nu",
-  "od","oe","of","oh","oi","ok","om","on","op","or","os","ou","ow","ox","oy",
-  "pa","pe","pi","po",
-  "qi",
-  "re",
-  "sh","si","so",
-  "ta","ti","to",
-  "uh","um","un","up","us","ut",
-  "we","wo",
-  "xi","xu",
-  "ya","ye","yo",
-  "za",
-  "ace","act","add","ado","ads","aft","age","ago","aid","aim","air","ale","all","and","ant","ape","apt","arc","are","ark","arm","art","ash","ask","ate","awe","awl","axe",
-  "bad","bag","ban","bar","bat","bay","bed","bee","beg","bet","bid","big","bin","bit","bog","bow","box","boy","bra","bud","bug","bum","bun","bur","bus","but","buy",
-  "cab","cam","can","cap","car","cat","cob","cod","cog","cop","cor","cos","cot","cow","cry","cub","cud","cue","cup","cur","cut",
-  "dab","dad","dam","day","den","dew","did","die","dig","dim","din","dip","doe","dog","don","dot","dry","dub","dud","due","dug","dun","duo","dye",
-  "ear","eat","eel","egg","ego","elk","elm","emu","end","era","eve","ewe","eye",
-  "fab","fad","fan","far","fat","fax","fed","fee","fen","few","fig","fin","fir","fit","fix","fly","fob","foe","fog","fop","for","fox","fry","fun","fur",
-  "gab","gag","gal","gap","gas","gay","gel","gem","get","gig","gin","gnu","god","got","gum","gun","gust","gut","guy","gym",
-  "had","hag","ham","has","hat","hay","hem","hen","her","hew","hex","hid","him","hip","his","hit","hob","hod","hoe","hog","hop","hot","how","hub","hue","hug","hum","hut",
-  "ice","icy","ilk","ill","imp","ink","inn","ion","ire","irk","its","ivy",
-  "jab","jag","jam","jar","jaw","jay","jet","jig","job","jog","jot","joy","jug","jut",
-  "keg","ken","key","kid","kin","kit",
-  "lab","lad","lag","lap","law","lax","lay","lea","led","leg","let","lid","lie","lip","lit","log","lop","lot","low","lug",
-  "mad","man","map","mar","mat","maw","max","may","men","met","mid","mix","mob","mod","mop","mow","mud","mug","mum","mun","muse","mut","my",
-  "nab","nag","nap","nay","net","new","nil","nip","nit","nob","nod","nor","not","now","nub","nun","nut",
-  "oak","oaf","oar","oat","odd","ode","off","oft","ohm","oil","old","one","opt","orb","ore","our","out","owe","owl","own",
-  "pad","pal","pan","pap","par","pat","paw","pay","pea","peg","pen","pep","per","pet","pew","pie","pig","pin","pit","ply","pod","pop","pot","pow","pro","pry","pub","pug","pun","pup","pus","put",
-  "rag","ram","ran","rap","rat","raw","ray","red","ref","rep","rev","rib","rid","rig","rim","rip","rob","rod","roe","rot","row","rub","rug","rum","run","rut","rye",
-  "sac","sad","sag","sap","sat","saw","say","sea","set","sew","she","shy","sin","sip","sir","sis","sit","six","ski","sky","sly","sob","sod","son","sop","sot","sow","soy","spa","spy","sty","sub","sue","sum","sun","sup",
-  "tab","tad","tag","tan","tap","tar","tat","tax","tea","ten","the","thy","tic","tie","tin","tip","toe","ton","too","top","tot","tow","toy","try","tub","tug","tun","two",
-  "ugh","ump","urn","use",
-  "van","vat","vet","vex","via","vie","vim","vow",
-  "wad","wag","war","was","wax","way","web","wed","wet","who","why","wig","win","wit","woe","wok","won","woo","wow",
-  "yak","yam","yap","yaw","yea","yes","yet","yew","yin","you","yow",
-  "zap","zed","zen","zip","zit","zoo",
-  "able","ache","acid","acme","acre","aged","aide","ally","also","arch","area","army","atom","auto","avid","away","axes","axis",
-  "back","bade","bait","bake","bald","bale","ball","band","bane","bang","bank","bare","bark","barn","base","bass","bath","bead","beak","beam","bean","bear","beat","beef","been","beer","bell","belt","bend","bent","best","bias","bike","bile","bill","bind","bird","bite","blew","blob","bloc","blog","blow","blue","blur","boar","boat","body","boil","bold","bolt","bomb","bond","bone","book","boom","boot","bore","born","boss","both","bout","bowl","bred","brew","brim","bulb","bulk","bull","bump","burn","burp","bust","busy",
-  "cafe","cage","cake","calf","call","calm","came","camp","cane","cape","card","care","cart","case","cash","cast","cave","cell","char","chat","chef","chin","chip","chop","cite","city","clad","clam","clap","claw","clay","clip","clod","clog","clot","club","clue","coal","coat","code","coil","coin","cold","colt","comb","come","cone","cook","cool","cope","copy","cord","core","cork","corn","cost","cosy","coup","cove","cozy","crab","crew","crop","crow","cube","cult","curb","cure","curl","cute",
-  "dale","dame","damp","dare","dark","dart","dash","data","date","dawn","dead","deaf","deal","dean","dear","debt","deck","deed","deem","deep","deer","demo","dent","deny","desk","dial","dice","diet","dire","dirt","disc","dish","disk","dock","does","dome","done","doom","door","dose","dove","down","doze","drab","drag","draw","drew","drip","drop","drum","dual","duck","duel","duke","dull","dumb","dump","dune","dung","dunk","dusk","dust","duty",
-  "each","earl","earn","ease","east","easy","edge","edit","else","emit","ends","epic","even","ever","evil","exam","exit","eyed","eyes",
-  "face","fact","fade","fail","fair","fake","fall","fame","fang","fare","farm","fast","fate","fawn","fear","feat","feed","feel","feet","fell","felt","fern","file","fill","film","find","fine","fire","firm","fish","fist","five","flag","flak","flap","flat","flaw","flea","fled","flew","flex","flip","flit","flog","flop","flow","foam","foil","fold","folk","fond","font","food","fool","foot","ford","fore","fork","form","fort","foul","four","free","frog","from","fuel","full","fume","fund","fury","fuse","fuss",
-  "gain","gait","gale","gall","game","gape","garb","gate","gave","gaze","gear","gene","gift","gild","gilt","girl","gist","give","glad","glee","glen","glib","glow","glue","glum","glut","gnat","gnaw","goal","goat","goes","gold","golf","gone","good","gore","grab","gram","gray","grew","grid","grim","grin","grip","grit","grow","grub","gulf","gush","gust",
-  "hack","hail","hair","hake","half","hall","halt","hand","hang","hare","harm","harp","hash","hast","hate","haul","have","haze","hazy","head","heal","heap","hear","heat","heed","heel","held","hell","helm","help","hemp","herd","here","hero","hide","high","hike","hill","hilt","hind","hint","hire","hiss","hive","hoax","hold","hole","holy","home","hone","hood","hook","hoop","hope","horn","hose","host","hour","howl","huge","hull","hump","hung","hunt","hurl","hurt","hush","hymn",
-  "icon","idea","idle","inch","into","iron","isle","item",
-  "jack","jade","jail","jaws","jazz","jean","jeer","jell","jerk","jest","jilt","jinx","join","joke","jolt","josh","jowl","judo","juke","jump","june","junk","jury","just","jute",
-  "kale","keen","keep","kelp","kept","kick","kill","kind","king","kiss","kite","knack","knee","knew","knit","knob","knot","know",
-  "lace","lack","lacy","laid","lake","lame","lamp","land","lane","lard","lark","lash","lass","last","late","lawn","lazy","lead","leaf","leak","lean","leap","left","lend","lens","lent","less","liar","lice","lick","lied","lieu","life","lift","like","limb","lime","limp","line","link","lint","lion","list","live","load","loaf","loam","loan","lock","lode","loft","logo","lone","long","look","loom","loop","loot","lord","lore","lose","loss","lost","loud","love","luck","lull","lump","lung","lure","lurk","lush","lust",
-  "mace","made","maid","mail","main","make","male","mall","malt","mane","many","mare","mark","mars","mash","mask","mass","mast","mate","math","maze","meal","mean","meat","meet","meld","melt","memo","mend","menu","mere","mesh","mess","mice","mild","mile","milk","mill","mime","mind","mine","mint","mire","miss","mist","mite","moan","moat","mock","mode","mold","mole","monk","mood","moon","moor","more","moss","most","moth","move","much","muck","mule","mull","muse","mush","musk","must","mute",
-  "nail","name","nape","navy","near","neat","neck","need","nest","nine","node","none","noon","norm","nose","note","noun","nude","numb",
-  "obey","odds","odor","once","only","onto","ooze","open","oral","oven","over","owed","owed",
-  "pace","pack","pact","page","paid","pail","pain","pair","pale","palm","pane","pang","pant","park","part","pass","past","path","pave","pawn","peak","peal","pear","peat","peck","peel","peer","pelt","perk","pest","pick","pier","pike","pile","pine","pink","pipe","pith","pity","plan","play","plea","plod","plot","plow","ploy","plug","plum","plus","pock","poem","poet","poke","pole","poll","polo","pond","pool","poor","pope","pore","pork","port","pose","post","pour","pray","prep","prey","prod","prop","prow","pull","pulp","pump","punk","pure","purr","push",
-  "race","rack","raft","rage","raid","rail","rain","rake","ramp","rang","rank","rant","rare","rash","rasp","rate","rave","read","real","reap","rear","reef","reel","rely","rent","rest","rice","rich","ride","rift","rind","ring","riot","ripe","rise","risk","road","roam","roar","robe","rock","rode","role","roll","roof","room","root","rope","rose","rosy","rove","rude","ruin","rule","rung","rush","rust",
-  "sack","safe","sage","said","sail","sake","sale","salt","same","sand","sane","sang","sank","sash","save","scar","seal","seam","sear","seat","sect","seed","seek","seem","seen","self","sell","send","sent","sept","shed","shin","ship","shop","shot","show","shut","sick","side","sift","sigh","sign","silk","sill","silo","silt","sing","sink","sire","site","size","skip","slab","slag","slam","slap","slat","slaw","sled","slew","slid","slim","slit","slob","slop","slot","slow","slug","slum","smog","snap","snag","snip","snob","snow","snub","snug","soak","soap","soar","sock","soda","sofa","soft","soil","sold","sole","some","song","soon","soot","sore","sort","soul","soup","sour","span","spar","spec","sped","spin","spit","spot","spry","spur","stab","stag","star","stay","stem","step","stew","stir","stop","stub","stud","stun","such","suck","suit","sulk","sung","sunk","sure","surf","swan","swap","swim","swum",
-  "tack","tact","tail","take","tale","talk","tall","tame","tang","tank","tape","tarn","tart","task","taxi","teak","team","tear","teen","tell","temp","tend","tent","term","test","text","than","that","them","then","they","thin","this","thud","thus","tick","tide","tidy","tied","tier","tile","till","tilt","time","tine","tiny","tire","toad","toil","told","toll","tomb","tome","tone","took","tool","tops","tore","torn","toss","tour","town","trap","tray","tree","trek","trim","trio","trip","trod","trot","true","tuck","tube","tuna","tune","turf","turn","tusk","tuft","twig","twin","type",
-  "ugly","undo","unit","upon","urge","used","user",
-  "vain","vale","vane","vary","vase","vast","veal","veer","veil","vein","vent","verb","very","vest","veto","vice","view","vine","visa","void","volt","vote","vows",
-  "wade","wage","wail","wait","wake","walk","wall","wand","want","ward","warm","warn","warp","wart","wary","wash","wasp","wave","wavy","waxy","weak","wean","wear","weed","week","weep","weld","well","went","were","west","what","when","whim","whip","whom","wick","wide","wife","wild","will","wilt","wily","wimp","wind","wine","wing","wink","wipe","wire","wise","wish","wisp","with","woke","woke","wolf","womb","wood","wool","word","wore","work","worm","worn","wove","wrap","wren",
-  "yard","yarn","year","yell","yoga","yoke","your",
-  "zeal","zero","zest","zinc","zone","zoom",
-  "about","above","abuse","adapt","admit","adopt","after","again","agree","ahead","alarm","album","alert","alien","align","alive","alley","allow","alone","along","alter","among","ample","angel","anger","angle","angry","anime","ankle","annex","apart","apple","apply","arena","arise","armor","array","aside","asset","atlas","attic","audio","audit","avoid","awake","award","aware",
-  "badge","badly","basic","basin","basis","batch","beach","beard","beast","begin","being","below","bench","berry","bible","birth","black","blade","blame","bland","blank","blast","blaze","bleak","bleed","blend","bless","blind","blink","bliss","block","blond","blood","bloom","blown","board","boast","bonus","boost","booth","bound","brace","brain","brand","brave","bread","break","breed","brick","bride","brief","bring","broad","broke","brook","brown","brush","build","built","bunch","burst","buyer",
-  "cabin","candy","cargo","carry","catch","cause","chain","chair","chalk","champ","chant","chaos","charm","chart","chase","cheap","cheat","check","cheek","cheer","chess","chest","chief","child","china","chord","chose","chunk","civic","civil","claim","clash","clasp","class","clean","clear","clerk","click","cliff","climb","cling","clock","clone","close","cloth","cloud","coach","coast","comet","comic","coral","couch","could","count","court","cover","crack","craft","crane","crash","crazy","cream","crest","crime","crisp","cross","crowd","crown","crude","crush","curve","cycle",
-  "daily","dance","debut","decay","delta","dense","depot","depth","derby","devil","diary","dirty","doing","doubt","dough","draft","drain","drake","drama","drank","drape","drawn","dream","dress","dried","drift","drill","drink","drive","drone","drove","drunk","dryer","dwarf","dwell",
-  "eager","eagle","early","earth","eaten","eight","elect","elite","email","empty","enemy","enjoy","enter","entry","equal","equip","erase","error","essay","event","every","exact","exert","exile","exist","extra",
-  "fable","faced","facet","fairy","faith","fatal","fault","feast","fiber","field","fifth","fifty","fight","final","first","fixed","flame","flash","fleet","flesh","float","flock","flood","floor","flora","flour","fluid","flush","flute","focus","force","forge","forth","forum","found","frame","frank","fraud","freak","fresh","front","frost","froze","fruit","fully",
-  "gauge","ghost","giant","given","glare","glass","gleam","glide","globe","gloom","glory","gloss","glove","grace","grade","grain","grand","grant","graph","grasp","grass","grave","graze","great","green","greet","grief","grill","grind","groan","groom","gross","group","grove","grown","gruel","guard","guess","guest","guide","guild","guilt","guise",
-  "habit","harsh","haste","hasty","hatch","haunt","haven","heart","heavy","hedge","heist","hence","hobby","honey","honor","horse","hotel","house","human","humor","hurry",
-  "ideal","image","imply","index","indie","infer","inner","input","irony","ivory",
-  "jewel","joint","joker","judge","juice","juicy",
-  "kneel","knife","knock","known",
-  "label","labor","latch","later","laugh","layer","learn","lease","least","leave","legal","lemon","level","light","limit","linen","liver","lobby","local","lodge","logic","loose","lover","lower","loyal","lunar","lunch",
-  "magic","major","manor","maple","march","marry","match","mayor","medal","media","mercy","merge","merit","metal","meter","might","minor","minus","model","money","month","moral","motor","mound","mount","mouse","mouth","movie","music","midst",
-  "naive","nerve","never","noble","noise","north","noted","novel","nurse",
-  "occur","ocean","offer","often","olive","onset","opera","orbit","order","organ","other","outer","owner","oxide",
-  "paint","panel","panic","paper","party","paste","patch","pause","peace","peach","pearl","penny","phase","phone","photo","piano","piece","pilot","pinch","pitch","pixel","pizza","place","plain","plane","plant","plate","plaza","plead","pleas","pluck","plumb","plump","plunge","point","polar","porch","posse","pound","power","prank","press","price","pride","prime","prince","print","prior","prize","probe","prone","proof","prose","proud","prove","proxy","psalm","pulse","punch","pupil","purse","quest","queue","quick","quiet","quota","quote",
-  "radar","radio","raise","rally","ranch","range","rapid","ratio","reach","react","ready","realm","rebel","refer","reign","relax","renew","repay","reply","rider","ridge","rifle","right","rigid","rival","river","roast","robin","robot","rocky","roger","roman","rough","round","route","royal","rugby","ruler","rural",
-  "saint","salad","scale","scare","scene","scent","scope","score","scout","scrap","serve","setup","seven","shade","shaft","shake","shall","shame","shape","share","shark","sharp","shave","shear","sheep","sheer","sheet","shelf","shell","shift","shine","shirt","shock","shoot","shore","short","shout","shove","shown","siege","sight","sigma","since","sixth","sixty","sized","skill","skull","slash","slate","slave","sleep","sleek","slice","slide","slope","small","smart","smell","smile","smith","smoke","snack","snake","solar","solid","solve","sorry","sound","south","space","spare","spark","spawn","speak","speed","spell","spend","spent","spice","spike","spine","split","spoke","spoon","sport","spray","squad","stack","staff","stage","stain","stair","stake","stale","stall","stamp","stand","stare","stark","start","state","stave","stays","steak","steal","steam","steel","steep","steer","stern","stick","stiff","still","sting","stock","stole","stone","stood","stool","store","storm","story","stout","stove","strap","straw","stray","strip","stuck","study","stuff","stump","stung","stunt","style","sugar","suite","sunny","super","surge","swamp","swarm","swear","sweat","sweep","sweet","swift","swing","swirl","sword","swore","sworn",
-  "table","taste","teach","teeth","thank","theft","their","theme","there","thick","thief","thing","think","third","thorn","those","three","threw","throw","thumb","tiger","tight","timer","title","toast","today","token","topic","total","touch","tough","towel","tower","toxic","trace","track","trade","trail","train","trait","trash","treat","trend","trial","tribe","trick","tried","troop","truck","truly","trunk","trust","truth","tumor","twist",
-  "ultra","uncle","under","union","unite","unity","until","upper","upset","urban","usage","usual","utter",
-  "valid","value","valve","vault","vigor","vinyl","viola","viral","virus","visit","vital","vivid","vocal","vodka","voice","voter",
-  "waist","waste","watch","water","weary","weave","weigh","weird","wheat","wheel","where","which","while","white","whole","whose","wider","witch","woman","women","world","worry","worse","worst","worth","would","wound","wrath","write","wrong","wrote",
-  "yacht","yield","young","youth",
-  "zebra"
-];
+  <script>
+    // ========== DICTIONARY (500+ common English words) ==========
+    const WORDS = [
+      "aa", "ab", "ad", "ae", "ag", "ah", "ai", "al", "am", "an", "ar", "as", "at", "aw", "ax", "ay",
+      "ba", "be", "bi", "bo", "by",
+      "da", "de", "do",
+      "ed", "ef", "eh", "el", "em", "en", "er", "es", "et", "ex",
+      "fa", "go", "ha", "he", "hi", "ho",
+      "id", "if", "in", "is", "it",
+      "jo",
+      "ka", "la", "li", "lo",
+      "ma", "me", "mi", "mo", "mu", "my",
+      "na", "ne", "no", "nu",
+      "od", "oe", "of", "oh", "oi", "ok", "om", "on", "op", "or", "os", "ou", "ow", "ox", "oy",
+      "pa", "pe", "pi", "po",
+      "qi",
+      "re",
+      "sh", "si", "so",
+      "ta", "ti", "to",
+      "uh", "um", "un", "up", "us", "ut",
+      "we", "wo",
+      "xi", "xu",
+      "ya", "ye", "yo",
+      "za",
+      "ace", "act", "add", "ado", "ads", "aft", "age", "ago", "aid", "aim", "air", "ale", "all", "and", "ant", "ape", "apt", "arc", "are", "ark", "arm", "art", "ash", "ask", "ate", "awe", "awl", "axe",
+      "bad", "bag", "ban", "bar", "bat", "bay", "bed", "bee", "beg", "bet", "bid", "big", "bin", "bit", "bog", "bow", "box", "boy", "bra", "bud", "bug", "bum", "bun", "bur", "bus", "but", "buy",
+      "cab", "cam", "can", "cap", "car", "cat", "cob", "cod", "cog", "cop", "cor", "cos", "cot", "cow", "cry", "cub", "cud", "cue", "cup", "cur", "cut",
+      "dab", "dad", "dam", "day", "den", "dew", "did", "die", "dig", "dim", "din", "dip", "doe", "dog", "don", "dot", "dry", "dub", "dud", "due", "dug", "dun", "duo", "dye",
+      "ear", "eat", "eel", "egg", "ego", "elk", "elm", "emu", "end", "era", "eve", "ewe", "eye",
+      "fab", "fad", "fan", "far", "fat", "fax", "fed", "fee", "fen", "few", "fig", "fin", "fir", "fit", "fix", "fly", "fob", "foe", "fog", "fop", "for", "fox", "fry", "fun", "fur",
+      "gab", "gag", "gal", "gap", "gas", "gay", "gel", "gem", "get", "gig", "gin", "gnu", "god", "got", "gum", "gun", "gust", "gut", "guy", "gym",
+      "had", "hag", "ham", "has", "hat", "hay", "hem", "hen", "her", "hew", "hex", "hid", "him", "hip", "his", "hit", "hob", "hod", "hoe", "hog", "hop", "hot", "how", "hub", "hue", "hug", "hum", "hut",
+      "ice", "icy", "ilk", "ill", "imp", "ink", "inn", "ion", "ire", "irk", "its", "ivy",
+      "jab", "jag", "jam", "jar", "jaw", "jay", "jet", "jig", "job", "jog", "jot", "joy", "jug", "jut",
+      "keg", "ken", "key", "kid", "kin", "kit",
+      "lab", "lad", "lag", "lap", "law", "lax", "lay", "lea", "led", "leg", "let", "lid", "lie", "lip", "lit", "log", "lop", "lot", "low", "lug",
+      "mad", "man", "map", "mar", "mat", "maw", "max", "may", "men", "met", "mid", "mix", "mob", "mod", "mop", "mow", "mud", "mug", "mum", "mun", "muse", "mut", "my",
+      "nab", "nag", "nap", "nay", "net", "new", "nil", "nip", "nit", "nob", "nod", "nor", "not", "now", "nub", "nun", "nut",
+      "oak", "oaf", "oar", "oat", "odd", "ode", "off", "oft", "ohm", "oil", "old", "one", "opt", "orb", "ore", "our", "out", "owe", "owl", "own",
+      "pad", "pal", "pan", "pap", "par", "pat", "paw", "pay", "pea", "peg", "pen", "pep", "per", "pet", "pew", "pie", "pig", "pin", "pit", "ply", "pod", "pop", "pot", "pow", "pro", "pry", "pub", "pug", "pun", "pup", "pus", "put",
+      "rag", "ram", "ran", "rap", "rat", "raw", "ray", "red", "ref", "rep", "rev", "rib", "rid", "rig", "rim", "rip", "rob", "rod", "roe", "rot", "row", "rub", "rug", "rum", "run", "rut", "rye",
+      "sac", "sad", "sag", "sap", "sat", "saw", "say", "sea", "set", "sew", "she", "shy", "sin", "sip", "sir", "sis", "sit", "six", "ski", "sky", "sly", "sob", "sod", "son", "sop", "sot", "sow", "soy", "spa", "spy", "sty", "sub", "sue", "sum", "sun", "sup",
+      "tab", "tad", "tag", "tan", "tap", "tar", "tat", "tax", "tea", "ten", "the", "thy", "tic", "tie", "tin", "tip", "toe", "ton", "too", "top", "tot", "tow", "toy", "try", "tub", "tug", "tun", "two",
+      "ugh", "ump", "urn", "use",
+      "van", "vat", "vet", "vex", "via", "vie", "vim", "vow",
+      "wad", "wag", "war", "was", "wax", "way", "web", "wed", "wet", "who", "why", "wig", "win", "wit", "woe", "wok", "won", "woo", "wow",
+      "yak", "yam", "yap", "yaw", "yea", "yes", "yet", "yew", "yin", "you", "yow",
+      "zap", "zed", "zen", "zip", "zit", "zoo",
+      "able", "ache", "acid", "acme", "acre", "aged", "aide", "ally", "also", "arch", "area", "army", "atom", "auto", "avid", "away", "axes", "axis",
+      "back", "bade", "bait", "bake", "bald", "bale", "ball", "band", "bane", "bang", "bank", "bare", "bark", "barn", "base", "bass", "bath", "bead", "beak", "beam", "bean", "bear", "beat", "beef", "been", "beer", "bell", "belt", "bend", "bent", "best", "bias", "bike", "bile", "bill", "bind", "bird", "bite", "blew", "blob", "bloc", "blog", "blow", "blue", "blur", "boar", "boat", "body", "boil", "bold", "bolt", "bomb", "bond", "bone", "book", "boom", "boot", "bore", "born", "boss", "both", "bout", "bowl", "bred", "brew", "brim", "bulb", "bulk", "bull", "bump", "burn", "burp", "bust", "busy",
+      "cafe", "cage", "cake", "calf", "call", "calm", "came", "camp", "cane", "cape", "card", "care", "cart", "case", "cash", "cast", "cave", "cell", "char", "chat", "chef", "chin", "chip", "chop", "cite", "city", "clad", "clam", "clap", "claw", "clay", "clip", "clod", "clog", "clot", "club", "clue", "coal", "coat", "code", "coil", "coin", "cold", "colt", "comb", "come", "cone", "cook", "cool", "cope", "copy", "cord", "core", "cork", "corn", "cost", "cosy", "coup", "cove", "cozy", "crab", "crew", "crop", "crow", "cube", "cult", "curb", "cure", "curl", "cute",
+      "dale", "dame", "damp", "dare", "dark", "dart", "dash", "data", "date", "dawn", "dead", "deaf", "deal", "dean", "dear", "debt", "deck", "deed", "deem", "deep", "deer", "demo", "dent", "deny", "desk", "dial", "dice", "diet", "dire", "dirt", "disc", "dish", "disk", "dock", "does", "dome", "done", "doom", "door", "dose", "dove", "down", "doze", "drab", "drag", "draw", "drew", "drip", "drop", "drum", "dual", "duck", "duel", "duke", "dull", "dumb", "dump", "dune", "dung", "dunk", "dusk", "dust", "duty",
+      "each", "earl", "earn", "ease", "east", "easy", "edge", "edit", "else", "emit", "ends", "epic", "even", "ever", "evil", "exam", "exit", "eyed", "eyes",
+      "face", "fact", "fade", "fail", "fair", "fake", "fall", "fame", "fang", "fare", "farm", "fast", "fate", "fawn", "fear", "feat", "feed", "feel", "feet", "fell", "felt", "fern", "file", "fill", "film", "find", "fine", "fire", "firm", "fish", "fist", "five", "flag", "flak", "flap", "flat", "flaw", "flea", "fled", "flew", "flex", "flip", "flit", "flog", "flop", "flow", "foam", "foil", "fold", "folk", "fond", "font", "food", "fool", "foot", "ford", "fore", "fork", "form", "fort", "foul", "four", "free", "frog", "from", "fuel", "full", "fume", "fund", "fury", "fuse", "fuss",
+      "gain", "gait", "gale", "gall", "game", "gape", "garb", "gate", "gave", "gaze", "gear", "gene", "gift", "gild", "gilt", "girl", "gist", "give", "glad", "glee", "glen", "glib", "glow", "glue", "glum", "glut", "gnat", "gnaw", "goal", "goat", "goes", "gold", "golf", "gone", "good", "gore", "grab", "gram", "gray", "grew", "grid", "grim", "grin", "grip", "grit", "grow", "grub", "gulf", "gush", "gust",
+      "hack", "hail", "hair", "hake", "half", "hall", "halt", "hand", "hang", "hare", "harm", "harp", "hash", "hast", "hate", "haul", "have", "haze", "hazy", "head", "heal", "heap", "hear", "heat", "heed", "heel", "held", "hell", "helm", "help", "hemp", "herd", "here", "hero", "hide", "high", "hike", "hill", "hilt", "hind", "hint", "hire", "hiss", "hive", "hoax", "hold", "hole", "holy", "home", "hone", "hood", "hook", "hoop", "hope", "horn", "hose", "host", "hour", "howl", "huge", "hull", "hump", "hung", "hunt", "hurl", "hurt", "hush", "hymn",
+      "icon", "idea", "idle", "inch", "into", "iron", "isle", "item",
+      "jack", "jade", "jail", "jaws", "jazz", "jean", "jeer", "jell", "jerk", "jest", "jilt", "jinx", "join", "joke", "jolt", "josh", "jowl", "judo", "juke", "jump", "june", "junk", "jury", "just", "jute",
+      "kale", "keen", "keep", "kelp", "kept", "kick", "kill", "kind", "king", "kiss", "kite", "knack", "knee", "knew", "knit", "knob", "knot", "know",
+      "lace", "lack", "lacy", "laid", "lake", "lame", "lamp", "land", "lane", "lard", "lark", "lash", "lass", "last", "late", "lawn", "lazy", "lead", "leaf", "leak", "lean", "leap", "left", "lend", "lens", "lent", "less", "liar", "lice", "lick", "lied", "lieu", "life", "lift", "like", "limb", "lime", "limp", "line", "link", "lint", "lion", "list", "live", "load", "loaf", "loam", "loan", "lock", "lode", "loft", "logo", "lone", "long", "look", "loom", "loop", "loot", "lord", "lore", "lose", "loss", "lost", "loud", "love", "luck", "lull", "lump", "lung", "lure", "lurk", "lush", "lust",
+      "mace", "made", "maid", "mail", "main", "make", "male", "mall", "malt", "mane", "many", "mare", "mark", "mars", "mash", "mask", "mass", "mast", "mate", "math", "maze", "meal", "mean", "meat", "meet", "meld", "melt", "memo", "mend", "menu", "mere", "mesh", "mess", "mice", "mild", "mile", "milk", "mill", "mime", "mind", "mine", "mint", "mire", "miss", "mist", "mite", "moan", "moat", "mock", "mode", "mold", "mole", "monk", "mood", "moon", "moor", "more", "moss", "most", "moth", "move", "much", "muck", "mule", "mull", "muse", "mush", "musk", "must", "mute",
+      "nail", "name", "nape", "navy", "near", "neat", "neck", "need", "nest", "nine", "node", "none", "noon", "norm", "nose", "note", "noun", "nude", "numb",
+      "obey", "odds", "odor", "once", "only", "onto", "ooze", "open", "oral", "oven", "over", "owed", "owed",
+      "pace", "pack", "pact", "page", "paid", "pail", "pain", "pair", "pale", "palm", "pane", "pang", "pant", "park", "part", "pass", "past", "path", "pave", "pawn", "peak", "peal", "pear", "peat", "peck", "peel", "peer", "pelt", "perk", "pest", "pick", "pier", "pike", "pile", "pine", "pink", "pipe", "pith", "pity", "plan", "play", "plea", "plod", "plot", "plow", "ploy", "plug", "plum", "plus", "pock", "poem", "poet", "poke", "pole", "poll", "polo", "pond", "pool", "poor", "pope", "pore", "pork", "port", "pose", "post", "pour", "pray", "prep", "prey", "prod", "prop", "prow", "pull", "pulp", "pump", "punk", "pure", "purr", "push",
+      "race", "rack", "raft", "rage", "raid", "rail", "rain", "rake", "ramp", "rang", "rank", "rant", "rare", "rash", "rasp", "rate", "rave", "read", "real", "reap", "rear", "reef", "reel", "rely", "rent", "rest", "rice", "rich", "ride", "rift", "rind", "ring", "riot", "ripe", "rise", "risk", "road", "roam", "roar", "robe", "rock", "rode", "role", "roll", "roof", "room", "root", "rope", "rose", "rosy", "rove", "rude", "ruin", "rule", "rung", "rush", "rust",
+      "sack", "safe", "sage", "said", "sail", "sake", "sale", "salt", "same", "sand", "sane", "sang", "sank", "sash", "save", "scar", "seal", "seam", "sear", "seat", "sect", "seed", "seek", "seem", "seen", "self", "sell", "send", "sent", "sept", "shed", "shin", "ship", "shop", "shot", "show", "shut", "sick", "side", "sift", "sigh", "sign", "silk", "sill", "silo", "silt", "sing", "sink", "sire", "site", "size", "skip", "slab", "slag", "slam", "slap", "slat", "slaw", "sled", "slew", "slid", "slim", "slit", "slob", "slop", "slot", "slow", "slug", "slum", "smog", "snap", "snag", "snip", "snob", "snow", "snub", "snug", "soak", "soap", "soar", "sock", "soda", "sofa", "soft", "soil", "sold", "sole", "some", "song", "soon", "soot", "sore", "sort", "soul", "soup", "sour", "span", "spar", "spec", "sped", "spin", "spit", "spot", "spry", "spur", "stab", "stag", "star", "stay", "stem", "step", "stew", "stir", "stop", "stub", "stud", "stun", "such", "suck", "suit", "sulk", "sung", "sunk", "sure", "surf", "swan", "swap", "swim", "swum",
+      "tack", "tact", "tail", "take", "tale", "talk", "tall", "tame", "tang", "tank", "tape", "tarn", "tart", "task", "taxi", "teak", "team", "tear", "teen", "tell", "temp", "tend", "tent", "term", "test", "text", "than", "that", "them", "then", "they", "thin", "this", "thud", "thus", "tick", "tide", "tidy", "tied", "tier", "tile", "till", "tilt", "time", "tine", "tiny", "tire", "toad", "toil", "told", "toll", "tomb", "tome", "tone", "took", "tool", "tops", "tore", "torn", "toss", "tour", "town", "trap", "tray", "tree", "trek", "trim", "trio", "trip", "trod", "trot", "true", "tuck", "tube", "tuna", "tune", "turf", "turn", "tusk", "tuft", "twig", "twin", "type",
+      "ugly", "undo", "unit", "upon", "urge", "used", "user",
+      "vain", "vale", "vane", "vary", "vase", "vast", "veal", "veer", "veil", "vein", "vent", "verb", "very", "vest", "veto", "vice", "view", "vine", "visa", "void", "volt", "vote", "vows",
+      "wade", "wage", "wail", "wait", "wake", "walk", "wall", "wand", "want", "ward", "warm", "warn", "warp", "wart", "wary", "wash", "wasp", "wave", "wavy", "waxy", "weak", "wean", "wear", "weed", "week", "weep", "weld", "well", "went", "were", "west", "what", "when", "whim", "whip", "whom", "wick", "wide", "wife", "wild", "will", "wilt", "wily", "wimp", "wind", "wine", "wing", "wink", "wipe", "wire", "wise", "wish", "wisp", "with", "woke", "woke", "wolf", "womb", "wood", "wool", "word", "wore", "work", "worm", "worn", "wove", "wrap", "wren",
+      "yard", "yarn", "year", "yell", "yoga", "yoke", "your",
+      "zeal", "zero", "zest", "zinc", "zone", "zoom",
+      "about", "above", "abuse", "adapt", "admit", "adopt", "after", "again", "agree", "ahead", "alarm", "album", "alert", "alien", "align", "alive", "alley", "allow", "alone", "along", "alter", "among", "ample", "angel", "anger", "angle", "angry", "anime", "ankle", "annex", "apart", "apple", "apply", "arena", "arise", "armor", "array", "aside", "asset", "atlas", "attic", "audio", "audit", "avoid", "awake", "award", "aware",
+      "badge", "badly", "basic", "basin", "basis", "batch", "beach", "beard", "beast", "begin", "being", "below", "bench", "berry", "bible", "birth", "black", "blade", "blame", "bland", "blank", "blast", "blaze", "bleak", "bleed", "blend", "bless", "blind", "blink", "bliss", "block", "blond", "blood", "bloom", "blown", "board", "boast", "bonus", "boost", "booth", "bound", "brace", "brain", "brand", "brave", "bread", "break", "breed", "brick", "bride", "brief", "bring", "broad", "broke", "brook", "brown", "brush", "build", "built", "bunch", "burst", "buyer",
+      "cabin", "candy", "cargo", "carry", "catch", "cause", "chain", "chair", "chalk", "champ", "chant", "chaos", "charm", "chart", "chase", "cheap", "cheat", "check", "cheek", "cheer", "chess", "chest", "chief", "child", "china", "chord", "chose", "chunk", "civic", "civil", "claim", "clash", "clasp", "class", "clean", "clear", "clerk", "click", "cliff", "climb", "cling", "clock", "clone", "close", "cloth", "cloud", "coach", "coast", "comet", "comic", "coral", "couch", "could", "count", "court", "cover", "crack", "craft", "crane", "crash", "crazy", "cream", "crest", "crime", "crisp", "cross", "crowd", "crown", "crude", "crush", "curve", "cycle",
+      "daily", "dance", "debut", "decay", "delta", "dense", "depot", "depth", "derby", "devil", "diary", "dirty", "doing", "doubt", "dough", "draft", "drain", "drake", "drama", "drank", "drape", "drawn", "dream", "dress", "dried", "drift", "drill", "drink", "drive", "drone", "drove", "drunk", "dryer", "dwarf", "dwell",
+      "eager", "eagle", "early", "earth", "eaten", "eight", "elect", "elite", "email", "empty", "enemy", "enjoy", "enter", "entry", "equal", "equip", "erase", "error", "essay", "event", "every", "exact", "exert", "exile", "exist", "extra",
+      "fable", "faced", "facet", "fairy", "faith", "fatal", "fault", "feast", "fiber", "field", "fifth", "fifty", "fight", "final", "first", "fixed", "flame", "flash", "fleet", "flesh", "float", "flock", "flood", "floor", "flora", "flour", "fluid", "flush", "flute", "focus", "force", "forge", "forth", "forum", "found", "frame", "frank", "fraud", "freak", "fresh", "front", "frost", "froze", "fruit", "fully",
+      "gauge", "ghost", "giant", "given", "glare", "glass", "gleam", "glide", "globe", "gloom", "glory", "gloss", "glove", "grace", "grade", "grain", "grand", "grant", "graph", "grasp", "grass", "grave", "graze", "great", "green", "greet", "grief", "grill", "grind", "groan", "groom", "gross", "group", "grove", "grown", "gruel", "guard", "guess", "guest", "guide", "guild", "guilt", "guise",
+      "habit", "harsh", "haste", "hasty", "hatch", "haunt", "haven", "heart", "heavy", "hedge", "heist", "hence", "hobby", "honey", "honor", "horse", "hotel", "house", "human", "humor", "hurry",
+      "ideal", "image", "imply", "index", "indie", "infer", "inner", "input", "irony", "ivory",
+      "jewel", "joint", "joker", "judge", "juice", "juicy",
+      "kneel", "knife", "knock", "known",
+      "label", "labor", "latch", "later", "laugh", "layer", "learn", "lease", "least", "leave", "legal", "lemon", "level", "light", "limit", "linen", "liver", "lobby", "local", "lodge", "logic", "loose", "lover", "lower", "loyal", "lunar", "lunch",
+      "magic", "major", "manor", "maple", "march", "marry", "match", "mayor", "medal", "media", "mercy", "merge", "merit", "metal", "meter", "might", "minor", "minus", "model", "money", "month", "moral", "motor", "mound", "mount", "mouse", "mouth", "movie", "music", "midst",
+      "naive", "nerve", "never", "noble", "noise", "north", "noted", "novel", "nurse",
+      "occur", "ocean", "offer", "often", "olive", "onset", "opera", "orbit", "order", "organ", "other", "outer", "owner", "oxide",
+      "paint", "panel", "panic", "paper", "party", "paste", "patch", "pause", "peace", "peach", "pearl", "penny", "phase", "phone", "photo", "piano", "piece", "pilot", "pinch", "pitch", "pixel", "pizza", "place", "plain", "plane", "plant", "plate", "plaza", "plead", "pleas", "pluck", "plumb", "plump", "plunge", "point", "polar", "porch", "posse", "pound", "power", "prank", "press", "price", "pride", "prime", "prince", "print", "prior", "prize", "probe", "prone", "proof", "prose", "proud", "prove", "proxy", "psalm", "pulse", "punch", "pupil", "purse", "quest", "queue", "quick", "quiet", "quota", "quote",
+      "radar", "radio", "raise", "rally", "ranch", "range", "rapid", "ratio", "reach", "react", "ready", "realm", "rebel", "refer", "reign", "relax", "renew", "repay", "reply", "rider", "ridge", "rifle", "right", "rigid", "rival", "river", "roast", "robin", "robot", "rocky", "roger", "roman", "rough", "round", "route", "royal", "rugby", "ruler", "rural",
+      "saint", "salad", "scale", "scare", "scene", "scent", "scope", "score", "scout", "scrap", "serve", "setup", "seven", "shade", "shaft", "shake", "shall", "shame", "shape", "share", "shark", "sharp", "shave", "shear", "sheep", "sheer", "sheet", "shelf", "shell", "shift", "shine", "shirt", "shock", "shoot", "shore", "short", "shout", "shove", "shown", "siege", "sight", "sigma", "since", "sixth", "sixty", "sized", "skill", "skull", "slash", "slate", "slave", "sleep", "sleek", "slice", "slide", "slope", "small", "smart", "smell", "smile", "smith", "smoke", "snack", "snake", "solar", "solid", "solve", "sorry", "sound", "south", "space", "spare", "spark", "spawn", "speak", "speed", "spell", "spend", "spent", "spice", "spike", "spine", "split", "spoke", "spoon", "sport", "spray", "squad", "stack", "staff", "stage", "stain", "stair", "stake", "stale", "stall", "stamp", "stand", "stare", "stark", "start", "state", "stave", "stays", "steak", "steal", "steam", "steel", "steep", "steer", "stern", "stick", "stiff", "still", "sting", "stock", "stole", "stone", "stood", "stool", "store", "storm", "story", "stout", "stove", "strap", "straw", "stray", "strip", "stuck", "study", "stuff", "stump", "stung", "stunt", "style", "sugar", "suite", "sunny", "super", "surge", "swamp", "swarm", "swear", "sweat", "sweep", "sweet", "swift", "swing", "swirl", "sword", "swore", "sworn",
+      "table", "taste", "teach", "teeth", "thank", "theft", "their", "theme", "there", "thick", "thief", "thing", "think", "third", "thorn", "those", "three", "threw", "throw", "thumb", "tiger", "tight", "timer", "title", "toast", "today", "token", "topic", "total", "touch", "tough", "towel", "tower", "toxic", "trace", "track", "trade", "trail", "train", "trait", "trash", "treat", "trend", "trial", "tribe", "trick", "tried", "troop", "truck", "truly", "trunk", "trust", "truth", "tumor", "twist",
+      "ultra", "uncle", "under", "union", "unite", "unity", "until", "upper", "upset", "urban", "usage", "usual", "utter",
+      "valid", "value", "valve", "vault", "vigor", "vinyl", "viola", "viral", "virus", "visit", "vital", "vivid", "vocal", "vodka", "voice", "voter",
+      "waist", "waste", "watch", "water", "weary", "weave", "weigh", "weird", "wheat", "wheel", "where", "which", "while", "white", "whole", "whose", "wider", "witch", "woman", "women", "world", "worry", "worse", "worst", "worth", "would", "wound", "wrath", "write", "wrong", "wrote",
+      "yacht", "yield", "young", "youth",
+      "zebra"
+    ];
 
-// ========== PREPROCESS: build signature → words map ==========
-const sigMap = {};
-function sortLetters(w) { return w.split('').sort().join(''); }
-WORDS.forEach(function(w) {
-  const sig = sortLetters(w);
-  if (!sigMap[sig]) sigMap[sig] = [];
-  if (sigMap[sig].indexOf(w) === -1) sigMap[sig].push(w);
-});
+    // ========== PREPROCESS: build signature → words map ==========
+    const sigMap = {};
+    function sortLetters(w) { return w.split('').sort().join(''); }
+    WORDS.forEach(function (w) {
+      const sig = sortLetters(w);
+      if (!sigMap[sig]) sigMap[sig] = [];
+      if (sigMap[sig].indexOf(w) === -1) sigMap[sig].push(w);
+    });
 
-let currentFilter = 0;
+    let currentFilter = 0;
 
-function setFilter(len) {
-  currentFilter = len;
-  document.querySelectorAll('.filter-btn').forEach(function(b) {
-    b.classList.toggle('active', parseInt(b.getAttribute('data-len')) === len);
-  });
-  // re-render if results exist
-  const input = document.getElementById('letterInput').value.trim();
-  if (input.length >= 2) unscramble();
-}
-
-// Generate all subsets of letters (as sorted strings), size 2+
-function getSubsets(letters) {
-  const n = letters.length;
-  const results = new Set();
-  const total = 1 << n;
-  for (let mask = 3; mask < total; mask++) {
-    let bits = 0;
-    for (let tmp = mask; tmp; tmp >>= 1) bits += (tmp & 1);
-    if (bits < 2) continue;
-    const chars = [];
-    for (let i = 0; i < n; i++) {
-      if (mask & (1 << i)) chars.push(letters[i]);
+    function setFilter(len) {
+      currentFilter = len;
+      document.querySelectorAll('.filter-btn').forEach(function (b) {
+        b.classList.toggle('active', parseInt(b.getAttribute('data-len')) === len);
+      });
+      // re-render if results exist
+      const input = document.getElementById('letterInput').value.trim();
+      if (input.length >= 2) unscramble();
     }
-    results.add(chars.sort().join(''));
-  }
-  return results;
-}
 
-function unscramble() {
-  const raw = document.getElementById('letterInput').value.trim().toLowerCase().replace(/[^a-z?]/g, '');
-  if (raw.length < 2) {
-    document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">✏️</div><p>Enter at least 2 letters to unscramble.</p></div>';
-    document.getElementById('resultsCount').textContent = '';
-    return;
-  }
-
-  const wildcardCount = (raw.match(/\?/g) || []).length;
-  if (wildcardCount > 2) {
-    document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Maximum 2 wildcards (?) allowed.</p></div>';
-    document.getElementById('resultsCount').textContent = '';
-    return;
-  }
-
-  const allFound = new Set();
-  const alpha = 'abcdefghijklmnopqrstuvwxyz';
-
-  function solve(letters) {
-    const subs = getSubsets(letters.split(''));
-    subs.forEach(function(sig) {
-      if (sigMap[sig]) {
-        sigMap[sig].forEach(function(w) { allFound.add(w); });
+    // Generate all subsets of letters (as sorted strings), size 2+
+    function getSubsets(letters) {
+      const n = letters.length;
+      const results = new Set();
+      const total = 1 << n;
+      for (let mask = 3; mask < total; mask++) {
+        let bits = 0;
+        for (let tmp = mask; tmp; tmp >>= 1) bits += (tmp & 1);
+        if (bits < 2) continue;
+        const chars = [];
+        for (let i = 0; i < n; i++) {
+          if (mask & (1 << i)) chars.push(letters[i]);
+        }
+        results.add(chars.sort().join(''));
       }
-    });
-  }
-
-  if (wildcardCount === 0) {
-    solve(raw);
-  } else if (wildcardCount === 1) {
-    const base = raw.replace('?', '');
-    for (let i = 0; i < 26; i++) {
-      solve(base + alpha[i]);
+      return results;
     }
-  } else {
-    const base = raw.replace('?', '').replace('?', '');
-    for (let i = 0; i < 26; i++) {
-      for (let j = i; j < 26; j++) {
-        solve(base + alpha[i] + alpha[j]);
+
+    function unscramble() {
+      const raw = document.getElementById('letterInput').value.trim().toLowerCase().replace(/[^a-z?]/g, '');
+      if (raw.length < 2) {
+        document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">✏️</div><p>Enter at least 2 letters to unscramble.</p></div>';
+        document.getElementById('resultsCount').textContent = '';
+        return;
       }
+
+      const wildcardCount = (raw.match(/\?/g) || []).length;
+      if (wildcardCount > 2) {
+        document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Maximum 2 wildcards (?) allowed.</p></div>';
+        document.getElementById('resultsCount').textContent = '';
+        return;
+      }
+
+      const allFound = new Set();
+      const alpha = 'abcdefghijklmnopqrstuvwxyz';
+
+      function solve(letters) {
+        const subs = getSubsets(letters.split(''));
+        subs.forEach(function (sig) {
+          if (sigMap[sig]) {
+            sigMap[sig].forEach(function (w) { allFound.add(w); });
+          }
+        });
+      }
+
+      if (wildcardCount === 0) {
+        solve(raw);
+      } else if (wildcardCount === 1) {
+        const base = raw.replace('?', '');
+        for (let i = 0; i < 26; i++) {
+          solve(base + alpha[i]);
+        }
+      } else {
+        const base = raw.replace('?', '').replace('?', '');
+        for (let i = 0; i < 26; i++) {
+          for (let j = i; j < 26; j++) {
+            solve(base + alpha[i] + alpha[j]);
+          }
+        }
+      }
+
+      // Filter and group by length
+      let words = Array.from(allFound);
+      if (currentFilter === 6) {
+        words = words.filter(function (w) { return w.length >= 6; });
+      } else if (currentFilter > 0) {
+        words = words.filter(function (w) { return w.length === currentFilter; });
+      }
+
+      words.sort(function (a, b) { return b.length - a.length || a.localeCompare(b); });
+
+      if (words.length === 0) {
+        document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">🤔</div><p>No words found. Try different letters or add a wildcard (?).</p></div>';
+        document.getElementById('resultsCount').textContent = '0 words';
+        document.getElementById('resultsBody').previousElementSibling.querySelector('.results-count').textContent = '0 words';
+        return;
+      }
+
+      // Group
+      const groups = {};
+      words.forEach(function (w) {
+        const k = w.length;
+        if (!groups[k]) groups[k] = [];
+        groups[k].push(w);
+      });
+
+      let html = '<div class="verdict-hero"><div class="verdict-label">Words Found</div><div class="verdict-value">' + words.length + '</div><div class="verdict-sub">from ' + raw.length + ' letter' + (raw.length > 1 ? 's' : '') + '</div></div>';
+
+      const lengths = Object.keys(groups).map(Number).sort(function (a, b) { return b - a; });
+      lengths.forEach(function (len) {
+        html += '<div class="word-group">';
+        html += '<div class="word-group-label">' + len + '-letter words (' + groups[len].length + ')</div>';
+        html += '<div class="word-chips">';
+        groups[len].forEach(function (w) {
+          const cls = len >= 5 ? 'word-chip long' : 'word-chip';
+          html += '<span class="' + cls + '">' + w.toUpperCase() + '</span>';
+        });
+        html += '</div></div>';
+      });
+
+      document.getElementById('resultsBody').innerHTML = html;
+      document.getElementById('resultsCount').textContent = words.length + ' word' + (words.length !== 1 ? 's' : '');
     }
-  }
 
-  // Filter and group by length
-  let words = Array.from(allFound);
-  if (currentFilter === 6) {
-    words = words.filter(function(w) { return w.length >= 6; });
-  } else if (currentFilter > 0) {
-    words = words.filter(function(w) { return w.length === currentFilter; });
-  }
+    function clearInput() {
+      document.getElementById('letterInput').value = '';
+      document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">🔠</div><p>Type your scrambled letters and hit <strong>Unscramble</strong> to find every valid word.</p></div>';
+      document.getElementById('resultsCount').textContent = '';
+      currentFilter = 0;
+      document.querySelectorAll('.filter-btn').forEach(function (b) {
+        b.classList.toggle('active', parseInt(b.getAttribute('data-len')) === 0);
+      });
+      document.getElementById('letterInput').focus();
+    }
 
-  words.sort(function(a, b) { return b.length - a.length || a.localeCompare(b); });
-
-  if (words.length === 0) {
-    document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">🤔</div><p>No words found. Try different letters or add a wildcard (?).</p></div>';
-    document.getElementById('resultsCount').textContent = '0 words';
-    document.getElementById('resultsBody').previousElementSibling.querySelector('.results-count').textContent = '0 words';
-    return;
-  }
-
-  // Group
-  const groups = {};
-  words.forEach(function(w) {
-    const k = w.length;
-    if (!groups[k]) groups[k] = [];
-    groups[k].push(w);
-  });
-
-  let html = '<div class="verdict-hero"><div class="verdict-label">Words Found</div><div class="verdict-value">' + words.length + '</div><div class="verdict-sub">from ' + raw.length + ' letter' + (raw.length > 1 ? 's' : '') + '</div></div>';
-
-  const lengths = Object.keys(groups).map(Number).sort(function(a, b) { return b - a; });
-  lengths.forEach(function(len) {
-    html += '<div class="word-group">';
-    html += '<div class="word-group-label">' + len + '-letter words (' + groups[len].length + ')</div>';
-    html += '<div class="word-chips">';
-    groups[len].forEach(function(w) {
-      const cls = len >= 5 ? 'word-chip long' : 'word-chip';
-      html += '<span class="' + cls + '">' + w.toUpperCase() + '</span>';
+    // Enter key triggers unscramble
+    document.getElementById('letterInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); unscramble(); }
     });
-    html += '</div></div>';
-  });
 
-  document.getElementById('resultsBody').innerHTML = html;
-  document.getElementById('resultsCount').textContent = words.length + ' word' + (words.length !== 1 ? 's' : '');
-}
-
-function clearInput() {
-  document.getElementById('letterInput').value = '';
-  document.getElementById('resultsBody').innerHTML = '<div class="empty-state"><div class="empty-icon">🔠</div><p>Type your scrambled letters and hit <strong>Unscramble</strong> to find every valid word.</p></div>';
-  document.getElementById('resultsCount').textContent = '';
-  currentFilter = 0;
-  document.querySelectorAll('.filter-btn').forEach(function(b) {
-    b.classList.toggle('active', parseInt(b.getAttribute('data-len')) === 0);
-  });
-  document.getElementById('letterInput').focus();
-}
-
-// Enter key triggers unscramble
-document.getElementById('letterInput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') { e.preventDefault(); unscramble(); }
-});
-
-// FAQ accordion
-document.querySelectorAll('.faq-q').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    const answer = btn.nextElementSibling;
-    const isOpen = btn.classList.contains('open');
-    document.querySelectorAll('.faq-q.open').forEach(function(b) {
-      b.classList.remove('open');
-      if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-q.open').forEach(function (b) {
+          b.classList.remove('open');
+          if (b.nextElementSibling) b.nextElementSibling.classList.remove('open');
+        });
+        if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
+      });
     });
-    if (!isOpen) { btn.classList.add('open'); if (answer) answer.classList.add('open'); }
-  });
-});
-</script>
+  </script>
 </body>
+
 </html>

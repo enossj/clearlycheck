@@ -179,7 +179,7 @@
   </noscript>
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/calculator.css">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <meta property="og:image" content="https://clearlycheck.com/assets/og-image.svg">
   <style>
     *,
@@ -383,7 +383,7 @@
       border-left: 16px solid transparent;
       border-right: 16px solid transparent;
       border-top: 30px solid var(--text);
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
 
     .wheel-spinner {
@@ -391,7 +391,7 @@
       height: 340px;
       border-radius: 50%;
       border: 6px solid var(--text);
-      box-shadow: 0 0 0 4px var(--bg), 0 8px 32px rgba(0,0,0,0.12);
+      box-shadow: 0 0 0 4px var(--bg), 0 8px 32px rgba(0, 0, 0, 0.12);
       transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
       position: relative;
       overflow: hidden;
@@ -414,7 +414,7 @@
       border: 4px solid var(--text);
       border-radius: 50%;
       z-index: 5;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     .spin-btn {
@@ -863,22 +863,65 @@
   <div class="article-section">
     <article class="article">
       <h2>How Our Yes or No Wheel Works</h2>
-      <p>The spinning wheel you see above is built entirely with HTML5 Canvas and JavaScript — no images, no external libraries, no server calls. When you click the "Spin" button, the tool executes a straightforward three-step process that produces a genuinely random binary outcome.</p>
-      <p>First, the script calls <code>Math.random()</code>, which returns a floating-point number between 0 (inclusive) and 1 (exclusive). That number is multiplied by 360 to produce a random target angle somewhere on the full circle. Because the wheel is evenly divided — 180 degrees for "Yes" and 180 degrees for "No" — any angle in the first half maps to one answer and any angle in the second half maps to the other.</p>
-      <p>Second, the script adds several full rotations (typically between 5 and 8 complete 360-degree turns) on top of that random angle. These extra rotations exist purely for visual satisfaction; they have no effect on the outcome. The total rotation is applied to the wheel element via a CSS <code>transform: rotate()</code> property.</p>
-      <p>Third, a CSS transition with a <code>cubic-bezier(0.17, 0.67, 0.12, 0.99)</code> easing curve handles the animation. This particular curve accelerates quickly at the start and decelerates slowly at the end, mimicking the physics of a real spinning wheel grinding to a halt. The browser's GPU-accelerated compositor handles the rendering, which is why the animation stays smooth even on low-powered devices.</p>
-      <p>Once the transition ends (after roughly four seconds), the script reads the final rotation modulo 360 degrees and determines which slice the pointer sits over. The result — "Yes" or "No" — is then displayed prominently below the wheel. At no point does any data leave your browser, and no spin outcome is stored, logged, or reported anywhere.</p>
-      <p>This approach is deliberately minimal. A virtual decision-making tool should not require account registration, backend APIs, or third-party dependencies. You load the page, you spin, you get your answer. If you want to audit the logic yourself, right-click the page and select "View Page Source" — the entire algorithm is readable inline JavaScript.</p>
+      <p>The spinning wheel you see above is built entirely with HTML5 Canvas and JavaScript — no images, no external
+        libraries, no server calls. When you click the "Spin" button, the tool executes a straightforward three-step
+        process that produces a genuinely random binary outcome.</p>
+      <p>First, the script calls <code>Math.random()</code>, which returns a floating-point number between 0 (inclusive)
+        and 1 (exclusive). That number is multiplied by 360 to produce a random target angle somewhere on the full
+        circle. Because the wheel is evenly divided — 180 degrees for "Yes" and 180 degrees for "No" — any angle in the
+        first half maps to one answer and any angle in the second half maps to the other.</p>
+      <p>Second, the script adds several full rotations (typically between 5 and 8 complete 360-degree turns) on top of
+        that random angle. These extra rotations exist purely for visual satisfaction; they have no effect on the
+        outcome. The total rotation is applied to the wheel element via a CSS <code>transform: rotate()</code> property.
+      </p>
+      <p>Third, a CSS transition with a <code>cubic-bezier(0.17, 0.67, 0.12, 0.99)</code> easing curve handles the
+        animation. This particular curve accelerates quickly at the start and decelerates slowly at the end, mimicking
+        the physics of a real spinning wheel grinding to a halt. The browser's GPU-accelerated compositor handles the
+        rendering, which is why the animation stays smooth even on low-powered devices.</p>
+      <p>Once the transition ends (after roughly four seconds), the script reads the final rotation modulo 360 degrees
+        and determines which slice the pointer sits over. The result — "Yes" or "No" — is then displayed prominently
+        below the wheel. At no point does any data leave your browser, and no spin outcome is stored, logged, or
+        reported anywhere.</p>
+      <p>This approach is deliberately minimal. A virtual decision-making tool should not require account registration,
+        backend APIs, or third-party dependencies. You load the page, you spin, you get your answer. If you want to
+        audit the logic yourself, right-click the page and select "View Page Source" — the entire algorithm is readable
+        inline JavaScript.</p>
 
       <h2>The Psychology of Random Decisions</h2>
-      <p>Psychologists have a term for the mental exhaustion that comes from making too many choices in a short period: <strong>decision fatigue</strong>. First documented in research by social psychologist Roy Baumeister, decision fatigue describes how the quality of decisions deteriorates after a long session of decision-making. It explains why judges grant fewer paroles late in the day, why shoppers impulse-buy near the checkout counter, and why you cannot pick a restaurant after spending eight hours making choices at work.</p>
-      <p>The paradox of modern life is that we have more options than any previous generation — and significantly less peace of mind about our choices as a result. Psychologist Barry Schwartz explores this in his work on the "paradox of choice," showing that beyond a certain threshold, having more options leads to anxiety, regret, and analysis paralysis rather than satisfaction. When faced with a binary question — "Should I go to the gym or skip it today?" — the two options are objectively simple. But the weight of making yet another decision, stacked on top of dozens you have already made that day, can feel surprisingly heavy.</p>
-      <p>This is exactly where a random decision tool like the Yes or No wheel becomes psychologically useful. Delegating a low-stakes decision to random chance accomplishes several things simultaneously. It short-circuits the deliberation loop. It removes the post-decision second-guessing ("Did I pick wrong?") because there was no deliberation to second-guess. And it preserves your finite reservoir of willpower for decisions that actually warrant it — <a href="can-i-afford-this.html">financial choices</a>, career moves, or health-related judgments.</p>
-      <p>There is also a subtler psychological trick at play. When you spin the wheel and feel a flash of relief or disappointment at the result, that gut reaction is diagnostic information. If the wheel says "No" and you feel disappointed, you now know that you actually wanted "Yes." The wheel did not make the decision for you — it revealed the decision you had already made internally but could not articulate. Therapists sometimes use a variant of this technique, asking clients to flip a coin and then observe their own reaction to the outcome, as a way of bypassing conscious overthinking and accessing their genuine preference.</p>
-      <p>Decision fatigue also compounds across a day in ways people rarely notice. A 2011 study published in the <em>Proceedings of the National Academy of Sciences</em> found that the percentage of favorable rulings by judges dropped from roughly 65% at the start of a session to nearly 0% just before a meal break, then reset to 65% after eating. The judges were not consciously biased — their depleted cognitive resources defaulted to the safer, easier "deny" option. Outsourcing trivial decisions to random chance is a form of cognitive hygiene: you preserve bandwidth for the rulings that matter.</p>
+      <p>Psychologists have a term for the mental exhaustion that comes from making too many choices in a short period:
+        <strong>decision fatigue</strong>. First documented in research by social psychologist Roy Baumeister, decision
+        fatigue describes how the quality of decisions deteriorates after a long session of decision-making. It explains
+        why judges grant fewer paroles late in the day, why shoppers impulse-buy near the checkout counter, and why you
+        cannot pick a restaurant after spending eight hours making choices at work.</p>
+      <p>The paradox of modern life is that we have more options than any previous generation — and significantly less
+        peace of mind about our choices as a result. Psychologist Barry Schwartz explores this in his work on the
+        "paradox of choice," showing that beyond a certain threshold, having more options leads to anxiety, regret, and
+        analysis paralysis rather than satisfaction. When faced with a binary question — "Should I go to the gym or skip
+        it today?" — the two options are objectively simple. But the weight of making yet another decision, stacked on
+        top of dozens you have already made that day, can feel surprisingly heavy.</p>
+      <p>This is exactly where a random decision tool like the Yes or No wheel becomes psychologically useful.
+        Delegating a low-stakes decision to random chance accomplishes several things simultaneously. It short-circuits
+        the deliberation loop. It removes the post-decision second-guessing ("Did I pick wrong?") because there was no
+        deliberation to second-guess. And it preserves your finite reservoir of willpower for decisions that actually
+        warrant it — <a href="can-i-afford-this.html">financial choices</a>, career moves, or health-related judgments.
+      </p>
+      <p>There is also a subtler psychological trick at play. When you spin the wheel and feel a flash of relief or
+        disappointment at the result, that gut reaction is diagnostic information. If the wheel says "No" and you feel
+        disappointed, you now know that you actually wanted "Yes." The wheel did not make the decision for you — it
+        revealed the decision you had already made internally but could not articulate. Therapists sometimes use a
+        variant of this technique, asking clients to flip a coin and then observe their own reaction to the outcome, as
+        a way of bypassing conscious overthinking and accessing their genuine preference.</p>
+      <p>Decision fatigue also compounds across a day in ways people rarely notice. A 2011 study published in the
+        <em>Proceedings of the National Academy of Sciences</em> found that the percentage of favorable rulings by
+        judges dropped from roughly 65% at the start of a session to nearly 0% just before a meal break, then reset to
+        65% after eating. The judges were not consciously biased — their depleted cognitive resources defaulted to the
+        safer, easier "deny" option. Outsourcing trivial decisions to random chance is a form of cognitive hygiene: you
+        preserve bandwidth for the rulings that matter.</p>
 
       <h2>Coin Flip vs. Spinner Wheel</h2>
-      <p>Both a coin flip and a spinner wheel produce a 50/50 binary outcome. So why would anyone use a digital spinner instead of the coin in their pocket? The differences fall into three categories: ritual, perception, and practical flexibility.</p>
+      <p>Both a coin flip and a spinner wheel produce a 50/50 binary outcome. So why would anyone use a digital spinner
+        instead of the coin in their pocket? The differences fall into three categories: ritual, perception, and
+        practical flexibility.</p>
 
       <div class="table-scroll">
         <table>
@@ -924,100 +967,199 @@
         </table>
       </div>
 
-      <p>The anticipation factor deserves emphasis. When a coin is flipped, it spends less than a second in the air before being caught. There is barely enough time to register the act, let alone build psychological investment in the outcome. A spinner wheel, by contrast, takes several seconds to decelerate. During those seconds, your brain involuntarily starts rooting for one side. That involuntary rooting is itself valuable — it tells you what you want before the wheel tells you what you got.</p>
-      <p>Physical coin flips also carry a small but real bias. Research published in the journal <em>SIAM Review</em> by Stanford mathematician Persi Diaconis showed that a vigorously flipped coin lands on the same side it started on approximately 51% of the time, due to precession dynamics. A software-based spinner eliminates this mechanical asymmetry entirely.</p>
-      <p>For groups, the spinner is plainly superior. Imagine four friends trying to decide who picks the movie. A coin flip requires multiple rounds of elimination. A spinner can replace that with a single shared-screen spin visible to everyone, making the process faster and more inclusive. If you need a shared random tool for group decisions — such as splitting tasks at work — ClearlyCheck's <a href="percentage-calculator.html">Percentage Calculator</a> can also help distribute responsibilities numerically.</p>
+      <p>The anticipation factor deserves emphasis. When a coin is flipped, it spends less than a second in the air
+        before being caught. There is barely enough time to register the act, let alone build psychological investment
+        in the outcome. A spinner wheel, by contrast, takes several seconds to decelerate. During those seconds, your
+        brain involuntarily starts rooting for one side. That involuntary rooting is itself valuable — it tells you what
+        you want before the wheel tells you what you got.</p>
+      <p>Physical coin flips also carry a small but real bias. Research published in the journal <em>SIAM Review</em> by
+        Stanford mathematician Persi Diaconis showed that a vigorously flipped coin lands on the same side it started on
+        approximately 51% of the time, due to precession dynamics. A software-based spinner eliminates this mechanical
+        asymmetry entirely.</p>
+      <p>For groups, the spinner is plainly superior. Imagine four friends trying to decide who picks the movie. A coin
+        flip requires multiple rounds of elimination. A spinner can replace that with a single shared-screen spin
+        visible to everyone, making the process faster and more inclusive. If you need a shared random tool for group
+        decisions — such as splitting tasks at work — ClearlyCheck's <a href="percentage-calculator.html">Percentage
+          Calculator</a> can also help distribute responsibilities numerically.</p>
 
       <h2>5 Times You Should Let the Wheel Decide</h2>
-      <p>Not every decision belongs on a spinner. Tax strategy, medical treatment, and whether to accept a job offer should involve deliberation, research, and probably professional advice. But a surprising number of daily decisions are low-stakes enough that spending more than ten seconds on them is a net waste of mental energy. Here are five categories where the wheel earns its keep.</p>
+      <p>Not every decision belongs on a spinner. Tax strategy, medical treatment, and whether to accept a job offer
+        should involve deliberation, research, and probably professional advice. But a surprising number of daily
+        decisions are low-stakes enough that spending more than ten seconds on them is a net waste of mental energy.
+        Here are five categories where the wheel earns its keep.</p>
 
       <h3>1. What to eat</h3>
-      <p>"What do you want for dinner?" is statistically one of the most common daily disagreements between partners and roommates. The stakes are low — virtually any meal will be adequate — but the decision feels disproportionately difficult because everyone has veto power and no one has a strong positive preference. Assign "Yes" to one cuisine and "No" to the other, spin, and move on. You will eat in twenty minutes instead of sixty. If you are also trying to figure out whether ordering delivery fits your budget, run the numbers through our <a href="tip-calculator.html">Tip Calculator</a> first.</p>
+      <p>"What do you want for dinner?" is statistically one of the most common daily disagreements between partners and
+        roommates. The stakes are low — virtually any meal will be adequate — but the decision feels disproportionately
+        difficult because everyone has veto power and no one has a strong positive preference. Assign "Yes" to one
+        cuisine and "No" to the other, spin, and move on. You will eat in twenty minutes instead of sixty. If you are
+        also trying to figure out whether ordering delivery fits your budget, run the numbers through our <a
+          href="tip-calculator.html">Tip Calculator</a> first.</p>
 
       <h3>2. Who goes first</h3>
-      <p>Board game nights, pickup basketball, presentation order at work — any scenario that requires choosing a starting person. The wheel removes politics from the selection entirely. No one can accuse anyone of favoritism when the decision was visibly random and witnessed by the group.</p>
+      <p>Board game nights, pickup basketball, presentation order at work — any scenario that requires choosing a
+        starting person. The wheel removes politics from the selection entirely. No one can accuse anyone of favoritism
+        when the decision was visibly random and witnessed by the group.</p>
 
       <h3>3. Whether to work out</h3>
-      <p>This one is counterintuitive. If you are genuinely ambivalent about exercising today, spinning the wheel can break the inertia. Most people find that when the wheel says "Yes" and they actually go, they are glad they did. And when it says "No," they enjoy the guilt-free rest. The key insight is that the ambivalence itself — not the workout — is what drains energy. Resolving it quickly, even randomly, is the win.</p>
+      <p>This one is counterintuitive. If you are genuinely ambivalent about exercising today, spinning the wheel can
+        break the inertia. Most people find that when the wheel says "Yes" and they actually go, they are glad they did.
+        And when it says "No," they enjoy the guilt-free rest. The key insight is that the ambivalence itself — not the
+        workout — is what drains energy. Resolving it quickly, even randomly, is the win.</p>
 
       <h3>4. Whether to buy something optional</h3>
-      <p>You have been eyeing a gadget, a piece of clothing, or a subscription for days but cannot commit. You have already checked whether you can afford it (perhaps using our <a href="can-i-afford-this.html">Can I Afford This?</a> calculator). The financial analysis is done; the remaining hesitation is purely emotional. Let the wheel break the tie. If the answer is "No" and you feel relieved, you were looking for permission not to buy it. If you feel disappointed, go ahead and buy it — you clearly want it.</p>
+      <p>You have been eyeing a gadget, a piece of clothing, or a subscription for days but cannot commit. You have
+        already checked whether you can afford it (perhaps using our <a href="can-i-afford-this.html">Can I Afford
+          This?</a> calculator). The financial analysis is done; the remaining hesitation is purely emotional. Let the
+        wheel break the tie. If the answer is "No" and you feel relieved, you were looking for permission not to buy it.
+        If you feel disappointed, go ahead and buy it — you clearly want it.</p>
 
       <h3>5. Resolving trivial bets</h3>
-      <p>Who pays for coffee? Whose turn is it to drive? Which podcast to listen to on a road trip? These micro-decisions accumulate over the course of a friendship, relationship, or workday. Having a shared, visible, no-argument resolution tool prevents trivial choices from escalating into disproportionate conflicts. Bookmark the page, spin when needed, and move on to things that matter.</p>
+      <p>Who pays for coffee? Whose turn is it to drive? Which podcast to listen to on a road trip? These
+        micro-decisions accumulate over the course of a friendship, relationship, or workday. Having a shared, visible,
+        no-argument resolution tool prevents trivial choices from escalating into disproportionate conflicts. Bookmark
+        the page, spin when needed, and move on to things that matter.</p>
 
       <h2>Is the Result Truly Random?</h2>
-      <p>This question comes up often enough that it deserves a precise technical answer. The short version: <strong>yes, for all practical purposes, the result is random and unbiased</strong>. The longer version involves understanding what JavaScript's <code>Math.random()</code> actually does under the hood.</p>
-      <p>When you call <code>Math.random()</code>, the JavaScript engine invokes a pseudo-random number generator (PRNG). The word "pseudo" means the sequence is generated by a deterministic algorithm — given the same initial state (called a "seed"), the algorithm would produce the same sequence of numbers every time. This is how all PRNGs work, from the <code>rand()</code> function in C to the Mersenne Twister used in scientific simulations.</p>
-      <p>Modern browsers use a PRNG algorithm called <strong>xorshift128+</strong>. This algorithm passes the BigCrush statistical test suite, which means its output is statistically indistinguishable from true random noise for non-cryptographic purposes. The seed is typically drawn from a combination of the current timestamp, process ID, and other entropy sources when the browser initializes, making the starting state unpredictable in practice.</p>
-      <p>The critical point is that "pseudo-random" does not mean "predictable" in any meaningful way for a yes/no spinner. To predict the output, an attacker would need to know the exact internal state of the PRNG — a 128-bit value that changes with every call. For context, brute-forcing a 128-bit state space would take longer than the age of the universe on current hardware. No one is going to reverse-engineer your dinner decision.</p>
-      <p>If you needed cryptographic-grade randomness — say, for generating a <a href="password-generator.html">secure password</a> or an encryption key — you would use <code>window.crypto.getRandomValues()</code>, which draws from the operating system's entropy pool (mouse movements, disk I/O timing, thermal noise, etc.). For a binary spinner, that level of security is unnecessary. <code>Math.random()</code> provides perfectly uniform distribution across [0, 1), which maps cleanly to a 50/50 wheel split.</p>
-      <p>One common misconception deserves correction: the gambler's fallacy. Getting "Yes" five times in a row does not make "No" more likely on the next spin. Each spin is a statistically independent event. The PRNG does not "remember" previous outputs when generating the next one. If you spin the wheel a thousand times, you will see streaks of the same result — that is a natural property of random sequences, not evidence of bias.</p>
-      <p>For those who want to verify the fairness empirically, you can open your browser's developer console (F12 → Console) and run a quick simulation. The following code spins the wheel 100,000 times and counts the results:</p>
-      <p><code>let y=0,n=0; for(let i=0;i&lt;100000;i++){Math.random()&lt;0.5?y++:n++;} console.log('Yes:',y,'No:',n);</code></p>
-      <p>You will find the counts converge toward 50,000 each, with minor statistical fluctuation — exactly what you would expect from a fair coin or an unbiased wheel. If you are curious about randomness in other contexts, our <a href="password-generator.html">Password Generator</a> uses <code>crypto.getRandomValues()</code> and explains the difference between PRNG and CSPRNG in detail.</p>
-      <p>One last nuance: some people ask whether the CSS animation can affect the result. It cannot. The animation is purely visual — the final angle is calculated before the animation begins. The <code>cubic-bezier</code> easing curve controls only how the wheel decelerates visually, not where it stops. The random number decides the destination; the animation is just the journey.</p>
+      <p>This question comes up often enough that it deserves a precise technical answer. The short version:
+        <strong>yes, for all practical purposes, the result is random and unbiased</strong>. The longer version involves
+        understanding what JavaScript's <code>Math.random()</code> actually does under the hood.</p>
+      <p>When you call <code>Math.random()</code>, the JavaScript engine invokes a pseudo-random number generator
+        (PRNG). The word "pseudo" means the sequence is generated by a deterministic algorithm — given the same initial
+        state (called a "seed"), the algorithm would produce the same sequence of numbers every time. This is how all
+        PRNGs work, from the <code>rand()</code> function in C to the Mersenne Twister used in scientific simulations.
+      </p>
+      <p>Modern browsers use a PRNG algorithm called <strong>xorshift128+</strong>. This algorithm passes the BigCrush
+        statistical test suite, which means its output is statistically indistinguishable from true random noise for
+        non-cryptographic purposes. The seed is typically drawn from a combination of the current timestamp, process ID,
+        and other entropy sources when the browser initializes, making the starting state unpredictable in practice.</p>
+      <p>The critical point is that "pseudo-random" does not mean "predictable" in any meaningful way for a yes/no
+        spinner. To predict the output, an attacker would need to know the exact internal state of the PRNG — a 128-bit
+        value that changes with every call. For context, brute-forcing a 128-bit state space would take longer than the
+        age of the universe on current hardware. No one is going to reverse-engineer your dinner decision.</p>
+      <p>If you needed cryptographic-grade randomness — say, for generating a <a href="password-generator.html">secure
+          password</a> or an encryption key — you would use <code>window.crypto.getRandomValues()</code>, which draws
+        from the operating system's entropy pool (mouse movements, disk I/O timing, thermal noise, etc.). For a binary
+        spinner, that level of security is unnecessary. <code>Math.random()</code> provides perfectly uniform
+        distribution across [0, 1), which maps cleanly to a 50/50 wheel split.</p>
+      <p>One common misconception deserves correction: the gambler's fallacy. Getting "Yes" five times in a row does not
+        make "No" more likely on the next spin. Each spin is a statistically independent event. The PRNG does not
+        "remember" previous outputs when generating the next one. If you spin the wheel a thousand times, you will see
+        streaks of the same result — that is a natural property of random sequences, not evidence of bias.</p>
+      <p>For those who want to verify the fairness empirically, you can open your browser's developer console (F12 →
+        Console) and run a quick simulation. The following code spins the wheel 100,000 times and counts the results:
+      </p>
+      <p>
+        <code>let y=0,n=0; for(let i=0;i&lt;100000;i++){Math.random()&lt;0.5?y++:n++;} console.log('Yes:',y,'No:',n);</code>
+      </p>
+      <p>You will find the counts converge toward 50,000 each, with minor statistical fluctuation — exactly what you
+        would expect from a fair coin or an unbiased wheel. If you are curious about randomness in other contexts, our
+        <a href="password-generator.html">Password Generator</a> uses <code>crypto.getRandomValues()</code> and explains
+        the difference between PRNG and CSPRNG in detail.</p>
+      <p>One last nuance: some people ask whether the CSS animation can affect the result. It cannot. The animation is
+        purely visual — the final angle is calculated before the animation begins. The <code>cubic-bezier</code> easing
+        curve controls only how the wheel decelerates visually, not where it stops. The random number decides the
+        destination; the animation is just the journey.</p>
 
       <h2>Frequently Asked Questions</h2>
       <div class="faq-wrapper">
         <details class="faq-item" name="faq-accordion">
           <summary>Can the Yes or No wheel be rigged?</summary>
-          <div class="faq-content">No. The wheel uses JavaScript's <code>Math.random()</code> to generate a random angle between 0 and 360 degrees on each spin. The code runs entirely in your browser and there is no server-side logic that could bias the result. You can right-click the page, select "View Page Source," and read the entire algorithm yourself. There are no hidden weights, no backend overrides, and no cookies that influence the outcome.</div>
+          <div class="faq-content">No. The wheel uses JavaScript's <code>Math.random()</code> to generate a random angle
+            between 0 and 360 degrees on each spin. The code runs entirely in your browser and there is no server-side
+            logic that could bias the result. You can right-click the page, select "View Page Source," and read the
+            entire algorithm yourself. There are no hidden weights, no backend overrides, and no cookies that influence
+            the outcome.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Does the Yes or No wheel use true randomness?</summary>
-          <div class="faq-content"><code>Math.random()</code> produces pseudo-random numbers using a PRNG algorithm (xorshift128+ in most modern browsers) seeded by the browser's internal entropy. While not cryptographically secure randomness — which would require <code>crypto.getRandomValues()</code> — it is more than sufficient for fair yes/no decisions. The output passes rigorous statistical test suites like BigCrush and is indistinguishable from true randomness for non-security purposes.</div>
+          <div class="faq-content"><code>Math.random()</code> produces pseudo-random numbers using a PRNG algorithm
+            (xorshift128+ in most modern browsers) seeded by the browser's internal entropy. While not cryptographically
+            secure randomness — which would require <code>crypto.getRandomValues()</code> — it is more than sufficient
+            for fair yes/no decisions. The output passes rigorous statistical test suites like BigCrush and is
+            indistinguishable from true randomness for non-security purposes.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Is the wheel a fair 50/50 split?</summary>
-          <div class="faq-content">Yes. The wheel is divided into exactly two equal halves — 180 degrees for "Yes" and 180 degrees for "No." The random angle is generated uniformly across the full 360-degree range. Combined, this guarantees each outcome has an equal 50% probability on every spin. You can verify this by running the console test described in the article above.</div>
+          <div class="faq-content">Yes. The wheel is divided into exactly two equal halves — 180 degrees for "Yes" and
+            180 degrees for "No." The random angle is generated uniformly across the full 360-degree range. Combined,
+            this guarantees each outcome has an equal 50% probability on every spin. You can verify this by running the
+            console test described in the article above.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Is this the same as flipping a coin?</summary>
-          <div class="faq-content">Mathematically, both give you a 50/50 binary outcome. The difference is experiential. A spinning wheel takes several seconds to decelerate, which builds anticipation and gives your brain time to process an emotional reaction to the impending result. Research suggests this extended decision reveal makes people slightly more committed to following the outcome. A coin flip is faster but less ceremonial.</div>
+          <div class="faq-content">Mathematically, both give you a 50/50 binary outcome. The difference is experiential.
+            A spinning wheel takes several seconds to decelerate, which builds anticipation and gives your brain time to
+            process an emotional reaction to the impending result. Research suggests this extended decision reveal makes
+            people slightly more committed to following the outcome. A coin flip is faster but less ceremonial.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Can I use this for more than two options?</summary>
-          <div class="faq-content">This specific tool is designed for binary yes/no decisions only. If you need to choose among three or more options, you would need a multi-segment spinner wheel. One workaround: assign pairs of options to sequential yes/no spins (e.g., "Pizza vs. Tacos?" → Yes = Pizza. If No, "Sushi vs. Burgers?" → Yes = Sushi).</div>
+          <div class="faq-content">This specific tool is designed for binary yes/no decisions only. If you need to
+            choose among three or more options, you would need a multi-segment spinner wheel. One workaround: assign
+            pairs of options to sequential yes/no spins (e.g., "Pizza vs. Tacos?" → Yes = Pizza. If No, "Sushi vs.
+            Burgers?" → Yes = Sushi).</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Does the wheel remember my previous spins?</summary>
-          <div class="faq-content">No. Each spin is completely independent. There is no local storage, no cookies, and no session tracking. The PRNG generates a fresh random number for each spin with no reference to any previous output. Getting "Yes" ten times in a row does not make "No" more likely — that expectation is the gambler's fallacy.</div>
+          <div class="faq-content">No. Each spin is completely independent. There is no local storage, no cookies, and
+            no session tracking. The PRNG generates a fresh random number for each spin with no reference to any
+            previous output. Getting "Yes" ten times in a row does not make "No" more likely — that expectation is the
+            gambler's fallacy.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Why does the wheel sometimes land very close to the boundary?</summary>
-          <div class="faq-content">Because the random angle is drawn from a continuous range (0 to 360), it can land at any position, including very close to the Yes/No dividing line. The result is still unambiguous because the code evaluates the final numeric angle, not the visual pointer position. There is no "edge case" — the angle either falls in the Yes half or the No half.</div>
+          <div class="faq-content">Because the random angle is drawn from a continuous range (0 to 360), it can land at
+            any position, including very close to the Yes/No dividing line. The result is still unambiguous because the
+            code evaluates the final numeric angle, not the visual pointer position. There is no "edge case" — the angle
+            either falls in the Yes half or the No half.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Can I use this for important life decisions?</summary>
-          <div class="faq-content">For genuinely consequential decisions — medical, financial, legal — you should consult appropriate professionals, not a spinner. For important but emotionally charged personal decisions, the wheel can serve as a diagnostic tool: spin it, notice your gut reaction to the result, and use that reaction as data about what you actually want. If you need to evaluate the financial side of a decision, try our <a href="can-i-afford-this.html">Can I Afford This?</a> calculator.</div>
+          <div class="faq-content">For genuinely consequential decisions — medical, financial, legal — you should
+            consult appropriate professionals, not a spinner. For important but emotionally charged personal decisions,
+            the wheel can serve as a diagnostic tool: spin it, notice your gut reaction to the result, and use that
+            reaction as data about what you actually want. If you need to evaluate the financial side of a decision, try
+            our <a href="can-i-afford-this.html">Can I Afford This?</a> calculator.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Does this tool work on mobile devices?</summary>
-          <div class="faq-content">Yes. The wheel is built with standard CSS and JavaScript that works on all modern browsers, including Safari on iOS and Chrome on Android. The layout is fully responsive and the spin button is sized for touch interaction. No app download or plugin is required.</div>
+          <div class="faq-content">Yes. The wheel is built with standard CSS and JavaScript that works on all modern
+            browsers, including Safari on iOS and Chrome on Android. The layout is fully responsive and the spin button
+            is sized for touch interaction. No app download or plugin is required.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>Is any data collected when I spin the wheel?</summary>
-          <div class="faq-content">No. The spinner runs entirely client-side in your browser. No spin results, timestamps, IP addresses, or usage data are sent to any server. ClearlyCheck does not set any cookies through this tool. Your decisions are entirely private.</div>
+          <div class="faq-content">No. The spinner runs entirely client-side in your browser. No spin results,
+            timestamps, IP addresses, or usage data are sent to any server. ClearlyCheck does not set any cookies
+            through this tool. Your decisions are entirely private.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>How is Math.random() different from crypto.getRandomValues()?</summary>
-          <div class="faq-content"><code>Math.random()</code> uses a pseudo-random number generator that is fast and statistically uniform, but theoretically predictable if you know the internal 128-bit state. <code>crypto.getRandomValues()</code> draws from the operating system's entropy pool — hardware events like mouse movements and disk timing — and is cryptographically unpredictable. For a yes/no spinner, <code>Math.random()</code> is the appropriate choice. For security-critical applications like password generation, <code>crypto.getRandomValues()</code> is mandatory — our <a href="password-generator.html">Password Generator</a> uses it for exactly that reason.</div>
+          <div class="faq-content"><code>Math.random()</code> uses a pseudo-random number generator that is fast and
+            statistically uniform, but theoretically predictable if you know the internal 128-bit state.
+            <code>crypto.getRandomValues()</code> draws from the operating system's entropy pool — hardware events like
+            mouse movements and disk timing — and is cryptographically unpredictable. For a yes/no spinner,
+            <code>Math.random()</code> is the appropriate choice. For security-critical applications like password
+            generation, <code>crypto.getRandomValues()</code> is mandatory — our <a
+              href="password-generator.html">Password Generator</a> uses it for exactly that reason.</div>
         </details>
 
         <details class="faq-item" name="faq-accordion">
           <summary>What happens if I click Spin while the wheel is already spinning?</summary>
-          <div class="faq-content">The spin button is automatically disabled while the wheel is in motion. You must wait for the current spin to complete and the result to display before you can spin again. This prevents overlapping animations, ensures a clean result, and avoids confusing visual artifacts.</div>
+          <div class="faq-content">The spin button is automatically disabled while the wheel is in motion. You must wait
+            for the current spin to complete and the result to display before you can spin again. This prevents
+            overlapping animations, ensures a clean result, and avoids confusing visual artifacts.</div>
         </details>
       </div>
     </article>
