@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calorie Calculator — Daily Calorie Needs & Macros | ClearlyCheck</title>
+  <title>Calorie Calculator | Daily Calories for Weight Loss & Gain | ClearlyCheck</title>
   <meta name="description"
-    content="Find your daily calorie needs to maintain, lose, or gain weight. Uses the Mifflin-St Jeor equation with activity level adjustments, plus a macro breakdown. Free, private, no signup.">
+    content="Calculate your daily calorie needs for maintenance, weight loss, or weight gain. Get personalized BMR, maintenance calories, calorie targets, and a macro estimate.">
   <meta name="keywords"
-    content="calorie calculator, TDEE calculator, how many calories should I eat, calorie deficit calculator, BMR calculator, macro calculator, weight loss calories">
+    content="calorie calculator, daily calorie calculator, calorie calculator for weight loss, maintenance calorie calculator, calorie deficit calculator, calorie cut calculator, weight loss calorie calculator, BMR calculator, TDEE calculator, calorie calculator for weight gain, macro calculator, daily calorie needs">
   <link rel="canonical" href="https://clearlycheck.com/calorie-calculator.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Calorie Calculator — Daily Calorie Needs & Macros">
   <meta property="og:description"
-    content="Find your daily calorie needs to maintain, lose, or gain weight, with a macro breakdown. Free and private.">
+    content="Calculate your daily calorie needs for maintenance, weight loss, or weight gain, with personalized BMR, calorie targets, and macro estimates.">
   <meta property="og:url" content="https://clearlycheck.com/calorie-calculator.html">
   <meta property="og:site_name" content="ClearlyCheck">
   <meta name="twitter:card" content="summary">
@@ -23,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Calorie Calculator",
-  "description": "Free calorie calculator using the Mifflin-St Jeor equation to estimate daily calorie needs for maintenance, weight loss, or weight gain, with a macro breakdown.",
+  "description": "Free calorie calculator that estimates BMR, maintenance calories, and daily calorie targets for weight loss, weight gain, or weight maintenance, with a macro estimate.",
   "url": "https://clearlycheck.com/calorie-calculator.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",
@@ -36,41 +36,18 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the difference between BMR and TDEE?",
-      "acceptedAnswer": { "@type": "Answer", "text": "BMR (Basal Metabolic Rate) is the number of calories your body burns at complete rest just to maintain vital functions like breathing and circulation. TDEE (Total Daily Energy Expenditure) is your BMR plus all the calories you burn from daily activities, exercise, and digesting food." }
-    },
-    {
-      "@type": "Question",
-      "name": "Which calorie calculation formula is the most accurate?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The Mifflin-St Jeor equation is widely considered the most accurate formula for estimating BMR in healthy adults today, outperforming the older Harris-Benedict equation. However, all formulas are estimates, and individual results can vary." }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Non-Exercise Activity Thermogenesis (NEAT) impact daily calorie burn?",
-      "acceptedAnswer": { "@type": "Answer", "text": "NEAT includes all the calories you burn from movements that aren't formal exercise, such as walking to your car, typing, or fidgeting. For many people, NEAT accounts for a larger portion of daily calorie burn than structured workouts." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is it safe to cut calories drastically for rapid weight loss?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No, drastically cutting calories (very low-calorie diets) can lead to muscle loss, nutrient deficiencies, fatigue, and gallstones. It also triggers metabolic adaptation, making future weight loss more difficult. A moderate deficit of 500 to 750 calories is generally recommended." }
-    },
-    {
-      "@type": "Question",
-      "name": "How do macronutrients (protein, carbs, fats) affect my daily calorie goals?",
-      "acceptedAnswer": { "@type": "Answer", "text": "While total calories dictate weight change, macronutrients determine body composition. Protein helps preserve muscle mass and keeps you full, carbohydrates provide readily available energy, and fats support hormone production and nutrient absorption." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do calorie calculators sometimes give results that don't match my actual weight changes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Calculators provide population-based estimates. Individual factors like genetics, muscle mass, hormonal fluctuations, inaccurate food tracking, and variations in NEAT can cause your actual calorie needs to differ from the mathematical estimate." }
-    },
-    {
-      "@type": "Question",
-      "name": "How does metabolic adaptation occur during a prolonged calorie deficit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "During a prolonged calorie deficit, your body adapts by slowing its metabolism to conserve energy. This involves a slight drop in BMR, reduced unconscious movement (lower NEAT), and hormonal changes, which is why weight loss often slows down over time." }
-    }
+    {"@type":"Question","name":"How many calories do I need per day?","acceptedAnswer":{"@type":"Answer","text":"Your daily calorie needs depend on factors such as your age, body size, sex, metabolism, and activity level. Enter your information above to get a personalized starting estimate."}},
+    {"@type":"Question","name":"What is the difference between BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR estimates the energy your body uses at rest. TDEE estimates your total daily energy expenditure after accounting for your usual activity. Your TDEE is the maintenance estimate used by this calculator."}},
+    {"@type":"Question","name":"What are maintenance calories?","acceptedAnswer":{"@type":"Answer","text":"Maintenance calories are an estimate of how much energy you need to maintain your current weight at your usual activity level. Your actual maintenance intake can be different from the calculator's estimate."}},
+    {"@type":"Question","name":"How many calories should I eat to lose weight?","acceptedAnswer":{"@type":"Answer","text":"A common approach is to start below your estimated maintenance calories. The right target depends on the individual, and a larger deficit is not automatically better. Choose a target you can sustain while meeting your nutritional needs."}},
+    {"@type":"Question","name":"What is a calorie deficit?","acceptedAnswer":{"@type":"Answer","text":"A calorie deficit means your average calorie intake is lower than your energy expenditure. If your estimated maintenance is 2,400 calories and you choose a 400-calorie deficit, your starting target would be about 2,000 calories per day."}},
+    {"@type":"Question","name":"What is a calorie surplus?","acceptedAnswer":{"@type":"Answer","text":"A calorie surplus means your average calorie intake is higher than your energy expenditure. People may use a modest surplus when trying to gain weight, but the amount needed varies by the individual."}},
+    {"@type":"Question","name":"Which calorie formula does this calculator use?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses the Mifflin-St Jeor equation to estimate BMR. It then applies an activity multiplier to estimate TDEE. Like all predictive equations, the result is an estimate rather than a direct measurement."}},
+    {"@type":"Question","name":"How accurate is a calorie calculator?","acceptedAnswer":{"@type":"Answer","text":"A calorie calculator can provide a useful starting estimate, but it cannot measure your exact energy expenditure. Differences in activity, body composition, food intake, and daily movement can make your real calorie needs higher or lower."}},
+    {"@type":"Question","name":"Why am I not losing weight at my calculated calorie target?","acceptedAnswer":{"@type":"Answer","text":"The estimate may be higher than your actual needs, your intake may be higher than estimated, or short-term changes in water and digestion may be hiding a change in body fat. Look at your weight trend over time rather than one or two readings."}},
+    {"@type":"Question","name":"Does my calorie requirement change when I lose weight?","acceptedAnswer":{"@type":"Answer","text":"It can. A smaller body generally requires less energy to maintain, and activity may also change during a weight-loss period. Recalculating after a meaningful change in body weight can provide a new starting estimate."}},
+    {"@type":"Question","name":"Should I eat back calories burned from exercise?","acceptedAnswer":{"@type":"Answer","text":"Exercise calorie estimates are not exact, so automatically eating back every reported exercise calorie can overstate how much extra energy you used. Consider your overall activity and weight trend instead of relying on a single exercise-calorie number."}},
+    {"@type":"Question","name":"Can I use this calculator if I am pregnant or breastfeeding?","acceptedAnswer":{"@type":"Answer","text":"This calculator is not designed for pregnancy or breastfeeding. Calorie and nutrient needs during these periods are different, so use guidance from a qualified healthcare professional."}}
   ]
 }
 </script>
@@ -110,12 +87,12 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Calorie Calculator",
-  "description": "Free calorie calculator using the Mifflin-St Jeor equation to estimate daily calorie needs for maintenance, weight loss, or weight gain, with a macro breakdown.",
+  "headline": "Calorie Calculator: Find Your Daily Calorie Needs",
+  "description": "Free calorie calculator that estimates BMR, maintenance calories, and daily calorie targets for weight loss, weight gain, or weight maintenance, with a macro estimate.",
   "url": "https://clearlycheck.com/calorie-calculator.html",
   "mainEntityOfPage": "https://clearlycheck.com/calorie-calculator.html",
   "datePublished": "2026-07-03",
-  "dateModified": "2026-09-02",
+  "dateModified": "2026-09-28",
   "author": {
     "@type": "Person",
     "@id": "https://clearlycheck.com/#enos",
@@ -313,6 +290,12 @@
       grid-template-columns: 1fr 420px;
       gap: 28px;
       align-items: start;
+    }
+
+    .calc-left {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .calc-card {
@@ -754,6 +737,12 @@
       gap: 28px;
     }
 
+    .article-left-column {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
     @media (max-width: 1024px) {
       .article-section {
         grid-template-columns: 1fr;
@@ -911,49 +900,110 @@
       display: block;
     }
 
-    .sidebar-tools {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .sidebar-tool {
+    /* MEGA NAVIGATION HUB */
+    .nav-block {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 14px;
+      padding: 24px;
       box-shadow: var(--shadow);
-      transition: all 0.18s;
+      margin-bottom: 24px;
     }
 
-    .sidebar-tool:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
-      border-color: var(--border-hover);
-    }
-
-    .sidebar-tool-icon {
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-
-    .sidebar-tool-name {
+    .nav-block h3 {
       font-family: 'Roboto', sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 2px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .sidebar-tool-desc {
-      font-size: 12px;
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .nav-grid a {
+      font-size: 13.5px;
       color: var(--text-muted);
-      font-weight: 300;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-grid a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .nav-hubs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-hubs a {
+      font-size: 12.5px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-hubs a:hover {
+      color: var(--accent);
+    }
+
+    .nav-hubs .sep {
+      color: var(--border-hover);
+      font-size: 12px;
+    }
+
+    /* RELATED CARD */
+    .related-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .related-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-right: 4px;
+    }
+
+    .related-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .related-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      background: var(--accent-light);
     }
 
     .disclaimer-bar {
@@ -1090,6 +1140,82 @@
       font-weight: 500;
     }
 
+    .goal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 16px 0 18px;
+    }
+
+    .goal-card {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 11px 12px;
+    }
+
+    .goal-card-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .goal-card-value {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .result-explanation {
+      background: #f7faf8;
+      border: 1px solid rgba(26, 107, 74, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 13px 14px;
+      margin-bottom: 16px;
+    }
+
+    .result-explanation h4 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .result-explanation p {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .method-note {
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: var(--text-light);
+      margin-top: 12px;
+    }
+
+    .article .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 16px;
+      margin: 18px 0;
+    }
+
+    .article .callout p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .goal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     footer {
       border-top: 1px solid var(--border);
       padding: 32px 24px;
@@ -1198,92 +1324,105 @@
       </div>
     </nav>
     <div class="tool-tag-pill">🩺 Health Tool</div>
-    <h1>Calorie Calculator</h1>
-    <p>Find how many calories you need each day to maintain, lose, or gain weight, based on your body stats and activity
-      level — plus a macro breakdown.</p>
+    <h1>Calorie Calculator: Find Your Daily Calorie Needs</h1>
+    <p>Estimate how many calories you need each day to maintain your current weight, lose weight, or gain weight based
+      on your age, sex, height, weight, and activity level.</p>
+    <p style="margin-top:10px;">Your result is a personalized starting point, not a fixed rule. Use it to understand
+      your maintenance calories, choose a realistic calorie target, and see how your estimated needs change with your
+      goal.</p>
     <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September
-      2, 2026</div>
+      28, 2026</div>
   </div>
 
   <main>
     <div class="main-layout">
 
-      <div class="calc-card">
-        <div class="calc-header">
-          <h2>Enter your details</h2>
-          <p>Uses the Mifflin-St Jeor equation, the formula most dietitians consider most accurate.</p>
-        </div>
-        <div class="calc-body">
-
-          <div class="unit-toggle">
-            <button class="unit-btn active" id="unitMetric" onclick="setUnit('metric')">Metric (kg/cm)</button>
-            <button class="unit-btn" id="unitImperial" onclick="setUnit('imperial')">Imperial (lb/in)</button>
+      <div class="calc-left">
+        <div class="calc-card">
+          <div class="calc-header">
+            <h2>Calculate your daily calorie needs</h2>
+            <p>Uses the Mifflin-St Jeor equation to estimate BMR, then adjusts for your activity level.</p>
           </div>
+          <div class="calc-body">
 
-          <div class="field-section-label">About You</div>
-          <div class="field">
-            <label>Sex</label>
-            <div class="sex-toggle">
-              <button class="sex-btn active" id="sexMale" onclick="setSex('male')">Male</button>
-              <button class="sex-btn" id="sexFemale" onclick="setSex('female')">Female</button>
+            <div class="unit-toggle">
+              <button class="unit-btn active" id="unitMetric" onclick="setUnit('metric')">Metric (kg/cm)</button>
+              <button class="unit-btn" id="unitImperial" onclick="setUnit('imperial')">Imperial (lb/in)</button>
             </div>
-            <p class="hint">Used because male and female metabolic formulas differ slightly.</p>
-          </div>
-          <div class="field-row2">
+
+            <div class="field-section-label">About You</div>
             <div class="field">
-              <label for="age">Age</label>
-              <div class="input-wrap"><input type="number" id="age" value="30" min="15" max="100"
-                  oninput="calculate()"><span class="input-suffix">yrs</span></div>
+              <label>Sex</label>
+              <div class="sex-toggle">
+                <button class="sex-btn active" id="sexMale" onclick="setSex('male')">Male</button>
+                <button class="sex-btn" id="sexFemale" onclick="setSex('female')">Female</button>
+              </div>
+              <p class="hint">Used because male and female metabolic formulas differ slightly.</p>
             </div>
-            <div class="field" id="heightMetricField">
-              <label for="heightCm">Height</label>
-              <div class="input-wrap"><input type="number" id="heightCm" value="170" min="100" max="250"
-                  oninput="calculate()"><span class="input-suffix">cm</span></div>
-            </div>
-            <div class="field" id="heightImperialField" style="display:none;">
-              <label for="heightFt">Height</label>
-              <div class="field-row2">
-                <div class="input-wrap"><input type="number" id="heightFt" value="5" min="3" max="8"
-                    oninput="calculate()"><span class="input-suffix">ft</span></div>
-                <div class="input-wrap"><input type="number" id="heightIn" value="7" min="0" max="11"
-                    oninput="calculate()"><span class="input-suffix">in</span></div>
+            <div class="field-row2">
+              <div class="field">
+                <label for="age">Age</label>
+                <div class="input-wrap"><input type="number" id="age" value="30" min="15" max="100"
+                    oninput="calculate()"><span class="input-suffix">yrs</span></div>
+              </div>
+              <div class="field" id="heightMetricField">
+                <label for="heightCm">Height</label>
+                <div class="input-wrap"><input type="number" id="heightCm" value="170" min="100" max="250"
+                    oninput="calculate()"><span class="input-suffix">cm</span></div>
+              </div>
+              <div class="field" id="heightImperialField" style="display:none;">
+                <label for="heightFt">Height</label>
+                <div class="field-row2">
+                  <div class="input-wrap"><input type="number" id="heightFt" value="5" min="3" max="8"
+                      oninput="calculate()"><span class="input-suffix">ft</span></div>
+                  <div class="input-wrap"><input type="number" id="heightIn" value="7" min="0" max="11"
+                      oninput="calculate()"><span class="input-suffix">in</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="field" id="weightMetricField">
-            <label for="weightKg">Weight</label>
-            <div class="input-wrap"><input type="number" id="weightKg" value="70" min="30" max="300"
-                oninput="calculate()"><span class="input-suffix">kg</span></div>
-          </div>
-          <div class="field" id="weightImperialField" style="display:none;">
-            <label for="weightLb">Weight</label>
-            <div class="input-wrap"><input type="number" id="weightLb" value="154" min="60" max="660"
-                oninput="calculate()"><span class="input-suffix">lb</span></div>
-          </div>
+            <div class="field" id="weightMetricField">
+              <label for="weightKg">Weight</label>
+              <div class="input-wrap"><input type="number" id="weightKg" value="70" min="30" max="300"
+                  oninput="calculate()"><span class="input-suffix">kg</span></div>
+            </div>
+            <div class="field" id="weightImperialField" style="display:none;">
+              <label for="weightLb">Weight</label>
+              <div class="input-wrap"><input type="number" id="weightLb" value="154" min="60" max="660"
+                  oninput="calculate()"><span class="input-suffix">lb</span></div>
+            </div>
 
-          <div class="field-section-label">Activity &amp; Goal</div>
-          <div class="field">
-            <label for="activity">Activity level</label>
-            <select id="activity" class="input-wrap-select" onchange="calculate()">
-              <option value="1.2">Sedentary — little or no exercise</option>
-              <option value="1.375" selected>Lightly active — exercise 1-3 days/week</option>
-              <option value="1.55">Moderately active — exercise 3-5 days/week</option>
-              <option value="1.725">Very active — exercise 6-7 days/week</option>
-              <option value="1.9">Extra active — hard daily exercise or physical job</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="goal">Goal</label>
-            <select id="goal" class="input-wrap-select" onchange="calculate()">
-              <option value="0">Maintain current weight</option>
-              <option value="-250">Mild weight loss — ~0.25kg (0.5lb)/week</option>
-              <option value="-500" selected>Weight loss — ~0.5kg (1lb)/week</option>
-              <option value="-1000">Faster weight loss — ~1kg (2lb)/week</option>
-              <option value="250">Mild weight gain — ~0.25kg (0.5lb)/week</option>
-              <option value="500">Weight gain — ~0.5kg (1lb)/week</option>
-            </select>
-          </div>
+            <div class="field-section-label">Activity &amp; Goal</div>
+            <div class="field">
+              <label for="activity">Activity level</label>
+              <select id="activity" class="input-wrap-select" onchange="calculate()">
+                <option value="1.2">Sedentary — little or no exercise</option>
+                <option value="1.375" selected>Lightly active — exercise 1-3 days/week</option>
+                <option value="1.55">Moderately active — exercise 3-5 days/week</option>
+                <option value="1.725">Very active — exercise 6-7 days/week</option>
+                <option value="1.9">Extra active — hard daily exercise or physical job</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="goal">Goal</label>
+              <select id="goal" class="input-wrap-select" onchange="calculate()">
+                <option value="0">Maintain current weight</option>
+                <option value="-250">Mild weight loss — ~0.25kg (0.5lb)/week</option>
+                <option value="-500" selected>Weight loss — ~0.5kg (1lb)/week</option>
+                <option value="-750">Larger weight loss deficit — 750 calories/day</option>
+                <option value="250">Mild weight gain — ~0.25kg (0.5lb)/week</option>
+                <option value="500">Weight gain — ~0.5kg (1lb)/week</option>
+              </select>
+            </div>
 
+          </div>
+        </div>
+
+        <!-- Related Tools Card placed directly under the calculator -->
+        <div class="related-card" style="margin-top: 28px; margin-bottom: 0;">
+          <span class="related-label">MORE HEALTH TOOLS:</span>
+          <a href="bmi-calculator.html" class="related-pill">BMI Calculator</a>
+          <a href="height-calculator.html" class="related-pill">Height Calculator</a>
+          <a href="age-calculator.html" class="related-pill">Age Calculator</a>
         </div>
       </div>
 
@@ -1304,9 +1443,12 @@
   <div class="disclaimer-bar">
     <div class="inner">
       <span style="font-size:16px;flex-shrink:0;">🩺</span>
-      <p><strong style="color:#0f0f0e;">Not medical advice.</strong> This tool gives a general estimate based on
-        standard formulas. Individual needs vary. Talk to a doctor or registered dietitian before starting any
-        weight-loss or weight-gain plan, especially if you have a health condition.</p>
+      <p><strong style="color:#0f0f0e;">Educational estimate, not medical advice.</strong> Calorie equations estimate
+        energy needs from population data, so your actual needs may differ. If you are pregnant or breastfeeding, under
+        18,
+        have a medical condition, or are planning a substantial change in your diet or weight, discuss your calorie
+        needs
+        with a qualified health professional.</p>
     </div>
   </div>
 
@@ -1729,164 +1871,297 @@
   </div>
 
   <div class="article-section">
-    <article class="article">
-      <h2>Understanding Energy Balance and Metabolism</h2>
-      <p>At its core, weight management is governed by the laws of thermodynamics, specifically the concept of
-        <strong>energy balance</strong>. Energy balance is the relationship between the calories you consume through
-        food and beverages (energy in) and the calories your body burns to function and move (energy out). When you
-        consume more calories than you burn, your body stores the excess energy, primarily as fat, resulting in a
-        <em>caloric surplus</em> and weight gain. Conversely, when you consume fewer calories than you burn, your body
-        must tap into its stored energy reserves, resulting in a <em>caloric deficit</em> and weight loss. If energy
-        intake perfectly matches energy expenditure, your weight remains stable (maintenance).
-      </p>
-      <p>A critical component of this energy balance equation is your <strong>Basal Metabolic Rate (BMR)</strong>. Your
-        BMR represents the absolute minimum number of calories your body requires at rest to sustain vital,
-        life-preserving functions. This includes breathing, circulating blood, cellular repair, and brain function. For
-        most individuals, BMR accounts for the vast majority—typically between 60% and 75%—of all calories burned in a
-        given day. BMR is influenced by several factors, including age, height, biological sex, and, most importantly,
-        lean body mass. Because muscle tissue is metabolically active, individuals with higher muscle mass naturally
-        have a higher BMR, meaning they burn more calories even while completely sedentary.</p>
 
-      <h2>The Science of Calorie Formulas</h2>
-      <p>Because it is impractical to measure an individual's exact BMR in a clinical setting (which requires
-        specialized equipment like indirect calorimetry), dietitians and health professionals rely on predictive
-        mathematical equations. Historically, the most famous of these was the <strong>Harris-Benedict
-          equation</strong>, originally published in 1919 and later revised in 1984. While revolutionary for its time,
-        the Harris-Benedict formula was based on populations from the early 20th century and tends to overestimate
-        resting metabolic rate by about 5% to 10% in modern populations, particularly for individuals who are overweight
-        or obese.</p>
-      <p>To address these inaccuracies, researchers developed the <strong>Mifflin-St Jeor equation</strong> in 1990.
-        Through rigorous clinical testing and validation across broader demographic groups, the Mifflin-St Jeor formula
-        has proven to be significantly more reliable. It is now widely considered the gold standard for clinical
-        estimation of BMR. This calculator utilizes the Mifflin-St Jeor equation because it provides the most accurate
-        baseline for both men and women, ensuring that the resulting daily calorie targets are scientifically grounded.
-      </p>
+    <div class="article-left-column">
 
-      <h2>Components of Total Daily Energy Expenditure (TDEE)</h2>
-      <p>While your BMR is the foundation of your metabolism, it is only one part of the equation. To determine how many
-        calories you actually need to consume, you must calculate your <strong>Total Daily Energy Expenditure
-          (TDEE)</strong>. TDEE is the total number of calories you burn in a 24-hour period, and it is composed of four
-        distinct pillars:</p>
-      <ul>
-        <li><strong>Basal Metabolic Rate (BMR):</strong> As discussed, the energy required for basic survival at
-          complete rest (60-75% of TDEE).</li>
-        <li><strong>Thermic Effect of Food (TEF):</strong> The energy your body expends to digest, absorb, and
-          metabolize the food you eat. Different macronutrients require different amounts of energy to process. Protein
-          has the highest TEF (roughly 20-30% of protein calories are burned during digestion), while fats and
-          carbohydrates have a much lower TEF. Overall, TEF accounts for about 10% of your daily calorie expenditure.
-        </li>
-        <li><strong>Exercise Activity Thermogenesis (EAT):</strong> The calories burned during intentional, structured
-          physical activity. This includes going for a run, lifting weights, cycling, or playing a sport. Depending on
-          an individual's lifestyle, EAT can account for anywhere from 5% (for sedentary individuals) to 15%+ (for
-          highly active athletes) of TDEE.</li>
-        <li><strong>Non-Exercise Activity Thermogenesis (NEAT):</strong> This is arguably the most variable and
-          overlooked component of daily calorie burn. NEAT encompasses all the physical movement in your life that isn't
-          formal exercise. It includes walking to your car, carrying groceries, doing household chores, pacing while on
-          the phone, and even unconscious fidgeting. For some people, particularly those with active jobs, NEAT can
-          account for hundreds or even thousands of calories burned per day, making a massive impact on total energy
-          expenditure.</li>
-      </ul>
+      <article class="article">
+        <h2>How many calories do I need each day?</h2>
+        <p>There is no single calorie number that works for everyone. Your daily energy needs depend on factors such as
+          age, body size, sex, metabolism, and physical activity. That is why a calorie target that works well for one
+          person
+          may be too high or too low for another.</p>
+        <p>Enter your own details above to get an estimate built around you. The calculator first estimates your
+          <strong>Basal Metabolic Rate (BMR)</strong>, which is the energy your body would use at rest, then applies an
+          activity factor to estimate your <strong>Total Daily Energy Expenditure (TDEE)</strong>, also called your
+          maintenance calories.
+        </p>
 
-      <h2>Setting Sustainable Calorie Goals</h2>
-      <p>Once you know your TDEE (your maintenance calories), you can set a goal for weight loss or weight gain. The key
-        to long-term success is sustainability rather than speed. One pound of body fat contains approximately 3,500
-        calories of stored energy. Therefore, creating a daily caloric deficit of 500 calories will theoretically result
-        in losing about one pound per week (500 calories × 7 days = 3,500 calories).</p>
-      <p>While a deficit of 500 to 750 calories per day is generally considered safe and effective, aggressive deficits
-        (such as eating less than 1,200 calories a day for women or 1,500 for men) can be counterproductive. Drastically
-        cutting calories can lead to muscle loss, severe fatigue, nutrient deficiencies, and the increased risk of
-        developing gallstones. Furthermore, massive deficits trigger a biological survival mechanism known as
-        <em>metabolic adaptation</em>.
-      </p>
-      <p>During a prolonged and severe calorie deficit, your body adapts by attempting to conserve energy. Your BMR may
-        drop slightly, but more significantly, your body will unconsciously reduce its NEAT—you will fidget less, feel
-        more lethargic, and subconsciously move less throughout the day. This is why weight loss often plateaus on very
-        low-calorie diets; the body has actively reduced its TDEE to match the lower food intake. A moderate,
-        sustainable deficit minimizes this metabolic slowdown, preserves lean muscle mass (especially when combined with
-        resistance training and adequate protein intake), and fosters healthier long-term dietary habits.</p>
+        <div class="callout">
+          <p><strong>Think of your result as a starting point.</strong> Your real maintenance intake can be different
+            from
+            the calculator's estimate. Your weight trend over several weeks can help you judge whether the estimate is a
+            good
+            fit for your routine.</p>
+        </div>
 
-      <h2>Sources &amp; Method</h2>
-      <p class="sources">This calculator estimates your energy needs using the <strong>Mifflin-St Jeor equation</strong>
-        (1990), recognized by the Academy of Nutrition and Dietetics as the most reliable formula for predicting resting
-        metabolic rate in healthy adults. Calculations for TDEE apply standard physical activity multipliers (ranging
-        from 1.2 for sedentary lifestyles to 1.9 for extreme activity). Information regarding energy balance, TEF, EAT,
-        NEAT, and sustainable weight management aligns with current physiological science and consensus guidelines from
-        major health and fitness organizations. This tool is intended for general informational purposes and should not
-        replace professional medical or nutritional advice.</p>
+        <h2>What are maintenance calories?</h2>
+        <p>Your <strong>maintenance calories</strong> are an estimate of how much energy you need to maintain your
+          current
+          body weight when your usual activity stays about the same. In this calculator, maintenance is represented by
+          your
+          TDEE.</p>
+        <p>If you regularly eat less energy than you use, your body has to draw on stored energy. If you regularly eat
+          more,
+          the extra energy can contribute to weight gain. In real life, the relationship is not perfectly linear because
+          appetite, activity, body weight, and energy expenditure can change over time. NIDDK's Body Weight Planner also
+          accounts for changes in energy expenditure as body weight changes.</p>
 
-      <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <button class="faq-q">What is the difference between BMR and TDEE?<span class="faq-icon">+</span></button>
-          <div class="faq-a">BMR (Basal Metabolic Rate) is the number of calories your body burns at complete rest just
-            to maintain vital functions like breathing and circulation. TDEE (Total Daily Energy Expenditure) is your
-            BMR plus all the calories you burn from daily activities, exercise, and digesting food.</div>
+        <h2>How many calories should I eat to lose weight?</h2>
+        <p>For weight loss, the usual starting point is a calorie intake below your estimated maintenance level. The
+          size of
+          the deficit should be realistic enough that you can maintain your eating pattern and still meet your
+          nutritional
+          needs.</p>
+        <p>This calculator offers moderate goal settings rather than treating a large deficit as automatically better.
+          NIDDK recommends setting achievable weight-loss goals and notes that individual calorie needs can differ.</p>
+        <p>Also remember that the simple idea that a fixed calorie deficit guarantees a fixed amount of weight loss
+          every
+          week is an oversimplification. As weight changes, energy expenditure can change too, so actual results may
+          slow or
+          differ from the initial estimate.</p>
+
+        <h2>What is a calorie deficit?</h2>
+        <p>A <strong>calorie deficit</strong> means your average calorie intake is lower than your energy expenditure.
+          For
+          example, if your estimated maintenance is 2,400 calories and you choose a 400-calorie deficit, your starting
+          target
+          would be about 2,000 calories per day.</p>
+        <p>The word "deficit" describes the relationship between intake and expenditure. It does not mean that the
+          lowest
+          possible calorie intake is the best choice. A sustainable eating pattern, adequate nutrition, and appropriate
+          activity matter too.</p>
+
+        <h2>What is BMR?</h2>
+        <p><strong>Basal Metabolic Rate (BMR)</strong> is an estimate of the energy your body uses at rest to support
+          basic
+          functions. Your BMR is not the same as your recommended daily food intake because you also use energy for
+          movement,
+          exercise, digestion, and other daily activities.</p>
+        <p>This calculator estimates BMR with the <strong>Mifflin-St Jeor equation</strong>. It is a predictive
+          equation,
+          not a direct measurement of your metabolism. Laboratory methods such as indirect calorimetry can measure
+          resting
+          energy expenditure more directly, but they are not practical for a simple online calculator.</p>
+
+        <h2>What is TDEE?</h2>
+        <p><strong>Total Daily Energy Expenditure (TDEE)</strong> is an estimate of the total energy you use across a
+          typical
+          day. It includes your resting energy needs plus movement, exercise, and the energy involved in processing
+          food.</p>
+        <p>Your activity selection is therefore important. Someone with a desk job and little exercise can have very
+          different
+          daily energy needs from someone with the same height and weight who trains frequently or works a physically
+          active
+          job.</p>
+
+        <h2>Why your calorie result may not match your real weight change</h2>
+        <p>Calorie calculators use equations derived from groups of people. They cannot know every detail of your
+          metabolism,
+          daily movement, food intake, sleep, training, or changes in body composition.</p>
+        <ul>
+          <li>Your activity level may be higher or lower than the category you selected.</li>
+          <li>Food portions and drinks can be harder to estimate than they appear.</li>
+          <li>Daily movement outside exercise can change from one period to another.</li>
+          <li>Water, glycogen, digestion, and other short-term changes can move the scale even when body fat has not
+            changed.</li>
+          <li>As body weight changes, your energy needs can change as well.</li>
+        </ul>
+        <p>That is why your calorie target should be treated as a starting estimate rather than a promise of a
+          particular
+          weight change.</p>
+
+        <h2>How to use your result in real life</h2>
+        <ol>
+          <li><strong>Start with your estimated maintenance.</strong> This gives you a reference point for your current
+            activity level.</li>
+          <li><strong>Choose a realistic goal.</strong> If you want to lose weight, start with a moderate reduction
+            rather
+            than assuming a larger deficit is always better.</li>
+          <li><strong>Give the plan time.</strong> Look at trends rather than judging your progress from a single day's
+            scale reading.</li>
+          <li><strong>Recalculate when your circumstances change.</strong> A meaningful change in body weight or
+            activity can
+            change your estimated calorie needs.</li>
+        </ol>
+
+        <h2>Calories, protein, carbohydrates, and fat</h2>
+        <p>Calories describe energy, while macronutrients describe where that energy comes from. Protein, carbohydrates,
+          and
+          fat each have different roles in the diet. The macro numbers shown in the calculator are a simple planning
+          estimate,
+          not a personalized medical nutrition prescription.</p>
+        <p>Use the macro breakdown as a way to understand your calorie target, not as a requirement that every day must
+          match
+          the exact gram numbers shown.</p>
+
+        <h2>Calories burned during exercise</h2>
+        <p>The activity table above gives estimates based on standard MET values and your entered body weight. Exercise
+          calorie
+          estimates are useful for understanding relative energy cost, but they are not exact measurements. Wearables
+          and
+          online exercise calculators can also differ because they use different assumptions.</p>
+
+        <h2>Sources and methodology</h2>
+        <p>This calculator uses the <strong>Mifflin-St Jeor equation</strong> to estimate BMR and standard activity
+          multipliers to estimate TDEE. The goal adjustment is then applied to the estimated maintenance calories. The
+          result
+          is intentionally presented as an estimate because individual energy requirements vary.</p>
+        <p>For personalized weight-management planning, the National Institute of Diabetes and Digestive and Kidney
+          Diseases
+          provides the <a href="https://www.niddk.nih.gov/health-information/weight-management/body-weight-planner"
+            target="_blank" rel="noopener noreferrer">NIH Body Weight Planner</a>, which is designed to model calorie
+          and
+          physical-activity changes over time.
+        </p>
+        <p class="sources"><strong>Important:</strong> This calculator is intended for general education. It is not
+          designed
+          for children, pregnancy, breastfeeding, eating-disorder treatment, or medical nutrition therapy.</p>
+
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <button class="faq-q">How many calories do I need per day?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Your daily calorie needs depend on factors such as your age, body size, sex, metabolism,
+              and
+              activity level. Enter your information above to get a personalized starting estimate.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">What is the difference between BMR and TDEE?<span class="faq-icon">+</span></button>
+            <div class="faq-a">BMR estimates the energy your body uses at rest. TDEE estimates your total daily energy
+              expenditure after accounting for your usual activity. Your TDEE is the maintenance estimate used by this
+              calculator.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">What are maintenance calories?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Maintenance calories are an estimate of how much energy you need to maintain your current
+              weight
+              at your usual activity level. Your actual maintenance intake can be different from the calculator's
+              estimate.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">How many calories should I eat to lose weight?<span class="faq-icon">+</span></button>
+            <div class="faq-a">A common approach is to start below your estimated maintenance calories. The right target
+              depends on the individual, and a larger deficit is not automatically better. Choose a target you can
+              sustain
+              while meeting your nutritional needs.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">What is a calorie deficit?<span class="faq-icon">+</span></button>
+            <div class="faq-a">A calorie deficit means your average calorie intake is lower than your energy
+              expenditure. If
+              your estimated maintenance is 2,400 calories and you choose a 400-calorie deficit, your starting target
+              would be
+              about 2,000 calories per day.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">What is a calorie surplus?<span class="faq-icon">+</span></button>
+            <div class="faq-a">A calorie surplus means your average calorie intake is higher than your energy
+              expenditure.
+              People may use a modest surplus when trying to gain weight, but the amount needed varies by the
+              individual.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Which calorie formula does this calculator use?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">This calculator uses the Mifflin-St Jeor equation to estimate BMR. It then applies an
+              activity
+              multiplier to estimate TDEE. Like all predictive equations, the result is an estimate rather than a direct
+              measurement.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">How accurate is a calorie calculator?<span class="faq-icon">+</span></button>
+            <div class="faq-a">A calorie calculator can provide a useful starting estimate, but it cannot measure your
+              exact
+              energy expenditure. Differences in activity, body composition, food intake, and daily movement can make
+              your real
+              calorie needs higher or lower.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Why am I not losing weight at my calculated calorie target?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">The estimate may be higher than your actual needs, your intake may be higher than
+              estimated, or
+              short-term changes in water and digestion may be hiding a change in body fat. Look at your weight trend
+              over time
+              rather than one or two readings.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Does my calorie requirement change when I lose weight?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">It can. A smaller body generally requires less energy to maintain, and activity may also
+              change
+              during a weight-loss period. Recalculating after a meaningful change in body weight can provide a new
+              starting
+              estimate.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Should I eat back calories burned from exercise?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Exercise calorie estimates are not exact, so automatically eating back every reported
+              exercise
+              calorie can overstate how much extra energy you used. Consider your overall activity and weight trend
+              instead of
+              relying on a single exercise-calorie number.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Can I use this calculator if I am pregnant or breastfeeding?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">This calculator is not designed for pregnancy or breastfeeding. Calorie and nutrient
+              needs
+              during these periods are different, so use guidance from a qualified healthcare professional.</div>
+          </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-q">Which calorie calculation formula is the most accurate?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">The Mifflin-St Jeor equation is widely considered the most accurate formula for estimating
-            BMR in healthy adults today, outperforming the older Harris-Benedict equation. However, all formulas are
-            estimates, and individual results can vary.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How does Non-Exercise Activity Thermogenesis (NEAT) impact daily calorie burn?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">NEAT includes all the calories you burn from movements that aren't formal exercise, such as
-            walking to your car, typing, or fidgeting. For many people, NEAT accounts for a larger portion of daily
-            calorie burn than structured workouts.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Is it safe to cut calories drastically for rapid weight loss?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">No, drastically cutting calories (very low-calorie diets) can lead to muscle loss, nutrient
-            deficiencies, fatigue, and gallstones. It also triggers metabolic adaptation, making future weight loss more
-            difficult. A moderate deficit of 500 to 750 calories is generally recommended.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How do macronutrients (protein, carbs, fats) affect my daily calorie goals?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">While total calories dictate weight change, macronutrients determine body composition.
-            Protein helps preserve muscle mass and keeps you full, carbohydrates provide readily available energy, and
-            fats support hormone production and nutrient absorption.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Why do calorie calculators sometimes give results that don't match my actual weight
-            changes?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Calculators provide population-based estimates. Individual factors like genetics, muscle
-            mass, hormonal fluctuations, inaccurate food tracking, and variations in NEAT can cause your actual calorie
-            needs to differ from the mathematical estimate.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How does metabolic adaptation occur during a prolonged calorie deficit?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">During a prolonged calorie deficit, your body adapts by slowing its metabolism to conserve
-            energy. This involves a slight drop in BMR, reduced unconscious movement (lower NEAT), and hormonal changes,
-            which is why weight loss often slows down over time.</div>
-        </div>
-      </div>
-    </article>
+      </article>
+    </div>
 
     <div>
-      <p
-        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
-        More Health Tools</p>
-      <div class="sidebar-tools">
-        <a class="sidebar-tool" href="bmi-calculator.html">
-          <div class="sidebar-tool-icon">⚖️</div>
-          <div>
-            <div class="sidebar-tool-name">BMI Calculator</div>
-            <div class="sidebar-tool-desc">Calculate your Body Mass Index</div>
-          </div>
-        </a>
-        <a class="sidebar-tool" href="age-calculator.html">
-          <div class="sidebar-tool-icon">🎂</div>
-          <div>
-            <div class="sidebar-tool-name">Age Calculator</div>
-            <div class="sidebar-tool-desc">Find your exact age, every way</div>
-          </div>
-        </a>
+
+      <!-- Mega Internal Linking Block -->
+      <div class="nav-block">
+        <h3>Other Calculators</h3>
+        <div class="nav-grid">
+          <a href="sales-tax-calculator.html">Sales Tax</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound Interest</a>
+          <a href="paycheck-calculator.html">Paycheck</a>
+          <a href="gpa-calculator.html">GPA</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="words-to-pages-calculator.html">Words to Pages</a>
+          <a href="reading-time-calculator.html">Reading Time</a>
+          <a href="auto-loan-calculator.html">Auto Loan</a>
+          <a href="mpg-calculator.html">MPG</a>
+          <a href="pet-age-calculator.html">Pet Age</a>
+          <a href="pet-cost-calculator.html">Pet Cost</a>
+          <a href="timezone-planner.html">Timezone Planner</a>
+          <a href="password-generator.html">Password Gen</a>
+          <a href="reality-check-calculator.html">Reality Check</a>
+          <a href="unit-converter.html">Unit Converter</a>
+        </div>
+
+        <div class="nav-hubs">
+          <a href="finance-calculators.html">Finance</a><span class="sep">|</span>
+          <a href="health-calculators.html">Health</a><span class="sep">|</span>
+          <a href="pet-tools.html">Pets</a><span class="sep">|</span>
+          <a href="productivity-tools.html">Productivity</a><span class="sep">|</span>
+          <a href="utility-tools.html">Utility</a><span class="sep">|</span>
+          <a href="education-tools.html">Education</a><span class="sep">|</span>
+          <a href="auto-calculators.html">Auto</a><span class="sep">|</span>
+          <a href="/guides/index.html">Guides</a>
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -2021,14 +2296,14 @@
         : 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
 
       const tdee = bmr * activityFactor;
-      let goalCalories = tdee + goalAdjustment;
+      const selectedTarget = tdee + goalAdjustment;
+      const goalCalories = Math.max(0, selectedTarget);
 
-      const floor = sex === 'male' ? 1500 : 1200;
-      let floorApplied = false;
-      if (goalAdjustment < 0 && goalCalories < floor) {
-        goalCalories = floor;
-        floorApplied = true;
-      }
+      const deficit250 = Math.max(0, tdee - 250);
+      const deficit500 = Math.max(0, tdee - 500);
+      const deficit750 = Math.max(0, tdee - 750);
+      const surplus250 = tdee + 250;
+      const surplus500 = tdee + 500;
 
       const protein = (goalCalories * 0.30) / 4;
       const carbs = (goalCalories * 0.40) / 4;
@@ -2038,44 +2313,70 @@
       document.getElementById('statusBadge').className = 'results-status status-ready';
 
       let goalLabel = 'Maintenance';
-      if (goalAdjustment < 0) goalLabel = 'Weight Loss';
-      if (goalAdjustment > 0) goalLabel = 'Weight Gain';
+      let explanation = `Your estimated maintenance intake is about ${Math.round(tdee).toLocaleString()} calories per day.`;
+      if (goalAdjustment < 0) {
+        goalLabel = 'Weight Loss';
+        explanation = `You selected a ${Math.abs(goalAdjustment).toLocaleString()} calorie daily deficit. Your starting target is about ${Math.round(goalCalories).toLocaleString()} calories per day.`;
+      }
+      if (goalAdjustment > 0) {
+        goalLabel = 'Weight Gain';
+        explanation = `You selected a ${Math.abs(goalAdjustment).toLocaleString()} calorie daily surplus. Your starting target is about ${Math.round(goalCalories).toLocaleString()} calories per day.`;
+      }
+
+      const lowTargetWarning = goalAdjustment < 0 && goalCalories < 1200
+        ? `<div class="safety-note">This target is below 1,200 calories per day. The calculator does not treat 1,200 as a universal safe minimum, but very low calorie intakes may not provide enough energy or nutrients for many adults. Consider a smaller deficit and discuss your plan with a qualified health professional.</div>`
+        : '';
 
       document.getElementById('resultsBody').innerHTML = `
-    <div class="verdict-hero">
-      <div class="verdict-label">Daily Calorie Target — ${goalLabel}</div>
-      <div class="verdict-value">${Math.round(goalCalories).toLocaleString()}</div>
-      <div class="verdict-sub">calories / day</div>
-    </div>
+        <div class="verdict-hero">
+          <div class="verdict-label">Your Daily Calorie Target · ${goalLabel}</div>
+          <div class="verdict-value">${Math.round(goalCalories).toLocaleString()}</div>
+          <div class="verdict-sub">estimated calories / day</div>
+        </div>
 
-    ${floorApplied ? `<div class="safety-note">Your selected deficit would go below a safe minimum, so this has been capped at ${floor.toLocaleString()} cal/day. Consider a smaller deficit, or talk to a doctor about faster weight loss under supervision.</div>` : ''}
+        ${lowTargetWarning}
 
-    <div class="metrics-grid">
-      <div class="metric">
-        <div class="metric-label">BMR</div>
-        <div class="metric-value accent">${Math.round(bmr).toLocaleString()}</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Maintenance (TDEE)</div>
-        <div class="metric-value blue">${Math.round(tdee).toLocaleString()}</div>
-      </div>
-    </div>
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-label">BMR</div>
+            <div class="metric-value accent">${Math.round(bmr).toLocaleString()}</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Maintenance (TDEE)</div>
+            <div class="metric-value blue">${Math.round(tdee).toLocaleString()}</div>
+          </div>
+        </div>
 
-    <div class="breakdown-wrap">
-      <div class="breakdown-title">Suggested Macro Split</div>
-      <table class="breakdown-table">
-        <thead><tr><th>Macro</th><th>Grams/day</th><th>Calories</th></tr></thead>
-        <tbody>
-          <tr><td>Protein (30%)</td><td>${Math.round(protein)}g</td><td>${Math.round(protein * 4).toLocaleString()}</td></tr>
-          <tr><td>Carbohydrates (40%)</td><td>${Math.round(carbs)}g</td><td>${Math.round(carbs * 4).toLocaleString()}</td></tr>
-          <tr><td>Fat (30%)</td><td>${Math.round(fat)}g</td><td>${Math.round(fat * 9).toLocaleString()}</td></tr>
-          <tr class="total-row"><td>Total</td><td>—</td><td>${Math.round(goalCalories).toLocaleString()}</td></tr>
-        </tbody>
-      </table>
-    </div>
-  `;
+        <div class="result-explanation">
+          <h4>What this means for you</h4>
+          <p>${explanation} Treat this as a starting estimate and compare it with your weight trend and real-world activity over time.</p>
+        </div>
+
+        <div class="breakdown-title">Other useful calorie targets</div>
+        <div class="goal-grid">
+          <div class="goal-card"><div class="goal-card-label">-250 / day</div><div class="goal-card-value">${Math.round(deficit250).toLocaleString()} kcal</div></div>
+          <div class="goal-card"><div class="goal-card-label">-500 / day</div><div class="goal-card-value">${Math.round(deficit500).toLocaleString()} kcal</div></div>
+          <div class="goal-card"><div class="goal-card-label">-750 / day</div><div class="goal-card-value">${Math.round(deficit750).toLocaleString()} kcal</div></div>
+          <div class="goal-card"><div class="goal-card-label">Maintenance</div><div class="goal-card-value">${Math.round(tdee).toLocaleString()} kcal</div></div>
+          <div class="goal-card"><div class="goal-card-label">+250 / day</div><div class="goal-card-value">${Math.round(surplus250).toLocaleString()} kcal</div></div>
+          <div class="goal-card"><div class="goal-card-label">+500 / day</div><div class="goal-card-value">${Math.round(surplus500).toLocaleString()} kcal</div></div>
+        </div>
+
+        <div class="breakdown-wrap">
+          <div class="breakdown-title">Suggested Macro Estimate</div>
+          <table class="breakdown-table">
+            <thead><tr><th>Macro</th><th>Grams/day</th><th>Calories</th></tr></thead>
+            <tbody>
+              <tr><td>Protein (30%)</td><td>${Math.round(protein)}g</td><td>${Math.round(protein * 4).toLocaleString()}</td></tr>
+              <tr><td>Carbohydrates (40%)</td><td>${Math.round(carbs)}g</td><td>${Math.round(carbs * 4).toLocaleString()}</td></tr>
+              <tr><td>Fat (30%)</td><td>${Math.round(fat)}g</td><td>${Math.round(fat * 9).toLocaleString()}</td></tr>
+              <tr class="total-row"><td>Total</td><td>—</td><td>${Math.round(goalCalories).toLocaleString()}</td></tr>
+            </tbody>
+          </table>
+          <p class="method-note">The macro split is a simple 30% protein / 40% carbohydrate / 30% fat planning estimate. It is not a personalized medical nutrition prescription.</p>
+        </div>
+      `;
     }
-
     calculate();
 
     // FAQ accordion
