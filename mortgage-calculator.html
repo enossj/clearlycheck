@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mortgage Calculator — Monthly Payment, PITI & Amortization | ClearlyCheck</title>
+  <title>Mortgage Calculator | Monthly Payment, PITI &amp; Amortization</title>
   <meta name="description"
-    content="Calculate your monthly mortgage payment including principal, interest, taxes, insurance, PMI, and HOA. See your full amortization schedule and payoff date. Free, private, no signup.">
+    content="Use this mortgage calculator to estimate your monthly payment, principal and interest, property taxes, homeowners insurance, PMI, HOA, total interest, payoff date, and amortization schedule.">
   <meta name="keywords"
-    content="mortgage calculator, monthly mortgage payment, PITI calculator, amortization schedule, home loan calculator, mortgage payoff calculator, extra payment mortgage calculator">
+    content="mortgage calculator, mortgage payment calculator, monthly mortgage payment calculator, home mortgage calculator, home loan calculator, house payment calculator, PITI mortgage calculator, mortgage calculator with taxes and insurance, mortgage calculator with PMI, mortgage calculator with amortization, mortgage amortization calculator, mortgage payoff calculator, mortgage early payoff calculator, extra payment mortgage calculator, calculate my mortgage payment, how much is my mortgage payment">
   <link rel="canonical" href="https://clearlycheck.com/mortgage-calculator.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mortgage Calculator — Monthly Payment, PITI & Amortization">
+  <meta property="og:title" content="Mortgage Calculator | Monthly Payment, PITI &amp; Amortization">
   <meta property="og:description"
-    content="Calculate your full monthly mortgage payment and see your complete amortization schedule. Free and private.">
+    content="Estimate your monthly mortgage payment with principal, interest, taxes, insurance, PMI, HOA, extra payments, and a complete amortization schedule.">
   <meta property="og:url" content="https://clearlycheck.com/mortgage-calculator.html">
   <meta property="og:site_name" content="ClearlyCheck">
   <meta name="twitter:card" content="summary">
@@ -38,23 +38,51 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is PITI?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PITI stands for Principal, Interest, Taxes, and Insurance — the four components most lenders bundle into your monthly mortgage payment. Principal and interest repay the loan itself, while taxes and insurance are collected monthly and paid on your behalf when due." }
+      "name": "What is a mortgage calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A mortgage calculator estimates a monthly mortgage payment from the home price, down payment, interest rate, loan term, and other costs entered by the user. This calculator can include property taxes, homeowners insurance, PMI, HOA fees, other costs, and extra payments."
+      }
     },
     {
       "@type": "Question",
-      "name": "How is my monthly mortgage payment calculated?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The principal and interest portion uses the standard amortization formula, which spreads the loan amount across equal monthly payments at a fixed interest rate over the loan term. Property taxes, insurance, PMI, and HOA fees are then added on top, typically divided into equal monthly installments." }
+      "name": "How do I calculate my monthly mortgage payment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter the home price, down payment, loan term, and interest rate. Add property taxes, homeowners insurance, PMI, HOA fees, and other costs if you want a fuller estimate of the monthly housing payment. The principal-and-interest portion uses a standard fixed-rate amortization formula."
+      }
     },
     {
       "@type": "Question",
-      "name": "When do I need PMI?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Private Mortgage Insurance (PMI) is typically required on conventional loans when your down payment is less than 20% of the home price. It protects the lender, not you, and can usually be removed once you reach 20% equity in the home." }
+      "name": "What does PITI stand for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PITI stands for Principal, Interest, Taxes, and Insurance. PMI, HOA dues, and other costs may be additional."
+      }
     },
     {
       "@type": "Question",
-      "name": "Does paying extra each month actually help?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Extra payments go directly toward your principal balance, which reduces the interest charged in every subsequent month. Even a modest extra payment can shorten your loan term by years and save a significant amount in total interest, since mortgage interest compounds against your remaining balance." }
+      "name": "Does a mortgage calculator include taxes and insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This mortgage calculator lets you enter annual property taxes and homeowners insurance and includes their estimated monthly amounts in the total payment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does mortgage amortization work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mortgage amortization pays a fixed-rate loan down through scheduled payments containing principal and interest. As the balance decreases, the interest portion generally falls and the principal portion increases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much can I save by paying extra on my mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Savings depend on the balance, interest rate, remaining term, and extra amount paid. This calculator can estimate the reduction in payoff time and total interest from extra monthly, yearly, or one-time payments."
+      }
     }
   ]
 }
@@ -100,7 +128,7 @@
   "url": "https://clearlycheck.com/mortgage-calculator.html",
   "mainEntityOfPage": "https://clearlycheck.com/mortgage-calculator.html",
   "datePublished": "2026-07-04",
-  "dateModified": "2026-08-31",
+  "dateModified": "2026-09-28",
   "author": {
     "@type": "Person",
     "@id": "https://clearlycheck.com/#enos",
@@ -791,6 +819,15 @@
       background: var(--bg-card);
     }
 
+    .breakdown-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
     .ref-table th:first-child {
       text-align: left;
     }
@@ -821,7 +858,7 @@
       margin-top: 10px;
     }
 
-    /* ARTICLE */
+    /* ARTICLE SECTION */
     .article-section>div {
       min-width: 0;
     }
@@ -833,6 +870,12 @@
       display: grid;
       grid-template-columns: 1fr 420px;
       gap: 28px;
+    }
+
+    .article-left-column {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     @media (max-width: 1024px) {
@@ -862,15 +905,6 @@
 
     .article h2:first-child {
       margin-top: 0;
-    }
-
-    .article h3 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-      margin-top: 24px;
-      margin-bottom: 10px;
     }
 
     .article p {
@@ -1138,6 +1172,111 @@
     .page-meta a:hover {
       text-decoration: underline;
     }
+
+    /* Navigation Additions */
+    .nav-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .nav-block h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .nav-grid a {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-grid a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .nav-hubs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-hubs a {
+      font-size: 12.5px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-hubs a:hover {
+      color: var(--accent);
+    }
+
+    .nav-hubs .sep {
+      color: var(--border-hover);
+      font-size: 12px;
+    }
+
+    .related-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .related-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-right: 4px;
+    }
+
+    .related-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .related-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      background: var(--accent-light);
+    }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1937179969817973"
     crossorigin="anonymous"></script>
@@ -1171,10 +1310,10 @@
     </nav>
     <div class="tool-tag-pill">🏡 Finance Tool</div>
     <h1>Mortgage Calculator</h1>
-    <p>Calculate your full monthly mortgage payment — principal, interest, taxes, insurance, and more — plus your
-      complete amortization schedule.</p>
-    <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated August
-      31, 2026</div>
+    <p>Estimate your monthly mortgage payment with principal, interest, property taxes, homeowners insurance, PMI, HOA
+      fees, and more — plus your complete mortgage amortization schedule.</p>
+    <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September
+      28, 2026</div>
   </div>
 
   <main>
@@ -1182,8 +1321,9 @@
 
       <div class="calc-card">
         <div class="calc-header">
-          <h2>Enter your loan details</h2>
-          <p>Add taxes and costs below for your full monthly payment.</p>
+          <h2>Mortgage Payment Calculator</h2>
+          <p>Enter your home price, down payment, interest rate, taxes, insurance, and other costs to estimate your
+            complete monthly mortgage payment.</p>
         </div>
         <div class="calc-body">
 
@@ -1331,8 +1471,9 @@
 
   <div class="reference-section">
     <div class="reference-card">
-      <h2>Amortization Schedule</h2>
-      <p class="ref-intro">How your payment splits between principal and interest over the life of the loan.</p>
+      <h2>Mortgage Amortization Schedule</h2>
+      <p class="ref-intro">See how each mortgage payment is divided between principal and interest, how your balance
+        falls over time, and how extra payments can shorten the loan.</p>
 
       <div class="amort-controls">
         <div class="amort-toggle">
@@ -1356,180 +1497,223 @@
               <th>Payment</th>
               <th>Principal</th>
               <th>Interest</th>
+              <th>Extra</th>
               <th>Ending Balance</th>
             </tr>
           </thead>
           <tbody id="amortTableBody"></tbody>
         </table>
       </div>
-      <p class="ref-footnote">Includes any extra payments entered above. Property tax, insurance, PMI, and HOA are not
-        part of the amortization balance.</p>
+      <p class="ref-footnote">Includes any extra principal payments entered above. Property tax, insurance, PMI, HOA,
+        and other housing costs are not part of the loan amortization balance.</p>
     </div>
   </div>
 
   <div class="article-section">
-    <article class="article">
-      <h2>The Definitive Guide to Home Mortgages and Financing</h2>
-      <p>Securing a mortgage represents the largest single financial commitment most homeowners ever make. While the
-        headline purchase price captures attention, the structure of your loan—including amortization length, interest
-        compounding, property tax escrows, private mortgage insurance (PMI), and debt-to-income limits—dictates the
-        total lifetime cost of your home.</p>
+    <div class="article-left-column">
 
-      <h3>Understanding the PITI Framework</h3>
-      <p>Your monthly housing payment rarely stops at principal and interest. Lenders typically collect payments under
-        the <strong>PITI</strong> umbrella to ensure loan collateral is fully protected:</p>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>Component</th>
-              <th>What it is</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Principal</strong></td>
-              <td>The direct portion of your payment that reduces the remaining balance of the money borrowed.</td>
-            </tr>
-            <tr>
-              <td><strong>Interest</strong></td>
-              <td>The fee charged by the lender for granting the debt, calculated monthly on your remaining balance.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Property tax</strong></td>
-              <td>Real estate property taxes assessed by local county or municipal governments, held in an escrow
-                reserve account.</td>
-            </tr>
-            <tr>
-              <td><strong>Home insurance</strong></td>
-              <td>Hazard and homeowners insurance policies protecting against structure loss or liability claims.</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Related Tools Card -->
+      <div class="related-card">
+        <span class="related-label">MORE FINANCE TOOLS:</span>
+        <a href="debt-free-calculator.html" class="related-pill">Debt Payoff Calculator</a>
+        <a href="auto-loan-calculator.html" class="related-pill">Auto Loan Calculator</a>
+        <a href="income-tax-calculator.html" class="related-pill">Income Tax Calculator</a>
       </div>
 
-      <h3>The 28/36 Debt-to-Income (DTI) Rule</h3>
-      <p>Mortgage underwriters use Debt-to-Income (DTI) ratios to evaluate whether a borrower can comfortably manage
-        monthly obligations:</p>
-      <ul>
-        <li><strong>Front-End DTI (The 28% Rule):</strong> Your total housing expenses (PITI + HOA fees) should not
-          exceed 28% of your gross monthly pre-tax income. For example, a household earning $10,000/month should target
-          a maximum housing payment of $2,800.</li>
-        <li><strong>Back-End DTI (The 36% Rule):</strong> Your total recurring debt obligations (housing plus car loans,
-          student debt, and minimum credit card dues) should not exceed 36% of your gross income.</li>
-      </ul>
+      <article class="article">
+        <h2>How Much Is My Mortgage Payment?</h2>
+        <p>A mortgage calculator estimates the cost of financing a home by combining your loan amount, interest rate,
+          loan term, and the costs that may be part of your monthly housing payment. This calculator also lets you
+          include property taxes, homeowners insurance, PMI, HOA fees, other costs, and extra principal payments.</p>
 
-      <h3>Comparing Major Mortgage Loan Types</h3>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>Loan Program</th>
-              <th>Min. Down Payment</th>
-              <th>Key Benefit</th>
-              <th>Insurance Requirement</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Conventional</strong></td>
-              <td>3% to 20%</td>
-              <td>PMI drops off at 20% equity (80% LTV).</td>
-              <td>PMI if down payment is &lt;20%.</td>
-            </tr>
-            <tr>
-              <td><strong>FHA Loan</strong></td>
-              <td>3.5%</td>
-              <td>Accessible credit score thresholds.</td>
-              <td>Upfront MIP + Annual MIP.</td>
-            </tr>
-            <tr>
-              <td><strong>VA Loan</strong></td>
-              <td>0%</td>
-              <td>No ongoing mortgage insurance; competitive rates.</td>
-              <td>One-time VA Funding Fee (No PMI).</td>
-            </tr>
-            <tr>
-              <td><strong>USDA Loan</strong></td>
-              <td>0%</td>
-              <td>Zero down payment in designated rural areas.</td>
-              <td>Upfront Guarantee Fee + Annual Fee.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>PMI Cancellation Rules (Homeowners Protection Act)</h3>
-      <p>For conventional mortgages, Private Mortgage Insurance (PMI) is governed by the federal <strong>Homeowners
-          Protection Act of 1998 (HPA)</strong>. You have the right to request PMI cancellation once your principal
-        balance reaches 80% of the original property value. Furthermore, lenders are legally mandated to terminate PMI
-        automatically once the loan balance reaches 78% of the original purchase value, provided your account remains in
-        good standing.</p>
-
-      <h3>Why early payments are mostly interest</h3>
-      <p>In the early years of a mortgage, most of each payment goes toward interest rather than principal. That's
-        because interest is calculated on your remaining balance, which is largest at the start of the loan. Making even
-        modest supplemental principal payments early in the loan lifecycle significantly truncates the amortization
-        curve, eliminating tens of thousands of dollars in compounding interest.</p>
-
-      <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <button class="faq-q">What is PITI?<span class="faq-icon">+</span></button>
-          <div class="faq-a">PITI stands for Principal, Interest, Taxes, and Insurance — the four components most
-            lenders bundle into your monthly mortgage payment. Principal and interest repay the loan itself, while taxes
-            and insurance are collected monthly and paid on your behalf when due.</div>
+        <h3>What Is Included in a Mortgage Payment?</h3>
+        <p>Your principal-and-interest payment is the amount used to repay the mortgage itself. Your total monthly
+          housing payment can be higher when taxes, insurance, mortgage insurance, HOA dues, or other recurring costs
+          are included.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Principal</strong></td>
+                <td>The portion of the payment that reduces the amount you borrowed.</td>
+              </tr>
+              <tr>
+                <td><strong>Interest</strong></td>
+                <td>The borrowing cost charged on the remaining mortgage balance.</td>
+              </tr>
+              <tr>
+                <td><strong>Property tax</strong></td>
+                <td>Real estate taxes charged by your local government. They may be collected through an escrow account.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Homeowners insurance</strong></td>
+                <td>Insurance that helps protect the property against covered losses and may be included in an escrow
+                  payment.</td>
+              </tr>
+              <tr>
+                <td><strong>PMI</strong></td>
+                <td>Private mortgage insurance that may apply to some conventional loans when the down payment is below
+                  20%.</td>
+              </tr>
+              <tr>
+                <td><strong>HOA</strong></td>
+                <td>Homeowners association dues, when applicable. HOA fees are generally separate from principal and
+                  interest.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="faq-item">
-          <button class="faq-q">How is my monthly mortgage payment calculated?<span class="faq-icon">+</span></button>
-          <div class="faq-a">The principal and interest portion uses the standard amortization formula, which spreads
-            the loan amount across equal monthly payments at a fixed interest rate over the loan term. Property taxes,
-            insurance, PMI, and HOA fees are then added on top, typically divided into equal monthly installments.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">When do I need PMI?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Private Mortgage Insurance (PMI) is typically required on conventional loans when your down
-            payment is less than 20% of the home price. It protects the lender, not you, and can usually be removed once
-            you reach 20% equity in the home.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Does paying extra each month actually help?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Yes. Extra payments go directly toward your principal balance, which reduces the interest
-            charged in every subsequent month. Even a modest extra payment can shorten your loan term by years and save
-            a significant amount in total interest, since mortgage interest compounds against your remaining balance.
+
+        <h3>What Is PITI?</h3>
+        <p><strong>PITI</strong> stands for Principal, Interest, Taxes, and Insurance. A PITI mortgage calculator helps
+          estimate a broader monthly housing payment rather than showing only the mortgage principal-and-interest
+          amount. PMI, HOA fees, and other costs can be added separately.</p>
+
+        <h3>How to Calculate a Mortgage Payment</h3>
+        <p>For a fixed-rate mortgage, the principal-and-interest payment is calculated from the loan amount, monthly
+          interest rate, and number of monthly payments. The standard amortization formula spreads repayment across the
+          selected loan term. This calculator then adds the monthly portions of property taxes, homeowners insurance,
+          PMI, HOA fees, and other costs that you enter.</p>
+        <p>Your loan amount is generally the home price minus the down payment. A larger down payment reduces the amount
+          borrowed and can also affect whether mortgage insurance is required.</p>
+
+        <h3>Mortgage Calculator With Taxes and Insurance</h3>
+        <p>Looking only at principal and interest can understate the amount you actually spend each month on housing.
+          Enter your annual property tax and homeowners insurance to estimate a more complete monthly payment. Because
+          tax rates and insurance premiums vary by location and property, use your actual estimates when available.</p>
+
+        <h3>Mortgage Calculator With PMI</h3>
+        <p>PMI can increase the monthly cost of a conventional mortgage when it applies. The amount and cancellation
+          rules depend on the loan, lender, borrower, and applicable requirements. Enter the estimated annual PMI cost
+          in the calculator to include it in your monthly payment.</p>
+
+        <h3>How Mortgage Amortization Works</h3>
+        <p>A mortgage amortization schedule shows how each scheduled payment changes your loan balance. Early in a
+          typical fixed-rate mortgage, interest represents a larger share of the payment because interest is calculated
+          from a larger outstanding balance. As principal is repaid, the balance falls and the interest portion
+          generally decreases.</p>
+        <p>Use the annual view for a quick long-term summary or the monthly view to inspect the first 24 payments. The
+          schedule also reflects the extra payments entered in the calculator.</p>
+
+        <h3>How Much Interest Will I Pay on My Mortgage?</h3>
+        <p>Total interest depends mainly on the amount borrowed, interest rate, and how long the balance remains
+          outstanding. A longer loan term usually produces a lower required monthly principal-and-interest payment but
+          can result in more interest over the life of the loan. The calculator shows estimated total interest based on
+          the inputs you provide.</p>
+
+        <h3>How Extra Mortgage Payments Can Save Interest</h3>
+        <p>Extra principal payments reduce the outstanding balance. A lower balance generally means less interest is
+          charged in subsequent periods, which can shorten the payoff timeline and reduce total interest. This
+          calculator lets you test extra monthly payments, extra yearly payments, and a one-time lump sum.</p>
+        <p>Compare the standard schedule with the extra-payment scenario to see the estimated time and interest savings.
+          Check your mortgage terms before making additional payments because some loans can have specific rules or
+          fees.</p>
+
+        <h3>15-Year vs. 30-Year Mortgage</h3>
+        <p>A 15-year mortgage generally requires a higher monthly principal-and-interest payment than a 30-year mortgage
+          for the same loan amount and rate, but it pays the balance down over a shorter period. A 30-year mortgage
+          generally spreads repayment over more months. Your actual choice depends on your rate, budget, goals, and loan
+          terms.</p>
+
+        <h3>Mortgage Calculator FAQs</h3>
+        <div class="faq-section">
+          <div class="faq-item">
+            <button class="faq-q">What is a mortgage calculator?<span class="faq-icon">+</span></button>
+            <div class="faq-a">A mortgage calculator estimates your monthly mortgage payment and related housing costs
+              from inputs such as home price, down payment, interest rate, and loan term. This calculator can also
+              include property taxes, homeowners insurance, PMI, HOA fees, other costs, and extra payments.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How do I calculate my monthly mortgage payment?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Enter your home price, down payment, loan term, and interest rate. Then add property
+              taxes, homeowners insurance, PMI, HOA fees, or other costs if you want a fuller estimate of your monthly
+              housing payment. The calculator applies the standard fixed-rate amortization formula to the
+              principal-and-interest portion.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">What does PITI stand for?<span class="faq-icon">+</span></button>
+            <div class="faq-a">PITI stands for Principal, Interest, Taxes, and Insurance. It is commonly used to
+              describe the main components of a mortgage-related housing payment. PMI, HOA dues, and other costs may be
+              additional.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Does a mortgage calculator include taxes and insurance?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Yes. This calculator lets you enter annual property taxes and homeowners insurance so
+              they can be converted into estimated monthly amounts and included in the total monthly payment.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How does mortgage amortization work?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Mortgage amortization is the process of paying a fixed-rate loan down over a set number
+              of scheduled payments. Each payment contains interest and principal. As the balance decreases, the
+              interest amount generally falls and the principal portion increases.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How much can I save by paying extra on my mortgage?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">The savings depend on your balance, interest rate, remaining term, and how much extra you
+              pay. Enter an extra monthly payment, yearly payment, or lump sum to estimate the reduction in payoff time
+              and total interest.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Does PMI increase my monthly mortgage payment?<span class="faq-icon">+</span></button>
+            <div class="faq-a">Yes, when PMI applies, it adds to the monthly housing cost. The amount depends on the
+              loan and insurance terms. Enter the estimated annual PMI cost to include it in the calculation.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How does a down payment affect my mortgage payment?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">A larger down payment reduces the amount you need to borrow, which generally reduces the
+              principal-and-interest payment. It can also affect whether PMI applies to a conventional mortgage.</div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
 
     <div>
-      <p
-        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
-        More Finance Tools</p>
-      <div class="sidebar-tools">
-        <a class="sidebar-tool" href="rent-vs-buy.html">
-          <div class="sidebar-tool-icon">🏡</div>
-          <div>
-            <div class="sidebar-tool-name">Rent vs Buy Calculator</div>
-            <div class="sidebar-tool-desc">Compare renting vs. buying a home</div>
-          </div>
-        </a>
-        <a class="sidebar-tool" href="can-i-afford-this.html">
-          <div class="sidebar-tool-icon">🏠</div>
-          <div>
-            <div class="sidebar-tool-name">Can I Afford This?</div>
-            <div class="sidebar-tool-desc">Income-based affordability check</div>
-          </div>
-        </a>
-        <a class="sidebar-tool" href="compound-interest-calculator.html">
-          <div class="sidebar-tool-icon">📈</div>
-          <div>
-            <div class="sidebar-tool-name">Compound Interest Calculator</div>
-            <div class="sidebar-tool-desc">See how your savings grow over time</div>
-          </div>
-        </a>
+
+      <!-- Mega Internal Linking Block -->
+      <div class="nav-block">
+        <h3>Other Calculators</h3>
+        <div class="nav-grid">
+          <a href="sales-tax-calculator.html">Sales Tax</a>
+          <a href="rent-vs-buy.html">Rent Vs Buy</a>
+          <a href="compound-interest-calculator.html">Compound Interest</a>
+          <a href="paycheck-calculator.html">Paycheck</a>
+          <a href="gpa-calculator.html">GPA</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="words-to-pages-calculator.html">Words to Pages</a>
+          <a href="reading-time-calculator.html">Reading Time</a>
+          <a href="auto-loan-calculator.html">Auto Loan</a>
+          <a href="mpg-calculator.html">MPG</a>
+          <a href="pet-age-calculator.html">Pet Age</a>
+          <a href="pet-cost-calculator.html">Pet Cost</a>
+          <a href="timezone-planner.html">Timezone Planner</a>
+          <a href="password-generator.html">Password Gen</a>
+          <a href="reality-check-calculator.html">Reality Check</a>
+          <a href="unit-converter.html">Unit Converter</a>
+        </div>
+
+        <div class="nav-hubs">
+          <a href="finance-calculators.html">Finance</a><span class="sep">|</span>
+          <a href="health-calculators.html">Health</a><span class="sep">|</span>
+          <a href="pet-tools.html">Pets</a><span class="sep">|</span>
+          <a href="productivity-tools.html">Productivity</a><span class="sep">|</span>
+          <a href="utility-tools.html">Utility</a><span class="sep">|</span>
+          <a href="education-tools.html">Education</a><span class="sep">|</span>
+          <a href="auto-calculators.html">Auto</a><span class="sep">|</span>
+          <a href="/guides/index.html">Guides</a>
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -1627,55 +1811,83 @@
           payment = principalPortion + interestPortion;
         }
         balance = Math.max(0, balance - principalPortion);
-        rows.push({ month, payment, principal: principalPortion, interest: interestPortion, balance });
+        rows.push({ month, payment, principal: principalPortion, interest: interestPortion, extra: Math.max(0, currentExtra), balance });
         if (balance <= 0.01) break;
       }
       return rows;
     }
 
     function calculate() {
-      const homePrice = parseFloat(document.getElementById('homePrice').value) || 0;
-      const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
-      const loanTermYears = parseFloat(document.getElementById('loanTerm').value);
-      const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
-      const propertyTaxInput = parseFloat(document.getElementById('propertyTax').value) || 0;
-      const homeInsurance = parseFloat(document.getElementById('homeInsurance').value) || 0;
-      const pmiAnnual = parseFloat(document.getElementById('pmi').value) || 0;
-      const hoaMonthly = parseFloat(document.getElementById('hoa').value) || 0;
-      const otherCostsAnnual = parseFloat(document.getElementById('otherCosts').value) || 0;
-
-      // Advanced Extra Payments
-      const extraMonthly = parseFloat(document.getElementById('extraMonthly').value) || 0;
-      const extraAnnual = parseFloat(document.getElementById('extraAnnual').value) || 0;
-      const oneTimeLump = parseFloat(document.getElementById('oneTimeLump').value) || 0;
+      const homePrice = Math.max(0, parseFloat(document.getElementById('homePrice').value) || 0);
+      const downPayment = Math.max(0, parseFloat(document.getElementById('downPayment').value) || 0);
+      const loanTermYears = parseFloat(document.getElementById('loanTerm').value) || 0;
+      const interestRate = Math.max(0, parseFloat(document.getElementById('interestRate').value) || 0);
+      const propertyTaxInput = Math.max(0, parseFloat(document.getElementById('propertyTax').value) || 0);
+      const homeInsurance = Math.max(0, parseFloat(document.getElementById('homeInsurance').value) || 0);
+      const pmiAnnual = Math.max(0, parseFloat(document.getElementById('pmi').value) || 0);
+      const hoaMonthly = Math.max(0, parseFloat(document.getElementById('hoa').value) || 0);
+      const otherCostsAnnual = Math.max(0, parseFloat(document.getElementById('otherCosts').value) || 0);
+      const extraMonthly = Math.max(0, parseFloat(document.getElementById('extraMonthly').value) || 0);
+      const extraAnnual = Math.max(0, parseFloat(document.getElementById('extraAnnual').value) || 0);
+      const oneTimeLump = Math.max(0, parseFloat(document.getElementById('oneTimeLump').value) || 0);
       const startDateInput = document.getElementById('startDate').value;
 
-      const loanAmount = Math.max(0, homePrice - downPayment);
+      // Keep the down payment from exceeding the home price.
+      const effectiveDownPayment = Math.min(downPayment, homePrice);
+      const loanAmount = Math.max(0, homePrice - effectiveDownPayment);
       const monthlyRate = (interestRate / 100) / 12;
-      const n = loanTermYears * 12;
+      const n = Math.max(0, Math.round(loanTermYears * 12));
 
-      const propertyTaxAnnual = taxMode === 'pct' ? homePrice * propertyTaxInput / 100 : propertyTaxInput;
+      const propertyTaxAnnual = taxMode === 'pct'
+        ? homePrice * propertyTaxInput / 100
+        : propertyTaxInput;
 
       let basePayment = 0;
-      if (monthlyRate > 0) {
-        basePayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
-      } else if (n > 0) {
-        basePayment = loanAmount / n;
+      if (loanAmount > 0 && n > 0) {
+        if (monthlyRate > 0) {
+          basePayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, n)) /
+            (Math.pow(1 + monthlyRate, n) - 1);
+        } else {
+          basePayment = loanAmount / n;
+        }
+      }
+
+      if (loanAmount <= 0 || n <= 0 || basePayment <= 0) {
+        document.getElementById('statusBadge').textContent = 'Enter details';
+        document.getElementById('resultsContent').innerHTML = `
+          <div class="verdict-hero">
+            <div class="verdict-label">Estimated Monthly Mortgage Payment</div>
+            <div class="verdict-value">—</div>
+            <div class="verdict-sub">Enter a home price and loan term to calculate.</div>
+          </div>`;
+        document.getElementById('chartContainer').style.display = 'none';
+        document.getElementById('amortTableBody').innerHTML = '';
+        lastSchedule = null;
+        if (donutChartInst) { donutChartInst.destroy(); donutChartInst = null; }
+        if (lineChartInst) { lineChartInst.destroy(); lineChartInst = null; }
+        return;
       }
 
       const schedule = buildSchedule(loanAmount, monthlyRate, n, basePayment, extraMonthly, extraAnnual, oneTimeLump);
+      const baseSchedule = buildSchedule(loanAmount, monthlyRate, n, basePayment, 0, 0, 0);
       lastSchedule = schedule;
 
       const totalPI = schedule.reduce((s, r) => s + r.payment, 0);
+      const baseTotalPI = baseSchedule.reduce((s, r) => s + r.payment, 0);
       const totalInterest = schedule.reduce((s, r) => s + r.interest, 0);
+      const baseInterest = baseSchedule.reduce((s, r) => s + r.interest, 0);
       const actualMonths = schedule.length;
+      const baseMonths = baseSchedule.length;
 
       const propertyTaxMonthly = propertyTaxAnnual / 12;
       const homeInsuranceMonthly = homeInsurance / 12;
       const pmiMonthly = pmiAnnual / 12;
       const otherCostsMonthly = otherCostsAnnual / 12;
 
-      const totalMonthlyPayment = basePayment + propertyTaxMonthly + homeInsuranceMonthly + pmiMonthly + hoaMonthly + otherCostsMonthly;
+      // Extra principal changes the mortgage payoff timeline, but recurring housing
+      // costs are shown separately and are not treated as loan amortization.
+      const totalMonthlyPayment = basePayment + propertyTaxMonthly + homeInsuranceMonthly +
+        pmiMonthly + hoaMonthly + otherCostsMonthly;
 
       let startDate;
       if (startDateInput) {
@@ -1685,66 +1897,84 @@
         startDate = new Date();
         startDate.setDate(1);
       }
+
       const payoffDate = addMonths(startDate, actualMonths);
+      const interestSaved = Math.max(0, baseInterest - totalInterest);
+      const monthsSaved = Math.max(0, baseMonths - actualMonths);
+      const yearsSaved = Math.floor(monthsSaved / 12);
+      const monthsSavedRemainder = monthsSaved % 12;
 
-      let interestSavedNote = '';
-      if (extraMonthly > 0 || extraAnnual > 0 || oneTimeLump > 0) {
-        const baseSchedule = buildSchedule(loanAmount, monthlyRate, n, basePayment, 0, 0, 0);
-        const baseInterest = baseSchedule.reduce((s, r) => s + r.interest, 0);
-        const interestSaved = baseInterest - totalInterest;
-        const monthsSaved = baseSchedule.length - actualMonths;
-        const yearsSaved = (monthsSaved / 12).toFixed(1);
-
-        if (interestSaved > 0) {
-          interestSavedNote = `💡 Extra payments save ${fmt(interestSaved)} in interest and pay off your loan ${yearsSaved} years sooner.`;
-        }
+      let savedTimeText = '';
+      if (monthsSaved > 0) {
+        const parts = [];
+        if (yearsSaved) parts.push(`${yearsSaved} year${yearsSaved === 1 ? '' : 's'}`);
+        if (monthsSavedRemainder) parts.push(`${monthsSavedRemainder} month${monthsSavedRemainder === 1 ? '' : 's'}`);
+        savedTimeText = parts.join(' and ');
       }
 
-      // Inject Numbers
+      const hasExtra = extraMonthly > 0 || extraAnnual > 0 || oneTimeLump > 0;
+      let interestSavedNote = '';
+      if (hasExtra && (interestSaved > 0 || monthsSaved > 0)) {
+        interestSavedNote = `💡 With your extra payments, you could save <strong>${fmt(interestSaved)}</strong> in interest${savedTimeText ? ` and pay off the mortgage <strong>${savedTimeText}</strong> sooner` : ''}.`;
+      }
+
+      document.getElementById('statusBadge').textContent = 'Calculated';
+
       document.getElementById('resultsContent').innerHTML = `
-    <div class="verdict-hero">
-      <div class="verdict-label">Total Monthly Payment</div>
-      <div class="verdict-value">${fmt(totalMonthlyPayment)}</div>
-      <div class="verdict-sub">Principal, interest, taxes &amp; costs</div>
-    </div>
+        <div class="verdict-hero">
+          <div class="verdict-label">Estimated Monthly Mortgage Payment</div>
+          <div class="verdict-value">${fmt(totalMonthlyPayment)}</div>
+          <div class="verdict-sub">Principal, interest, taxes &amp; costs</div>
+        </div>
 
-    ${interestSavedNote ? `<div class="extra-savings-note">${interestSavedNote}</div>` : ''}
+        ${interestSavedNote ? `<div class="extra-savings-note">${interestSavedNote}</div>` : ''}
 
-    <div class="metrics-grid">
-      <div class="metric">
-        <div class="metric-label">Loan amount</div>
-        <div class="metric-value accent">${fmt(loanAmount)}</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Total interest</div>
-        <div class="metric-value blue">${fmt(totalInterest)}</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Total of payments</div>
-        <div class="metric-value accent">${fmt(totalPI)}</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Payoff date</div>
-        <div class="metric-value blue">${formatMonthYear(payoffDate)}</div>
-      </div>
-    </div>
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-label">Loan amount</div>
+            <div class="metric-value accent">${fmt(loanAmount)}</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Total interest</div>
+            <div class="metric-value blue">${fmt(totalInterest)}</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Mortgage payments</div>
+            <div class="metric-value accent">${fmt(totalPI)}</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Payoff date</div>
+            <div class="metric-value blue">${formatMonthYear(payoffDate)}</div>
+          </div>
+        </div>
 
-    <div class="breakdown-wrap">
-      <table class="breakdown-table">
-        <tbody>
-          <tr><td>Principal &amp; interest</td><td>${fmt2(basePayment)}</td></tr>
-          <tr><td>Property tax</td><td>${fmt2(propertyTaxMonthly)}</td></tr>
-          <tr><td>Home insurance</td><td>${fmt2(homeInsuranceMonthly)}</td></tr>
-          ${pmiMonthly > 0 ? `<tr><td>PMI</td><td>${fmt2(pmiMonthly)}</td></tr>` : ''}
-          ${hoaMonthly > 0 ? `<tr><td>HOA fee</td><td>${fmt2(hoaMonthly)}</td></tr>` : ''}
-          ${otherCostsMonthly > 0 ? `<tr><td>Other costs</td><td>${fmt2(otherCostsMonthly)}</td></tr>` : ''}
-          <tr class="total-row"><td>Total monthly</td><td>${fmt2(totalMonthlyPayment)}</td></tr>
-        </tbody>
-      </table>
-    </div>
-  `;
+        <div class="breakdown-wrap">
+          <div class="breakdown-title">Monthly Payment Breakdown</div>
+          <table class="breakdown-table">
+            <tbody>
+              <tr><td>Principal &amp; interest</td><td>${fmt2(basePayment)}</td></tr>
+              <tr><td>Property tax</td><td>${fmt2(propertyTaxMonthly)}</td></tr>
+              <tr><td>Home insurance</td><td>${fmt2(homeInsuranceMonthly)}</td></tr>
+              ${pmiMonthly > 0 ? `<tr><td>PMI</td><td>${fmt2(pmiMonthly)}</td></tr>` : ''}
+              ${hoaMonthly > 0 ? `<tr><td>HOA fee</td><td>${fmt2(hoaMonthly)}</td></tr>` : ''}
+              ${otherCostsMonthly > 0 ? `<tr><td>Other costs</td><td>${fmt2(otherCostsMonthly)}</td></tr>` : ''}
+              <tr class="total-row"><td>Total monthly payment</td><td>${fmt2(totalMonthlyPayment)}</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-      // Draw Visualizations
+        <div class="metrics-grid" style="margin-top:10px;">
+          <div class="metric">
+            <div class="metric-label">Down payment</div>
+            <div class="metric-value">${fmt(effectiveDownPayment)}</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Loan term</div>
+            <div class="metric-value">${actualMonths >= 12 ? `${Math.floor(actualMonths / 12)} yr${Math.floor(actualMonths / 12) === 1 ? '' : 's'}` : `${actualMonths} mo`}</div>
+          </div>
+        </div>
+      `;
+
       document.getElementById('chartContainer').style.display = 'block';
       renderCharts(basePayment, propertyTaxMonthly, homeInsuranceMonthly, pmiMonthly, hoaMonthly, otherCostsMonthly);
       renderAmortTable();
@@ -1837,22 +2067,23 @@
       if (amortView === 'monthly') {
         const monthly = lastSchedule.slice(0, 24);
         monthly.forEach(r => {
-          rows += `<tr><td>Month ${r.month}</td><td>${fmt2(r.payment)}</td><td>${fmt2(r.principal)}</td><td>${fmt2(r.interest)}</td><td>${fmt(r.balance)}</td></tr>`;
+          const extra = r.extra || 0;
+          rows += `<tr><td>Month ${r.month}</td><td>${fmt2(r.payment)}</td><td>${fmt2(r.principal)}</td><td>${fmt2(r.interest)}</td><td>${extra > 0 ? fmt2(extra) : '—'}</td><td>${fmt(r.balance)}</td></tr>`;
         });
       } else {
-        // annual rollup
         const years = {};
         lastSchedule.forEach(r => {
           const y = Math.ceil(r.month / 12);
-          if (!years[y]) years[y] = { payment: 0, principal: 0, interest: 0, balance: r.balance };
+          if (!years[y]) years[y] = { payment: 0, principal: 0, interest: 0, extra: 0, balance: r.balance };
           years[y].payment += r.payment;
           years[y].principal += r.principal;
           years[y].interest += r.interest;
+          years[y].extra += r.extra || 0;
           years[y].balance = r.balance;
         });
         Object.keys(years).forEach(y => {
           const r = years[y];
-          rows += `<tr><td>Year ${y}</td><td>${fmt(r.payment)}</td><td>${fmt(r.principal)}</td><td>${fmt(r.interest)}</td><td>${fmt(r.balance)}</td></tr>`;
+          rows += `<tr><td>Year ${y}</td><td>${fmt(r.payment)}</td><td>${fmt(r.principal)}</td><td>${fmt(r.interest)}</td><td>${r.extra > 0 ? fmt(r.extra) : '—'}</td><td>${fmt(r.balance)}</td></tr>`;
         });
       }
       tbody.innerHTML = rows;
@@ -1862,15 +2093,16 @@
     function exportCSV() {
       if (!lastSchedule) return;
 
-      let csvContent = "data:text/csv;charset=utf-8,Month,Payment,Principal,Interest,Ending Balance\n";
+      let csvContent = "data:text/csv;charset=utf-8,Month,Payment,Principal,Interest,Extra Principal,Ending Balance\n";
 
       lastSchedule.forEach(r => {
         // Round data to 2 decimals for the CSV
         const pmt = r.payment.toFixed(2);
         const prn = r.principal.toFixed(2);
         const int = r.interest.toFixed(2);
+        const extra = (r.extra || 0).toFixed(2);
         const bal = r.balance.toFixed(2);
-        csvContent += `${r.month},${pmt},${prn},${int},${bal}\n`;
+        csvContent += `${r.month},${pmt},${prn},${int},${extra},${bal}\n`;
       });
 
       const encodedUri = encodeURI(csvContent);
