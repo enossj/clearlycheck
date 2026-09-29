@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auto Loan Calculator | Estimate Monthly Car Payments & Costs</title>
+  <title>Auto Loan Calculator | Car Payment, Interest &amp; Amortization</title>
   <meta name="description"
-    content="Free auto loan calculator and car payment estimator. Calculate your monthly car payment, total interest, and loan cost using price, trade-in, fees, and interest rate.">
+    content="Calculate your auto loan payment, total interest, loan cost, and amortization schedule. Compare loan terms, down payments, trade-ins, taxes, fees, and interest rates.">
   <meta name="keywords"
-    content="auto loan calculator, car loan calculator, monthly car payment calculator, estimate car payment, loan calculator auto, auto loan calc, autoloan calculator, car payment estimator, car interest calculator, car loan estimator">
+    content="auto loan calculator, car loan calculator, car payment calculator, monthly car payment calculator, auto payment calculator, auto loan payment calculator, car loan interest calculator, auto loan amortization calculator, car payment calculator with trade-in, car loan calculator with down payment, negative equity car loan calculator, car payment calculator with taxes and fees">
   <link rel="canonical" href="https://clearlycheck.com/auto-loan-calculator.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Auto Loan Calculator | Estimate Monthly Car Payments">
+  <meta property="og:title" content="Auto Loan Calculator | Car Payment, Interest &amp; Amortization">
   <meta property="og:description"
-    content="Use this free car payment estimator to calculate your monthly payments, including trade-in debt, cash incentives, taxes, and dealership fees.">
+    content="Estimate your monthly car payment, total interest, loan cost, and amortization with trade-ins, incentives, taxes, fees, and different loan terms.">
   <meta property="og:url" content="https://clearlycheck.com/auto-loan-calculator.html">
   <meta property="og:site_name" content="ClearlyCheck">
   <meta name="twitter:card" content="summary">
@@ -100,12 +100,12 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Auto Loan Calculator | Estimate Monthly Car Payments",
+  "headline": "Auto Loan Calculator | Car Payment, Interest &amp; Amortization",
   "description": "Free auto loan calculator and car payment estimator. Calculate your monthly car payment, total interest, and loan cost using price, trade-in, fees, and interest rate.",
   "url": "https://clearlycheck.com/auto-loan-calculator.html",
   "mainEntityOfPage": "https://clearlycheck.com/auto-loan-calculator.html",
   "datePublished": "2026-07-14",
-  "dateModified": "2026-09-24",
+  "dateModified": "2026-09-29",
   "author": {
     "@type": "Person",
     "@id": "https://clearlycheck.com/#enos",
@@ -299,14 +299,24 @@
       line-height: 1.7;
     }
 
+    /* 50/50 LAYOUT */
     .main-layout {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px 40px;
       display: grid;
-      grid-template-columns: 1fr 520px;
+      grid-template-columns: 1fr 1fr;
       gap: 28px;
       align-items: start;
+    }
+
+    /* LEFT SIDE COLUMNS (STICKY) */
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      position: sticky;
+      top: 88px;
     }
 
     .calc-card {
@@ -534,20 +544,28 @@
       transform: translateY(-1px);
     }
 
-    /* RESULTS */
+    /* RIGHT SIDE RESULTS & SCROLLABLE CONTENT */
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-width: 0;
+    }
+
     .results-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      position: sticky;
-      top: 88px;
       min-width: 0;
     }
 
     .results-header {
       padding: 24px;
       border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .results-body {
@@ -611,7 +629,16 @@
       border-color: var(--text);
     }
 
-    /* Amortization Table */
+    /* Amortization Table Scroll Fix */
+    .amort-table-container {
+      max-height: 350px;
+      overflow-y: auto;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+    }
+
     .amortization-table {
       width: 100%;
       border-collapse: collapse;
@@ -624,6 +651,9 @@
       padding: 12px;
       font-weight: 700;
       border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .amortization-table th:first-child,
@@ -636,11 +666,111 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* ARTICLE */
-    .article-section>div {
-      min-width: 0;
+    /* COMPARISON PANELS (Extracted from main-layout grid) */
+    .comparisons-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
+    .comparison-panel {
+      width: 100%;
+      margin: 0 auto 28px;
+      padding: 26px 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .comparison-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .comparison-heading h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      margin-top: 3px;
+    }
+
+    .comparison-heading p {
+      max-width: 440px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .section-kicker {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: right;
+    }
+
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+      text-align: left;
+    }
+
+    .comparison-table th {
+      font-family: 'Roboto', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      background: var(--bg);
+    }
+
+    .comparison-table tr.current {
+      background: var(--accent-light);
+      font-weight: 700;
+    }
+
+    .current-badge {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .comparison-table-wrap {
+      overflow-x: auto;
+    }
+
+    .comparison-note {
+      font-size: 12px;
+      color: var(--text-light);
+      margin: 12px 0 0;
+    }
+
+    .secondary-comparison {
+      margin-bottom: 40px;
+    }
+
+    /* ARTICLE */
     .article-section {
       max-width: 1100px;
       margin: 0 auto;
@@ -648,6 +778,12 @@
       display: grid;
       grid-template-columns: 1fr 420px;
       gap: 28px;
+    }
+
+    .article-left-column {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     @media (max-width: 1024px) {
@@ -705,29 +841,28 @@
       font-weight: 500;
     }
 
-    .article table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-      font-size: 13.5px;
+    .article .callout {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 20px 0;
     }
 
-    .article th,
-    .article td {
-      text-align: left;
-      padding: 9px 10px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-muted);
-      font-weight: 300;
+    .article .callout p {
+      margin: 0;
+      color: var(--accent-dark);
     }
 
-    .article th {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      color: var(--text);
-      font-size: 11.5px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    .article .formula {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-family: monospace;
+      font-size: 13px;
+      margin: 16px 0;
+      overflow: auto;
     }
 
     .faq-section {
@@ -800,49 +935,110 @@
       display: block;
     }
 
-    .sidebar-tools {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .sidebar-tool {
+    /* MEGA NAVIGATION HUB */
+    .nav-block {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 14px;
+      padding: 24px;
       box-shadow: var(--shadow);
-      transition: all 0.18s;
+      margin-bottom: 24px;
     }
 
-    .sidebar-tool:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
-      border-color: var(--border-hover);
-    }
-
-    .sidebar-tool-icon {
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-
-    .sidebar-tool-name {
+    .nav-block h3 {
       font-family: 'Roboto', sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 2px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .sidebar-tool-desc {
-      font-size: 12px;
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .nav-grid a {
+      font-size: 13.5px;
       color: var(--text-muted);
-      font-weight: 300;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-grid a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .nav-hubs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-hubs a {
+      font-size: 12.5px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-hubs a:hover {
+      color: var(--accent);
+    }
+
+    .nav-hubs .sep {
+      color: var(--border-hover);
+      font-size: 12px;
+    }
+
+    /* RELATED CARD */
+    .related-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .related-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-right: 4px;
+    }
+
+    .related-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .related-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      background: var(--accent-light);
     }
 
     .disclaimer-bar {
@@ -904,13 +1100,131 @@
       white-space: nowrap;
     }
 
-    @media (max-width: 900px) {
+    /* Smaller Utilities */
+    .result-explanation {
+      background: var(--accent-light);
+      border: 1px solid rgba(26, 107, 74, .16);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 18px 0
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 18px 0 24px
+    }
+
+    .result-mini-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 13px;
+      background: #fff
+    }
+
+    .result-mini-card span,
+    .result-mini-card small {
+      display: block;
+      color: var(--text-light);
+      font-size: 11px;
+      line-height: 1.4
+    }
+
+    .result-mini-card strong {
+      display: block;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      margin: 4px 0
+    }
+
+    .extra-payment-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      background: var(--bg);
+      margin-bottom: 24px
+    }
+
+    .extra-payment-card h3 {
+      font-size: 15px;
+      margin-bottom: 3px
+    }
+
+    .extra-payment-card p {
+      font-size: 12px;
+      color: var(--text-light);
+      margin: 0 0 12px
+    }
+
+    .extra-payment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px
+    }
+
+    .extra-payment-grid div {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px
+    }
+
+    .extra-payment-grid span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-light)
+    }
+
+    .extra-payment-grid strong {
+      display: block;
+      margin-top: 3px;
+      font-size: 14px
+    }
+
+    @media(max-width:900px) {
       .main-layout {
         grid-template-columns: 1fr;
       }
 
-      .results-card {
+      .calc-card,
+      .left-column {
         position: static;
+      }
+    }
+
+    @media(max-width:700px) {
+
+      .result-grid,
+      .extra-payment-grid {
+        grid-template-columns: 1fr
+      }
+
+      .comparison-panel {
+        padding: 22px 20px;
+        margin-left: 0;
+        margin-right: 0
+      }
+
+      .comparison-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px
+      }
+
+      .comparison-table {
+        min-width: 620px
+      }
+
+      .comparison-table-wrap {
+        margin: 0 -4px
+      }
+
+      .chart-container {
+        height: 240px
       }
     }
 
@@ -976,319 +1290,483 @@
       </div>
     </nav>
     <div class="tool-tag-pill">🚗 Auto Tool</div>
-    <h1>Auto Loan Calculator</h1>
-    <p>Use this free car payment estimator to calculate your monthly payments, including trade-in debt, cash incentives,
-      taxes, and dealership fees.</p>
+    <h1>Auto Loan Calculator: Estimate Your Car Payment &amp; Total Cost</h1>
+    <p>Buying a car is about more than finding a monthly payment that fits your budget. Your interest rate, loan term,
+      down payment, trade-in, taxes, and fees can all change what you actually pay. Use this calculator to estimate the
+      full cost of your auto loan and compare different financing scenarios.</p>
     <div class="page-meta">Built &amp; reviewed by <a href="/about.html">Enos</a>, ClearlyCheck · Last updated September
-      24, 2026</div>
+      29, 2026</div>
   </div>
 
   <main>
     <div class="main-layout">
 
-      <div class="calc-card">
-        <div class="calc-header">
-          <h2>Enter your loan details</h2>
-          <p>See your estimated monthly payment update as you type.</p>
-        </div>
-        <div class="calc-body">
-
-          <div class="field-section-label">Vehicle &amp; Purchase Details</div>
-
-          <div class="field-row2">
-            <div class="field">
-              <label class="label-with-icon" for="vehiclePrice">Vehicle Price</label>
-              <div class="input-wrap"><span class="prefix">$</span><input type="number" id="vehiclePrice" value="35000"
-                  min="0" oninput="calculate()"></div>
-            </div>
-            <div class="field">
-              <div class="label-with-icon">
-                <label for="cashIncentives" style="margin:0;">Cash Incentives</label>
-                <div class="tooltip">
-                  <span class="tooltip-icon">?</span>
-                  <span class="tooltip-text">The discounts or cash rebates offered by car manufacturers, dealerships, or
-                    other parties to entice customers to buy. It reduces the total price of the purchase.[cite:
-                    1]</span>
-                </div>
-              </div>
-              <div class="input-wrap"><span class="prefix">$</span><input type="number" id="cashIncentives" value="250"
-                  min="0" oninput="calculate()"></div>
-            </div>
+      <!-- LEFT SIDE (STICKY) -->
+      <div class="left-column">
+        <div class="calc-card">
+          <div class="calc-header">
+            <h2>Enter your loan details</h2>
+            <p>See your estimated monthly payment update as you type.</p>
           </div>
+          <div class="calc-body">
 
-          <div class="field-row2">
-            <div class="field">
-              <label class="label-with-icon" for="downPayment">Down Payment</label>
-              <div class="input-wrap"><span class="prefix">$</span><input type="number" id="downPayment" value="4000"
-                  min="0" oninput="calculate()"></div>
-            </div>
-            <div class="field">
-              <div class="label-with-icon">
-                <label for="interestRate" style="margin:0;">Interest Rate</label>
-                <div class="tooltip">
-                  <span class="tooltip-icon">?</span>
-                  <span class="tooltip-text">The yearly interest percentage charged by the lender for borrowing the
-                    money.</span>
-                </div>
+            <div class="field-section-label">Vehicle &amp; Purchase Details</div>
+
+            <div class="field-row2">
+              <div class="field">
+                <label class="label-with-icon" for="vehiclePrice">Vehicle Price</label>
+                <div class="input-wrap"><span class="prefix">$</span><input type="number" id="vehiclePrice"
+                    value="35000" min="0" oninput="calculate()"></div>
               </div>
-              <div class="input-wrap"><input type="number" id="interestRate" value="5" min="0" max="40" step="0.01"
-                  oninput="calculate()"><span class="input-suffix">%</span></div>
-            </div>
-          </div>
-
-          <div class="field-section-label">Trade-in &amp; Fees</div>
-
-          <div class="field-row2">
-            <div class="field">
-              <label class="label-with-icon" for="tradeIn">Trade-in Value</label>
-              <div class="input-wrap"><span class="prefix">$</span><input type="number" id="tradeIn" value="3199"
-                  min="0" oninput="calculate()"></div>
-            </div>
-            <div class="field">
-              <div class="label-with-icon">
-                <label for="owedOnTrade" style="margin:0;">Amount Owed on Trade-in</label>
-                <div class="tooltip">
-                  <span class="tooltip-icon">?</span>
-                  <span class="tooltip-text">The remaining loan balance on your current car. If you owe more than the
-                    trade-in value, the negative equity is added to your new loan.</span>
+              <div class="field">
+                <div class="label-with-icon">
+                  <label for="cashIncentives" style="margin:0;">Cash Incentives</label>
+                  <div class="tooltip">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-text">The discounts or cash rebates offered by car manufacturers, dealerships,
+                      or
+                      other parties to entice customers to buy. It reduces the total price of the purchase.</span>
+                  </div>
                 </div>
+                <div class="input-wrap"><span class="prefix">$</span><input type="number" id="cashIncentives"
+                    value="250" min="0" oninput="calculate()"></div>
               </div>
-              <div class="input-wrap"><span class="prefix">$</span><input type="number" id="owedOnTrade" value="50"
-                  min="0" oninput="calculate()"></div>
             </div>
-          </div>
 
-          <div class="field-row2">
-            <div class="field">
-              <label class="label-with-icon" for="salesTax">Sales Tax</label>
-              <div class="input-wrap"><input type="number" id="salesTax" value="7" min="0" max="20" step="0.01"
-                  oninput="calculate()"><span class="input-suffix">%</span></div>
-            </div>
-            <div class="field">
-              <div class="label-with-icon">
-                <label for="fees" style="margin:0;">Title, Reg. &amp; Other Fees</label>
-                <div class="tooltip">
-                  <span class="tooltip-icon">?</span>
-                  <span class="tooltip-text">Additional costs charged by the dealership or state to process
-                    documentation and legally register the vehicle.</span>
-                </div>
+            <div class="field-row2">
+              <div class="field">
+                <label class="label-with-icon" for="downPayment">Down Payment</label>
+                <div class="input-wrap"><span class="prefix">$</span><input type="number" id="downPayment" value="4000"
+                    min="0" oninput="calculate()"></div>
               </div>
-              <div class="input-wrap"><span class="prefix">$</span><input type="number" id="fees" value="2800" min="0"
+              <div class="field">
+                <div class="label-with-icon">
+                  <label for="interestRate" style="margin:0;">Interest Rate</label>
+                  <div class="tooltip">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-text">The yearly interest percentage charged by the lender for borrowing the
+                      money.</span>
+                  </div>
+                </div>
+                <div class="input-wrap"><input type="number" id="interestRate" value="5" min="0" max="40" step="0.01"
+                    oninput="calculate()"><span class="input-suffix">%</span></div>
+              </div>
+            </div>
+
+            <div class="field-section-label">Trade-in &amp; Fees</div>
+
+            <div class="field-row2">
+              <div class="field">
+                <label class="label-with-icon" for="tradeIn">Trade-in Value</label>
+                <div class="input-wrap"><span class="prefix">$</span><input type="number" id="tradeIn" value="3199"
+                    min="0" oninput="calculate()"></div>
+              </div>
+              <div class="field">
+                <div class="label-with-icon">
+                  <label for="owedOnTrade" style="margin:0;">Amount Owed on Trade-in</label>
+                  <div class="tooltip">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-text">The remaining loan balance on your current car. If you owe more than the
+                      trade-in value, the negative equity is added to your new loan.</span>
+                  </div>
+                </div>
+                <div class="input-wrap"><span class="prefix">$</span><input type="number" id="owedOnTrade" value="50"
+                    min="0" oninput="calculate()"></div>
+              </div>
+            </div>
+
+            <div class="field-row2">
+              <div class="field">
+                <label class="label-with-icon" for="salesTax">Sales Tax</label>
+                <div class="input-wrap"><input type="number" id="salesTax" value="7" min="0" max="20" step="0.01"
+                    oninput="calculate()"><span class="input-suffix">%</span></div>
+              </div>
+              <div class="field">
+                <div class="label-with-icon">
+                  <label for="fees" style="margin:0;">Title, Reg. &amp; Other Fees</label>
+                  <div class="tooltip">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-text">Additional costs charged by the dealership or state to process
+                      documentation and legally register the vehicle.</span>
+                  </div>
+                </div>
+                <div class="input-wrap"><span class="prefix">$</span><input type="number" id="fees" value="2800" min="0"
+                    oninput="calculate()"></div>
+              </div>
+            </div>
+
+            <div class="field-section-label">Loan Term</div>
+
+            <div class="field">
+              <label class="label-with-icon" for="termMonths">Loan Term (Months)</label>
+              <div class="input-wrap"><input type="number" id="termMonths" value="48" min="1" step="1"
                   oninput="calculate()"></div>
+              <p class="hint">Common terms are 36, 48, 60, or 72 months. Longer terms lower the payment but increase
+                total interest.</p>
+            </div>
+
+            <div class="field">
+              <label class="label-with-icon" for="extraPayment">Optional Extra Payment</label>
+              <div class="input-wrap"><span class="prefix">$</span><input type="number" id="extraPayment" value="0"
+                  min="0" step="10" oninput="calculate()"></div>
+              <p class="hint">See how an additional monthly payment could shorten your payoff time and reduce interest.
+              </p>
             </div>
           </div>
+        </div>
 
-          <div class="field-section-label">Loan Term</div>
-
-          <div class="field">
-            <label class="label-with-icon" for="termMonths">Loan Term (Months)</label>
-            <div class="input-wrap"><input type="number" id="termMonths" value="48" min="0" step="1"
-                oninput="calculate()"></div>
-            <p class="hint">Common auto loan terms are 36, 48, 60, or 72 months.</p>
-          </div>
-
+        <!-- Related Tools Pill Card (Left side under calculator) -->
+        <div class="related-card" style="margin-bottom: 0;">
+          <span class="related-label">MORE AUTO TOOLS:</span>
+          <a href="fuel-cost-calculator.html" class="related-pill">Fuel Cost</a>
+          <a href="mpg-calculator.html" class="related-pill">MPG Calculator</a>
+          <a href="lease-vs-buy-calculator.html" class="related-pill">Lease vs Buy</a>
         </div>
       </div>
 
-      <!-- RESULTS & AMORTIZATION -->
-      <div class="results-card" role="region" aria-live="polite">
-        <div class="results-header">
-          <h3 style="font-size: 24px; color: var(--accent-dark); margin-bottom: 4px;">Monthly Payment: <span
-              id="resMonthly">$0.00</span></h3>
-          <p style="font-size: 13px; color: var(--text-muted);" id="resSubtitle">Over 48 months at 5% Interest Rate</p>
+      <!-- RIGHT SIDE SCROLLABLE (RESULTS) -->
+      <div class="right-column">
+        <div class="results-card" role="region" aria-live="polite">
+          <div class="results-header">
+            <div>
+              <h3 style="font-size: 24px; color: var(--accent-dark); margin-bottom: 4px;">Monthly Payment:<br><span
+                  id="resMonthly">$0.00</span></h3>
+            </div>
+            <div>
+              <p style="font-size: 13px; color: var(--text-muted); text-align: right; max-width: 140px; line-height: 1.4;"
+                id="resSubtitle">Over 48 months at 5% Interest Rate</p>
+            </div>
+          </div>
+          <div class="results-body">
+
+            <!-- Breakdown List -->
+            <div class="breakdown-list">
+              <div class="breakdown-row"><span>Total Loan Amount (Financed)</span><strong
+                  id="brkFinanced">$0.00</strong>
+              </div>
+              <div class="breakdown-row"><span>Sales Tax</span><strong id="brkTax">$0.00</strong></div>
+              <div class="breakdown-row"><span>Upfront Payment (Down Payment)</span><strong id="brkDown">$0.00</strong>
+              </div>
+              <div class="breakdown-row"><span>Total of Loan Payments</span><strong id="brkTotalPaid">$0.00</strong>
+              </div>
+              <div class="breakdown-row"><span>Total Loan Interest</span><strong id="brkInterest">$0.00</strong></div>
+              <div class="breakdown-row total-row"><span>Total Cost (Price, Interest, Tax, Fees)</span><strong
+                  id="brkTotalCost">$0.00</strong></div>
+            </div>
+
+            <div class="result-explanation" id="resultExplanation">Enter your loan details to see what your payment and
+              total financing cost mean.</div>
+
+            <div class="result-grid">
+              <div class="result-mini-card"><span>Trade-in equity</span><strong id="resTradeEquity">$0.00</strong><small
+                  id="resTradeNote">Value minus remaining balance</small></div>
+              <div class="result-mini-card"><span>Interest share</span><strong
+                  id="resInterestShare">0%</strong><small>Interest as a share of loan payments</small></div>
+              <div class="result-mini-card"><span>Upfront value</span><strong id="resUpfront">$0.00</strong><small>Down
+                  payment + positive trade-in equity</small></div>
+            </div>
+
+            <div class="extra-payment-card">
+              <h3>Extra payment impact</h3>
+              <p>See what your optional extra monthly payment could change.</p>
+              <div class="extra-payment-grid">
+                <div><span>New payoff</span><strong id="extraPayoff">—</strong></div>
+                <div><span>Time saved</span><strong id="extraTimeSaved">—</strong></div>
+                <div><span>Interest saved</span><strong id="extraInterestSaved">$0.00</strong></div>
+              </div>
+            </div>
+
+            <!-- Graph -->
+            <div style="display: flex; flex-direction: column;">
+              <h3 style="font-size: 16px; margin-top: 32px;">Loan Breakdown</h3>
+              <p style="font-size: 12px; color: var(--text-light); margin-top: 3px; line-height: 1.5;">See how your
+                remaining balance falls while principal and interest accumulate.</p>
+            </div>
+            <div class="chart-container">
+              <canvas id="amortizationChart"></canvas>
+            </div>
+
+            <!-- Table -->
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; margin-bottom: 16px;">
+              <h3 style="font-size: 16px;">Amortization Schedule</h3>
+              <div class="schedule-tabs">
+                <button class="tab-btn active" id="btnAnnual" onclick="switchTab('annual')">Annual</button>
+                <button class="tab-btn" id="btnMonthly" onclick="switchTab('monthly')">Monthly</button>
+              </div>
+            </div>
+
+            <div class="amort-table-container">
+              <table class="amortization-table" id="scheduleTable">
+                <thead>
+                  <tr>
+                    <th id="periodHeader">Year</th>
+                    <th>Interest</th>
+                    <th>Principal</th>
+                    <th>Ending Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="scheduleBody"></tbody>
+              </table>
+            </div>
+
+          </div>
         </div>
-        <div class="results-body">
 
-          <!-- Breakdown List -->
-          <div class="breakdown-list">
-            <div class="breakdown-row"><span>Total Loan Amount (Financed)</span><strong id="brkFinanced">$0.00</strong>
-            </div>
-            <div class="breakdown-row"><span>Sales Tax</span><strong id="brkTax">$0.00</strong></div>
-            <div class="breakdown-row"><span>Upfront Payment (Down Payment)</span><strong id="brkDown">$0.00</strong>
-            </div>
-            <div class="breakdown-row"><span>Total of Loan Payments</span><strong id="brkTotalPaid">$0.00</strong></div>
-            <div class="breakdown-row"><span>Total Loan Interest</span><strong id="brkInterest">$0.00</strong></div>
-            <div class="breakdown-row total-row"><span>Total Cost (Price, Interest, Tax, Fees)</span><strong
-                id="brkTotalCost">$0.00</strong></div>
-          </div>
-
-          <!-- Graph -->
-          <h3 style="font-size: 16px; margin-top: 32px;">Loan Breakdown</h3>
-          <div class="chart-container">
-            <canvas id="amortizationChart"></canvas>
-          </div>
-
-          <!-- Table -->
-          <div
-            style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; margin-bottom: 16px;">
-            <h3 style="font-size: 16px;">Amortization Schedule</h3>
-            <div class="schedule-tabs">
-              <button class="tab-btn active" id="btnAnnual" onclick="switchTab('annual')">Annual</button>
-              <button class="tab-btn" id="btnMonthly" onclick="switchTab('monthly')">Monthly</button>
-            </div>
-          </div>
-
-          <div style="overflow-x: auto;">
-            <table class="amortization-table" id="scheduleTable">
-              <thead>
-                <tr>
-                  <th id="periodHeader">Year</th>
-                  <th>Interest</th>
-                  <th>Principal</th>
-                  <th>Ending Balance</th>
-                </tr>
-              </thead>
-              <tbody id="scheduleBody"></tbody>
-            </table>
-          </div>
-
-        </div>
       </div>
-
     </div>
+
+    <!-- COMPARISON PANELS -->
+    <div class="comparisons-wrapper">
+      <section class="comparison-panel" aria-labelledby="termComparisonHeading">
+        <div class="comparison-heading">
+          <div><span class="section-kicker">Compare the loan</span>
+            <h2 id="termComparisonHeading">How the loan term changes your payment</h2>
+          </div>
+          <p>Using your current loan amount and interest rate, compare common terms before choosing a payment length.
+          </p>
+        </div>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table" id="termComparisonTable">
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Monthly payment</th>
+                <th>Total interest</th>
+                <th>Total payments</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="comparison-note">A longer term can reduce the required monthly payment, but it can also increase the
+          total interest you pay.</p>
+      </section>
+
+      <section class="comparison-panel secondary-comparison" aria-labelledby="rateComparisonHeading">
+        <div class="comparison-heading">
+          <div><span class="section-kicker">Understand your rate</span>
+            <h2 id="rateComparisonHeading">How interest rate changes your loan cost</h2>
+          </div>
+          <p>See how different rates would affect the same amount financed and loan term.</p>
+        </div>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table" id="rateComparisonTable">
+            <thead>
+              <tr>
+                <th>Interest rate</th>
+                <th>Monthly payment</th>
+                <th>Total interest</th>
+                <th>Difference vs. current</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
   </main>
 
   <div class="disclaimer-bar">
     <div class="inner">
       <span style="font-size:16px;flex-shrink:0;">🚗</span>
-      <p><strong style="color:#0f0f0e;">This is an estimate, not a loan offer.</strong> Actual rates, fees, and taxes
-        vary by lender and state. These estimates are informational only and not financial advice.</p>
+      <p><strong style="color:#0f0f0e;">This is an estimate, not a loan offer.</strong> Actual APRs, payment schedules,
+        taxes, fees, lender terms, and trade-in treatment can vary. Use your lender's disclosures and purchase documents
+        for final figures.</p>
     </div>
   </div>
 
   <div class="article-section">
-    <article class="article">
-      <h2>How to Use This Monthly Car Payment Calculator</h2>
-      <p>When you finance a vehicle, you are paying for the privilege of spreading the purchase price over several
-        months or years. This means the total cost of the car will always be higher than the agreed-upon sticker price.
-        The true cost of your vehicle is the sum of the principal (the amount you borrowed) plus all the interest that
-        accrues over the life of the loan. Using a precise car payment estimator helps you understand how the different
-        levers of a loan—price, cash incentives, down payment, term length, and interest rate—interact. Before signing a
-        legally binding contract, you should fully comprehend how your choices impact your monthly budget.</p>
+    <div class="article-left-column">
 
-      <h2>Understanding Your Car Loan Estimator Results</h2>
-      <p>Auto loans are typically installment loans with fixed interest rates. When a lender calculates your monthly
-        payment, they use a mathematical formula called an <strong>amortization schedule</strong>. This schedule ensures
-        that you pay off the entire loan balance exactly by the end of the term through equal, predictable monthly
-        installments.</p>
-      <p>If you use an autoloan calculator to check the math, you will see that the way payments are applied to your
-        balance changes dramatically over time. At the beginning of the loan, a disproportionately large portion of your
-        monthly payment goes toward paying down the interest, and a smaller portion goes toward the principal. This is
-        because a car interest calculator computes the interest based on the remaining balance, which is highest at the
-        start of the loan. As the loan matures and the principal balance decreases, the interest charged each month also
-        decreases.</p>
-      <p>This front-loaded interest structure is why it is difficult to build equity in a car during the first year or
-        two of a loan. This effect is compounded by the fact that new cars depreciate rapidly—often losing 20% or more
-        of their value in the very first year.</p>
+      <article class="article">
+        <h2>How to Use This Auto Loan Calculator</h2>
+        <p>Start with the vehicle price, then enter any cash incentive, down payment, trade-in value, amount still owed
+          on your trade-in, sales tax, fees, interest rate, and loan term. The calculator estimates how much you would
+          finance, your required monthly payment, total interest, and the amount paid over the loan.</p>
+        <p>The most useful part is not the monthly payment by itself. Try changing the loan term, interest rate, or down
+          payment and compare the results. A payment that looks affordable can still lead to a much higher financing
+          cost when the loan is stretched over more years.</p>
+        <div class="callout">
+          <p><strong>Tip:</strong> When comparing auto loans, look at the amount financed, APR or interest rate, loan
+            term, monthly payment, and total interest together. Focusing only on the monthly payment can hide the cost
+            of a longer loan.</p>
+        </div>
+        <h2>How Is a Car Loan Payment Calculated?</h2>
+        <p>For a standard fixed-rate installment loan, the required payment is based on the amount financed, monthly
+          interest rate, and number of payments. Each payment contains both interest and principal. Early in the
+          schedule, the balance is larger, so the interest portion is larger. As the balance falls, more of each payment
+          goes toward principal.</p>
+        <div class="formula">Payment = P × r × (1 + r)<sup>n</sup> ÷ ((1 + r)<sup>n</sup> − 1)</div>
+        <p>Here, <strong>P</strong> is the amount financed, <strong>r</strong> is the monthly interest rate, and
+          <strong>n</strong> is the number of monthly payments. At 0% interest, the financed amount is simply divided
+          across the number of payments.
+        </p>
+        <h2>What Goes Into the Amount You Finance?</h2>
+        <p>Your vehicle price is only one part of the calculation. This calculator also accounts for incentives, down
+          payment, trade-in equity, sales tax, and other fees. If you have negative equity on your current vehicle, that
+          difference can increase the new amount financed.</p>
+        <p>Tax rules and fees vary by location and lender, so treat the result as an estimate. Your purchase contract
+          and lender disclosures contain the final numbers.</p>
+        <h2>How Does a Longer Auto Loan Change the Cost?</h2>
+        <p>A longer term spreads the balance across more payments. That can reduce the required monthly payment, but it
+          usually means paying interest for a longer period. Use the term comparison above to see the trade-off for your
+          own numbers.</p>
+        <p>Long terms can also make it harder to build equity quickly, especially when the vehicle loses value faster
+          than the loan balance falls. This matters if you plan to trade or sell the vehicle before the loan is paid
+          off.</p>
+        <h2>Does a Larger Down Payment Save Money?</h2>
+        <p>A larger down payment reduces the amount you borrow. With the same interest rate and term, borrowing less
+          generally means a lower required payment and less total interest. It also changes how much cash you have left
+          after the purchase, so there is no single down payment that is right for every buyer.</p>
+        <h2>How Does a Trade-In Affect a Car Loan?</h2>
+        <p>Your trade-in creates positive equity when the vehicle is worth more than the amount you still owe. That
+          equity can reduce the amount needed for the next purchase. If you owe more than the vehicle is worth, you have
+          negative equity. Rolling that difference into a new loan increases the amount you borrow and can increase
+          interest costs.</p>
+        <p>Check your current lender's payoff amount before using an estimated balance. The payoff amount can differ
+          from the balance shown on a recent statement.</p>
+        <h2>Why Taxes and Fees Matter</h2>
+        <p>Sales tax, registration, title charges, documentation fees, and other purchase costs can make the amount you
+          need to pay higher than the advertised vehicle price. Entering those costs gives you a more complete financing
+          estimate.</p>
+        <h2>How Much Can Extra Payments Save?</h2>
+        <p>Extra payments can reduce principal faster. That can shorten the payoff period and reduce future interest.
+          Enter an optional extra payment above to see an estimate based on the current loan.</p>
+        <p>Check your loan agreement for how additional payments are handled. Some lenders have specific instructions
+          for applying extra money to principal.</p>
+        <h2>How to Compare Two Auto Loan Offers</h2>
+        <p>When two lenders quote different loans, compare more than the monthly payment. Check the amount financed,
+          interest rate or APR, term, required payment, fees, and total amount paid. A lower monthly payment is not
+          necessarily a lower-cost loan if it comes with a longer term or higher financing cost.</p>
+        <h2>APR vs. Interest Rate</h2>
+        <p>The interest rate describes the rate charged on the borrowed balance. APR is a broader measure of borrowing
+          cost and can include certain fees. When a lender provides an APR, read the disclosure to understand what is
+          included and compare offers using the same type of figure.</p>
+        <h2>Dealer Financing vs. Bank or Credit Union Financing</h2>
+        <p>Dealer financing can be convenient because the dealership arranges the loan as part of the purchase. You can
+          also compare a pre-approval or quote from a bank or credit union. Having another offer gives you a reference
+          point when reviewing the dealer's financing terms.</p>
+        <p>Compare the actual rate, term, fees, payment, and total financing cost rather than assuming one type of
+          lender is always cheaper.</p>
+        <h2>What Your Calculator Result Does Not Include</h2>
+        <p>This calculator estimates the financing side of the purchase. Your real cost of owning the vehicle can also
+          include insurance, fuel, maintenance, repairs, registration renewals, parking, and other transportation
+          expenses. Those costs are separate from the loan payment.</p>
+        <h2>Sources &amp; Methodology</h2>
+        <p>ClearlyCheck uses a standard fixed-rate amortization calculation for the loan payment and schedule. The
+          estimate incorporates the purchase price, incentives, down payment, trade-in equity, sales tax, fees, interest
+          rate, and term entered by the user. The optional extra-payment estimate applies the additional amount to the
+          loan balance each month and estimates the resulting payoff time and interest savings.</p>
+        <p>Actual loan terms can differ because lenders may use different payment timing, fees, APR calculations, tax
+          treatment, or contract conditions. Verify final figures in the lender's disclosures and purchase documents.
+        </p>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item"><button class="faq-q">How do I calculate my monthly car payment?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Your monthly payment depends mainly on the amount financed, interest rate, and loan term.
+              This calculator also accounts for incentives, down payment, trade-in equity, sales tax, and fees.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">How much interest will I pay on my car loan?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">The total interest depends on the amount financed, interest rate, and term. A longer loan
+              can reduce the required monthly payment while increasing the total interest paid.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">Does a larger down payment lower my car payment?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Yes. A larger down payment generally reduces the amount you need to finance, which lowers
+              the required monthly payment and usually reduces total interest.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">How does a trade-in affect my auto loan?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Your trade-in can reduce the amount you finance when it has positive equity. If you owe
+              more than the trade-in is worth, the negative equity can increase the new amount financed.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">What happens if I owe more on my trade-in than it is worth?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">The difference is negative equity. If that balance is rolled into the new loan, you
+              borrow more and can pay more interest over the life of the new loan.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">Is a 60-month or 72-month car loan cheaper?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">A 60-month loan will generally have a higher required monthly payment but can cost less
+              in total interest than a 72-month loan when the other terms are the same.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">How do taxes and dealer fees affect a car loan?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Taxes and fees can increase the amount you need to pay or finance. Entering them in the
+              calculator gives you a more complete estimate than using the vehicle price alone.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">How much can I save by paying extra on my car loan?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">Extra payments can reduce the principal faster, which can shorten the payoff period and
+              reduce interest. Actual savings depend on the balance, rate, remaining term, and how the lender applies
+              extra payments.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">What is the difference between APR and interest rate?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">The interest rate is the rate charged on the amount borrowed. APR is a broader measure of
+              borrowing cost that can include certain fees, so the two numbers are not always identical.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">Should I choose a shorter or longer auto loan term?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">A shorter term usually means a higher required payment but less interest over the life of
+              the loan. A longer term lowers the required payment but can increase total interest.</div>
+          </div>
+          <div class="faq-item"><button class="faq-q">How does my interest rate change the cost of a car loan?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">For the same amount financed and term, a higher interest rate generally increases both
+              the monthly payment and total interest. Comparing rates shows how financing changes the overall cost.
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-q">Is this auto loan calculator a loan offer?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-a">No. It is an estimate based on the information you enter. Actual lender terms, taxes,
+              fees, APR, payment timing, and approval conditions can differ.</div>
+          </div>
+        </div>
+      </article>
 
-      <h2>The Danger of Long-Term Auto Loans (72 &amp; 84 Months)</h2>
-      <p>Over the last decade, the average price of a new car has skyrocketed. To keep monthly payments affordable for
-        consumers, lenders and dealerships have increasingly popularized ultra-long loan terms spanning 72, 84, or even
-        96 months. While a lower monthly payment might seem attractive to your immediate cash flow when running numbers
-        in a loan calculator auto, these long-term loans carry severe financial risks.</p>
-      <p>The primary danger is the sheer amount of interest you will pay. Extending a loan from 60 months to 84 months
-        adds two entire years of interest payments to your contract. Furthermore, long-term loans almost guarantee that
-        you will experience negative equity. If you attempt to trade in the car in year four of an 84-month loan, you
-        will likely find that the vehicle's market value is far less than your remaining loan balance.</p>
-
-      <h2>Dealer Financing vs. Bank and Credit Union Loans</h2>
-      <p>When you sit down in the Finance and Insurance (F&amp;I) office at a dealership, the finance manager acts as a
-        middleman between you and various lending institutions. While dealership financing offers unparalleled
-        convenience, it is important to recognize that the dealership often makes a significant profit by marking up the
-        interest rate on the loan they secure for you.</p>
-      <p>To protect yourself, the most effective strategy is to secure a pre-approved auto loan from a local bank or
-        credit union before you even set foot on the lot. Credit unions frequently offer the lowest, most competitive
-        auto loan rates available in the market. Arriving at the dealership with a pre-approval in hand gives you a firm
-        baseline rate, ensuring you have the leverage to walk away with the best possible deal.</p>
-
-      <h2>Smart Strategies to Lower Your Car Loan Cost</h2>
-      <p>If you want to save money and minimize the total interest you pay over the life of your loan, there are several
-        highly effective strategies to estimate car payment savings:</p>
-      <ul>
-        <li><strong>Maximize Your Down Payment:</strong> A down payment reduces the principal balance, which in turn
-          reduces the total interest charged over the loan term. Financial experts strongly recommend putting down at
-          least 20% on a new car.</li>
-        <li><strong>Improve Your Credit Score Before Applying:</strong> Your credit score is the single most important
-          factor lenders use to determine your interest rate. Even a 1% or 2% drop in your interest rate can result in
-          massive savings.</li>
-        <li><strong>Account for Negative Equity:</strong> If you owe more on your trade-in than it is worth, that
-          "Amount Owed" gets rolled into your new loan. Always check your exact payoff amount before visiting a
-          dealership.</li>
-        <li><strong>Keep the Term as Short as Possible:</strong> Choose a 48-month or 60-month term if you can afford
-          the monthly payment. Shorter terms almost always qualify for lower rates and save you thousands of dollars in
-          interest.</li>
-      </ul>
-
-      <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <button class="faq-q">How does a car interest calculator determine my total cost?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">A car interest calculator applies your chosen interest rate to the principal balance of the
-            loan over the specified term. Because auto loans use standard amortization, you pay more interest at the
-            beginning of the loan when the principal balance is highest.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Why is my car loan estimator showing a higher payment than expected?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">If your car loan estimator yields a higher monthly payment, it is likely factoring in the
-            full financed amount, which includes state sales tax, title and registration fees, and any negative equity
-            (amount owed) from your trade-in vehicle.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Should I put money down on a car loan, and how much is recommended?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Yes, it is highly recommended to put money down. A down payment reduces the total amount
-            you finance, which lowers your monthly payments and decreases the total interest paid over the life of the
-            loan. Financial experts typically recommend a down payment of at least 20% for new cars and 10% for used
-            cars to protect against immediate depreciation.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">What is negative equity and how do you become 'underwater' on a car loan?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Negative equity, or being 'underwater' on a car loan, occurs when you owe more on the loan
-            than the vehicle is currently worth. This typically happens if you buy a car with little to no down payment,
-            roll negative equity from a previous trade-in into the new loan, or choose a long loan term (72+ months), as
-            the car depreciates faster than you pay down the principal.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">What is gap insurance, and do I actually need it?<span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Guaranteed Asset Protection (GAP) insurance covers the difference between what your car is
-            currently worth and what you owe on the loan if the vehicle is totaled or stolen. If you make a small down
-            payment (less than 20%) or choose a loan term of 60 months or longer, gap insurance is strongly recommended
-            to protect you from having to pay off a loan for a car you no longer have.</div>
-        </div>
-      </div>
-    </article>
+    </div>
 
     <div>
-      <p
-        style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:0 4px;margin-bottom:12px;">
-        More Auto Tools</p>
-      <div class="sidebar-tools">
-        <a class="sidebar-tool" href="fuel-cost-calculator.html">
-          <div class="sidebar-tool-icon">⛽</div>
-          <div>
-            <div class="sidebar-tool-name">Fuel Cost Calculator</div>
-            <div class="sidebar-tool-desc">Estimate trip and monthly fuel costs</div>
-          </div>
-        </a>
-        <a class="sidebar-tool" href="mpg-calculator.html">
-          <div class="sidebar-tool-icon">📊</div>
-          <div>
-            <div class="sidebar-tool-name">MPG Calculator</div>
-            <div class="sidebar-tool-desc">Calculate your car's fuel economy</div>
-          </div>
-        </a>
-        <a class="sidebar-tool" href="lease-vs-buy-calculator.html">
-          <div class="sidebar-tool-icon">🚗</div>
-          <div>
-            <div class="sidebar-tool-name">Lease vs Buy Calculator</div>
-            <div class="sidebar-tool-desc">Compare leasing against financing</div>
-          </div>
-        </a>
+
+      <!-- Mega Internal Linking Block -->
+      <div class="nav-block">
+        <h3>Other Calculators</h3>
+        <div class="nav-grid">
+          <a href="sales-tax-calculator.html">Sales Tax</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound Interest</a>
+          <a href="paycheck-calculator.html">Paycheck</a>
+          <a href="gpa-calculator.html">GPA</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="words-to-pages-calculator.html">Words to Pages</a>
+          <a href="reading-time-calculator.html">Reading Time</a>
+          <a href="calorie-calculator.html">Daily Calories</a>
+          <a href="mpg-calculator.html">MPG</a>
+          <a href="pet-age-calculator.html">Pet Age</a>
+          <a href="pet-cost-calculator.html">Pet Cost</a>
+          <a href="timezone-planner.html">Timezone Planner</a>
+          <a href="password-generator.html">Password Gen</a>
+          <a href="reality-check-calculator.html">Reality Check</a>
+          <a href="unit-converter.html">Unit Converter</a>
+        </div>
+
+        <div class="nav-hubs">
+          <a href="finance-calculators.html">Finance</a><span class="sep">|</span>
+          <a href="health-calculators.html">Health</a><span class="sep">|</span>
+          <a href="pet-tools.html">Pets</a><span class="sep">|</span>
+          <a href="productivity-tools.html">Productivity</a><span class="sep">|</span>
+          <a href="utility-tools.html">Utility</a><span class="sep">|</span>
+          <a href="education-tools.html">Education</a><span class="sep">|</span>
+          <a href="auto-calculators.html">Auto</a><span class="sep">|</span>
+          <a href="/guides/index.html">Guides</a>
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -1313,193 +1791,344 @@
       return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 });
     }
 
-    function computeAutoLoan() {
-      const price = parseFloat(document.getElementById('vehiclePrice').value) || 0;
-      const incentives = parseFloat(document.getElementById('cashIncentives').value) || 0;
-      const down = parseFloat(document.getElementById('downPayment').value) || 0;
-      const tradeIn = parseFloat(document.getElementById('tradeIn').value) || 0;
-      const owedOnTrade = parseFloat(document.getElementById('owedOnTrade').value) || 0;
-      const taxRate = (parseFloat(document.getElementById('salesTax').value) || 0) / 100;
-      const fees = parseFloat(document.getElementById('fees').value) || 0;
-      const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
-      const termMonths = parseInt(document.getElementById('termMonths').value) || 0;
-
+    function computeAutoLoan(customRate = null, customTerm = null) {
+      const price = Math.max(0, parseFloat(document.getElementById('vehiclePrice').value) || 0);
+      const incentives = Math.max(0, parseFloat(document.getElementById('cashIncentives').value) || 0);
+      const down = Math.max(0, parseFloat(document.getElementById('downPayment').value) || 0);
+      const tradeIn = Math.max(0, parseFloat(document.getElementById('tradeIn').value) || 0);
+      const owedOnTrade = Math.max(0, parseFloat(document.getElementById('owedOnTrade').value) || 0);
+      const taxRate = Math.max(0, parseFloat(document.getElementById('salesTax').value) || 0) / 100;
+      const fees = Math.max(0, parseFloat(document.getElementById('fees').value) || 0);
+      const interestRate = customRate === null ? Math.max(0, parseFloat(document.getElementById('interestRate').value) || 0) : customRate;
+      const termMonths = customTerm === null ? Math.max(1, parseInt(document.getElementById('termMonths').value) || 0) : customTerm;
       if (termMonths <= 0) return null;
-
-      const adjustedPrice = price - incentives;
+      const adjustedPrice = Math.max(0, price - incentives);
       const tax = adjustedPrice * taxRate;
       const netTradeIn = tradeIn - owedOnTrade;
-
-      const financed = adjustedPrice + tax + fees - down - netTradeIn;
-
-      if (financed <= 0) {
-        return { financed: 0, monthly: 0, totalPaid: 0, totalInterest: 0, tax, down, totalCost: adjustedPrice + tax + fees, schedule: [], termMonths, interestRate };
-      }
-
+      const financed = Math.max(0, adjustedPrice + tax + fees - down - netTradeIn);
+      if (financed === 0) return { financed: 0, monthly: 0, totalPaid: 0, totalInterest: 0, tax, down, totalCost: adjustedPrice + tax + fees, schedule: [], termMonths, interestRate, netTradeIn };
       const r = interestRate / 1200;
       const monthly = r === 0 ? financed / termMonths : financed * r / (1 - Math.pow(1 + r, -termMonths));
       const totalPaid = monthly * termMonths;
-      const totalCost = down + netTradeIn + totalPaid;
-
-      // Generate Amortization Schedule
-      let balance = financed;
-      let schedule = [];
-
+      const totalInterest = Math.max(0, totalPaid - financed);
+      const totalCost = adjustedPrice + tax + fees + totalInterest;
+      let balance = financed, schedule = [];
       for (let i = 1; i <= termMonths; i++) {
-        let interestForMonth = balance * r;
-        let principalForMonth = monthly - interestForMonth;
-        balance -= principalForMonth;
-
-        if (balance < 0) balance = 0; // Fix floating point trailing decimals
-
-        schedule.push({
-          month: i,
-          principal: principalForMonth,
-          interest: interestForMonth,
-          balance: balance
-        });
+        const interestForMonth = balance * r;
+        const principalForMonth = Math.min(balance, Math.max(0, monthly - interestForMonth));
+        balance = Math.max(0, balance - principalForMonth);
+        schedule.push({ month: i, principal: principalForMonth, interest: interestForMonth, balance });
       }
+      return { financed, monthly, totalPaid, totalInterest, tax, down, totalCost, schedule, termMonths, interestRate, netTradeIn };
+    }
 
-      return { financed, monthly, totalPaid, totalInterest: totalPaid - financed, tax, down, totalCost, schedule, termMonths, interestRate };
+    function calculateExtraPayment(out, extra) {
+      if (!out || out.financed <= 0 || extra <= 0) return { months: out ? out.termMonths : 0, interest: out ? out.totalInterest : 0 };
+      const r = out.interestRate / 1200;
+      let balance = out.financed, interest = 0, months = 0;
+      const payment = out.monthly + extra;
+      while (balance > 0.005 && months < 1200) {
+        months++;
+        const interestForMonth = balance * r;
+        interest += interestForMonth;
+        const principal = r === 0 ? Math.min(balance, payment) : Math.min(balance, Math.max(0, payment - interestForMonth));
+        balance = Math.max(0, balance - principal);
+        if (principal <= 0) break;
+      }
+      return { months, interest };
     }
 
     function renderChart(schedule, termMonths) {
-      const ctx = document.getElementById('amortizationChart').getContext('2d');
+      const canvas = document.getElementById('amortizationChart');
+      if (!canvas) return;
 
-      if (chartInstance) chartInstance.destroy();
+      if (chartInstance) {
+        try { chartInstance.destroy(); } catch (e) { }
+        chartInstance = null;
+      }
 
-      if (schedule.length === 0) return;
+      if (!schedule || schedule.length === 0) {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
 
-      const labels = schedule.map(s => `Mo ${s.month}`);
-      const balanceData = schedule.map(s => s.balance);
-      const principalData = [];
-      const interestData = [];
+      // Use Chart.js when available. If the CDN is unavailable, use the
+      // built-in canvas renderer so the calculator still works.
+      if (typeof Chart !== 'undefined') {
+        try {
+          const ctx = canvas.getContext('2d');
+          const step = Math.max(1, Math.ceil(schedule.length / 24));
+          const points = schedule.filter((s, i) => i % step === 0 || i === schedule.length - 1);
 
-      let accPrincipal = 0;
-      let accInterest = 0;
-      schedule.forEach(s => {
-        accPrincipal += s.principal;
-        accInterest += s.interest;
-        principalData.push(accPrincipal);
-        interestData.push(accInterest);
+          let principal = 0;
+          let interest = 0;
+          const principalData = [];
+          const interestData = [];
+          const pointSet = new Set(points.map(p => p.month));
+
+          schedule.forEach(s => {
+            principal += s.principal;
+            interest += s.interest;
+            if (pointSet.has(s.month)) {
+              principalData.push(principal);
+              interestData.push(interest);
+            }
+          });
+
+          chartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: points.map(s => `Mo ${s.month}`),
+              datasets: [
+                {
+                  label: 'Remaining balance',
+                  data: points.map(s => s.balance),
+                  borderColor: '#1a4fa0',
+                  backgroundColor: 'rgba(26,79,160,.06)',
+                  fill: true,
+                  tension: .2,
+                  pointRadius: 0
+                },
+                {
+                  label: 'Principal paid',
+                  data: principalData,
+                  borderColor: '#1a6b4a',
+                  backgroundColor: 'transparent',
+                  tension: .2,
+                  pointRadius: 0
+                },
+                {
+                  label: 'Interest paid',
+                  data: interestData,
+                  borderColor: '#b0362c',
+                  backgroundColor: 'transparent',
+                  tension: .2,
+                  pointRadius: 0
+                }
+              ]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              interaction: { mode: 'index', intersect: false },
+              plugins: {
+                legend: {
+                  position: 'top',
+                  labels: { boxWidth: 12, usePointStyle: true, padding: 14 }
+                },
+                tooltip: {
+                  callbacks: {
+                    label: ctx => `${ctx.dataset.label}: ${fmtCurrency(ctx.parsed.y)}`
+                  }
+                }
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    callback: value => '$' + Number(value).toLocaleString('en-US')
+                  }
+                },
+                x: { ticks: { maxTicksLimit: 8 } }
+              }
+            }
+          });
+          return;
+        } catch (error) {
+          console.warn('Chart.js failed; using the built-in chart renderer.', error);
+        }
+      }
+
+      drawLoanChartFallback(canvas, schedule);
+    }
+
+    function drawLoanChartFallback(canvas, schedule) {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const width = Math.max(320, rect.width);
+      const height = Math.max(210, rect.height);
+
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+
+      const pad = { left: 54, right: 18, top: 36, bottom: 30 };
+      const plotW = width - pad.left - pad.right;
+      const plotH = height - pad.top - pad.bottom;
+
+      let principal = 0;
+      let interest = 0;
+      const points = schedule.map(s => {
+        principal += s.principal;
+        interest += s.interest;
+        return { month: s.month, balance: s.balance, principal, interest };
       });
 
-      chartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: [
-            { label: 'Balance', data: balanceData, borderColor: '#1a4fa0', backgroundColor: 'transparent', yAxisID: 'y' },
-            { label: 'Total Principal Paid', data: principalData, borderColor: '#1a6b4a', backgroundColor: 'transparent', yAxisID: 'y' },
-            { label: 'Total Interest Paid', data: interestData, borderColor: '#b0362c', backgroundColor: 'transparent', yAxisID: 'y' }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          elements: { point: { radius: 0 } },
-          interaction: { mode: 'index', intersect: false },
-          scales: { y: { beginAtZero: true, ticks: { callback: function (value) { return '$' + value.toLocaleString(); } } } }
-        }
+      const maxValue = Math.max(...points.map(p => Math.max(p.balance, p.principal, p.interest)), 1);
+      const x = i => pad.left + (i / Math.max(1, points.length - 1)) * plotW;
+      const y = value => pad.top + plotH - (value / maxValue) * plotH;
+
+      ctx.strokeStyle = '#deded9';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const gy = pad.top + (plotH / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, gy);
+        ctx.lineTo(pad.left + plotW, gy);
+        ctx.stroke();
+      }
+
+      const drawLine = (key, stroke) => {
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        points.forEach((point, i) => {
+          const px = x(i), py = y(point[key]);
+          if (i === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        });
+        ctx.stroke();
+      };
+
+      drawLine('balance', '#1a4fa0');
+      drawLine('principal', '#1a6b4a');
+      drawLine('interest', '#b0362c');
+
+      ctx.font = '11px DM Sans, sans-serif';
+      ctx.fillStyle = '#555';
+      ctx.textAlign = 'right';
+      for (let i = 0; i <= 4; i++) {
+        const value = maxValue * (1 - i / 4);
+        ctx.fillText('$' + Math.round(value).toLocaleString('en-US'), pad.left - 8, pad.top + (plotH / 4) * i + 4);
+      }
+
+      ctx.textAlign = 'center';
+      const labelCount = Math.min(6, points.length);
+      for (let i = 0; i < labelCount; i++) {
+        const pointIndex = Math.round(i * (points.length - 1) / Math.max(1, labelCount - 1));
+        ctx.fillText(`Mo ${points[pointIndex].month}`, x(pointIndex), height - 8);
+      }
+
+      const legend = [
+        ['Remaining balance', '#1a4fa0'],
+        ['Principal paid', '#1a6b4a'],
+        ['Interest paid', '#b0362c']
+      ];
+      let legendX = pad.left;
+      ctx.textAlign = 'left';
+      legend.forEach(([label, color]) => {
+        ctx.fillStyle = color;
+        ctx.fillRect(legendX, 12, 10, 3);
+        ctx.fillStyle = '#333';
+        ctx.fillText(label, legendX + 15, 16);
+        legendX += ctx.measureText(label).width + 42;
       });
     }
 
     function renderTable(schedule) {
       const tbody = document.getElementById('scheduleBody');
       const header = document.getElementById('periodHeader');
+      if (!tbody || !header) return;
+
       tbody.innerHTML = '';
 
-      if (schedule.length === 0) return;
+      if (!schedule || schedule.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-light);padding:24px;">No amortization schedule is available for these inputs.</td></tr>';
+        return;
+      }
 
       if (currentView === 'annual') {
         header.textContent = 'Year';
-        let yearlyData = [];
-        let currentYear = { year: 1, interest: 0, principal: 0, balance: 0 };
 
-        schedule.forEach((s) => {
-          currentYear.interest += s.interest;
-          currentYear.principal += s.principal;
-          currentYear.balance = s.balance;
+        let year = { year: 1, interest: 0, principal: 0, balance: 0 };
 
-          if (s.month % 12 === 0 || s.month === schedule.length) {
-            yearlyData.push({ ...currentYear });
-            currentYear = { year: currentYear.year + 1, interest: 0, principal: 0, balance: 0 };
+        schedule.forEach((payment, index) => {
+          year.interest += payment.interest;
+          year.principal += payment.principal;
+          year.balance = payment.balance;
+
+          if (payment.month % 12 === 0 || index === schedule.length - 1) {
+            tbody.insertAdjacentHTML(
+              'beforeend',
+              `<tr><td>${year.year}</td><td>${fmtCurrency(year.interest)}</td><td>${fmtCurrency(year.principal)}</td><td>${fmtCurrency(year.balance)}</td></tr>`
+            );
+            year = { year: year.year + 1, interest: 0, principal: 0, balance: 0 };
           }
-        });
-
-        yearlyData.forEach(y => {
-          tbody.innerHTML += `
-            <tr>
-              <td>${y.year}</td>
-              <td>${fmtCurrency(y.interest)}</td>
-              <td>${fmtCurrency(y.principal)}</td>
-              <td>${fmtCurrency(y.balance)}</td>
-            </tr>
-          `;
         });
       } else {
         header.textContent = 'Month';
-        schedule.forEach(s => {
-          tbody.innerHTML += `
-            <tr>
-              <td>${s.month}</td>
-              <td>${fmtCurrency(s.interest)}</td>
-              <td>${fmtCurrency(s.principal)}</td>
-              <td>${fmtCurrency(s.balance)}</td>
-            </tr>
-          `;
+
+        schedule.forEach(payment => {
+          tbody.insertAdjacentHTML(
+            'beforeend',
+            `<tr><td>${payment.month}</td><td>${fmtCurrency(payment.interest)}</td><td>${fmtCurrency(payment.principal)}</td><td>${fmtCurrency(payment.balance)}</td></tr>`
+          );
         });
       }
     }
 
     function switchTab(view) {
-      currentView = view;
-      document.getElementById('btnAnnual').classList.toggle('active', view === 'annual');
-      document.getElementById('btnMonthly').classList.toggle('active', view === 'monthly');
+      currentView = view === 'monthly' ? 'monthly' : 'annual';
+      document.getElementById('btnAnnual').classList.toggle('active', currentView === 'annual');
+      document.getElementById('btnMonthly').classList.toggle('active', currentView === 'monthly');
       renderTable(globalAmortizationData);
+    }
+
+    function renderComparisons(out) {
+      const termBody = document.querySelector('#termComparisonTable tbody'), rateBody = document.querySelector('#rateComparisonTable tbody');
+      termBody.innerHTML = ''; rateBody.innerHTML = '';
+      if (!out || out.financed <= 0) return;
+      const terms = [36, 48, 60, 72, 84];
+      if (!terms.includes(out.termMonths)) terms.push(out.termMonths);
+      terms.sort((a, b) => a - b);
+      terms.forEach(term => {
+        const x = computeAutoLoan(null, term), tr = document.createElement('tr');
+        if (term === out.termMonths) tr.className = 'current';
+        tr.innerHTML = `<td><strong>${term} months</strong>${term === out.termMonths ? ' <span class="current-badge">Current</span>' : ''}</td><td>${fmtCurrency(x.monthly)}</td><td>${fmtCurrency(x.totalInterest)}</td><td>${fmtCurrency(x.totalPaid)}</td>`;
+        termBody.appendChild(tr);
+      });
+      [3, 4, 5, 6, 7, 8, 10].forEach(rate => {
+        const x = computeAutoLoan(rate, out.termMonths), diff = x.totalInterest - out.totalInterest, tr = document.createElement('tr');
+        if (Math.abs(rate - out.interestRate) < 0.001) tr.className = 'current';
+        const diffText = Math.abs(diff) < 0.005 ? 'Current' : `${diff > 0 ? '+' : '−'}${fmtCurrency(Math.abs(diff))}`;
+        tr.innerHTML = `<td>${rate.toFixed(2)}%${Math.abs(rate - out.interestRate) < 0.001 ? ' · current' : ''}</td><td>${fmtCurrency(x.monthly)}</td><td>${fmtCurrency(x.totalInterest)}</td><td>${diffText}</td>`;
+        rateBody.appendChild(tr);
+      });
     }
 
     function calculate() {
       const out = computeAutoLoan();
-      if (!out) {
-        document.getElementById('resMonthly').textContent = '—';
-        document.getElementById('resSubtitle').textContent = 'Enter a valid loan term';
-        return;
-      }
-
-      if (out.financed <= 0) {
-        document.getElementById('resMonthly').textContent = fmtCurrency(0);
-        document.getElementById('resSubtitle').textContent = 'No financing needed — your down payment and trade-in cover the full cost.';
-
-        document.getElementById('brkFinanced').textContent = fmtCurrency(0);
-        document.getElementById('brkTax').textContent = fmtCurrency(out.tax);
-        document.getElementById('brkDown').textContent = fmtCurrency(out.down);
-        document.getElementById('brkTotalPaid').textContent = fmtCurrency(0);
-        document.getElementById('brkInterest').textContent = fmtCurrency(0);
-        document.getElementById('brkTotalCost').textContent = fmtCurrency(out.totalCost);
-
-        if (chartInstance) chartInstance.destroy();
-        document.getElementById('scheduleBody').innerHTML = '';
-        globalAmortizationData = [];
-        return;
-      }
-
-      // Update Top Badges
+      if (!out) { document.getElementById('resMonthly').textContent = '—'; document.getElementById('resSubtitle').textContent = 'Enter a valid loan term'; return; }
+      const extra = Math.max(0, parseFloat(document.getElementById('extraPayment').value) || 0);
+      const tradeEquity = out.netTradeIn, interestShare = out.totalPaid > 0 ? (out.totalInterest / out.totalPaid) * 100 : 0, upfront = Math.max(0, out.down + Math.max(0, tradeEquity));
       document.getElementById('resMonthly').textContent = fmtCurrency(out.monthly);
-      document.getElementById('resSubtitle').textContent = `Over ${out.termMonths} months at ${out.interestRate}% Interest Rate`;
-
-      // Update Breakdown List
+      document.getElementById('resSubtitle').textContent = `Required payment over ${out.termMonths} months at ${out.interestRate}% interest`;
       document.getElementById('brkFinanced').textContent = fmtCurrency(out.financed);
       document.getElementById('brkTax').textContent = fmtCurrency(out.tax);
       document.getElementById('brkDown').textContent = fmtCurrency(out.down);
       document.getElementById('brkTotalPaid').textContent = fmtCurrency(out.totalPaid);
       document.getElementById('brkInterest').textContent = fmtCurrency(out.totalInterest);
       document.getElementById('brkTotalCost').textContent = fmtCurrency(out.totalCost);
-
-      // Store data and render charting/tables
-      globalAmortizationData = out.schedule;
-      renderChart(out.schedule, out.termMonths);
-      renderTable(out.schedule);
+      document.getElementById('resTradeEquity').textContent = fmtCurrency(tradeEquity);
+      document.getElementById('resTradeNote').textContent = tradeEquity >= 0 ? 'Positive equity reduces the new loan' : 'Negative equity increases the new loan';
+      document.getElementById('resInterestShare').textContent = `${interestShare.toFixed(1)}%`;
+      document.getElementById('resUpfront').textContent = fmtCurrency(upfront);
+      const explanation = document.getElementById('resultExplanation');
+      if (out.financed <= 0) {
+        explanation.textContent = 'Your down payment and trade-in equity cover the estimated amount due, so no loan financing is needed with these inputs.';
+        document.getElementById('extraPayoff').textContent = 'No loan'; document.getElementById('extraTimeSaved').textContent = '—'; document.getElementById('extraInterestSaved').textContent = '$0.00';
+        if (chartInstance) { try { chartInstance.destroy(); } catch (e) { } chartInstance = null; } globalAmortizationData = []; renderTable([]); renderComparisons(out); return;
+      }
+      explanation.textContent = `You would finance about ${fmtCurrency(out.financed)} and make a required payment of ${fmtCurrency(out.monthly)} for ${out.termMonths} months. At ${out.interestRate}% interest, the estimated interest cost is ${fmtCurrency(out.totalInterest)}.`;
+      const extraResult = calculateExtraPayment(out, extra), savedMonths = Math.max(0, out.termMonths - extraResult.months), interestSaved = Math.max(0, out.totalInterest - extraResult.interest);
+      document.getElementById('extraPayoff').textContent = extra > 0 ? `${extraResult.months} months` : `${out.termMonths} months`;
+      document.getElementById('extraTimeSaved').textContent = extra > 0 && savedMonths > 0 ? `${savedMonths} months` : 'None yet';
+      document.getElementById('extraInterestSaved').textContent = fmtCurrency(interestSaved);
+      globalAmortizationData = out.schedule; renderTable(out.schedule); renderComparisons(out); renderChart(out.schedule, out.termMonths);
     }
 
     // Initial calculation on load
